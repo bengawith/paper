@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-11-18T15:39:30.030062",
+  "python_version": "3.13.2",
+  "pytorch_version": "2.7.1+cu118",
+  "cuda_available": true,
+  "device_count": 1,
+  "os": "Windows",
+  "os_version": "10.0.26200",
+  "processor": "Intel64 Family 6 Model 158 Stepping 10, GenuineIntel",
+  "cpu_count": 6,
+  "cpu_count_logical": 6,
+  "total_ram_gb": 15.94,
+  "gpu_0_name": "NVIDIA GeForce GTX 1660 SUPER",
+  "gpu_0_memory_total_gb": 6.0,
+  "gpu_0_compute_capability": "7.5",
+  "scipy_version": "1.16.0",
+  "pandas_version": "2.3.1",
+  "numpy_version": "2.2.6",
+  "xgboost_version": "3.0.5"
+}

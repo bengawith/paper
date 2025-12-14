@@ -1,0 +1,21 @@
+{
+  "model_name": "MLP",
+  "loss_name": "log_cosh",
+  "hyperparameters": {
+    "hidden_size": 128,
+    "num_layers": 3,
+    "width_factor": 2,
+    "dropout_rate": 0.35933700140371516,
+    "learning_rate": 0.006257232387970148,
+    "weight_decay": 3.8054942444470353e-06,
+    "num_epochs": 106
+  },
+  "input_size": 12,
+  "output_size": 48,
+  "scaling_strategy": "robust",
+  "dataset": "dataset_12CST_params.csv",
+  "loss_type": "distance_weighted",
+  "distance_weighting": "continuous (0-1)",
+  "alpha_grid": "linspace(-20, 20, 48)",
+  "timestamp": "2025-11-18T10:57:53.085998"
+}

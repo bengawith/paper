@@ -1,0 +1,16 @@
+{
+  "mse_total": 0.028147252276539803,
+  "mse_weighted": 0.02660100720822811,
+  "mse_scaled": 0.1895226091146469,
+  "avg_distance": 0.9570159316062927,
+  "min_distance": 0.1386767327785492,
+  "max_distance": 1.0,
+  "cl_max_error_mean": 0.11729753472037234,
+  "cl_max_error_std": 0.11951815263293812,
+  "alpha_stall_error_mean": 1.7922827262892176,
+  "alpha_stall_error_std": 1.760931324773438,
+  "alpha_zero_lift_error_mean": 0.6462611237339341,
+  "alpha_zero_lift_error_std": 1.7038126371091167,
+  "lift_curve_slope_error_mean": 0.01885665409226283,
+  "lift_curve_slope_error_std": 0.018139804467012254
+}

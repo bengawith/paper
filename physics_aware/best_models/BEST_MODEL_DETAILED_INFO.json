@@ -1,0 +1,105 @@
+{
+  "metadata": {
+    "created": "2025-11-15T17:57:23.157058",
+    "source": "physics_aware_tuning with Optuna",
+    "dataset": "optimized_dataset_expmask_12params_kulfan.csv",
+    "dataset_solution": "Exponential distance mask (continuous validity)",
+    "n_trials": 100,
+    "n_cst_parameters": 12,
+    "n_output_points": 48,
+    "alpha_range": "-20\u00b0 to 20\u00b0"
+  },
+  "best_model": {
+    "name": "MLP",
+    "architecture": "ImprovedMLPModel",
+    "loss_function": "log_cosh",
+    "physics_score": 1.537353431693578,
+    "rank": "1st (overall best)"
+  },
+  "hyperparameters": {
+    "input_size": 12,
+    "output_size": 48,
+    "hidden_size": 128,
+    "num_layers": 3,
+    "width_factor": 2,
+    "dropout_rate": 0.35933700140371516,
+    "learning_rate": 0.006257232387970148,
+    "weight_decay": 3.8054942444470353e-06,
+    "num_epochs": 106
+  },
+  "model_instantiation": {
+    "python_code": "\n# Import from src2.models\nfrom src2.models import ImprovedMLPModel\n\n# Instantiate model\nmodel = ImprovedMLPModel(\n    input_size=12,\n    output_size=48,\n    hidden_size=128,\n    num_layers=3,\n    width_factor=2,\n    dropout=0.35933700140371516\n)\n"
+  },
+  "training_setup": {
+    "loss_function": "log_cosh",
+    "optimizer": "AdamW",
+    "learning_rate": 0.006257232387970148,
+    "weight_decay": 3.8054942444470353e-06,
+    "num_epochs": 106,
+    "early_stopping": "Yes (patience=20)",
+    "validation": "LOFO (Leave-One-Family-Out) on 5 families"
+  },
+  "cst_parameters": {
+    "lower_weights": [
+      "lower_weight_0",
+      "lower_weight_1",
+      "lower_weight_2",
+      "lower_weight_3",
+      "lower_weight_4"
+    ],
+    "upper_weights": [
+      "upper_weight_0",
+      "upper_weight_1",
+      "upper_weight_2",
+      "upper_weight_3",
+      "upper_weight_4"
+    ],
+    "additional": [
+      "TE_thickness",
+      "leading_edge_weight"
+    ],
+    "total": 12,
+    "description": "5 lower + 5 upper + trailing edge thickness + leading edge weight"
+  },
+  "output_structure": {
+    "n_points": 48,
+    "alpha_min": -20.0,
+    "alpha_max": 20.0,
+    "spacing": "linear",
+    "description": "Lift coefficient (CL) at 48 angles of attack"
+  },
+  "preprocessing": {
+    "input_scaler": "StandardScaler (sklearn)",
+    "output_scaler": "StandardScaler (sklearn)",
+    "fit_on": "full dataset (1569 airfoils)",
+    "distance_features": "available but not used for inference"
+  },
+  "physics_metrics": {
+    "cl_max": "Maximum lift coefficient",
+    "alpha_stall": "Stall angle (degrees)",
+    "alpha_zero_lift": "Zero-lift angle (degrees)",
+    "lift_curve_slope": "Slope in linear region (per degree)"
+  },
+  "all_models": {
+    "MLP": {
+      "loss": "log_cosh",
+      "physics_score": 1.537353431693578,
+      "relative_performance": "BEST"
+    },
+    "GRU": {
+      "loss": "huber",
+      "physics_score": 2.1471708183423437,
+      "relative_performance": "39.7% worse"
+    },
+    "LSTM": {
+      "loss": "mse",
+      "physics_score": 2.255144261261794,
+      "relative_performance": "46.7% worse"
+    },
+    "CNN": {
+      "loss": "mse",
+      "physics_score": 1.7020840898347793,
+      "relative_performance": "10.7% worse"
+    }
+  }
+}

@@ -1,0 +1,135 @@
+{
+  "MLP": {
+    "model_name": "MLP",
+    "hyperparameters": {
+      "input_size": 12,
+      "output_size": 48,
+      "hidden_size": 128,
+      "num_layers": 3,
+      "width_factor": 2,
+      "dropout_rate": 0.35933700140371516,
+      "learning_rate": 0.006257232387970148,
+      "weight_decay": 3.8054942444470353e-06,
+      "num_epochs": 106
+    },
+    "total_parameters": 157488,
+    "trainable_parameters": 157488,
+    "non_trainable_parameters": 0,
+    "model_size_mb": 0.6008,
+    "parameter_breakdown": {
+      "input_layer": 1664,
+      "input_norm": 256,
+      "wide.0": 33024,
+      "wide.3": 32896,
+      "deep.0": 16512,
+      "deep.2": 256,
+      "deep.4": 16512,
+      "deep.6": 256,
+      "deep.8": 16512,
+      "deep.10": 256,
+      "combine.0": 32896,
+      "combine.2": 256,
+      "output_layer": 6192
+    }
+  },
+  "GRU": {
+    "model_name": "GRU",
+    "hyperparameters": {
+      "input_size": 12,
+      "output_size": 48,
+      "hidden_size": 128,
+      "num_layers": 2,
+      "bidirectional": false,
+      "dropout_rate": 0.10743019544574531,
+      "learning_rate": 0.00031159954975562364,
+      "weight_decay": 0.0001731920144936752,
+      "num_epochs": 276
+    },
+    "total_parameters": 242864,
+    "trainable_parameters": 242864,
+    "non_trainable_parameters": 0,
+    "model_size_mb": 0.9265,
+    "parameter_breakdown": {
+      "gru": 153600,
+      "attention.attention.out_proj": 16512,
+      "attention.norm": 256,
+      "fc1": 16512,
+      "layer_norm": 256,
+      "fc2": 6192
+    }
+  },
+  "LSTM": {
+    "model_name": "LSTM",
+    "hyperparameters": {
+      "input_size": 12,
+      "output_size": 48,
+      "hidden_size": 128,
+      "num_layers": 2,
+      "bidirectional": false,
+      "dropout_rate": 0.2647866147297706,
+      "learning_rate": 0.0005048363676377844,
+      "weight_decay": 0.00016195988537875624,
+      "num_epochs": 122
+    },
+    "total_parameters": 294064,
+    "trainable_parameters": 294064,
+    "non_trainable_parameters": 0,
+    "model_size_mb": 1.1218,
+    "parameter_breakdown": {
+      "lstm": 204800,
+      "attention.attention.out_proj": 16512,
+      "attention.norm": 256,
+      "fc1": 16512,
+      "layer_norm": 256,
+      "fc2": 6192
+    }
+  },
+  "CNN": {
+    "model_name": "CNN",
+    "hyperparameters": {
+      "input_size": 12,
+      "output_size": 48,
+      "num_filters": [
+        64,
+        128,
+        256
+      ],
+      "kernel_sizes": [
+        5,
+        5,
+        3
+      ],
+      "dropout_rate": 0.10003615352631101,
+      "learning_rate": 0.0040273136662484265,
+      "weight_decay": 2.064250464417433e-05,
+      "num_epochs": 269
+    },
+    "total_parameters": 421168,
+    "trainable_parameters": 421168,
+    "non_trainable_parameters": 0,
+    "model_size_mb": 1.613,
+    "parameter_breakdown": {
+      "input_conv.0": 384,
+      "input_conv.1": 128,
+      "pyramid.0.0.conv1": 20544,
+      "pyramid.0.0.bn1": 128,
+      "pyramid.0.0.conv2": 20544,
+      "pyramid.0.0.bn2": 128,
+      "pyramid.0.1.fc.0": 256,
+      "pyramid.0.1.fc.2": 256,
+      "pyramid.0.2": 8192,
+      "pyramid.0.3": 256,
+      "pyramid.1.0.conv1": 82048,
+      "pyramid.1.0.bn1": 256,
+      "pyramid.1.0.conv2": 82048,
+      "pyramid.1.0.bn2": 256,
+      "pyramid.1.1.fc.0": 1024,
+      "pyramid.1.1.fc.2": 1024,
+      "pyramid.1.2": 32768,
+      "pyramid.1.3": 512,
+      "global_context.2": 131328,
+      "classifier.0": 32896,
+      "classifier.3": 6192
+    }
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "MLP": {
+    "model_name": "MLP",
+    "model_class": "ImprovedMLPModel",
+    "best_loss_function": "log_cosh",
+    "physics_score": 1.537353431693578,
+    "hyperparameters": {
+      "input_size": 12,
+      "output_size": 48,
+      "hidden_size": 128,
+      "num_layers": 3,
+      "width_factor": 2,
+      "dropout_rate": 0.35933700140371516,
+      "learning_rate": 0.006257232387970148,
+      "weight_decay": 3.8054942444470353e-06,
+      "num_epochs": 106
+    }
+  },
+  "GRU": {
+    "model_name": "GRU",
+    "model_class": "ImprovedGRUModel",
+    "best_loss_function": "huber",
+    "physics_score": 2.1471708183423437,
+    "hyperparameters": {
+      "input_size": 12,
+      "output_size": 48,
+      "hidden_size": 128,
+      "num_layers": 2,
+      "bidirectional": false,
+      "dropout_rate": 0.10743019544574531,
+      "learning_rate": 0.00031159954975562364,
+      "weight_decay": 0.0001731920144936752,
+      "num_epochs": 276
+    }
+  },
+  "LSTM": {
+    "model_name": "LSTM",
+    "model_class": "ImprovedLSTMModel",
+    "best_loss_function": "mse",
+    "physics_score": 2.255144261261794,
+    "hyperparameters": {
+      "input_size": 12,
+      "output_size": 48,
+      "hidden_size": 128,
+      "num_layers": 2,
+      "bidirectional": false,
+      "dropout_rate": 0.2647866147297706,
+      "learning_rate": 0.0005048363676377844,
+      "weight_decay": 0.00016195988537875624,
+      "num_epochs": 122
+    }
+  },
+  "CNN": {
+    "model_name": "CNN",
+    "model_class": "ImprovedCNNModel",
+    "best_loss_function": "mse",
+    "physics_score": 1.7020840898347793,
+    "hyperparameters": {
+      "input_size": 12,
+      "output_size": 48,
+      "num_filters": [
+        64,
+        128,
+        256
+      ],
+      "kernel_sizes": [
+        5,
+        5,
+        3
+      ],
+      "dropout_rate": 0.10003615352631101,
+      "learning_rate": 0.0040273136662484265,
+      "weight_decay": 2.064250464417433e-05,
+      "num_epochs": 269
+    }
+  }
+}

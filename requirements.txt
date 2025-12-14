@@ -1,0 +1,15 @@
+# Core runtime dependencies (compatible with Python 3.10+)
+# Install with: pip install -r requirements.txt
+numpy>=1.24
+pandas>=2.0
+scipy>=1.10
+matplotlib>=3.7
+seaborn>=0.12
+scikit-learn>=1.2
+optuna>=3.0
+xgboost>=1.7
+
+# PyTorch
+torch>=2.0
+# AeroSandbox (used for Kulfan/CST extraction, optional)
+aerosandbox>=0.6.0

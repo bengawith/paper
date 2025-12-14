@@ -1,0 +1,84 @@
+{
+  "lofo_results": [
+    {
+      "mse": 0.053142715245485306,
+      "physics_score": 2.5160879438022135,
+      "cl_max_error_mean": 0.14687114833581327,
+      "cl_max_error_std": 0.13154548886907633,
+      "alpha_stall_error_mean": 3.0474962389856017,
+      "alpha_stall_error_std": 2.454729473766316,
+      "alpha_zero_lift_error_mean": 1.7326016332029246,
+      "alpha_zero_lift_error_std": 2.5703095654773676,
+      "lift_curve_slope_error_mean": 0.03256881860127215,
+      "lift_curve_slope_error_std": 0.02791814092560161,
+      "family": "Gottingen",
+      "n_test": 396
+    },
+    {
+      "mse": 0.04489545896649361,
+      "physics_score": 2.0318408590047126,
+      "cl_max_error_mean": 0.1463598268372672,
+      "cl_max_error_std": 0.124756339125136,
+      "alpha_stall_error_mean": 2.2199707306090293,
+      "alpha_stall_error_std": 1.7564520873436529,
+      "alpha_zero_lift_error_mean": 1.5969722256502843,
+      "alpha_zero_lift_error_std": 2.421053335774718,
+      "lift_curve_slope_error_mean": 0.02964039991678454,
+      "lift_curve_slope_error_std": 0.02597564102666144,
+      "family": "Eppler",
+      "n_test": 189
+    },
+    {
+      "mse": 0.049870606511831284,
+      "physics_score": 2.391148955108571,
+      "cl_max_error_mean": 0.15011452321420637,
+      "cl_max_error_std": 0.13476116451109155,
+      "alpha_stall_error_mean": 3.128032848077641,
+      "alpha_stall_error_std": 2.1104059344064714,
+      "alpha_zero_lift_error_mean": 1.4232632170473853,
+      "alpha_zero_lift_error_std": 2.3426241102655974,
+      "lift_curve_slope_error_mean": 0.025003904274132845,
+      "lift_curve_slope_error_std": 0.025896194141339337,
+      "family": "FX",
+      "n_test": 114
+    },
+    {
+      "mse": 0.04363822191953659,
+      "physics_score": 2.4813364296813556,
+      "cl_max_error_mean": 0.13876657173471543,
+      "cl_max_error_std": 0.13128701864792156,
+      "alpha_stall_error_mean": 3.858706878744061,
+      "alpha_stall_error_std": 2.01194282035088,
+      "alpha_zero_lift_error_mean": 0.7356010805710956,
+      "alpha_zero_lift_error_std": 1.9816561623899036,
+      "lift_curve_slope_error_mean": 0.019253609440328105,
+      "lift_curve_slope_error_std": 0.01914258632845866,
+      "family": "NACA",
+      "n_test": 103
+    },
+    {
+      "mse": 0.02607594057917595,
+      "physics_score": 1.6278924405229638,
+      "cl_max_error_mean": 0.11852439917050875,
+      "cl_max_error_std": 0.10250105845522375,
+      "alpha_stall_error_mean": 2.2782324058919827,
+      "alpha_stall_error_std": 1.409217576125561,
+      "alpha_zero_lift_error_mean": 0.506444324798261,
+      "alpha_zero_lift_error_std": 1.334543746254516,
+      "lift_curve_slope_error_mean": 0.021831854096698536,
+      "lift_curve_slope_error_std": 0.020635616128024177,
+      "family": "Selig",
+      "n_test": 65
+    }
+  ],
+  "best_params": {
+    "hidden_size": 384,
+    "num_layers": 2,
+    "bidirectional": true,
+    "dropout_rate": 0.10684151474090035,
+    "learning_rate": 0.0021416613834046158,
+    "weight_decay": 6.529777758756253e-05,
+    "num_epochs": 174
+  },
+  "best_score": 1.777214426925753
+}

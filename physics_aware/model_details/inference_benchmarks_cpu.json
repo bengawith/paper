@@ -1,0 +1,210 @@
+{
+  "MLP": {
+    "batch_1": {
+      "mean_total_ms": 0.40504489980230574,
+      "std_total_ms": 0.4510969128776502,
+      "min_total_ms": 0.29630000062752515,
+      "max_total_ms": 8.262299990747124,
+      "median_total_ms": 0.3322500051581301,
+      "mean_per_sample_ms": 0.40504489980230574,
+      "std_per_sample_ms": 0.4510969128776502,
+      "throughput_samples_per_sec": 2468.862095259266
+    },
+    "batch_8": {
+      "mean_total_ms": 0.4384556000732118,
+      "std_total_ms": 0.16765336292867955,
+      "min_total_ms": 0.34690000757109374,
+      "max_total_ms": 3.030899999430403,
+      "median_total_ms": 0.3935999993700534,
+      "mean_per_sample_ms": 0.05480695000915148,
+      "std_per_sample_ms": 0.020956670366084944,
+      "throughput_samples_per_sec": 18245.861151423742
+    },
+    "batch_32": {
+      "mean_total_ms": 0.4404336003935896,
+      "std_total_ms": 0.10534206292460821,
+      "min_total_ms": 0.38660000427626073,
+      "max_total_ms": 3.2082999969134107,
+      "median_total_ms": 0.4255500025465153,
+      "mean_per_sample_ms": 0.013763550012299675,
+      "std_per_sample_ms": 0.0032919394663940066,
+      "throughput_samples_per_sec": 72655.67379828307
+    },
+    "batch_64": {
+      "mean_total_ms": 0.505059400034952,
+      "std_total_ms": 0.12708196491203394,
+      "min_total_ms": 0.42869999015238136,
+      "max_total_ms": 2.752700005657971,
+      "median_total_ms": 0.4730500077130273,
+      "mean_per_sample_ms": 0.007891553125546125,
+      "std_per_sample_ms": 0.0019856557017505303,
+      "throughput_samples_per_sec": 126717.7682378963
+    },
+    "batch_128": {
+      "mean_total_ms": 0.5910971998382593,
+      "std_total_ms": 0.07922572400237109,
+      "min_total_ms": 0.5129000055603683,
+      "max_total_ms": 1.5896999975666404,
+      "median_total_ms": 0.5680000031134114,
+      "mean_per_sample_ms": 0.0046179468737364004,
+      "std_per_sample_ms": 0.0006189509687685241,
+      "throughput_samples_per_sec": 216546.44961103585
+    }
+  },
+  "GRU": {
+    "batch_1": {
+      "mean_total_ms": 0.4935579002194572,
+      "std_total_ms": 0.20510522042063167,
+      "min_total_ms": 0.4160999960731715,
+      "max_total_ms": 3.6453000066103414,
+      "median_total_ms": 0.4628999959095381,
+      "mean_per_sample_ms": 0.4935579002194572,
+      "std_per_sample_ms": 0.20510522042063167,
+      "throughput_samples_per_sec": 2026.10473777313
+    },
+    "batch_8": {
+      "mean_total_ms": 0.5897233999567106,
+      "std_total_ms": 0.1694377130886586,
+      "min_total_ms": 0.4948999994667247,
+      "max_total_ms": 3.27429999015294,
+      "median_total_ms": 0.5486500012921169,
+      "mean_per_sample_ms": 0.07371542499458883,
+      "std_per_sample_ms": 0.021179714136082325,
+      "throughput_samples_per_sec": 13565.681810467839
+    },
+    "batch_32": {
+      "mean_total_ms": 0.7281975000951206,
+      "std_total_ms": 0.2706159902610986,
+      "min_total_ms": 0.5922999989707023,
+      "max_total_ms": 4.432400004588999,
+      "median_total_ms": 0.6559499961440451,
+      "mean_per_sample_ms": 0.02275617187797252,
+      "std_per_sample_ms": 0.008456749695659332,
+      "throughput_samples_per_sec": 43944.122296245194
+    },
+    "batch_64": {
+      "mean_total_ms": 0.8232046998455189,
+      "std_total_ms": 0.1381618176990373,
+      "min_total_ms": 0.7119000074453652,
+      "max_total_ms": 3.1027000077301636,
+      "median_total_ms": 0.7858499957364984,
+      "mean_per_sample_ms": 0.012862573435086233,
+      "std_per_sample_ms": 0.0021587784015474577,
+      "throughput_samples_per_sec": 77744.94000339178
+    },
+    "batch_128": {
+      "mean_total_ms": 1.1730356000189204,
+      "std_total_ms": 0.320053121773608,
+      "min_total_ms": 0.9838999976636842,
+      "max_total_ms": 5.721699999412522,
+      "median_total_ms": 1.0591999962343834,
+      "mean_per_sample_ms": 0.009164340625147815,
+      "std_per_sample_ms": 0.0025004150138563126,
+      "throughput_samples_per_sec": 109118.59793337512
+    }
+  },
+  "LSTM": {
+    "batch_1": {
+      "mean_total_ms": 0.646414599774289,
+      "std_total_ms": 0.2121078948700059,
+      "min_total_ms": 0.5368999991333112,
+      "max_total_ms": 3.726700000697747,
+      "median_total_ms": 0.6016999977873638,
+      "mean_per_sample_ms": 0.646414599774289,
+      "std_per_sample_ms": 0.2121078948700059,
+      "throughput_samples_per_sec": 1546.9947621065085
+    },
+    "batch_8": {
+      "mean_total_ms": 0.7401181996974628,
+      "std_total_ms": 0.34362269586219246,
+      "min_total_ms": 0.5896999937249348,
+      "max_total_ms": 6.035500002326444,
+      "median_total_ms": 0.6522999974549748,
+      "mean_per_sample_ms": 0.09251477496218286,
+      "std_per_sample_ms": 0.04295283698277406,
+      "throughput_samples_per_sec": 10809.084283118764
+    },
+    "batch_32": {
+      "mean_total_ms": 0.7741516996757127,
+      "std_total_ms": 0.19006768250248474,
+      "min_total_ms": 0.6608999974559993,
+      "max_total_ms": 4.401199999847449,
+      "median_total_ms": 0.7293999951798469,
+      "mean_per_sample_ms": 0.024192240614866023,
+      "std_per_sample_ms": 0.005939615078202648,
+      "throughput_samples_per_sec": 41335.56771031388
+    },
+    "batch_64": {
+      "mean_total_ms": 0.9330999997473555,
+      "std_total_ms": 0.34017125328354864,
+      "min_total_ms": 0.7443000067723915,
+      "max_total_ms": 5.964700001641177,
+      "median_total_ms": 0.8323000074597076,
+      "mean_per_sample_ms": 0.01457968749605243,
+      "std_per_sample_ms": 0.0053151758325554474,
+      "throughput_samples_per_sec": 68588.57573392833
+    },
+    "batch_128": {
+      "mean_total_ms": 1.43330200012133,
+      "std_total_ms": 0.5474805382834877,
+      "min_total_ms": 0.9904000035021454,
+      "max_total_ms": 14.937200001440942,
+      "median_total_ms": 1.4812000008532777,
+      "mean_per_sample_ms": 0.01119767187594789,
+      "std_per_sample_ms": 0.004277191705339748,
+      "throughput_samples_per_sec": 89304.27780688558
+    }
+  },
+  "CNN": {
+    "batch_1": {
+      "mean_total_ms": 1.1249734996818006,
+      "std_total_ms": 0.16279999376149987,
+      "min_total_ms": 1.007800005027093,
+      "max_total_ms": 3.5838999901898205,
+      "median_total_ms": 1.068850004230626,
+      "mean_per_sample_ms": 1.1249734996818006,
+      "std_per_sample_ms": 0.16279999376149987,
+      "throughput_samples_per_sec": 888.9098279051467
+    },
+    "batch_8": {
+      "mean_total_ms": 2.4472628998046275,
+      "std_total_ms": 0.7049733160171023,
+      "min_total_ms": 2.0911000028718263,
+      "max_total_ms": 11.44400000339374,
+      "median_total_ms": 2.2684499999741092,
+      "mean_per_sample_ms": 0.30590786247557844,
+      "std_per_sample_ms": 0.08812166450213779,
+      "throughput_samples_per_sec": 3268.958149383405
+    },
+    "batch_32": {
+      "mean_total_ms": 3.425671300079557,
+      "std_total_ms": 0.8119003157541644,
+      "min_total_ms": 2.897900005336851,
+      "max_total_ms": 14.63520000106655,
+      "median_total_ms": 3.1455499920411967,
+      "mean_per_sample_ms": 0.10705222812748616,
+      "std_per_sample_ms": 0.02537188486731764,
+      "throughput_samples_per_sec": 9341.234811190681
+    },
+    "batch_64": {
+      "mean_total_ms": 4.618814300149097,
+      "std_total_ms": 1.1075450642296518,
+      "min_total_ms": 3.848599997581914,
+      "max_total_ms": 21.921999999904074,
+      "median_total_ms": 4.214000000501983,
+      "mean_per_sample_ms": 0.07216897343982964,
+      "std_per_sample_ms": 0.01730539162858831,
+      "throughput_samples_per_sec": 13856.370020750575
+    },
+    "batch_128": {
+      "mean_total_ms": 8.295691700041061,
+      "std_total_ms": 8.88421259374877,
+      "min_total_ms": 6.147799998871051,
+      "max_total_ms": 249.1479000018444,
+      "median_total_ms": 6.756750008207746,
+      "mean_per_sample_ms": 0.06481009140657079,
+      "std_per_sample_ms": 0.06940791088866227,
+      "throughput_samples_per_sec": 15429.695874470171
+    }
+  }
+}

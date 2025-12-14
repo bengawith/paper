@@ -1,0 +1,5 @@
+Model,Loss Function,Physics Score,Hidden Size,Num Layers,Dropout,Learning Rate,Weight Decay,Width Factor,Bidirectional
+MLP,log_cosh,1.537353,128.000000,3.000000,0.359337,0.006257,0.000004,2.000000,
+GRU,huber,2.147171,128.000000,2.000000,0.107430,0.000312,0.000173,,False
+LSTM,mse,2.255144,128.000000,2.000000,0.264787,0.000505,0.000162,,False
+CNN,mse,1.702084,,,0.100036,0.004027,0.000021,,
