@@ -1,0 +1,18 @@
+{
+  "captured_utc": "2026-08-27T15:21:02.377351+00:00",
+  "cpu": "Intel64 Family 6 Model 158 Stepping 10, GenuineIntel",
+  "git_branch": "robust-v2-viability",
+  "git_sha": "01d807aac4f198bba0658f42e8a3dfedac115ae7",
+  "hostname": "SamsPC",
+  "implementation": "CPython",
+  "logical_cpus": 6,
+  "os": "Windows-10-10.0.26200-SP0",
+  "python": "3.11.15",
+  "ram_bytes": 17119027200,
+  "torch": {
+    "cuda_available": true,
+    "cuda_version": "13.0",
+    "device": "NVIDIA GeForce GTX 1660 SUPER",
+    "version": "2.13.0+cu130"
+  }
+}

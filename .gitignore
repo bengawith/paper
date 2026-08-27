@@ -1,2 +1,27 @@
-__pycache__
+__pycache__/
+*.py[cod]
 .env
+.venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+htmlcov/
+.coverage
+
+# Robust V2 generated/heavy artefacts. Compact manifests and reports are
+# force-added when they are intended to become part of the evidence record.
+data/robust_v2/raw/
+data/robust_v2/interim/
+data/robust_v2/processed/
+results/robust_v2/**/*.pt
+results/robust_v2/**/*.pkl
+results/robust_v2/**/*.sqlite3
+results/robust_v2/**/*.parquet
+reports/robust_v2/logs/
+tools/xfoil/*.exe
+tools/xfoil/*.zip
+
+# Direct-XFOIL per-case evidence is reproducible but extremely verbose. Commit
+# the compact root summaries; keep geometry, segment, polar, and console files local.
+results/robust_v2/xfoil_canaries/*/
+results/robust_v2/xfoil_candidates/*/

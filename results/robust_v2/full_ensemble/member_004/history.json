@@ -1,0 +1,92 @@
+[
+  {
+    "epoch": 0,
+    "train_loss": 0.0612423868085129,
+    "validation_loss": 0.011618104182198887
+  },
+  {
+    "epoch": 1,
+    "train_loss": 0.011894602336110623,
+    "validation_loss": 0.008470025824996211
+  },
+  {
+    "epoch": 2,
+    "train_loss": 0.009199666853130953,
+    "validation_loss": 0.007896519465773268
+  },
+  {
+    "epoch": 3,
+    "train_loss": 0.0075719967783557445,
+    "validation_loss": 0.007280975725971223
+  },
+  {
+    "epoch": 4,
+    "train_loss": 0.007145404476838989,
+    "validation_loss": 0.00523712648252949
+  },
+  {
+    "epoch": 5,
+    "train_loss": 0.006310881698519234,
+    "validation_loss": 0.006780274822830972
+  },
+  {
+    "epoch": 6,
+    "train_loss": 0.005715802129229334,
+    "validation_loss": 0.004804463963387761
+  },
+  {
+    "epoch": 7,
+    "train_loss": 0.005448647858991432,
+    "validation_loss": 0.003897839663095954
+  },
+  {
+    "epoch": 8,
+    "train_loss": 0.005113422441886875,
+    "validation_loss": 0.00444736643419866
+  },
+  {
+    "epoch": 9,
+    "train_loss": 0.004982618993617655,
+    "validation_loss": 0.00442758485120229
+  },
+  {
+    "epoch": 10,
+    "train_loss": 0.0050170483366714985,
+    "validation_loss": 0.0033454751577871905
+  },
+  {
+    "epoch": 11,
+    "train_loss": 0.00454195599616846,
+    "validation_loss": 0.003511799971679059
+  },
+  {
+    "epoch": 12,
+    "train_loss": 0.00443254078443094,
+    "validation_loss": 0.00344735759876411
+  },
+  {
+    "epoch": 13,
+    "train_loss": 0.004259005264659238,
+    "validation_loss": 0.0033034492034192493
+  },
+  {
+    "epoch": 14,
+    "train_loss": 0.004074145487047792,
+    "validation_loss": 0.0030898685506507147
+  },
+  {
+    "epoch": 15,
+    "train_loss": 0.0038284495798492336,
+    "validation_loss": 0.0030469187044129685
+  },
+  {
+    "epoch": 16,
+    "train_loss": 0.003691327898210384,
+    "validation_loss": 0.0046900042486036336
+  },
+  {
+    "epoch": 17,
+    "train_loss": 0.004026161678082393,
+    "validation_loss": 0.0039537234337833835
+  }
+]

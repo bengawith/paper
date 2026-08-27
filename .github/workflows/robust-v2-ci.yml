@@ -1,0 +1,16 @@
+name: robust-v2-ci
+on:
+  push:
+  pull_request:
+jobs:
+  cpu-tests:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          python-version: "3.11"
+      - run: uv sync --extra dev
+      - run: uv run ruff check src/robust_airfoil tests/robust_v2
+      - run: uv run mypy src/robust_airfoil
+      - run: uv run pytest tests/robust_v2 -m "not network and not xfoil and not slow" -q

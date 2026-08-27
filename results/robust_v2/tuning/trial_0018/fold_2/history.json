@@ -1,0 +1,122 @@
+[
+  {
+    "epoch": 0,
+    "train_loss": 0.7820342928171158,
+    "validation_loss": 0.11317267765601476
+  },
+  {
+    "epoch": 1,
+    "train_loss": 0.10593473846497743,
+    "validation_loss": 0.08415497839450836
+  },
+  {
+    "epoch": 2,
+    "train_loss": 0.06244837476507477,
+    "validation_loss": 0.04799823369830847
+  },
+  {
+    "epoch": 3,
+    "train_loss": 0.04349475240577822,
+    "validation_loss": 0.0328431890035669
+  },
+  {
+    "epoch": 4,
+    "train_loss": 0.02958698141510072,
+    "validation_loss": 0.027174387748042744
+  },
+  {
+    "epoch": 5,
+    "train_loss": 0.0218084417283535,
+    "validation_loss": 0.021703174492965143
+  },
+  {
+    "epoch": 6,
+    "train_loss": 0.024543704627000767,
+    "validation_loss": 0.027510502996544044
+  },
+  {
+    "epoch": 7,
+    "train_loss": 0.026374460967338604,
+    "validation_loss": 0.020366201798121136
+  },
+  {
+    "epoch": 8,
+    "train_loss": 0.018056410931698654,
+    "validation_loss": 0.02150693101187547
+  },
+  {
+    "epoch": 9,
+    "train_loss": 0.016507807268720608,
+    "validation_loss": 0.02519251871854067
+  },
+  {
+    "epoch": 10,
+    "train_loss": 0.015812212236873482,
+    "validation_loss": 0.01835831083978216
+  },
+  {
+    "epoch": 11,
+    "train_loss": 0.012684347350960192,
+    "validation_loss": 0.019328522263094783
+  },
+  {
+    "epoch": 12,
+    "train_loss": 0.011826714500784874,
+    "validation_loss": 0.01798715985690554
+  },
+  {
+    "epoch": 13,
+    "train_loss": 0.011590014495279478,
+    "validation_loss": 0.019242431813230116
+  },
+  {
+    "epoch": 14,
+    "train_loss": 0.010556413144197153,
+    "validation_loss": 0.01650498512511452
+  },
+  {
+    "epoch": 15,
+    "train_loss": 0.009520339334140654,
+    "validation_loss": 0.016916937893256545
+  },
+  {
+    "epoch": 16,
+    "train_loss": 0.00943111960330735,
+    "validation_loss": 0.016353259173532326
+  },
+  {
+    "epoch": 17,
+    "train_loss": 0.008957340260562689,
+    "validation_loss": 0.016894178309788305
+  },
+  {
+    "epoch": 18,
+    "train_loss": 0.00868860296095195,
+    "validation_loss": 0.016594914020970464
+  },
+  {
+    "epoch": 19,
+    "train_loss": 0.008799637384388758,
+    "validation_loss": 0.015647528537859518
+  },
+  {
+    "epoch": 20,
+    "train_loss": 0.008289715376399134,
+    "validation_loss": 0.016047825493539374
+  },
+  {
+    "epoch": 21,
+    "train_loss": 0.007884171001775108,
+    "validation_loss": 0.017239601196100313
+  },
+  {
+    "epoch": 22,
+    "train_loss": 0.007907165923034367,
+    "validation_loss": 0.01601040068392952
+  },
+  {
+    "epoch": 23,
+    "train_loss": 0.007813343515052744,
+    "validation_loss": 0.016986086033284664
+  }
+]

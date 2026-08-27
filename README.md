@@ -13,6 +13,38 @@ Data-Driven Aerodynamic Prediction: High-Fidelity Lift Curve Estimation for Aero
 - **Main package:** [src](src)
 - **Scripts:** [scripts](scripts)
 
+## Robust V2 viability study
+
+The provenance-first Robust V2 study is implemented in `src/robust_airfoil/` and is governed by `DIRECTIVE/MASTER_IMPLEMENTATION_PROMPT_AIRFOIL_ROBUST_V2.md`.
+
+As of **August 27, 2026**, the completed viability run is **HOLD**, not GO. The model-quality, calibration, uncertainty-sampling, and optimisation-feasibility stages completed, but the contract remains blocked by:
+
+1. unsupported exact V1 reproduction because the historical split/scaler/dependency provenance is incomplete;
+2. failed ten-seed NSGA-II front-agreement threshold; and
+3. incomplete strict direct-XFOIL sweep coverage.
+
+Canonical evidence:
+
+- `reports/robust_v2/viability/VIABILITY_REPORT.md`
+- `reports/robust_v2/viability/viability_report.json`
+- `reports/robust_v2/handover/AGENT_HANDOVER.md`
+- `results/robust_v2/uncertainty/manufacturing_study.json`
+- `results/robust_v2/optimisation/optimisation_summary.json`
+- `results/robust_v2/xfoil_canaries/canary_summary.json`
+- `results/robust_v2/xfoil_candidates/candidate_validation_summary.json`
+
+Run and validate from PowerShell:
+
+```powershell
+uv sync --extra dev
+uv run ruff check src/robust_airfoil tests/robust_v2
+uv run mypy src/robust_airfoil
+uv run pytest tests/robust_v2 -m "not network and not xfoil and not slow" -q
+uv run python -m robust_airfoil run --profile viability --resume
+```
+
+Large raw datasets, model checkpoints, XFOIL executables, per-segment console logs, and per-case polar files are intentionally excluded from Git. Their hashes and compact summaries remain in the committed provenance manifests and reports.
+
 **Installation**
 - Create and activate a virtual environment (recommended Python 3.10+):
 

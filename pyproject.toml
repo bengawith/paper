@@ -1,0 +1,79 @@
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
+
+[project]
+name = "robust-airfoil"
+version = "2.0.0"
+description = "Provenance-first robust aerofoil surrogate viability pipeline"
+requires-python = ">=3.11,<3.14"
+dependencies = [
+  "httpx>=0.27,<1",
+  "joblib>=1.4,<2",
+  "matplotlib>=3.9,<4",
+  "numpy>=1.26,<3",
+  "optuna>=4,<5",
+  "pandas>=2.2,<3",
+  "psutil>=6,<8",
+  "pyarrow>=17,<22",
+  "pydantic>=2.8,<3",
+  "pymoo>=0.6,<1",
+  "pyyaml>=6,<7",
+  "salib>=1.5,<2",
+  "scikit-learn>=1.5,<2",
+  "scipy>=1.13,<2",
+  "torch>=2.5,<3",
+]
+
+[project.optional-dependencies]
+benchmarks = ["aerosandbox>=4.2,<5", "neuralfoil>=0.3,<1"]
+dev = [
+  "mypy>=1.11,<2",
+  "pandas-stubs>=2.2",
+  "pytest>=8.3,<10",
+  "pytest-cov>=5,<8",
+  "ruff>=0.6,<1",
+  "types-pyyaml>=6",
+]
+
+[project.scripts]
+robust-airfoil = "robust_airfoil.cli:main"
+
+[tool.uv.sources]
+torch = [
+  { index = "pytorch-cu130", marker = "sys_platform == 'linux' or sys_platform == 'win32'" },
+]
+
+[[tool.uv.index]]
+name = "pytorch-cu130"
+url = "https://download.pytorch.org/whl/cu130"
+explicit = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/robust_airfoil"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests/robust_v2"]
+pythonpath = ["src"]
+markers = [
+  "network: requires explicitly enabled external network access",
+  "xfoil: requires a working local XFOIL executable",
+  "slow: long-running scientific validation",
+]
+addopts = "--strict-markers"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+ignore = ["E501"]
+
+[tool.mypy]
+python_version = "3.11"
+packages = ["robust_airfoil"]
+warn_unused_configs = true
+check_untyped_defs = true
+no_implicit_optional = true
+ignore_missing_imports = true
