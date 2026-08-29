@@ -14,3 +14,15 @@ jobs:
       - run: uv run ruff check src/robust_airfoil tests/robust_v2
       - run: uv run mypy src/robust_airfoil
       - run: uv run pytest tests/robust_v2 -m "not network and not xfoil and not slow" -q
+      - name: Export review source snapshot
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: robust-v2-source-${{ github.sha }}
+          path: |
+            .
+            !.git/**
+            !.venv/**
+            !**/__pycache__/**
+          include-hidden-files: true
+          retention-days: 1
