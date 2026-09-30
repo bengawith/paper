@@ -69,31 +69,55 @@ def build_xfoil_commands(case: XFoilCase, geometry_name: str, polar_name: str) -
     ])
 
 
+def _requested_alpha_grid(case: XFoilCase) -> np.ndarray:
+    values = np.asarray([case.alpha_start, case.alpha_end, case.alpha_step], dtype=float)
+    if not np.isfinite(values).all() or case.alpha_step == 0:
+        raise ValueError("Finite sweep endpoints and a nonzero step are required")
+    steps = (case.alpha_end - case.alpha_start) / case.alpha_step
+    if steps < 0 or not np.isclose(steps, round(steps), rtol=0, atol=1e-8):
+        raise ValueError("Sweep endpoints must lie on the requested directed alpha grid")
+    return case.alpha_start + np.arange(int(round(steps)) + 1) * case.alpha_step
+
+
 def _sweep_completion(points: pd.DataFrame, case: XFoilCase) -> tuple[int, float, bool]:
-    expected = len(
-        np.arange(
-            case.alpha_start,
-            case.alpha_end + np.sign(case.alpha_step) * abs(case.alpha_step) * 0.25,
-            case.alpha_step,
-        )
-    )
+    targets = _requested_alpha_grid(case)
     if not len(points) or "alpha_deg" not in points.columns:
-        return expected, 0.0, False
-    alpha = points["alpha_deg"].dropna().to_numpy(float)
-    coverage = len(np.unique(alpha)) / expected
-    tolerance = abs(case.alpha_step) * 1.01
-    span_complete = bool(
-        len(alpha)
-        and np.min(alpha) <= min(case.alpha_start, case.alpha_end) + tolerance
-        and np.max(alpha) >= max(case.alpha_start, case.alpha_end) - tolerance
-    )
-    return expected, float(coverage), span_complete
+        return len(targets), 0.0, False
+    alpha = points["alpha_deg"].to_numpy(float)
+    alpha = alpha[np.isfinite(alpha)]
+    # XFOIL text polars usually print alpha to 3 decimals. This permits half a
+    # final printed unit plus roundoff, never one whole requested alpha step.
+    tolerance = min(abs(case.alpha_step) * 0.01, 5.01e-4)
+    matched = np.asarray([np.any(np.abs(alpha - target) <= tolerance) for target in targets])
+    return len(targets), float(matched.mean()), bool(matched[0] and matched[-1])
+
+
+def _unresolved_alphas(points: pd.DataFrame, case: XFoilCase) -> np.ndarray:
+    """Return requested targets not represented by a valid direct-solver row."""
+    targets = _requested_alpha_grid(case)
+    if not len(points) or "alpha_deg" not in points.columns:
+        return targets
+    alpha = points["alpha_deg"].to_numpy(float)
+    alpha = alpha[np.isfinite(alpha)]
+    tolerance = min(abs(case.alpha_step) * 0.01, 5.01e-4)
+    return targets[
+        ~np.asarray([np.any(np.abs(alpha - target) <= tolerance) for target in targets])
+    ]
 
 
 def _segment_status(
     return_code: int, points: pd.DataFrame, case: XFoilCase
 ) -> tuple[str, str | None]:
-    expected, coverage, span_complete = _sweep_completion(points, case)
+    required_columns = ("alpha_deg", "cl", "cd", "cm")
+    missing_columns = sorted(set(required_columns) - set(points.columns))
+    valid_points = points
+    if missing_columns:
+        valid_points = pd.DataFrame()
+    else:
+        valid = np.isfinite(points[list(required_columns)].to_numpy(float)).all(axis=1)
+        valid &= points["cd"].to_numpy(float) > 0
+        valid_points = points.loc[valid]
+    expected, coverage, span_complete = _sweep_completion(valid_points, case)
     status = (
         "ok" if return_code == 0 and coverage == 1.0 and span_complete else "failed"
     )
@@ -103,7 +127,7 @@ def _segment_status(
         else (
             f"incomplete segment: {len(points)}/{expected} points, "
             f"coverage={coverage:.3f}, span_complete={span_complete}, "
-            f"return_code={return_code}"
+            f"return_code={return_code}, missing_columns={missing_columns}"
         )
     )
     return status, reason
@@ -175,11 +199,7 @@ def run_xfoil(
     timeout_seconds: int = 240,
 ) -> XFoilResult:
     output_dir.mkdir(parents=True, exist_ok=True)
-    alpha = np.arange(
-        case.alpha_start,
-        case.alpha_end + np.sign(case.alpha_step) * abs(case.alpha_step) * 0.25,
-        case.alpha_step,
-    )
+    alpha = _requested_alpha_grid(case)
     chunks = [alpha[index : index + 12] for index in range(0, len(alpha), 12)]
     segment_timeout = max(15, timeout_seconds // max(1, len(chunks)))
     results: list[XFoilResult] = []
@@ -211,6 +231,38 @@ def run_xfoil(
         if frames
         else pd.DataFrame()
     )
+    # Chunking bounds individual process time, but each chunk cold-starts XFOIL.
+    # Retry only missing targets as independent, auditable higher-iteration solves.
+    unresolved = _unresolved_alphas(parsed, case)
+    retry_timeout = max(15, timeout_seconds // max(1, len(unresolved)))
+    retry_results: list[XFoilResult] = []
+    for index, alpha in enumerate(unresolved):
+        retry_case = XFoilCase(
+            case.geometry_path,
+            case.reynolds_number,
+            case.mach,
+            case.ncrit,
+            float(alpha),
+            float(alpha),
+            case.alpha_step,
+            max(100, case.iterations * 2),
+            case.mode,
+        )
+        retry_results.append(
+            _run_xfoil_segment(
+                executable,
+                retry_case,
+                output_dir / "retries" / f"alpha_{alpha:+08.3f}_{index:03d}",
+                retry_timeout,
+            )
+        )
+    retry_frames = [result.parsed_points for result in retry_results if len(result.parsed_points)]
+    if retry_frames:
+        parsed = (
+            pd.concat([parsed, *retry_frames], ignore_index=True)
+            .sort_values("alpha_deg")
+            .drop_duplicates("alpha_deg", keep="first")
+        )
     stdout_path = output_dir / "stdout.txt"
     stderr_path = output_dir / "stderr.txt"
     command_path = output_dir / "command.txt"
@@ -218,6 +270,11 @@ def run_xfoil(
         "\n\n".join(
             f"===== SEGMENT {index:03d} =====\n{result.stdout_path.read_text(encoding='utf-8')}"
             for index, result in enumerate(results)
+        )
+        + "\n\n"
+        + "\n\n".join(
+            f"===== RETRY {index:03d} =====\n{result.stdout_path.read_text(encoding='utf-8')}"
+            for index, result in enumerate(retry_results)
         ),
         encoding="utf-8",
     )
@@ -225,6 +282,11 @@ def run_xfoil(
         "\n\n".join(
             f"===== SEGMENT {index:03d} =====\n{result.stderr_path.read_text(encoding='utf-8')}"
             for index, result in enumerate(results)
+        )
+        + "\n\n"
+        + "\n\n".join(
+            f"===== RETRY {index:03d} =====\n{result.stderr_path.read_text(encoding='utf-8')}"
+            for index, result in enumerate(retry_results)
         ),
         encoding="utf-8",
     )
@@ -232,18 +294,22 @@ def run_xfoil(
         f"===== SEGMENT {index:03d} =====\n{result.command_text}"
         for index, result in enumerate(results)
     )
+    if retry_results:
+        command_text += "\n\n" + "\n\n".join(
+            f"===== RETRY {index:03d} =====\n{result.command_text}"
+            for index, result in enumerate(retry_results)
+        )
     command_path.write_text(command_text, encoding="utf-8")
     combined_path: Path | None = None
     if len(parsed):
         combined_path = output_dir / "combined_points.csv"
         parsed.to_csv(combined_path, index=False)
-    failed_segments = [
-        index for index, result in enumerate(results) if result.status != "ok"
-    ]
+    failed_segments = [index for index, result in enumerate(results) if result.status != "ok"]
+    failed_retries = [index for index, result in enumerate(retry_results) if result.status != "ok"]
     expected_points, convergence_fraction, span_complete = _sweep_completion(parsed, case)
     status = (
         "ok"
-        if convergence_fraction == 1.0 and span_complete and not failed_segments
+        if convergence_fraction == 1.0 and span_complete
         else "failed"
     )
     reason = (
@@ -252,18 +318,19 @@ def run_xfoil(
         else (
             f"incomplete sweep: {len(parsed)}/{expected_points} points, "
             f"coverage={convergence_fraction:.3f}, span_complete={span_complete}, "
-            f"failed_segments={failed_segments}"
+            f"failed_segments={failed_segments}, failed_retries={failed_retries}"
         )
     )
-    return_codes = [result.return_code for result in results if result.return_code is not None]
+    all_results = [*results, *retry_results]
+    return_codes = [result.return_code for result in all_results if result.return_code is not None]
     return XFoilResult(
         status,
         0
-        if len(return_codes) == len(results)
-        and not any(result.timed_out for result in results)
+        if len(return_codes) == len(all_results)
+        and not any(result.timed_out for result in all_results)
         and all(code == 0 for code in return_codes)
         else None,
-        any(result.timed_out for result in results),
+        any(result.timed_out for result in all_results),
         command_text,
         stdout_path,
         stderr_path,
@@ -750,10 +817,9 @@ def run_candidate_validation(
             ),
             "positive_means_lower_drag_than_reference": True,
         }
-    all_completed = all(
-        summary["nominal_completed"]
-        and int(summary["shared_completed"]) >= 50
-        and int(summary["adverse_tail_completed"]) >= 1
+    all_completed = bool(design_summary) and all(
+        int(summary["requested_cases"]) > 0
+        and int(summary["completed_cases"]) == int(summary["requested_cases"])
         for summary in design_summary.values()
     )
     payload = {

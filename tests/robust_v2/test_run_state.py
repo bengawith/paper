@@ -14,11 +14,11 @@ def test_run_state_roundtrip_and_skip(tmp_path):
     assert not reloaded.can_skip("01", {"config": "x"}, {"input": "y"})
 
 
-def test_held_phase_with_current_evidence_can_skip(tmp_path):
+def test_held_phase_does_not_silently_skip_on_resume(tmp_path):
     output = tmp_path / "held-artifact.txt"
     output.write_text("complete hold evidence", encoding="utf-8")
     state = RunState(tmp_path / "run_state.json")
     state.begin("22", "report", config_hashes={"config": "x"}, input_hashes={})
     state.finish("22", "held", {"decision": "HOLD"}, [output])
     reloaded = RunState(state.path)
-    assert reloaded.can_skip("22", {"config": "x"}, {})
+    assert not reloaded.can_skip("22", {"config": "x"}, {})

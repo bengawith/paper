@@ -1,0 +1,56 @@
+{
+  "status": "applied_uncommitted",
+  "branch": "robust-v2-viability",
+  "starting_head": "c7156b7dcb78d231f46b52542f495f6f776c2b9e",
+  "actions": [
+    {
+      "path": "src/robust_airfoil/modelling/evaluate.py",
+      "action": "replace"
+    },
+    {
+      "path": "src/robust_airfoil/optimisation/objectives.py",
+      "action": "replace"
+    },
+    {
+      "path": "src/robust_airfoil/data/polar_parser.py",
+      "action": "replace"
+    },
+    {
+      "path": "src/robust_airfoil/data/builder.py",
+      "action": "replace"
+    },
+    {
+      "path": "src/robust_airfoil/validation/xfoil_runner.py",
+      "action": "replace"
+    },
+    {
+      "path": "src/robust_airfoil/modelling/freeze.py",
+      "action": "replace"
+    },
+    {
+      "path": "src/robust_airfoil/data/splits.py",
+      "action": "replace"
+    },
+    {
+      "path": "tests/robust_v2/test_locked_test_guard.py",
+      "action": "replace"
+    },
+    {
+      "path": "src/robust_airfoil/modelling/train.py",
+      "action": "replace"
+    },
+    {
+      "path": "src/robust_airfoil/run_state.py",
+      "action": "replace"
+    },
+    {
+      "path": "tests/robust_v2/test_run_state.py",
+      "action": "replace"
+    },
+    {
+      "path": "tests/robust_v2/test_ava_alignment_regressions.py",
+      "action": "create"
+    }
+  ],
+  "note": "Source repairs only. Dependent scientific results require invalidation/rerun."
+}

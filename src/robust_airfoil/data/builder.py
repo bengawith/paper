@@ -8,7 +8,7 @@ import numpy as np
 import pandas as pd
 
 from robust_airfoil.data.mapping import build_name_index, canonical_name, map_by_strict_name
-from robust_airfoil.data.polar_parser import parse_polar_file
+from robust_airfoil.data.polar_parser import parse_polar_file, validate_polar_conditions
 from robust_airfoil.geometry.clustering import cluster_coordinate_vectors
 from robust_airfoil.geometry.cst import fit_cst
 from robust_airfoil.geometry.metrics import geometry_metrics
@@ -42,6 +42,8 @@ def build_long_form_dataset(
             continue
         geometry_path = mapping.geometry_path
         try:
+            parsed = parse_polar_file(polar_path)
+            validate_polar_conditions(parsed.metadata)
             if geometry_path not in cache:
                 normal = normalise_geometry(parse_coordinate_file(geometry_path), cosine_points)
                 validity = validate_geometry(normal.upper, normal.lower)
@@ -72,7 +74,6 @@ def build_long_form_dataset(
                     "TE_thickness": float(fit.parameters[11]),
                 })
             airfoil_id, _ = cache[geometry_path]
-            parsed = parse_polar_file(polar_path)
             polar_id = polar_path.stem
             for row in parsed.points.to_dict(orient="records"):
                 polar_rows.append({
@@ -81,25 +82,28 @@ def build_long_form_dataset(
                     "source_tier": source_tier,
                     "source_path": polar_path.as_posix(),
                     "source_sha256": sha256_file(polar_path),
-                    "reynolds_number": parsed.metadata.get("reynolds_number") or 1_000_000.0,
-                    "mach": parsed.metadata.get("mach") or 0.0,
-                    "ncrit": parsed.metadata.get("ncrit") or 9.0,
+                    "reynolds_number": parsed.metadata["reynolds_number"],
+                    "mach": parsed.metadata["mach"],
+                    "ncrit": parsed.metadata["ncrit"],
                     **row,
                 })
         except Exception as exc:
             rejected.append({"source_path": str(polar_path), "reason": repr(exc)})
-    airfoils = pd.DataFrame(airfoil_rows).drop_duplicates("airfoil_id", keep="first")
+    airfoils = pd.DataFrame(airfoil_rows).drop_duplicates("airfoil_id", keep="first") if airfoil_rows else pd.DataFrame(columns=["airfoil_id"])
     if len(airfoils):
         retained_vectors = np.asarray([vector_by_airfoil[str(name)] for name in airfoils["airfoil_id"]])
         airfoils["cluster_id"] = cluster_coordinate_vectors(retained_vectors, near_duplicate_threshold)
     points = pd.DataFrame(polar_rows)
     if len(points):
-        points["mask_cl"] = points["cl"].notna()
-        points["mask_log_cd"] = points["cd"].gt(0) & points["cd"].notna()
-        points["mask_cm"] = points["cm"].notna()
-        points["log_cd"] = np.where(points["mask_log_cd"], np.log(points["cd"]), np.nan)
+        points["mask_cl"] = np.isfinite(points["cl"])
+        points["mask_log_cd"] = points["cd"].gt(0) & np.isfinite(points["cd"])
+        points["mask_cm"] = np.isfinite(points["cm"])
+        points["log_cd"] = np.nan
+        points.loc[points["mask_log_cd"], "log_cd"] = np.log(points.loc[points["mask_log_cd"], "cd"])
+        points["model_eligible"] = ~points["conflicting_alpha"] & ~points["exact_duplicate"]
+        eligible_points = points.loc[points["model_eligible"]].copy()
         feature_columns = [f"lower_weight_{i}" for i in range(5)] + [f"upper_weight_{i}" for i in range(5)] + ["leading_edge_weight", "TE_thickness"]
-        model_points = points.merge(airfoils[["airfoil_id", *feature_columns]], on="airfoil_id", how="inner", validate="many_to_one")
+        model_points = eligible_points.merge(airfoils[["airfoil_id", *feature_columns]], on="airfoil_id", how="inner", validate="many_to_one")
         counts = model_points.groupby("airfoil_id").size()
         model_points["airfoil_weight"] = model_points["airfoil_id"].map(1.0 / counts)
     else:
@@ -112,7 +116,7 @@ def build_long_form_dataset(
         "requested_polars": len(polar_paths),
         "mapped_airfoils": int(len(airfoils)),
         "accepted_polar_rows": int(len(points)),
-        "joint_model_points": int(len(model_points)),
+        "joint_model_points": int(model_points[["mask_cl", "mask_log_cd", "mask_cm"]].all(axis=1).sum()) if len(model_points) else 0,
         "rejected_records": len(rejected),
         "mapping_fraction": len(airfoils) / max(len(polar_paths), 1),
     }

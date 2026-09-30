@@ -2,11 +2,14 @@ from __future__ import annotations
 
 import csv
 import json
+import os
+import re
 import subprocess
 import sys
 import traceback
 import zipfile
 from collections.abc import Callable
+from contextlib import contextmanager
 from dataclasses import asdict
 from pathlib import Path
 from typing import Any
@@ -16,7 +19,7 @@ import numpy as np
 import pandas as pd
 import torch
 
-from robust_airfoil.benchmarks.neuralfoil import benchmark_neuralfoil
+from robust_airfoil.benchmarks.neuralfoil import benchmark_neuralfoil_from_coordinates
 from robust_airfoil.config import (
     OptimisationConfig,
     TuningConfig,
@@ -71,6 +74,55 @@ from robust_airfoil.sources.uiuc import acquire_uiuc_zip, extract_zip_safely
 from robust_airfoil.sources.xfoil import locate_xfoil
 from robust_airfoil.uncertainty.study import run_manufacturing_study
 from robust_airfoil.validation.xfoil_runner import run_canary_suite, run_candidate_validation
+
+_ACTIVE_LINEAGE_METADATA: dict[str, Any] = {}
+
+
+@contextmanager
+def _lineage_paths(
+    results_root: Path | None,
+    reports_root: Path | None,
+    lineage_metadata: dict[str, Any] | None,
+) -> Any:
+    """Temporarily bind pipeline-owned evidence paths to one immutable lineage."""
+    if (results_root is None) != (reports_root is None):
+        raise ValueError("Lineage results_root and reports_root must be supplied together")
+    if results_root is None:
+        yield
+        return
+    assert reports_root is not None
+    lock_path = ROOT / ".robust-airfoil-pipeline.lock"
+    lock_path.parent.mkdir(parents=True, exist_ok=True)
+    try:
+        lock_descriptor = os.open(lock_path, os.O_CREAT | os.O_EXCL | os.O_WRONLY)
+    except FileExistsError:
+        try:
+            owner_pid = int(lock_path.read_text(encoding="ascii").strip())
+            os.kill(owner_pid, 0)
+        except (OSError, ValueError):
+            lock_path.unlink(missing_ok=True)
+            lock_descriptor = os.open(lock_path, os.O_CREAT | os.O_EXCL | os.O_WRONLY)
+        else:
+            raise RuntimeError("Another isolated robust-airfoil lineage is already running")
+    try:
+        os.write(lock_descriptor, str(os.getpid()).encode("ascii"))
+    except Exception:
+        os.close(lock_descriptor)
+        lock_path.unlink(missing_ok=True)
+        raise
+    global RESULTS_ROOT, REPORTS_ROOT, RUN_STATE_PATH, FROZEN_MANIFEST_PATH, _ACTIVE_LINEAGE_METADATA
+    previous = RESULTS_ROOT, REPORTS_ROOT, RUN_STATE_PATH, FROZEN_MANIFEST_PATH, _ACTIVE_LINEAGE_METADATA
+    RESULTS_ROOT = Path(results_root)
+    REPORTS_ROOT = Path(reports_root)
+    RUN_STATE_PATH = REPORTS_ROOT / "run_state.json"
+    FROZEN_MANIFEST_PATH = RESULTS_ROOT / "FROZEN_MODEL_MANIFEST.json"
+    _ACTIVE_LINEAGE_METADATA = dict(lineage_metadata or {})
+    try:
+        yield
+    finally:
+        RESULTS_ROOT, REPORTS_ROOT, RUN_STATE_PATH, FROZEN_MANIFEST_PATH, _ACTIVE_LINEAGE_METADATA = previous
+        os.close(lock_descriptor)
+        lock_path.unlink(missing_ok=True)
 
 
 def _json(path: Path) -> Any:
@@ -336,7 +388,7 @@ def _run_model_stage(label: str, count: int, seed: int, maximum_epochs: int = 18
     selected_airfoils = airfoils[airfoils["airfoil_id"].isin(selected_ids)].copy()
     selected_points = points[points["airfoil_id"].isin(selected_ids)].copy()
     splits = _pilot_splits(selected_airfoils, seed) if count == 25 else make_cluster_splits(selected_airfoils, seed)
-    split_path = ROOT / f"data/robust_v2/splits/{label}.json"
+    split_path = RESULTS_ROOT / f"splits/{label}.json"
     write_split_manifest(splits, split_path, seed)
     train, validation = _train_validation_from_development(selected_points, selected_airfoils, splits, seed)
     output_dir = RESULTS_ROOT / label
@@ -380,8 +432,9 @@ def _phase12_16() -> tuple[dict[str, Any], list[Path], str]:
             and (RESULTS_ROOT / "locked_test/metrics.json").is_file()
         ):
             return cached_summary, cached_outputs, "passed"
-    pilot = _run_model_stage("pilot", 25, 20260824, 180)
-    expansion = _run_model_stage("expansion_200", 200, 20260825, 220)
+    engineering_seed = int(_ACTIVE_LINEAGE_METADATA.get("engineering_seed", 20260824))
+    pilot = _run_model_stage("pilot", 25, engineering_seed, 180)
+    expansion = _run_model_stage("expansion_200", 200, engineering_seed + 1, 220)
     full: dict[str, Any] = {"status": "not_started"}
     tuning: dict[str, Any] = {"status": "not_started"}
     calibration: dict[str, Any] = {"status": "not_started"}
@@ -389,9 +442,9 @@ def _phase12_16() -> tuple[dict[str, Any], list[Path], str]:
         data_root = ROOT / "data/robust_v2/processed/full_exact"
         airfoils = pd.read_parquet(data_root / "airfoils.parquet")
         points = pd.read_parquet(data_root / "model_points.parquet")
-        splits = make_cluster_splits(airfoils, 20260824)
-        split_path = ROOT / "data/robust_v2/splits/full.json"
-        write_split_manifest(splits, split_path, 20260824)
+        splits = make_cluster_splits(airfoils, engineering_seed)
+        split_path = RESULTS_ROOT / "splits/full.json"
+        write_split_manifest(splits, split_path, engineering_seed)
         development_ids = splits.loc[splits["split"] == "development", "airfoil_id"].astype(str).tolist()
         calibration_ids = splits.loc[splits["split"] == "calibration", "airfoil_id"].astype(str).tolist()
         locked_ids = splits.loc[splits["split"] == "locked_test", "airfoil_id"].astype(str).tolist()
@@ -403,7 +456,7 @@ def _phase12_16() -> tuple[dict[str, Any], list[Path], str]:
             how="left",
             validate="many_to_one",
         )
-        baseline_train, baseline_validation = _train_validation_from_development(points, airfoils, splits, 20260824)
+        baseline_train, baseline_validation = _train_validation_from_development(points, airfoils, splits, engineering_seed)
         full = train_model(baseline_train, baseline_validation, RESULTS_ROOT / "full_baseline/mlp", maximum_epochs=260)
         tuning_config = TuningConfig.model_validate(load_yaml(CONFIG_ROOT / "tuning.yaml"))
         study = tune_model(development_points, development_airfoils, RESULTS_ROOT / "tuning", tuning_config)
@@ -425,7 +478,7 @@ def _phase12_16() -> tuple[dict[str, Any], list[Path], str]:
             ensemble_root,
             study.best_params,
             selected_epochs,
-            20260824,
+            engineering_seed,
             members=5,
         )
         first_model, first_scaling = load_member(ensemble_root / "member_000")
@@ -458,10 +511,11 @@ def _phase12_16() -> tuple[dict[str, Any], list[Path], str]:
                 "split_hash": sha256_file(split_path),
                 "tuning_best_value": study.best_value,
                 "selected_hyperparameters": study.best_params,
-                "training_seeds": [20260824 + index for index in range(5)],
+                "training_seeds": [engineering_seed + index for index in range(5)],
                 "selected_epochs": selected_epochs,
                 "feature_columns": FEATURE_COLUMNS,
                 "target_columns": TARGET_COLUMNS,
+                **_ACTIVE_LINEAGE_METADATA,
             },
         )
         verify_frozen_artifacts(FROZEN_MANIFEST_PATH, artifacts)
@@ -494,10 +548,16 @@ def _phase14_21(model_summary: dict[str, Any]) -> tuple[dict[str, Any], list[Pat
     del model_summary
     if not FROZEN_MANIFEST_PATH.is_file():
         raise RuntimeError("Advanced studies require a verified frozen ensemble")
+    frozen = _json(FROZEN_MANIFEST_PATH)
+    frozen_artifacts = {
+        name: Path(path)
+        for name, path in frozen.get("artifact_paths", {}).items()
+    }
+    verify_frozen_artifacts(FROZEN_MANIFEST_PATH, frozen_artifacts)
     data_root = ROOT / "data/robust_v2/processed/full_exact"
     airfoils = pd.read_parquet(data_root / "airfoils.parquet")
     points = pd.read_parquet(data_root / "model_points.parquet")
-    split_payload = _json(ROOT / "data/robust_v2/splits/full.json")
+    split_payload = _json(RESULTS_ROOT / "splits/full.json")
     splits = pd.DataFrame(split_payload["records"])
     development_ids = splits.loc[splits["split"] == "development", "airfoil_id"].astype(str).tolist()
     development_points = points[points["airfoil_id"].isin(development_ids)].copy()
@@ -540,10 +600,12 @@ def _phase14_21(model_summary: dict[str, Any]) -> tuple[dict[str, Any], list[Pat
         lower,
         RESULTS_ROOT / "optimisation",
     )
-    neuralfoil = asdict(benchmark_neuralfoil({
-        "lower_weights": parameters[:5][None, :], "upper_weights": parameters[5:10][None, :],
-        "leading_edge_weight": np.asarray([parameters[10]]), "TE_thickness": np.asarray([parameters[11]]),
-    }, np.asarray([0.0, 2.0, 4.0, 6.0, 8.0])))
+    coordinates = np.vstack([upper[::-1], lower[1:]])
+    neuralfoil = asdict(
+        benchmark_neuralfoil_from_coordinates(
+            coordinates, np.asarray([0.0, 2.0, 4.0, 6.0, 8.0])
+        )
+    )
     neuralfoil = {key: (value.tolist() if isinstance(value, np.ndarray) else value) for key, value in neuralfoil.items()}
     xfoil = locate_xfoil(ROOT)
     xfoil_status: dict[str, Any]
@@ -591,15 +653,127 @@ def _phase14_21(model_summary: dict[str, Any]) -> tuple[dict[str, Any], list[Pat
     return summary, [output, uncertainty_path, RESULTS_ROOT / "optimisation/optimisation_summary.json", RESULTS_ROOT / "xfoil_canaries/canary_summary.json", RESULTS_ROOT / "xfoil_candidates/candidate_validation_summary.json"], status
 
 
+def _ml_evidence_gate(path: Path) -> dict[str, Any]:
+    """Validate ML gate evidence without allowing it to make the overall GO decision."""
+    result: dict[str, Any] = {"path": str(path.relative_to(ROOT)), "status": "missing"}
+    if not path.is_file():
+        result["reason"] = "The required ML evidence artifact has not been produced."
+        return result
+    try:
+        payload = _json(path)
+    except (OSError, ValueError, json.JSONDecodeError) as exc:
+        result.update(status="invalid", reason=f"ML evidence could not be parsed: {exc}")
+        return result
+    if not isinstance(payload, dict):
+        result.update(status="invalid", reason="ML evidence must be a JSON object.")
+        return result
+    if payload.get("schema_version") != "robust-v2-ml-evidence-v1":
+        result.update(status="invalid", reason="ML evidence has an unsupported schema version.")
+        return result
+    if payload.get("status") != "passed" or payload.get("ml_gate_passed") is not True:
+        result.update(status="invalid", reason="ML evidence does not record a passed ML acceptance gate.")
+        return result
+    if payload.get("scientific_go_granted") is not False:
+        result.update(
+            status="invalid",
+            reason="ML evidence must not grant the overall scientific decision by itself.",
+        )
+        return result
+    lineage_protocol_hash = _ACTIVE_LINEAGE_METADATA.get("lineage_protocol_hash")
+    if not isinstance(lineage_protocol_hash, str) or not re.fullmatch(
+        r"[0-9a-f]{64}", lineage_protocol_hash
+    ):
+        result.update(
+            status="invalid",
+            reason="ML evidence can only be accepted inside a lineage with a pinned protocol hash.",
+        )
+        return result
+    if not FROZEN_MANIFEST_PATH.is_file():
+        result.update(status="invalid", reason="The frozen-model manifest is missing.")
+        return result
+    model_points_path = ROOT / "data/robust_v2/processed/full_exact/model_points.parquet"
+    if not model_points_path.is_file():
+        result.update(status="invalid", reason="The frozen model input dataset is missing.")
+        return result
+    expected_hashes = {
+        "model_sha256": sha256_file(FROZEN_MANIFEST_PATH),
+        "protocol_hash": lineage_protocol_hash,
+        "input_sha256": sha256_file(model_points_path),
+    }
+    for field in ("model_sha256", "protocol_hash", "input_sha256"):
+        value = payload.get(field)
+        if not isinstance(value, str) or not re.fullmatch(r"[0-9a-f]{64}", value):
+            result.update(status="invalid", reason=f"ML evidence has an invalid {field}.")
+            return result
+        if value != expected_hashes[field]:
+            result.update(
+                status="invalid",
+                reason=f"ML evidence {field} does not match the pinned lineage evidence.",
+            )
+            return result
+    if not isinstance(payload.get("model_id"), str) or not payload["model_id"].strip():
+        result.update(status="invalid", reason="ML evidence has no model identifier.")
+        return result
+    target_metrics = payload.get("target_metrics")
+    if not isinstance(target_metrics, dict):
+        result.update(status="invalid", reason="ML evidence has no target metrics object.")
+        return result
+    for target in ("cl", "log_cd"):
+        metrics = target_metrics.get(target)
+        if not isinstance(metrics, dict):
+            result.update(status="invalid", reason=f"ML evidence is missing {target} target metrics.")
+            return result
+        try:
+            model_error = float(metrics["model_macro_error"])
+            dummy_error = float(metrics["dummy_macro_error"])
+            improvement = float(metrics["macro_error_improvement_vs_dummy"])
+        except (KeyError, TypeError, ValueError):
+            result.update(status="invalid", reason=f"ML evidence has incomplete {target} metrics.")
+            return result
+        expected_improvement = (dummy_error - model_error) / dummy_error if dummy_error > 0 else None
+        if (
+            not np.isfinite([model_error, dummy_error, improvement]).all()
+            or model_error < 0
+            or dummy_error <= 0
+            or model_error > dummy_error
+            or improvement < 0.20
+            or expected_improvement is None
+            or not np.isclose(improvement, expected_improvement, rtol=1e-9, atol=1e-12)
+        ):
+            result.update(
+                status="invalid",
+                reason=(
+                    f"ML evidence does not demonstrate the required 20% {target} "
+                    "macro-error improvement over Dummy."
+                ),
+            )
+            return result
+    return {
+        "path": str(path.relative_to(ROOT)),
+        "status": "passed",
+        "model_id": payload["model_id"],
+        "model_sha256": payload["model_sha256"],
+        "protocol_hash": payload["protocol_hash"],
+        "input_sha256": payload["input_sha256"],
+        "target_metrics": {target: target_metrics[target] for target in ("cl", "log_cd")},
+        "scientific_go_granted": False,
+    }
+
+
 def _phase22(all_results: dict[str, Any]) -> tuple[dict[str, Any], list[Path], str]:
     model = all_results.get("model", {})
     advanced = all_results.get("advanced", {})
+    model_status = all_results.get("model_status", "pending")
+    advanced_status = all_results.get("advanced_status", "pending")
+    model_evidence_available = model_status == "passed"
+    advanced_evidence_available = advanced_status == "passed"
     data = all_results.get("data", {})
     source = all_results.get("source", {})
     uncertainty = advanced.get("uncertainty", {})
     optimisation = advanced.get("optimisation", {})
     xfoil = advanced.get("xfoil", {})
     blockers: list[dict[str, str]] = []
+    ml_evidence = _ml_evidence_gate(REPORTS_ROOT / "modelling/ml_evidence.json")
 
     def add_blocker(code: str, severity: str, detail: str, resolution: str) -> None:
         blockers.append(
@@ -613,13 +787,26 @@ def _phase22(all_results: dict[str, Any]) -> tuple[dict[str, Any], list[Path], s
             "Committed V1 entrypoints are internally inconsistent and exact split/scaler provenance is absent; exact reproduction is not supportable.",
             "Recover the original V1 split IDs, scaler state, dependency lock, and training command, then rerun the frozen V1 comparison before making V1-to-V2 claim language.",
         )
-    expansion_passed = bool(model.get("expansion_200", {}).get("gate_passed", False))
-    if not expansion_passed:
+    if not model_evidence_available:
+        add_blocker(
+            "model_evidence_not_current",
+            "high",
+            f"Model phase 09-16 is {model_status}; no current verified model evidence is available for assessment.",
+            "Repair the failed or incomplete model phase, verify its frozen artifacts, and rerun phases 09-22 before interpreting model performance.",
+        )
+    elif not bool(model.get("expansion_200", {}).get("gate_passed", False)):
         add_blocker(
             "expanded_learning_signal",
             "critical",
             "The 200-airfoil model gate did not demonstrate the required CL and log(CD) improvement over Dummy.",
             "Inspect grouped residuals and source strata, repair the data/model defect, and rerun phases 09-22.",
+        )
+    if ml_evidence["status"] != "passed":
+        add_blocker(
+            "ml_evidence_missing_or_invalid",
+            "high",
+            str(ml_evidence["reason"]),
+            "Produce a lineage-bound ML evidence artifact for the frozen model, with independent-group macro-error comparisons against Dummy for CL and log(CD), then rerun phase 22. An audit report alone cannot grant this gate.",
         )
     calibration_path = RESULTS_ROOT / "calibration/trust_calibration.json"
     if not calibration_path.exists():
@@ -647,7 +834,7 @@ def _phase22(all_results: dict[str, Any]) -> tuple[dict[str, Any], list[Path], s
             ),
             "sample_matrix_sha256": level.get("sample_matrix_sha256"),
         }
-    if predominantly_invalid:
+    if advanced_evidence_available and predominantly_invalid:
         add_blocker(
             "predominantly_invalid_uncertainty",
             "critical",
@@ -660,7 +847,7 @@ def _phase22(all_results: dict[str, Any]) -> tuple[dict[str, Any], list[Path], s
         for run in full_runs
         if len(run.get("constraint_values", []))
     )
-    if not full_runs or feasible_full == 0:
+    if advanced_evidence_available and (not full_runs or feasible_full == 0):
         add_blocker(
             "no_feasible_robust_optimum",
             "critical",
@@ -668,7 +855,7 @@ def _phase22(all_results: dict[str, Any]) -> tuple[dict[str, Any], list[Path], s
             "Diagnose constraint margins and trust rejections, repair the optimiser or model-domain bounds, and rerun all ten full seeds.",
         )
     agreement = optimisation.get("nsga2", {}).get("full", {}).get("agreement", {})
-    if full_runs and agreement.get("agreement_status") != "pass":
+    if advanced_evidence_available and full_runs and agreement.get("agreement_status") != "pass":
         add_blocker(
             "optimisation_seed_agreement",
             "high",
@@ -676,7 +863,14 @@ def _phase22(all_results: dict[str, Any]) -> tuple[dict[str, Any], list[Path], s
             "Increase convergence budget or repair front instability, then rerun all full seeds with the same frozen model and common random samples.",
         )
     candidate_validation = xfoil.get("candidate_validation", {})
-    if xfoil.get("comparison") != "completed":
+    if not advanced_evidence_available:
+        add_blocker(
+            "advanced_evidence_not_current",
+            "high",
+            f"Advanced phase 17-21 is {advanced_status}; no current verified uncertainty, optimisation, or XFOIL evidence is available for assessment.",
+            "Repair the failed or incomplete advanced phase and rerun phases 17-22 with the verified frozen model before interpreting optimisation or XFOIL results.",
+        )
+    elif xfoil.get("comparison") != "completed":
         add_blocker(
             "direct_xfoil_incomplete",
             "high",
@@ -714,7 +908,7 @@ def _phase22(all_results: dict[str, Any]) -> tuple[dict[str, Any], list[Path], s
     else:
         decision = "GO"
 
-    split_path = ROOT / "data/robust_v2/splits/full.json"
+    split_path = RESULTS_ROOT / "splits/full.json"
     leakage: dict[str, Any] = {"status": "not_available"}
     if split_path.is_file():
         split_frame = pd.DataFrame(_json(split_path)["records"])
@@ -923,6 +1117,7 @@ def _phase22(all_results: dict[str, Any]) -> tuple[dict[str, Any], list[Path], s
         "Pilot model": model.get("pilot", {}),
         "200-airfoil model": model.get("expansion_200", {}),
         "Full baseline": model.get("full_baseline", {}),
+        "ML evidence": ml_evidence,
         "Baseline comparisons": {
             "pilot": model.get("pilot", {}).get("baseline_comparison", {}),
             "expansion_200": model.get("expansion_200", {}).get("baseline_comparison", {}),
@@ -991,7 +1186,35 @@ def _phase22(all_results: dict[str, Any]) -> tuple[dict[str, Any], list[Path], s
     return {"decision": decision, "blockers": blockers, "report": str(report_path)}, [report_path, json_path, handover_path, next_commands], "passed" if decision == "GO" else "held"
 
 
-def run_viability(resume: bool = True) -> int:
+def run_viability(
+    resume: bool = True,
+    *,
+    results_root: Path | None = None,
+    reports_root: Path | None = None,
+    lineage_metadata: dict[str, Any] | None = None,
+    phase_ids: set[str] | None = None,
+) -> int:
+    """Run the viability pipeline, optionally in an isolated evidence lineage."""
+    with _lineage_paths(results_root, reports_root, lineage_metadata):
+        if phase_ids is None:
+            return _run_viability(resume)
+        return _run_viability(resume, phase_ids)
+
+
+def _run_viability(resume: bool = True, phase_ids: set[str] | None = None) -> int:
+    valid_phase_ids = {"00", "02", "03", "04", "05-08", "09-16", "17-21", "22"}
+    if phase_ids is not None and not phase_ids <= valid_phase_ids:
+        raise ValueError("Unknown viability phase requested")
+
+    def requested(phase_id: str) -> bool:
+        return phase_ids is None or phase_id in phase_ids
+
+    def previous(phase_id: str) -> tuple[dict[str, Any], str]:
+        record = state.phases.get(phase_id)
+        if record is None:
+            return {}, "pending"
+        return record.summary, record.status
+
     load_all_configs()
     state = RunState(RUN_STATE_PATH)
     results: dict[str, Any] = {}
@@ -1002,25 +1225,35 @@ def run_viability(resume: bool = True) -> int:
         ROOT / "src/utils.py",
         *sorted((ROOT / "trained_model").glob("**/*")),
     ]
-    results["setup"], _ = _phase(
-        state, "00", "preflight and provenance", "robust-airfoil run", _phase00,
-        resume=resume, input_paths=historical_inputs,
-    )
-    results["legacy"], results["legacy_status"] = _phase(
-        state, "02", "legacy audit", "audit_legacy", _phase02,
-        resume=resume, input_paths=[ROOT / "data/csv/dataset_12CST_params.csv"],
-    )
-    results["recovery"], _ = _phase(
-        state, "03", "bounded local recovery", "discover_legacy_data --auto-roots", _phase03,
-        resume=resume,
-    )
-    results["source"], source_status = _phase(
-        state, "04", "source acquisition", "acquire_sources", _phase04,
-        resume=resume,
-    )
-    if source_status == "failed":
-        results["data"] = {"error": "source acquisition failed"}
+    if requested("00"):
+        results["setup"], _ = _phase(
+            state, "00", "preflight and provenance", "robust-airfoil run", _phase00,
+            resume=resume, input_paths=historical_inputs,
+        )
     else:
+        results["setup"], _ = previous("00")
+    if requested("02"):
+        results["legacy"], results["legacy_status"] = _phase(
+            state, "02", "legacy audit", "audit_legacy", _phase02,
+            resume=resume, input_paths=[ROOT / "data/csv/dataset_12CST_params.csv"],
+        )
+    else:
+        results["legacy"], results["legacy_status"] = previous("02")
+    if requested("03"):
+        results["recovery"], _ = _phase(
+            state, "03", "bounded local recovery", "discover_legacy_data --auto-roots", _phase03,
+            resume=resume,
+        )
+    else:
+        results["recovery"], _ = previous("03")
+    if requested("04"):
+        results["source"], source_status = _phase(
+            state, "04", "source acquisition", "acquire_sources", _phase04,
+            resume=resume,
+        )
+    else:
+        results["source"], source_status = previous("04")
+    if requested("05-08") and source_status != "failed":
         polar_inputs, geometry_inputs = _exact_source_paths()
         results["data"], _ = _phase(
             state, "05-08", "parse map and build long-form dataset", "build_dataset", _phase05_08,
@@ -1032,27 +1265,77 @@ def run_viability(resume: bool = True) -> int:
                 *geometry_inputs,
             ],
         )
+    elif requested("05-08"):
+        results["data"] = {"error": "source acquisition failed"}
+    else:
+        data_root = ROOT / "data/robust_v2/processed/full_exact"
+        airfoils_path = data_root / "airfoils.parquet"
+        points_path = data_root / "model_points.parquet"
+        dataset_summary_path = REPORTS_ROOT / "data/dataset_summary.json"
+        if dataset_summary_path.is_file():
+            results["data"] = _json(dataset_summary_path)
+        elif airfoils_path.is_file() and points_path.is_file():
+            results["data"] = {
+                "mapped_airfoils": len(pd.read_parquet(airfoils_path)),
+                "status": "adopted_hash_pinned_processed_data",
+            }
+        else:
+            results["data"], _ = previous("05-08")
     if results.get("data", {}).get("mapped_airfoils", 0) >= 20:
         model_inputs = [
             ROOT / "data/robust_v2/processed/full_exact/airfoils.parquet",
             ROOT / "data/robust_v2/processed/full_exact/model_points.parquet",
         ]
-        results["model"], _ = _phase(
-            state, "09-16", "splits model ladder tuning calibration", "train_baseline", _phase12_16,
-            resume=resume, input_paths=model_inputs,
-        )
-        advanced_inputs = [*model_inputs, FROZEN_MANIFEST_PATH]
-        results["advanced"], _ = _phase(
-            state, "17-21", "benchmarks uncertainty optimisation validation", "run_uncertainty_and_optimisation",
-            lambda: _phase14_21(results["model"]), resume=resume, input_paths=advanced_inputs,
-        )
+        if requested("09-16"):
+            results["model"], model_status = _phase(
+                state, "09-16", "splits model ladder tuning calibration", "train_baseline", _phase12_16,
+                resume=resume, input_paths=model_inputs,
+            )
+        else:
+            model_summary_path = REPORTS_ROOT / "modelling/model_ladder.json"
+            previous_model, model_status = previous("09-16")
+            results["model"] = (
+                _json(model_summary_path)
+                if model_status == "passed" and model_summary_path.is_file()
+                else previous_model
+            )
+        results["model_status"] = model_status
+        if requested("17-21") and model_status == "passed":
+            advanced_inputs = [*model_inputs, FROZEN_MANIFEST_PATH]
+            results["advanced"], advanced_status = _phase(
+                state, "17-21", "benchmarks uncertainty optimisation validation", "run_uncertainty_and_optimisation",
+                lambda: _phase14_21(results["model"]), resume=resume, input_paths=advanced_inputs,
+            )
+        elif requested("17-21"):
+            state.invalidate(
+                "17-21",
+                f"Model phase 09-16 is {model_status}; advanced evidence is not valid",
+            )
+            results["advanced"] = {
+                "status": "blocked",
+                "reason": "Advanced studies require a passed, verified frozen model phase",
+                "upstream_phase": "09-16",
+                "upstream_status": model_status,
+            }
+            advanced_status = "blocked"
+        else:
+            advanced_summary_path = REPORTS_ROOT / "viability/advanced_studies.json"
+            previous_advanced, advanced_status = previous("17-21")
+            results["advanced"] = (
+                _json(advanced_summary_path)
+                if advanced_status == "passed" and advanced_summary_path.is_file()
+                else previous_advanced
+            )
+        results["advanced_status"] = advanced_status
     else:
         results["model"], results["advanced"] = {}, {}
+        results["model_status"], results["advanced_status"] = "blocked", "blocked"
     report_inputs = [
         REPORTS_ROOT / "setup/environment.json",
         REPORTS_ROOT / "data/source_acquisition.json",
         REPORTS_ROOT / "data/dataset_summary.json",
         REPORTS_ROOT / "modelling/model_ladder.json",
+        REPORTS_ROOT / "modelling/ml_evidence.json",
         REPORTS_ROOT / "viability/advanced_studies.json",
         RESULTS_ROOT / "uncertainty/manufacturing_study.json",
         RESULTS_ROOT / "optimisation/optimisation_summary.json",
@@ -1060,9 +1343,12 @@ def run_viability(resume: bool = True) -> int:
         RESULTS_ROOT / "xfoil_candidates/candidate_validation_summary.json",
         REPORTS_ROOT / "setup/quality_gates.json",
     ]
-    final, status = _phase(
-        state, "22", "viability report and handover", "build_report", lambda: _phase22(results),
-        resume=resume, input_paths=report_inputs,
-    )
+    if requested("22"):
+        final, status = _phase(
+            state, "22", "viability report and handover", "build_report", lambda: _phase22(results),
+            resume=resume, input_paths=report_inputs,
+        )
+    else:
+        final, status = {"status": "not_run", "requested_phases": sorted(phase_ids or [])}, "passed"
     print(json.dumps(final, indent=2))
     return 0 if status in {"passed", "held"} else 1

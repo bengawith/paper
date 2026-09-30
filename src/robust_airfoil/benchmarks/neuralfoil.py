@@ -37,3 +37,21 @@ def benchmark_neuralfoil(kulfan_parameters: dict[str, object], alpha_deg: np.nda
         )
     except Exception as exc:
         return NeuralFoilBenchmarkResult("error", repr(exc))
+
+
+def benchmark_neuralfoil_from_coordinates(
+    coordinates: np.ndarray,
+    alpha_deg: np.ndarray,
+    reynolds_number: float = 1e6,
+) -> NeuralFoilBenchmarkResult:
+    """Refit arbitrary CST geometry to NeuralFoil's fixed eight-weight Kulfan form."""
+    try:
+        import aerosandbox as asb
+    except ImportError:
+        return NeuralFoilBenchmarkResult("unavailable", "aerosandbox benchmark dependency is not installed")
+    try:
+        airfoil = asb.Airfoil(name="robust_airfoil_reference", coordinates=np.asarray(coordinates, dtype=float))
+        kulfan = airfoil.to_kulfan_airfoil(n_weights_per_side=8)
+        return benchmark_neuralfoil(kulfan.kulfan_parameters, alpha_deg, reynolds_number)
+    except Exception as exc:
+        return NeuralFoilBenchmarkResult("error", repr(exc))

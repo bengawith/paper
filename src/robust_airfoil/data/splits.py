@@ -70,10 +70,11 @@ def assert_locked_test_access(frozen_manifest: Path, requested_split: str, artif
     payload = json.loads(frozen_manifest.read_text(encoding="utf-8"))
     if payload.get("schema_version") != 2 or payload.get("status") != "frozen":
         raise PermissionError("Locked test access denied: frozen manifest is incomplete")
-    if artifacts:
-        from robust_airfoil.hashing import sha256_file
+    if not artifacts:
+        raise PermissionError("Locked test access requires the complete frozen artifact set")
+    from robust_airfoil.modelling.freeze import verify_frozen_artifacts
 
-        recorded = payload.get("artifact_hashes", {})
-        for name, path in artifacts.items():
-            if not path.is_file() or recorded.get(name) != sha256_file(path):
-                raise PermissionError(f"Locked test access denied: frozen artifact mismatch for {name}")
+    try:
+        verify_frozen_artifacts(frozen_manifest, artifacts)
+    except (ValueError, FileNotFoundError) as exc:
+        raise PermissionError(f"Locked test access denied: {exc}") from exc

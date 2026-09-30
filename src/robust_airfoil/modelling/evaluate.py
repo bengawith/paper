@@ -26,7 +26,21 @@ def regression_metrics(frame: pd.DataFrame, prediction_columns: dict[str, str]) 
 
 
 def cvar(values: np.ndarray, quantile: float = 0.95) -> float:
+    """Exact upper-tail CVaR of an equally weighted empirical distribution.
+
+    Fractional boundary probability is retained. Averaging all values >= the
+    interpolated sample quantile is not equivalent for atoms or small samples.
+    """
     values = np.asarray(values, dtype=float)
-    cutoff = np.quantile(values, quantile)
-    tail = values[values >= cutoff]
-    return float(tail.mean()) if len(tail) else float(cutoff)
+    if values.ndim != 1 or len(values) == 0 or not np.isfinite(values).all():
+        raise ValueError("CVaR requires a nonempty finite one-dimensional sample")
+    if not np.isfinite(quantile) or not 0 <= quantile < 1:
+        raise ValueError("CVaR quantile must be in [0, 1)")
+    tail_mass = len(values) * (1.0 - quantile)
+    descending = np.sort(values)[::-1]
+    whole = int(np.floor(tail_mass))
+    fractional = tail_mass - whole
+    tail_sum = float(descending[:whole].sum())
+    if fractional > 0 and whole < len(values):
+        tail_sum += fractional * float(descending[whole])
+    return tail_sum / tail_mass

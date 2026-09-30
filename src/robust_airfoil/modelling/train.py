@@ -32,12 +32,14 @@ def set_deterministic_seed(seed: int) -> None:
     torch.use_deterministic_algorithms(True, warn_only=True)
 
 
-def _batch_loss(model: ConditionedPolarMLP, batch: dict[str, torch.Tensor], device: torch.device, loss_name: str) -> tuple[torch.Tensor, dict[str, torch.Tensor]]:
+def _batch_loss(model: ConditionedPolarMLP, batch: dict[str, torch.Tensor], device: torch.device, loss_name: str, *, uniform_airfoil_sampling: bool = False) -> tuple[torch.Tensor, dict[str, torch.Tensor]]:
     features = batch["features"].to(device)
     predictions = model(features)
     targets = {name: batch[name].to(device) for name in TARGET_COLUMNS}
     masks = {name: batch[f"mask_{name}"].to(device) for name in TARGET_COLUMNS}
     weights = batch["airfoil_weight"].to(device)
+    if uniform_airfoil_sampling:
+        weights = torch.ones_like(weights)
     return masked_macro_multitask_loss(predictions, targets, masks, weights, loss_name, 1.0)
 
 
@@ -99,17 +101,27 @@ def train_model(
         train_losses: list[float] = []
         for batch in train_loader:
             optimiser.zero_grad(set_to_none=True)
-            loss, _ = _batch_loss(model, batch, device, loss_name)
+            loss, _ = _batch_loss(model, batch, device, loss_name, uniform_airfoil_sampling=True)
             loss.backward()
             torch.nn.utils.clip_grad_norm_(model.parameters(), 1.0)
             optimiser.step()
             train_losses.append(float(loss.detach().cpu()))
         model.eval()
-        validation_losses: list[float] = []
+        # Accumulate weighted sums/counts, not an unweighted mean of batch
+        # means (which depends on the final batch size and target masks).
+        numerators = dict.fromkeys(TARGET_COLUMNS, 0.0)
+        denominators = dict.fromkeys(TARGET_COLUMNS, 0.0)
         with torch.no_grad():
             for batch in validation_loader:
-                validation_losses.append(float(_batch_loss(model, batch, device, loss_name)[0].cpu()))
-        validation_loss = float(np.mean(validation_losses))
+                _, components = _batch_loss(model, batch, device, loss_name)
+                for target in TARGET_COLUMNS:
+                    denominator = float((batch["airfoil_weight"] * batch[f"mask_{target}"].float()).sum())
+                    numerators[target] += float(components[target].cpu()) * denominator
+                    denominators[target] += denominator
+        active_losses = [numerators[target] / denominators[target] for target in TARGET_COLUMNS if denominators[target] > 0]
+        if not active_losses:
+            raise ValueError("Validation has no active targets")
+        validation_loss = float(np.mean(active_losses))
         history.append({"epoch": epoch, "train_loss": float(np.mean(train_losses)), "validation_loss": validation_loss})
         if validation_loss < best_loss - 1e-7:
             best_loss, best_epoch = validation_loss, epoch

@@ -13,6 +13,11 @@ def freeze_artifacts(
     artifacts: dict[str, Path],
     metadata: dict[str, Any],
 ) -> dict[str, Any]:
+    reserved = {"schema_version", "status", "created_utc", "artifact_paths", "artifact_hashes"}
+    if reserved.intersection(metadata):
+        raise ValueError("Metadata must not overwrite frozen-manifest contract fields")
+    if not artifacts:
+        raise ValueError("A frozen model must declare its artifacts")
     missing = [name for name, path in artifacts.items() if not path.is_file()]
     if missing:
         raise FileNotFoundError(f"Cannot freeze missing artifacts: {missing}")
@@ -41,6 +46,10 @@ def verify_frozen_artifacts(manifest_path: Path, artifacts: dict[str, Path]) -> 
     if payload.get("schema_version") != 2 or payload.get("status") != "frozen":
         raise ValueError("Frozen manifest schema/status is invalid")
     expected = payload.get("artifact_hashes", {})
+    if not expected or set(expected) != set(artifacts):
+        raise ValueError("Every frozen artifact must be supplied and verified")
+    if set(payload.get("artifact_paths", {})) != set(expected):
+        raise ValueError("Frozen manifest paths and hashes are inconsistent")
     for name, path in artifacts.items():
         if not path.is_file() or expected.get(name) != sha256_file(path):
             raise ValueError(f"Frozen artifact hash mismatch: {name}")

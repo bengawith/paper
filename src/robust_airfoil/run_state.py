@@ -65,9 +65,23 @@ class RunState:
         record.retryable = retryable
         self.save()
 
+    def invalidate(self, phase_id: str, reason: str) -> None:
+        """Ensure a dependent phase cannot be reused after an upstream regression."""
+        record = self.phases.get(phase_id)
+        if record is None:
+            return
+        record.status = "pending"
+        record.finished_utc = utc_now()
+        record.output_hashes = {}
+        record.summary = {"status": "invalidated", "reason": reason}
+        record.failure_type = None
+        record.failure_message = None
+        record.retryable = False
+        self.save()
+
     def can_skip(self, phase_id: str, config_hashes: dict[str, str], input_hashes: dict[str, str]) -> bool:
         record = self.phases.get(phase_id)
-        if not record or record.status not in {"passed", "held"}:
+        if not record or record.status != "passed" or not record.output_hashes:
             return False
         if record.config_hashes != config_hashes or record.input_hashes != input_hashes:
             return False

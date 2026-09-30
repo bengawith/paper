@@ -17,6 +17,7 @@ from scipy.spatial import cKDTree
 from scipy.stats import norm
 
 from robust_airfoil.config import Nsga2Config, OptimisationConfig, UncertaintyConfig
+from robust_airfoil.front_agreement import front_agreement
 from robust_airfoil.geometry.cst import fit_cst, reconstruct_cst
 from robust_airfoil.geometry.metrics import geometry_metrics
 from robust_airfoil.geometry.normalise import resample_surfaces_to_common_x
@@ -426,26 +427,35 @@ def _agreement(runs: list[dict[str, Any]], bounds: DesignBounds) -> dict[str, An
         counts.append(int(feasible.sum()))
         if feasible.any():
             feasible_runs.append((designs[feasible], objectives[feasible]))
-    all_objectives = np.vstack([values for _, values in feasible_runs]) if feasible_runs else np.empty((0, 2))
+    all_objectives = (
+        np.vstack([values for _, values in feasible_runs]) if feasible_runs else np.empty((0, 2))
+    )
     design_distances: list[float] = []
-    objective_distances: list[float] = []
     design_scale = np.maximum(bounds.upper - bounds.lower, 1e-12)
-    objective_scale = np.maximum(np.ptp(all_objectives, axis=0), 1e-12) if len(all_objectives) else np.ones(2)
-    for (design_a, objective_a), (design_b, objective_b) in combinations(feasible_runs, 2):
+    objective_scale = (
+        np.maximum(np.ptp(all_objectives, axis=0), 1e-12) if len(all_objectives) else np.ones(2)
+    )
+    for (design_a, _), (design_b, _) in combinations(feasible_runs, 2):
+        left_to_right = cKDTree(design_b / design_scale).query(design_a / design_scale, k=1)[0]
+        right_to_left = cKDTree(design_a / design_scale).query(design_b / design_scale, k=1)[0]
         design_distances.append(
-            float(np.mean(cKDTree(design_b / design_scale).query(design_a / design_scale, k=1)[0]))
+            float(0.5 * (left_to_right.mean() + right_to_left.mean()))
         )
-        objective_distances.append(
-            float(
-                np.mean(
-                    cKDTree(objective_b / objective_scale).query(
-                        objective_a / objective_scale, k=1
-                    )[0]
-                )
-            )
-        )
-    enough = len(feasible_runs) >= max(2, int(np.ceil(0.8 * len(runs))))
-    objective_mean_distance = float(np.mean(objective_distances)) if objective_distances else None
+    objective_fronts = [
+        np.asarray(run["objectives"], dtype=float)[
+            np.all(np.asarray(run["constraint_values"], dtype=float) <= 0, axis=1)
+        ]
+        if len(run["constraint_values"])
+        else np.empty((0, len(objective_scale)))
+        for run in runs
+    ]
+    objective_metrics = front_agreement(
+        objective_fronts,
+        objective_scale,
+        threshold=0.20,
+        minimum_feasible_fraction=0.80,
+    )
+    objective_mean_distance = objective_metrics["mean_symmetric_distance"]
     return {
         "run_count": len(runs),
         "feasible_run_count": len(feasible_runs),
@@ -457,11 +467,19 @@ def _agreement(runs: list[dict[str, Any]], bounds: DesignBounds) -> dict[str, An
         "pairwise_design_distance_mean": float(np.mean(design_distances)) if design_distances else None,
         "pairwise_design_distance_max": float(np.max(design_distances)) if design_distances else None,
         "pairwise_objective_distance_mean": objective_mean_distance,
-        "pairwise_objective_distance_max": float(np.max(objective_distances)) if objective_distances else None,
-        "agreement_status": "pass"
-        if enough and objective_mean_distance is not None and objective_mean_distance <= 0.20
-        else "fail" if feasible_runs else "insufficient_feasible_runs",
-        "agreement_rule": "at least 80% feasible runs and mean normalized cross-front distance <= 0.20",
+        "pairwise_objective_distance_max": max(
+            objective_metrics["pairwise_symmetric_distances"], default=None
+        ),
+        "agreement_status": (
+            "pass"
+            if objective_metrics["passed"]
+            else "fail"
+            if feasible_runs
+            else "insufficient_feasible_runs"
+        ),
+        "agreement_rule": "at least 80% feasible runs and mean normalized symmetric cross-front distance <= 0.20",
+        "objective_agreement": objective_metrics,
+        "objective_scale_context": "frozen_once_from_all_feasible_runs_for_this_profile",
     }
 
 

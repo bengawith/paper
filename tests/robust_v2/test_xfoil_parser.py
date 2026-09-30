@@ -8,6 +8,7 @@ from robust_airfoil.validation.xfoil_runner import (
     _comparison,
     _segment_status,
     _sweep_completion,
+    _unresolved_alphas,
     build_xfoil_commands,
 )
 
@@ -44,6 +45,12 @@ def test_xfoil_sweep_requires_coverage_and_span():
     assert expected == 11
     assert coverage > 0.8
     assert not complete
+
+
+def test_xfoil_retry_targets_only_missing_requested_alphas():
+    case = XFoilCase(Path("shape.dat"), 1e6, 0.0, 9.0, 0.0, 2.0, 1.0, 70, "positive")
+    missing = _unresolved_alphas(pd.DataFrame({"alpha_deg": [0.0, 2.0]}), case)
+    assert missing.tolist() == [1.0]
 
 
 def test_xfoil_segment_rejects_nonzero_exit_with_complete_polar():
