@@ -1,0 +1,104 @@
+{
+  "created_utc": "2026-09-25T07:23:27.937597+00:00",
+  "evaluation_scope": "frozen model; development-only Dummy baseline; untouched locked test",
+  "input_sha256": "8ca191bfc7d5b6e82827f3a90fdc0e7354fb45fb6c6ab7fe3b349583a4e901d2",
+  "locked_prediction_sha256": "aad0e8849ec431d36084fabfd63fad18241144158197491197a51a4dcef979b1",
+  "ml_gate_passed": true,
+  "model_id": "frozen-cluster-bootstrap-ensemble",
+  "model_sha256": "ec81faf59ff97b771c8675f3342151a94f7930d57bd6c41ba5f5e1af12c1913d",
+  "protocol_hash": "96127b1fcec8d07615f57953a484609be9945562d3a6e59d1f8a5ad71bfb0ac5",
+  "registered_evidence_scope": {
+    "acceptance_gate": "completed",
+    "external_held_out_benchmark": "not_run",
+    "learning_curve_10_25_50_100_200_full_three_seeds": "not_run",
+    "matched_solver_cost_study": "not_run",
+    "reason": "This artifact does not substitute unmeasured evidence with proxy claims."
+  },
+  "schema_version": "robust-v2-ml-evidence-v1",
+  "scientific_go_granted": false,
+  "split_manifest_sha256": "9c8c67b2625845f9da024dc671802275917b331042fc208b5b9339c7251f3dd8",
+  "status": "passed",
+  "target_metrics": {
+    "cl": {
+      "dummy_macro_error": 0.6516009180712926,
+      "evaluated_rows": 26692,
+      "independent_airfoil_groups": 233,
+      "macro_error_improvement_vs_dummy": 0.988520159299448,
+      "metric": "equal-airfoil-weight macro MSE on the locked test split",
+      "model_macro_error": 0.007480274739791797,
+      "paired_group_bootstrap_model_minus_dummy": {
+        "assumption": "independent_exchangeable_groups_established_by_caller",
+        "confidence": 0.95,
+        "estimand": "mean_group_average_left_minus_right_loss",
+        "group_count": 233,
+        "interval": [
+          -0.678716657240734,
+          -0.6091351194840359
+        ],
+        "mean_difference": -0.6441206433315007,
+        "negative_means_left_better": true,
+        "repetitions": 2000,
+        "row_count": 26692,
+        "seed": 20260908,
+        "status": "calculated"
+      }
+    },
+    "cm": {
+      "dummy_macro_error": 0.002784549432779783,
+      "evaluated_rows": 26692,
+      "independent_airfoil_groups": 233,
+      "macro_error_improvement_vs_dummy": 0.9187897146093889,
+      "metric": "equal-airfoil-weight macro MSE on the locked test split",
+      "model_macro_error": 0.00022613405412031027,
+      "paired_group_bootstrap_model_minus_dummy": {
+        "assumption": "independent_exchangeable_groups_established_by_caller",
+        "confidence": 0.95,
+        "estimand": "mean_group_average_left_minus_right_loss",
+        "group_count": 233,
+        "interval": [
+          -0.003102796988690514,
+          -0.0021303720674958624
+        ],
+        "mean_difference": -0.0025584153786594723,
+        "negative_means_left_better": true,
+        "repetitions": 2000,
+        "row_count": 26692,
+        "seed": 20260908,
+        "status": "calculated"
+      }
+    },
+    "log_cd": {
+      "dummy_macro_error": 0.725937077577133,
+      "evaluated_rows": 26692,
+      "independent_airfoil_groups": 233,
+      "macro_error_improvement_vs_dummy": 0.9208090828627665,
+      "metric": "equal-airfoil-weight macro MSE on the locked test split",
+      "model_macro_error": 0.05748762295725615,
+      "paired_group_bootstrap_model_minus_dummy": {
+        "assumption": "independent_exchangeable_groups_established_by_caller",
+        "confidence": 0.95,
+        "estimand": "mean_group_average_left_minus_right_loss",
+        "group_count": 233,
+        "interval": [
+          -0.709217819320771,
+          -0.631059303329872
+        ],
+        "mean_difference": -0.6684494546198768,
+        "negative_means_left_better": true,
+        "repetitions": 2000,
+        "row_count": 26692,
+        "seed": 20260908,
+        "status": "calculated"
+      }
+    }
+  },
+  "trust_domain": {
+    "calibration_empirical_95_interval_coverage": {
+      "cl": 0.9500612631344447,
+      "cm": 0.9500612631344447,
+      "log_cd": 0.9500612631344447
+    },
+    "calibration_trusted_fraction": 0.7020383915642521,
+    "locked_test_trusted_fraction": 0.660947100254758
+  }
+}

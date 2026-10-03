@@ -42,3 +42,4 @@ reports/robust_v2/lineages/**/logs/
 reports/robust_v2/lineages/**/viability/advanced_studies.json
 reports/robust_v2/lineages/**/viability/viability_report.json
 reports/robust_v2/lineages/**/run_state.json
+.opencode/

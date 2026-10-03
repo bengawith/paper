@@ -1,5 +1,7 @@
 # Risk-Aware Aerofoil Design under Manufacturing Uncertainty using a Trust-Calibrated Machine-Learning Surrogate and Multi-Fidelity Verification
 
+> **Uncorrected review draft.** Read [REVIEW_STATUS.md](REVIEW_STATUS.md) before relying on these claims. It identifies material interpretation errors and incomplete validation. This text is preserved for review, not approved for submission.
+
 ## Authors
 
 Benjamin Ian George Gawith ᵃ, *Ava Shahrokhi ᵇ, Keivan Navaie ᶜ

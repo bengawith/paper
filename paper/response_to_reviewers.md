@@ -1,5 +1,7 @@
 # Response to Reviewers
 
+> **Uncorrected review draft.** This response inherits unsupported claims from the manuscript. Read [REVIEW_STATUS.md](REVIEW_STATUS.md); do not send this response before the listed corrections and reference checks.
+
 **Manuscript (previous):** "Data-Driven Aerodynamic Prediction: High-Fidelity Lift Curve Estimation for Aerofoils Using Class-Shape Transformation and Artificial Intelligence" (EAAI-26-2180).
 
 **Resubmission (revised, retitled):** "Risk-Aware Aerofoil Design under Manufacturing Uncertainty using a Trust-Calibrated Machine-Learning Surrogate and Multi-Fidelity Verification."

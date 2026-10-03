@@ -1,5 +1,7 @@
 # Risk-Aware Aerofoil Design under Manufacturing Uncertainty
 
+> **Review draft, not submission-ready.** Read [paper/REVIEW_STATUS.md](paper/REVIEW_STATUS.md) first. Several scientific interpretations below and in the manuscript require correction against the raw evidence; earlier completion claims were overstated.
+
 **Trust-calibrated machine-learning surrogate, risk-aware optimisation, and multi-fidelity (XFOIL) verification for two-dimensional aerofoils.**
 
 This repository accompanies the manuscript
