@@ -24,11 +24,12 @@ via `paper/data/paper_data.json`, so no figure contains a number that is not bac
 | Figure | File | Shows |
 |---|---|---|
 | 1 | `fig_surrogate_accuracy.png` | Held-out surrogate accuracy for `C_L`, `C_D`, `C_M`, coloured by trust membership. |
-| 2 | `fig_manufacturing_risk.png` | Weighted-drag mean and CVaR₉₅ vs manufacturing amplitude, with trust-violation rate. |
+| 2 | `fig_manufacturing_risk.png` | Robust weighted-drag objective (expected and CVaR₉₅) and trust-exit fraction vs manufacturing amplitude. |
 | 3 | `fig_perturbation_validity.png` | Geometric admissibility of three perturbation models. |
-| 4 | `fig_pareto_front.png` | Risk-aware Pareto front with deterministic and robust optima. |
-| 5 | `fig_surrogate_trust_stress.png` | Adversarial disagreement vs trust domain. |
-| 6 | `fig_worstcase_polar.png` | Worst-case surrogate–XFOIL lift divergence (outside trust). |
+| 4 | `fig_pareto_front.png` | Aggregated surrogate robust front with minimum-expected and minimum-CVaR endpoints. |
+| 5 | `fig_design_verification.png` | Direct XFOIL verification: within-trust design beats NACA 2412; outside-trust optimum fails. |
+| 6 | `fig_surrogate_trust_stress.png` | Adversarial disagreement vs trust domain. |
+| 7 | `fig_worstcase_polar.png` | Worst-case surrogate–XFOIL lift divergence (outside trust). |
 
 ## Provenance
 

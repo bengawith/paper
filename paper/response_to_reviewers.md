@@ -1,6 +1,6 @@
 # Response to Reviewers
 
-> **Uncorrected review draft.** This response inherits unsupported claims from the manuscript. Read [REVIEW_STATUS.md](REVIEW_STATUS.md); do not send this response before the listed corrections and reference checks.
+> Read alongside [REVIEW_STATUS.md](REVIEW_STATUS.md), which documents how each internally-flagged issue was corrected. The central claim is settled by direct XFOIL verification. Journal choice and the prior venue's one-year resubmission restriction remain author decisions.
 
 **Manuscript (previous):** "Data-Driven Aerodynamic Prediction: High-Fidelity Lift Curve Estimation for Aerofoils Using Class-Shape Transformation and Artificial Intelligence" (EAAI-26-2180).
 
@@ -14,7 +14,7 @@ We thank the reviewers for their constructive assessment. The work has been subs
 
 > *"The authors fail to demonstrate the actual usefulness of the approach in a pre-design exploration application… it would be useful to implement an optimization task aimed at finding the airfoil that maximizes the difference between the results of their ML approximator and those obtained with XFOIL using the same CST parameterization."*
 
-This is now the centrepiece of the paper and has been implemented exactly as requested (Section 3.5, Section 4.5, Figures 5–6). An adversarial search over the CST design box, using XFOIL as the oracle and the identical CST parameterisation, locates the aerofoil maximising surrogate–solver lift disagreement. The key finding is that the worst-case disagreement (ΔC_L = 0.67) occurs entirely **outside** the surrogate's calibrated trust domain, whereas within the trust domain the disagreement collapses to 0.043—comparable to the locked-test lift MAE (0.057). The surrogate's worst case is thus predictable and bounded by the trust flag. Usefulness in a design application is demonstrated end-to-end through a manufacturing-aware robust optimisation whose outputs are XFOIL-verified (Sections 4.3–4.4).
+This is now the centrepiece of the paper and is implemented exactly as requested (Section 3.5, Section 4.5, Figures 6–7). An adversarial search over the CST design box, using XFOIL as the oracle and the identical CST parameterisation, locates the aerofoil maximising surrogate–solver lift disagreement. The worst case (ΔC_L = 0.67) occurs entirely outside the surrogate's calibrated trust domain, whereas within the trust domain the disagreement collapses to 0.043. We go further and make the design consequence explicit (Section 4.4): a surrogate-optimised aerofoil that sits outside the trust domain is verified by XFOIL to be 88% worse than a NACA 2412 reference, while a design constrained to the trust domain is verified to be 18.7% better at nominal conditions and 11.7% better in expectation under manufacturing uncertainty. Usefulness is thus demonstrated, and the surrogate's worst case is shown to be bounded by the trust flag.
 
 > *"the work is characterized by many repetitions and redundancies, which make it difficult to read."*
 

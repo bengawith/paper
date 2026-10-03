@@ -38,6 +38,7 @@ results/robust_v2/xfoil_candidates/*/
 results/robust_v2/lineages/**/surrogate_stress/*/
 results/robust_v2/lineages/**/xfoil_canaries/*/
 results/robust_v2/lineages/**/xfoil_candidates/*/
+results/robust_v2/lineages/**/design_verification/*/
 reports/robust_v2/lineages/**/logs/
 reports/robust_v2/lineages/**/viability/advanced_studies.json
 reports/robust_v2/lineages/**/viability/viability_report.json

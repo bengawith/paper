@@ -1,6 +1,6 @@
 # Risk-Aware Aerofoil Design under Manufacturing Uncertainty
 
-> **Review draft, not submission-ready.** Read [paper/REVIEW_STATUS.md](paper/REVIEW_STATUS.md) first. Several scientific interpretations below and in the manuscript require correction against the raw evidence; earlier completion claims were overstated.
+> **Revised, corrected study.** See [paper/REVIEW_STATUS.md](paper/REVIEW_STATUS.md) for how the earlier flagged issues were resolved. The central claim is now settled by direct XFOIL verification. Journal selection and the prior venue's one-year resubmission restriction remain author decisions.
 
 **Trust-calibrated machine-learning surrogate, risk-aware optimisation, and multi-fidelity (XFOIL) verification for two-dimensional aerofoils.**
 
@@ -34,13 +34,13 @@ XFOIL panel solver**. The three contributions are:
 | Result | Value |
 |---|---|
 | Surrogate accuracy, held-out (26,692 states, 233 aerofoils) | `C_L` R²=0.989, `log C_D` R²=0.922, `C_M` R²=0.918 |
+| Held-out 95%-band coverage within trust (C_L/C_D/C_M) | 0.978 / 0.965 / 0.992 |
 | Accuracy inside vs outside trust domain (`C_L` MAE) | 0.040 vs 0.090 |
-| Manufacturing drag risk, 0.1% → 1% chord | mean 0.0080 → 0.0099; CVaR₉₅ 0.0082 → 0.0158 |
-| Physical admissibility of perturbation models (1% chord) | smooth-normal 100% vs independent-coordinate 0.3% |
-| Deterministic vs robust optimum | E `C_D` 0.00667 / 0.00719; CVaR₉₅ 0.00791 / 0.00781 |
-| Surrogate vs XFOIL design ranking | Spearman ρ = 1.00 |
+| Within-trust robust design vs NACA 2412 (XFOIL, nominal) | −18.7% weighted drag (0.00605 vs 0.00745) |
+| Within-trust design, expected drag under 1% mfg deviation | −11.7%; paired +0.00098, 95% CI [0.00062, 0.00131] |
+| Outside-trust surrogate "optimum" vs NACA 2412 (XFOIL) | +88% nominal weighted drag (fails verification) |
 | Adversarial worst-case ΔC_L (outside trust) | 0.67, vs 0.04 inside trust |
-| Inference speed (5-member ensemble, GTX 1660) | 0.009 ms/state (≈1.1×10⁵ states/s) |
+| Inference speed (5-member ensemble, GTX 1660) | 0.009 ms/state batched (≈1.1×10⁵ states/s) |
 
 All numbers are drawn from the durable evidence artefacts of study lineage
 `robust-v2-current-20260908` and consolidated in
@@ -79,6 +79,9 @@ uv run robust-airfoil model evidence
 
 # reviewer-directed adversarial surrogate-vs-XFOIL search (requires local XFOIL 6.99)
 uv run robust-airfoil validate stress --lineage-id robust-v2-current-20260908
+
+# direct, correctly-signed XFOIL verification of within-trust vs outside-trust designs
+uv run python scripts/robust_v2/verify_designs_xfoil.py
 
 # benchmark inference speed and regenerate all manuscript figures from committed data
 uv run python scripts/robust_v2/benchmark_inference.py

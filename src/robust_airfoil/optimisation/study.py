@@ -23,6 +23,7 @@ from robust_airfoil.geometry.metrics import geometry_metrics
 from robust_airfoil.geometry.normalise import resample_surfaces_to_common_x
 from robust_airfoil.geometry.validity import validate_geometry
 from robust_airfoil.hashing import hash_object, sha256_bytes, sha256_file
+from robust_airfoil.modelling.calibrate import trust_thresholds
 from robust_airfoil.modelling.dataset import FEATURE_COLUMNS
 from robust_airfoil.modelling.ensemble import LoadedEnsemble
 from robust_airfoil.modelling.evaluate import cvar
@@ -135,11 +136,9 @@ class RobustCandidateEvaluator:
         self.support_tree = cKDTree(support_features)
         self.feature_center = scaling.feature_center
         self.feature_scale = scaling.feature_scale
-        self.support_threshold = float(calibration["support_distance_quantiles"]["0.99"])
-        self.disagreement_thresholds = {
-            target: float(values["0.99"])
-            for target, values in calibration["ensemble_disagreement_quantiles"].items()
-        }
+        self.support_threshold, self.disagreement_thresholds, self.alpha_coverage = trust_thresholds(
+            calibration
+        )
         reference_prediction = ensemble.predict(_frame(reference_parameters[None, :], self.alpha))
         self.reference_cm = float(reference_prediction["prediction_cm"].mean())
         self.counters = {
@@ -506,7 +505,7 @@ def _run_nsga_profile(
     development_matrix = development_points[FEATURE_COLUMNS].to_numpy(float)
     cache_context_hash = hash_object(
         {
-            "objective_schema_version": 2,
+            "objective_schema_version": 3,
             "profile_name": name,
             "profile": profile.model_dump(mode="json"),
             "optimisation": optimisation.model_dump(mode="json"),

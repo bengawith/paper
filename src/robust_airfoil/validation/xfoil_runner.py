@@ -92,6 +92,19 @@ def _sweep_completion(points: pd.DataFrame, case: XFoilCase) -> tuple[int, float
     return len(targets), float(matched.mean()), bool(matched[0] and matched[-1])
 
 
+def _valid_aero_points(points: pd.DataFrame) -> pd.DataFrame:
+    """Keep only complete, finite, positive-drag aerodynamic rows.
+
+    Coverage and success must never be credited to a printed but non-converged
+    row (NaN or missing coefficient) or to a physically impossible nonpositive
+    drag value.
+    """
+    if not len(points) or not {"alpha_deg", "cl", "cd", "cm"}.issubset(points.columns):
+        return points.iloc[0:0]
+    finite = np.isfinite(points[["alpha_deg", "cl", "cd", "cm"]].to_numpy(float)).all(axis=1)
+    return points.loc[finite & (points["cd"].to_numpy(float) > 0)]
+
+
 def _unresolved_alphas(points: pd.DataFrame, case: XFoilCase) -> np.ndarray:
     """Return requested targets not represented by a valid direct-solver row."""
     targets = _requested_alpha_grid(case)
@@ -306,30 +319,36 @@ def run_xfoil(
         parsed.to_csv(combined_path, index=False)
     failed_segments = [index for index, result in enumerate(results) if result.status != "ok"]
     failed_retries = [index for index, result in enumerate(retry_results) if result.status != "ok"]
-    expected_points, convergence_fraction, span_complete = _sweep_completion(parsed, case)
+    all_results = [*results, *retry_results]
+    return_codes = [result.return_code for result in all_results if result.return_code is not None]
+    clean_exit = (
+        len(return_codes) == len(all_results)
+        and not any(result.timed_out for result in all_results)
+        and all(code == 0 for code in return_codes)
+    )
+    # Coverage must be assessed only over rows that are complete, finite aerodynamic
+    # solutions with positive drag; a printed but non-converged row, or a clean grid
+    # reached under a nonzero solver exit or timeout, can never count as success.
+    valid_parsed = _valid_aero_points(parsed)
+    expected_points, convergence_fraction, span_complete = _sweep_completion(valid_parsed, case)
     status = (
         "ok"
-        if convergence_fraction == 1.0 and span_complete
+        if convergence_fraction == 1.0 and span_complete and clean_exit and not failed_retries
         else "failed"
     )
     reason = (
         None
         if status == "ok"
         else (
-            f"incomplete sweep: {len(parsed)}/{expected_points} points, "
+            f"incomplete sweep: {len(valid_parsed)}/{expected_points} valid points, "
             f"coverage={convergence_fraction:.3f}, span_complete={span_complete}, "
-            f"failed_segments={failed_segments}, failed_retries={failed_retries}"
+            f"clean_exit={clean_exit}, failed_segments={failed_segments}, "
+            f"failed_retries={failed_retries}"
         )
     )
-    all_results = [*results, *retry_results]
-    return_codes = [result.return_code for result in all_results if result.return_code is not None]
     return XFoilResult(
         status,
-        0
-        if len(return_codes) == len(all_results)
-        and not any(result.timed_out for result in all_results)
-        and all(code == 0 for code in return_codes)
-        else None,
+        0 if clean_exit else None,
         any(result.timed_out for result in all_results),
         command_text,
         stdout_path,

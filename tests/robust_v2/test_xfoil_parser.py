@@ -9,6 +9,7 @@ from robust_airfoil.validation.xfoil_runner import (
     _segment_status,
     _sweep_completion,
     _unresolved_alphas,
+    _valid_aero_points,
     build_xfoil_commands,
 )
 
@@ -51,6 +52,25 @@ def test_xfoil_retry_targets_only_missing_requested_alphas():
     case = XFoilCase(Path("shape.dat"), 1e6, 0.0, 9.0, 0.0, 2.0, 1.0, 70, "positive")
     missing = _unresolved_alphas(pd.DataFrame({"alpha_deg": [0.0, 2.0]}), case)
     assert missing.tolist() == [1.0]
+
+
+def test_valid_aero_points_excludes_nonconverged_and_nonpositive_drag():
+    case = XFoilCase(Path("shape.dat"), 1e6, 0.0, 9.0, 0.0, 2.0, 1.0, 70, "positive")
+    points = pd.DataFrame(
+        {
+            "alpha_deg": [0.0, 1.0, 2.0],
+            "cl": [0.2, float("nan"), 0.6],  # 1 deg printed but non-converged
+            "cd": [0.01, 0.011, 0.0],  # 2 deg has non-physical zero drag
+            "cm": [-0.05, -0.05, -0.05],
+        }
+    )
+    valid = _valid_aero_points(points)
+    assert valid["alpha_deg"].tolist() == [0.0]
+    # Coverage computed on valid rows alone must not reach full span.
+    _, coverage, span_complete = _sweep_completion(valid, case)
+    assert coverage < 1.0
+    assert span_complete is False
+
 
 
 def test_xfoil_segment_rejects_nonzero_exit_with_complete_polar():

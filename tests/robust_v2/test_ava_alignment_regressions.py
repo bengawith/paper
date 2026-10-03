@@ -1,18 +1,25 @@
 """Software-only arithmetic/format fixtures; none are aerodynamic training data."""
 from pathlib import Path
+
 import numpy as np
 import pandas as pd
 import pytest
 import torch
+
 import robust_airfoil.pipeline as pipeline
 from robust_airfoil.data.polar_parser import parse_polar_text, validate_polar_conditions
 from robust_airfoil.data.splits import assert_locked_test_access
 from robust_airfoil.modelling.evaluate import cvar
 from robust_airfoil.modelling.freeze import freeze_artifacts, verify_frozen_artifacts
 from robust_airfoil.modelling.train import _batch_loss
-from robust_airfoil.optimisation.objectives import ava_lift_sensitivity, required_lift_drag, robust_drag_objectives
+from robust_airfoil.optimisation.objectives import (
+    ava_lift_sensitivity,
+    required_lift_drag,
+    robust_drag_objectives,
+)
 from robust_airfoil.run_state import RunState
 from robust_airfoil.validation.xfoil_runner import XFoilCase, _segment_status, _sweep_completion
+
 
 def case(start=0.0, end=2.0, step=1.0):
     return XFoilCase(Path('unused.dat'), 1000000.0, 0.0, 9.0, start, end, step, 70, 'test')

@@ -123,6 +123,32 @@ def calibrate_trust_model(
     return payload
 
 
+def trust_thresholds(
+    calibration: dict[str, Any],
+) -> tuple[float, dict[str, float], tuple[float, float]]:
+    """Return the single, authoritative trust thresholds for a calibration.
+
+    Both the online trust model and the optimisation evaluator must consult this
+    helper so the operating definition of "within trust" cannot silently diverge
+    between where the surrogate is characterised and where it is used to design.
+    The thresholds are the residual-tolerance-calibrated support distance, the
+    per-target ensemble-disagreement limits, and the angle-of-attack coverage.
+    """
+    support = float(
+        calibration["support_distance_quantiles"]["trusted_threshold_from_residual_tolerance"]
+    )
+    disagreement = {
+        target: float(
+            calibration["ensemble_disagreement_quantiles"][target][
+                "trusted_threshold_from_residual_tolerance"
+            ]
+        )
+        for target in TARGET_COLUMNS
+    }
+    alpha_min, alpha_max = calibration["alpha_coverage_deg"]
+    return support, disagreement, (float(alpha_min), float(alpha_max))
+
+
 def apply_trust_model(
     development_points: pd.DataFrame,
     predictions: pd.DataFrame,
@@ -133,14 +159,10 @@ def apply_trust_model(
     development_features = (development_points[FEATURE_COLUMNS].to_numpy(float) - scaling.feature_center) / scaling.feature_scale
     query_features = (result[FEATURE_COLUMNS].to_numpy(float) - scaling.feature_center) / scaling.feature_scale
     result["support_distance"] = support_distance(development_features, query_features)
-    support_quantiles = calibration["support_distance_quantiles"]
-    disagreement_quantiles = calibration["ensemble_disagreement_quantiles"]
-    alpha_min, alpha_max = calibration["alpha_coverage_deg"]
-    trusted = result["support_distance"].to_numpy(float) <= float(support_quantiles["trusted_threshold_from_residual_tolerance"])
-    trusted &= result["alpha_deg"].between(float(alpha_min), float(alpha_max)).to_numpy()
+    support_threshold, disagreement_thresholds, (alpha_min, alpha_max) = trust_thresholds(calibration)
+    trusted = result["support_distance"].to_numpy(float) <= support_threshold
+    trusted &= result["alpha_deg"].between(alpha_min, alpha_max).to_numpy()
     for target in TARGET_COLUMNS:
-        trusted &= result[f"ensemble_std_{target}"].to_numpy(float) <= float(
-            disagreement_quantiles[target]["trusted_threshold_from_residual_tolerance"]
-        )
+        trusted &= result[f"ensemble_std_{target}"].to_numpy(float) <= disagreement_thresholds[target]
     result["trusted_domain"] = trusted
     return result
