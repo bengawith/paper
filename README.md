@@ -38,7 +38,7 @@ XFOIL panel solver**. The three contributions are:
 | Accuracy inside vs outside trust domain (`C_L` MAE) | 0.040 vs 0.090 |
 | Within-trust robust design vs NACA 2412 (XFOIL, nominal) | −18.7% weighted drag (0.00605 vs 0.00745) |
 | Within-trust design, expected drag under 1% mfg deviation | −11.7%; paired +0.00098, 95% CI [0.00062, 0.00131] |
-| Outside-trust surrogate "optimum" vs NACA 2412 (XFOIL) | +88% nominal weighted drag (fails verification) |
+| Outside-trust surrogate "optimum" vs NACA 2412 (XFOIL) | +87% nominal weighted drag (fails verification) |
 | Adversarial worst-case ΔC_L (outside trust) | 0.67, vs 0.04 inside trust |
 | Inference speed (5-member ensemble, GTX 1660) | 0.009 ms/state batched (≈1.1×10⁵ states/s) |
 

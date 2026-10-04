@@ -4,7 +4,7 @@
 
 ## How each prior-flagged item was resolved
 
-1. **XFOIL drag sign (was inverted).** Resolved. A fresh, correctly-signed verification (`results/.../design_verification/`, `scripts/robust_v2/verify_designs_xfoil.py`) compares the NACA 2412 reference against a within-trust design and an outside-trust design. The sign convention is stated explicitly (positive = lower drag than reference). The outside-trust surrogate "optimum" is now correctly reported as **worse** than the reference (nominal +88%), and the within-trust design as **better** (nominal −18.7%, expected −11.7%, paired +0.00098, 95% CI [0.00062, 0.00131]).
+1. **XFOIL drag sign (was inverted).** Resolved. A fresh, correctly-signed verification (`results/.../design_verification/`, `scripts/robust_v2/verify_designs_xfoil.py`) compares the NACA 2412 reference against a within-trust design and an outside-trust design. The sign convention is stated explicitly (positive = lower drag than reference). The outside-trust surrogate "optimum" is now correctly reported as **worse** than the reference (nominal +87%), and the within-trust design as **better** (nominal −18.7%, expected −11.7%, paired +0.00098, 95% CI [0.00062, 0.00131]).
 
 2. **Rank correlation rested on two designs.** Resolved by replacing the two-design nominal ranking with the three-design, matched-perturbation verification above (15–16 converged shared samples per design, paired bootstrap intervals). The weak two-point Spearman claim has been removed.
 
