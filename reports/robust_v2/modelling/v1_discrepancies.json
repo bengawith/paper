@@ -1,0 +1,12 @@
+{
+  "confirmed": [
+    "train_best_model.py unpacks compare_physical_metrics as three values but utility returns one dictionary",
+    "physics_aware_tuner.py passes unsupported use_distance_features argument",
+    "physics_aware_tuner.py masked evaluation unpacks a three-item batch twice, second time into two values",
+    "reported full dataset count 1569 conflicts with committed CSV row count 1568",
+    "reported full-dataset StandardScaler conflicts with train-only RobustScaler model artifact",
+    "random final split is not geometry-cluster leakage resistant"
+  ],
+  "exact_reproduction_status": "held",
+  "reason": "checked-in historical training entrypoints contain confirmed runtime defects and omit exact split indices/scaler provenance"
+}

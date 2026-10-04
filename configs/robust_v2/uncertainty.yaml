@@ -1,0 +1,16 @@
+seed: 20260824
+representation: smooth_correlated_surface_normal
+cosine_points_per_surface: 201
+basis_control_points_per_surface: 8
+correlation_length_chord: 0.15
+upper_lower_correlation: 0.0
+leading_edge_taper: true
+trailing_edge_zero_displacement: true
+# Selected after inspecting the full 2,048-sample refit-error distribution at all
+# four amplitudes; retains at least 94% of smooth-field samples at 1% chord.
+maximum_cst_refit_error_fraction_chord: 0.005
+amplitudes_fraction_chord: [0.001, 0.0025, 0.005, 0.01]
+optimisation_samples: {method: scrambled_sobol, count: 64, common_random_numbers: true, antithetic: true}
+final_evaluation_samples: {method: scrambled_sobol, count: 2048}
+convergence_counts: [16, 32, 64, 128, 256, 512, 1024, 2048]
+ablations: [independent_multiplicative_cst, independent_coordinate_noise, smooth_correlated_surface_normal]

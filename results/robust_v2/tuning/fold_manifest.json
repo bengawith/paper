@@ -1,0 +1,5482 @@
+{
+  "folds": 3,
+  "records": [
+    {
+      "airfoil_id": "a18",
+      "cluster_id": 0,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "a18sm",
+      "cluster_id": 1,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "a63a108c",
+      "cluster_id": 2,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "ag03",
+      "cluster_id": 3,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "ag04",
+      "cluster_id": 4,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "ag08",
+      "cluster_id": 5,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "ag10",
+      "cluster_id": 7,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "ag13",
+      "cluster_id": 10,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "ag14",
+      "cluster_id": 11,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "ag17",
+      "cluster_id": 13,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "ag18",
+      "cluster_id": 14,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "ag25",
+      "cluster_id": 17,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "ag26",
+      "cluster_id": 18,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "ag27",
+      "cluster_id": 19,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "ag35",
+      "cluster_id": 20,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "ag44ct02r",
+      "cluster_id": 24,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "ag455ct02r",
+      "cluster_id": 25,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "ag45c03",
+      "cluster_id": 26,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "ag46ct02r",
+      "cluster_id": 29,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "ag47c03",
+      "cluster_id": 30,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "ag47ct02r",
+      "cluster_id": 31,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "ah219",
+      "cluster_id": 33,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "ah7476",
+      "cluster_id": 36,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "ah79100a",
+      "cluster_id": 37,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "ah79100b",
+      "cluster_id": 38,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "ah79100c",
+      "cluster_id": 39,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "ah79k132",
+      "cluster_id": 40,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "ah79k135",
+      "cluster_id": 41,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "ah80129",
+      "cluster_id": 43,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "ah80136",
+      "cluster_id": 44,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "ah80140",
+      "cluster_id": 45,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "ah81131",
+      "cluster_id": 46,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "ah81k144",
+      "cluster_id": 47,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "ah81k144wfklappe",
+      "cluster_id": 48,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "ah82150a",
+      "cluster_id": 49,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "ah83150q",
+      "cluster_id": 51,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "ah83159",
+      "cluster_id": 52,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "ah85l120",
+      "cluster_id": 53,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "ah88k130",
+      "cluster_id": 54,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "ah88k136",
+      "cluster_id": 55,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "ah93k130",
+      "cluster_id": 58,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "ah93k131",
+      "cluster_id": 59,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "ah93w145",
+      "cluster_id": 61,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "ah93w174",
+      "cluster_id": 62,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "ah93w215",
+      "cluster_id": 63,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "ah93w257",
+      "cluster_id": 64,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "ah93w300",
+      "cluster_id": 65,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "ah93w480b",
+      "cluster_id": 66,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "ah94145",
+      "cluster_id": 67,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "ah94156",
+      "cluster_id": 68,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "ah94w301",
+      "cluster_id": 69,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "ah95160",
+      "cluster_id": 70,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "ames01",
+      "cluster_id": 71,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "ames02",
+      "cluster_id": 2,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "ames03",
+      "cluster_id": 72,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "amsoil1",
+      "cluster_id": 73,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "amsoil2",
+      "cluster_id": 74,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "apex16",
+      "cluster_id": 75,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "aquilasm",
+      "cluster_id": 76,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "arad20",
+      "cluster_id": 79,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "arad6",
+      "cluster_id": 80,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "as5045",
+      "cluster_id": 81,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "as5048",
+      "cluster_id": 83,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "avistar",
+      "cluster_id": 86,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "b29root",
+      "cluster_id": 87,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "b29tip",
+      "cluster_id": 88,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "b707b",
+      "cluster_id": 91,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "b707d",
+      "cluster_id": 93,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "b737a",
+      "cluster_id": 95,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "b737c",
+      "cluster_id": 97,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "bacxxx",
+      "cluster_id": 101,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "be50",
+      "cluster_id": 103,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "be50sm",
+      "cluster_id": 104,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "boe103",
+      "cluster_id": 105,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "bqm34",
+      "cluster_id": 107,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "bw3",
+      "cluster_id": 108,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "c141a",
+      "cluster_id": 109,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "c141b",
+      "cluster_id": 110,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "c141c",
+      "cluster_id": 111,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "c141d",
+      "cluster_id": 112,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "c141e",
+      "cluster_id": 113,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "c141f",
+      "cluster_id": 114,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "c5a",
+      "cluster_id": 115,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "c5b",
+      "cluster_id": 116,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "c5c",
+      "cluster_id": 117,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "c5d",
+      "cluster_id": 118,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "c5e",
+      "cluster_id": 119,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "cap21c",
+      "cluster_id": 120,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "cast102",
+      "cluster_id": 121,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "chen",
+      "cluster_id": 123,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "clarkk",
+      "cluster_id": 124,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "clarkx",
+      "cluster_id": 127,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "clarky",
+      "cluster_id": 128,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "clarkyh",
+      "cluster_id": 129,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "clarkys",
+      "cluster_id": 130,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "clarkysm",
+      "cluster_id": 131,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "clarkz",
+      "cluster_id": 132,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "clarym15",
+      "cluster_id": 133,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "clarym18",
+      "cluster_id": 134,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "coanda1",
+      "cluster_id": 135,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "coanda2",
+      "cluster_id": 136,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "coanda3",
+      "cluster_id": 137,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "cr1",
+      "cluster_id": 140,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "curtisc72",
+      "cluster_id": 141,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "dae21",
+      "cluster_id": 143,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "dae31",
+      "cluster_id": 144,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "dae51",
+      "cluster_id": 145,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "davissm",
+      "cluster_id": 148,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "daytonwright6",
+      "cluster_id": 149,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "daytonwrightt1",
+      "cluster_id": 150,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "defcnd1",
+      "cluster_id": 152,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "defcnd2",
+      "cluster_id": 153,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "df101",
+      "cluster_id": 155,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "df102",
+      "cluster_id": 156,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "dfvlrr4",
+      "cluster_id": 157,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "dga1138",
+      "cluster_id": 158,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "dga1182",
+      "cluster_id": 159,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "dh4009sm",
+      "cluster_id": 160,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "doa5",
+      "cluster_id": 161,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "dsma523b",
+      "cluster_id": 165,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "du84132v",
+      "cluster_id": 166,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "du8608418",
+      "cluster_id": 167,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "du861372",
+      "cluster_id": 168,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "e1098",
+      "cluster_id": 169,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "e1200",
+      "cluster_id": 170,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "e1210",
+      "cluster_id": 171,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "e1212",
+      "cluster_id": 173,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "e1212mod",
+      "cluster_id": 174,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "e1214",
+      "cluster_id": 176,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "e1230",
+      "cluster_id": 177,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "e1233",
+      "cluster_id": 178,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "e168",
+      "cluster_id": 179,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "e169",
+      "cluster_id": 180,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "e171",
+      "cluster_id": 181,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "e176",
+      "cluster_id": 183,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "e180",
+      "cluster_id": 185,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "e182",
+      "cluster_id": 186,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "e184",
+      "cluster_id": 187,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "e186",
+      "cluster_id": 188,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "e193",
+      "cluster_id": 189,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "e195",
+      "cluster_id": 190,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "e197",
+      "cluster_id": 191,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "e201",
+      "cluster_id": 192,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "e203",
+      "cluster_id": 193,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "e205",
+      "cluster_id": 194,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "e209",
+      "cluster_id": 196,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "e210",
+      "cluster_id": 197,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "e211",
+      "cluster_id": 198,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "e214",
+      "cluster_id": 200,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "e216",
+      "cluster_id": 201,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "e222",
+      "cluster_id": 204,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "e224",
+      "cluster_id": 205,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "e226",
+      "cluster_id": 206,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "e266",
+      "cluster_id": 210,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "e297",
+      "cluster_id": 211,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "e325",
+      "cluster_id": 212,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "e326",
+      "cluster_id": 213,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "e327",
+      "cluster_id": 214,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "e328",
+      "cluster_id": 215,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "e329",
+      "cluster_id": 216,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "e331",
+      "cluster_id": 218,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "e332",
+      "cluster_id": 219,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "e334",
+      "cluster_id": 221,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "e335",
+      "cluster_id": 222,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "e337",
+      "cluster_id": 224,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "e340",
+      "cluster_id": 227,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "e341",
+      "cluster_id": 228,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "e343",
+      "cluster_id": 230,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "e344",
+      "cluster_id": 231,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "e360",
+      "cluster_id": 232,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "e361",
+      "cluster_id": 233,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "e374",
+      "cluster_id": 234,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "e376",
+      "cluster_id": 235,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "e377m",
+      "cluster_id": 237,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "e379",
+      "cluster_id": 239,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "e387",
+      "cluster_id": 241,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "e392",
+      "cluster_id": 242,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "e393",
+      "cluster_id": 243,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "e395",
+      "cluster_id": 244,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "e396",
+      "cluster_id": 245,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "e398",
+      "cluster_id": 247,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "e399",
+      "cluster_id": 248,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "e407",
+      "cluster_id": 250,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "e417",
+      "cluster_id": 251,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "e420",
+      "cluster_id": 252,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "e423",
+      "cluster_id": 255,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "e426",
+      "cluster_id": 256,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "e428",
+      "cluster_id": 257,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "e431",
+      "cluster_id": 258,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "e471",
+      "cluster_id": 263,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "e472",
+      "cluster_id": 264,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "e473",
+      "cluster_id": 265,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "e479",
+      "cluster_id": 268,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "e485",
+      "cluster_id": 269,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "e49",
+      "cluster_id": 270,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "e502",
+      "cluster_id": 271,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "e520",
+      "cluster_id": 272,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "e521",
+      "cluster_id": 273,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "e542",
+      "cluster_id": 276,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "e544",
+      "cluster_id": 278,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "e545",
+      "cluster_id": 279,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "e546",
+      "cluster_id": 280,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "e547",
+      "cluster_id": 281,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "e548",
+      "cluster_id": 282,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "e552",
+      "cluster_id": 286,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "e555",
+      "cluster_id": 289,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "e556",
+      "cluster_id": 290,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "e557",
+      "cluster_id": 291,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "e558",
+      "cluster_id": 292,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "e559",
+      "cluster_id": 293,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "e560",
+      "cluster_id": 294,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "e561",
+      "cluster_id": 295,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "e562",
+      "cluster_id": 296,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "e58",
+      "cluster_id": 297,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "e580",
+      "cluster_id": 298,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "e582",
+      "cluster_id": 299,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "e583",
+      "cluster_id": 300,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "e584",
+      "cluster_id": 301,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "e585",
+      "cluster_id": 302,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "e587",
+      "cluster_id": 303,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "e593",
+      "cluster_id": 306,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "e598",
+      "cluster_id": 307,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "e604",
+      "cluster_id": 309,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "e625",
+      "cluster_id": 312,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "e63",
+      "cluster_id": 313,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "e635",
+      "cluster_id": 314,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "e638",
+      "cluster_id": 317,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "e639",
+      "cluster_id": 318,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "e64",
+      "cluster_id": 319,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "e642",
+      "cluster_id": 320,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "e654",
+      "cluster_id": 321,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "e656",
+      "cluster_id": 323,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "e657",
+      "cluster_id": 324,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "e66",
+      "cluster_id": 325,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "e662",
+      "cluster_id": 326,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "e664",
+      "cluster_id": 327,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "e668",
+      "cluster_id": 328,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "e67",
+      "cluster_id": 329,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "e678",
+      "cluster_id": 330,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "e682",
+      "cluster_id": 332,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "e694",
+      "cluster_id": 333,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "e71",
+      "cluster_id": 334,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "e748",
+      "cluster_id": 336,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "e793",
+      "cluster_id": 337,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "e817",
+      "cluster_id": 338,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "e837",
+      "cluster_id": 341,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "e838",
+      "cluster_id": 342,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "e850",
+      "cluster_id": 343,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "e851",
+      "cluster_id": 344,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "e852",
+      "cluster_id": 345,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "e854",
+      "cluster_id": 347,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "e856",
+      "cluster_id": 349,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "e857",
+      "cluster_id": 350,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "e858",
+      "cluster_id": 351,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "e862",
+      "cluster_id": 352,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "e864",
+      "cluster_id": 354,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "e874",
+      "cluster_id": 355,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "e904",
+      "cluster_id": 356,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "ea61009",
+      "cluster_id": 358,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "ea61012",
+      "cluster_id": 359,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "ea81006",
+      "cluster_id": 360,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "ebambino7",
+      "cluster_id": 361,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "ec863914",
+      "cluster_id": 362,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "eh0009",
+      "cluster_id": 363,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "eh1070",
+      "cluster_id": 364,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "eh1090",
+      "cluster_id": 365,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "eh1590",
+      "cluster_id": 366,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "eh2012",
+      "cluster_id": 368,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "eh2070",
+      "cluster_id": 369,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "eh2510",
+      "cluster_id": 370,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "eiffel10",
+      "cluster_id": 372,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "eiffel371",
+      "cluster_id": 373,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "eiffel385",
+      "cluster_id": 374,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "eiffel430",
+      "cluster_id": 376,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "esa40",
+      "cluster_id": 377,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "fauvel",
+      "cluster_id": 379,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "fg1",
+      "cluster_id": 380,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "fg3",
+      "cluster_id": 382,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "fg4",
+      "cluster_id": 383,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "fx05191",
+      "cluster_id": 386,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "fx057816",
+      "cluster_id": 387,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "fx082512",
+      "cluster_id": 389,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "fx08s176",
+      "cluster_id": 390,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "fx2",
+      "cluster_id": 391,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "fx38153",
+      "cluster_id": 393,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "fx60100",
+      "cluster_id": 394,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "fx601001",
+      "cluster_id": 395,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "fx60126",
+      "cluster_id": 397,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "fx601261",
+      "cluster_id": 398,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "fx61140",
+      "cluster_id": 402,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "fx61163",
+      "cluster_id": 404,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "fx61168",
+      "cluster_id": 405,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "fx61184",
+      "cluster_id": 406,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "fx62k153",
+      "cluster_id": 408,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "fx63110",
+      "cluster_id": 410,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "fx63137",
+      "cluster_id": 412,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "fx63137sm",
+      "cluster_id": 413,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "fx63143",
+      "cluster_id": 414,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "fx63145",
+      "cluster_id": 415,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "fx63147",
+      "cluster_id": 416,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "fx63158",
+      "cluster_id": 417,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "fx6617a2",
+      "cluster_id": 418,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "fx66182",
+      "cluster_id": 420,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "fx66196v",
+      "cluster_id": 421,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "fx66a175",
+      "cluster_id": 422,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "fx66s196",
+      "cluster_id": 427,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "fx67k150",
+      "cluster_id": 428,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "fx68h120",
+      "cluster_id": 430,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "fx69274",
+      "cluster_id": 431,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "fx69h083",
+      "cluster_id": 432,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "fx69pr281",
+      "cluster_id": 434,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "fx71120",
+      "cluster_id": 436,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "fx711520",
+      "cluster_id": 437,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "fx711530",
+      "cluster_id": 439,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "fx71l150",
+      "cluster_id": 439,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "fx72150a",
+      "cluster_id": 440,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "fx73cl3152",
+      "cluster_id": 446,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "fx74080",
+      "cluster_id": 448,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "fx74130wp1",
+      "cluster_id": 449,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "fx74modsm",
+      "cluster_id": 454,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "fx75193",
+      "cluster_id": 456,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "fx75vg166",
+      "cluster_id": 457,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "fx76100",
+      "cluster_id": 458,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "fx76120",
+      "cluster_id": 459,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "fx77w121",
+      "cluster_id": 464,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "fx77w153",
+      "cluster_id": 465,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "fx77w258",
+      "cluster_id": 466,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "fx77w270",
+      "cluster_id": 467,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "fx77w343",
+      "cluster_id": 469,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "fx78k140",
+      "cluster_id": 470,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "fx78k150",
+      "cluster_id": 472,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "fx78k161",
+      "cluster_id": 473,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "fx78pk188",
+      "cluster_id": 474,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "fx79l120",
+      "cluster_id": 477,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "fx80080",
+      "cluster_id": 480,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "fx83w160",
+      "cluster_id": 482,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "fx83w227",
+      "cluster_id": 483,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "fx84w097",
+      "cluster_id": 484,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "fx84w127",
+      "cluster_id": 485,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "fx84w140",
+      "cluster_id": 486,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "fx84w175",
+      "cluster_id": 488,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "fxlv152",
+      "cluster_id": 491,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "fxm2",
+      "cluster_id": 492,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "fxs02196",
+      "cluster_id": 493,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "fxs03182",
+      "cluster_id": 494,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "fxs21158",
+      "cluster_id": 495,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "geminism",
+      "cluster_id": 496,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "giiia",
+      "cluster_id": 497,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "giiic",
+      "cluster_id": 499,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "giiid",
+      "cluster_id": 500,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "giiie",
+      "cluster_id": 501,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "giiif",
+      "cluster_id": 502,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "giiig",
+      "cluster_id": 503,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "giiii",
+      "cluster_id": 505,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "giiil",
+      "cluster_id": 508,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "giiim",
+      "cluster_id": 509,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "giiin",
+      "cluster_id": 510,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "glennmartin2",
+      "cluster_id": 511,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "glennmartin4",
+      "cluster_id": 513,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "gm15sm",
+      "cluster_id": 514,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "goe06k",
+      "cluster_id": 516,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "goe07k",
+      "cluster_id": 517,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "goe08k",
+      "cluster_id": 518,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "goe09k",
+      "cluster_id": 519,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "goe100",
+      "cluster_id": 520,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "goe101",
+      "cluster_id": 521,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "goe10k",
+      "cluster_id": 522,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "goe114",
+      "cluster_id": 524,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "goe115",
+      "cluster_id": 525,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "goe116",
+      "cluster_id": 526,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "goe117",
+      "cluster_id": 527,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "goe118",
+      "cluster_id": 528,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "goe121",
+      "cluster_id": 530,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "goe122",
+      "cluster_id": 531,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "goe124",
+      "cluster_id": 533,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "goe12k",
+      "cluster_id": 534,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "goe137",
+      "cluster_id": 537,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "goe13k",
+      "cluster_id": 538,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "goe14",
+      "cluster_id": 539,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "goe140",
+      "cluster_id": 540,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "goe142",
+      "cluster_id": 541,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "goe143",
+      "cluster_id": 542,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "goe144",
+      "cluster_id": 543,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "goe14k",
+      "cluster_id": 545,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "goe15",
+      "cluster_id": 546,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "goe155",
+      "cluster_id": 547,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "goe15k",
+      "cluster_id": 548,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "goe165",
+      "cluster_id": 550,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "goe167",
+      "cluster_id": 551,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "goe16k",
+      "cluster_id": 552,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "goe173",
+      "cluster_id": 553,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "goe177",
+      "cluster_id": 556,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "goe178",
+      "cluster_id": 557,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "goe180",
+      "cluster_id": 558,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "goe184",
+      "cluster_id": 560,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "goe187",
+      "cluster_id": 561,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "goe190",
+      "cluster_id": 563,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "goe195",
+      "cluster_id": 564,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "goe199",
+      "cluster_id": 566,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "goe207",
+      "cluster_id": 567,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "goe217",
+      "cluster_id": 569,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "goe222",
+      "cluster_id": 570,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "goe225",
+      "cluster_id": 572,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "goe226",
+      "cluster_id": 573,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "goe227",
+      "cluster_id": 574,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "goe228",
+      "cluster_id": 575,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "goe233",
+      "cluster_id": 577,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "goe234",
+      "cluster_id": 578,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "goe238",
+      "cluster_id": 580,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "goe239",
+      "cluster_id": 581,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "goe241",
+      "cluster_id": 583,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "goe242",
+      "cluster_id": 584,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "goe243",
+      "cluster_id": 585,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "goe244",
+      "cluster_id": 586,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "goe255",
+      "cluster_id": 587,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "goe256",
+      "cluster_id": 588,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "goe257",
+      "cluster_id": 589,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "goe264",
+      "cluster_id": 590,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "goe265",
+      "cluster_id": 591,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "goe269",
+      "cluster_id": 592,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "goe274",
+      "cluster_id": 593,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "goe275",
+      "cluster_id": 594,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "goe280",
+      "cluster_id": 599,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "goe281",
+      "cluster_id": 600,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "goe282",
+      "cluster_id": 601,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "goe284",
+      "cluster_id": 602,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "goe285",
+      "cluster_id": 603,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "goe288",
+      "cluster_id": 606,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "goe298",
+      "cluster_id": 609,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "goe29b",
+      "cluster_id": 610,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "goe300",
+      "cluster_id": 611,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "goe301",
+      "cluster_id": 612,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "goe303",
+      "cluster_id": 613,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "goe304",
+      "cluster_id": 614,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "goe309",
+      "cluster_id": 616,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "goe310",
+      "cluster_id": 617,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "goe311",
+      "cluster_id": 618,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "goe314",
+      "cluster_id": 619,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "goe315",
+      "cluster_id": 620,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "goe316",
+      "cluster_id": 621,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "goe318",
+      "cluster_id": 622,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "goe320",
+      "cluster_id": 624,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "goe321",
+      "cluster_id": 625,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "goe323",
+      "cluster_id": 627,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "goe324",
+      "cluster_id": 628,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "goe326",
+      "cluster_id": 630,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "goe328",
+      "cluster_id": 631,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "goe329",
+      "cluster_id": 632,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "goe331",
+      "cluster_id": 634,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "goe332",
+      "cluster_id": 635,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "goe335",
+      "cluster_id": 636,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "goe336",
+      "cluster_id": 637,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "goe344",
+      "cluster_id": 639,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "goe346",
+      "cluster_id": 640,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "goe358",
+      "cluster_id": 641,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "goe359",
+      "cluster_id": 642,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "goe362",
+      "cluster_id": 645,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "goe363",
+      "cluster_id": 646,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "goe364",
+      "cluster_id": 647,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "goe367",
+      "cluster_id": 650,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "goe368",
+      "cluster_id": 651,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "goe369",
+      "cluster_id": 652,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "goe370",
+      "cluster_id": 653,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "goe371",
+      "cluster_id": 654,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "goe373",
+      "cluster_id": 656,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "goe374",
+      "cluster_id": 657,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "goe375",
+      "cluster_id": 658,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "goe376",
+      "cluster_id": 659,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "goe377",
+      "cluster_id": 660,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "goe380",
+      "cluster_id": 662,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "goe381",
+      "cluster_id": 663,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "goe382",
+      "cluster_id": 664,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "goe383",
+      "cluster_id": 665,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "goe385",
+      "cluster_id": 667,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "goe390",
+      "cluster_id": 672,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "goe391",
+      "cluster_id": 673,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "goe394",
+      "cluster_id": 676,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "goe395",
+      "cluster_id": 677,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "goe396",
+      "cluster_id": 678,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "goe399",
+      "cluster_id": 681,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "goe400",
+      "cluster_id": 682,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "goe401",
+      "cluster_id": 683,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "goe402",
+      "cluster_id": 684,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "goe403",
+      "cluster_id": 685,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "goe404",
+      "cluster_id": 686,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "goe405",
+      "cluster_id": 687,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "goe406",
+      "cluster_id": 688,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "goe407",
+      "cluster_id": 689,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "goe408",
+      "cluster_id": 690,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "goe409",
+      "cluster_id": 691,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "goe410",
+      "cluster_id": 692,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "goe411",
+      "cluster_id": 693,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "goe412",
+      "cluster_id": 694,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "goe414",
+      "cluster_id": 696,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "goe416a",
+      "cluster_id": 698,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "goe418",
+      "cluster_id": 701,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "goe419",
+      "cluster_id": 702,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "goe424",
+      "cluster_id": 707,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "goe425",
+      "cluster_id": 708,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "goe428",
+      "cluster_id": 711,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "goe429",
+      "cluster_id": 712,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "goe430",
+      "cluster_id": 713,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "goe432",
+      "cluster_id": 715,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "goe433",
+      "cluster_id": 716,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "goe434",
+      "cluster_id": 717,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "goe435",
+      "cluster_id": 718,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "goe436",
+      "cluster_id": 719,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "goe437",
+      "cluster_id": 720,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "goe438",
+      "cluster_id": 721,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "goe439",
+      "cluster_id": 722,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "goe440",
+      "cluster_id": 723,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "goe441",
+      "cluster_id": 724,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "goe445",
+      "cluster_id": 728,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "goe446",
+      "cluster_id": 729,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "goe447",
+      "cluster_id": 730,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "goe448",
+      "cluster_id": 731,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "goe449",
+      "cluster_id": 732,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "goe456",
+      "cluster_id": 734,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "goe457",
+      "cluster_id": 735,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "goe458",
+      "cluster_id": 734,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "goe459",
+      "cluster_id": 736,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "goe460",
+      "cluster_id": 737,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "goe474",
+      "cluster_id": 740,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "goe477",
+      "cluster_id": 742,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "goe478",
+      "cluster_id": 743,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "goe479",
+      "cluster_id": 744,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "goe480",
+      "cluster_id": 745,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "goe481",
+      "cluster_id": 746,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "goe481a",
+      "cluster_id": 747,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "goe482",
+      "cluster_id": 748,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "goe483",
+      "cluster_id": 749,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "goe491",
+      "cluster_id": 753,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "goe492",
+      "cluster_id": 754,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "goe494",
+      "cluster_id": 756,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "goe495",
+      "cluster_id": 757,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "goe498",
+      "cluster_id": 760,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "goe499",
+      "cluster_id": 761,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "goe500",
+      "cluster_id": 762,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "goe501",
+      "cluster_id": 763,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "goe504",
+      "cluster_id": 766,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "goe506",
+      "cluster_id": 768,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "goe507",
+      "cluster_id": 769,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "goe508",
+      "cluster_id": 770,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "goe511",
+      "cluster_id": 773,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "goe512",
+      "cluster_id": 774,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "goe513",
+      "cluster_id": 775,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "goe514",
+      "cluster_id": 776,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "goe518",
+      "cluster_id": 779,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "goe522",
+      "cluster_id": 780,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "goe523",
+      "cluster_id": 781,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "goe525",
+      "cluster_id": 781,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "goe526",
+      "cluster_id": 782,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "goe527",
+      "cluster_id": 783,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "goe528",
+      "cluster_id": 784,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "goe529",
+      "cluster_id": 785,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "goe530",
+      "cluster_id": 786,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "goe531",
+      "cluster_id": 787,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "goe533",
+      "cluster_id": 789,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "goe535",
+      "cluster_id": 791,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "goe547",
+      "cluster_id": 794,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "goe55",
+      "cluster_id": 797,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "goe550",
+      "cluster_id": 798,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "goe553",
+      "cluster_id": 799,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "goe561",
+      "cluster_id": 801,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "goe562",
+      "cluster_id": 802,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "goe565",
+      "cluster_id": 805,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "goe566",
+      "cluster_id": 806,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "goe567",
+      "cluster_id": 807,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "goe571",
+      "cluster_id": 810,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "goe573",
+      "cluster_id": 812,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "goe574",
+      "cluster_id": 813,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "goe584",
+      "cluster_id": 815,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "goe590",
+      "cluster_id": 818,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "goe591",
+      "cluster_id": 819,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "goe592",
+      "cluster_id": 820,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "goe593",
+      "cluster_id": 821,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "goe595",
+      "cluster_id": 822,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "goe598",
+      "cluster_id": 824,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "goe602",
+      "cluster_id": 828,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "goe602m",
+      "cluster_id": 829,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "goe604",
+      "cluster_id": 830,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "goe610b",
+      "cluster_id": 831,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "goe610bm",
+      "cluster_id": 832,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "goe611",
+      "cluster_id": 833,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "goe612",
+      "cluster_id": 834,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "goe613",
+      "cluster_id": 835,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "goe619",
+      "cluster_id": 839,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "goe620",
+      "cluster_id": 840,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "goe622",
+      "cluster_id": 842,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "goe623",
+      "cluster_id": 843,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "goe624",
+      "cluster_id": 844,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "goe625",
+      "cluster_id": 845,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "goe626",
+      "cluster_id": 846,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "goe628",
+      "cluster_id": 848,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "goe629",
+      "cluster_id": 849,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "goe63",
+      "cluster_id": 850,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "goe630",
+      "cluster_id": 851,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "goe632",
+      "cluster_id": 852,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "goe645",
+      "cluster_id": 854,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "goe646",
+      "cluster_id": 855,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "goe652",
+      "cluster_id": 859,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "goe655",
+      "cluster_id": 861,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "goe676",
+      "cluster_id": 865,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "goe677",
+      "cluster_id": 866,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "goe679",
+      "cluster_id": 867,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "goe681",
+      "cluster_id": 868,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "goe682",
+      "cluster_id": 869,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "goe683",
+      "cluster_id": 870,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "goe685",
+      "cluster_id": 871,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "goe693",
+      "cluster_id": 873,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "goe701",
+      "cluster_id": 874,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "goe703",
+      "cluster_id": 876,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "goe704",
+      "cluster_id": 877,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "goe711",
+      "cluster_id": 878,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "goe741",
+      "cluster_id": 882,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "goe746",
+      "cluster_id": 884,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "goe758",
+      "cluster_id": 885,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "goe765",
+      "cluster_id": 886,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "goe767",
+      "cluster_id": 888,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "goe775",
+      "cluster_id": 891,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "goe776",
+      "cluster_id": 892,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "goe780",
+      "cluster_id": 894,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "goe79",
+      "cluster_id": 895,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "goe795",
+      "cluster_id": 896,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "goe795sm",
+      "cluster_id": 897,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "goe796",
+      "cluster_id": 898,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "goe797",
+      "cluster_id": 899,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "goe798",
+      "cluster_id": 900,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "goe803h",
+      "cluster_id": 904,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "goe81",
+      "cluster_id": 906,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "goe92",
+      "cluster_id": 907,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "griffith30symsuction",
+      "cluster_id": 908,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "gu255118",
+      "cluster_id": 910,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "hh02",
+      "cluster_id": 911,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "hobie",
+      "cluster_id": 912,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "hobiesm",
+      "cluster_id": 913,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "hor04",
+      "cluster_id": 914,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "hor07",
+      "cluster_id": 915,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "hor20",
+      "cluster_id": 917,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "hq010",
+      "cluster_id": 918,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "hq07",
+      "cluster_id": 919,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "hq09",
+      "cluster_id": 920,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "hq1010",
+      "cluster_id": 921,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "hq109",
+      "cluster_id": 924,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "hq1510",
+      "cluster_id": 925,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "hq1511",
+      "cluster_id": 926,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "hq1512",
+      "cluster_id": 927,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "hq1585",
+      "cluster_id": 929,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "hq159",
+      "cluster_id": 930,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "hq159b",
+      "cluster_id": 931,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "hq2010",
+      "cluster_id": 933,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "hq2012",
+      "cluster_id": 934,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "hq209",
+      "cluster_id": 936,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "hq2090sm",
+      "cluster_id": 937,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "hq2195",
+      "cluster_id": 938,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "hq2510",
+      "cluster_id": 939,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "hq2511",
+      "cluster_id": 940,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "hq2512",
+      "cluster_id": 941,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "hq259",
+      "cluster_id": 943,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "hq2590sm",
+      "cluster_id": 944,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "hq300gd2",
+      "cluster_id": 946,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "hq3010",
+      "cluster_id": 947,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "hq3012",
+      "cluster_id": 949,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "hq3013",
+      "cluster_id": 950,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "hq3014",
+      "cluster_id": 951,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "hq3015",
+      "cluster_id": 952,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "hq308",
+      "cluster_id": 953,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "hq309",
+      "cluster_id": 954,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "hq3510",
+      "cluster_id": 955,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "hq3513",
+      "cluster_id": 957,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "hq3514",
+      "cluster_id": 958,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "hq358",
+      "cluster_id": 960,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "hs1404",
+      "cluster_id": 962,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "hs1606",
+      "cluster_id": 964,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "hs1620",
+      "cluster_id": 965,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "hs1708",
+      "cluster_id": 966,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "ht08",
+      "cluster_id": 970,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "ht12",
+      "cluster_id": 971,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "ht22",
+      "cluster_id": 972,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "ht23",
+      "cluster_id": 973,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "isa571",
+      "cluster_id": 974,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "isa962",
+      "cluster_id": 977,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "j5012",
+      "cluster_id": 978,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "joukowsk",
+      "cluster_id": 980,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "k1",
+      "cluster_id": 981,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "k3",
+      "cluster_id": 983,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "k3311",
+      "cluster_id": 984,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "k3311sm",
+      "cluster_id": 985,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "kc135a",
+      "cluster_id": 986,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "kc135b",
+      "cluster_id": 987,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "kc135d",
+      "cluster_id": 989,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "kc135winglet",
+      "cluster_id": 990,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "kenmar",
+      "cluster_id": 991,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "l1003",
+      "cluster_id": 992,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "l188root",
+      "cluster_id": 993,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "l7769",
+      "cluster_id": 995,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "la203a",
+      "cluster_id": 996,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "lds2",
+      "cluster_id": 999,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "lg10sc",
+      "cluster_id": 1000,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "lnv109a",
+      "cluster_id": 1001,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "lrn1007",
+      "cluster_id": 1002,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "lrn1015",
+      "cluster_id": 1003,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "ls013",
+      "cluster_id": 1004,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "ls413",
+      "cluster_id": 1005,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "ls413mod",
+      "cluster_id": 1006,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "ls417",
+      "cluster_id": 1007,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "ls417mod",
+      "cluster_id": 1008,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "ls421",
+      "cluster_id": 1009,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "ls421mod",
+      "cluster_id": 1010,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "lwk79100",
+      "cluster_id": 1011,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "lwk80080",
+      "cluster_id": 1012,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "lwk80100",
+      "cluster_id": 1013,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "m10",
+      "cluster_id": 1017,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "m11",
+      "cluster_id": 1018,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "m12",
+      "cluster_id": 1019,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "m13",
+      "cluster_id": 1020,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "m15",
+      "cluster_id": 1022,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "m16",
+      "cluster_id": 1023,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "m17",
+      "cluster_id": 1024,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "m18",
+      "cluster_id": 1025,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "m19",
+      "cluster_id": 1026,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "m20",
+      "cluster_id": 1028,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "m22",
+      "cluster_id": 1030,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "m23",
+      "cluster_id": 1031,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "m24",
+      "cluster_id": 1032,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "m25",
+      "cluster_id": 1033,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "m27",
+      "cluster_id": 1035,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "m3",
+      "cluster_id": 1036,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "m4",
+      "cluster_id": 1037,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "m5",
+      "cluster_id": 1038,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "m6",
+      "cluster_id": 1039,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "m665",
+      "cluster_id": 1040,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "m7",
+      "cluster_id": 1042,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "ma409sm",
+      "cluster_id": 1044,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "marsden",
+      "cluster_id": 1045,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "marske1",
+      "cluster_id": 1046,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "marske2",
+      "cluster_id": 1047,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "marske7",
+      "cluster_id": 1051,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "mb253515sm",
+      "cluster_id": 1052,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "mh102",
+      "cluster_id": 1053,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "mh106",
+      "cluster_id": 1055,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "mh108",
+      "cluster_id": 1056,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "mh110",
+      "cluster_id": 1057,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "mh113",
+      "cluster_id": 1059,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "mh114",
+      "cluster_id": 1060,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "mh115",
+      "cluster_id": 1061,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "mh120",
+      "cluster_id": 1064,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "mh121",
+      "cluster_id": 1065,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "mh122",
+      "cluster_id": 1066,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "mh18",
+      "cluster_id": 1067,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "mh200",
+      "cluster_id": 1069,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "mh201",
+      "cluster_id": 1070,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "mh22",
+      "cluster_id": 1071,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "mh26",
+      "cluster_id": 1075,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "mh30",
+      "cluster_id": 1077,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "mh32",
+      "cluster_id": 1078,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "mh33",
+      "cluster_id": 1079,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "mh38",
+      "cluster_id": 1080,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "mh42",
+      "cluster_id": 1081,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "mh43",
+      "cluster_id": 1082,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "mh45",
+      "cluster_id": 1084,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "mh46",
+      "cluster_id": 1085,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "mh61",
+      "cluster_id": 1087,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "mh62",
+      "cluster_id": 1088,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "mh70",
+      "cluster_id": 1090,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "mh80",
+      "cluster_id": 1092,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "mh82",
+      "cluster_id": 1094,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "mh83",
+      "cluster_id": 1095,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "mh84",
+      "cluster_id": 1096,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "mh91",
+      "cluster_id": 1097,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "mh93",
+      "cluster_id": 1099,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "mh94",
+      "cluster_id": 1100,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "mh95",
+      "cluster_id": 1101,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "miley",
+      "cluster_id": 1102,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "mrc20",
+      "cluster_id": 1104,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "ms313",
+      "cluster_id": 1105,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "mue139",
+      "cluster_id": 1107,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "n0009sm",
+      "cluster_id": 1108,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "n0011sc",
+      "cluster_id": 1109,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "n0012",
+      "cluster_id": 1110,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "n11h9",
+      "cluster_id": 1113,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "n12",
+      "cluster_id": 1114,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "n13",
+      "cluster_id": 1115,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "n14",
+      "cluster_id": 1116,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "n1h15",
+      "cluster_id": 1117,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "n22",
+      "cluster_id": 1118,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "n24",
+      "cluster_id": 1119,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "n2414",
+      "cluster_id": 1120,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "n2415",
+      "cluster_id": 1121,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "n2h15",
+      "cluster_id": 1122,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "n5h15",
+      "cluster_id": 1124,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "n5h20",
+      "cluster_id": 1125,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "n63010a",
+      "cluster_id": 1126,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "n63015a",
+      "cluster_id": 1128,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "n63210",
+      "cluster_id": 1129,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "n63212",
+      "cluster_id": 1130,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "n63215",
+      "cluster_id": 1131,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "n63412",
+      "cluster_id": 1133,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "n63415",
+      "cluster_id": 1134,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "n64008a",
+      "cluster_id": 1135,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "n64012",
+      "cluster_id": 1136,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "n64012a",
+      "cluster_id": 1137,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "n64015",
+      "cluster_id": 1138,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "n64108",
+      "cluster_id": 1141,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "n64110",
+      "cluster_id": 1142,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "n64212ma",
+      "cluster_id": 1144,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "n64212mb",
+      "cluster_id": 1145,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "n64215",
+      "cluster_id": 1146,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "n6h15",
+      "cluster_id": 1149,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "n6h20",
+      "cluster_id": 1150,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "n9",
+      "cluster_id": 1152,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "naca000834",
+      "cluster_id": 1155,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "naca0010",
+      "cluster_id": 1156,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "naca001034",
+      "cluster_id": 1157,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "naca001034a08cli02",
+      "cluster_id": 1158,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "naca001035",
+      "cluster_id": 1159,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "naca001064",
+      "cluster_id": 1160,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "naca001065",
+      "cluster_id": 1161,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "naca001066",
+      "cluster_id": 1162,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "naca001234",
+      "cluster_id": 1163,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "naca001264",
+      "cluster_id": 1164,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "naca001264a08cli02",
+      "cluster_id": 1165,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "naca0015",
+      "cluster_id": 1166,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "naca0018",
+      "cluster_id": 1167,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "naca0024",
+      "cluster_id": 1169,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "naca1408",
+      "cluster_id": 1170,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "naca1410",
+      "cluster_id": 1171,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "naca1412",
+      "cluster_id": 1172,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "naca16009",
+      "cluster_id": 1174,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "naca16015",
+      "cluster_id": 1176,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "naca16018",
+      "cluster_id": 1177,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "naca23012",
+      "cluster_id": 1179,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "naca23015",
+      "cluster_id": 1180,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "naca23018",
+      "cluster_id": 1181,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "naca2410",
+      "cluster_id": 1185,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "naca2412",
+      "cluster_id": 1187,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "naca2421",
+      "cluster_id": 1190,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "naca2424",
+      "cluster_id": 1191,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "naca4412",
+      "cluster_id": 1192,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "naca4415",
+      "cluster_id": 1193,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "naca4418",
+      "cluster_id": 1194,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "naca4421",
+      "cluster_id": 1195,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "naca4424",
+      "cluster_id": 1196,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "naca63206",
+      "cluster_id": 1197,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "naca63209",
+      "cluster_id": 1198,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "naca632615",
+      "cluster_id": 1199,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "naca632a015",
+      "cluster_id": 1200,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "naca633018",
+      "cluster_id": 1201,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "naca633218",
+      "cluster_id": 1202,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "naca633418",
+      "cluster_id": 1203,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "naca633618",
+      "cluster_id": 1204,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "naca634421",
+      "cluster_id": 1206,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "naca63a210",
+      "cluster_id": 1207,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "naca641112",
+      "cluster_id": 1208,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "naca6412",
+      "cluster_id": 1209,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "naca64208",
+      "cluster_id": 1211,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "naca64209",
+      "cluster_id": 1212,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "naca64210",
+      "cluster_id": 1213,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "naca642215",
+      "cluster_id": 1214,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "naca643218",
+      "cluster_id": 1216,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "naca643418",
+      "cluster_id": 1217,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "naca643618",
+      "cluster_id": 1218,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "naca644421",
+      "cluster_id": 1220,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "naca64a210",
+      "cluster_id": 1222,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "naca64a410",
+      "cluster_id": 1223,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "naca651212",
+      "cluster_id": 1224,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "naca651412",
+      "cluster_id": 1226,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "naca65206",
+      "cluster_id": 1227,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "naca65210",
+      "cluster_id": 1229,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "naca652415",
+      "cluster_id": 1231,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "naca653618",
+      "cluster_id": 1234,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "naca65410",
+      "cluster_id": 1235,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "naca654221",
+      "cluster_id": 1236,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "naca654421",
+      "cluster_id": 1237,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "naca66018",
+      "cluster_id": 1239,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "naca66206",
+      "cluster_id": 1241,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "naca66209",
+      "cluster_id": 1242,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "naca66210",
+      "cluster_id": 1243,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "naca662215",
+      "cluster_id": 1244,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "naca663418",
+      "cluster_id": 1247,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "naca664221",
+      "cluster_id": 1248,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "naca671215",
+      "cluster_id": 1249,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "naca747a315",
+      "cluster_id": 1250,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "nacacyh",
+      "cluster_id": 1252,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "nacam12",
+      "cluster_id": 1253,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "nacam18",
+      "cluster_id": 1254,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "nacam3",
+      "cluster_id": 1256,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "nacam6",
+      "cluster_id": 1257,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "nasasc20714",
+      "cluster_id": 1258,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "ncambre",
+      "cluster_id": 1259,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "nl722362",
+      "cluster_id": 1261,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "nlf1015",
+      "cluster_id": 1264,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "nlf414f",
+      "cluster_id": 1265,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "nlf416",
+      "cluster_id": 1267,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "nlr1t",
+      "cluster_id": 1268,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "nlr7301",
+      "cluster_id": 1269,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "nn7mk20",
+      "cluster_id": 1270,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "npl9510",
+      "cluster_id": 1271,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "npl9615",
+      "cluster_id": 1272,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "npl9626",
+      "cluster_id": 1273,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "npl9627",
+      "cluster_id": 1274,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "npl9660",
+      "cluster_id": 1275,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "nplx",
+      "cluster_id": 1276,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "oa212",
+      "cluster_id": 1279,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "oaf095",
+      "cluster_id": 1281,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "oaf102",
+      "cluster_id": 1282,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "oaf117",
+      "cluster_id": 1283,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "oaf128",
+      "cluster_id": 1284,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "oaf139",
+      "cluster_id": 1285,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "p51droot",
+      "cluster_id": 1286,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "p51dtip",
+      "cluster_id": 1287,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "p51htip",
+      "cluster_id": 1289,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "pfcm",
+      "cluster_id": 1290,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "psu90125wl",
+      "cluster_id": 1292,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "psu94097",
+      "cluster_id": 1293,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "pt40",
+      "cluster_id": 1294,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "r1046",
+      "cluster_id": 1295,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "r1080",
+      "cluster_id": 1296,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "r1082",
+      "cluster_id": 1297,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "r1082t",
+      "cluster_id": 1298,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "r140",
+      "cluster_id": 1299,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "r140sm",
+      "cluster_id": 1300,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "rae100",
+      "cluster_id": 1301,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "rae102",
+      "cluster_id": 1303,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "rae103",
+      "cluster_id": 1304,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "rae5214",
+      "cluster_id": 1309,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "rae5215",
+      "cluster_id": 1310,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "raf15",
+      "cluster_id": 1311,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "raf19",
+      "cluster_id": 1312,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "raf25",
+      "cluster_id": 1313,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "raf26",
+      "cluster_id": 1314,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "raf28",
+      "cluster_id": 1316,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "raf30",
+      "cluster_id": 1317,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "raf30md",
+      "cluster_id": 1318,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "raf31",
+      "cluster_id": 1319,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "raf38",
+      "cluster_id": 1324,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "raf69",
+      "cluster_id": 1327,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "raf89",
+      "cluster_id": 1328,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "rc0864c",
+      "cluster_id": 1329,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "rc08n1",
+      "cluster_id": 1331,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "rc1064c",
+      "cluster_id": 1332,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "rc10n1",
+      "cluster_id": 1334,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "rc1264c",
+      "cluster_id": 1335,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "rc410",
+      "cluster_id": 1338,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "rcsc2",
+      "cluster_id": 1340,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "rg12a",
+      "cluster_id": 1342,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "rg1410",
+      "cluster_id": 1345,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "rg149",
+      "cluster_id": 1346,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "rg1495",
+      "cluster_id": 1347,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "rg14a147",
+      "cluster_id": 1348,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "rg15",
+      "cluster_id": 1349,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "rg15a111",
+      "cluster_id": 1350,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "rg15a213",
+      "cluster_id": 1351,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "rhodesg32",
+      "cluster_id": 1354,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "rhodesg34",
+      "cluster_id": 1355,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "rhodesg36",
+      "cluster_id": 1356,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "s1014",
+      "cluster_id": 1359,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "s1016",
+      "cluster_id": 1360,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "s102b",
+      "cluster_id": 1362,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "s1046",
+      "cluster_id": 1364,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "s1091",
+      "cluster_id": 1366,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "s1221",
+      "cluster_id": 1368,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "s1223",
+      "cluster_id": 1369,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "s2027",
+      "cluster_id": 1371,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "s2046",
+      "cluster_id": 1372,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "s2048",
+      "cluster_id": 1373,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "s2050",
+      "cluster_id": 1374,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "s2055",
+      "cluster_id": 1375,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "s3",
+      "cluster_id": 1378,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "s3002",
+      "cluster_id": 1379,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "s3010",
+      "cluster_id": 1380,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "s3014",
+      "cluster_id": 1381,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "s3021",
+      "cluster_id": 1383,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "s3024",
+      "cluster_id": 1384,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "s3025",
+      "cluster_id": 1385,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "s4053",
+      "cluster_id": 1387,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "s4062",
+      "cluster_id": 1388,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "s4083",
+      "cluster_id": 1389,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "s4094",
+      "cluster_id": 1390,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "s4095",
+      "cluster_id": 1391,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "s4096",
+      "cluster_id": 1392,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "s4110",
+      "cluster_id": 1393,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "s4158",
+      "cluster_id": 1394,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "s4233",
+      "cluster_id": 1395,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "s4310",
+      "cluster_id": 1396,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "s4320",
+      "cluster_id": 1397,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "s5020",
+      "cluster_id": 1399,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "s6061",
+      "cluster_id": 1400,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "s6062",
+      "cluster_id": 1401,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "s7055",
+      "cluster_id": 1404,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "s7075",
+      "cluster_id": 1405,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "s8025",
+      "cluster_id": 1406,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "s8037",
+      "cluster_id": 1409,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "s8038",
+      "cluster_id": 1410,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "s8052",
+      "cluster_id": 1411,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "s8055",
+      "cluster_id": 1412,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "s8064",
+      "cluster_id": 1413,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "s8066",
+      "cluster_id": 1415,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "s9000",
+      "cluster_id": 1416,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "s9026",
+      "cluster_id": 1417,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "s9032",
+      "cluster_id": 1419,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "sa7025",
+      "cluster_id": 1423,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "sa7026",
+      "cluster_id": 1424,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "sa7035",
+      "cluster_id": 1425,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "sa7036",
+      "cluster_id": 1426,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "sa7038",
+      "cluster_id": 1427,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "sc1012r8",
+      "cluster_id": 1429,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "sc1094r8",
+      "cluster_id": 1430,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "sc20402",
+      "cluster_id": 1435,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "sc20403",
+      "cluster_id": 1436,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "sc20404",
+      "cluster_id": 1437,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "sc20410",
+      "cluster_id": 1439,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "sc20412",
+      "cluster_id": 1440,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "sc20414",
+      "cluster_id": 1441,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "sc20503",
+      "cluster_id": 1442,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "sc20606",
+      "cluster_id": 1444,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "sc20610",
+      "cluster_id": 1445,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "sc20612",
+      "cluster_id": 1446,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "sc20710",
+      "cluster_id": 1449,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "sc21006",
+      "cluster_id": 1452,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "sc2110",
+      "cluster_id": 1454,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "sd2030",
+      "cluster_id": 1455,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "sd2083",
+      "cluster_id": 1456,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "sd5060",
+      "cluster_id": 1457,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "sd6060",
+      "cluster_id": 1458,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "sd6080",
+      "cluster_id": 1459,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "sd7003",
+      "cluster_id": 1460,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "sd7037",
+      "cluster_id": 1462,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "sd7062",
+      "cluster_id": 1463,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "sd7080",
+      "cluster_id": 1464,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "sd7084",
+      "cluster_id": 1465,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "sd7090",
+      "cluster_id": 1466,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "sd8040",
+      "cluster_id": 1469,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "sg6040",
+      "cluster_id": 1470,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "sg6042",
+      "cluster_id": 1472,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "sg6043",
+      "cluster_id": 1473,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "sg6050",
+      "cluster_id": 1474,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "sg6051",
+      "cluster_id": 1475,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "sm701",
+      "cluster_id": 1476,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "sokolov",
+      "cluster_id": 1477,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "ssca07",
+      "cluster_id": 1479,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "ssca09",
+      "cluster_id": 1480,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "stcyr172",
+      "cluster_id": 1482,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "stcyr234",
+      "cluster_id": 1483,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "stcyr24",
+      "cluster_id": 1484,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "ste87151",
+      "cluster_id": 1485,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "stf86361",
+      "cluster_id": 1487,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "tempest1",
+      "cluster_id": 1491,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "tempest2",
+      "cluster_id": 1492,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "tempest3",
+      "cluster_id": 1493,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "th25816",
+      "cluster_id": 1494,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "trainer60",
+      "cluster_id": 1495,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "tsagi12",
+      "cluster_id": 1497,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "tsagi8",
+      "cluster_id": 1498,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "tsagir3a",
+      "cluster_id": 1496,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "ua2180",
+      "cluster_id": 1499,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "ua2180sm",
+      "cluster_id": 1500,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "ua79sf18",
+      "cluster_id": 1501,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "uag8814320",
+      "cluster_id": 1504,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "ui1720",
+      "cluster_id": 1505,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "ultimate",
+      "cluster_id": 1506,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "usa22",
+      "cluster_id": 1508,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "usa25",
+      "cluster_id": 1509,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "usa26",
+      "cluster_id": 1510,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "usa27",
+      "cluster_id": 1511,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "usa27m2",
+      "cluster_id": 1512,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "usa28",
+      "cluster_id": 1513,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "usa29",
+      "cluster_id": 1514,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "usa31",
+      "cluster_id": 1515,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "usa34",
+      "cluster_id": 1518,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "usa35",
+      "cluster_id": 1519,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "usa40",
+      "cluster_id": 1522,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "usa40b",
+      "cluster_id": 1523,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "usa41",
+      "cluster_id": 1524,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "usa45",
+      "cluster_id": 1525,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "usa48",
+      "cluster_id": 1528,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "usa5",
+      "cluster_id": 1530,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "usa50",
+      "cluster_id": 1531,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "usnps4",
+      "cluster_id": 1534,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "v13009",
+      "cluster_id": 1536,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "v43015",
+      "cluster_id": 1539,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "vr1",
+      "cluster_id": 1540,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "vr12",
+      "cluster_id": 1542,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "vr13",
+      "cluster_id": 1543,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "vr14",
+      "cluster_id": 1544,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "vr7",
+      "cluster_id": 1547,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "vr8",
+      "cluster_id": 1549,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "vr8b",
+      "cluster_id": 1550,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "vr9",
+      "cluster_id": 1551,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "wb13535sm",
+      "cluster_id": 1553,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "wb140",
+      "cluster_id": 1554,
+      "fold": 0
+    },
+    {
+      "airfoil_id": "whitcomb",
+      "cluster_id": 1555,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "ys900",
+      "cluster_id": 1556,
+      "fold": 2
+    },
+    {
+      "airfoil_id": "ys915",
+      "cluster_id": 1557,
+      "fold": 1
+    },
+    {
+      "airfoil_id": "ys930",
+      "cluster_id": 1558,
+      "fold": 2
+    }
+  ],
+  "records_hash": "a145dcb85e6a5b6f87d94dd475bd0d024cf9c957c29a1226626bb03ef444650d",
+  "seed": 20260824
+}

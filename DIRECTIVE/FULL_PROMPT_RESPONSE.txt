@@ -1,0 +1,2218 @@
+# The correct end-to-end route
+
+The immediate task is **not** to regenerate 1,568 aerofoils locally with XFOIL and it is **not** to start optimisation yet.
+
+The correct sequence is:
+
+1. Freeze and reproduce the rejected-paper state.
+2. Recover the original raw AirfoilTools downloads or caches from your home PC.
+3. Where recovery is impossible, re-ingest the missing AirfoilTools polars conservatively and with full provenance.
+4. Rebuild the aerodynamic data in **long form**, retaining genuine (C_L), (C_D), (C_{Dp}), (C_M), upper transition and lower transition values.
+5. Rebuild the geometry/CST mapping and leakage-resistant train/calibration/test splits.
+6. Train an angle-conditioned surrogate:
+   [
+   (\text{12 CST parameters},\alpha)
+   \rightarrow
+   (C_L,\log C_D,C_M)
+   ]
+7. Tune and calibrate it without touching the locked test set.
+8. Build the surface-uncertainty generator.
+9. Run deterministic, naïve-robust and trust-constrained risk-aware optimisation.
+10. Verify selected results with direct XFOIL and selected higher-fidelity cases.
+
+The submitted paper says the original dataset contained 1,568 UIUC geometries, encoded by 12 CST parameters and mapped to 48 (C_L) values with 48 validity weights. Its aerodynamic labels came from AirfoilTools XFOIL predictions at (Re=10^6).
+
+The original generator has now been located in `curve_gen/scripts/full_set_gen.py`. It confirms that the process downloaded the UIUC coordinate ZIP, requested an AirfoilTools polar for each aerofoil, read the AirfoilTools CSV, and then retained only angle and (C_L). It sampled 48 rows by their row positions across each aerofoil’s source-specific polar rather than preserving the full polar or all its outputs.
+
+AirfoilTools’ actual source polars are considerably richer. They contain:
+
+[
+\alpha,\quad C_L,\quad C_D,\quad C_{Dp},\quad C_M,\quad
+X_{\mathrm{tr,upper}},\quad X_{\mathrm{tr,lower}}
+]
+
+AirfoilTools says its generated polars attempted (-20^\circ) to (+20^\circ) in (0.25^\circ) increments, omitted points that did not converge, and truncated the data after the useful region around maximum and minimum lift. Its examples record Mach zero, (N_{\mathrm{crit}}=9), the Reynolds number and the XFOIL version in the source file. ([Airfoil Tools][1])
+
+That means the old pipeline **discarded (C_D), (C_{Dp}), (C_M) and transition data that were already available**. It also means a missing angle is a solver outcome, not a value that should be silently padded into the new labels.
+
+I have prepared two files for you:
+
+* [Download the complete execution guide](sandbox:/mnt/data/robust_airfoil_v2_execution_guide.md)
+* [Download the tested starter repository scaffold](sandbox:/mnt/data/robust_airfoil_v2_starter.zip)
+
+The starter contains a Windows bootstrap, a local-data discovery utility, a legacy-dataset audit, a provenance-preserving AirfoilTools parser, a deliberately limited pilot downloader, schemas, configuration and tests. The supplied parser tests pass.
+
+---
+
+# Part I — What to do when you connect to your PC
+
+## 1. Decide whether you have an existing local clone
+
+Open PowerShell and locate your existing `paper` repository.
+
+```powershell
+Get-ChildItem "$HOME\Documents","$HOME\Desktop","$HOME\Downloads","$HOME\OneDrive" `
+    -Directory -Recurse -ErrorAction SilentlyContinue |
+    Where-Object { $_.Name -eq "paper" } |
+    Select-Object FullName
+```
+
+If you find the existing clone, enter it and inspect it before pulling:
+
+```powershell
+cd "C:\PATH\TO\paper"
+
+git status
+git branch --show-current
+git rev-parse HEAD
+git remote -v
+git log --oneline --decorate -10
+```
+
+Do **not** run `git pull` while there are unexplained local changes. Save or commit them to a separate recovery branch first:
+
+```powershell
+git switch -c local-recovery-before-robust-v2
+git add -A
+git commit -m "Preserve uncommitted local work before robust v2"
+```
+
+Then return to `main`:
+
+```powershell
+git switch main
+git fetch --all --tags --prune
+git pull --ff-only
+```
+
+For a completely fresh clone:
+
+```powershell
+New-Item -ItemType Directory -Force C:\Research | Out-Null
+cd C:\Research
+
+git clone https://github.com/bengawith/paper.git
+git clone https://github.com/bengawith/curve_gen.git curve_gen_legacy
+
+cd paper
+git fetch --all --tags --prune
+git status
+git rev-parse HEAD
+```
+
+Use `paper` as the scientific repository. Keep `curve_gen_legacy` alongside it as a read-only source for coordinate ingestion, UI code and the historical scraper. The paper repository identifies `data/csv/dataset_12CST_params.csv`, the model scripts and trained artefacts as its core scientific content.
+
+---
+
+## 2. Freeze the submitted state before changing anything
+
+Create a tag that permanently identifies the rejected-paper implementation:
+
+```powershell
+git status --short
+git tag --list submitted-v1
+```
+
+If `submitted-v1` does not exist:
+
+```powershell
+git tag -a submitted-v1 -m "Exact repository state used for submitted paper v1"
+```
+
+Create the new branch:
+
+```powershell
+git switch -c robust-v2
+```
+
+If the branch already exists:
+
+```powershell
+git switch robust-v2
+```
+
+Create baseline records:
+
+```powershell
+New-Item -ItemType Directory -Force `
+    reports\setup, `
+    reports\generated, `
+    logs, `
+    data\legacy | Out-Null
+
+git rev-parse HEAD |
+    Out-File reports\setup\starting_git_sha.txt
+
+git ls-files |
+    Out-File reports\setup\tracked_files.txt
+
+Get-FileHash data\csv\dataset_12CST_params.csv -Algorithm SHA256 |
+    Format-List |
+    Out-File reports\setup\legacy_dataset_sha256.txt
+
+Get-FileHash trained_model\best_model.pt -Algorithm SHA256 |
+    Format-List |
+    Out-File reports\setup\legacy_model_sha256.txt
+
+Get-FileHash trained_model\scalers.pkl -Algorithm SHA256 |
+    Format-List |
+    Out-File reports\setup\legacy_scalers_sha256.txt
+```
+
+Where appropriate, back up the branch and tag remotely:
+
+```powershell
+git push origin submitted-v1
+git push -u origin robust-v2
+```
+
+The current `main` data tree exposes the coordinate and CSV directories, but I did not find the original raw polar cache in the current repository.
+
+---
+
+## 3. Add the starter scaffold without overwriting your current README
+
+Download and extract the starter ZIP into a temporary sibling directory, not directly over the repository.
+
+```powershell
+Expand-Archive `
+    "$HOME\Downloads\robust_airfoil_v2_starter.zip" `
+    "$HOME\Downloads\robust_airfoil_v2_starter_extracted" `
+    -Force
+```
+
+The extracted folder should be:
+
+```text
+robust_airfoil_v2_starter_extracted/
+└── robust_airfoil_v2_starter/
+```
+
+From the `paper` repository, copy the scaffold while excluding its replacement README and top-level guide:
+
+```powershell
+robocopy `
+    "$HOME\Downloads\robust_airfoil_v2_starter_extracted\robust_airfoil_v2_starter" `
+    "." `
+    /E `
+    /XF README.md EXECUTION_GUIDE.md
+```
+
+Copy the guide into your documentation directory:
+
+```powershell
+New-Item -ItemType Directory -Force docs | Out-Null
+
+Copy-Item `
+    "$HOME\Downloads\robust_airfoil_v2_starter_extracted\robust_airfoil_v2_starter\EXECUTION_GUIDE.md" `
+    "docs\ROBUST_V2_EXECUTION_GUIDE.md"
+```
+
+Inspect everything before committing:
+
+```powershell
+git status
+git diff --stat
+git diff
+```
+
+Do not allow `robocopy` to replace any file without examining the diff.
+
+---
+
+# Part II — Environment setup
+
+## 4. Preserve any historical environment first
+
+Before installing anything, search for existing environments:
+
+```powershell
+Get-ChildItem . -Force -Directory |
+    Where-Object {
+        $_.Name -match "^(\.venv|venv|env|\.conda|conda)"
+    } |
+    Select-Object FullName
+```
+
+If the old environment still runs, activate it and capture its exact package state:
+
+```powershell
+# Adjust the path to the discovered environment.
+.\.venv\Scripts\Activate.ps1
+
+python --version
+python -m pip freeze |
+    Out-File reports\setup\legacy_environment_freeze.txt
+```
+
+Do not upgrade this environment. It is evidence for reproducing the old model.
+
+The submitted repository’s `requirements.txt` only gives broad minimum versions, so installing it today will not necessarily recreate the environment that generated the paper’s results.
+
+Deactivate it:
+
+```powershell
+deactivate
+```
+
+---
+
+## 5. Create a separate Python 3.11 environment for `robust-v2`
+
+Python 3.11 is the safest compatibility target for the new branch while retaining support for current PyTorch and aerodynamic packages.
+
+Install `uv` using the official Windows method:
+
+```powershell
+winget install --id=astral-sh.uv -e
+```
+
+Alternatively, use the official standalone installer:
+
+```powershell
+powershell -ExecutionPolicy ByPass -c `
+    "irm https://astral.sh/uv/install.ps1 | iex"
+```
+
+Restart PowerShell if `uv` is not immediately on `PATH`. `uv` supports Windows, managed Python installations, project lockfiles and isolated virtual environments. ([Astral Docs][2])
+
+Inside the repository:
+
+```powershell
+uv python install 3.11
+uv venv --python 3.11
+uv sync --extra dev
+
+.venv\Scripts\Activate.ps1
+```
+
+Run the environment report:
+
+```powershell
+python scripts\00_environment_report.py
+```
+
+Inspect the GPU:
+
+```powershell
+nvidia-smi
+```
+
+Install PyTorch using the current command generated by the official PyTorch selector for:
+
+* Windows
+* Pip
+* Python
+* the CUDA build compatible with your current NVIDIA driver
+
+Do not copy the paper’s old CUDA 11.8 command blindly. The official selector is the source of truth for currently supported builds, and current stable PyTorch requires Python 3.10 or newer. ([PyTorch][3])
+
+Inside the activated `uv` environment, adapt the selector command by using `uv pip install` in place of `pip install`.
+
+Verify:
+
+```powershell
+python -c "import torch; print('Torch:', torch.__version__); print('CUDA available:', torch.cuda.is_available()); print('Torch CUDA:', torch.version.cuda); print('GPU:', torch.cuda.get_device_name(0) if torch.cuda.is_available() else 'CPU')"
+```
+
+Capture the complete installed state:
+
+```powershell
+uv pip freeze |
+    Out-File reports\setup\robust_v2_environment_freeze.txt
+```
+
+Run the supplied tests:
+
+```powershell
+pytest -q
+```
+
+Initial expected result:
+
+```text
+2 passed
+```
+
+Then run code-quality checks:
+
+```powershell
+ruff check .
+mypy src
+```
+
+Do not worry yet if `mypy` finds type errors in the old repository code. Record them separately from errors in the new `src/robust_airfoil` package.
+
+---
+
+# Part III — Reproduce and diagnose the rejected-paper baseline
+
+## 6. Audit the old CSV exactly as it exists
+
+Run:
+
+```powershell
+python scripts\02_audit_legacy_dataset.py
+```
+
+This produces:
+
+```text
+reports/generated/legacy_dataset_audit.json
+```
+
+Review:
+
+```powershell
+Get-Content reports\generated\legacy_dataset_audit.json
+```
+
+Confirm:
+
+* row count;
+* exact column count;
+* airfoil/name column;
+* `Lower 0` to `Lower 4`;
+* `Upper 0` to `Upper 4`;
+* `dz`;
+* `zeta`;
+* all `Cl...` columns;
+* all validity columns;
+* duplicate rows;
+* missing values;
+* SHA-256.
+
+The final training script explicitly selects the 12 inputs as five lower coefficients, five upper coefficients, `dz` and `zeta`, detects output columns beginning with `Cl`, and detects validity columns beginning with `valid`.
+
+---
+
+## 7. Do not run the old training script unchanged
+
+The current repository contains several incompatible historical states:
+
+* `src/models.py` still defaults to 14 inputs and 96 outputs in places.
+* The final training script constructs a 12-input, 48-output MLP.
+* The recurrent implementations process a sequence of length one.
+* `src/utils.py` has a default 96-point angle array inconsistent with the paper’s 48-point grid.
+* `compare_physical_metrics` returns one dictionary, while the training script calls it in incompatible ways.
+* The final script performs a random 70/15/15 split with seed 42.
+* Early stopping is actually driven by validation loss rather than the Physics Score described in the paper.
+
+Create a **new** reproduction script rather than editing the historical script in place:
+
+```text
+scripts/05_reproduce_submitted_v1.py
+```
+
+It must:
+
+1. Load the exact legacy CSV.
+2. Select the 12 input columns explicitly.
+3. Select the 48 (C_L) columns and corresponding validity columns.
+4. Recreate the random split using seed 42 and the exact two-stage 70/15/15 procedure from `train_best_model.py`.
+5. Load `trained_model/scalers.pkl`.
+6. Instantiate the exact saved MLP configuration.
+7. Load `trained_model/best_model.pt`.
+8. Assert input shape `(N, 12)` and output shape `(N, 48)`.
+9. Derive the 48-angle grid from committed metadata or explicitly set the paper’s grid, rather than using the stale 96-point utility default.
+10. Recalculate:
+
+    * full pointwise MSE;
+    * full pointwise (R^2);
+    * valid-only MSE;
+    * valid-only (R^2);
+    * separate physical errors using corrected extraction;
+    * inference timing.
+11. Compare results with `trained_model/evaluation_results.json`.
+12. Save:
+
+    ```text
+    reports/reproduction/v1_reproduction.json
+    reports/reproduction/v1_discrepancies.md
+    ```
+
+### Baseline gate
+
+Do not begin new training until one of these is true:
+
+* the saved model reproduces the recorded metrics within declared numerical tolerance; or
+* every discrepancy is traced to a known code/configuration mismatch and documented.
+
+The purpose is not to preserve weak methodology. It is to establish exactly which result state the new work is extending.
+
+### Coding-agent prompt for this stage
+
+```text
+Work only on baseline reproduction in bengawith/paper, branch robust-v2.
+
+Create scripts/05_reproduce_submitted_v1.py without modifying the historical
+training scripts or saved artefacts.
+
+Requirements:
+- hash and load data/csv/dataset_12CST_params.csv;
+- select Lower 0..4, Upper 0..4, dz and zeta explicitly;
+- reconstruct the exact seed-42 70/15/15 split used in train_best_model.py;
+- load the committed scalers, model config and best_model.pt;
+- assert 12 inputs and 48 outputs;
+- derive or declare the correct 48-angle paper grid and never use the stale
+  96-point utility default;
+- compute full and validity-supported pointwise metrics;
+- report physical metrics separately without a mixed-unit Physics Score;
+- write machine-readable results and a discrepancy report;
+- add tests for split determinism, model shape, scaler loading and output shape.
+
+Do not retrain or tune anything. Stop after the reproduction report and tests pass.
+```
+
+---
+
+# Part IV — Find your original raw data before downloading again
+
+## 8. Search your home PC and backups
+
+Run the supplied discovery script against likely locations first:
+
+```powershell
+python scripts\01_discover_legacy_data.py `
+    "$HOME\Documents" `
+    "$HOME\Downloads" `
+    "$HOME\Desktop" `
+    "$HOME\OneDrive"
+```
+
+Open:
+
+```powershell
+Import-Csv reports\generated\legacy_search.csv |
+    Out-GridView
+```
+
+If your data may be on other drives:
+
+```powershell
+python scripts\01_discover_legacy_data.py `
+    "D:\" `
+    "E:\"
+```
+
+Search Git history and reflogs too:
+
+```powershell
+git reflog --all
+git log --all --oneline --name-only -- `
+    "*airfoil*" `
+    "*aerofoil*" `
+    "*polar*" `
+    "*xfoil*" `
+    "*cache*" `
+    "*dataset*" `
+    "*.pkl" `
+    "*.pickle"
+```
+
+Search the older clone:
+
+```powershell
+cd ..\curve_gen_legacy
+
+git log --all --oneline --name-only -- `
+    "*polar*" `
+    "*cache*" `
+    "*dataset*" `
+    "*.pkl" `
+    "*.pickle"
+
+cd ..\paper
+```
+
+Look specifically for files containing fields such as:
+
+```powershell
+Get-ChildItem "$HOME\Documents","$HOME\OneDrive","D:\" `
+    -Recurse -File -Include *.csv,*.txt,*.json,*.py `
+    -ErrorAction SilentlyContinue |
+    Select-String -Pattern "Top_Xtr|Bot_Xtr|Cdp|Cm|Ncrit|XFOIL" |
+    Select-Object Path -Unique
+```
+
+### Pickle warning
+
+A pickle can execute code when loaded. Only unpickle a file you personally created and trust. Do not load an unknown downloaded `.pkl` merely to inspect it.
+
+---
+
+## 9. Use this recovery decision tree
+
+| What you find                                        | Action                                                                                                               |
+| ---------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| Raw AirfoilTools CSV/TXT files                       | Best result. Hash and parse them directly. Do not redownload those keys.                                             |
+| Trusted pickle/JSON cache containing full polar rows | Export it once to immutable CSV/Parquet; preserve the original cache and SHA-256.                                    |
+| Only the wide (C_L)-only dataset                     | Re-ingest the missing AirfoilTools polars using a controlled process.                                                |
+| Some raw files and some missing                      | Parse existing files first; download only missing exact polar keys.                                                  |
+| AirfoilTools records no longer accessible            | Use a small controlled local-XFOIL pilot and reassess. Do not silently use NeuralFoil predictions as training truth. |
+
+Your original `full_set_gen.py` is evidence of the historical procedure, but do not rerun it unchanged. It used a fixed `skiprows=11`, ten concurrent workers, no immutable response cache, no metadata verification and then discarded all outputs except (C_L) and angle.
+
+---
+
+# Part V — Define the new dataset correctly
+
+## 10. Keep the committed geometries as the continuity set
+
+The official UIUC site now contains more than 1,600 coordinate files and supports both Selig and Lednicer coordinate layouts. Because the archive evolves, do not silently replace the paper’s committed geometry set with the current bulk archive. Use the committed files as the main continuity set and treat a current UIUC snapshot as a separately versioned source or external extension. ([Applied Aerodynamics Group][4])
+
+Create this structure:
+
+```text
+data/
+├── legacy/
+│   ├── dataset_12CST_params_v1.csv
+│   └── legacy_manifest.json
+│
+├── raw/
+│   ├── uiuc_legacy/
+│   ├── uiuc_current_snapshot/
+│   └── airfoiltools/
+│       ├── polar_csv/
+│       └── failed_responses/
+│
+├── interim/
+│   ├── normalised_coordinates/
+│   ├── cst_fits/
+│   └── mapping/
+│
+├── processed/
+│   ├── airfoils.parquet
+│   ├── polars.parquet
+│   ├── polar_points.parquet
+│   ├── model_points_full_source.parquet
+│   └── model_points_primary.parquet
+│
+├── manifests/
+│   ├── source_manifest.jsonl
+│   ├── airfoil_mapping.csv
+│   ├── accepted_rows.csv
+│   └── rejected_rows.csv
+│
+└── splits/
+    ├── development.csv
+    ├── calibration.csv
+    ├── locked_test.csv
+    └── split_manifest.json
+```
+
+Raw data must be immutable. Any filtering occurs only in `interim` and `processed`.
+
+---
+
+## 11. Use four connected long-form tables
+
+### `airfoils.parquet`
+
+One row per nominal geometry:
+
+```text
+airfoil_id
+canonical_name
+legacy_name
+uiuc_filename
+uiuc_source_url
+raw_geometry_path
+raw_geometry_sha256
+normalised_geometry_sha256
+geometry_format
+geometry_valid
+geometry_failure_reason
+family_label
+geometry_cluster_id
+
+lower_0 ... lower_4
+upper_0 ... upper_4
+dz_le
+zeta_te
+
+cst_roundtrip_rmse
+cst_roundtrip_max_abs_error
+thickness_ratio
+max_camber_ratio
+section_area
+leading_edge_radius
+trailing_edge_thickness
+```
+
+### `polars.parquet`
+
+One row per retrieved source polar:
+
+```text
+polar_id
+airfoil_id
+source
+polar_key
+source_url
+retrieved_utc
+raw_path
+raw_sha256
+
+xfoil_version
+reynolds_number
+mach
+ncrit
+forced_top_xtr
+forced_bot_xtr
+
+source_point_count
+alpha_min_deg
+alpha_max_deg
+metadata_match
+parse_status
+```
+
+### `polar_points.parquet`
+
+One row per genuine source row:
+
+```text
+polar_id
+airfoil_id
+source_row_index
+
+alpha_deg
+cl
+cd
+cdp
+cm
+top_xtr
+bot_xtr
+
+finite_cl
+finite_cd
+finite_cm
+duplicate_alpha
+primary_model_eligible
+quality_flags
+```
+
+### `model_points.parquet`
+
+One row per training point:
+
+```text
+airfoil_id
+geometry_cluster_id
+family_label
+split
+source_polar_id
+
+lower_0 ... lower_4
+upper_0 ... upper_4
+dz_le
+zeta_te
+alpha_deg
+
+cl
+log_cd
+cm
+
+point_weight
+dataset_version
+```
+
+The critical change is that there is **no padded 48-point target** in the new model. If AirfoilTools did not converge at (3.5^\circ), there is simply no (3.5^\circ) training row for that polar.
+
+---
+
+## 12. Retain more data than the original “clean full curves” filter
+
+Your historical decision to retain only clean, complete curves made sense for a fixed-output network, but it is not ideal for the new model.
+
+It can create selection bias because geometries that are harder for XFOIL to converge may be removed disproportionately. The point-conditioned model can use genuine valid points from a partially covered polar without inventing the missing values.
+
+Create three layers:
+
+1. **Raw layer:** every successfully retrieved source response.
+2. **Point-model layer:** every valid real point satisfying the target and metadata checks.
+3. **Strict curve subset:** aerofoils with sufficient contiguous coverage for curve-level evaluation and optimisation-domain calibration.
+
+A partial polar may contribute valid pointwise training data but should not automatically qualify for:
+
+* stall extraction;
+* full-curve validation;
+* optimisation support;
+* lower-tail design verification.
+
+---
+
+# Part VI — Build an auditable UIUC-to-AirfoilTools mapping
+
+## 13. Never rely only on a guessed filename
+
+Create:
+
+```text
+data/manifests/airfoil_mapping.csv
+```
+
+Required fields:
+
+```text
+uiuc_filename
+uiuc_stem
+legacy_dataset_name
+canonical_name
+airfoiltools_slug
+polar_key
+raw_geometry_sha256
+normalised_geometry_sha256
+mapping_method
+mapping_status
+review_note
+```
+
+Mapping order:
+
+1. Exact recovered historical polar key.
+2. Exact UIUC filename/stem.
+3. Explicit alias table.
+4. Exact normalised geometry match where both coordinate sources exist.
+5. Manual review.
+
+Possible `mapping_status` values:
+
+```text
+exact_historical_key
+exact_name
+explicit_alias
+geometry_confirmed
+ambiguous
+unmatched
+missing_polar
+invalid_geometry
+source_condition_mismatch
+```
+
+Do not silently accept fuzzy string matches. Something that looks close by name may represent a different coordinate source or revision.
+
+---
+
+## 14. Validate conditions from the downloaded file itself
+
+The requested URL is not sufficient evidence that you received the correct polar. Parse and assert:
+
+```text
+Reynolds number = 1,000,000
+Mach = 0
+Ncrit = 9
+```
+
+Also record:
+
+* XFOIL version;
+* forced transition values;
+* source airfoil name;
+* point count;
+* minimum/maximum angle;
+* raw hash.
+
+AirfoilTools examples expose all this metadata in their polar files. ([Airfoil Tools][5])
+
+---
+
+# Part VII — AirfoilTools ingestion
+
+## 15. Test the parser without using the network
+
+Run:
+
+```powershell
+python scripts\03_parse_airfoiltools_csv.py `
+    tests\fixtures\sample_airfoiltools_polar.csv
+```
+
+It should report:
+
+```text
+xfoil_version: 6.96
+reynolds_number: 1000000
+mach: 0.0
+ncrit: 9.0
+point_count: 3
+condition_errors: []
+```
+
+The parser:
+
+* finds the header dynamically;
+* does not assume exactly 11 preamble rows;
+* parses all seven aerodynamic columns;
+* records source metadata;
+* preserves missing/asterisk values as missing;
+* never interpolates or pads.
+
+---
+
+## 16. Run one network pilot only
+
+The starter includes one example key so you can verify connectivity and format. Replace the contact value with a real academic email address.
+
+```powershell
+python scripts\04_ingest_airfoiltools_pilot.py `
+    --keys pilot_polar_keys.txt `
+    --limit 1 `
+    --delay 1.5 `
+    --contact "YOUR-ACADEMIC-EMAIL"
+```
+
+Inspect:
+
+```text
+data/raw/airfoiltools/polar_csv/
+data/manifests/airfoiltools_ingestion.jsonl
+```
+
+Then parse the downloaded file directly:
+
+```powershell
+python scripts\03_parse_airfoiltools_csv.py `
+    data\raw\airfoiltools\polar_csv\xf-naca001234-il-1000000.csv
+```
+
+The pilot deliberately:
+
+* limits a run to at most 25 records;
+* runs one request at a time;
+* preserves raw files;
+* hashes every response;
+* stops immediately on 401, 403 or 429;
+* does not attempt to bypass restrictions;
+* reuses cached raw files rather than downloading them again.
+
+Do not restore the old ten-thread downloader.
+
+---
+
+## 17. Expand only through controlled gates
+
+### Gate 1: one polar
+
+Confirm:
+
+* expected metadata;
+* all expected fields;
+* sensible numeric parsing;
+* immutable raw file;
+* manifest entry;
+* no unrecognised HTML/error page saved as a polar.
+
+### Gate 2: 25 mapped aerofoils
+
+Create a 25-key file:
+
+```text
+data/manifests/pilot_25_polar_keys.txt
+```
+
+Run:
+
+```powershell
+python scripts\04_ingest_airfoiltools_pilot.py `
+    --keys data\manifests\pilot_25_polar_keys.txt `
+    --limit 25 `
+    --delay 1.5 `
+    --contact "YOUR-ACADEMIC-EMAIL"
+```
+
+Audit:
+
+* parse success rate;
+* metadata match rate;
+* (C_D) and (C_M) completeness;
+* exact mapping rate;
+* alpha-range variation;
+* duplicate angles;
+* gaps;
+* failed downloads.
+
+### Gate 3: 200 aerofoils
+
+Do not increase until the 25-record report is clean. The 200-record run should include diverse families and geometry types, not merely the first 200 alphabetically.
+
+### Gate 4: full accepted mapping
+
+Download only records whose exact mapping and source conditions have passed. Resume from the manifest. Never overwrite an existing raw file without explicitly checking its hash.
+
+### What cannot yet be claimed
+
+The web evidence confirms that the required data fields and (Re=10^6), (N_{\mathrm{crit}}=9) polars exist on AirfoilTools. It does **not** prove that every one of your historical 1,568 polar keys remains accessible today. The full mapping manifest must establish that empirically.
+
+---
+
+# Part VIII — Data-quality rules
+
+## 18. Separate hard exclusions from diagnostic flags
+
+### Hard exclusion from the primary model
+
+Exclude a point when:
+
+* geometry mapping is unresolved;
+* source metadata does not match the declared condition;
+* (\alpha), (C_L), (C_D), or (C_M) is non-finite;
+* (C_D \leq 0);
+* the nominal geometry is invalid;
+* the CST fit is demonstrably unacceptable under the eventual audited threshold;
+* the source row is an unresolved duplicate;
+* the raw response cannot be traced and hashed.
+
+### Retain but flag
+
+Do not automatically delete a point merely because it has:
+
+* a large adjacent (C_L) jump;
+* a drag spike;
+* transition movement;
+* a gap before or after it;
+* proximity to maximum lift;
+* unusual but physically possible (C_M).
+
+These may indicate real separation behaviour or XFOIL instability. Flag them for the strict-subset decision rather than silently smoothing them away.
+
+Suggested flags:
+
+```text
+large_delta_cl
+large_delta_cd
+non_contiguous_alpha
+near_cl_max
+post_peak
+transition_jump
+possible_solver_instability
+isolated_point
+```
+
+---
+
+## 19. Produce the following audits before choosing an angle range
+
+Generate:
+
+```text
+reports/data/geometry_parse_summary.json
+reports/data/cst_roundtrip_summary.json
+reports/data/airfoil_mapping_summary.json
+reports/data/source_condition_summary.json
+reports/data/target_completeness.csv
+reports/data/alpha_coverage.csv
+reports/data/duplicate_alpha.csv
+reports/data/geometry_duplicates.csv
+reports/data/family_cluster_counts.csv
+reports/data/accepted_rejected_ledger.csv
+```
+
+Required figures:
+
+1. Number of real source points at every angle bin.
+2. (C_L), (C_D) and (C_M) availability by angle.
+3. Source range distribution.
+4. Point-gap distribution.
+5. CST reconstruction-error distribution.
+6. Worst CST fits.
+7. Exact and near-duplicate shape distribution.
+8. Coverage by geometry family/cluster.
+9. Accepted versus rejected counts and reasons.
+
+Do not permanently choose (0^\circ)–(10^\circ) merely because it was previously suggested. It is likely to be a useful pre-stall interval, but the final trusted interval must be selected from the coverage and validation evidence.
+
+A reasonable preregistered rule is:
+
+* at least 90% geometry coverage at each retained angle or target-lift condition;
+* no unexplained sharp increase in held-out error;
+* sufficient contiguous source points for interpolation;
+* operation predominantly before unreliable separated-flow behaviour;
+* sensitivity reported for 80%, 90% and 95% coverage thresholds.
+
+---
+
+# Part IX — Geometry and CST processing
+
+## 20. Normalise each UIUC coordinate file consistently
+
+UIUC explicitly notes that its archive contains both Selig-style and Lednicer-style coordinate ordering, so format detection must be part of the processing rather than assuming every file uses one layout. ([Applied Aerodynamics Group][4])
+
+For every geometry:
+
+1. Read the title and numeric coordinate lines.
+2. Detect Selig versus Lednicer ordering.
+3. Remove only exact duplicate points initially.
+4. Identify leading and trailing edges.
+5. Translate and rotate so:
+   [
+   LE=(0,0),\qquad TE=(1,0)
+   ]
+6. Scale to unit chord.
+7. Ensure ordering:
+
+   ```text
+   TE upper → LE → TE lower
+   ```
+8. Split upper and lower surfaces.
+9. Interpolate each surface onto 201 cosine-spaced (x/c) locations.
+10. Check:
+
+    * surface crossing;
+    * negative local thickness;
+    * self-intersection;
+    * chord definition;
+    * missing leading edge;
+    * excessive coordinate discontinuity.
+11. Fit the same five-lower/five-upper CST representation with `dz` and `zeta`.
+12. Reconstruct the fitted shape.
+13. Store:
+
+    * RMS reconstruction error;
+    * maximum absolute error;
+    * thickness-to-chord;
+    * maximum camber;
+    * section area;
+    * leading-edge radius;
+    * trailing-edge thickness.
+
+Do not choose the CST rejection threshold before plotting the full error distribution and inspecting the worst-fitting examples.
+
+---
+
+## 21. Geometry tests that must exist
+
+Create at least:
+
+```text
+tests/test_coordinate_parsing.py
+tests/test_geometry_normalisation.py
+tests/test_surface_split.py
+tests/test_cst_roundtrip.py
+tests/test_geometry_constraints.py
+tests/test_geometry_hashing.py
+tests/test_duplicate_clustering.py
+```
+
+Tests should cover:
+
+* known Selig geometry;
+* known Lednicer geometry;
+* finite-thickness trailing edge;
+* reversed coordinate order;
+* duplicated leading-edge point;
+* non-unit chord;
+* crossing surfaces;
+* symmetric profile;
+* highly cambered profile;
+* CST round-trip determinism.
+
+---
+
+# Part X — Leakage-resistant dataset splitting
+
+## 22. Do not split point rows or ordinary airfoil names randomly
+
+Every operating point from one nominal geometry must remain in one partition. Every future perturbation of that geometry must inherit the same partition.
+
+Use:
+
+```text
+development: 70% of geometry clusters
+calibration: 15% of geometry clusters
+locked test: 15% of geometry clusters
+```
+
+The roles are:
+
+* **Development:** grouped cross-validation and model fitting.
+* **Calibration:** residual/trust calibration after architecture selection.
+* **Locked test:** opened once after all model and calibration decisions are frozen.
+
+This is stronger than using one validation set repeatedly for tuning, early stopping and conformal calibration.
+
+---
+
+## 23. Construct geometry clusters
+
+For every normalised geometry:
+
+1. Resample upper and lower surfaces on the same 201-point cosine grid.
+2. Concatenate them into a fixed geometry vector.
+3. Hash the rounded vector for exact duplicates.
+4. Calculate nearest-neighbour RMS ordinate distances.
+5. Plot the nearest-distance distribution.
+6. Manually inspect at least the 100 closest non-identical pairs.
+7. Choose and document a near-duplicate threshold.
+8. Form connected components under that threshold.
+9. Assign whole components to one split.
+
+Do not select the threshold solely to produce convenient 70/15/15 counts.
+
+Publish:
+
+```text
+data/splits/development.csv
+data/splits/calibration.csv
+data/splits/locked_test.csv
+data/splits/split_manifest.json
+```
+
+Add a test asserting that no `geometry_cluster_id` appears in more than one partition.
+
+Use named family holdouts such as NACA, Eppler or Selig as additional out-of-distribution stress tests, not as a substitute for geometry-cluster separation.
+
+---
+
+# Part XI — The new surrogate model
+
+## 24. Primary formulation
+
+At the fixed source condition:
+
+[
+Re=10^6,\qquad M=0,\qquad N_{\mathrm{crit}}=9
+]
+
+train:
+
+[
+f_\theta(\mathbf p,\alpha)
+==========================
+
+\left[
+\hat C_L,\widehat{\log C_D},\hat C_M
+\right]
+]
+
+where:
+
+[
+\mathbf p=
+[
+A_{L,0},\ldots,A_{L,4},
+A_{U,0},\ldots,A_{U,4},
+\Delta z_{LE},
+\zeta_{TE}
+]
+]
+
+This is a 13-input model:
+
+* 12 geometry features;
+* one angle-of-attack feature.
+
+Do not include Reynolds number, Mach or (N_{\mathrm{crit}}) as constant-valued input columns. If you later add multiple conditions, then extend the input with:
+
+[
+\log_{10}Re,\quad M,\quad N_{\mathrm{crit}}
+]
+
+as a separately versioned experiment.
+
+---
+
+## 25. Target treatment
+
+Use:
+
+```text
+CL      → standardise
+log(CD) → standardise
+CM      → standardise
+```
+
+Only calculate:
+
+[
+\log C_D
+]
+
+where (C_D>0). Do not repair invalid drag values by adding an arbitrary epsilon.
+
+Retain but do not initially make primary outputs:
+
+```text
+Cdp
+Top_Xtr
+Bot_Xtr
+```
+
+They can later be tested as auxiliary heads. Keep them in the dataset now so the decision remains possible.
+
+---
+
+## 26. Prevent longer polars dominating training
+
+If aerofoil (i) has (n_i) accepted points, assign:
+
+[
+w_{i,k}=\frac{1}{n_i}
+]
+
+to each of its points, or implement a sampler that:
+
+1. samples a nominal aerofoil uniformly;
+2. samples one of its valid operating points uniformly.
+
+Otherwise, an aerofoil with 150 converged rows contributes five times as much loss as one with 30 rows merely because its solver coverage is longer.
+
+---
+
+## 27. Initial baseline configuration
+
+Use this before Optuna:
+
+```yaml
+model:
+  type: shared_trunk_multi_head_mlp
+  hidden_layers: [256, 256, 256]
+  activation: silu
+  dropout: 0.10
+  outputs:
+    - cl
+    - log_cd
+    - cm
+
+training:
+  optimizer: adamw
+  learning_rate: 0.001
+  weight_decay: 0.00001
+  batch_size: 1024
+  max_epochs: 300
+  gradient_clip_norm: 1.0
+  early_stopping_patience: 25
+  seed: 20260822
+```
+
+Reduce batch size only if memory requires it.
+
+Use Huber or log-cosh loss in standardised output units:
+
+[
+L=
+\frac{1}{3}
+\left(
+L_{C_L}+L_{\log C_D}+L_{C_M}
+\right)
+]
+
+and apply the nominal-airfoil point weights.
+
+---
+
+## 28. Training ladder
+
+Do not go directly to the full dataset.
+
+### Test 1 — forward shape
+
+Confirm:
+
+```text
+input:  (batch, 13)
+output: (batch, 3)
+```
+
+### Test 2 — one-batch overfit
+
+Train repeatedly on one small batch. The loss should fall almost to zero.
+
+Failure means there is a problem in:
+
+* input/target alignment;
+* scaling;
+* masking;
+* loss;
+* optimiser;
+* model shape.
+
+Do not tune around a failed one-batch test.
+
+### Test 3 — 1,000-row smoke train
+
+Verify:
+
+* no NaNs;
+* finite gradients;
+* checkpoint saving;
+* deterministic data split;
+* metric output;
+* inverse transforms.
+
+### Test 4 — 25 nominal aerofoils
+
+Confirm the model can learn several complete polars and plot predictions.
+
+### Test 5 — 200 nominal aerofoils
+
+Confirm:
+
+* family diversity;
+* batch performance;
+* metric stability;
+* no memory leak;
+* no geometry/point leakage.
+
+### Test 6 — complete development set
+
+Only now run the first complete baseline.
+
+---
+
+## 29. Baseline evaluation
+
+Report separately:
+
+### Point metrics
+
+* (C_L) MAE, RMSE and (R^2);
+* (\log C_D) MAE and RMSE;
+* (C_D) MAE;
+* (10^4|\Delta C_D|), reported as drag counts;
+* (C_M) MAE and RMSE.
+
+### Conditional metrics
+
+* error versus (\alpha);
+* error versus lift;
+* error versus family;
+* error versus geometry-support distance;
+* error versus source coverage;
+* error around maximum lift;
+* error around transition movement.
+
+### Design-relevant metrics
+
+* error in drag at fixed target lift;
+* error in the angle required to attain target lift;
+* error in integrated drag across operating points;
+* ranking correlation among candidate geometries;
+* constraint-classification accuracy.
+
+Do not reintroduce the old mixed-unit Physics Score as the primary selector.
+
+---
+
+# Part XII — Hyperparameter tuning
+
+## 30. Use grouped inner cross-validation
+
+The locked test remains closed.
+
+Within the development partition, use three or five grouped folds based on `geometry_cluster_id`.
+
+Suggested Optuna search:
+
+```text
+hidden layers:       2–6
+width:               128–512
+residual blocks:     off/on
+activation:          ReLU, GELU, SiLU
+dropout:             0.00–0.30
+learning rate:       1e-5–3e-3, log scale
+weight decay:        1e-8–1e-3, log scale
+batch size:          512, 1024, 2048, 4096, 8192
+loss:                Huber or LogCosh
+Huber delta:         0.5–2.0 standard deviations
+normalisation:       standard scaler or robust scaler
+```
+
+Start with a sequential study using a fixed sampler seed. Optuna explicitly notes that fixed sampler seeds improve reproducibility but parallel/distributed optimisation is inherently more difficult to reproduce exactly. ([Optuna][6])
+
+Use a persisted study:
+
+```python
+study = optuna.create_study(
+    study_name="conditioned_polar_v2",
+    storage="sqlite:///results/tuning/conditioned_polar_v2.sqlite3",
+    load_if_exists=True,
+    direction="minimize",
+    sampler=optuna.samplers.TPESampler(seed=20260822),
+    pruner=optuna.pruners.MedianPruner(),
+)
+```
+
+Optuna supports pruning unpromising trials through intermediate reports. ([Optuna][7])
+
+---
+
+## 31. Tuning objective
+
+Use a dimensionless grouped-fold objective:
+
+[
+J_{\mathrm{val}}
+================
+
+\frac{1}{3}
+\left(
+\mathrm{MAE}(z_{C_L})
++
+\mathrm{MAE}(z_{\log C_D})
++
+\mathrm{MAE}(z_{C_M})
+\right)
+]
+
+where each metric is:
+
+1. calculated per nominal aerofoil;
+2. averaged across aerofoils;
+3. averaged across grouped validation folds.
+
+This prevents large families and long polars from dominating.
+
+Record every trial’s:
+
+```text
+trial number
+Git SHA
+dataset version/hash
+split manifest hash
+configuration
+seed
+fold metrics
+epoch selected
+runtime
+pruned/completed/failed state
+failure reason
+model parameter count
+```
+
+---
+
+## 32. Select a stable model, not the luckiest trial
+
+After the first search:
+
+1. Take the top five to ten configurations.
+2. Retrain each with several seeds.
+3. Compare mean and dispersion.
+4. Prefer the simplest configuration within the statistical uncertainty of the best.
+5. Freeze:
+
+   * architecture;
+   * loss;
+   * data filters;
+   * scalers;
+   * stopping rule;
+   * metrics;
+   * trust inputs.
+
+Only then train the ensemble and use the calibration partition.
+
+Do not inspect the locked test while deciding among configurations.
+
+---
+
+# Part XIII — Model uncertainty and trust calibration
+
+## 33. Train a geometry-resampled ensemble
+
+Train five ensemble members using:
+
+* different model seeds;
+* bootstrap or group-resampled nominal aerofoils;
+* identical frozen architecture and training procedure.
+
+For a candidate:
+
+[
+u_{\mathrm{ens}}(\mathbf p,\alpha)
+==================================
+
+\operatorname{Std}_m
+[
+\hat y_m(\mathbf p,\alpha)
+]
+]
+
+Call this **ensemble disagreement** or **empirical model uncertainty**, not a formally exact epistemic variance.
+
+---
+
+## 34. Calculate geometry-support distance
+
+Scale the CST input using development-set statistics and calculate:
+
+[
+d_{\mathrm{kNN}}(\mathbf p)
+===========================
+
+\frac{1}{k}
+\sum_{j=1}^{k}
+|
+\tilde{\mathbf p}
+-----------------
+
+\tilde{\mathbf p}_{(j)}
+|_2
+]
+
+On the untouched calibration geometries, model actual residual magnitude as a function of:
+
+* (d_{\mathrm{kNN}});
+* ensemble disagreement;
+* (\alpha);
+* target;
+* source coverage.
+
+Define the trusted domain as the region where the calibrated residual quantile remains below a predeclared engineering tolerance.
+
+Do not merely use “within the 95th percentile of training distance” as proof of trustworthiness.
+
+NeuralFoil is a necessary external benchmark because it already returns (C_L), (C_D), (C_M), transition quantities and an `analysis_confidence` output intended to flag sensitive or out-of-distribution optimisation queries. ([GitHub][8])
+
+Benchmark it on exactly the same:
+
+* test geometries;
+* angles;
+* Reynolds number;
+* source targets;
+* error metrics;
+* candidate rankings.
+
+Do not train your model on NeuralFoil outputs.
+
+---
+
+# Part XIV — Build the geometric-uncertainty model
+
+## 35. Use actual surface deviations
+
+For a surface coordinate (\mathbf r(x)), define:
+
+[
+\mathbf r^{(s)}(x)
+==================
+
+\mathbf r(x)
++
+\delta n^{(s)}(x)\hat{\mathbf n}(x)
+]
+
+with:
+
+[
+\delta n^{(s)}(x)
+=================
+
+T(x)
+\sum_{j=1}^{q}
+\sqrt{\lambda_j}\xi_j^{(s)}\phi_j(x)
+]
+
+where:
+
+* (\phi_j(x)) are smooth B-spline or Karhunen–Loève modes;
+* (\lambda_j) defines the correlation structure;
+* (\xi_j) are bounded random coefficients;
+* (T(x)) controls the leading/trailing-edge treatment;
+* (\hat{\mathbf n}(x)) is the local normal.
+
+Define amplitude unambiguously as:
+
+[
+\epsilon
+========
+
+\frac{\max_x |\delta n(x)|}{c}
+]
+
+and also report RMS displacement.
+
+Initial stress-test levels:
+
+```text
+0.1% chord
+0.25% chord
+0.5% chord
+1.0% chord
+```
+
+Unless these levels are based on measured manufacturing evidence, describe them as **prescribed bounded correlated geometric uncertainty**, not a measured manufacturing distribution.
+
+---
+
+## 36. Required uncertainty ablations
+
+Compare:
+
+1. Independent percentage perturbation of CST coefficients.
+2. Independent coordinate-point noise.
+3. Smooth correlated normal displacement.
+
+Also vary:
+
+* displacement amplitude;
+* correlation length;
+* upper/lower-surface correlation;
+* number of retained modes.
+
+This comparison is central to novelty: it tests whether the uncertainty representation materially changes the selected robust design.
+
+For every realisation:
+
+1. Generate the actual perturbed coordinates.
+2. Check self-intersection.
+3. Check local thickness.
+4. Check leading/trailing-edge integrity.
+5. Fit back to the 12-CST representation.
+6. record CST refit error.
+7. Use the CST fit for surrogate inference.
+8. Use the **actual displaced coordinates** for direct XFOIL/RANS validation.
+
+---
+
+## 37. Sampling
+
+During optimisation:
+
+```text
+M = 64 common scrambled Sobol samples
+```
+
+Use antithetic pairs where appropriate:
+
+[
++\boldsymbol\xi,\quad-\boldsymbol\xi
+]
+
+Reuse the same sample matrix for every candidate. This is a common-random-number design that reduces comparison noise.
+
+For final evaluation:
+
+```text
+M = 2,000 independent samples
+```
+
+Run convergence checks at:
+
+```text
+16, 32, 64, 128, 256, 512, 1000, 2000
+```
+
+Monitor convergence of:
+
+* mean;
+* standard deviation;
+* 5th/95th percentile;
+* CVaR;
+* constraint-violation probability.
+
+---
+
+# Part XV — The optimisation problem
+
+## 38. Do not maximise average (C_L) alone
+
+A useful first **pilot** design brief is:
+
+```text
+Re = 1,000,000
+Mach = 0
+Ncrit = 9
+reference = a conventional baseline such as NACA 2412,
+            after exact source and geometry verification
+target CL values = 0.4, 0.7, 1.0
+weights = 0.25, 0.50, 0.25
+```
+
+The pilot target values are not yet a publication claim. Ava and the authors should approve the final engineering use case before full runs.
+
+For each geometry realisation (s) and service condition (k), solve:
+
+[
+C_L(\mathbf p,\boldsymbol\xi_s,\alpha_{k,s})
+============================================
+
+C_{L,\mathrm{req},k}
+]
+
+within the trusted angle interval.
+
+If no valid root exists, the realisation violates the lift-achievability constraint.
+
+Define:
+
+[
+D_s(\mathbf p)
+==============
+
+\sum_k
+w_k
+C_D(
+\mathbf p,\boldsymbol\xi_s,\alpha_{k,s}
+)
+]
+
+Primary Pareto objectives:
+
+[
+\min_{\mathbf p} E[D_s]
+]
+
+and:
+
+[
+\min_{\mathbf p}
+\operatorname{CVaR}_{0.95}(D_s)
+]
+
+This asks for good average efficiency and good adverse-tail efficiency.
+
+---
+
+## 39. Constraints
+
+Relative to the chosen reference aerofoil, begin with constraints such as:
+
+[
+0.98,t_{\mathrm{ref}}
+\leq t/c
+\leq 1.02,t_{\mathrm{ref}}
+]
+
+[
+A(\mathbf p)
+\geq 0.98 A_{\mathrm{ref}}
+]
+
+[
+r_{LE}(\mathbf p)
+\geq 0.8 r_{LE,\mathrm{ref}}
+]
+
+[
+C_M(\mathbf p,\alpha_k)
+\geq
+C_{M,\mathrm{ref}}(\alpha_k)-0.01
+]
+
+along with:
+
+* minimum local thickness;
+* trailing-edge-thickness limits;
+* no surface crossing;
+* no self-intersection;
+* CST fit validity;
+* trusted-support distance;
+* ensemble/calibrated error limits;
+* target lift achievable under a declared percentage of uncertainty realisations.
+
+These relative constraints keep the first comparison controlled. They can be replaced by application-derived absolute limits once the design brief is agreed.
+
+---
+
+## 40. Compare five designs
+
+You need:
+
+1. Reference aerofoil.
+2. Deterministic optimum.
+3. Ava’s simple robust baseline using independent CST perturbations.
+4. Smooth correlated-surface robust optimum.
+5. Trust-calibrated robust Pareto knee.
+
+This lets the paper distinguish:
+
+* the value of robust optimisation;
+* the value of a physical uncertainty representation;
+* the value of lower-tail risk;
+* the value of surrogate trust constraints.
+
+---
+
+## 41. Optimisers
+
+First debug a scalar objective using SciPy differential evolution.
+
+Then use NSGA-II through `pymoo` for:
+
+[
+\min E[D],\qquad
+\min \operatorname{CVaR}_{0.95}(D)
+]
+
+`pymoo` provides a standard NSGA-II implementation with non-dominated sorting and crowding-distance survival, together with explicit constraint-handling support. ([pymoo][9])
+
+Starting values:
+
+```text
+debug:
+  population = 32–64
+  generations = 20–50
+  uncertainty samples = 16–32
+
+full candidate run:
+  population = 128
+  generations = 200
+  uncertainty samples = 64
+  independent optimiser seeds = at least 10
+```
+
+Do not treat 200 generations as automatically sufficient. Continue or stop based on:
+
+* hypervolume convergence;
+* front movement;
+* constraint-feasible population;
+* repeated-seed front agreement.
+
+---
+
+# Part XVI — Direct validation
+
+## 42. First verify local XFOIL against archived AirfoilTools records
+
+AirfoilTools examples identify the archived solver as XFOIL 6.96. A locally installed solver may use another version or different panel settings, so first quantify the difference rather than assuming bitwise equivalence. ([Airfoil Tools][5])
+
+Select ten ordinary aerofoils spanning:
+
+* symmetric;
+* moderately cambered;
+* highly cambered;
+* thick;
+* thin;
+* several named families.
+
+For each, reproduce:
+
+```text
+Re = 1,000,000
+Mach = 0
+Ncrit = 9
+PANE
+FILT, if reproducing the historical procedure
+ITER = 70
+```
+
+Compare local and archived:
+
+* convergence pattern;
+* (C_L);
+* (C_D);
+* (C_M);
+* transition location;
+* maximum lift vicinity.
+
+Do not start validating optimised geometries until the ordinary-airfoil discrepancy is understood.
+
+---
+
+## 43. Validate selected designs
+
+For:
+
+1. reference;
+2. deterministic optimum;
+3. naïve robust optimum;
+4. smooth-field robust optimum;
+5. trust-calibrated knee;
+
+run:
+
+* nominal direct XFOIL;
+* a shared set of independent perturbations;
+* at least 50–100 perturbations initially;
+* the same lift targets;
+* direct recomputation of mean, quantiles and CVaR.
+
+Compare:
+
+* surrogate versus direct-solver mean;
+* surrogate versus direct-solver tails;
+* constraint violations;
+* design ranking;
+* effect size and confidence intervals.
+
+Direct XFOIL establishes consistency with the source method. It is not independent high-fidelity validation.
+
+---
+
+## 44. RANS or experimental validation
+
+For the final reference, deterministic and robust-knee designs, use selected two-dimensional RANS cases:
+
+* nominal;
+* representative median perturbation;
+* adverse-tail perturbation;
+* angles or target-lift states needed to test the claimed ranking.
+
+Use:
+
+* documented domain-size study;
+* three mesh levels;
+* (y^+<1) where the selected near-wall treatment requires it;
+* force-history convergence;
+* residual convergence;
+* a turbulence/transition-model justification;
+* identical Reynolds and Mach conditions.
+
+The UIUC experimental archive is valuable but largely covers low Reynolds numbers, typically below the paper’s (10^6) condition. It should be used as matched external evidence only where Reynolds number, transition and geometry are suitable, not merged indiscriminately into the primary source labels. ([Applied Aerodynamics Group][10])
+
+---
+
+# Part XVII — Required automated test suite
+
+## 45. Repository and reproducibility
+
+```text
+test_dataset_hash_is_recorded
+test_model_hash_is_recorded
+test_config_hash_is_recorded
+test_split_is_deterministic
+test_seed_is_recorded
+test_raw_files_are_not_modified
+```
+
+## 46. Source ingestion
+
+```text
+test_airfoiltools_header_discovery
+test_airfoiltools_metadata_parse
+test_expected_seven_columns
+test_condition_mismatch_rejected
+test_html_error_not_parsed_as_csv
+test_duplicate_alpha_flagged
+test_raw_response_sha256
+test_resume_uses_cache
+test_stops_on_403_429
+```
+
+## 47. Geometry
+
+```text
+test_selig_format
+test_lednicer_format
+test_unit_chord_normalisation
+test_surface_orientation
+test_surface_crossing
+test_cst_roundtrip
+test_finite_trailing_edge
+test_geometry_hash_determinism
+```
+
+## 48. Dataset
+
+```text
+test_no_padded_training_rows
+test_cd_strictly_positive
+test_all_targets_finite
+test_equal_airfoil_aggregate_weight
+test_mapping_is_unambiguous
+test_all_points_inherit_geometry_split
+test_no_cluster_leakage
+```
+
+## 49. Model
+
+```text
+test_input_output_shape
+test_scaler_train_only
+test_log_cd_inverse
+test_one_batch_overfit
+test_checkpoint_roundtrip
+test_cpu_gpu_prediction_tolerance
+test_fixed_seed_smoke_repeat
+test_test_partition_not_loaded_during_tuning
+```
+
+## 50. Uncertainty and optimisation
+
+```text
+test_displacement_amplitude
+test_displacement_reproducibility
+test_invalid_geometry_rejected
+test_cst_refit_error_recorded
+test_common_random_numbers
+test_risk_metric_against_hand_calculation
+test_geometry_constraints
+test_untrusted_candidate_rejected
+test_optimisation_smoke
+test_final_sample_convergence
+```
+
+Run routinely:
+
+```powershell
+pytest -q
+pytest --cov=robust_airfoil --cov-report=html
+ruff check .
+mypy src
+```
+
+---
+
+# Part XVIII — Exact go/no-go gates
+
+## Dataset gate
+
+Proceed only if:
+
+* every processed row links to an immutable raw response and geometry hash;
+* source conditions are verified;
+* mapping ambiguity is quarantined;
+* missing source angles remain missing;
+* geometry and CST errors are characterised;
+* split leakage tests pass.
+
+## Model gate
+
+Proceed only if:
+
+* one-batch overfit passes;
+* grouped validation is materially better than simple baselines;
+* (C_D) and (C_M) errors are low enough for the proposed optimisation;
+* error does not explode within the intended operating domain;
+* calibration residuals are usable;
+* NeuralFoil comparison is understood.
+
+## Optimisation gate
+
+Proceed only if:
+
+* all geometry constraints are tested;
+* uncertainty estimates converge;
+* candidate performance improvements exceed calibrated surrogate error;
+* repeated optimiser seeds produce a stable trade-off;
+* the optimiser is not selecting unsupported geometries.
+
+## Publication gate
+
+Do not make the central robust-design claim unless:
+
+* the direct XFOIL ranking agrees;
+* the lower-tail improvement confidence interval does not overlap zero;
+* the effect exceeds sampling and surrogate uncertainty;
+* selected RANS or matched higher-fidelity evidence supports the main ordering;
+* the result remains under reasonable tolerance/correlation-length sensitivity analyses.
+
+---
+
+# Your exact first PC session
+
+Do these in this order and stop before any full scrape or training run:
+
+```powershell
+# 1. Inspect or clone the repository.
+cd C:\Research\paper
+git status
+git fetch --all --tags --prune
+git pull --ff-only
+
+# 2. Freeze the old state.
+git tag --list submitted-v1
+git tag -a submitted-v1 -m "Exact repository state used for submitted paper v1"
+git switch -c robust-v2
+
+# 3. Add the starter files selectively.
+# Extract the downloaded ZIP outside the repository and use the robocopy command above.
+
+# 4. Create the environment.
+winget install --id=astral-sh.uv -e
+uv python install 3.11
+uv venv --python 3.11
+uv sync --extra dev
+.venv\Scripts\Activate.ps1
+
+# 5. Install the correct PyTorch build from the current official selector.
+
+# 6. Record the machine/environment.
+python scripts\00_environment_report.py
+
+# 7. Run the supplied tests.
+pytest -q
+
+# 8. Audit the old processed CSV.
+python scripts\02_audit_legacy_dataset.py
+
+# 9. Search likely folders for old raw polar/cache files.
+python scripts\01_discover_legacy_data.py `
+    "$HOME\Documents" `
+    "$HOME\Downloads" `
+    "$HOME\Desktop" `
+    "$HOME\OneDrive"
+
+# 10. Test the parser locally.
+python scripts\03_parse_airfoiltools_csv.py `
+    tests\fixtures\sample_airfoiltools_polar.csv
+
+# 11. Run only the one-record network pilot.
+python scripts\04_ingest_airfoiltools_pilot.py `
+    --keys pilot_polar_keys.txt `
+    --limit 1 `
+    --delay 1.5 `
+    --contact "YOUR-ACADEMIC-EMAIL"
+
+# 12. Save the starting state.
+git status
+git diff --stat
+uv pip freeze | Out-File reports\setup\robust_v2_environment_freeze.txt
+```
+
+Do **not** yet:
+
+* run the old ten-thread scraper;
+* download the complete archive;
+* train the new network;
+* run Optuna;
+* generate uncertainty samples;
+* run an optimiser.
+
+The first decision depends on whether your home PC contains the original full-polar files or cache.
+
+---
+
+# First checkpoint prompt to send back
+
+```text
+I have started robust-v2.
+
+Git:
+- branch:
+- starting SHA:
+- git status:
+
+Machine:
+- Windows version:
+- CPU:
+- RAM:
+- GPU:
+- Python:
+- PyTorch:
+- CUDA available:
+
+Attached/pasted:
+1. reports/generated/environment_report.json
+2. pytest output
+3. reports/generated/legacy_dataset_audit.json
+4. reports/generated/legacy_search.csv
+5. the one-record AirfoilTools ingestion manifest
+6. the parser output
+7. the names and sizes of any raw polar, pickle, cache, JSON or intermediate
+   dataset files found locally
+
+Audit only these results. Determine whether the aerodynamic-data route is:
+A. recover raw polars,
+B. recover a trusted cache,
+C. controlled partial/full re-ingestion, or
+D. local-XFOIL fallback.
+
+Then give me the exact next commands for baseline reproduction and the 25-airfoil
+pilot. Do not begin full scraping, model tuning or optimisation yet.
+```
+
+The detailed staged prompts for the later data audit, baseline training, tuning, trust calibration and optimisation checkpoints are included in the [execution guide](sandbox:/mnt/data/robust_airfoil_v2_execution_guide.md).
+
+[1]: https://airfoiltools.com/polar/index?utm_source=chatgpt.com "Airfoil lift and drag polar diagrams"
+[2]: https://docs.astral.sh/uv/ "https://docs.astral.sh/uv/"
+[3]: https://pytorch.org/get-started/locally/ "https://pytorch.org/get-started/locally/"
+[4]: https://m-selig.ae.illinois.edu/ads.html "https://m-selig.ae.illinois.edu/ads.html"
+[5]: https://airfoiltools.com/polar/details?polar=xf-naca001234-il-1000000 "https://airfoiltools.com/polar/details?polar=xf-naca001234-il-1000000"
+[6]: https://optuna.readthedocs.io/en/stable/faq.html "https://optuna.readthedocs.io/en/stable/faq.html"
+[7]: https://optuna.readthedocs.io/en/stable/tutorial/10_key_features/003_efficient_optimization_algorithms.html "https://optuna.readthedocs.io/en/stable/tutorial/10_key_features/003_efficient_optimization_algorithms.html"
+[8]: https://github.com/peterdsharpe/NeuralFoil "https://github.com/peterdsharpe/NeuralFoil"
+[9]: https://pymoo.org/algorithms/moo/nsga2.html "https://pymoo.org/algorithms/moo/nsga2.html"
+[10]: https://m-selig.ae.illinois.edu/ads_faq.html "https://m-selig.ae.illinois.edu/ads_faq.html"

@@ -1,2 +1,48 @@
-__pycache__
+__pycache__/
+*.py[cod]
 .env
+.venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+htmlcov/
+.coverage
+ROBUST_V2_ML_ENGINEERING_FINAL/
+ROBUST_V2_ML_ENGINEERING_FINAL_20260908.zip
+
+# Robust V2 generated/heavy artefacts. Compact manifests and reports are
+# force-added when they are intended to become part of the evidence record.
+data/robust_v2/raw/
+data/robust_v2/interim/
+data/robust_v2/processed/
+results/robust_v2/**/*.pt
+results/robust_v2/**/*.pkl
+results/robust_v2/**/*.sqlite3
+results/robust_v2/**/*.parquet
+# Retain only the scaling bundles declared by the immutable frozen ensemble.
+results/robust_v2/**/*.joblib
+!results/robust_v2/full_ensemble/
+!results/robust_v2/full_ensemble/member_*/
+!results/robust_v2/full_ensemble/member_*/scaling.joblib
+reports/robust_v2/logs/
+tools/xfoil/*.exe
+tools/xfoil/*.zip
+
+# Direct-XFOIL per-case evidence is reproducible but extremely verbose. Commit
+# the compact root summaries; keep geometry, segment, polar, and console files local.
+results/robust_v2/xfoil_canaries/*/
+results/robust_v2/xfoil_candidates/*/
+
+# Lineage-scoped heavy artefacts: keep compact summaries, not the verbose per-case
+# XFOIL trees, oversized evidence JSON, or console logs.
+results/robust_v2/lineages/**/surrogate_stress/*/
+results/robust_v2/lineages/**/xfoil_canaries/*/
+results/robust_v2/lineages/**/xfoil_candidates/*/
+results/robust_v2/lineages/**/design_verification/*/
+reports/robust_v2/lineages/**/logs/
+reports/robust_v2/lineages/**/viability/advanced_studies.json
+reports/robust_v2/lineages/**/viability/viability_report.json
+reports/robust_v2/lineages/**/run_state.json
+# Oversized one-time starting-state snapshot patch (reproducible provenance, kept local).
+reports/robust_v2/final_study/starting_diff.patch
+.opencode/

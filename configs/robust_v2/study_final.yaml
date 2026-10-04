@@ -1,0 +1,9 @@
+schema_version: robust-v2-study-v1
+status: working
+lineage_id: robust-v2-current-20260908
+parent_lineage_id: legacy-20260826
+engineering_seed: 20260824
+evidence_seed: 20260908
+notes:
+  - This is a working protocol, not a coauthor-approved preregistration.
+  - A fresh lineage is required because current processed-data hashes do not match the August 26 frozen model.
