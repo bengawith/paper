@@ -1,0 +1,710 @@
+
+## git rev-parse --show-toplevel
+
+C:/Users/Ben/workspaces/github.com/bengawith/paper
+
+## git remote -v
+
+origin	https://github.com/bengawith/paper (fetch)
+origin	https://github.com/bengawith/paper (push)
+
+## git status --short
+
+MM .gitignore
+A  reports/robust_v2/ava_alignment/local_patch_application.json
+ M reports/robust_v2/data/dataset_summary.json
+ M reports/robust_v2/handover/AGENT_HANDOVER.md
+ M reports/robust_v2/run_state.json
+ M reports/robust_v2/setup/environment.json
+ M reports/robust_v2/setup/environment.txt
+ M reports/robust_v2/viability/VIABILITY_REPORT.md
+ M reports/robust_v2/viability/viability_report.json
+D  results/robust_v2/expansion_200/mlp/scaling.joblib
+D  results/robust_v2/full_baseline/mlp/scaling.joblib
+ M results/robust_v2/optimisation/nsga2_debug_seed_20261824.json
+ M results/robust_v2/optimisation/nsga2_full_seed_20263824.json
+ M results/robust_v2/optimisation/nsga2_full_seed_20263825.json
+ M results/robust_v2/optimisation/nsga2_pilot_seed_20262824.json
+D  results/robust_v2/pilot/mlp/scaling.joblib
+D  results/robust_v2/tuning/trial_0000/fold_0/scaling.joblib
+D  results/robust_v2/tuning/trial_0000/fold_1/scaling.joblib
+D  results/robust_v2/tuning/trial_0000/fold_2/scaling.joblib
+D  results/robust_v2/tuning/trial_0001/fold_0/scaling.joblib
+D  results/robust_v2/tuning/trial_0001/fold_1/scaling.joblib
+D  results/robust_v2/tuning/trial_0001/fold_2/scaling.joblib
+D  results/robust_v2/tuning/trial_0002/fold_0/scaling.joblib
+D  results/robust_v2/tuning/trial_0002/fold_1/scaling.joblib
+D  results/robust_v2/tuning/trial_0002/fold_2/scaling.joblib
+D  results/robust_v2/tuning/trial_0003/fold_0/scaling.joblib
+D  results/robust_v2/tuning/trial_0003/fold_1/scaling.joblib
+D  results/robust_v2/tuning/trial_0003/fold_2/scaling.joblib
+D  results/robust_v2/tuning/trial_0004/fold_0/scaling.joblib
+D  results/robust_v2/tuning/trial_0004/fold_1/scaling.joblib
+D  results/robust_v2/tuning/trial_0004/fold_2/scaling.joblib
+D  results/robust_v2/tuning/trial_0005/fold_0/scaling.joblib
+D  results/robust_v2/tuning/trial_0005/fold_1/scaling.joblib
+D  results/robust_v2/tuning/trial_0005/fold_2/scaling.joblib
+D  results/robust_v2/tuning/trial_0006/fold_0/scaling.joblib
+D  results/robust_v2/tuning/trial_0006/fold_1/scaling.joblib
+D  results/robust_v2/tuning/trial_0006/fold_2/scaling.joblib
+D  results/robust_v2/tuning/trial_0007/fold_0/scaling.joblib
+D  results/robust_v2/tuning/trial_0007/fold_1/scaling.joblib
+D  results/robust_v2/tuning/trial_0007/fold_2/scaling.joblib
+D  results/robust_v2/tuning/trial_0008/fold_0/scaling.joblib
+D  results/robust_v2/tuning/trial_0008/fold_1/scaling.joblib
+D  results/robust_v2/tuning/trial_0008/fold_2/scaling.joblib
+D  results/robust_v2/tuning/trial_0009/fold_0/scaling.joblib
+D  results/robust_v2/tuning/trial_0009/fold_1/scaling.joblib
+D  results/robust_v2/tuning/trial_0009/fold_2/scaling.joblib
+D  results/robust_v2/tuning/trial_0010/fold_0/scaling.joblib
+D  results/robust_v2/tuning/trial_0010/fold_1/scaling.joblib
+D  results/robust_v2/tuning/trial_0010/fold_2/scaling.joblib
+D  results/robust_v2/tuning/trial_0011/fold_0/scaling.joblib
+D  results/robust_v2/tuning/trial_0011/fold_1/scaling.joblib
+D  results/robust_v2/tuning/trial_0011/fold_2/scaling.joblib
+D  results/robust_v2/tuning/trial_0012/fold_0/scaling.joblib
+D  results/robust_v2/tuning/trial_0012/fold_1/scaling.joblib
+D  results/robust_v2/tuning/trial_0012/fold_2/scaling.joblib
+D  results/robust_v2/tuning/trial_0013/fold_0/scaling.joblib
+D  results/robust_v2/tuning/trial_0013/fold_1/scaling.joblib
+D  results/robust_v2/tuning/trial_0013/fold_2/scaling.joblib
+D  results/robust_v2/tuning/trial_0014/fold_0/scaling.joblib
+D  results/robust_v2/tuning/trial_0014/fold_1/scaling.joblib
+D  results/robust_v2/tuning/trial_0014/fold_2/scaling.joblib
+D  results/robust_v2/tuning/trial_0015/fold_0/scaling.joblib
+D  results/robust_v2/tuning/trial_0015/fold_1/scaling.joblib
+D  results/robust_v2/tuning/trial_0015/fold_2/scaling.joblib
+D  results/robust_v2/tuning/trial_0016/fold_0/scaling.joblib
+D  results/robust_v2/tuning/trial_0017/fold_0/scaling.joblib
+D  results/robust_v2/tuning/trial_0018/fold_0/scaling.joblib
+D  results/robust_v2/tuning/trial_0018/fold_1/scaling.joblib
+D  results/robust_v2/tuning/trial_0018/fold_2/scaling.joblib
+D  results/robust_v2/tuning/trial_0019/fold_0/scaling.joblib
+D  results/robust_v2/tuning/trial_0020/fold_0/scaling.joblib
+D  results/robust_v2/tuning/trial_0021/fold_0/scaling.joblib
+D  results/robust_v2/tuning/trial_0022/fold_0/scaling.joblib
+D  results/robust_v2/tuning/trial_0022/fold_1/scaling.joblib
+D  results/robust_v2/tuning/trial_0022/fold_2/scaling.joblib
+D  results/robust_v2/tuning/trial_0023/fold_0/scaling.joblib
+D  results/robust_v2/tuning/trial_0023/fold_1/scaling.joblib
+D  results/robust_v2/tuning/trial_0023/fold_2/scaling.joblib
+D  results/robust_v2/tuning/trial_0024/fold_0/scaling.joblib
+D  results/robust_v2/tuning/trial_0024/fold_1/scaling.joblib
+D  results/robust_v2/tuning/trial_0024/fold_2/scaling.joblib
+D  results/robust_v2/tuning/trial_0025/fold_0/scaling.joblib
+D  results/robust_v2/tuning/trial_0026/fold_0/scaling.joblib
+D  results/robust_v2/tuning/trial_0027/fold_0/scaling.joblib
+D  results/robust_v2/tuning/trial_0028/fold_0/scaling.joblib
+D  results/robust_v2/tuning/trial_0029/fold_0/scaling.joblib
+D  results/robust_v2/tuning/trial_0030/fold_0/scaling.joblib
+D  results/robust_v2/tuning/trial_0031/fold_0/scaling.joblib
+D  results/robust_v2/tuning/trial_0031/fold_1/scaling.joblib
+D  results/robust_v2/tuning/trial_0031/fold_2/scaling.joblib
+D  results/robust_v2/tuning/trial_0032/fold_0/scaling.joblib
+D  results/robust_v2/tuning/trial_0032/fold_1/scaling.joblib
+D  results/robust_v2/tuning/trial_0032/fold_2/scaling.joblib
+D  results/robust_v2/tuning/trial_0033/fold_0/scaling.joblib
+D  results/robust_v2/tuning/trial_0034/fold_0/scaling.joblib
+D  results/robust_v2/tuning/trial_0035/fold_0/scaling.joblib
+D  results/robust_v2/tuning/trial_0036/fold_0/scaling.joblib
+D  results/robust_v2/tuning/trial_0036/fold_1/scaling.joblib
+D  results/robust_v2/tuning/trial_0036/fold_2/scaling.joblib
+D  results/robust_v2/tuning/trial_0037/fold_0/scaling.joblib
+D  results/robust_v2/tuning/trial_0038/fold_0/scaling.joblib
+D  results/robust_v2/tuning/trial_0039/fold_0/scaling.joblib
+D  results/robust_v2/tuning/trial_0040/fold_0/scaling.joblib
+D  results/robust_v2/tuning/trial_0040/fold_1/scaling.joblib
+D  results/robust_v2/tuning/trial_0040/fold_2/scaling.joblib
+D  results/robust_v2/tuning/trial_0041/fold_0/scaling.joblib
+D  results/robust_v2/tuning/trial_0042/fold_0/scaling.joblib
+D  results/robust_v2/tuning/trial_0042/fold_1/scaling.joblib
+D  results/robust_v2/tuning/trial_0042/fold_2/scaling.joblib
+D  results/robust_v2/tuning/trial_0043/fold_0/scaling.joblib
+D  results/robust_v2/tuning/trial_0043/fold_1/scaling.joblib
+D  results/robust_v2/tuning/trial_0043/fold_2/scaling.joblib
+D  results/robust_v2/tuning/trial_0044/fold_0/scaling.joblib
+D  results/robust_v2/tuning/trial_0045/fold_0/scaling.joblib
+D  results/robust_v2/tuning/trial_0046/fold_0/scaling.joblib
+D  results/robust_v2/tuning/trial_0047/fold_0/scaling.joblib
+D  results/robust_v2/tuning/trial_0048/fold_0/scaling.joblib
+D  results/robust_v2/tuning/trial_0049/fold_0/scaling.joblib
+D  results/robust_v2/tuning/trial_0049/fold_1/scaling.joblib
+D  results/robust_v2/tuning/trial_0049/fold_2/scaling.joblib
+ M results/robust_v2/uncertainty/manufacturing_study.json
+ M src/robust_airfoil/cli.py
+M  src/robust_airfoil/data/builder.py
+MM src/robust_airfoil/data/polar_parser.py
+M  src/robust_airfoil/data/splits.py
+M  src/robust_airfoil/modelling/evaluate.py
+M  src/robust_airfoil/modelling/freeze.py
+M  src/robust_airfoil/modelling/train.py
+M  src/robust_airfoil/optimisation/objectives.py
+ M src/robust_airfoil/optimisation/study.py
+ M src/robust_airfoil/pipeline.py
+MM src/robust_airfoil/run_state.py
+M  src/robust_airfoil/validation/xfoil_runner.py
+AM tests/robust_v2/test_ava_alignment_regressions.py
+M  tests/robust_v2/test_locked_test_guard.py
+M  tests/robust_v2/test_run_state.py
+?? .robust-airfoil-pipeline.lock
+?? configs/robust_v2/study_final.yaml
+?? contracts/
+?? reports/robust_v2/final_study/
+?? reports/robust_v2/lineages/
+?? results/robust_v2/lineages/
+?? scripts/robust_v2/audit_ml_predictions.py
+?? src/robust_airfoil/bounded_surface_field.py
+?? src/robust_airfoil/front_agreement.py
+?? src/robust_airfoil/ml_evidence.py
+?? src/robust_airfoil/ml_prediction_audit.py
+?? src/robust_airfoil/study.py
+?? tests/robust_v2/test_ml_evidence_contracts.py
+?? tests/robust_v2/test_ml_evidence_gate.py
+?? tests/robust_v2/test_study_controller.py
+
+## git branch --show-current
+
+robust-v2-viability
+
+## git rev-parse HEAD
+
+c7156b7dcb78d231f46b52542f495f6f776c2b9e
+
+## git log --oneline --decorate -20
+
+c7156b7 (HEAD -> robust-v2-viability, origin/robust-v2-viability) [audit] export robust V2 source snapshot for deep review
+02e25a9 Implement robust V2 viability study
+01d807a (tag: baseline-pre-robust-v2-20260824, origin/main, origin/HEAD, main) initial commit
+
+## git rev-parse origin/main
+
+01d807aac4f198bba0658f42e8a3dfedac115ae7
+
+## git rev-parse origin/robust-v2-viability
+
+c7156b7dcb78d231f46b52542f495f6f776c2b9e
+
+## git log --oneline --decorate --graph --all -30
+
+* c7156b7 (HEAD -> robust-v2-viability, origin/robust-v2-viability) [audit] export robust V2 source snapshot for deep review
+* 02e25a9 Implement robust V2 viability study
+* 01d807a (tag: baseline-pre-robust-v2-20260824, origin/main, origin/HEAD, main) initial commit
+
+## git diff --stat origin/main...HEAD
+
+ .env.example                                       |      6 +
+ .github/workflows/robust-v2-ci.yml                 |     28 +
+ .gitignore                                         |     27 +-
+ DIRECTIVE/FULL_PROMPT_RESPONSE.txt                 |   2218 +
+ DIRECTIVE/FULL_PROMPT_RESPONSE_2.txt               |    101 +
+ ...STER_IMPLEMENTATION_PROMPT_AIRFOIL_ROBUST_V2.md |   3140 +
+ ...TER_IMPLEMENTATION_PROMPT_AIRFOIL_ROBUST_V2.txt |   3140 +
+ DIRECTIVE/final_draft.docx                         |    Bin 0 -> 3991850 bytes
+ DIRECTIVE/robust_airfoil_v2_execution_guide.md     |    473 +
+ README.md                                          |     34 +-
+ configs/robust_v2/model_baseline.yaml              |     28 +
+ configs/robust_v2/optimisation.yaml                |     19 +
+ configs/robust_v2/sources.yaml                     |     43 +
+ configs/robust_v2/tuning.yaml                      |     19 +
+ configs/robust_v2/uncertainty.yaml                 |     16 +
+ configs/robust_v2/viability.yaml                   |     29 +
+ .../robust_v2/manifests/airfoiltools_snapshot.json |     13 +
+ data/robust_v2/manifests/uiuc_current.json         |      9 +
+ data/robust_v2/splits/expansion_200.json           |   1006 +
+ data/robust_v2/splits/full.json                    |   7831 +
+ data/robust_v2/splits/pilot.json                   |    131 +
+ pyproject.toml                                     |     79 +
+ reports/robust_v2/data/dataset_summary.json        |      9 +
+ .../robust_v2/data/local_recovery_candidates.csv   |   1736 +
+ reports/robust_v2/data/local_recovery_summary.json |     13 +
+ reports/robust_v2/data/source_acquisition.json     |     37 +
+ reports/robust_v2/handover/AGENT_HANDOVER.md       |     12 +
+ reports/robust_v2/handover/NEXT_COMMANDS.ps1       |      1 +
+ reports/robust_v2/modelling/model_ladder.json      |    534 +
+ reports/robust_v2/modelling/v1_discrepancies.json  |     12 +
+ reports/robust_v2/run_state.json                   | 143019 ++++++++++++++++++
+ reports/robust_v2/setup/environment.json           |     18 +
+ reports/robust_v2/setup/environment.txt            |     18 +
+ reports/robust_v2/setup/historical_hashes.csv      |     15 +
+ reports/robust_v2/setup/package_freeze.txt         |     84 +
+ reports/robust_v2/setup/starting_branch.txt        |      1 +
+ reports/robust_v2/setup/starting_diff.patch        |      0
+ reports/robust_v2/setup/starting_git_sha.txt       |      1 +
+ reports/robust_v2/setup/starting_log.txt           |      1 +
+ reports/robust_v2/setup/starting_remotes.txt       |      2 +
+ reports/robust_v2/setup/starting_status.txt        |      1 +
+ .../robust_v2/setup/starting_untracked_files.txt   |      6 +
+ reports/robust_v2/viability/VIABILITY_REPORT.md    |  23108 +++
+ reports/robust_v2/viability/advanced_studies.json  | 138012 +++++++++++++++++
+ reports/robust_v2/viability/viability_report.json  |  22897 +++
+ results/robust_v2/FROZEN_MODEL_MANIFEST.json       |     86 +
+ .../robust_v2/calibration/trust_calibration.json   |     87 +
+ results/robust_v2/expansion_200/baselines.json     |     71 +
+ results/robust_v2/expansion_200/mlp/history.json   |    172 +
+ results/robust_v2/expansion_200/mlp/metrics.json   |     71 +
+ results/robust_v2/expansion_200/mlp/scaling.joblib |    Bin 0 -> 714 bytes
+ results/robust_v2/expansion_200/stage_summary.json |    158 +
+ results/robust_v2/full_baseline/mlp/history.json   |    492 +
+ results/robust_v2/full_baseline/mlp/metrics.json   |     81 +
+ results/robust_v2/full_baseline/mlp/scaling.joblib |    Bin 0 -> 714 bytes
+ .../robust_v2/full_ensemble/ensemble_manifest.json |   5780 +
+ .../full_ensemble/member_000/history.json          |     92 +
+ .../full_ensemble/member_000/metrics.json          |     81 +
+ .../full_ensemble/member_000/scaling.joblib        |    Bin 0 -> 714 bytes
+ .../full_ensemble/member_001/history.json          |     92 +
+ .../full_ensemble/member_001/metrics.json          |     81 +
+ .../full_ensemble/member_001/scaling.joblib        |    Bin 0 -> 714 bytes
+ .../full_ensemble/member_002/history.json          |     92 +
+ .../full_ensemble/member_002/metrics.json          |     81 +
+ .../full_ensemble/member_002/scaling.joblib        |    Bin 0 -> 714 bytes
+ .../full_ensemble/member_003/history.json          |     92 +
+ .../full_ensemble/member_003/metrics.json          |     81 +
+ .../full_ensemble/member_003/scaling.joblib        |    Bin 0 -> 714 bytes
+ .../full_ensemble/member_004/history.json          |     92 +
+ .../full_ensemble/member_004/metrics.json          |     81 +
+ .../full_ensemble/member_004/scaling.joblib        |    Bin 0 -> 714 bytes
+ results/robust_v2/legacy/legacy_audit.json         |    409 +
+ results/robust_v2/locked_test/metrics.json         |     29 +
+ .../optimisation/nsga2_debug_seed_20261824.json    |    735 +
+ .../optimisation/nsga2_full_seed_20263824.json     |  10893 ++
+ .../optimisation/nsga2_full_seed_20263825.json     |   8774 ++
+ .../optimisation/nsga2_full_seed_20263826.json     |   7959 +
+ .../optimisation/nsga2_full_seed_20263827.json     |   8285 +
+ .../optimisation/nsga2_full_seed_20263828.json     |   7959 +
+ .../optimisation/nsga2_full_seed_20263829.json     |  15294 ++
+ .../optimisation/nsga2_full_seed_20263830.json     |   6655 +
+ .../optimisation/nsga2_full_seed_20263831.json     |  15946 ++
+ .../optimisation/nsga2_full_seed_20263832.json     |  11056 ++
+ .../optimisation/nsga2_full_seed_20263833.json     |   8285 +
+ .../optimisation/nsga2_pilot_seed_20262824.json    |   1927 +
+ .../optimisation/optimisation_summary.json         | 123970 +++++++++++++++
+ .../robust_v2/optimisation/selected_designs.json   |  18832 +++
+ results/robust_v2/pilot/baselines.json             |     71 +
+ results/robust_v2/pilot/mlp/history.json           |    227 +
+ results/robust_v2/pilot/mlp/metrics.json           |     71 +
+ results/robust_v2/pilot/mlp/scaling.joblib         |    Bin 0 -> 714 bytes
+ results/robust_v2/pilot/stage_summary.json         |    158 +
+ results/robust_v2/tuning/fold_manifest.json        |   5482 +
+ results/robust_v2/tuning/summary.json              |     19 +
+ .../tuning/trial_0000/fold_0/history.json          |    122 +
+ .../tuning/trial_0000/fold_0/metrics.json          |     81 +
+ .../tuning/trial_0000/fold_0/scaling.joblib        |    Bin 0 -> 714 bytes
+ .../tuning/trial_0000/fold_1/history.json          |    107 +
+ .../tuning/trial_0000/fold_1/metrics.json          |     81 +
+ .../tuning/trial_0000/fold_1/scaling.joblib        |    Bin 0 -> 714 bytes
+ .../tuning/trial_0000/fold_2/history.json          |    122 +
+ .../tuning/trial_0000/fold_2/metrics.json          |     81 +
+ .../tuning/trial_0000/fold_2/scaling.joblib        |    Bin 0 -> 714 bytes
+ .../tuning/trial_0001/fold_0/history.json          |    122 +
+ .../tuning/trial_0001/fold_0/metrics.json          |     81 +
+ .../tuning/trial_0001/fold_0/scaling.joblib        |    Bin 0 -> 714 bytes
+ .../tuning/trial_0001/fold_1/history.json          |    122 +
+ .../tuning/trial_0001/fold_1/metrics.json          |     81 +
+ .../tuning/trial_0001/fold_1/scaling.joblib        |    Bin 0 -> 714 bytes
+ .../tuning/trial_0001/fold_2/history.json          |    122 +
+ .../tuning/trial_0001/fold_2/metrics.json          |     81 +
+ .../tuning/trial_0001/fold_2/scaling.joblib        |    Bin 0 -> 714 bytes
+ .../tuning/trial_0002/fold_0/history.json          |    122 +
+ .../tuning/trial_0002/fold_0/metrics.json          |     81 +
+ .../tuning/trial_0002/fold_0/scaling.joblib        |    Bin 0 -> 714 bytes
+ .../tuning/trial_0002/fold_1/history.json          |    122 +
+ .../tuning/trial_0002/fold_1/metrics.json          |     81 +
+ .../tuning/trial_0002/fold_1/scaling.joblib        |    Bin 0 -> 714 bytes
+ .../tuning/trial_0002/fold_2/history.json          |    122 +
+ .../tuning/trial_0002/fold_2/metrics.json          |     81 +
+ .../tuning/trial_0002/fold_2/scaling.joblib        |    Bin 0 -> 714 bytes
+ .../tuning/trial_0003/fold_0/history.json          |    122 +
+ .../tuning/trial_0003/fold_0/metrics.json          |     81 +
+ .../tuning/trial_0003/fold_0/scaling.joblib        |    Bin 0 -> 714 bytes
+ .../tuning/trial_0003/fold_1/history.json          |    122 +
+ .../tuning/trial_0003/fold_1/metrics.json          |     81 +
+ .../tuning/trial_0003/fold_1/scaling.joblib        |    Bin 0 -> 714 bytes
+ .../tuning/trial_0003/fold_2/history.json          |    122 +
+ .../tuning/trial_0003/fold_2/metrics.json          |     81 +
+ .../tuning/trial_0003/fold_2/scaling.joblib        |    Bin 0 -> 714 bytes
+ .../tuning/trial_0004/fold_0/history.json          |    122 +
+ .../tuning/trial_0004/fold_0/metrics.json          |     81 +
+ .../tuning/trial_0004/fold_0/scaling.joblib        |    Bin 0 -> 714 bytes
+ .../tuning/trial_0004/fold_1/history.json          |    122 +
+ .../tuning/trial_0004/fold_1/metrics.json          |     81 +
+ .../tuning/trial_0004/fold_1/scaling.joblib        |    Bin 0 -> 714 bytes
+ .../tuning/trial_0004/fold_2/history.json          |    122 +
+ .../tuning/trial_0004/fold_2/metrics.json          |     81 +
+ .../tuning/trial_0004/fold_2/scaling.joblib        |    Bin 0 -> 714 bytes
+ .../tuning/trial_0005/fold_0/history.json          |    122 +
+ .../tuning/trial_0005/fold_0/metrics.json          |     81 +
+ .../tuning/trial_0005/fold_0/scaling.joblib        |    Bin 0 -> 714 bytes
+ .../tuning/trial_0005/fold_1/history.json          |    122 +
+ .../tuning/trial_0005/fold_1/metrics.json          |     81 +
+ .../tuning/trial_0005/fold_1/scaling.joblib        |    Bin 0 -> 714 bytes
+ .../tuning/trial_0005/fold_2/history.json          |    102 +
+ .../tuning/trial_0005/fold_2/metrics.json          |     81 +
+ .../tuning/trial_0005/fold_2/scaling.joblib        |    Bin 0 -> 714 bytes
+ .../tuning/trial_0006/fold_0/history.json          |    122 +
+ .../tuning/trial_0006/fold_0/metrics.json          |     81 +
+ .../tuning/trial_0006/fold_0/scaling.joblib        |    Bin 0 -> 714 bytes
+ .../tuning/trial_0006/fold_1/history.json          |    122 +
+ .../tuning/trial_0006/fold_1/metrics.json          |     81 +
+ .../tuning/trial_0006/fold_1/scaling.joblib        |    Bin 0 -> 714 bytes
+ .../tuning/trial_0006/fold_2/history.json          |    122 +
+ .../tuning/trial_0006/fold_2/metrics.json          |     81 +
+ .../tuning/trial_0006/fold_2/scaling.joblib        |    Bin 0 -> 714 bytes
+ .../tuning/trial_0007/fold_0/history.json          |    122 +
+ .../tuning/trial_0007/fold_0/metrics.json          |     81 +
+ .../tuning/trial_0007/fold_0/scaling.joblib        |    Bin 0 -> 714 bytes
+ .../tuning/trial_0007/fold_1/history.json          |    122 +
+ .../tuning/trial_0007/fold_1/metrics.json          |     81 +
+ .../tuning/trial_0007/fold_1/scaling.joblib        |    Bin 0 -> 714 bytes
+ .../tuning/trial_0007/fold_2/history.json          |    122 +
+ .../tuning/trial_0007/fold_2/metrics.json          |     81 +
+ .../tuning/trial_0007/fold_2/scaling.joblib        |    Bin 0 -> 714 bytes
+ .../tuning/trial_0008/fold_0/history.json          |    122 +
+ .../tuning/trial_0008/fold_0/metrics.json          |     81 +
+ .../tuning/trial_0008/fold_0/scaling.joblib        |    Bin 0 -> 714 bytes
+ .../tuning/trial_0008/fold_1/history.json          |    112 +
+ .../tuning/trial_0008/fold_1/metrics.json          |     81 +
+ .../tuning/trial_0008/fold_1/scaling.joblib        |    Bin 0 -> 714 bytes
+ .../tuning/trial_0008/fold_2/history.json          |    122 +
+ .../tuning/trial_0008/fold_2/metrics.json          |     81 +
+ .../tuning/trial_0008/fold_2/scaling.joblib        |    Bin 0 -> 714 bytes
+ .../tuning/trial_0009/fold_0/history.json          |    122 +
+ .../tuning/trial_0009/fold_0/metrics.json          |     81 +
+ .../tuning/trial_0009/fold_0/scaling.joblib        |    Bin 0 -> 714 bytes
+ .../tuning/trial_0009/fold_1/history.json          |    122 +
+ .../tuning/trial_0009/fold_1/metrics.json          |     81 +
+ .../tuning/trial_0009/fold_1/scaling.joblib        |    Bin 0 -> 714 bytes
+ .../tuning/trial_0009/fold_2/history.json          |    122 +
+ .../tuning/trial_0009/fold_2/metrics.json          |     81 +
+ .../tuning/trial_0009/fold_2/scaling.joblib        |    Bin 0 -> 714 bytes
+ .../tuning/trial_0010/fold_0/history.json          |    122 +
+ .../tuning/trial_0010/fold_0/metrics.json          |     81 +
+ .../tuning/trial_0010/fold_0/scaling.joblib        |    Bin 0 -> 714 bytes
+ .../tuning/trial_0010/fold_1/history.json          |    122 +
+ .../tuning/trial_0010/fold_1/metrics.json          |     81 +
+ .../tuning/trial_0010/fold_1/scaling.joblib        |    Bin 0 -> 714 bytes
+ .../tuning/trial_0010/fold_2/history.json          |    122 +
+ .../tuning/trial_0010/fold_2/metrics.json          |     81 +
+ .../tuning/trial_0010/fold_2/scaling.joblib        |    Bin 0 -> 714 bytes
+ .../tuning/trial_0011/fold_0/history.json          |    122 +
+ .../tuning/trial_0011/fold_0/metrics.json          |     81 +
+ .../tuning/trial_0011/fold_0/scaling.joblib        |    Bin 0 -> 714 bytes
+ .../tuning/trial_0011/fold_1/history.json          |    122 +
+ .../tuning/trial_0011/fold_1/metrics.json          |     81 +
+ .../tuning/trial_0011/fold_1/scaling.joblib        |    Bin 0 -> 714 bytes
+ .../tuning/trial_0011/fold_2/history.json          |    122 +
+ .../tuning/trial_0011/fold_2/metrics.json          |     81 +
+ .../tuning/trial_0011/fold_2/scaling.joblib        |    Bin 0 -> 714 bytes
+ .../tuning/trial_0012/fold_0/history.json          |    122 +
+ .../tuning/trial_0012/fold_0/metrics.json          |     81 +
+ .../tuning/trial_0012/fold_0/scaling.joblib        |    Bin 0 -> 714 bytes
+ .../tuning/trial_0012/fold_1/history.json          |    122 +
+ .../tuning/trial_0012/fold_1/metrics.json          |     81 +
+ .../tuning/trial_0012/fold_1/scaling.joblib        |    Bin 0 -> 714 bytes
+ .../tuning/trial_0012/fold_2/history.json          |    102 +
+ .../tuning/trial_0012/fold_2/metrics.json          |     81 +
+ .../tuning/trial_0012/fold_2/scaling.joblib        |    Bin 0 -> 714 bytes
+ .../tuning/trial_0013/fold_0/history.json          |    122 +
+ .../tuning/trial_0013/fold_0/metrics.json          |     81 +
+ .../tuning/trial_0013/fold_0/scaling.joblib        |    Bin 0 -> 714 bytes
+ .../tuning/trial_0013/fold_1/history.json          |    112 +
+ .../tuning/trial_0013/fold_1/metrics.json          |     81 +
+ .../tuning/trial_0013/fold_1/scaling.joblib        |    Bin 0 -> 714 bytes
+ .../tuning/trial_0013/fold_2/history.json          |    122 +
+ .../tuning/trial_0013/fold_2/metrics.json          |     81 +
+ .../tuning/trial_0013/fold_2/scaling.joblib        |    Bin 0 -> 714 bytes
+ .../tuning/trial_0014/fold_0/history.json          |    122 +
+ .../tuning/trial_0014/fold_0/metrics.json          |     81 +
+ .../tuning/trial_0014/fold_0/scaling.joblib        |    Bin 0 -> 714 bytes
+ .../tuning/trial_0014/fold_1/history.json          |     82 +
+ .../tuning/trial_0014/fold_1/metrics.json          |     81 +
+ .../tuning/trial_0014/fold_1/scaling.joblib        |    Bin 0 -> 714 bytes
+ .../tuning/trial_0014/fold_2/history.json          |    122 +
+ .../tuning/trial_0014/fold_2/metrics.json          |     81 +
+ .../tuning/trial_0014/fold_2/scaling.joblib        |    Bin 0 -> 714 bytes
+ .../tuning/trial_0015/fold_0/history.json          |    122 +
+ .../tuning/trial_0015/fold_0/metrics.json          |     81 +
+ .../tuning/trial_0015/fold_0/scaling.joblib        |    Bin 0 -> 714 bytes
+ .../tuning/trial_0015/fold_1/history.json          |    122 +
+ .../tuning/trial_0015/fold_1/metrics.json          |     81 +
+ .../tuning/trial_0015/fold_1/scaling.joblib        |    Bin 0 -> 714 bytes
+ .../tuning/trial_0015/fold_2/history.json          |    122 +
+ .../tuning/trial_0015/fold_2/metrics.json          |     81 +
+ .../tuning/trial_0015/fold_2/scaling.joblib        |    Bin 0 -> 714 bytes
+ .../tuning/trial_0016/fold_0/history.json          |    112 +
+ .../tuning/trial_0016/fold_0/metrics.json          |     81 +
+ .../tuning/trial_0016/fold_0/scaling.joblib        |    Bin 0 -> 714 bytes
+ .../tuning/trial_0017/fold_0/history.json          |     97 +
+ .../tuning/trial_0017/fold_0/metrics.json          |     81 +
+ .../tuning/trial_0017/fold_0/scaling.joblib        |    Bin 0 -> 714 bytes
+ .../tuning/trial_0018/fold_0/history.json          |    122 +
+ .../tuning/trial_0018/fold_0/metrics.json          |     81 +
+ .../tuning/trial_0018/fold_0/scaling.joblib        |    Bin 0 -> 714 bytes
+ .../tuning/trial_0018/fold_1/history.json          |    122 +
+ .../tuning/trial_0018/fold_1/metrics.json          |     81 +
+ .../tuning/trial_0018/fold_1/scaling.joblib        |    Bin 0 -> 714 bytes
+ .../tuning/trial_0018/fold_2/history.json          |    122 +
+ .../tuning/trial_0018/fold_2/metrics.json          |     81 +
+ .../tuning/trial_0018/fold_2/scaling.joblib        |    Bin 0 -> 714 bytes
+ .../tuning/trial_0019/fold_0/history.json          |    122 +
+ .../tuning/trial_0019/fold_0/metrics.json          |     81 +
+ .../tuning/trial_0019/fold_0/scaling.joblib        |    Bin 0 -> 714 bytes
+ .../tuning/trial_0020/fold_0/history.json          |    122 +
+ .../tuning/trial_0020/fold_0/metrics.json          |     81 +
+ .../tuning/trial_0020/fold_0/scaling.joblib        |    Bin 0 -> 714 bytes
+ .../tuning/trial_0021/fold_0/history.json          |    107 +
+ .../tuning/trial_0021/fold_0/metrics.json          |     81 +
+ .../tuning/trial_0021/fold_0/scaling.joblib        |    Bin 0 -> 714 bytes
+ .../tuning/trial_0022/fold_0/history.json          |    122 +
+ .../tuning/trial_0022/fold_0/metrics.json          |     81 +
+ .../tuning/trial_0022/fold_0/scaling.joblib        |    Bin 0 -> 714 bytes
+ .../tuning/trial_0022/fold_1/history.json          |     82 +
+ .../tuning/trial_0022/fold_1/metrics.json          |     81 +
+ .../tuning/trial_0022/fold_1/scaling.joblib        |    Bin 0 -> 714 bytes
+ .../tuning/trial_0022/fold_2/history.json          |    122 +
+ .../tuning/trial_0022/fold_2/metrics.json          |     81 +
+ .../tuning/trial_0022/fold_2/scaling.joblib        |    Bin 0 -> 714 bytes
+ .../tuning/trial_0023/fold_0/history.json          |    122 +
+ .../tuning/trial_0023/fold_0/metrics.json          |     81 +
+ .../tuning/trial_0023/fold_0/scaling.joblib        |    Bin 0 -> 714 bytes
+ .../tuning/trial_0023/fold_1/history.json          |    112 +
+ .../tuning/trial_0023/fold_1/metrics.json          |     81 +
+ .../tuning/trial_0023/fold_1/scaling.joblib        |    Bin 0 -> 714 bytes
+ .../tuning/trial_0023/fold_2/history.json          |    122 +
+ .../tuning/trial_0023/fold_2/metrics.json          |     81 +
+ .../tuning/trial_0023/fold_2/scaling.joblib        |    Bin 0 -> 714 bytes
+ .../tuning/trial_0024/fold_0/history.json          |    122 +
+ .../tuning/trial_0024/fold_0/metrics.json          |     81 +
+ .../tuning/trial_0024/fold_0/scaling.joblib        |    Bin 0 -> 714 bytes
+ .../tuning/trial_0024/fold_1/history.json          |    122 +
+ .../tuning/trial_0024/fold_1/metrics.json          |     81 +
+ .../tuning/trial_0024/fold_1/scaling.joblib        |    Bin 0 -> 714 bytes
+ .../tuning/trial_0024/fold_2/history.json          |    122 +
+ .../tuning/trial_0024/fold_2/metrics.json          |     81 +
+ .../tuning/trial_0024/fold_2/scaling.joblib        |    Bin 0 -> 714 bytes
+ .../tuning/trial_0025/fold_0/history.json          |    117 +
+ .../tuning/trial_0025/fold_0/metrics.json          |     81 +
+ .../tuning/trial_0025/fold_0/scaling.joblib        |    Bin 0 -> 714 bytes
+ .../tuning/trial_0026/fold_0/history.json          |    122 +
+ .../tuning/trial_0026/fold_0/metrics.json          |     81 +
+ .../tuning/trial_0026/fold_0/scaling.joblib        |    Bin 0 -> 714 bytes
+ .../tuning/trial_0027/fold_0/history.json          |    122 +
+ .../tuning/trial_0027/fold_0/metrics.json          |     81 +
+ .../tuning/trial_0027/fold_0/scaling.joblib        |    Bin 0 -> 714 bytes
+ .../tuning/trial_0028/fold_0/history.json          |    122 +
+ .../tuning/trial_0028/fold_0/metrics.json          |     81 +
+ .../tuning/trial_0028/fold_0/scaling.joblib        |    Bin 0 -> 714 bytes
+ .../tuning/trial_0029/fold_0/history.json          |    122 +
+ .../tuning/trial_0029/fold_0/metrics.json          |     81 +
+ .../tuning/trial_0029/fold_0/scaling.joblib        |    Bin 0 -> 714 bytes
+ .../tuning/trial_0030/fold_0/history.json          |    122 +
+ .../tuning/trial_0030/fold_0/metrics.json          |     81 +
+ .../tuning/trial_0030/fold_0/scaling.joblib        |    Bin 0 -> 714 bytes
+ .../tuning/trial_0031/fold_0/history.json          |    122 +
+ .../tuning/trial_0031/fold_0/metrics.json          |     81 +
+ .../tuning/trial_0031/fold_0/scaling.joblib        |    Bin 0 -> 714 bytes
+ .../tuning/trial_0031/fold_1/history.json          |    122 +
+ .../tuning/trial_0031/fold_1/metrics.json          |     81 +
+ .../tuning/trial_0031/fold_1/scaling.joblib        |    Bin 0 -> 714 bytes
+ .../tuning/trial_0031/fold_2/history.json          |    122 +
+ .../tuning/trial_0031/fold_2/metrics.json          |     81 +
+ .../tuning/trial_0031/fold_2/scaling.joblib        |    Bin 0 -> 714 bytes
+ .../tuning/trial_0032/fold_0/history.json          |    122 +
+ .../tuning/trial_0032/fold_0/metrics.json          |     81 +
+ .../tuning/trial_0032/fold_0/scaling.joblib        |    Bin 0 -> 714 bytes
+ .../tuning/trial_0032/fold_1/history.json          |    122 +
+ .../tuning/trial_0032/fold_1/metrics.json          |     81 +
+ .../tuning/trial_0032/fold_1/scaling.joblib        |    Bin 0 -> 714 bytes
+ .../tuning/trial_0032/fold_2/history.json          |    122 +
+ .../tuning/trial_0032/fold_2/metrics.json          |     81 +
+ .../tuning/trial_0032/fold_2/scaling.joblib        |    Bin 0 -> 714 bytes
+ .../tuning/trial_0033/fold_0/history.json          |    122 +
+ .../tuning/trial_0033/fold_0/metrics.json          |     81 +
+ .../tuning/trial_0033/fold_0/scaling.joblib        |    Bin 0 -> 714 bytes
+ .../tuning/trial_0034/fold_0/history.json          |     82 +
+ .../tuning/trial_0034/fold_0/metrics.json          |     81 +
+ .../tuning/trial_0034/fold_0/scaling.joblib        |    Bin 0 -> 714 bytes
+ .../tuning/trial_0035/fold_0/history.json          |    122 +
+ .../tuning/trial_0035/fold_0/metrics.json          |     81 +
+ .../tuning/trial_0035/fold_0/scaling.joblib        |    Bin 0 -> 714 bytes
+ .../tuning/trial_0036/fold_0/history.json          |    122 +
+ .../tuning/trial_0036/fold_0/metrics.json          |     81 +
+ .../tuning/trial_0036/fold_0/scaling.joblib        |    Bin 0 -> 714 bytes
+ .../tuning/trial_0036/fold_1/history.json          |    122 +
+ .../tuning/trial_0036/fold_1/metrics.json          |     81 +
+ .../tuning/trial_0036/fold_1/scaling.joblib        |    Bin 0 -> 714 bytes
+ .../tuning/trial_0036/fold_2/history.json          |    122 +
+ .../tuning/trial_0036/fold_2/metrics.json          |     81 +
+ .../tuning/trial_0036/fold_2/scaling.joblib        |    Bin 0 -> 714 bytes
+ .../tuning/trial_0037/fold_0/history.json          |    122 +
+ .../tuning/trial_0037/fold_0/metrics.json          |     81 +
+ .../tuning/trial_0037/fold_0/scaling.joblib        |    Bin 0 -> 714 bytes
+ .../tuning/trial_0038/fold_0/history.json          |    122 +
+ .../tuning/trial_0038/fold_0/metrics.json          |     81 +
+ .../tuning/trial_0038/fold_0/scaling.joblib        |    Bin 0 -> 714 bytes
+ .../tuning/trial_0039/fold_0/history.json          |    122 +
+ .../tuning/trial_0039/fold_0/metrics.json          |     81 +
+ .../tuning/trial_0039/fold_0/scaling.joblib        |    Bin 0 -> 714 bytes
+ .../tuning/trial_0040/fold_0/history.json          |    102 +
+ .../tuning/trial_0040/fold_0/metrics.json          |     81 +
+ .../tuning/trial_0040/fold_0/scaling.joblib        |    Bin 0 -> 714 bytes
+ .../tuning/trial_0040/fold_1/history.json          |    122 +
+ .../tuning/trial_0040/fold_1/metrics.json          |     81 +
+ .../tuning/trial_0040/fold_1/scaling.joblib        |    Bin 0 -> 714 bytes
+ .../tuning/trial_0040/fold_2/history.json          |     97 +
+ .../tuning/trial_0040/fold_2/metrics.json          |     81 +
+ .../tuning/trial_0040/fold_2/scaling.joblib        |    Bin 0 -> 714 bytes
+ .../tuning/trial_0041/fold_0/history.json          |     62 +
+ .../tuning/trial_0041/fold_0/metrics.json          |     81 +
+ .../tuning/trial_0041/fold_0/scaling.joblib        |    Bin 0 -> 714 bytes
+ .../tuning/trial_0042/fold_0/history.json          |    122 +
+ .../tuning/trial_0042/fold_0/metrics.json          |     81 +
+ .../tuning/trial_0042/fold_0/scaling.joblib        |    Bin 0 -> 714 bytes
+ .../tuning/trial_0042/fold_1/history.json          |    122 +
+ .../tuning/trial_0042/fold_1/metrics.json          |     81 +
+ .../tuning/trial_0042/fold_1/scaling.joblib        |    Bin 0 -> 714 bytes
+ .../tuning/trial_0042/fold_2/history.json          |    112 +
+ .../tuning/trial_0042/fold_2/metrics.json          |     81 +
+ .../tuning/trial_0042/fold_2/scaling.joblib        |    Bin 0 -> 714 bytes
+ .../tuning/trial_0043/fold_0/history.json          |    112 +
+ .../tuning/trial_0043/fold_0/metrics.json          |     81 +
+ .../tuning/trial_0043/fold_0/scaling.joblib        |    Bin 0 -> 714 bytes
+ .../tuning/trial_0043/fold_1/history.json          |     97 +
+ .../tuning/trial_0043/fold_1/metrics.json          |     81 +
+ .../tuning/trial_0043/fold_1/scaling.joblib        |    Bin 0 -> 714 bytes
+ .../tuning/trial_0043/fold_2/history.json          |    107 +
+ .../tuning/trial_0043/fold_2/metrics.json          |     81 +
+ .../tuning/trial_0043/fold_2/scaling.joblib        |    Bin 0 -> 714 bytes
+ .../tuning/trial_0044/fold_0/history.json          |     97 +
+ .../tuning/trial_0044/fold_0/metrics.json          |     81 +
+ .../tuning/trial_0044/fold_0/scaling.joblib        |    Bin 0 -> 714 bytes
+ .../tuning/trial_0045/fold_0/history.json          |    122 +
+ .../tuning/trial_0045/fold_0/metrics.json          |     81 +
+ .../tuning/trial_0045/fold_0/scaling.joblib        |    Bin 0 -> 714 bytes
+ .../tuning/trial_0046/fold_0/history.json          |    122 +
+ .../tuning/trial_0046/fold_0/metrics.json          |     81 +
+ .../tuning/trial_0046/fold_0/scaling.joblib        |    Bin 0 -> 714 bytes
+ .../tuning/trial_0047/fold_0/history.json          |    122 +
+ .../tuning/trial_0047/fold_0/metrics.json          |     81 +
+ .../tuning/trial_0047/fold_0/scaling.joblib        |    Bin 0 -> 714 bytes
+ .../tuning/trial_0048/fold_0/history.json          |    117 +
+ .../tuning/trial_0048/fold_0/metrics.json          |     81 +
+ .../tuning/trial_0048/fold_0/scaling.joblib        |    Bin 0 -> 714 bytes
+ .../tuning/trial_0049/fold_0/history.json          |    122 +
+ .../tuning/trial_0049/fold_0/metrics.json          |     81 +
+ .../tuning/trial_0049/fold_0/scaling.joblib        |    Bin 0 -> 714 bytes
+ .../tuning/trial_0049/fold_1/history.json          |    107 +
+ .../tuning/trial_0049/fold_1/metrics.json          |     81 +
+ .../tuning/trial_0049/fold_1/scaling.joblib        |    Bin 0 -> 714 bytes
+ .../tuning/trial_0049/fold_2/history.json          |    117 +
+ .../tuning/trial_0049/fold_2/metrics.json          |     81 +
+ .../tuning/trial_0049/fold_2/scaling.joblib        |    Bin 0 -> 714 bytes
+ .../robust_v2/uncertainty/manufacturing_study.json |   2000 +
+ .../robust_v2/xfoil_canaries/canary_summary.json   |    191 +
+ .../candidate_validation_summary.json              |  11838 ++
+ scripts/robust_v2/acquire_sources.py               |      3 +
+ scripts/robust_v2/audit_legacy.py                  |      5 +
+ scripts/robust_v2/benchmark_neuralfoil.py          |      1 +
+ scripts/robust_v2/bootstrap.ps1                    |      5 +
+ scripts/robust_v2/build_dataset.py                 |      3 +
+ scripts/robust_v2/build_report.py                  |      1 +
+ scripts/robust_v2/discover_legacy_data.py          |     11 +
+ scripts/robust_v2/run_optimisation.py              |      1 +
+ scripts/robust_v2/run_uncertainty.py               |      1 +
+ scripts/robust_v2/run_viability.ps1                |      2 +
+ scripts/robust_v2/run_viability.py                 |      3 +
+ scripts/robust_v2/train_baseline.py                |      3 +
+ scripts/robust_v2/tune_model.py                    |      1 +
+ scripts/robust_v2/validate_xfoil.py                |      1 +
+ src/robust_airfoil/__init__.py                     |      3 +
+ src/robust_airfoil/__main__.py                     |      4 +
+ src/robust_airfoil/benchmarks/__init__.py          |      1 +
+ src/robust_airfoil/benchmarks/neuralfoil.py        |     39 +
+ src/robust_airfoil/cli.py                          |     21 +
+ src/robust_airfoil/config.py                       |    307 +
+ src/robust_airfoil/constants.py                    |     10 +
+ src/robust_airfoil/data/__init__.py                |      1 +
+ src/robust_airfoil/data/builder.py                 |    118 +
+ src/robust_airfoil/data/legacy.py                  |     45 +
+ src/robust_airfoil/data/mapping.py                 |     47 +
+ src/robust_airfoil/data/polar_parser.py            |     80 +
+ src/robust_airfoil/data/quality.py                 |     17 +
+ src/robust_airfoil/data/schemas.py                 |     11 +
+ src/robust_airfoil/data/splits.py                  |     79 +
+ src/robust_airfoil/geometry/__init__.py            |      1 +
+ src/robust_airfoil/geometry/clustering.py          |     30 +
+ src/robust_airfoil/geometry/cst.py                 |     56 +
+ src/robust_airfoil/geometry/metrics.py             |     19 +
+ src/robust_airfoil/geometry/normalise.py           |     72 +
+ src/robust_airfoil/geometry/parser.py              |     29 +
+ src/robust_airfoil/geometry/validity.py            |     31 +
+ src/robust_airfoil/hashing.py                      |     37 +
+ src/robust_airfoil/logging_utils.py                |     39 +
+ src/robust_airfoil/modelling/__init__.py           |      5 +
+ src/robust_airfoil/modelling/baselines.py          |     40 +
+ src/robust_airfoil/modelling/calibrate.py          |    146 +
+ src/robust_airfoil/modelling/dataset.py            |     58 +
+ src/robust_airfoil/modelling/ensemble.py           |    113 +
+ src/robust_airfoil/modelling/evaluate.py           |     32 +
+ src/robust_airfoil/modelling/freeze.py             |     47 +
+ src/robust_airfoil/modelling/losses.py             |     39 +
+ src/robust_airfoil/modelling/models.py             |     63 +
+ src/robust_airfoil/modelling/samplers.py           |     25 +
+ src/robust_airfoil/modelling/train.py              |    159 +
+ src/robust_airfoil/modelling/tune.py               |    110 +
+ src/robust_airfoil/optimisation/__init__.py        |      1 +
+ src/robust_airfoil/optimisation/constraints.py     |     14 +
+ src/robust_airfoil/optimisation/objectives.py      |     52 +
+ src/robust_airfoil/optimisation/problems.py        |     18 +
+ src/robust_airfoil/optimisation/runner.py          |     13 +
+ src/robust_airfoil/optimisation/study.py           |    876 +
+ src/robust_airfoil/pipeline.py                     |   1068 +
+ src/robust_airfoil/provenance.py                   |     97 +
+ src/robust_airfoil/recovery.py                     |     69 +
+ src/robust_airfoil/reports/__init__.py             |      1 +
+ src/robust_airfoil/reports/figures.py              |     19 +
+ src/robust_airfoil/reports/viability.py            |     78 +
+ src/robust_airfoil/run_state.py                    |     79 +
+ src/robust_airfoil/sources/__init__.py             |      1 +
+ src/robust_airfoil/sources/airfoiltools.py         |    129 +
+ src/robust_airfoil/sources/snapshot.py             |     32 +
+ src/robust_airfoil/sources/uiuc.py                 |     48 +
+ src/robust_airfoil/sources/xfoil.py                |     11 +
+ src/robust_airfoil/uncertainty/__init__.py         |      1 +
+ src/robust_airfoil/uncertainty/fields.py           |     66 +
+ src/robust_airfoil/uncertainty/propagation.py      |     37 +
+ src/robust_airfoil/uncertainty/sampling.py         |     20 +
+ src/robust_airfoil/uncertainty/study.py            |    459 +
+ src/robust_airfoil/validation/__init__.py          |      1 +
+ src/robust_airfoil/validation/ranking.py           |     11 +
+ src/robust_airfoil/validation/xfoil_runner.py      |    782 +
+ tests/robust_v2/conftest.py                        |     60 +
+ tests/robust_v2/test_airfoiltools_client.py        |     20 +
+ tests/robust_v2/test_airfoiltools_parser.py        |     14 +
+ tests/robust_v2/test_config_validation.py          |     26 +
+ tests/robust_v2/test_cst_roundtrip.py              |     12 +
+ tests/robust_v2/test_dataset_builder.py            |     17 +
+ tests/robust_v2/test_geometry_normalise.py         |     25 +
+ tests/robust_v2/test_geometry_validity.py          |     16 +
+ tests/robust_v2/test_hashing.py                    |     23 +
+ tests/robust_v2/test_locked_test_guard.py          |     12 +
+ tests/robust_v2/test_logging_utils.py              |     20 +
+ tests/robust_v2/test_losses.py                     |     14 +
+ tests/robust_v2/test_mapping.py                    |     10 +
+ tests/robust_v2/test_model.py                      |     10 +
+ tests/robust_v2/test_neuralfoil_adapter.py         |     16 +
+ tests/robust_v2/test_optimisation_smoke.py         |     15 +
+ tests/robust_v2/test_recovery.py                   |     14 +
+ tests/robust_v2/test_risk_metrics.py               |     33 +
+ tests/robust_v2/test_run_state.py                  |     24 +
+ tests/robust_v2/test_sampler.py                    |     12 +
+ tests/robust_v2/test_snapshot.py                   |     20 +
+ tests/robust_v2/test_splits.py                     |     10 +
+ tests/robust_v2/test_training_smoke.py             |     10 +
+ tests/robust_v2/test_uiuc_parser.py                |     29 +
+ tests/robust_v2/test_uncertainty_fields.py         |     14 +
+ tests/robust_v2/test_viability_report.py           |     14 +
+ tests/robust_v2/test_xfoil_parser.py               |     54 +
+ uv.lock                                            |   2235 +
+ 513 files changed, 652227 insertions(+), 2 deletions(-)
+
+## git diff --stat origin/robust-v2-viability...HEAD

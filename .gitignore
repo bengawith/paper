@@ -43,4 +43,6 @@ reports/robust_v2/lineages/**/logs/
 reports/robust_v2/lineages/**/viability/advanced_studies.json
 reports/robust_v2/lineages/**/viability/viability_report.json
 reports/robust_v2/lineages/**/run_state.json
+# Oversized one-time starting-state snapshot patch (reproducible provenance, kept local).
+reports/robust_v2/final_study/starting_diff.patch
 .opencode/
