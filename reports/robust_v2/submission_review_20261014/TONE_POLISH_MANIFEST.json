@@ -1,0 +1,79 @@
+{
+  "schema": "robust-v2-v1-tone-polish-v1",
+  "date": "2026-10-14",
+  "reference": "prior_final_draft.docx (V1): measured methods-first prose; no scientific numbers borrowed",
+  "new_sha256": "26ea6a72c2a64a0a211cb9708e1b723201c2cf7faa2d1daa73eee0a63dfb5da4",
+  "n_changes": 14,
+  "changes": [
+    {
+      "section": "abstract",
+      "before_chars": 1519,
+      "after_chars": 1560
+    },
+    {
+      "section": "remove duplicated contributions",
+      "before_chars": 857,
+      "after_chars": 0
+    },
+    {
+      "section": "subject-verb agreement",
+      "before_chars": 72,
+      "after_chars": 71
+    },
+    {
+      "section": "motivation closer to V1",
+      "before_chars": 368,
+      "after_chars": 399
+    },
+    {
+      "section": "contribution introduction",
+      "before_chars": 131,
+      "after_chars": 75
+    },
+    {
+      "section": "V1-style literature gap",
+      "before_chars": 332,
+      "after_chars": 335
+    },
+    {
+      "section": "replace promotional reproducibility wording",
+      "before_chars": 315,
+      "after_chars": 219
+    },
+    {
+      "section": "remove meta peer-review narration",
+      "before_chars": 415,
+      "after_chars": 231
+    },
+    {
+      "section": "model-results tone",
+      "before_chars": 169,
+      "after_chars": 128
+    },
+    {
+      "section": "cautious interpretation",
+      "before_chars": 110,
+      "after_chars": 92
+    },
+    {
+      "section": "conclusion V1 tone",
+      "before_chars": 174,
+      "after_chars": 146
+    },
+    {
+      "section": "tool language",
+      "before_chars": 125,
+      "after_chars": 140
+    },
+    {
+      "section": "Table 5 scientifically accurate headings",
+      "before_chars": 129,
+      "after_chars": 154
+    },
+    {
+      "section": "paired cases clarity",
+      "before_chars": 122,
+      "after_chars": 124
+    }
+  ]
+}

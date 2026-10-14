@@ -5,9 +5,9 @@
 Open in this order:
 
 1. **SCIENTIFIC_REVIEW_REPORT.docx** — conclusions, verified numbers, fixes, remaining blockers and author decisions.
-2. **MANUSCRIPT_AUTHOR_REVIEW.docx** — current manuscript text, 6 tables and all 7 main figures plus supplementary ML-selectivity figure.
+2. **MANUSCRIPT_AUTHOR_REVIEW.docx** — current manuscript text, 7 tables and all 7 main figures plus supplementary ML-selectivity figure.
 3. **paper/manuscript.md** — canonical plain-text manuscript, then **paper/response_to_reviewers.md**.
-4. **CFD_HANDOFF/CFD_PROTOCOL_FOR_AVA.md** and **CFD_HANDOFF/CFD_CASE_MANIFEST.json** — coauthor-selected CFD plan and hash-pinned input geometry/polars.
+4. **CFD_HANDOFF/CFD_PROTOCOL_FOR_AVA.md** and **CFD_HANDOFF/CFD_CASE_MANIFEST.json** — proposed CFD plan for coauthor review and hash-pinned input geometry/polars.
 5. **EVIDENCE/** — strict direct-XFOIL summary, baseline comparison, numerical reconciliation and audit.
 
 Key facts to check:

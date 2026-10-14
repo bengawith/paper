@@ -8,8 +8,8 @@
   "artifacts": [
     {
       "path": "paper/manuscript.md",
-      "bytes": 39499,
-      "sha256": "e96c5389947cb84cd70c22cb7882121d0f80dc3227b8e24f899bafb7f23e9635"
+      "bytes": 38328,
+      "sha256": "26ea6a72c2a64a0a211cb9708e1b723201c2cf7faa2d1daa73eee0a63dfb5da4"
     },
     {
       "path": "paper/response_to_reviewers.md",
@@ -63,13 +63,13 @@
     },
     {
       "path": "reports/robust_v2/submission_review_20261014/MANUSCRIPT_AUTHOR_REVIEW.docx",
-      "bytes": 2643474,
-      "sha256": "6749aeab3906246c2a235f1fc3d702dfa8fc0e0a66c1ae93597937e6ae8a42eb"
+      "bytes": 2643015,
+      "sha256": "edf77bd91dfd421daf41c11c4dafd590b78740387986a9aca4d6828c7d177676"
     },
     {
       "path": "reports/robust_v2/submission_review_20261014/SCIENTIFIC_REVIEW_REPORT.docx",
       "bytes": 44907,
-      "sha256": "249d6e6c1f405387bdc3a702e6df3f155c6a98945e75828ba16065d3a080a968"
+      "sha256": "f5173195dd8fa51896b6ed84b1c373d57727c2eb6aa3f56cf638087acd5771a1"
     },
     {
       "path": "paper/figures/fig_design_verification.png",

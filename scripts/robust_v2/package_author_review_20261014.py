@@ -17,13 +17,11 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 REVIEW = ROOT / "reports/robust_v2/submission_review_20261014"
-PACKAGE_NAME = "REVIEW_READY_20261014"
-DESTS = [
-    Path(r"C:\Users\Ben\OneDrive\paper") / PACKAGE_NAME,
-    Path(r"C:\Users\Ben\OneDrive\Documents\paper") / PACKAGE_NAME,
-]
+PACKAGE_NAME = "READY_FOR_REVIEW"
+DESTS = [Path(r"C:\Users\Ben\OneDrive\paper") / PACKAGE_NAME]
 FILES = [
     ("README.md", ROOT / "paper/README.md"),
+    ("prior_final_draft.docx", Path(r"C:\Users\Ben\OneDrive\paper\prior_final_draft.docx")),
     ("READ_THIS_FIRST.md", REVIEW / "READ_THIS_FIRST.md"),
     ("MANUSCRIPT_AUTHOR_REVIEW.docx", REVIEW / "MANUSCRIPT_AUTHOR_REVIEW.docx"),
     ("SCIENTIFIC_REVIEW_REPORT.docx", REVIEW / "SCIENTIFIC_REVIEW_REPORT.docx"),
@@ -31,6 +29,8 @@ FILES = [
     ("paper/response_to_reviewers.md", ROOT / "paper/response_to_reviewers.md"),
     ("paper/data/paper_data.json", ROOT / "paper/data/paper_data.json"),
     ("EVIDENCE/REVIEW_REPORT.md", REVIEW / "REVIEW_REPORT.md"),
+    ("EVIDENCE/TONE_REVIEW_NOTE.md", REVIEW / "TONE_REVIEW_NOTE.md"),
+    ("EVIDENCE/TONE_POLISH_MANIFEST.json", REVIEW / "TONE_POLISH_MANIFEST.json"),
     ("EVIDENCE/NUMERICAL_RECONCILIATION.json", REVIEW / "NUMERICAL_RECONCILIATION.json"),
     ("EVIDENCE/XFOIL_ARCHIVE_COVERAGE_AUDIT.json", REVIEW / "XFOIL_ARCHIVE_COVERAGE_AUDIT.json"),
     (
@@ -106,7 +106,5 @@ def make(target: Path) -> None:
 if __name__ == "__main__":
     for dest in DESTS:
         make(dest)
-    a = (DESTS[0] / "SHA256_MANIFEST.json").read_bytes()
-    b = (DESTS[1] / "SHA256_MANIFEST.json").read_bytes()
-    assert a == b, "Mirror manifests differ"
-    print("Both mirrors have identical review-package manifest bytes.")
+    assert (DESTS[0] / "SHA256_MANIFEST.json").is_file()
+    print("One canonical review package:", DESTS[0])
