@@ -1398,5 +1398,18 @@
       "interpretation": "Frozen 2026-09 trust selection is effectively support-distance-driven on this held-out test; do not claim ensemble spread materially rejects states."
     },
     "source_sha256": "87a4db05544e699049eb43203cbb3c86cdeb1e82a506dbc2846b40b2badd4f93"
+  },
+  "corrected_candidate_specific_smoke": {
+    "source": "reports/robust_v2/submission_review_20261014/CORRECTED_OPTIMISATION/CORRECTED_SMOKE_FRONT.json",
+    "source_sha256": "3ba3627b5df02d069aadd1ba4573b5b74606486d4c033c01cc69efbe325a168d",
+    "agreement_status": "pass",
+    "observed_distance": 0.14929243850538715,
+    "protocol": {
+      "population": 32,
+      "generations": 10,
+      "uncertainty_samples": 16,
+      "independent_seeds": 10
+    },
+    "scope": "ten-seed small-budget numerical diagnostic, not production optimality"
   }
 }

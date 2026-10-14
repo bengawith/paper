@@ -1,32 +1,38 @@
-# Robust V2 — author review and CFD handoff
+# Robust V2 — final offline author review (14 October 2026)
 
-**14 October 2026 — This is an author-review manuscript, not a submitted or accepted journal paper.**
+**Read this first.** This is the current paper and evidence for Ben's review and Ava's selected CFD stage. It is **not** a claim of accepted journal publication, independent CFD results or globally optimal robust design.
 
-Open in this order:
+## The standalone paper to send Ava
 
-**For the flight:** The package also includes `EMAIL_TO_AVA_DRAFT.txt` (send only after your review) and `COPY_TO_LAPTOP_OFFLINE.ps1` (safe, fail-closed laptop copy; refuses dirty Git working trees). The original V1 DOCX is included unchanged for tone comparison. The independent CFD and optimizer repeatability limitations remain open; this is an author-review package, not a journal-ready or CFD-completed result.
+**`LATEST_MANUSCRIPT_FOR_AVA.docx`** is the current manuscript alone. It contains the latest abstract, methods, numerical results, seven main figures, one supplementary ML figure, tables, limitations and 28 references. It does **not** contain the old paper, previous submissions, revision commentary or this review report. Open it and review before emailing Ava.
 
-1. **SCIENTIFIC_REVIEW_REPORT.docx** — conclusions, verified numbers, fixes, remaining blockers and author decisions.
-2. **MANUSCRIPT_AUTHOR_REVIEW.docx** — current manuscript text, 7 tables and all 7 main figures plus supplementary ML-selectivity figure.
-3. **paper/manuscript.md** — canonical plain-text manuscript, then **paper/response_to_reviewers.md**.
-4. **CFD_HANDOFF/CFD_PROTOCOL_FOR_AVA.md** and **CFD_HANDOFF/CFD_CASE_MANIFEST.json** — proposed CFD plan for coauthor review and hash-pinned input geometry/polars.
-5. **EVIDENCE/** — strict direct-XFOIL summary, baseline comparison, numerical reconciliation and audit.
+`HISTORICAL/prior_final_draft.docx` is the separate V1 tone reference. Historical source, Git-history, and frozen-model/data archives are also included under `HISTORICAL/`, explicitly **not** presented as the latest code. The latest code comes from the Git branch whose commit is recorded in this package’s manifest. None of the historical material is merged into the Ava-ready manuscript.
 
-Key facts to check:
-- ML held-out R²: CL 0.989, logCD 0.922, CM 0.918; in-screen acceptance 66.1% and conditional-on-selection empirical coverage, not a formal certification.
-- Direct XFOIL at one Re/Mach/Ncrit: 18.7% lower NOMINAL weighted drag for a selected within-screen design versus NACA2412, and 8.8% lower marginal means over differently filtered completed runs; 10 valid paired perturbations.
-- Empirical 95% CVaR from 13 cases degenerates to the largest observation; no robust population-tail improvement is established. The within-screen sample maximum is higher than reference.
-- Ten-seed NSGA-II agreement 0.283 > 0.20, therefore front not repeatability-certified.
-- Manufacturing deviation amplitude is PRESCRIBED, not a measured production distribution.
-- CFD/experimental aerodynamic verification HAS NOT BEEN PERFORMED. Ava's independent viscous RANS work remains next.
+## Recommended reading order
 
-The package includes **CFD_HANDOFF_ONLY.zip** for selectively sharing just inputs/protocol with Ava; it is not a simulation result.
+1. `LATEST_MANUSCRIPT_FOR_AVA.docx` — standalone latest draft.
+2. `SCIENTIFIC_REVIEW_REPORT.docx` and `EVIDENCE/FINAL_RESEARCH_RESOLUTION.md` — what has been independently checked and what remains scientifically incomplete.
+3. `EVIDENCE/TRUST_INCREMENTAL_CV.json` and `EVIDENCE/CORRECTED_SELECTED_DESIGNS.json` — the new ML/optimisation audit.
+4. `EVIDENCE/CORRECTED_SMOKE_FRONT.json` — the ten-seed *low-budget* corrected Pareto diagnostic (not production optimality).
+5. `CFD_HANDOFF/CFD_PROTOCOL_FOR_AVA.md`, `CFD_HANDOFF/CFD_CASE_MANIFEST.json` and `CFD_HANDOFF_ONLY.zip` — exact input geometry, numerical comparisons and suggested CFD verification.
+6. `EMAIL_TO_AVA_DRAFT.txt` — friendly email to review and send **only with your permission**.
+7. `COPY_TO_LAPTOP_OFFLINE.ps1` — fail-closed single-command offline copy from inside your laptop's existing Git repository.
 
-Do not submit the manuscript before the authors approve the claims and the selected CFD study is integrated (or agree explicitly to a narrower XFOIL-only paper). Verify any prior journal resubmission restrictions, chosen venue's rules, figure formatting and generative-AI declaration.
+## Scientific conclusions that are supportable today
 
-File integrity: SHA256_MANIFEST.json records size and SHA-256 for every included file. Earlier archival packages remain untouched in the parent OneDrive paper directories. OneDrive local presence does not prove completed cloud sync.
+- On 26,692 geometry-grouped held-out **XFOIL-labelled** states, the fixed MLP predicts CL, log-CD, CM with R² approximately 0.989/0.922/0.918. XFOIL is numerical training truth, not experiment.
+- The historical trust acceptance rule rejects one-third of states predominantly on geometry support. A separate **calibration-only**, five-fold group cross-validation finds higher high-error discrimination from adding ensemble disagreement: AUROC 0.767 to 0.866, gain 0.099 [0.069, 0.139] from 300 airfoil-group bootstrap resamples. This is not a newly final-test-validated operational gate.
+- A selected design has 18.7% lower nominal local-XFOIL weighted drag than NACA 2412. Two 128-scenario XFOIL numerical checks at prescribed 0.5%-chord amplitude yield 92 and 96 fully matched, converged comparisons with about 15.4%/15.8% lower paired mean drag. These comparisons are conditional on solver success; physical manufacturing tail-risk probability and CFD confirmation remain unknown.
+- A material optimisation-physics bug was corrected: each candidate now receives its own surface-normal uncertainty field with shared latent scenarios. Prior optimisation objective values and front claims are superseded.
+- The corrected ten-seed **smoke** uses population 32, 10 generations and 16 scenarios. All seeds yielded feasible designs, with mean symmetric front distance 0.149 versus the unchanged 0.20 rule. **This is not the required full 128/200/64/10 production acceptance.**
+- The geometric deviation field is prescribed and piecewise-linear/continuous after correlated controls. No actual process-metrology tolerance distribution has been demonstrated.
 
+## What Ava will still need to establish
 
-## 14 October: Additional ML and XFOIL evidence
+A different viscous solver with a documented mesh/domain study, consistent transition/turbulence assumptions and lift-matched comparisons. Do not claim an independently CFD-verified or robust Pareto-optimal design before this work and the corrected production optimiser are completed.
 
-Two separately scrambled 128-scenario 0.5%-chord XFOIL studies give 92 and 96 strictly completed matched cases and paired mean drag reductions of 15.4% / 15.8%. These results are conditional on solver completion; no independent CFD evidence or unconditional tail guarantee. A frozen-model audit also finds historical acceptance was effectively support-distance-driven, not independently gated by disagreement. See ML_DIAGNOSTICS and the supplement in manuscript.
+## Integrity and offline access
+
+The canonical folder is `C:\Users\Ben\OneDrive\paper\READY_FOR_REVIEW` on SamsPC. `SHA256_MANIFEST.json` lists every included file and verifies the package's exact Git source commit. Original frozen research archives are retained separately in the parent OneDrive folder and not silently merged.
+
+The laptop copy script refuses a dirty working tree, verifies the branch against the package, and hashes source/destination files. Sync OneDrive to your laptop before departing. Local file presence on SamsPC does not by itself prove OneDrive cloud sync completed.

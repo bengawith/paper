@@ -128,7 +128,7 @@ def fig_manufacturing_risk() -> None:
 def fig_perturbation_validity() -> None:
     ab = DATA["perturbation_ablations"]
     names = {
-        "smooth_correlated_surface_normal": "Smooth correlated\nnormal (this work)",
+        "smooth_correlated_surface_normal": "Correlated\nsurface normal",
         "independent_multiplicative_cst": "Independent\nmultiplicative CST",
         "independent_coordinate_noise": "Independent\ncoordinate noise",
     }
@@ -157,46 +157,28 @@ def fig_perturbation_validity() -> None:
 
 
 def fig_pareto_front() -> None:
-    ns = DATA["nsga2_full"]
-    front = np.array(ns["combined_front"])
-    exp_pt, cvar_pt = ns["min_expected_point"], ns["min_cvar_point"]
-    seed_ids = np.unique(front[:, 2])
-    seed_index = {s: i + 1 for i, s in enumerate(seed_ids)}
-    colours = np.array([seed_index[s] for s in front[:, 2]])
-    fig, ax = plt.subplots(figsize=(8, 6))
-    sc = ax.scatter(
-        front[:, 0] * 1e3, front[:, 1] * 1e3, c=colours, cmap="viridis", s=18, alpha=0.6
-    )
-    ax.scatter(
-        [exp_pt[0] * 1e3],
-        [exp_pt[1] * 1e3],
-        marker="*",
-        s=320,
-        c="#b2182b",
-        edgecolor="k",
-        label="Minimum expected $C_D$ endpoint",
-        zorder=5,
-    )
-    ax.scatter(
-        [cvar_pt[0] * 1e3],
-        [cvar_pt[1] * 1e3],
-        marker="D",
-        s=160,
-        c="#2166ac",
-        edgecolor="k",
-        label="Minimum CVaR$_{95}$ endpoint",
-        zorder=5,
-    )
-    ax.set_xlabel(r"Expected weighted $C_D$ ($\times 10^{-3}$)")
-    ax.set_ylabel(r"CVaR$_{95}$ weighted $C_D$ ($\times 10^{-3}$)")
+    """Display ten-seed corrected-physics smoke outcomes, NOT an optimal full front."""
+    source = ROOT / "reports/robust_v2/submission_review_20261014/CORRECTED_OPTIMISATION/CORRECTED_SMOKE_FRONT.json"
+    report = json.loads(source.read_text(encoding="utf-8"))
+    fig, ax = plt.subplots(figsize=(8.5, 6))
+    seeds = report["seeds"]
+    for index, run in enumerate(seeds, start=1):
+        objectives = np.asarray(run["feasible_objectives"], dtype=float)
+        if len(objectives):
+            ax.scatter(objectives[:, 0] * 1e3, objectives[:, 1] * 1e3,
+                       s=42, label=f"Seed {index}", alpha=0.8)
+    agreement = report["agreement"]
+    ax.set_xlabel("Penalised mean required-lift drag objective (×10⁻³)")
+    ax.set_ylabel("Penalised empirical CVaR95 objective (×10⁻³)")
     ax.set_title(
-        f"Surrogate robust front, {ns['independent_seeds']} seeds, {len(front)} feasible designs\n"
-        f"seed front disagreement {ns['mean_symmetric_distance']:.2f} "
-        f"(> {ns['agreement_threshold']:.2f}: locations only indicative)"
+        "Candidate-specific corrected NSGA-II: low-budget diagnostic\\n"
+        f"10 seeds; 32 population × 10 generations × 16 scenarios; "
+        f"front-distance={agreement['pairwise_objective_distance_mean']:.3f}"
     )
-    cb = fig.colorbar(sc, ax=ax)
-    cb.set_label("Independent seed index")
-    ax.legend(loc="upper right")
+    ax.text(0.02, 0.02, "NOT a production Pareto optimum", transform=ax.transAxes,
+            fontsize=10, weight="bold", color="#8b0000")
+    ax.legend(loc="upper right", ncol=2, fontsize=8)
+    fig.tight_layout()
     fig.savefig(FIGDIR / "fig_pareto_front.png")
     plt.close(fig)
 

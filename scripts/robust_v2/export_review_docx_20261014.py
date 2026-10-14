@@ -136,4 +136,4 @@ def export(source, target):
 
 if __name__ == "__main__":
     export(ROOT / "paper/manuscript.md", OUT / "MANUSCRIPT_AUTHOR_REVIEW.docx")
-    export(OUT / "REVIEW_REPORT.md", OUT / "SCIENTIFIC_REVIEW_REPORT.docx")
+    export(OUT / "FINAL_RESEARCH_RESOLUTION.md", OUT / "SCIENTIFIC_REVIEW_REPORT.docx")

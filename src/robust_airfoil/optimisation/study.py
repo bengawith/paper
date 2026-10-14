@@ -27,6 +27,7 @@ from robust_airfoil.modelling.calibrate import trust_thresholds
 from robust_airfoil.modelling.dataset import FEATURE_COLUMNS
 from robust_airfoil.modelling.ensemble import LoadedEnsemble
 from robust_airfoil.modelling.evaluate import cvar
+from robust_airfoil.optimisation.candidate_uncertainty import candidate_surface_scenarios
 from robust_airfoil.optimisation.objectives import (
     ava_lift_sensitivity,
     weighted_required_lift_drag,
@@ -90,16 +91,22 @@ def manufacturing_parameter_deltas(
             reasons[invalid_reason] = reasons.get(invalid_reason, 0) + 1
     if int((~invalid_flags).sum()) < 16:
         raise RuntimeError("Too few valid manufacturing perturbations for robust optimisation")
-    return deltas, invalid_flags, {
-        "requested": len(perturbations),
-        "valid": int((~invalid_flags).sum()),
-        "invalid": int(invalid_flags.sum()),
-        "invalid_reason_counts": dict(sorted(reasons.items())),
-        "common_random_numbers": True,
-        "amplitude": max(uncertainty.amplitudes_fraction_chord),
-        "seed": seed,
-        "parameter_delta_sha256": sha256_bytes(np.ascontiguousarray(deltas, dtype="<f8").tobytes()),
-    }
+    return (
+        deltas,
+        invalid_flags,
+        {
+            "requested": len(perturbations),
+            "valid": int((~invalid_flags).sum()),
+            "invalid": int(invalid_flags.sum()),
+            "invalid_reason_counts": dict(sorted(reasons.items())),
+            "common_random_numbers": True,
+            "amplitude": max(uncertainty.amplitudes_fraction_chord),
+            "seed": seed,
+            "parameter_delta_sha256": sha256_bytes(
+                np.ascontiguousarray(deltas, dtype="<f8").tobytes()
+            ),
+        },
+    )
 
 
 class RobustCandidateEvaluator:
@@ -112,7 +119,18 @@ class RobustCandidateEvaluator:
         ensemble: LoadedEnsemble,
         calibration: dict[str, Any],
         optimisation: OptimisationConfig,
+        *,
+        candidate_latent: np.ndarray | None = None,
+        uncertainty: UncertaintyConfig | None = None,
     ):
+        if (candidate_latent is None) != (uncertainty is None):
+            raise ValueError(
+                "Candidate latent draws and physical uncertainty config must be paired"
+            )
+        if candidate_latent is not None and len(candidate_latent) != len(deltas):
+            raise ValueError("Candidate latent sample count must match evaluator sample count")
+        self.candidate_latent = candidate_latent
+        self.physical_uncertainty = uncertainty
         if len(deltas) != len(manufacturing_invalid_flags):
             raise ValueError("Manufacturing delta and validity arrays differ")
         self.reference_parameters = reference_parameters
@@ -136,8 +154,8 @@ class RobustCandidateEvaluator:
         self.support_tree = cKDTree(support_features)
         self.feature_center = scaling.feature_center
         self.feature_scale = scaling.feature_scale
-        self.support_threshold, self.disagreement_thresholds, self.alpha_coverage = trust_thresholds(
-            calibration
+        self.support_threshold, self.disagreement_thresholds, self.alpha_coverage = (
+            trust_thresholds(calibration)
         )
         reference_prediction = ensemble.predict(_frame(reference_parameters[None, :], self.alpha))
         self.reference_cm = float(reference_prediction["prediction_cm"].mean())
@@ -149,7 +167,9 @@ class RobustCandidateEvaluator:
             "manufacturing_invalid_samples": 0,
         }
 
-    def _support_and_disagreement(self, predictions: pd.DataFrame, shape: tuple[int, ...]) -> np.ndarray:
+    def _support_and_disagreement(
+        self, predictions: pd.DataFrame, shape: tuple[int, ...]
+    ) -> np.ndarray:
         standardised = (
             predictions[FEATURE_COLUMNS].to_numpy(float) - self.feature_center
         ) / self.feature_scale
@@ -157,7 +177,9 @@ class RobustCandidateEvaluator:
         support = np.mean(np.atleast_2d(distances), axis=1).reshape(shape)
         trusted = support <= self.support_threshold
         for target, threshold in self.disagreement_thresholds.items():
-            trusted &= predictions[f"ensemble_std_{target}"].to_numpy(float).reshape(shape) <= threshold
+            trusted &= (
+                predictions[f"ensemble_std_{target}"].to_numpy(float).reshape(shape) <= threshold
+            )
         return trusted
 
     def _nominal_constraints(
@@ -176,9 +198,14 @@ class RobustCandidateEvaluator:
             lower = np.column_stack([self.x, lower_y])
             validity = validate_geometry(upper, lower)
             metrics = geometry_metrics(upper, lower)
-            ratio_thickness = metrics["maximum_thickness"] / self.reference_metrics["maximum_thickness"]
+            ratio_thickness = (
+                metrics["maximum_thickness"] / self.reference_metrics["maximum_thickness"]
+            )
             ratio_area = metrics["section_area"] / self.reference_metrics["section_area"]
-            ratio_radius = metrics["leading_edge_radius_proxy"] / self.reference_metrics["leading_edge_radius_proxy"]
+            ratio_radius = (
+                metrics["leading_edge_radius_proxy"]
+                / self.reference_metrics["leading_edge_radius_proxy"]
+            )
             prediction = nominal_predictions.iloc[index * alpha_count : (index + 1) * alpha_count]
             trust_ok = bool(np.all(trusted_rows[index]))
             candidate_cm = float(prediction["prediction_cm"].mean())
@@ -188,7 +215,10 @@ class RobustCandidateEvaluator:
                 ratio_area - self.config.relative_constraints.section_area_lower,
                 ratio_radius - self.config.relative_constraints.leading_edge_radius_lower,
                 candidate_cm
-                - (self.reference_cm - self.config.relative_constraints.cm_allowance_below_reference),
+                - (
+                    self.reference_cm
+                    - self.config.relative_constraints.cm_allowance_below_reference
+                ),
                 1.0 if validity.valid and trust_ok else -1.0,
             ]
             constraint_rows.append([-value for value in margins])
@@ -232,7 +262,20 @@ class RobustCandidateEvaluator:
     ) -> tuple[np.ndarray, np.ndarray, list[dict[str, Any]]]:
         candidates = np.atleast_2d(candidates).astype(float)
         self.counters["candidate_evaluations"] += len(candidates)
-        perturbed = candidates[:, None, :] + self.deltas[None, :, :]
+        if self.candidate_latent is None:
+            perturbed = candidates[:, None, :] + self.deltas[None, :, :]
+            candidate_invalid = np.broadcast_to(
+                self.manufacturing_invalid_flags, perturbed.shape[:2]
+            )
+        else:
+            # Common latent samples, but perturbed surfaces and CST refits
+            # are recomputed independently on each candidate's geometry.
+            scenario_rows = [
+                candidate_surface_scenarios(c, self.candidate_latent, self.physical_uncertainty)
+                for c in candidates
+            ]
+            perturbed = np.stack([r.parameters for r in scenario_rows], axis=0)
+            candidate_invalid = np.stack([r.invalid for r in scenario_rows], axis=0)
         flat = perturbed.reshape(-1, perturbed.shape[-1])
         predictions = self.ensemble.predict(_frame(flat, self.alpha))
         shape = (len(candidates), len(self.deltas), len(self.alpha))
@@ -260,7 +303,7 @@ class RobustCandidateEvaluator:
             )
             missing = ~np.isfinite(drags)
             untrusted = ~np.all(trusted[candidate_index], axis=1)
-            violations = missing | untrusted | self.manufacturing_invalid_flags
+            violations = missing | untrusted | candidate_invalid[candidate_index]
             finite = drags[np.isfinite(drags) & ~violations]
             penalty = float(np.max(finite) * 2) if len(finite) else 1.0
             drags[violations] = penalty
@@ -276,15 +319,11 @@ class RobustCandidateEvaluator:
             diagnostic["mean_cm_by_alpha"] = np.mean(cm[index], axis=0).tolist()
             diagnostic["uncertainty_trust_violations"] = trust_violations[index]
             diagnostic["missing_lift_roots"] = missing_roots[index]
-            diagnostic["manufacturing_invalid_samples"] = int(
-                self.manufacturing_invalid_flags.sum()
-            )
+            diagnostic["manufacturing_invalid_samples"] = int(candidate_invalid[index].sum())
             diagnostic["evaluation_sample_count"] = len(self.deltas)
         self.counters["trust_rejections"] += sum(trust_violations)
         self.counters["missing_lift_roots"] += sum(missing_roots)
-        self.counters["manufacturing_invalid_samples"] += int(
-            self.manufacturing_invalid_flags.sum() * len(candidates)
-        )
+        self.counters["manufacturing_invalid_samples"] += int(candidate_invalid.sum())
         return objectives, constraints, diagnostics
 
     def deterministic_drag_objective(self, candidate: np.ndarray) -> float:
@@ -305,8 +344,8 @@ class RobustCandidateEvaluator:
         candidate = np.asarray(candidate, dtype=float)
         perturbed = candidate[None, :] + self.deltas
         predictions = self.ensemble.predict(_frame(perturbed, self.alpha))
-        lift = predictions["prediction_cl"].to_numpy(float).reshape(
-            len(self.deltas), len(self.alpha)
+        lift = (
+            predictions["prediction_cl"].to_numpy(float).reshape(len(self.deltas), len(self.alpha))
         )
         score = ava_lift_sensitivity(
             np.mean(lift, axis=0),
@@ -400,7 +439,7 @@ def _serialise_nsga_result(
     else:
         constraints = np.empty((0, 6))
     return {
-        "schema_version": 3,
+        "schema_version": 4,
         "cache_context_hash": cache_context_hash,
         "seed": seed,
         "sample_count": sample_count,
@@ -437,9 +476,7 @@ def _agreement(runs: list[dict[str, Any]], bounds: DesignBounds) -> dict[str, An
     for (design_a, _), (design_b, _) in combinations(feasible_runs, 2):
         left_to_right = cKDTree(design_b / design_scale).query(design_a / design_scale, k=1)[0]
         right_to_left = cKDTree(design_a / design_scale).query(design_b / design_scale, k=1)[0]
-        design_distances.append(
-            float(0.5 * (left_to_right.mean() + right_to_left.mean()))
-        )
+        design_distances.append(float(0.5 * (left_to_right.mean() + right_to_left.mean())))
     objective_fronts = [
         np.asarray(run["objectives"], dtype=float)[
             np.all(np.asarray(run["constraint_values"], dtype=float) <= 0, axis=1)
@@ -460,11 +497,17 @@ def _agreement(runs: list[dict[str, Any]], bounds: DesignBounds) -> dict[str, An
         "feasible_run_count": len(feasible_runs),
         "feasible_solution_counts": counts,
         "objective_mean": np.mean(all_objectives, axis=0).tolist() if len(all_objectives) else None,
-        "objective_std": np.std(all_objectives, axis=0, ddof=1).tolist() if len(all_objectives) > 1 else None,
+        "objective_std": np.std(all_objectives, axis=0, ddof=1).tolist()
+        if len(all_objectives) > 1
+        else None,
         "objective_min": np.min(all_objectives, axis=0).tolist() if len(all_objectives) else None,
         "objective_max": np.max(all_objectives, axis=0).tolist() if len(all_objectives) else None,
-        "pairwise_design_distance_mean": float(np.mean(design_distances)) if design_distances else None,
-        "pairwise_design_distance_max": float(np.max(design_distances)) if design_distances else None,
+        "pairwise_design_distance_mean": float(np.mean(design_distances))
+        if design_distances
+        else None,
+        "pairwise_design_distance_max": float(np.max(design_distances))
+        if design_distances
+        else None,
         "pairwise_objective_distance_mean": objective_mean_distance,
         "pairwise_objective_distance_max": max(
             objective_metrics["pairwise_symmetric_distances"], default=None
@@ -496,6 +539,7 @@ def _run_nsga_profile(
     output_root: Path,
     profile_index: int,
     ensemble_manifest_hash: str,
+    uncertainty: UncertaintyConfig,
 ) -> dict[str, Any]:
     if profile.uncertainty_samples > len(master_deltas):
         raise ValueError(f"{name} requests more uncertainty samples than the common master set")
@@ -505,12 +549,21 @@ def _run_nsga_profile(
     development_matrix = development_points[FEATURE_COLUMNS].to_numpy(float)
     cache_context_hash = hash_object(
         {
-            "objective_schema_version": 3,
+            "objective_schema_version": 4,
             "profile_name": name,
             "profile": profile.model_dump(mode="json"),
             "optimisation": optimisation.model_dump(mode="json"),
             "reference_parameters": reference_parameters.tolist(),
-            "manufacturing_deltas_sha256": sha256_bytes(
+            "candidate_specific_surface_normals": True,
+            "optimiser_source_sha256": sha256_file(Path(__file__)),
+            "normal_field_source_sha256": sha256_file(
+                Path(__file__).parents[1] / "uncertainty" / "fields.py"
+            ),
+            "candidate_refit_source_sha256": sha256_file(
+                Path(__file__).with_name("candidate_uncertainty.py")
+            ),
+            "uncertainty": uncertainty.model_dump(mode="json"),
+            "manufacturing_latent_sha256": sha256_bytes(
                 np.ascontiguousarray(
                     master_deltas[: profile.uncertainty_samples], dtype="<f8"
                 ).tobytes()
@@ -533,12 +586,14 @@ def _run_nsga_profile(
         seed_path = output_root / f"nsga2_{name}_seed_{seed}.json"
         evaluator = RobustCandidateEvaluator(
             reference_parameters,
-            master_deltas[sample_slice],
+            np.zeros((profile.uncertainty_samples, 12)),
             master_invalid[sample_slice],
             development_points,
             ensemble,
             calibration,
             optimisation,
+            candidate_latent=master_deltas[sample_slice],
+            uncertainty=uncertainty,
         )
         if seed_path.is_file():
             cached = json.loads(seed_path.read_text(encoding="utf-8"))
@@ -548,31 +603,14 @@ def _run_nsga_profile(
             )
             if (
                 structurally_current
-                and cached.get("schema_version") == 3
+                and cached.get("schema_version") == 4
                 and cached.get("cache_context_hash") == cache_context_hash
             ):
                 runs.append(cached)
                 continue
-            if structurally_current and cached.get("schema_version") == 2:
-                cached_designs = np.asarray(cached.get("solutions", []), dtype=float)
-                cached_objectives = np.asarray(cached.get("objectives", []), dtype=float)
-                cached_constraints = np.asarray(cached.get("constraint_values", []), dtype=float)
-                if len(cached_designs):
-                    verified_objectives, verified_constraints, _ = evaluator.evaluate(
-                        cached_designs
-                    )
-                    if np.allclose(
-                        verified_objectives, cached_objectives, rtol=1e-7, atol=1e-9
-                    ) and np.allclose(
-                        verified_constraints, cached_constraints, rtol=1e-7, atol=1e-9
-                    ):
-                        cached["schema_version"] = 3
-                        cached["cache_context_hash"] = cache_context_hash
-                        seed_path.write_text(
-                            json.dumps(cached, indent=2, sort_keys=True), encoding="utf-8"
-                        )
-                        runs.append(cached)
-                        continue
+            # All schema-v2/v3 caches used reference-fitted CST increments and
+            # are incompatible with candidate-specific physical perturbations.
+            # Recompute under schema v4; do not migrate historical objectives.
         reference_objectives, _, _ = evaluator.evaluate(reference_parameters[None, :])
         reference_point = np.maximum(reference_objectives[0] * 2, reference_objectives[0] + 0.01)
         callback = _StudyCallback(evaluator, reference_point)
@@ -652,13 +690,10 @@ def _full_selection_pool(
     feasible = np.all(all_constraints <= 0, axis=1)
     if feasible.any():
         return all_designs[feasible], all_objectives[feasible], "feasible"
-    violation = np.sum(np.maximum(all_constraints, 0), axis=1)
-    count = min(32, len(all_designs))
-    least_infeasible = np.argsort(violation)[:count]
-    return (
-        all_designs[least_infeasible],
-        all_objectives[least_infeasible],
-        "least_constraint_violation",
+    # An infeasible fallback cannot be relabelled as a robust optimum.
+    # Fail the final-selection gate, preserving per-seed evidence for diagnosis.
+    raise RuntimeError(
+        "No feasible full-budget NSGA-II design: cannot select a robust Pareto optimum"
     )
 
 
@@ -676,16 +711,18 @@ def _five_design_comparison(
     nsga: dict[str, Any],
     final_evaluator: RobustCandidateEvaluator,
 ) -> list[dict[str, Any]]:
-    full_designs, full_objectives, selection_pool = _full_selection_pool(
-        nsga["full"]["runs"]
-    )
+    full_designs, full_objectives, selection_pool = _full_selection_pool(nsga["full"]["runs"])
     robust_index = int(np.argmin(full_objectives[:, 1]))
     knee = _select_knee(full_designs, full_objectives)
     ava_key = "1.0" if "1.0" in ava else min(ava, key=lambda key: abs(float(key) - 1.0))
     definitions = [
         ("verified_reference", "verified_reference", reference_parameters),
         ("deterministic_optimum", "deterministic_expected_drag", deterministic_parameters),
-        ("ava_robust_optimum", f"ava_lambda_{ava_key}", np.asarray(ava[ava_key]["parameters"], dtype=float)),
+        (
+            "ava_robust_optimum",
+            f"ava_lambda_{ava_key}",
+            np.asarray(ava[ava_key]["parameters"], dtype=float),
+        ),
         ("smooth_correlated_robust_optimum", "full_nsga2_minimum_cvar", full_designs[robust_index]),
         ("trust_constrained_pareto_knee", "full_nsga2_knee", knee),
     ]
@@ -697,7 +734,9 @@ def _five_design_comparison(
             {
                 "design_id": design_id,
                 "source": source,
-                "selection_pool": selection_pool if design_id.startswith(("smooth_", "trust_")) else "not_applicable",
+                "selection_pool": selection_pool
+                if design_id.startswith(("smooth_", "trust_"))
+                else "not_applicable",
                 "parameters": parameters.tolist(),
                 "coordinates": {
                     "upper": np.column_stack([final_evaluator.x, upper_y]).tolist(),
@@ -733,17 +772,22 @@ def run_optimisation_studies(
         optimisation.pilot_nsga2.uncertainty_samples,
         optimisation.full_nsga2.uncertainty_samples,
     )
-    master_deltas, master_invalid, delta_summary = manufacturing_parameter_deltas(
-        reference_parameters,
-        upper,
-        lower,
-        uncertainty,
-        count=maximum_optimisation_samples,
-        seed=uncertainty.seed + 2_000,
+    master_deltas = sobol_normal_samples(
+        maximum_optimisation_samples,
+        2 * uncertainty.basis_control_points_per_surface,
+        uncertainty.seed + 2_000,
+        antithetic=True,
     )
-    development_parameters = development_points[
-        PARAMETER_COLUMNS
-    ].drop_duplicates().to_numpy(float)
+    master_invalid = np.zeros(maximum_optimisation_samples, dtype=bool)
+    delta_summary = {
+        "schema": "candidate-specific-surface-normal-v2",
+        "latent_sha256": sha256_bytes(np.ascontiguousarray(master_deltas, dtype="<f8").tobytes()),
+        "requested": maximum_optimisation_samples,
+        "common_random_numbers": True,
+        "applied_to_each_candidate_geometry": True,
+        "amplitude": max(uncertainty.amplitudes_fraction_chord),
+    }
+    development_parameters = development_points[PARAMETER_COLUMNS].drop_duplicates().to_numpy(float)
     development_parameter_std = development_parameters.std(axis=0, ddof=1)
     ava_latent = sobol_normal_samples(
         maximum_optimisation_samples,
@@ -780,8 +824,8 @@ def run_optimisation_studies(
         workers=1,
         updating="immediate",
     )
-    deterministic_objectives, deterministic_constraints, deterministic_diagnostics = ava_evaluator.evaluate(
-        deterministic_result.x[None, :]
+    deterministic_objectives, deterministic_constraints, deterministic_diagnostics = (
+        ava_evaluator.evaluate(deterministic_result.x[None, :])
     )
     deterministic = {
         "parameters": deterministic_result.x.tolist(),
@@ -834,25 +878,34 @@ def run_optimisation_studies(
             output_root,
             index,
             sha256_file(ensemble_root / "ensemble_manifest.json"),
+            uncertainty,
         )
         for index, (name, profile) in enumerate(profiles.items())
     }
-    final_deltas, final_invalid, final_delta_summary = manufacturing_parameter_deltas(
-        reference_parameters,
-        upper,
-        lower,
-        uncertainty,
-        count=uncertainty.final_evaluation_samples.count,
-        seed=uncertainty.seed + 9_000,
+    final_deltas = sobol_normal_samples(
+        uncertainty.final_evaluation_samples.count,
+        2 * uncertainty.basis_control_points_per_surface,
+        uncertainty.seed + 9_000,
+        antithetic=True,
     )
+    final_invalid = np.zeros(len(final_deltas), dtype=bool)
+    final_delta_summary = {
+        "schema": "candidate-specific-surface-normal-v2",
+        "requested": len(final_deltas),
+        "common_random_numbers": True,
+        "applied_to_each_candidate_geometry": True,
+        "latent_sha256": sha256_bytes(np.ascontiguousarray(final_deltas, dtype="<f8").tobytes()),
+    }
     final_evaluator = RobustCandidateEvaluator(
         reference_parameters,
-        final_deltas,
+        np.zeros((len(final_deltas), 12)),
         final_invalid,
         development_points,
         ensemble,
         calibration,
         optimisation,
+        candidate_latent=final_deltas,
+        uncertainty=uncertainty,
     )
     comparison = _five_design_comparison(
         reference_parameters,

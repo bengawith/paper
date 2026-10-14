@@ -1,0 +1,18 @@
+{
+  "status": "PASSED_AUTHOR_REVIEW_ACCEPTANCE_NOT_CFD_OR_FULL_PRODUCTION",
+  "schema": "robust-v2-author-acceptance-v1",
+  "canonical_manuscript_md_sha256": "2c68015cd0977c62fbfa7126c9fd46a1f5da3adf74a965b0d2bd72d3d6df0aa4",
+  "ava_docx_sha256": "284427dda25f325e63d4cf0c11ec3b2d591e6bea5a2815b2a1a70407a1ebd4e8",
+  "docx_tables": 7,
+  "docx_embedded_figures": 8,
+  "bibliography_entries": 28,
+  "trust_oof_delta_auroc": 0.09916003059895018,
+  "trust_oof_delta_cluster_interval": [
+    0.06942638740274414,
+    0.1386358963117066
+  ],
+  "corrected_smoke_front_distance": 0.14929243850538715,
+  "corrected_production_optimisation_completed": false,
+  "cfd_completed": false,
+  "limitations": "No accepted full-budget Pareto front, no CFD/experiment, manufacture prior unmeasured, XFOIL failed cases excluded."
+}

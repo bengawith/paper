@@ -1,4 +1,4 @@
-"""Create mirrored, hashed author-review and CFD handoff packages on SAMSPC.
+"""Create one verified author-review and CFD handoff package on SamsPC.
 
 Does not overwrite or remove historical archived review package contents.
 The new dated subfolders are generated only when absent or when explicitly
@@ -21,16 +21,47 @@ PACKAGE_NAME = "READY_FOR_REVIEW"
 DESTS = [Path(r"C:\Users\Ben\OneDrive\paper") / PACKAGE_NAME]
 FILES = [
     ("README.md", ROOT / "paper/README.md"),
-    ("prior_final_draft.docx", Path(r"C:\Users\Ben\OneDrive\paper\prior_final_draft.docx")),
+    (
+        "HISTORICAL/prior_final_draft.docx",
+        Path(r"C:\Users\Ben\OneDrive\paper\prior_final_draft.docx"),
+    ),
+    ("HISTORICAL/previous_source_snapshot.zip", Path(r"C:\Users\Ben\OneDrive\paper\source_snapshot.zip")),
+    ("HISTORICAL/previous_repository_history.bundle", Path(r"C:\Users\Ben\OneDrive\paper\repository_history.bundle")),
+    ("HISTORICAL/previous_local_evidence_and_models.zip", Path(r"C:\Users\Ben\OneDrive\paper\local_evidence_and_models.zip")),
+    ("HISTORICAL/previous_evidence_inventory.json", Path(r"C:\Users\Ben\OneDrive\paper\evidence_inventory.json")),
     ("READ_THIS_FIRST.md", REVIEW / "READ_THIS_FIRST.md"),
     ("EMAIL_TO_AVA_DRAFT.txt", REVIEW / "EMAIL_TO_AVA_DRAFT.txt"),
     ("COPY_TO_LAPTOP_OFFLINE.ps1", REVIEW / "COPY_TO_LAPTOP_OFFLINE.ps1"),
-    ("MANUSCRIPT_AUTHOR_REVIEW.docx", REVIEW / "MANUSCRIPT_AUTHOR_REVIEW.docx"),
+    ("LATEST_MANUSCRIPT_FOR_AVA.docx", ROOT / "paper/LATEST_MANUSCRIPT_FOR_AVA.docx"),
     ("SCIENTIFIC_REVIEW_REPORT.docx", REVIEW / "SCIENTIFIC_REVIEW_REPORT.docx"),
     ("paper/manuscript.md", ROOT / "paper/manuscript.md"),
     ("paper/response_to_reviewers.md", ROOT / "paper/response_to_reviewers.md"),
     ("paper/data/paper_data.json", ROOT / "paper/data/paper_data.json"),
     ("EVIDENCE/REVIEW_REPORT.md", REVIEW / "REVIEW_REPORT.md"),
+    ("EVIDENCE/FINAL_RESEARCH_RESOLUTION.md", REVIEW / "FINAL_RESEARCH_RESOLUTION.md"),
+    ("EVIDENCE/FINAL_AUTHOR_ACCEPTANCE.json", REVIEW / "FINAL_AUTHOR_ACCEPTANCE.json"),
+    (
+        "EVIDENCE/FINAL_SCIENTIFIC_RECONCILIATION.json",
+        REVIEW / "FINAL_SCIENTIFIC_RECONCILIATION.json",
+    ),
+    ("EVIDENCE/TRUST_INCREMENTAL_CV.json", REVIEW / "TRUST_INCREMENTAL/TRUST_INCREMENTAL_CV.json"),
+    (
+        "EVIDENCE/CORRECTED_SELECTED_DESIGNS.json",
+        REVIEW / "CORRECTED_OPTIMISATION/CORRECTED_SELECTED_DESIGNS.json",
+    ),
+    (
+        "EVIDENCE/CORRECTED_SMOKE_FRONT.json",
+        REVIEW / "CORRECTED_OPTIMISATION/CORRECTED_SMOKE_FRONT.json",
+    ),
+    (
+        "EVIDENCE/CORRECTED_TEN_SEED_SMOKE_SUMMARY.json",
+        REVIEW / "CORRECTED_OPTIMISATION/TEN_SEED_SMOKE_SUMMARY.json",
+    ),
+    (
+        "EVIDENCE/PRIMARY_SOURCE_REFERENCE_LEDGER.json",
+        REVIEW / "REFERENCES/PRIMARY_SOURCE_REFERENCE_LEDGER.json",
+    ),
+    ("EVIDENCE/BIBLIOGRAPHY_AUDIT.json", REVIEW / "REFERENCES/BIBLIOGRAPHY_AUDIT.json"),
     ("EVIDENCE/TONE_REVIEW_NOTE.md", REVIEW / "TONE_REVIEW_NOTE.md"),
     ("EVIDENCE/TONE_POLISH_MANIFEST.json", REVIEW / "TONE_POLISH_MANIFEST.json"),
     ("EVIDENCE/NUMERICAL_RECONCILIATION.json", REVIEW / "NUMERICAL_RECONCILIATION.json"),
@@ -52,6 +83,8 @@ FILES = [
 ]
 for f in (ROOT / "paper/figures").glob("fig_*.png"):
     FILES.append((f"paper/figures/{f.name}", f))
+for seed_file in sorted((REVIEW / "CORRECTED_OPTIMISATION/smoke_seeds").glob("*.json")):
+    FILES.append((f"EVIDENCE/CORRECTED_SEEDS/{seed_file.name}", seed_file))
 CFD = REVIEW / "CFD_HANDOFF"
 for file in CFD.rglob("*"):
     if file.is_file():
@@ -70,6 +103,18 @@ def make(target: Path) -> None:
         # re-hash rather than deleting the entire review directory.
         pass
     target.mkdir(parents=True, exist_ok=True)
+    # On in-place refresh remove *only* files from earlier manifests that
+    # are not part of this package. Never delete unknown user files.
+    old_manifest = target / "SHA256_MANIFEST.json"
+    if old_manifest.exists() and os.getenv("REPLACE_REVIEW_PACKAGE") == "1":
+        previous = json.loads(old_manifest.read_text(encoding="utf-8"))
+        wanted = {rel for rel, _ in FILES} | {"CFD_HANDOFF_ONLY.zip"}
+        for previous_file in previous.get("files", []):
+            rel = str(previous_file["path"]).replace("\\", "/")
+            if rel not in wanted:
+                extra = target / rel
+                if extra.is_file():
+                    extra.unlink()
     for rel, source in FILES:
         if not source.is_file():
             raise FileNotFoundError(source)

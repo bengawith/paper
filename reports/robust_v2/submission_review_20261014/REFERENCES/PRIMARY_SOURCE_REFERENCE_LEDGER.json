@@ -1,0 +1,174 @@
+{
+  "schema": "primary-reference-ledger-v1",
+  "basis": "Crossref metadata and verified publisher/proceedings pages; books/web resources not claimed verified via Crossref",
+  "entries": [
+    {
+      "number": 1,
+      "source_url": "https://doi.org/10.2514/3.9789",
+      "status": "identified_publisher_or_proceedings",
+      "reference": "[1] Drela, M. & Giles, M. B. (1987). Viscous–inviscid analysis of transonic and low Reynolds number airfoils. AIAA Journal, 25(10), 1347–1355. https://doi.org/10.2514/3.9789"
+    },
+    {
+      "number": 2,
+      "source_url": "https://doi.org/10.1038/s43588-022-00264-7",
+      "status": "identified_publisher_or_proceedings",
+      "reference": "[2] Vinuesa, R. & Brunton, S. L. (2022). Enhancing computational fluid dynamics with machine learning. Nature Computational Science, 2(6), 358–366. https://doi.org/10.1038/s43588-022-00264-7"
+    },
+    {
+      "number": 3,
+      "source_url": "https://doi.org/10.1146/annurev-fluid-010719-060214",
+      "status": "identified_publisher_or_proceedings",
+      "reference": "[3] Brunton, S. L., Noack, B. R. & Koumoutsakos, P. (2020). Machine learning for fluid mechanics. Annual Review of Fluid Mechanics, 52, 477–508. https://doi.org/10.1146/annurev-fluid-010719-060214"
+    },
+    {
+      "number": 4,
+      "source_url": "https://doi.org/10.2514/1.J057129",
+      "status": "identified_publisher_or_proceedings",
+      "reference": "[4] Li, J., Bouhlel, M. A. & Martins, J. R. R. A. (2019). Data-based approach for fast airfoil analysis and optimization. AIAA Journal, 57(2), 581–596. https://doi.org/10.2514/1.J057129"
+    },
+    {
+      "number": 5,
+      "source_url": "https://doi.org/10.1016/j.paerosci.2022.100849",
+      "status": "identified_publisher_or_proceedings",
+      "reference": "[5] Li, J., Du, X. & Martins, J. R. R. A. (2022). Machine learning in aerodynamic shape optimization. Progress in Aerospace Sciences, 134, 100849. https://doi.org/10.1016/j.paerosci.2022.100849"
+    },
+    {
+      "number": 6,
+      "source_url": "https://doi.org/10.1080/03052150903305468",
+      "status": "identified_publisher_or_proceedings",
+      "reference": "[6] Shahrokhi, A. & Jahangirian, A. (2010). A surrogate assisted evolutionary optimization method with application to the transonic airfoil design. Engineering Optimization, 42(6), 497–515. https://doi.org/10.1080/03052150903305468"
+    },
+    {
+      "number": 7,
+      "source_url": "https://doi.org/10.1016/j.compfluid.2011.02.010",
+      "status": "identified_publisher_or_proceedings",
+      "reference": "[7] Jahangirian, A. & Shahrokhi, A. (2011). Aerodynamic shape optimization using efficient evolutionary algorithms and unstructured CFD solver. Computers & Fluids, 46(1), 270–276. https://doi.org/10.1016/j.compfluid.2011.02.010"
+    },
+    {
+      "number": 8,
+      "source_url": "https://doi.org/10.2514/1.29958",
+      "status": "identified_publisher_or_proceedings",
+      "reference": "[8] Kulfan, B. M. (2008). Universal parametric geometry representation method. Journal of Aircraft, 45(1), 142–158. https://doi.org/10.2514/1.29958"
+    },
+    {
+      "number": 9,
+      "source_url": "https://doi.org/10.2514/6.2006-6948",
+      "status": "identified_publisher_or_proceedings",
+      "reference": "[9] Kulfan, B. M. & Bussoletti, J. E. (2006). \"Fundamental\" parametric geometry representations for aircraft component shapes. In 11th AIAA/ISSMO Multidisciplinary Analysis and Optimization Conference, AIAA 2006-6948. https://doi.org/10.2514/6.2006-6948"
+    },
+    {
+      "number": 10,
+      "source_url": "https://doi.org/10.1007/978-3-642-84010-4_1",
+      "status": "identified_publisher_or_proceedings",
+      "reference": "[10] Drela, M. (1989). XFOIL: An analysis and design system for low Reynolds number airfoils. In Low Reynolds Number Aerodynamics, Lecture Notes in Engineering, vol. 54, Springer, 1–12. https://doi.org/10.1007/978-3-642-84010-4_1"
+    },
+    {
+      "number": 11,
+      "source_url": "https://m-selig.ae.illinois.edu/ads/coord_database.html",
+      "status": "official_university_database",
+      "reference": "[11] Selig, M. S. (2010). UIUC Airfoil Data Site. University of Illinois at Urbana–Champaign. https://m-selig.ae.illinois.edu/ads/coord_database.html"
+    },
+    {
+      "number": 12,
+      "source_url": "http://airfoiltools.com/",
+      "status": "historical_web_source_current_access_not_guaranteed",
+      "reference": "[12] Airfoil Tools (2019). Airfoil Tools. http://airfoiltools.com/"
+    },
+    {
+      "number": 13,
+      "source_url": "https://doi.org/10.1109/4235.996017",
+      "status": "identified_publisher_or_proceedings",
+      "reference": "[13] Deb, K., Pratap, A., Agarwal, S. & Meyarivan, T. (2002). A fast and elitist multiobjective genetic algorithm: NSGA-II. IEEE Transactions on Evolutionary Computation, 6(2), 182–197. https://doi.org/10.1109/4235.996017"
+    },
+    {
+      "number": 14,
+      "source_url": "https://doi.org/10.1109/ACCESS.2020.2990567",
+      "status": "identified_publisher_or_proceedings",
+      "reference": "[14] Blank, J. & Deb, K. (2020). pymoo: Multi-objective optimization in Python. IEEE Access, 8, 89497–89509. https://doi.org/10.1109/ACCESS.2020.2990567"
+    },
+    {
+      "number": 15,
+      "source_url": "https://doi.org/10.21314/JOR.2000.038",
+      "status": "identified_publisher_or_proceedings",
+      "reference": "[15] Rockafellar, R. T. & Uryasev, S. (2000). Optimization of conditional value-at-risk. Journal of Risk, 2(3), 21–41. https://doi.org/10.21314/JOR.2000.038"
+    },
+    {
+      "number": 16,
+      "source_url": "https://papers.neurips.cc/paper/7219-simple-and-scalable-predictive-uncertainty-estimation-using-deep-ensembles",
+      "status": "identified_publisher_or_proceedings",
+      "reference": "[16] Lakshminarayanan, B., Pritzel, A. & Blundell, C. (2017). Simple and scalable predictive uncertainty estimation using deep ensembles. In Advances in Neural Information Processing Systems 30 (NIPS 2017), 6402–6413. https://papers.neurips.cc/paper/7219-simple-and-scalable-predictive-uncertainty-estimation-using-deep-ensembles"
+    },
+    {
+      "number": 17,
+      "source_url": "https://arxiv.org/abs/2107.07511",
+      "status": "primary_arxiv",
+      "reference": "[17] Angelopoulos, A. N. & Bates, S. (2021). A gentle introduction to conformal prediction and distribution-free uncertainty quantification. arXiv:2107.07511. https://arxiv.org/abs/2107.07511"
+    },
+    {
+      "number": 18,
+      "source_url": "https://arxiv.org/abs/1711.05101",
+      "status": "primary_arxiv",
+      "reference": "[18] Loshchilov, I. & Hutter, F. (2019). Decoupled weight decay regularization. In International Conference on Learning Representations (ICLR 2019). arXiv:1711.05101. https://arxiv.org/abs/1711.05101"
+    },
+    {
+      "number": 19,
+      "source_url": "https://icml.cc/2010/papers/432.pdf",
+      "status": "identified_publisher_or_proceedings",
+      "reference": "[19] Nair, V. & Hinton, G. E. (2010). Rectified linear units improve restricted Boltzmann machines. In Proceedings of the 27th International Conference on Machine Learning (ICML 2010), 807–814. https://icml.cc/2010/papers/432.pdf"
+    },
+    {
+      "number": 20,
+      "source_url": "https://papers.neurips.cc/paper/9015-pytorch-an-imperative-stylehigh-performance-deep-learning-library.pdf",
+      "status": "identified_publisher_or_proceedings",
+      "reference": "[20] Paszke, A., Gross, S., Massa, F. et al. (2019). PyTorch: An imperative style, high-performance deep learning library. In Advances in Neural Information Processing Systems 32 (NeurIPS 2019), 8026–8037. https://papers.neurips.cc/paper/9015-pytorch-an-imperative-stylehigh-performance-deep-learning-library.pdf"
+    },
+    {
+      "number": 21,
+      "source_url": "https://doi.org/10.1145/3292500.3330701",
+      "status": "identified_publisher_or_proceedings",
+      "reference": "[21] Akiba, T., Sano, S., Yanase, T., Ohta, T. & Koyama, M. (2019). Optuna: A next-generation hyperparameter optimization framework. In Proceedings of the 25th ACM SIGKDD International Conference on Knowledge Discovery & Data Mining, 2623–2631. https://doi.org/10.1145/3292500.3330701"
+    },
+    {
+      "number": 22,
+      "source_url": "https://doi.org/10.1038/s41586-020-2649-2",
+      "status": "identified_publisher_or_proceedings",
+      "reference": "[22] Harris, C. R., Millman, K. J., van der Walt, S. J. et al. (2020). Array programming with NumPy. Nature, 585, 357–362. https://doi.org/10.1038/s41586-020-2649-2"
+    },
+    {
+      "number": 23,
+      "source_url": "https://doi.org/10.1038/s41592-019-0686-2",
+      "status": "identified_publisher_or_proceedings",
+      "reference": "[23] Virtanen, P., Gommers, R., Oliphant, T. E. et al. (2020). SciPy 1.0: Fundamental algorithms for scientific computing in Python. Nature Methods, 17, 261–272. https://doi.org/10.1038/s41592-019-0686-2"
+    },
+    {
+      "number": 24,
+      "source_url": "https://www.jmlr.org/papers/v12/pedregosa11a.html",
+      "status": "identified_publisher_or_proceedings",
+      "reference": "[24] Pedregosa, F., Varoquaux, G., Gramfort, A. et al. (2011). Scikit-learn: Machine learning in Python. Journal of Machine Learning Research, 12, 2825–2830. https://www.jmlr.org/papers/v12/pedregosa11a.html"
+    },
+    {
+      "number": 25,
+      "source_url": null,
+      "status": "book_manual_catalog_check",
+      "reference": "[25] Abbott, I. H. & von Doenhoff, A. E. (1959). Theory of Wing Sections, Including a Summary of Airfoil Data. Dover Publications."
+    },
+    {
+      "number": 26,
+      "source_url": null,
+      "status": "book_manual_catalog_check",
+      "reference": "[26] Anderson, J. D. (2017). Fundamentals of Aerodynamics. 6th edn. McGraw-Hill Education."
+    },
+    {
+      "number": 27,
+      "source_url": "https://doi.org/10.1016/j.apples.2026.100310",
+      "status": "identified_publisher_or_proceedings",
+      "reference": "[27] Pichitkul, A., Boksawat, A., Phiboon, T., Tantrairatn, S., Bureerat, S., Kasemsri, R. & Ariyarit, A. (2026). An intelligent multi-objective robust design optimization framework based on PathLine Transformation and surrogate-assisted sampling for uncertainty-aware airfoil design. Applications in Engineering Science, 25, 100310. https://doi.org/10.1016/j.apples.2026.100310"
+    },
+    {
+      "number": 28,
+      "source_url": "https://doi.org/10.1073/pnas.2204569119",
+      "status": "identified_publisher_or_proceedings",
+      "reference": "[28] Fannjiang, C., Bates, S., Angelopoulos, A. N., Listgarten, J. & Jordan, M. I. (2022). Conformal prediction under feedback covariate shift for biomolecular design. Proceedings of the National Academy of Sciences, 119(43), e2204569119. https://doi.org/10.1073/pnas.2204569119"
+    }
+  ]
+}

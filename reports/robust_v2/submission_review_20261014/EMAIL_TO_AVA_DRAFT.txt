@@ -1,16 +1,18 @@
-Subject: Updated aerofoil paper and CFD verification
+Subject: Aerofoil paper – updated draft and CFD verification
 
 Hi Ava,
 
 I hope you're well!
 
-I've now finished another detailed review of the paper and attached the latest draft. I've tried to keep the ML contribution central while giving it a clearer engineering application, as we discussed.
+I've now completed another stage of the paper and wanted to send over the latest draft for your thoughts. We've kept the ML surrogate central, but extended it to predict lift, drag and pitching moment, and looked more closely at where its predictions can be trusted during optimisation.
 
-The updated surrogate predicts lift, drag and pitching moment, and we now assess where its predictions are reliable enough to use in optimisation. The results are encouraging: a selected design gives 18.7% lower nominal weighted drag than NACA 2412 in XFOIL, and two larger studies of bounded geometry variations also show lower mean drag among the successfully evaluated cases. We've also identified where unrestricted ML optimisation produces a poor design, which I think is an important finding.
+The results are encouraging. A selected design shows 18.7% lower nominal weighted drag than NACA 2412 in XFOIL. Two independently sampled 0.5%-chord geometry-variation studies also show lower mean drag in the successfully completed matched XFOIL cases. We've found cases where unrestricted ML optimisation performs poorly, which I think is an interesting contribution in itself.
 
-I've kept the limitations explicit, particularly the remaining optimisation variability and the fact that the geometric deviations are prescribed rather than measured. The main next step is the independent CFD comparison. I've included the exact geometries, XFOIL results and a proposed CFD plan for us to discuss.
+I've also tightened the uncertainty implementation and kept the remaining limitations clear. The full corrected optimisation study still needs its final run, and independent CFD is the next major verification step. I've included the selected geometries, XFOIL results and a proposed CFD plan to make that easier.
 
-I'd really appreciate your thoughts on the revised manuscript and whether the proposed CFD cases look appropriate. Hopefully we're getting much closer!
+I'd really appreciate your thoughts on the updated manuscript, particularly the ML and engineering balance and whether the CFD cases and approach look appropriate.
+
+Thanks again for your help. Hopefully we're getting much closer!
 
 Best,
 Ben

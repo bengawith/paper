@@ -1,58 +1,46 @@
-# Trust-screened ML for risk-aware aerofoil design
+# Trust-aware machine-learning surrogate for aerofoil design
 
-This repository accompanies the revised research manuscript by Benjamin Gawith, Ava Shahrokhi and Keivan Navaie.
+This repository contains the latest research code, evidence and manuscript by Benjamin I. G. Gawith, Ava Shahrokhi and Keivan Navaie. The next stage is independent CFD verification and a full corrected-physics optimisation acceptance run.
 
-**Current status (14 October 2026): author-review draft, ready for selected RANS CFD work with Ava. Not journal-submission-ready.** The previous 3 October status note is preserved for history, but superseded by the new scientific review.
+**Status: complete author-review draft; not yet accepted for journal submission.**
 
-## What the study demonstrates
+## Scientifically supported results
 
-A compact CST-and-angle-conditioned five-member MLP ensemble predicts lift, log drag and pitching moment from XFOIL-labelled data. On 26,692 grouped held-out aerodynamic states (233 aerofoils), R² is approximately 0.989 for lift, 0.922 for log drag and 0.918 for moment. An empirical support/disagreement screen accepts 66.1% of the states with lower observed error than rejected states.
+The fixed five-member point-conditioned MLP predicts lift, logarithmic drag and pitching moment from a compact 12-parameter CST geometry plus angle of attack. On 26,692 held-out, geometry-grouped XFOIL-labelled states from 233 aerofoils, its R² is 0.989, 0.922 and 0.918 respectively.
 
-A prescribed smooth, bounded surface-normal deviation model is used for expected-drag and 95% upper-tail surrogate objectives. It is **not** a measured manufacturing-tolerance distribution.
+The frozen empirical screening rule accepts 66.1% of held-out states with lower error and higher observed interval coverage. A component audit shows its decisions were effectively support-distance-driven, **not independently improved by its original ensemble spread cutoffs**. A separate five-fold airfoil-group cross-validation on 26,933 calibration rows shows that disagreement adds predictive information: AUROC for identifying high-residual cases improves from 0.767 (support alone) to 0.866 (combined), +0.099 [0.069,0.139] under 300 cluster-bootstrap replicates. This result has not been prospectively validated on an untouched optimiser-selection cohort and does not amend the frozen deployed trust rule.
 
-A fresh, strict local XFOIL re-evaluation of **three selected** aerofoils shows:
+A selected in-screen design has 18.7% lower nominal local-XFOIL required-lift weighted drag than NACA 2412. Two separate 128-scenario XFOIL comparisons at 0.5%-chord prescribed perturbations show paired mean reductions of 15.4% and 15.8% among the 92 and 96 **successfully completed matched cases**, respectively. Because unsuccessful solver cases are excluded, these are conditional descriptive outcomes, not unconditional manufacturing-risk probabilities. At 1%-chord stress, the small sample maximum is worse for the selected design.
 
-| Selected design | Nominal weighted drag | Full-sweep/required-lift-feasible perturbed cases | Mean drag, accepted cases |
-|---|---:|---:|---:|
-| NACA 2412 reference | 0.007446 | 13/16 | 0.008349 |
-| Within-screen design | 0.006051 | 13/16 | 0.007615 |
-| Outside-screen diagnostic optimum | 0.013960 | 14/16 | 0.014137 |
+## Important optimisation correction
 
-The selected within-screen design improves nominal weighted drag by **18.7%** against NACA 2412. Marginal means from independently successful cases differ by **8.8%**, with ten fully valid paired scenarios. The empirical 95%-tail statistics are just the largest observations from 13–14 samples, **not trustworthy manufacturing-population CVaR estimates**; the within-screen observed maximum is higher than the reference. The ten-seed robust-front agreement criterion also fails (0.283 > 0.20).
+The historic ten-seed Pareto study applied CST coefficient increments fitted to the reference aerofoil to other candidates. That implementation does not represent physically equal surface-normal variation. The source now generates the same latent uncertainty draw separately on each candidate's actual geometry, performs validity checks, refits CST, and rejects stale optimisation caches. The five historic selected shapes were re-evaluated; **no production robust Pareto optimality is claimed** from that fixed-design test.
 
-**No independent viscous RANS CFD or experimental verification is yet included.** The local XFOIL is a separate numerical implementation/execution of the same solver family as the training labels. Trust-screening performance is measured on held-out historical states, not guaranteed under adaptive optimisation distribution shift.
+Ten independent **low-budget corrected** NSGA-II runs (population 32, generations 10, scenarios 16) all returned feasible solutions, with mean symmetric front-distance 0.149 below the 0.20 criterion. The full production design (population 128, generations 200, scenarios 64, ten seeds) has **not** been rerun under the corrected physics; its agreement and candidate choice remain open.
 
-## Read, review and reproduce
+The uncertainty field uses correlated, continuous but **piecewise-linear** control interpolation and per-draw scaling, with leading/trailing-edge taper. It is a prescribed geometry perturbation model, not a distribution measured from manufacturing.
 
-- Canonical manuscript: [paper/manuscript.md](paper/manuscript.md)
-- Paper-specific overview: [paper/README.md](paper/README.md)
-- Reviewer response (historical, revised): [paper/response_to_reviewers.md](paper/response_to_reviewers.md)
-- Full scientific review: [reports/robust_v2/submission_review_20261014/REVIEW_REPORT.md](reports/robust_v2/submission_review_20261014/REVIEW_REPORT.md)
-- Coauthor CFD protocol and geometry inputs: [reports/robust_v2/submission_review_20261014/CFD_HANDOFF/CFD_PROTOCOL_FOR_AVA.md](reports/robust_v2/submission_review_20261014/CFD_HANDOFF/CFD_PROTOCOL_FOR_AVA.md)
-- Historical frozen source lineage: `robust-v2-current-20260908`
-- Fresh strict verification: `results/robust_v2/submission_review_20261014/xfoil_strict/`, with summary/digest incorporated into `paper/data/paper_data.json`.
+## What is ready
 
-Install with `uv sync --extra dev --extra benchmarks`, then validate:
+- Latest standalone Word manuscript: paper/LATEST_MANUSCRIPT_FOR_AVA.docx
+- Canonical Markdown manuscript: paper/manuscript.md
+- Author scientific review: reports/robust_v2/submission_review_20261014/FINAL_RESEARCH_RESOLUTION.md
+- Trust incremental test: reports/robust_v2/submission_review_20261014/TRUST_INCREMENTAL/TRUST_INCREMENTAL_CV.json
+- Corrected fixed-design objective audit: reports/robust_v2/submission_review_20261014/CORRECTED_OPTIMISATION/CORRECTED_SELECTED_DESIGNS.json
+- Corrected low-budget front: reports/robust_v2/submission_review_20261014/CORRECTED_OPTIMISATION/CORRECTED_SMOKE_FRONT.json
+- Ava's proposed CFD inputs and instructions: reports/robust_v2/submission_review_20261014/CFD_HANDOFF/
 
-```powershell
-uv run ruff check src/robust_airfoil tests/robust_v2 scripts/robust_v2
-uv run mypy src/robust_airfoil
-uv run pytest tests/robust_v2 -m "not network and not xfoil and not slow" -q
-uv run python scripts/robust_v2/make_paper_figures.py
-```
+Run unit validation:
 
-For strict XFOIL rerun, use the local official `tools/xfoil/xfoil.exe` and an independently named output folder:
+    uv sync --extra dev --extra benchmarks --extra docs
+    uv run ruff check src/robust_airfoil tests/robust_v2 scripts/robust_v2
+    uv run mypy src/robust_airfoil
+    uv run pytest tests/robust_v2 -m "not network and not xfoil and not slow" -q
 
-```powershell
-$env:ROBUST_V2_XFOIL_OUT="results/robust_v2/validation_rerun_YYYYMMDD/xfoil_strict"
-uv run python scripts/robust_v2/verify_designs_xfoil.py
-```
+A sample user-tool command:
 
-Run the submitted CFD protocol separately. The next research decision belongs to the authors and depends on matched-lift CFD results, numerical convergence, actual tolerance evidence (if available), journal requirements and prior resubmission restrictions.
+    uv run robust-airfoil predict --cst="-0.172,-0.065,-0.125,-0.055,-0.083,0.208,0.190,0.223,0.180,0.218,-0.041,0.002" --alpha-start 0 --alpha-end 10 --alpha-step 2
 
-Large source caches, frozen weights and per-case solver logs are local/handoff evidence rather than guaranteed public Git artefacts. No claim of physical safety, universal conformal conditional coverage or guaranteed publication acceptance is made.
+The original frozen source/data lineage remains preserved separately. Its historical objectives must not be confused with the corrected source's physics. The local OneDrive READY_FOR_REVIEW folder contains the independent author review and CFD handoff; the full model/data archives remain local and hashed.
 
-
-## 14 October: Additional ML and XFOIL evidence
-
-Two separately scrambled 128-scenario 0.5%-chord XFOIL studies give 92 and 96 strictly completed matched cases and paired mean drag reductions of 15.4% / 15.8%. These results are conditional on solver completion; no independent CFD evidence or unconditional tail guarantee. A frozen-model audit also finds historical acceptance was effectively support-distance-driven, not independently gated by disagreement. See ML_DIAGNOSTICS and the supplement in manuscript.
+The study is valuable as ML prediction plus empirically evaluated support/disagreement and selected design-verification evidence. It is **not independent physical validation**: both training labels and direct checks use XFOIL-class models. Ava's selected, mesh-verified CFD will determine whether the aerodynamic ranking survives at higher fidelity. The final paper should only be submitted after coauthor review, a valid full-budget optimisation (or explicit journal-approved narrowing of that claim), and the target journal's required checks.
