@@ -23,6 +23,8 @@ FILES = [
     ("README.md", ROOT / "paper/README.md"),
     ("prior_final_draft.docx", Path(r"C:\Users\Ben\OneDrive\paper\prior_final_draft.docx")),
     ("READ_THIS_FIRST.md", REVIEW / "READ_THIS_FIRST.md"),
+    ("EMAIL_TO_AVA_DRAFT.txt", REVIEW / "EMAIL_TO_AVA_DRAFT.txt"),
+    ("COPY_TO_LAPTOP_OFFLINE.ps1", REVIEW / "COPY_TO_LAPTOP_OFFLINE.ps1"),
     ("MANUSCRIPT_AUTHOR_REVIEW.docx", REVIEW / "MANUSCRIPT_AUTHOR_REVIEW.docx"),
     ("SCIENTIFIC_REVIEW_REPORT.docx", REVIEW / "SCIENTIFIC_REVIEW_REPORT.docx"),
     ("paper/manuscript.md", ROOT / "paper/manuscript.md"),

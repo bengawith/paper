@@ -4,6 +4,8 @@
 
 Open in this order:
 
+**For the flight:** The package also includes `EMAIL_TO_AVA_DRAFT.txt` (send only after your review) and `COPY_TO_LAPTOP_OFFLINE.ps1` (safe, fail-closed laptop copy; refuses dirty Git working trees). The original V1 DOCX is included unchanged for tone comparison. The independent CFD and optimizer repeatability limitations remain open; this is an author-review package, not a journal-ready or CFD-completed result.
+
 1. **SCIENTIFIC_REVIEW_REPORT.docx** — conclusions, verified numbers, fixes, remaining blockers and author decisions.
 2. **MANUSCRIPT_AUTHOR_REVIEW.docx** — current manuscript text, 7 tables and all 7 main figures plus supplementary ML-selectivity figure.
 3. **paper/manuscript.md** — canonical plain-text manuscript, then **paper/response_to_reviewers.md**.
