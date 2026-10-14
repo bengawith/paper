@@ -1,0 +1,30 @@
+{
+  "execution_exit_code": 0,
+  "lineage_id": "robust-v2-current-20260908",
+  "material_evidence_hashes": {
+    "reports/robust_v2/lineages/robust-v2-current-20260908/modelling/model_ladder.json": "7a9c553a66cfe7482fd36aed673cb69c72667ffe5a36de4c734a0c786b7e0c09",
+    "reports/robust_v2/lineages/robust-v2-current-20260908/viability/advanced_studies.json": "04877027ad4cf18f959b7a5554da874f0234cf512c98594e5bad7bd028fb322b",
+    "results/robust_v2/lineages/robust-v2-current-20260908/FROZEN_MODEL_MANIFEST.json": "ec81faf59ff97b771c8675f3342151a94f7930d57bd6c41ba5f5e1af12c1913d",
+    "results/robust_v2/lineages/robust-v2-current-20260908/optimisation/optimisation_summary.json": "b0aa87f23844868c704e47fd268a91749fc2b9c0947107488533f74687ce15b0",
+    "results/robust_v2/lineages/robust-v2-current-20260908/splits/full.json": "9c8c67b2625845f9da024dc671802275917b331042fc208b5b9339c7251f3dd8",
+    "results/robust_v2/lineages/robust-v2-current-20260908/uncertainty/manufacturing_study.json": "b4d0a38c7aebd613ec59b4ff70940b0cf85bc18ca40950a57042e9b41d7b1745",
+    "results/robust_v2/lineages/robust-v2-current-20260908/xfoil_canaries/canary_summary.json": "1f4c3d4f7d6a352db6106193045f343a5cc02c01478c30fdbb03cb04fa6e38f0",
+    "results/robust_v2/lineages/robust-v2-current-20260908/xfoil_candidates/candidate_validation_summary.json": "f0e1473409fce6b256e9264ba9aeb7bce650429fecadde0e1b823914c2e22dfa"
+  },
+  "ml_evidence_hashes": {
+    "reports/robust_v2/lineages/robust-v2-current-20260908/modelling/ml_evidence.json": "79f80af46830a308d0fa0a0074664636b0e1d3bdb3cd783b3527ac2f2a6b2e70"
+  },
+  "report_hashes": {
+    "reports/robust_v2/lineages/robust-v2-current-20260908/viability/viability_report.json": "0b7a0f0dd2421de24a940976406ea5af408d4f0b153a1fabef5006a5ec389332"
+  },
+  "run_state_hashes": {
+    "reports/robust_v2/lineages/robust-v2-current-20260908/run_state.json": "4a626dc0233bbeccde05de02843f189a35b29651d5941d3093fd121c32dc47ff"
+  },
+  "schema_version": 1,
+  "scientific_assessment": "HOLD",
+  "stage_range": {
+    "from": "report",
+    "to": "report"
+  },
+  "updated_utc": "2026-09-25T07:24:46.969404+00:00"
+}

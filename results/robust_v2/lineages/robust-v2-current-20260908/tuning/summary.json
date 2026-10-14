@@ -1,0 +1,19 @@
+{
+  "best_params": {
+    "activation": "relu",
+    "batch_size": 1024,
+    "dropout": 0.12181152899002505,
+    "hidden_layers": 2,
+    "hidden_width": 512,
+    "learning_rate": 0.0016830217255088852,
+    "loss": "logcosh",
+    "residual": true,
+    "weight_decay": 1.0205288760315097e-05
+  },
+  "best_value": 0.0815722020291204,
+  "completed_trials": 28,
+  "grouped_folds": 3,
+  "selected_epochs": 23,
+  "status": "completed",
+  "trials": 50
+}

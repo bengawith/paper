@@ -1,0 +1,188 @@
+{
+  "schema": "corrected-optimisation-ten-seed-smoke-v1",
+  "status": "diagnostic_not_full_200_generation_acceptance",
+  "profile": {
+    "population": 32,
+    "generations": 10,
+    "uncertainty_samples": 16,
+    "independent_seeds": 10
+  },
+  "nominal_reference": [
+    -0.17206509553935198,
+    -0.06487645284796927,
+    -0.12530005922280965,
+    -0.05454605833398942,
+    -0.08274871211879595,
+    0.20839279013135772,
+    0.19042935361383515,
+    0.22314243030038705,
+    0.18049413922530969,
+    0.21829176166579578,
+    -0.04076541405747518,
+    0.002328850360356585
+  ],
+  "manufacturing": "candidate-specific normal field; same latent scenarios per design",
+  "agreement": {
+    "run_count": 10,
+    "feasible_run_count": 10,
+    "feasible_solution_counts": [
+      4,
+      4,
+      6,
+      4,
+      7,
+      2,
+      2,
+      6,
+      4,
+      5
+    ],
+    "objective_mean": [
+      0.010197204762363939,
+      0.01725938464330249
+    ],
+    "objective_std": [
+      0.0010976800677929132,
+      0.0005934280871275461
+    ],
+    "objective_min": [
+      0.008989600008822804,
+      0.015582072303977523
+    ],
+    "objective_max": [
+      0.015095132544478225,
+      0.018828190503808788
+    ],
+    "pairwise_design_distance_mean": 0.12056937280317245,
+    "pairwise_design_distance_max": 0.178063618128601,
+    "pairwise_objective_distance_mean": 0.14929243850538715,
+    "pairwise_objective_distance_max": 0.3150817679066493,
+    "agreement_status": "pass",
+    "agreement_rule": "at least 80% feasible runs and mean normalized symmetric cross-front distance <= 0.20",
+    "objective_agreement": {
+      "method": "symmetric_mean_nearest_front_distance_v1",
+      "run_count": 10,
+      "feasible_run_count": 10,
+      "feasible_fraction": 1.0,
+      "objective_scales": [
+        0.006105532535655421,
+        0.0032461181998312653
+      ],
+      "pairwise_symmetric_distances": [
+        0.18726813947876064,
+        0.14448123606680896,
+        0.23442299286531848,
+        0.1944832568976398,
+        0.2803693505145689,
+        0.3150817679066493,
+        0.19207950479048524,
+        0.18952529333486223,
+        0.2112469844639326,
+        0.09704150868690044,
+        0.14673422059826777,
+        0.03620455775809736,
+        0.1834580715140805,
+        0.17243970425091876,
+        0.09669049094001253,
+        0.1010231495548213,
+        0.06175743518816315,
+        0.19763706468311487,
+        0.11176737149807112,
+        0.21897160634274127,
+        0.235072911161473,
+        0.12674618558902942,
+        0.14262800847205168,
+        0.11307879354521669,
+        0.11762732786164293,
+        0.11431895015705125,
+        0.22750256602135127,
+        0.09285916623485677,
+        0.1343973058898721,
+        0.1370805980610104,
+        0.13497049419893015,
+        0.19262473792006862,
+        0.05024104524730125,
+        0.0734978986971552,
+        0.07606181457514571,
+        0.1967870388740291,
+        0.08570280554053986,
+        0.14555691646213698,
+        0.12542587794456456,
+        0.23027848222950828,
+        0.1963735044406982,
+        0.1321333654157715,
+        0.0853858467276616,
+        0.10503888985635167,
+        0.07408549428478803
+      ],
+      "maximum_symmetric_hausdorff": 0.9230214499208521,
+      "mean_symmetric_distance": 0.14929243850538715,
+      "threshold": 0.2,
+      "minimum_feasible_fraction": 0.8,
+      "passed": true
+    },
+    "objective_scale_context": "frozen_once_from_all_feasible_runs_for_this_profile"
+  },
+  "per_run": [
+    {
+      "seed": 20268824,
+      "solution_count": 4,
+      "fallback": false,
+      "context_hash": "a51c831ca721e7b77641a4727360d35111d2ff5c3dc58dddeb887733c72dc189"
+    },
+    {
+      "seed": 20268825,
+      "solution_count": 4,
+      "fallback": false,
+      "context_hash": "a51c831ca721e7b77641a4727360d35111d2ff5c3dc58dddeb887733c72dc189"
+    },
+    {
+      "seed": 20268826,
+      "solution_count": 6,
+      "fallback": false,
+      "context_hash": "a51c831ca721e7b77641a4727360d35111d2ff5c3dc58dddeb887733c72dc189"
+    },
+    {
+      "seed": 20268827,
+      "solution_count": 4,
+      "fallback": false,
+      "context_hash": "a51c831ca721e7b77641a4727360d35111d2ff5c3dc58dddeb887733c72dc189"
+    },
+    {
+      "seed": 20268828,
+      "solution_count": 7,
+      "fallback": false,
+      "context_hash": "a51c831ca721e7b77641a4727360d35111d2ff5c3dc58dddeb887733c72dc189"
+    },
+    {
+      "seed": 20268829,
+      "solution_count": 2,
+      "fallback": false,
+      "context_hash": "a51c831ca721e7b77641a4727360d35111d2ff5c3dc58dddeb887733c72dc189"
+    },
+    {
+      "seed": 20268830,
+      "solution_count": 2,
+      "fallback": false,
+      "context_hash": "a51c831ca721e7b77641a4727360d35111d2ff5c3dc58dddeb887733c72dc189"
+    },
+    {
+      "seed": 20268831,
+      "solution_count": 6,
+      "fallback": false,
+      "context_hash": "a51c831ca721e7b77641a4727360d35111d2ff5c3dc58dddeb887733c72dc189"
+    },
+    {
+      "seed": 20268832,
+      "solution_count": 4,
+      "fallback": false,
+      "context_hash": "a51c831ca721e7b77641a4727360d35111d2ff5c3dc58dddeb887733c72dc189"
+    },
+    {
+      "seed": 20268833,
+      "solution_count": 5,
+      "fallback": false,
+      "context_hash": "a51c831ca721e7b77641a4727360d35111d2ff5c3dc58dddeb887733c72dc189"
+    }
+  ]
+}

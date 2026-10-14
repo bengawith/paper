@@ -1,0 +1,101 @@
+# Master implementation prompt
+
+Use the Markdown version as the canonical instruction:
+
+* [Download the complete master implementation prompt — Markdown](sandbox:/mnt/data/MASTER_IMPLEMENTATION_PROMPT_AIRFOIL_ROBUST_V2.md)
+* [Download the same prompt as plain text](sandbox:/mnt/data/MASTER_IMPLEMENTATION_PROMPT_AIRFOIL_ROBUST_V2.txt)
+
+It is a **9,187-word, 3,140-line implementation mandate** designed to be passed directly to the agent without further explanation.
+
+The prompt is grounded in the submitted paper’s actual V1 methodology and intended extensions: 1,568 UIUC geometries, 12 CST parameters, AirfoilTools/XFOIL labels at (Re=10^6), a 48-point (C_L) target, and the proposed future addition of drag, moment, uncertainty quantification and optimisation.
+
+## What I resolved before writing it
+
+The old generator has been located and accounted for. It downloaded full AirfoilTools records containing:
+
+[
+\alpha,\ C_L,\ C_D,\ C_{Dp},\ C_M,\ X_{\mathrm{tr,upper}},\ X_{\mathrm{tr,lower}},
+]
+
+but then selected 48 source rows and returned only angle and (C_L), discarding the other aerodynamic data. The new mandate explicitly preserves V1 while rebuilding V2 from genuine long-form polar rows.
+
+The prompt does **not** assume AirfoilTools will be available. Current checks of both its HTTPS and historical HTTP CSV routes returned `502 Bad Gateway`, so live access is now only a one-record canary and is never a single point of failure.
+
+I found a viable pinned fallback repository that reports approximately 11,034 raw files, including UIUC geometries and AirfoilTools/XFOIL coefficient files. A verified example contains the exact metadata and complete seven-column polar schema required for this extension. The prompt pins its exact Git commit, preserves its MIT licence and provenance, validates geometries against your continuity set, and labels every row as a third-party snapshot rather than pretending it came directly from AirfoilTools.
+
+The official UIUC source now lists approximately 1,650 geometries and a standard-format archive updated on **23 February 2026**. The mandate uses your committed `data/aerofoil_data` files as the historical continuity set and downloads the current UIUC archive only as a separately versioned comparison, preventing silent dataset drift. It also accounts for Selig and Lednicer ordering, comments, finite trailing edges and XFOIL filename peculiarities. ([m-selig.ae.illinois.edu][1])
+
+The local validation route uses the official MIT XFOIL distribution. The MIT page currently provides XFOIL 6.99 for Windows, XFOIL 6.996 source for Unix, the user guide and sample command sessions. The prompt labels local results as cross-checks rather than falsely treating a modern local executable as numerically identical to the historical AirfoilTools service. ([Massachusetts Institute of Technology][2])
+
+## What the agent is instructed to build and run
+
+The mandate specifies all of the following:
+
+* Repository preservation, baseline hashes, a dedicated `robust-v2-viability` branch and resumable run-state management.
+* A complete `src/robust_airfoil` package, configuration tree, data tree, results tree, report tree and test suite.
+* Exact source links, source priorities and fallback behaviour.
+* Local historical-data discovery without unsafely opening arbitrary pickle files.
+* Official UIUC acquisition and continuity-set comparison.
+* Pinned third-party snapshot ingestion.
+* A rate-limited AirfoilTools client with canary testing, content validation, immutable caching, retry limits and automatic shutdown on `401`, `403` or `429`.
+* A robust AirfoilTools parser retaining (C_L), (C_D), (C_{Dp}), (C_M), and transition values.
+* A safe XFOIL installer, subprocess wrapper, command generator, timeout handling and polar parser.
+* Geometry parsing and normalisation for Selig and Lednicer formats.
+* Five-weight-per-side CST extraction, reconstruction and round-trip validation.
+* Exact-name, explicit-alias and geometry-confirmed polar mapping, with fuzzy matching prohibited as an automatic acceptance method.
+* Four connected long-form Parquet tables rather than padded 48-value V2 targets.
+* Exact and near-duplicate geometry clustering.
+* Development, calibration and locked-test partitions with a hard test-access guard.
+* A deterministic, diverse 25-airfoil pilot followed automatically by a 200-airfoil expansion.
+* A 13-input, three-output point-conditioned MLP:
+  [
+  (\mathbf p,\alpha)\rightarrow(C_L,\log C_D,C_M).
+  ]
+* Equal nominal-airfoil weighting so long polars cannot dominate training.
+* Dummy, Ridge and histogram-gradient-boosting baselines.
+* Forward tests, one-batch overfit, 1,000-row smoke test, pilot training and full baseline training.
+* Persistent Optuna tuning with grouped geometry-cluster cross-validation and no locked-test access. Optuna supports persistent database-backed studies and median pruning as specified. ([optuna.readthedocs.io][3])
+* A NeuralFoil benchmark that retains `analysis_confidence` but never uses NeuralFoil as training truth. NeuralFoil exposes (C_L), (C_D), (C_M), transition outputs and confidence as required for that comparison. ([GitHub][4])
+* Ensemble disagreement, support-distance analysis and calibration-set residual bands.
+* Ava’s original independent (\pm1%) CST-parameter uncertainty proposal.
+* Independent coordinate noise as an ablation.
+* A primary smooth, correlated surface-normal displacement model.
+* Scrambled Sobol sampling using power-of-two sample sizes and common random numbers, following the balance requirements of the SciPy implementation. ([SciPy Documentation][5])
+* Ava’s original lift-versus-standard-deviation objective.
+* A stronger fixed-required-lift drag formulation using expected (C_D) and 95% CVaR.
+* Geometry, thickness, area, moment, target-lift and calibrated-trust constraints.
+* Differential-evolution debugging followed by NSGA-II. The prescribed interface follows pymoo’s supported NSGA-II implementation. ([pymoo.org][6])
+* Direct XFOIL validation of the reference, deterministic optimum and robust candidates.
+* Exact `GO`, `HOLD` and `NO-GO` criteria.
+* Automatic continuation into the 200-airfoil and full available datasets when the viability gates pass.
+* A final `VIABILITY_REPORT.md`, machine-readable report, `AGENT_HANDOVER.md`, output hashes and exact resume commands.
+
+## How to give it to the implementation agent
+
+Attach the Markdown file or paste its entire contents. Add only this wrapper above it:
+
+```text
+Read and execute the attached master implementation mandate in full.
+
+You are operating inside the existing paper repository on this PC. Do not
+return another abstract plan. Begin by inspecting and preserving the current
+repository state, then implement and run the mandate phase by phase.
+
+Continue autonomously through the viability decision and the authorised
+automatic scale-up. Use the documented fallback hierarchy whenever an external
+source is unavailable. Do not omit tests, provenance, reports, or failure
+evidence.
+
+At the end, return the exact branch, SHA, test results, data counts, model
+results, viability decision, report paths, and resume command required by the
+mandate.
+```
+
+The Markdown document itself is the authoritative version; the short wrapper merely tells the agent to start executing it.
+
+[1]: https://m-selig.ae.illinois.edu/ads.html "https://m-selig.ae.illinois.edu/ads.html"
+[2]: https://web.mit.edu/drela/Public/web/xfoil/ "https://web.mit.edu/drela/Public/web/xfoil/"
+[3]: https://optuna.readthedocs.io/en/stable/reference/generated/optuna.pruners.MedianPruner.html "https://optuna.readthedocs.io/en/stable/reference/generated/optuna.pruners.MedianPruner.html"
+[4]: https://github.com/peterdsharpe/NeuralFoil "https://github.com/peterdsharpe/NeuralFoil"
+[5]: https://docs.scipy.org/doc/scipy-1.15.2/reference/generated/scipy.stats.qmc.Sobol.html "https://docs.scipy.org/doc/scipy-1.15.2/reference/generated/scipy.stats.qmc.Sobol.html"
+[6]: https://pymoo.org/algorithms/moo/nsga2.html "https://pymoo.org/algorithms/moo/nsga2.html"

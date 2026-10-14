@@ -1,0 +1,43 @@
+project_seed: 20260824
+conditions:
+  reynolds_number: 1000000
+  mach: 0.0
+  ncrit: 9.0
+continuity_geometry_dir: data/aerofoil_data
+legacy_dataset: data/csv/dataset_12CST_params.csv
+uiuc:
+  landing_url: https://m-selig.ae.illinois.edu/ads.html
+  database_url: https://m-selig.ae.illinois.edu/ads/coord_database.html
+  zip_url: https://m-selig.ae.illinois.edu/ads/archives/coord_seligFmt.zip
+  individual_dir_url: https://m-selig.ae.illinois.edu/ads/coord_seligFmt/
+  use_current_as_replacement: false
+snapshot:
+  repo_url: https://github.com/niccoforte/Aerofoil-Aerodynamic-Coefficients-ML-Predictive-Model.git
+  commit: 6c0d35b44a33337afae0578402964df314b07698
+  case_glob: dat/case-dat/*-il-1000000.csv
+  geometry_dir: dat/aerofoil-dat
+  source_tier: third_party_airfoiltools_snapshot
+airfoiltools_live:
+  enabled: true
+  robots_url: https://airfoiltools.com/robots.txt
+  csv_url_template: https://airfoiltools.com/polar/csv?polar={polar_key}
+  http_fallback_template: http://airfoiltools.com/polar/csv?polar={polar_key}
+  details_url_template: https://airfoiltools.com/polar/details?polar={polar_key}
+  canary_key: xf-naca2412-il-1000000
+  concurrency: 1
+  minimum_delay_seconds: 2.0
+  connect_timeout_seconds: 15
+  read_timeout_seconds: 30
+  max_transient_attempts: 3
+  max_live_pilot_records: 25
+  stop_on_status: [401, 403, 429]
+  require_contact_env: AIRFOILTOOLS_CONTACT
+  permit_bulk_without_successful_canary: false
+xfoil:
+  official_page: https://web.mit.edu/drela/Public/web/xfoil/
+  windows_zip_url: https://web.mit.edu/drela/Public/web/xfoil/XFOIL6.99.zip
+  documentation_url: https://web.mit.edu/drela/Public/web/xfoil/xfoil_doc.txt
+  sessions_url: https://web.mit.edu/drela/Public/web/xfoil/sessions.txt
+  executable_env: XFOIL_EXE
+  timeout_seconds: 240
+  iterations: 70

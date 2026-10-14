@@ -1,0 +1,102 @@
+[
+  {
+    "epoch": 0,
+    "train_loss": 0.591832567492257,
+    "validation_loss": 0.09699301458607977
+  },
+  {
+    "epoch": 1,
+    "train_loss": 0.07578068194182022,
+    "validation_loss": 0.050218383098707776
+  },
+  {
+    "epoch": 2,
+    "train_loss": 0.036189307823129326,
+    "validation_loss": 0.02803432693588495
+  },
+  {
+    "epoch": 3,
+    "train_loss": 0.027673300598626552,
+    "validation_loss": 0.023298963639116144
+  },
+  {
+    "epoch": 4,
+    "train_loss": 0.021743311344281487,
+    "validation_loss": 0.027376191764515122
+  },
+  {
+    "epoch": 5,
+    "train_loss": 0.022048675495645275,
+    "validation_loss": 0.023268762289692088
+  },
+  {
+    "epoch": 6,
+    "train_loss": 0.018149190379873566,
+    "validation_loss": 0.022804593737115315
+  },
+  {
+    "epoch": 7,
+    "train_loss": 0.013825224348060463,
+    "validation_loss": 0.02068520188073157
+  },
+  {
+    "epoch": 8,
+    "train_loss": 0.012593558301096376,
+    "validation_loss": 0.018269365740580842
+  },
+  {
+    "epoch": 9,
+    "train_loss": 0.011680894450325033,
+    "validation_loss": 0.019168975559708437
+  },
+  {
+    "epoch": 10,
+    "train_loss": 0.011065639636438826,
+    "validation_loss": 0.01829629423933046
+  },
+  {
+    "epoch": 11,
+    "train_loss": 0.010625490027925243,
+    "validation_loss": 0.018521234983903425
+  },
+  {
+    "epoch": 12,
+    "train_loss": 0.009874370880424976,
+    "validation_loss": 0.017691498343284744
+  },
+  {
+    "epoch": 13,
+    "train_loss": 0.009943489552192066,
+    "validation_loss": 0.01734761402589004
+  },
+  {
+    "epoch": 14,
+    "train_loss": 0.00935543883267952,
+    "validation_loss": 0.017489792147477954
+  },
+  {
+    "epoch": 15,
+    "train_loss": 0.00899974819596695,
+    "validation_loss": 0.01897777780863207
+  },
+  {
+    "epoch": 16,
+    "train_loss": 0.009130347115190132,
+    "validation_loss": 0.018795990766237624
+  },
+  {
+    "epoch": 17,
+    "train_loss": 0.009025670041370651,
+    "validation_loss": 0.0175989811762784
+  },
+  {
+    "epoch": 18,
+    "train_loss": 0.008177684356822916,
+    "validation_loss": 0.018293447727964925
+  },
+  {
+    "epoch": 19,
+    "train_loss": 0.0079227348830065,
+    "validation_loss": 0.017950729720219456
+  }
+]

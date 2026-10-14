@@ -1,0 +1,153 @@
+{
+  "schema": "robust-v2-cfd-handoff-v1",
+  "source_git_commit": "8b14165ce74396e0c504b1f165dd6eb248d51cae",
+  "source_xfoil_dir": "results/robust_v2/submission_review_20261014/xfoil_strict",
+  "source_summary_sha256": "edeeeca0a214f7f98ac61ba62ebb5346153f5f9463ded6d427cefb7d6963a3c7",
+  "reynolds_number": 1000000,
+  "mach": 0.0,
+  "source_ncrit": 9.0,
+  "requested_lift": [
+    0.4,
+    0.7,
+    1.0
+  ],
+  "lift_weights": [
+    0.25,
+    0.5,
+    0.25
+  ],
+  "selection": {
+    "common_strict_successful_scenarios": 10,
+    "median_sample": "shared_07",
+    "largest_sampled_candidate_drag": "shared_04",
+    "note": "Largest in the available 10 strictly paired cases, not a population 95%-tail quantile."
+  },
+  "cases": [
+    {
+      "design": "reference_naca2412",
+      "scenario": "nominal",
+      "source_path": "results/robust_v2/submission_review_20261014/xfoil_strict/reference_naca2412/nominal",
+      "xfoil_weighted_cd": 0.007446402014116983,
+      "files": {
+        "geometry.dat": "be5d75c092be0edc865af702a58ac4f4ebd436607958faedff65b00ae3ae55a7",
+        "combined_points.csv": "dc3782604cd92110cfbe8883845da3bf3eff1ae529799341ea6d8745300c3768",
+        "run_status.json": "adc3343b8778a7dc322232575bf1963cf2db8d6ecba120a88a926f68313dc3e6",
+        "command.txt": "a204bfd1cf986b11809d9d28acd28587d689e39f8f4c4fe7cb11cedd90da4815"
+      },
+      "xfoil_initial_alpha_deg_for_target_cl": {
+        "0.4": 1.498144712430427,
+        "0.7": 3.8647980214344595,
+        "1.0": 6.992746113989638
+      },
+      "target_alpha_is_a_starting_guess_not_cfd_output": true
+    },
+    {
+      "design": "within_trust_knee",
+      "scenario": "nominal",
+      "source_path": "results/robust_v2/submission_review_20261014/xfoil_strict/within_trust_knee/nominal",
+      "xfoil_weighted_cd": 0.006051131470505879,
+      "files": {
+        "geometry.dat": "4e601ba2cfbe29602b5938758cfb2efdf7ef501746e2543e2e8fe55bf9674b86",
+        "combined_points.csv": "0914958539079c375abe970570e2324c13e555d545a12bd775389960e4439fb4",
+        "run_status.json": "adc3343b8778a7dc322232575bf1963cf2db8d6ecba120a88a926f68313dc3e6",
+        "command.txt": "a204bfd1cf986b11809d9d28acd28587d689e39f8f4c4fe7cb11cedd90da4815"
+      },
+      "xfoil_initial_alpha_deg_for_target_cl": {
+        "0.4": 0.44464944649446514,
+        "0.7": 2.722834645669291,
+        "1.0": 5.634121274409043
+      },
+      "target_alpha_is_a_starting_guess_not_cfd_output": true
+    },
+    {
+      "design": "outside_trust_deterministic",
+      "scenario": "nominal",
+      "source_path": "results/robust_v2/submission_review_20261014/xfoil_strict/outside_trust_deterministic/nominal",
+      "xfoil_weighted_cd": 0.013960017379531587,
+      "files": {
+        "geometry.dat": "afb21dc353980f0258f4c1831a493d647f81b4ea30048a9cdb0b46f74dc09ac7",
+        "combined_points.csv": "b7564bd6f195aa1b9c09976bcb98e737e34f696a0294acac0e31929165dd6a12",
+        "run_status.json": "b08b843286f98eac7472a553498f933702d51ed382251c9bcfe80d5be2c369c4",
+        "command.txt": "9a7c8cfc77f7c1209f24307c1487f62b14fb6205d486a3c4916d2e02a0d51a5a"
+      },
+      "xfoil_initial_alpha_deg_for_target_cl": {
+        "0.4": 2.186385737439222,
+        "0.7": 4.633986928104575,
+        "1.0": 7.044991511035653
+      },
+      "target_alpha_is_a_starting_guess_not_cfd_output": true
+    },
+    {
+      "design": "reference_naca2412",
+      "scenario": "shared_07",
+      "source_path": "results/robust_v2/submission_review_20261014/xfoil_strict/reference_naca2412/shared_07",
+      "xfoil_weighted_cd": 0.008589285213190724,
+      "files": {
+        "geometry.dat": "d80e39fdf340229f7fa98a68dfd7468b518dc5fbc97f179d029b95801ac7814b",
+        "combined_points.csv": "71b1c2bd165f2b9174934b20b46a92f471689b662f170eef075a9ff28d67fb48",
+        "run_status.json": "adc3343b8778a7dc322232575bf1963cf2db8d6ecba120a88a926f68313dc3e6",
+        "command.txt": "a204bfd1cf986b11809d9d28acd28587d689e39f8f4c4fe7cb11cedd90da4815"
+      },
+      "xfoil_initial_alpha_deg_for_target_cl": {
+        "0.4": 1.5486725663716814,
+        "0.7": 4.013528748590755,
+        "1.0": 7.278008298755187
+      },
+      "target_alpha_is_a_starting_guess_not_cfd_output": true
+    },
+    {
+      "design": "within_trust_knee",
+      "scenario": "shared_07",
+      "source_path": "results/robust_v2/submission_review_20261014/xfoil_strict/within_trust_knee/shared_07",
+      "xfoil_weighted_cd": 0.007286264620728934,
+      "files": {
+        "geometry.dat": "6b8a6572eb0b7b8af9cad1e24743f88157621de5e35ea6c4ce5f494e4fd37b94",
+        "combined_points.csv": "2847653157c28139d10aad4ae6440fa9948e4ce85a4b8c75366aaf1a6252798e",
+        "run_status.json": "adc3343b8778a7dc322232575bf1963cf2db8d6ecba120a88a926f68313dc3e6",
+        "command.txt": "a204bfd1cf986b11809d9d28acd28587d689e39f8f4c4fe7cb11cedd90da4815"
+      },
+      "xfoil_initial_alpha_deg_for_target_cl": {
+        "0.4": 0.4670719351570418,
+        "0.7": 2.7828904731043416,
+        "1.0": 6.2663891779396454
+      },
+      "target_alpha_is_a_starting_guess_not_cfd_output": true
+    },
+    {
+      "design": "reference_naca2412",
+      "scenario": "shared_04",
+      "source_path": "results/robust_v2/submission_review_20261014/xfoil_strict/reference_naca2412/shared_04",
+      "xfoil_weighted_cd": 0.007962973801538927,
+      "files": {
+        "geometry.dat": "06c15c3a1f8ad6d0b8305431b5515eeb72a0386411811cf97f030e6d3f65d71d",
+        "combined_points.csv": "b2f743200dee5050689292595d66ea79497da1ef997dd18b3fa0787c405df0c2",
+        "run_status.json": "b08b843286f98eac7472a553498f933702d51ed382251c9bcfe80d5be2c369c4",
+        "command.txt": "5156b37dc7aa4df6f2e06bb1ddb895c59c8d91482910a58da2087d4209ecc616"
+      },
+      "xfoil_initial_alpha_deg_for_target_cl": {
+        "0.4": 1.596745027124774,
+        "0.7": 4.042918454935623,
+        "1.0": 7.239422084623323
+      },
+      "target_alpha_is_a_starting_guess_not_cfd_output": true
+    },
+    {
+      "design": "within_trust_knee",
+      "scenario": "shared_04",
+      "source_path": "results/robust_v2/submission_review_20261014/xfoil_strict/within_trust_knee/shared_04",
+      "xfoil_weighted_cd": 0.008400814212406658,
+      "files": {
+        "geometry.dat": "82794bcb1af7f5c6dee0ca3ddf7604ce6f9a38cb82d5aac0917932de69dc2a73",
+        "combined_points.csv": "78ae14e4ba5244f49bc3f7ae6de26b5eec57e33a160e4fcc23195078847ff2a3",
+        "run_status.json": "adc3343b8778a7dc322232575bf1963cf2db8d6ecba120a88a926f68313dc3e6",
+        "command.txt": "a204bfd1cf986b11809d9d28acd28587d689e39f8f4c4fe7cb11cedd90da4815"
+      },
+      "xfoil_initial_alpha_deg_for_target_cl": {
+        "0.4": 0.40550133096716956,
+        "0.7": 3.1819515774027876,
+        "1.0": 6.182682154171067
+      },
+      "target_alpha_is_a_starting_guess_not_cfd_output": true
+    }
+  ]
+}
