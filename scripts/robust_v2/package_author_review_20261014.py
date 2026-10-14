@@ -66,8 +66,10 @@ def make(target: Path) -> None:
     if target.exists():
         if os.getenv("REPLACE_REVIEW_PACKAGE", "") != "1":
             raise FileExistsError(f"Review package already exists; refusing overwrite: {target}")
-        shutil.rmtree(target)
-    target.mkdir(parents=True)
+        # OneDrive may hold file handles; replace listed files in place and
+        # re-hash rather than deleting the entire review directory.
+        pass
+    target.mkdir(parents=True, exist_ok=True)
     for rel, source in FILES:
         if not source.is_file():
             raise FileNotFoundError(source)
