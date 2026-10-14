@@ -1,0 +1,264 @@
+{
+  "schema": "frozen-ml-selective-audit-v1",
+  "frozen_rule_component_audit": {
+    "n_test_states": 26692,
+    "untrusted_states_total": 9050,
+    "failed_support_distance": 9050,
+    "failed_disagreement_any": 6,
+    "failed_disagreement_without_support_failure": 0,
+    "failed_per_output_spread": {
+      "cl": 0,
+      "log_cd": 0,
+      "cm": 6
+    },
+    "interpretation": "Frozen 2026-09 trust selection is effectively support-distance-driven on this held-out test; do not claim ensemble spread materially rejects states."
+  },
+  "purpose": "Descriptive held-out test diagnostic; NO model selection or trust-threshold tuning",
+  "source_test_sha256": "aad0e8849ec431d36084fabfd63fad18241144158197491197a51a4dcef979b1",
+  "source_calibration_sha256": "d3b41f63cf1c28960b886c944140495876169f1fc121c3b6ad4cbe5c2d3a78ec",
+  "n_test_states": 26692,
+  "n_test_airfoils": 233,
+  "fixed_risk_rule": "maximum of support distance and 3 ensemble disagreements, each divided by 95th calibration quantile",
+  "calibration_scaling": {
+    "ensemble_std_cl": 0.10599373961703498,
+    "ensemble_std_log_cd": 0.2606173103182291,
+    "ensemble_std_cm": 0.015527691540063353,
+    "support_distance": 2.4541719392590737
+  },
+  "targets": {
+    "cl": {
+      "error_risk_spearman": 0.4761571273765022,
+      "all_macro_mae": 0.056022043116590134,
+      "existing_trusted_macro_mae": 0.03958231074267171,
+      "existing_rejected_macro_mae": 0.08929968696826637,
+      "curve": [
+        {
+          "target": "cl",
+          "retained_fraction": 0.1,
+          "n_states": 2669,
+          "n_airfoils": 71,
+          "group_macro_mae": 0.02026278861816826
+        },
+        {
+          "target": "cl",
+          "retained_fraction": 0.2,
+          "n_states": 5338,
+          "n_airfoils": 103,
+          "group_macro_mae": 0.023339861274658057
+        },
+        {
+          "target": "cl",
+          "retained_fraction": 0.3,
+          "n_states": 8007,
+          "n_airfoils": 130,
+          "group_macro_mae": 0.027084757393268256
+        },
+        {
+          "target": "cl",
+          "retained_fraction": 0.4,
+          "n_states": 10676,
+          "n_airfoils": 143,
+          "group_macro_mae": 0.030100300796252772
+        },
+        {
+          "target": "cl",
+          "retained_fraction": 0.5,
+          "n_states": 13346,
+          "n_airfoils": 161,
+          "group_macro_mae": 0.032903523283351735
+        },
+        {
+          "target": "cl",
+          "retained_fraction": 0.6,
+          "n_states": 16015,
+          "n_airfoils": 182,
+          "group_macro_mae": 0.038950106449787414
+        },
+        {
+          "target": "cl",
+          "retained_fraction": 0.7,
+          "n_states": 18684,
+          "n_airfoils": 195,
+          "group_macro_mae": 0.04380317153070944
+        },
+        {
+          "target": "cl",
+          "retained_fraction": 0.8,
+          "n_states": 21353,
+          "n_airfoils": 208,
+          "group_macro_mae": 0.04760251120907772
+        },
+        {
+          "target": "cl",
+          "retained_fraction": 0.9,
+          "n_states": 24022,
+          "n_airfoils": 220,
+          "group_macro_mae": 0.05170995247522335
+        },
+        {
+          "target": "cl",
+          "retained_fraction": 1.0,
+          "n_states": 26692,
+          "n_airfoils": 233,
+          "group_macro_mae": 0.056022043116590134
+        }
+      ]
+    },
+    "log_cd": {
+      "error_risk_spearman": 0.4522056660428502,
+      "all_macro_mae": 0.1483917968141882,
+      "existing_trusted_macro_mae": 0.11597195747550183,
+      "existing_rejected_macro_mae": 0.21585501201418023,
+      "curve": [
+        {
+          "target": "log_cd",
+          "retained_fraction": 0.1,
+          "n_states": 2669,
+          "n_airfoils": 71,
+          "group_macro_mae": 0.05830178235078863
+        },
+        {
+          "target": "log_cd",
+          "retained_fraction": 0.2,
+          "n_states": 5338,
+          "n_airfoils": 103,
+          "group_macro_mae": 0.07038225714460214
+        },
+        {
+          "target": "log_cd",
+          "retained_fraction": 0.3,
+          "n_states": 8007,
+          "n_airfoils": 130,
+          "group_macro_mae": 0.08220127445296804
+        },
+        {
+          "target": "log_cd",
+          "retained_fraction": 0.4,
+          "n_states": 10676,
+          "n_airfoils": 143,
+          "group_macro_mae": 0.08476772765961726
+        },
+        {
+          "target": "log_cd",
+          "retained_fraction": 0.5,
+          "n_states": 13346,
+          "n_airfoils": 161,
+          "group_macro_mae": 0.09282667484041619
+        },
+        {
+          "target": "log_cd",
+          "retained_fraction": 0.6,
+          "n_states": 16015,
+          "n_airfoils": 182,
+          "group_macro_mae": 0.09898186020270221
+        },
+        {
+          "target": "log_cd",
+          "retained_fraction": 0.7,
+          "n_states": 18684,
+          "n_airfoils": 195,
+          "group_macro_mae": 0.1048158004347845
+        },
+        {
+          "target": "log_cd",
+          "retained_fraction": 0.8,
+          "n_states": 21353,
+          "n_airfoils": 208,
+          "group_macro_mae": 0.11476377188595156
+        },
+        {
+          "target": "log_cd",
+          "retained_fraction": 0.9,
+          "n_states": 24022,
+          "n_airfoils": 220,
+          "group_macro_mae": 0.1300284890013099
+        },
+        {
+          "target": "log_cd",
+          "retained_fraction": 1.0,
+          "n_states": 26692,
+          "n_airfoils": 233,
+          "group_macro_mae": 0.1483917968141882
+        }
+      ]
+    },
+    "cm": {
+      "error_risk_spearman": 0.5238972896040529,
+      "all_macro_mae": 0.009541047291044855,
+      "existing_trusted_macro_mae": 0.005994891185745474,
+      "existing_rejected_macro_mae": 0.016646269581229146,
+      "curve": [
+        {
+          "target": "cm",
+          "retained_fraction": 0.1,
+          "n_states": 2669,
+          "n_airfoils": 71,
+          "group_macro_mae": 0.0030156929931925034
+        },
+        {
+          "target": "cm",
+          "retained_fraction": 0.2,
+          "n_states": 5338,
+          "n_airfoils": 103,
+          "group_macro_mae": 0.0034537456648650717
+        },
+        {
+          "target": "cm",
+          "retained_fraction": 0.3,
+          "n_states": 8007,
+          "n_airfoils": 130,
+          "group_macro_mae": 0.004378656313258615
+        },
+        {
+          "target": "cm",
+          "retained_fraction": 0.4,
+          "n_states": 10676,
+          "n_airfoils": 143,
+          "group_macro_mae": 0.004859732139008025
+        },
+        {
+          "target": "cm",
+          "retained_fraction": 0.5,
+          "n_states": 13346,
+          "n_airfoils": 161,
+          "group_macro_mae": 0.0052417213574494125
+        },
+        {
+          "target": "cm",
+          "retained_fraction": 0.6,
+          "n_states": 16015,
+          "n_airfoils": 182,
+          "group_macro_mae": 0.006231637894416849
+        },
+        {
+          "target": "cm",
+          "retained_fraction": 0.7,
+          "n_states": 18684,
+          "n_airfoils": 195,
+          "group_macro_mae": 0.006855043687925607
+        },
+        {
+          "target": "cm",
+          "retained_fraction": 0.8,
+          "n_states": 21353,
+          "n_airfoils": 208,
+          "group_macro_mae": 0.00777586367657583
+        },
+        {
+          "target": "cm",
+          "retained_fraction": 0.9,
+          "n_states": 24022,
+          "n_airfoils": 220,
+          "group_macro_mae": 0.008541704237216539
+        },
+        {
+          "target": "cm",
+          "retained_fraction": 1.0,
+          "n_states": 26692,
+          "n_airfoils": 233,
+          "group_macro_mae": 0.009541047291044855
+        }
+      ]
+    }
+  }
+}

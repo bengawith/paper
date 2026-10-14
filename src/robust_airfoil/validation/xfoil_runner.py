@@ -346,7 +346,7 @@ def run_xfoil(
             f"failed_retries={failed_retries}"
         )
     )
-    return XFoilResult(
+    final = XFoilResult(
         status,
         0 if clean_exit else None,
         any(result.timed_out for result in all_results),
@@ -357,6 +357,23 @@ def run_xfoil(
         parsed,
         reason,
     )
+    # Persist the strict completion decision: a historical CSV alone cannot
+    # prove clean process exits or full requested-angle coverage.
+    write_json_atomic(output_dir / "run_status.json", {
+        "schema": "xfoil-strict-sweep-v1",
+        "status": status,
+        "return_code": final.return_code,
+        "timed_out": final.timed_out,
+        "expected_points": expected_points,
+        "valid_points": int(len(valid_parsed)),
+        "coverage_fraction": float(convergence_fraction),
+        "span_complete": bool(span_complete),
+        "clean_exit": bool(clean_exit),
+        "failed_segments": failed_segments,
+        "failed_retries": failed_retries,
+        "failure_reason": reason,
+    })
+    return final
 
 
 def _comparison(local: pd.DataFrame, archive_path: Path | None) -> dict[str, object]:

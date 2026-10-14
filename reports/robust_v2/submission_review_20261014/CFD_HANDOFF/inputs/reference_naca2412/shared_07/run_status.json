@@ -1,0 +1,14 @@
+{
+  "clean_exit": true,
+  "coverage_fraction": 1.0,
+  "expected_points": 12,
+  "failed_retries": [],
+  "failed_segments": [],
+  "failure_reason": null,
+  "return_code": 0,
+  "schema": "xfoil-strict-sweep-v1",
+  "span_complete": true,
+  "status": "ok",
+  "timed_out": false,
+  "valid_points": 12
+}

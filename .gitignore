@@ -46,3 +46,9 @@ reports/robust_v2/lineages/**/run_state.json
 # Oversized one-time starting-state snapshot patch (reproducible provenance, kept local).
 reports/robust_v2/final_study/starting_diff.patch
 .opencode/
+
+# October 2026 review: keep per-case XFOIL logs and generated Word exports local.
+# Compact numerical summaries are intentionally force-added by the release script.
+results/robust_v2/submission_review_20261014/xfoil_*/
+reports/robust_v2/submission_review_20261014/*.docx
+reports/robust_v2/submission_review_20261014/XFOIL_*.log

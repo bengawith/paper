@@ -1,3 +1,5 @@
+> Historic review note (3 October 2026), superseded by reports/robust_v2/submission_review_20261014/REVIEW_REPORT.md for current claim wording. Frozen results unchanged.
+
 # Review status — 3 October 2026 (revision 2)
 
 **This revision resolves the material errors flagged in revision 1. The manuscript now matches the recorded evidence, and the central claim is settled by direct XFOIL verification rather than by surrogate-side values.** Read this note alongside the manuscript.

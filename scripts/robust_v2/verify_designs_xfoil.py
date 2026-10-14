@@ -1,14 +1,15 @@
-"""Clean, correctly-signed XFOIL verification of surrogate-optimised designs.
+"""Exploratory numerical XFOIL comparison of three selected designs.
 
-Confirms the central thesis directly: a design inside the surrogate's calibrated
-trust domain is verified by XFOIL as robust against the NACA 2412 reference,
-whereas a surrogate-optimised design that sits outside the trust domain is not.
-A positive paired difference denotes LOWER drag than the reference (improvement).
+Strictly requires completed sweeps before computing required-lift drag.
+Outcomes support a selected-case comparison, not a universal trust guarantee
+or a reliable 95%-tail estimate from the 16-scenario experiment.
+A positive paired difference denotes lower drag than NACA 2412.
 """
 
 from __future__ import annotations
 
 import json
+import os
 from pathlib import Path
 
 import numpy as np
@@ -32,15 +33,17 @@ from robust_airfoil.validation.xfoil_runner import XFoilCase, run_xfoil
 PARAM = FEATURE_COLUMNS[:-1]
 LIN = "robust-v2-current-20260908"
 BASE = ROOT / "results/robust_v2/lineages" / LIN
-OUT = BASE / "design_verification"
-N_SHARED = 16
+OUT = Path(os.environ.get("ROBUST_V2_XFOIL_OUT", str(BASE / "design_verification")))
+N_SHARED = int(os.environ.get("ROBUST_V2_XFOIL_SHARED", "16"))
 ALPHA = (0.0, 11.0, 1.0)
 
 
 def _write_geometry(path: Path, name: str, upper: np.ndarray, lower: np.ndarray) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     coords = np.vstack([upper[::-1], lower[1:]])
-    path.write_text("\n".join([f"_{name}", *(f"{x:.12f} {y:.12f}" for x, y in coords)]) + "\n", encoding="utf-8")
+    path.write_text(
+        "\n".join([f"_{name}", *(f"{x:.12f} {y:.12f}" for x, y in coords)]) + "\n", encoding="utf-8"
+    )
 
 
 def _weighted_cd(points: pd.DataFrame, opt: OptimisationConfig) -> float | None:
@@ -50,31 +53,55 @@ def _weighted_cd(points: pd.DataFrame, opt: OptimisationConfig) -> float | None:
     if not len(valid):
         return None
     value = weighted_required_lift_drag(
-        valid["alpha_deg"].to_numpy(float), valid["cl"].to_numpy(float), valid["cd"].to_numpy(float),
-        np.asarray(opt.service_targets.cl_required, float), np.asarray(opt.service_targets.weights, float),
+        valid["alpha_deg"].to_numpy(float),
+        valid["cl"].to_numpy(float),
+        valid["cd"].to_numpy(float),
+        np.asarray(opt.service_targets.cl_required, float),
+        np.asarray(opt.service_targets.weights, float),
     )
     return float(value) if np.isfinite(value) else None
 
 
-def _support(parameters: np.ndarray, ensemble: LoadedEnsemble, dev: pd.DataFrame,
-             calibration: dict, alpha: np.ndarray) -> float:
-    frame = pd.DataFrame(np.repeat(parameters[None, :], len(alpha), axis=0), columns=pd.Index(PARAM))
+def _support(
+    parameters: np.ndarray,
+    ensemble: LoadedEnsemble,
+    dev: pd.DataFrame,
+    calibration: dict,
+    alpha: np.ndarray,
+) -> float:
+    frame = pd.DataFrame(
+        np.repeat(parameters[None, :], len(alpha), axis=0), columns=pd.Index(PARAM)
+    )
     frame["alpha_deg"] = alpha
     frame["airfoil_id"] = "q"
     trusted = apply_trust_model(dev, ensemble.predict(frame), ensemble.first_scaling, calibration)
     return float(trusted["support_distance"].max())
 
 
-def _run(parameters: np.ndarray, upper: np.ndarray, lower: np.ndarray, name: str, exe: Path,
-         opt: OptimisationConfig, unc: UncertaintyConfig) -> float | None:
+def _run(
+    parameters: np.ndarray,
+    upper: np.ndarray,
+    lower: np.ndarray,
+    name: str,
+    exe: Path,
+    opt: OptimisationConfig,
+    unc: UncertaintyConfig,
+) -> float | None:
     cosx = (1 - np.cos(np.linspace(0, np.pi, len(upper)))) / 2
     fu, fl = resample_surfaces_to_common_x(upper, lower, cosx)
-    if not validate_geometry(upper, lower).valid or fit_cst(fu, fl).max_error > unc.maximum_cst_refit_error_fraction_chord:
+    if (
+        not validate_geometry(upper, lower).valid
+        or fit_cst(fu, fl).max_error > unc.maximum_cst_refit_error_fraction_chord
+    ):
         return None
     geom = OUT / name / "geometry.dat"
     _write_geometry(geom, name, upper, lower)
     case = XFoilCase(geom, 1_000_000, 0.0, 9.0, ALPHA[0], ALPHA[1], ALPHA[2], 100, "positive")
     result = run_xfoil(exe, case, OUT / name, 150)
+    # A useful partial polar is not a completed validation case: require the
+    # runner's full finite/positive-drag coverage and clean-exit contract.
+    if result.status != "ok" or result.return_code != 0 or result.timed_out:
+        return None
     return _weighted_cd(result.parsed_points, opt)
 
 
@@ -86,10 +113,16 @@ def main() -> None:
     split = json.loads((BASE / "splits/full.json").read_text(encoding="utf-8"))
     dev_ids = {str(r["airfoil_id"]) for r in split["records"] if r["split"] == "development"}
     dev = points.loc[points["airfoil_id"].astype(str).isin(sorted(dev_ids))].copy()
-    cols = [f"lower_weight_{i}" for i in range(5)] + [f"upper_weight_{i}" for i in range(5)] + ["leading_edge_weight", "TE_thickness"]
+    cols = (
+        [f"lower_weight_{i}" for i in range(5)]
+        + [f"upper_weight_{i}" for i in range(5)]
+        + ["leading_edge_weight", "TE_thickness"]
+    )
     rrow = airfoils.loc[airfoils["airfoil_id"] == "naca2412"].iloc[0]
     reference = np.asarray([rrow[c] for c in cols], float)
-    calibration = json.loads((BASE / "calibration/trust_calibration.json").read_text(encoding="utf-8"))
+    calibration = json.loads(
+        (BASE / "calibration/trust_calibration.json").read_text(encoding="utf-8")
+    )
     opt = OptimisationConfig.model_validate(load_yaml(ROOT / "configs/robust_v2/optimisation.yaml"))
     unc = UncertaintyConfig.model_validate(load_yaml(ROOT / "configs/robust_v2/uncertainty.yaml"))
     support_threshold, _, _ = trust_thresholds(calibration)
@@ -107,8 +140,17 @@ def main() -> None:
     }
 
     controls = unc.basis_control_points_per_surface
-    amplitude = max(unc.amplitudes_fraction_chord)
-    latent = sobol_normal_samples(N_SHARED, controls * 2, unc.seed + 50_000, antithetic=True)
+    amplitude = float(
+        os.environ.get("ROBUST_V2_XFOIL_AMPLITUDE", str(max(unc.amplitudes_fraction_chord)))
+    )
+    if N_SHARED < 2 or N_SHARED & (N_SHARED - 1):
+        raise ValueError("ROBUST_V2_XFOIL_SHARED must be a power of two >=2")
+    if not (0 < amplitude <= 0.01):
+        raise ValueError("ROBUST_V2_XFOIL_AMPLITUDE must be in (0, 0.01]")
+    scramble_offset = int(os.environ.get("ROBUST_V2_XFOIL_SCRAMBLE_OFFSET", "50000"))
+    latent = sobol_normal_samples(
+        N_SHARED, controls * 2, unc.seed + scramble_offset, antithetic=True
+    )
 
     records: dict[str, dict] = {}
     nominal_cd: dict[str, float | None] = {}
@@ -122,13 +164,21 @@ def main() -> None:
         samples: list[float | None] = []
         for j, row in enumerate(latent):
             pert = smooth_normal_perturbation(
-                upper, lower, row[:controls], row[controls:], amplitude,
-                unc.correlation_length_chord, unc.leading_edge_taper, unc.trailing_edge_zero_displacement,
+                upper,
+                lower,
+                row[:controls],
+                row[controls:],
+                amplitude,
+                unc.correlation_length_chord,
+                unc.leading_edge_taper,
+                unc.trailing_edge_zero_displacement,
             )
             if not pert.valid:
                 samples.append(None)
                 continue
-            samples.append(_run(params, pert.upper, pert.lower, f"{name}/shared_{j:02d}", exe, opt, unc))
+            samples.append(
+                _run(params, pert.upper, pert.lower, f"{name}/shared_{j:02d}", exe, opt, unc)
+            )
         sample_cd[name] = samples
         converged = [v for v in samples if v is not None]
         records[name] = {
@@ -152,11 +202,14 @@ def main() -> None:
     rng = np.random.default_rng(unc.seed + 7)
     paired = {}
     for name in ("within_trust_knee", "outside_trust_deterministic"):
-        diffs = np.asarray([
-            ref_samples[j] - sample_cd[name][j]
-            for j in range(N_SHARED)
-            if ref_samples[j] is not None and sample_cd[name][j] is not None
-        ], float)
+        diffs = np.asarray(
+            [
+                ref_samples[j] - sample_cd[name][j]
+                for j in range(N_SHARED)
+                if ref_samples[j] is not None and sample_cd[name][j] is not None
+            ],
+            float,
+        )
         if len(diffs) >= 2:
             boot = rng.choice(diffs, size=(10000, len(diffs)), replace=True).mean(axis=1)
             paired[name] = {
@@ -166,19 +219,28 @@ def main() -> None:
                 "sign_convention": "positive means design has LOWER weighted drag than the reference",
             }
         else:
-            paired[name] = {"paired_samples": int(len(diffs)), "mean_improvement_vs_reference": None}
+            paired[name] = {
+                "paired_samples": int(len(diffs)),
+                "mean_improvement_vs_reference": None,
+            }
         print("paired", name, paired[name])
 
     summary = {
         "schema_version": "robust-v2-design-verification-v1",
-        "reynolds_number": 1_000_000, "mach": 0.0, "ncrit": 9.0,
-        "alpha_grid_deg": list(ALPHA), "shared_perturbations": N_SHARED,
+        "reynolds_number": 1_000_000,
+        "mach": 0.0,
+        "ncrit": 9.0,
+        "alpha_grid_deg": list(ALPHA),
+        "shared_perturbations": N_SHARED,
         "manufacturing_amplitude_fraction_chord": amplitude,
+        "sobol_scramble_seed_offset": scramble_offset,
         "strict_support_threshold": support_threshold,
         "designs": records,
         "paired_improvement_vs_reference": paired,
     }
-    (OUT / "design_verification_summary.json").write_text(json.dumps(summary, indent=2), encoding="utf-8")
+    (OUT / "design_verification_summary.json").write_text(
+        json.dumps(summary, indent=2), encoding="utf-8"
+    )
     print("wrote", OUT / "design_verification_summary.json")
 
 

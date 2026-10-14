@@ -35,6 +35,9 @@ dev = [
   "ruff>=0.6,<1",
   "types-pyyaml>=6",
 ]
+docs = [
+    "python-docx>=1.2,<2",
+]
 
 [project.scripts]
 robust-airfoil = "robust_airfoil.cli:main"

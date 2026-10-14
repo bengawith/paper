@@ -1,118 +1,58 @@
-# Risk-Aware Aerofoil Design under Manufacturing Uncertainty
+# Trust-screened ML for risk-aware aerofoil design
 
-> **Revised, corrected study.** See [paper/REVIEW_STATUS.md](paper/REVIEW_STATUS.md) for how the earlier flagged issues were resolved. The central claim is now settled by direct XFOIL verification. Journal selection and the prior venue's one-year resubmission restriction remain author decisions.
+This repository accompanies the revised research manuscript by Benjamin Gawith, Ava Shahrokhi and Keivan Navaie.
 
-**Trust-calibrated machine-learning surrogate, risk-aware optimisation, and multi-fidelity (XFOIL) verification for two-dimensional aerofoils.**
+**Current status (14 October 2026): author-review draft, ready for selected RANS CFD work with Ava. Not journal-submission-ready.** The previous 3 October status note is preserved for history, but superseded by the new scientific review.
 
-This repository accompanies the manuscript
-*"Risk-Aware Aerofoil Design under Manufacturing Uncertainty using a Trust-Calibrated
-Machine-Learning Surrogate and Multi-Fidelity Verification"* (Gawith, Shahrokhi, Navaie).
-The manuscript and its point-by-point response to the previous round of peer review are in
-[`paper/`](paper/).
+## What the study demonstrates
 
-## What this project does
+A compact CST-and-angle-conditioned five-member MLP ensemble predicts lift, log drag and pitching moment from XFOIL-labelled data. On 26,692 grouped held-out aerodynamic states (233 aerofoils), R² is approximately 0.989 for lift, 0.922 for log drag and 0.918 for moment. An empirical support/disagreement screen accepts 66.1% of the states with lower observed error than rejected states.
 
-A compact surrogate predicts lift, drag and pitching-moment coefficients of an aerofoil
-directly from a 12-parameter Class–Shape Transformation (CST) geometry, and is used to
-perform **manufacturing-aware robust design** with every conclusion **verified against the
-XFOIL panel solver**. The three contributions are:
+A prescribed smooth, bounded surface-normal deviation model is used for expected-drag and 95% upper-tail surrogate objectives. It is **not** a measured manufacturing-tolerance distribution.
 
-1. **A trust-calibrated multi-output surrogate.** An ensemble of point-conditioned MLPs
-   predicts `C_L`, `C_D`, `C_M`, with a split-conformal *trust domain* that labels each
-   query as reliable or not. Errors inside the trust domain are 2–2.7× smaller than outside.
-2. **Risk-aware optimisation under manufacturing uncertainty.** Manufacturing deviation is a
-   smooth, bounded, spatially correlated surface-normal displacement (0.1–1% chord). NSGA-II
-   minimises expected drag and 95% CVaR tail-risk drag at required lift, giving an explicit
-   deterministic-versus-robust trade-off.
-3. **Multi-fidelity verification and adversarial trust probing.** XFOIL confirms the
-   surrogate's design ranking (Spearman ρ = 1.00) and the drag advantage of the optimised
-   designs; an adversarial search (per Reviewer #2) locates the worst-case surrogate–solver
-   disagreement and shows it is confined to the untrusted region.
+A fresh, strict local XFOIL re-evaluation of **three selected** aerofoils shows:
 
-## Headline results (Re = 1×10⁶, M = 0, N_crit = 9)
+| Selected design | Nominal weighted drag | Full-sweep/required-lift-feasible perturbed cases | Mean drag, accepted cases |
+|---|---:|---:|---:|
+| NACA 2412 reference | 0.007446 | 13/16 | 0.008349 |
+| Within-screen design | 0.006051 | 13/16 | 0.007615 |
+| Outside-screen diagnostic optimum | 0.013960 | 14/16 | 0.014137 |
 
-| Result | Value |
-|---|---|
-| Surrogate accuracy, held-out (26,692 states, 233 aerofoils) | `C_L` R²=0.989, `log C_D` R²=0.922, `C_M` R²=0.918 |
-| Held-out 95%-band coverage within trust (C_L/C_D/C_M) | 0.978 / 0.965 / 0.992 |
-| Accuracy inside vs outside trust domain (`C_L` MAE) | 0.040 vs 0.090 |
-| Within-trust robust design vs NACA 2412 (XFOIL, nominal) | −18.7% weighted drag (0.00605 vs 0.00745) |
-| Within-trust design, expected drag under 1% mfg deviation | −11.7%; paired +0.00098, 95% CI [0.00062, 0.00131] |
-| Outside-trust surrogate "optimum" vs NACA 2412 (XFOIL) | +87% nominal weighted drag (fails verification) |
-| Adversarial worst-case ΔC_L (outside trust) | 0.67, vs 0.04 inside trust |
-| Inference speed (5-member ensemble, GTX 1660) | 0.009 ms/state batched (≈1.1×10⁵ states/s) |
+The selected within-screen design improves nominal weighted drag by **18.7%** against NACA 2412. Marginal means from independently successful cases differ by **8.8%**, with ten fully valid paired scenarios. The empirical 95%-tail statistics are just the largest observations from 13–14 samples, **not trustworthy manufacturing-population CVaR estimates**; the within-screen observed maximum is higher than the reference. The ten-seed robust-front agreement criterion also fails (0.283 > 0.20).
 
-All numbers are drawn from the durable evidence artefacts of study lineage
-`robust-v2-current-20260908` and consolidated in
-[`paper/data/paper_data.json`](paper/data/paper_data.json).
+**No independent viscous RANS CFD or experimental verification is yet included.** The local XFOIL is a separate numerical implementation/execution of the same solver family as the training labels. Trust-screening performance is measured on held-out historical states, not guaranteed under adaptive optimisation distribution shift.
 
-## Repository layout
+## Read, review and reproduce
 
-| Path | Contents |
-|---|---|
-| `src/robust_airfoil/` | The provenance-first pipeline (surrogate, trust calibration, uncertainty, optimisation, XFOIL verification, adversarial probing). |
-| `src/robust_airfoil/surrogate_stress.py` | Reviewer-directed adversarial surrogate-vs-XFOIL disagreement search. |
-| `paper/manuscript.md` | The full manuscript. |
-| `paper/response_to_reviewers.md` | Point-by-point response to the prior EAAI reviews. |
-| `paper/figures/` | Publication figures (regenerable from committed data). |
-| `paper/data/paper_data.json` | Consolidated, single-source numbers behind every figure and table. |
-| `scripts/robust_v2/` | Reproduction helpers (adversarial search, figure generation). |
-| `results/robust_v2/lineages/` | Hash-pinned result artefacts per study lineage. |
-| `reports/robust_v2/lineages/` | Study context, run state, and evidence reports. |
-| `src/utils.py`, `src/models.py` | **Legacy V1 code** for the previous submission, preserved unchanged. |
+- Canonical manuscript: [paper/manuscript.md](paper/manuscript.md)
+- Paper-specific overview: [paper/README.md](paper/README.md)
+- Reviewer response (historical, revised): [paper/response_to_reviewers.md](paper/response_to_reviewers.md)
+- Full scientific review: [reports/robust_v2/submission_review_20261014/REVIEW_REPORT.md](reports/robust_v2/submission_review_20261014/REVIEW_REPORT.md)
+- Coauthor CFD protocol and geometry inputs: [reports/robust_v2/submission_review_20261014/CFD_HANDOFF/CFD_PROTOCOL_FOR_AVA.md](reports/robust_v2/submission_review_20261014/CFD_HANDOFF/CFD_PROTOCOL_FOR_AVA.md)
+- Historical frozen source lineage: `robust-v2-current-20260908`
+- Fresh strict verification: `results/robust_v2/submission_review_20261014/xfoil_strict/`, with summary/digest incorporated into `paper/data/paper_data.json`.
 
-## Reproduce
+Install with `uv sync --extra dev --extra benchmarks`, then validate:
 
 ```powershell
-uv sync --extra dev --extra benchmarks
-
-# fast checks
-uv run pytest tests/robust_v2 -q
-uv run ruff check src/robust_airfoil tests/robust_v2
+uv run ruff check src/robust_airfoil tests/robust_v2 scripts/robust_v2
 uv run mypy src/robust_airfoil
-
-# use the trust-calibrated surrogate as a tool: predict a polar for one CST aerofoil
-uv run robust-airfoil predict --cst="-0.172,-0.065,-0.125,-0.055,-0.083,0.208,0.190,0.223,0.180,0.218,-0.041,0.002" --alpha-start 0 --alpha-end 10 --alpha-step 2
-
-# regenerate the ML acceptance evidence for the frozen model
-uv run robust-airfoil model evidence
-
-# reviewer-directed adversarial surrogate-vs-XFOIL search (requires local XFOIL 6.99)
-uv run robust-airfoil validate stress --lineage-id robust-v2-current-20260908
-
-# direct, correctly-signed XFOIL verification of within-trust vs outside-trust designs
-uv run python scripts/robust_v2/verify_designs_xfoil.py
-
-# benchmark inference speed and regenerate all manuscript figures from committed data
-uv run python scripts/robust_v2/benchmark_inference.py
+uv run pytest tests/robust_v2 -m "not network and not xfoil and not slow" -q
 uv run python scripts/robust_v2/make_paper_figures.py
 ```
 
-The public interface (`robust-airfoil predict|data|model|optimize|validate|report|reproduce`)
-serves both the end-user prediction tool and each reproducible study stage against an
-immutable, hash-pinned lineage. XFOIL 6.99 must be present at `tools/xfoil/xfoil.exe` or on
-`XFOIL_EXE` for the direct-solver stages. When passing CST values that begin with a minus
-sign, use the `--cst=...` form so the shell does not treat them as flags.
+For strict XFOIL rerun, use the local official `tools/xfoil/xfoil.exe` and an independently named output folder:
 
-## Scope and honest limitations
+```powershell
+$env:ROBUST_V2_XFOIL_OUT="results/robust_v2/validation_rerun_YYYYMMDD/xfoil_strict"
+uv run python scripts/robust_v2/verify_designs_xfoil.py
+```
 
-- The study is deliberately restricted to a single operating condition (Re = 1×10⁶, M = 0,
-  N_crit = 9) to isolate the robustness and trust contributions; the point-conditioned
-  architecture extends to a Re/Mach-parameterised envelope given additional labelled data.
-- The manufacturing model is a *prescribed*, physically admissible perturbation field, not a
-  measured production distribution.
-- Labels are panel-method (XFOIL) predictions; the framework is multi-fidelity and structured
-  to accept selective CFD/wind-tunnel augmentation.
-- The robust Pareto front's *location* is only moderately reproducible across optimisation
-  seeds at the budget used (mean symmetric distance 0.28 vs a 0.20 threshold); the
-  deterministic-versus-robust ranking and the reference-relative drag advantage are stable.
-- A separate internal engineering gate (`reports/robust_v2/.../VIABILITY_REPORT.md`) reports
-  **HOLD** on production-readiness of the tool (chiefly unrecoverable V1-reproduction
-  provenance); this is distinct from, and does not diminish, the scientific results above.
+Run the submitted CFD protocol separately. The next research decision belongs to the authors and depends on matched-lift CFD results, numerical convergence, actual tolerance evidence (if available), journal requirements and prior resubmission restrictions.
 
-## Environment
+Large source caches, frozen weights and per-case solver logs are local/handoff evidence rather than guaranteed public Git artefacts. No claim of physical safety, universal conformal conditional coverage or guaranteed publication acceptance is made.
 
-Python 3.11–3.13, `uv`, PyTorch 2.13 (CUDA 13.0), NVIDIA GTX 1660 (6 GB), XFOIL 6.99.
-Large raw datasets, model checkpoints, XFOIL binaries and per-case console/polar files are
-excluded from Git; their hashes and compact summaries remain in the committed provenance
-manifests and reports.
+
+## 14 October: Additional ML and XFOIL evidence
+
+Two separately scrambled 128-scenario 0.5%-chord XFOIL studies give 92 and 96 strictly completed matched cases and paired mean drag reductions of 15.4% / 15.8%. These results are conditional on solver completion; no independent CFD evidence or unconditional tail guarantee. A frozen-model audit also finds historical acceptance was effectively support-distance-driven, not independently gated by disagreement. See ML_DIAGNOSTICS and the supplement in manuscript.
