@@ -88,3 +88,45 @@ def ava_lift_sensitivity(mean_lift: np.ndarray, lift_std: np.ndarray, weights: n
         raise ValueError("Objective scales must be positive and lambda nonnegative")
     weights = weights / weights.sum()
     return float(-np.sum(weights * mean_lift) / lift_scale + sensitivity_lambda * np.sum(weights * lift_std) / sensitivity_scale)
+
+
+def batched_weighted_required_lift_drag(alpha: np.ndarray, cl: np.ndarray, cd: np.ndarray, required: np.ndarray, weights: np.ndarray) -> np.ndarray:
+    """Evaluate many polars with the scalar required-lift acceptance semantics."""
+    alpha,cl,cd,required,weights=(np.asarray(v,float) for v in (alpha,cl,cd,required,weights))
+    if cl.ndim != 2 or cl.shape != cd.shape or alpha.ndim != 1 or cl.shape[1] != len(alpha):
+        raise ValueError('Batched lift and drag must share one incidence grid')
+    if required.ndim != 1 or required.shape != weights.shape or not len(required):
+        raise ValueError('Required lift and weights must be equal nonempty vectors')
+    if not np.isfinite(weights).all() or np.any(weights<0) or weights.sum()<=0:
+        raise ValueError('Weights must be finite, nonnegative and have positive sum')
+    count=len(cl)
+    if len(alpha)<2 or not np.isfinite(alpha).all() or not np.isfinite(required).all():
+        return np.full(count,np.inf)
+    if np.any(np.diff(alpha)<=0):
+        return np.asarray([weighted_required_lift_drag(alpha,a,b,required,weights) for a,b in zip(cl,cd,strict=True)])
+    valid=np.isfinite(cl).all(axis=1)&np.isfinite(cd).all(axis=1)&np.all(cd>0,axis=1)
+    delta=np.diff(cl,axis=1)
+    rising=delta>1e-12
+    first_stop=np.where(np.all(rising,axis=1),len(alpha)-1,np.argmax(~rising,axis=1))
+    result=np.zeros(count)
+    for target,weight in zip(required,weights/weights.sum(),strict=True):
+        crossing=rising&(cl[:,:-1]<=target)&(target<=cl[:,1:])
+        crossings=np.zeros(count,int)
+        first_index=np.full(count,-1,int)
+        selected_drag=np.zeros(count)
+        previous=np.full(count,-np.inf)
+        for j in range(len(alpha)-1):
+            with np.errstate(divide='ignore',invalid='ignore'):
+                fraction=(target-cl[:,j])/delta[:,j]
+                root=alpha[j]+fraction*(alpha[j+1]-alpha[j])
+                drag=cd[:,j]+fraction*(cd[:,j+1]-cd[:,j])
+            new=crossing[:,j]&~np.isclose(root,previous,rtol=0,atol=1e-10)
+            first=new&(crossings==0)
+            first_index[first]=j
+            selected_drag[first]=drag[first]
+            previous[new]=root[new]
+            crossings+=new.astype(int)
+        valid&=(crossings==1)&(first_index<first_stop)&(first_index>=0)
+        result+=weight*selected_drag
+    result[~valid]=np.inf
+    return result

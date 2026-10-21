@@ -7,8 +7,7 @@ import pandas as pd
 import torch
 from torch.utils.data import Dataset
 
-FEATURE_COLUMNS = [f"lower_weight_{i}" for i in range(5)] + [f"upper_weight_{i}" for i in range(5)] + ["leading_edge_weight", "TE_thickness", "alpha_deg"]
-TARGET_COLUMNS = ["cl", "log_cd", "cm"]
+from robust_airfoil.constants import FEATURE_COLUMNS, TARGET_COLUMNS
 
 
 @dataclass(frozen=True)
@@ -55,4 +54,13 @@ class PolarPointDataset(Dataset[dict[str, torch.Tensor]]):
             "airfoil_weight": torch.tensor(self.weights[index]),
             **{target: torch.tensor(values[index]) for target, values in self.targets.items()},
             **{f"mask_{target}": torch.tensor(values[index]) for target, values in self.masks.items()},
+        }
+
+    def tensor_dict(self, device: torch.device) -> dict[str, torch.Tensor]:
+        """Materialise the same dataset values once for batched device indexing."""
+        return {
+            'features': torch.as_tensor(self.features, device=device),
+            'airfoil_weight': torch.as_tensor(self.weights, device=device),
+            **{target: torch.as_tensor(values, device=device) for target, values in self.targets.items()},
+            **{f'mask_{target}': torch.as_tensor(values, device=device) for target, values in self.masks.items()},
         }

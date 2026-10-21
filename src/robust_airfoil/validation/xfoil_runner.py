@@ -5,26 +5,26 @@ import subprocess
 import tempfile
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Any
+from typing import TYPE_CHECKING, Any
 
 import numpy as np
 import pandas as pd
 from scipy.stats import spearmanr
 
 from robust_airfoil.config import OptimisationConfig, UncertaintyConfig
+from robust_airfoil.constants import FEATURE_COLUMNS
 from robust_airfoil.data.polar_parser import parse_polar_file
 from robust_airfoil.geometry.cst import fit_cst, reconstruct_cst
 from robust_airfoil.geometry.normalise import normalise_geometry, resample_surfaces_to_common_x
 from robust_airfoil.geometry.parser import parse_coordinate_file
 from robust_airfoil.geometry.validity import validate_geometry
 from robust_airfoil.hashing import sha256_bytes, sha256_file
-from robust_airfoil.modelling.calibrate import apply_trust_model
-from robust_airfoil.modelling.dataset import FEATURE_COLUMNS
-from robust_airfoil.modelling.ensemble import LoadedEnsemble
-from robust_airfoil.optimisation.objectives import weighted_required_lift_drag
 from robust_airfoil.provenance import write_json_atomic
 from robust_airfoil.uncertainty.fields import PerturbedGeometry, smooth_normal_perturbation
 from robust_airfoil.uncertainty.sampling import sobol_normal_samples
+
+if TYPE_CHECKING:
+    from robust_airfoil.modelling.ensemble import LoadedEnsemble
 
 
 @dataclass(frozen=True)
@@ -500,6 +500,8 @@ def _prediction_frame(parameters: np.ndarray, alpha: np.ndarray, airfoil_id: str
 
 
 def _weighted_drag(points: pd.DataFrame, optimisation: OptimisationConfig) -> float | None:
+    from robust_airfoil.optimisation.objectives import weighted_required_lift_drag
+
     if not {"alpha_deg", "cl", "cd"}.issubset(points.columns):
         return None
     valid = points.dropna(subset=["alpha_deg", "cl", "cd"]).sort_values("alpha_deg")
@@ -523,6 +525,8 @@ def _surrogate_comparison(
     development_points: pd.DataFrame,
     calibration: dict[str, Any],
 ) -> dict[str, object]:
+    from robust_airfoil.modelling.calibrate import apply_trust_model
+
     if not {"alpha_deg", "cl", "cd", "cm"}.issubset(points.columns):
         return {"shared_points": 0, "trusted_points": 0}
     valid = points.dropna(subset=["alpha_deg", "cl", "cd", "cm"]).copy()
@@ -644,6 +648,8 @@ def run_candidate_validation(
     output_root: Path,
     timeout_seconds: int = 240,
 ) -> dict[str, Any]:
+    from robust_airfoil.modelling.ensemble import LoadedEnsemble
+
     output_root.mkdir(parents=True, exist_ok=True)
     ensemble = LoadedEnsemble(ensemble_root)
     x = (1 - np.cos(np.linspace(0, np.pi, uncertainty.cosine_points_per_surface))) / 2

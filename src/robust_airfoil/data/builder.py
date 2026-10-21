@@ -10,7 +10,7 @@ import pandas as pd
 from robust_airfoil.data.mapping import build_name_index, canonical_name, map_by_strict_name
 from robust_airfoil.data.polar_parser import parse_polar_file, validate_polar_conditions
 from robust_airfoil.geometry.clustering import cluster_coordinate_vectors
-from robust_airfoil.geometry.cst import fit_cst
+from robust_airfoil.geometry.cst import fit_cst, reconstruct_cst
 from robust_airfoil.geometry.metrics import geometry_metrics
 from robust_airfoil.geometry.normalise import normalise_geometry
 from robust_airfoil.geometry.parser import parse_coordinate_file
@@ -50,6 +50,13 @@ def build_long_form_dataset(
                 if not validity.valid:
                     raise ValueError(";".join(validity.reasons))
                 fit = fit_cst(normal.upper, normal.lower)
+                refit_upper, refit_lower = reconstruct_cst(fit.parameters, normal.upper[:, 0])
+                refit_validity = validate_geometry(
+                    np.column_stack([normal.upper[:, 0], refit_upper]),
+                    np.column_stack([normal.lower[:, 0], refit_lower]),
+                )
+                if not refit_validity.valid:
+                    raise ValueError("invalid_refitted_geometry:" + ";".join(refit_validity.reasons))
                 metrics = geometry_metrics(normal.upper, normal.lower)
                 vector = np.concatenate([normal.upper[:, 1], normal.lower[:, 1]])
                 airfoil_id = canonical_name(geometry_path.name)
@@ -120,3 +127,47 @@ def build_long_form_dataset(
         "rejected_records": len(rejected),
         "mapping_fraction": len(airfoils) / max(len(polar_paths), 1),
     }
+
+
+def admit_local_polar_rows(points: pd.DataFrame, requested_alphas: np.ndarray, *, return_code: int | None, timed_out: bool) -> pd.DataFrame:
+    """Keep actual usable observations, without claiming a complete solver sweep.
+
+    Partial polars may contain genuine converged rows after a clean exit.
+    Abnormal exits/timeouts contribute no training labels. Missing observations
+    are never filled, extrapolated or replaced by a model prediction.
+    """
+    required = ['alpha_deg', 'cl', 'cd', 'cm']
+    empty = points.iloc[0:0].copy().reindex(columns=list(dict.fromkeys([*points.columns, *required, 'log_cd', 'mask_cl', 'mask_log_cd', 'mask_cm'])))
+    requested = np.asarray(requested_alphas, float)
+    if requested.ndim != 1 or not np.isfinite(requested).all():
+        raise ValueError('Requested solver incidence must be a finite vector')
+    if return_code != 0 or timed_out or not set(required).issubset(points.columns) or not len(points):
+        return empty
+    values = points[required].to_numpy(float)
+    finite = np.isfinite(values).all(axis=1) & (values[:, 2] > 0)
+    on_grid = np.any(abs(values[:, 0, None] - requested[None, :]) <= 5.01e-4, axis=1)
+    result = points.loc[finite & on_grid].copy()
+    result['log_cd'] = np.log(result['cd'].to_numpy(float))
+    for target in ('cl', 'log_cd', 'cm'):
+        result['mask_' + target] = True
+    return result.reset_index(drop=True)
+
+
+def merge_local_polar_rows(frames: list[pd.DataFrame]) -> tuple[pd.DataFrame, dict[str, object]]:
+    """Count consistent repeated angles once; exclude conflicting observations."""
+    populated = [frame for frame in frames if len(frame)]
+    if not populated:
+        return pd.DataFrame(columns=['alpha_deg', 'cl', 'cd', 'cm', 'log_cd', 'mask_cl', 'mask_log_cd', 'mask_cm']), {'admitted_states': 0, 'conflicting_alpha_count': 0, 'conflicting_alpha_values': [], 'consistent_duplicate_rows_removed': 0}
+    combined = pd.concat(populated, ignore_index=True)
+    kept: list[pd.DataFrame] = []
+    conflicts: list[float] = []
+    consistent_removed = 0
+    for _alpha, group in combined.groupby('alpha_deg', sort=True):
+        values = group[['cl', 'cd', 'cm']].to_numpy(float)
+        if not np.isfinite(values).all() or np.any(np.ptp(values, axis=0) > 1e-10):
+            conflicts.append(float(group['alpha_deg'].to_numpy(dtype=float)[0]))
+            continue
+        kept.append(group.iloc[:1].copy())
+        consistent_removed += len(group) - 1
+    result = pd.concat(kept, ignore_index=True) if kept else combined.iloc[:0].copy()
+    return result, {'admitted_states': len(result), 'conflicting_alpha_count': len(conflicts), 'conflicting_alpha_values': conflicts, 'consistent_duplicate_rows_removed': consistent_removed}

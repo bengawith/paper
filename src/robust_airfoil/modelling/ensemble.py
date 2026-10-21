@@ -93,6 +93,21 @@ def predict_ensemble(member_root: Path, frame: pd.DataFrame, members: int = 5) -
 class LoadedEnsemble:
     def __init__(self, member_root: Path, members: int = 5, device: torch.device | None = None):
         self.device = device or torch.device("cuda" if torch.cuda.is_available() else "cpu")
+        self.member_root = member_root
+        manifest_path = member_root / "ensemble_manifest.json"
+        manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+        if not 1 <= members <= int(manifest["member_count"]):
+            raise ValueError("Requested member count is inconsistent with the ensemble manifest")
+        self.artifact_hashes: dict[str, str] = {}
+        for index in range(members):
+            for label, filename in (("checkpoint", "checkpoint.pt"), ("scaling", "scaling.joblib")):
+                key = f"member_{index:03d}_{label}"
+                path = member_root / f"member_{index:03d}" / filename
+                actual = sha256_file(path)
+                if actual != manifest["artifact_hashes"].get(key):
+                    raise ValueError(f"Ensemble artifact hash mismatch: {key}")
+                self.artifact_hashes[key] = actual
+        self.artifact_hashes["ensemble_manifest"] = sha256_file(manifest_path)
         self.members = [load_member(member_root / f"member_{index:03d}", self.device) for index in range(members)]
 
     @property
@@ -111,3 +126,34 @@ class LoadedEnsemble:
             result[f"prediction_{target}"] = values.mean(axis=1)
             result[f"ensemble_std_{target}"] = values.std(axis=1, ddof=1)
         return result
+
+
+def cluster_bootstrap_with_oob(frame: pd.DataFrame, seed: int) -> tuple[pd.DataFrame, pd.DataFrame, dict[str, Any]]:
+    """Bootstrap DEVELOPMENT clusters, holding out unsampled clusters for stopping."""
+    if 'cluster_id' not in frame or frame.cluster_id.isna().any():
+        raise ValueError('Out-of-bag stopping requires complete geometry cluster identity')
+    if 'split' in frame and not frame['split'].eq('development').all():
+        raise ValueError('Calibration/test data cannot choose a member stopping epoch')
+    clusters = np.asarray(sorted(frame.cluster_id.unique()))
+    if len(clusters) < 2:
+        raise ValueError('At least two development clusters are needed')
+    sampled = np.random.default_rng(seed).choice(clusters,size=len(clusters),replace=True)
+    training_clusters = np.unique(sampled)
+    validation = frame.loc[~frame.cluster_id.isin(training_clusters)].copy()
+    if validation.empty:
+        raise ValueError('This declared bootstrap has no out-of-bag clusters; do not use training loss as validation')
+    pieces = []
+    for draw, cluster in enumerate(sampled):
+        piece = frame.loc[frame.cluster_id == cluster].copy()
+        piece['airfoil_id'] = piece.airfoil_id.astype(str) + f'__cluster_bootstrap_{draw:05d}'
+        pieces.append(piece)
+    bootstrap = pd.concat(pieces,ignore_index=True)
+    if not set(bootstrap.cluster_id).isdisjoint(set(validation.cluster_id)):
+        raise AssertionError('Training and stopping-validation clusters overlap')
+    return bootstrap, validation, {
+        'seed':seed, 'draws':len(sampled), 'unique_training_clusters':len(training_clusters),
+        'sampled_cluster_ids':[int(x) for x in sampled],
+        'out_of_bag_cluster_ids':[int(x) for x in sorted(validation.cluster_id.unique())],
+        'out_of_bag_airfoil_ids':sorted(validation.airfoil_id.astype(str).unique().tolist()),
+        'validation_policy':'out-of-bag development clusters only; calibration/test untouched',
+    }

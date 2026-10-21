@@ -18,12 +18,15 @@ from sklearn.model_selection import GroupKFold
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
 
+from robust_airfoil.data.splits import calibration_geometry_groups
+
 ROOT = Path(__file__).resolve().parents[2]
 CAL = (
     ROOT
     / "results/robust_v2/lineages/robust-v2-current-20260908/calibration/calibration_predictions.parquet"
 )
-OUT = ROOT / "reports/robust_v2/submission_review_20261014/TRUST_INCREMENTAL"
+OUT = ROOT / "reports/robust_v2/external_academic_review_20261014/CANONICAL_TRUST_INCREMENTAL"
+SPLIT = ROOT / "results/robust_v2/lineages/robust-v2-current-20260908/splits/full.json"
 OUT.mkdir(parents=True, exist_ok=True)
 d = pd.read_parquet(CAL)
 FEATURES = {
@@ -44,7 +47,8 @@ errors = np.column_stack(
 valid = np.isfinite(features).all(axis=1) & np.isfinite(errors).all(axis=1)
 d = d.loc[valid].reset_index(drop=True)
 errors = errors[valid]
-groups = d.airfoil_id.astype(str).to_numpy()
+split_records = pd.DataFrame(json.loads(SPLIT.read_text(encoding="utf-8"))["records"])
+groups = calibration_geometry_groups(d, split_records)
 folds = []
 cv = GroupKFold(n_splits=5)
 oof = {key: np.full(len(d), np.nan) for key in FEATURES}
@@ -109,13 +113,15 @@ for _ in range(300):
     boot.append(float(with_spread - without_spread))
 ci = [float(np.quantile(boot, 0.025)), float(np.quantile(boot, 0.975))]
 report = {
-    "schema": "trust-calibration-group-oof-all-fit-is-train-only-v2",
+    "schema": "trust-calibration-geometry-cluster-oof-train-only-v3",
     "source": CAL.relative_to(ROOT).as_posix(),
     "source_sha256": hashlib.sha256(CAL.read_bytes()).hexdigest(),
     "n_rows": len(d),
     "n_geometries": len(set(groups)),
     "high_error_base_rate": float(np.mean(large)),
-    "cv": "GroupKFold(5) with no shared airfoil IDs",
+    "cv": "GroupKFold(5) with no shared geometry clusters",
+    "n_airfoils": int(d.airfoil_id.nunique()),
+    "split_manifest_sha256": hashlib.sha256(SPLIT.read_bytes()).hexdigest(),
     "target_definition": "within each fold: max target absolute residual normalized by training-fold P90; high risk threshold training-fold P90",
     "fitting": "per-fold train-only normalization/threshold and train-only input scaling; ridge alpha=10 fixed",
     "folds": folds,
@@ -123,7 +129,7 @@ report = {
     "incremental_auroc": float(delta),
     "cluster_bootstrap_replicates": len(boot),
     "cluster_bootstrap_95pct_interval": ci,
-    "limits": "Calibration-distribution CV diagnostic only. Not tested on pristine optimisation-selected/CFD examples. No operational trust threshold changed.",
+    "limits": "Retrospective calibration diagnostic using historical geometry clusters. Bootstrap resamples fixed OOF predictions, not refits. Training geometry encodings require repair. No prospective confirmation or operational threshold change.",
 }
 target = OUT / "TRUST_INCREMENTAL_CV.json"
 target.write_text(json.dumps(report, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")

@@ -272,6 +272,15 @@ class OptimisationConfig(StrictModel):
     reference_preference: str
     conditions: OptimisationConditions
     service_targets: ServiceTargets
+    service_alpha_deg: list[float] | None = None
+    @model_validator(mode="after")
+    def validate_service_grid(self) -> OptimisationConfig:
+        import numpy as np
+        if self.service_alpha_deg is not None:
+            values = np.asarray(self.service_alpha_deg, dtype=float)
+            if len(values) < 2 or not np.isfinite(values).all() or np.any(np.diff(values) <= 0):
+                raise ValueError("Service angle grid must be finite and strictly increasing")
+        return self
     ava_baseline: AvaConfig
     risk_objectives: list[Literal["expected_weighted_cd", "cvar_95_weighted_cd"]]
     relative_constraints: RelativeConstraints

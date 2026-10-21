@@ -52,3 +52,18 @@ reports/robust_v2/final_study/starting_diff.patch
 results/robust_v2/submission_review_20261014/xfoil_*/
 reports/robust_v2/submission_review_20261014/*.docx
 reports/robust_v2/submission_review_20261014/XFOIL_*.log
+
+# Controlled scientific lineage: large XFOIL case trees and restart states remain
+# on the authorised workstation, hash-bound by compact tracked manifests.
+results/robust_v2/lineages/robust-v2-controlled-20261020/solver_labels/
+results/robust_v2/lineages/robust-v2-controlled-20261020/confirmation/solver_labels/
+results/robust_v2/lineages/robust-v2-controlled-20261020/selected_study/xfoil/
+results/robust_v2/lineages/robust-v2-controlled-20261020/optimisation_production/checkpoints/
+results/robust_v2/lineages/robust-v2-controlled-20261020/nominal_control/checkpoints/
+results/robust_v2/lineages/robust-v2-controlled-20261020/full_ensemble/member_*/
+results/robust_v2/lineages/robust-v2-rebuilt-20261014/full_ensemble/member_*/
+reports/robust_v2/external_academic_review_20261014/**/*.log
+reports/robust_v2/external_academic_review_20261014/RENDERED/
+reports/robust_v2/external_academic_review_20261014/BEFORE_REVIEW/
+reports/robust_v2/external_academic_review_20261014/CONTINUATION_20261020/FRAME_CHECK/
+reports/robust_v2/external_academic_review_20261014/CONTINUATION_20261020/RUNTIME_MEMORY_REPAIR/before/

@@ -1,6 +1,8 @@
 from __future__ import annotations
 
 import json
+import platform
+from importlib.metadata import version
 from itertools import combinations
 from pathlib import Path
 from typing import Any
@@ -27,9 +29,17 @@ from robust_airfoil.modelling.calibrate import trust_thresholds
 from robust_airfoil.modelling.dataset import FEATURE_COLUMNS
 from robust_airfoil.modelling.ensemble import LoadedEnsemble
 from robust_airfoil.modelling.evaluate import cvar
-from robust_airfoil.optimisation.candidate_uncertainty import candidate_surface_scenarios
+from robust_airfoil.modelling.support_index import GroupedSupportIndex
+from robust_airfoil.optimisation.candidate_uncertainty import PreparedCandidateScenarios
+from robust_airfoil.optimisation.checkpointing import (
+    assert_campaign_resources,
+    load_algorithm_checkpoint,
+    save_algorithm_checkpoint,
+)
+from robust_airfoil.optimisation.nominal_control import initial_nominal_population
 from robust_airfoil.optimisation.objectives import (
     ava_lift_sensitivity,
+    batched_weighted_required_lift_drag,
     weighted_required_lift_drag,
 )
 from robust_airfoil.optimisation.problems import DesignBounds
@@ -131,6 +141,8 @@ class RobustCandidateEvaluator:
             raise ValueError("Candidate latent sample count must match evaluator sample count")
         self.candidate_latent = candidate_latent
         self.physical_uncertainty = uncertainty
+        self.prepared_scenarios = (PreparedCandidateScenarios(candidate_latent, uncertainty)
+                                   if candidate_latent is not None and uncertainty is not None else None)
         if len(deltas) != len(manufacturing_invalid_flags):
             raise ValueError("Manufacturing delta and validity arrays differ")
         self.reference_parameters = reference_parameters
@@ -138,12 +150,13 @@ class RobustCandidateEvaluator:
         self.manufacturing_invalid_flags = manufacturing_invalid_flags
         self.ensemble = ensemble
         self.config = optimisation
-        self.alpha = np.asarray(optimisation.ava_baseline.alpha_deg, dtype=float)
+        self.alpha = np.asarray(optimisation.service_alpha_deg if optimisation.service_alpha_deg is not None else optimisation.ava_baseline.alpha_deg, dtype=float)
         self.required = np.asarray(optimisation.service_targets.cl_required, dtype=float)
         self.weights = np.asarray(optimisation.service_targets.weights, dtype=float)
         x = (1 - np.cos(np.linspace(0, np.pi, 201))) / 2
         upper_y, lower_y = reconstruct_cst(reference_parameters, x)
         self.x = x
+        self.validation_x = (1 - np.cos(np.linspace(0, np.pi, 2001))) / 2
         self.reference_metrics = geometry_metrics(
             np.column_stack([x, upper_y]), np.column_stack([x, lower_y])
         )
@@ -151,7 +164,7 @@ class RobustCandidateEvaluator:
         support_features = (
             development_points[FEATURE_COLUMNS].to_numpy(float) - scaling.feature_center
         ) / scaling.feature_scale
-        self.support_tree = cKDTree(support_features)
+        self.support_tree = GroupedSupportIndex(support_features)
         self.feature_center = scaling.feature_center
         self.feature_scale = scaling.feature_scale
         self.support_threshold, self.disagreement_thresholds, self.alpha_coverage = (
@@ -176,6 +189,8 @@ class RobustCandidateEvaluator:
         distances, _ = self.support_tree.query(standardised, k=5)
         support = np.mean(np.atleast_2d(distances), axis=1).reshape(shape)
         trusted = support <= self.support_threshold
+        alpha = predictions["alpha_deg"].to_numpy(float).reshape(shape)
+        trusted &= (alpha >= self.alpha_coverage[0]) & (alpha <= self.alpha_coverage[1])
         for target, threshold in self.disagreement_thresholds.items():
             trusted &= (
                 predictions[f"ensemble_std_{target}"].to_numpy(float).reshape(shape) <= threshold
@@ -196,7 +211,9 @@ class RobustCandidateEvaluator:
             upper_y, lower_y = reconstruct_cst(candidate, self.x)
             upper = np.column_stack([self.x, upper_y])
             lower = np.column_stack([self.x, lower_y])
-            validity = validate_geometry(upper, lower)
+            dense_upper, dense_lower = reconstruct_cst(candidate, self.validation_x)
+            validity = validate_geometry(np.column_stack([self.validation_x, dense_upper]),
+                                         np.column_stack([self.validation_x, dense_lower]))
             metrics = geometry_metrics(upper, lower)
             ratio_thickness = (
                 metrics["maximum_thickness"] / self.reference_metrics["maximum_thickness"]
@@ -209,6 +226,14 @@ class RobustCandidateEvaluator:
             prediction = nominal_predictions.iloc[index * alpha_count : (index + 1) * alpha_count]
             trust_ok = bool(np.all(trusted_rows[index]))
             candidate_cm = float(prediction["prediction_cm"].mean())
+            nominal_drag = weighted_required_lift_drag(
+                self.alpha,
+                prediction["prediction_cl"].to_numpy(float),
+                np.exp(prediction["prediction_log_cd"].to_numpy(float)),
+                self.required,
+                self.weights,
+            )
+            lift_feasible = bool(np.isfinite(nominal_drag))
             margins = [
                 ratio_thickness - self.config.relative_constraints.thickness_ratio_lower,
                 self.config.relative_constraints.thickness_ratio_upper - ratio_thickness,
@@ -219,7 +244,7 @@ class RobustCandidateEvaluator:
                     self.reference_cm
                     - self.config.relative_constraints.cm_allowance_below_reference
                 ),
-                1.0 if validity.valid and trust_ok else -1.0,
+                1.0 if validity.valid and trust_ok and lift_feasible else -1.0,
             ]
             constraint_rows.append([-value for value in margins])
             diagnostics.append(
@@ -227,6 +252,8 @@ class RobustCandidateEvaluator:
                     "valid_geometry": validity.valid,
                     "invalid_reasons": list(validity.reasons),
                     "trusted": trust_ok,
+                    "nominal_required_lift_feasible": lift_feasible,
+                    "nominal_weighted_drag": float(nominal_drag) if lift_feasible else None,
                     "maximum_support_distance": float(
                         np.max(
                             np.mean(
@@ -270,10 +297,9 @@ class RobustCandidateEvaluator:
         else:
             # Common latent samples, but perturbed surfaces and CST refits
             # are recomputed independently on each candidate's geometry.
-            scenario_rows = [
-                candidate_surface_scenarios(c, self.candidate_latent, self.physical_uncertainty)
-                for c in candidates
-            ]
+            if self.prepared_scenarios is None:
+                raise ValueError("Missing prepared candidate-specific uncertainty operator")
+            scenario_rows = [self.prepared_scenarios.evaluate(c) for c in candidates]
             perturbed = np.stack([r.parameters for r in scenario_rows], axis=0)
             candidate_invalid = np.stack([r.invalid for r in scenario_rows], axis=0)
         flat = perturbed.reshape(-1, perturbed.shape[-1])
@@ -287,23 +313,17 @@ class RobustCandidateEvaluator:
         sample_drags: list[list[float]] = []
         trust_violations: list[int] = []
         missing_roots: list[int] = []
+        usable_samples: list[np.ndarray] = []
+        batch_drags = batched_weighted_required_lift_drag(
+            self.alpha, cl.reshape(-1,len(self.alpha)), cd.reshape(-1,len(self.alpha)),
+            self.required, self.weights,
+        ).reshape(len(candidates),len(self.deltas))
         for candidate_index in range(len(candidates)):
-            drags = np.asarray(
-                [
-                    weighted_required_lift_drag(
-                        self.alpha,
-                        cl[candidate_index, sample],
-                        cd[candidate_index, sample],
-                        self.required,
-                        self.weights,
-                    )
-                    for sample in range(len(self.deltas))
-                ],
-                dtype=float,
-            )
+            drags = batch_drags[candidate_index].copy()
             missing = ~np.isfinite(drags)
             untrusted = ~np.all(trusted[candidate_index], axis=1)
             violations = missing | untrusted | candidate_invalid[candidate_index]
+            usable_samples.append(~violations)
             finite = drags[np.isfinite(drags) & ~violations]
             penalty = float(np.max(finite) * 2) if len(finite) else 1.0
             drags[violations] = penalty
@@ -314,9 +334,7 @@ class RobustCandidateEvaluator:
         constraints, diagnostics = self._nominal_constraints(candidates)
         for index, diagnostic in enumerate(diagnostics):
             diagnostic["sample_weighted_drag"] = sample_drags[index]
-            diagnostic["mean_lift_by_alpha"] = np.mean(cl[index], axis=0).tolist()
-            diagnostic["lift_std_by_alpha"] = np.std(cl[index], axis=0, ddof=1).tolist()
-            diagnostic["mean_cm_by_alpha"] = np.mean(cm[index], axis=0).tolist()
+            diagnostic.update(summarise_valid_aerodynamics(cl[index], cm[index], usable_samples[index]))
             diagnostic["uncertainty_trust_violations"] = trust_violations[index]
             diagnostic["missing_lift_roots"] = missing_roots[index]
             diagnostic["manufacturing_invalid_samples"] = int(candidate_invalid[index].sum())
@@ -342,19 +360,45 @@ class RobustCandidateEvaluator:
 
     def ava_objective(self, candidate: np.ndarray, sensitivity_lambda: float) -> float:
         candidate = np.asarray(candidate, dtype=float)
-        perturbed = candidate[None, :] + self.deltas
+        if self.candidate_latent is not None:
+            if self.prepared_scenarios is None:
+                raise ValueError("Missing candidate-specific baseline uncertainty")
+            scenarios = self.prepared_scenarios.evaluate(candidate)
+            perturbed, invalid = scenarios.parameters, scenarios.invalid
+        else:
+            perturbed = candidate[None, :] + self.deltas
+            invalid = self.manufacturing_invalid_flags
         predictions = self.ensemble.predict(_frame(perturbed, self.alpha))
-        lift = (
-            predictions["prediction_cl"].to_numpy(float).reshape(len(self.deltas), len(self.alpha))
-        )
-        score = ava_lift_sensitivity(
-            np.mean(lift, axis=0),
-            np.std(lift, axis=0, ddof=1),
-            np.full(len(self.alpha), 1 / len(self.alpha)),
-            sensitivity_lambda,
-        )
+        lift = predictions["prediction_cl"].to_numpy(float).reshape(len(perturbed), len(self.alpha))
+        trusted = self._support_and_disagreement(predictions, lift.shape)
         constraints, _ = self._nominal_constraints(candidate[None, :])
-        return score + float(np.sum(np.maximum(constraints[0], 0)) * 1_000)
+        violation = float(np.sum(np.maximum(constraints[0], 0)) * 1_000)
+        failed = invalid | ~np.all(trusted, axis=1) | ~np.isfinite(lift).all(axis=1)
+        if failed.any():
+            # A sensitivity baseline has no physical lift outcome for a failed
+            # scenario. Fail closed rather than replacing it with nominal lift.
+            return 1_000_000.0 + violation + int(failed.sum())
+        score = ava_lift_sensitivity(
+            np.mean(lift, axis=0), np.std(lift, axis=0, ddof=1),
+            np.full(len(self.alpha), 1 / len(self.alpha)), sensitivity_lambda,
+        )
+        return score + violation
+
+
+def summarise_valid_aerodynamics(cl: np.ndarray, cm: np.ndarray, valid: np.ndarray) -> dict[str, Any]:
+    cl, cm, valid = np.asarray(cl,float), np.asarray(cm,float), np.asarray(valid,bool)
+    if cl.ndim != 2 or cl.shape != cm.shape or valid.shape != (len(cl),):
+        raise ValueError("Aerodynamic diagnostics require aligned sample matrices")
+    valid = valid & np.isfinite(cl).all(axis=1) & np.isfinite(cm).all(axis=1)
+    count = int(valid.sum())
+    unavailable = [None] * cl.shape[1]
+    return {
+        "conditional_aerodynamic_sample_count": count,
+        "aerodynamic_moment_scope": "conditional on valid geometry/refit, finite required-lift roots and empirical trust; invalid placeholders excluded",
+        "mean_lift_by_alpha": np.mean(cl[valid],axis=0).tolist() if count else unavailable,
+        "lift_std_by_alpha": np.std(cl[valid],axis=0,ddof=1).tolist() if count > 1 else unavailable,
+        "mean_cm_by_alpha": np.mean(cm[valid],axis=0).tolist() if count else unavailable,
+    }
 
 
 class _RobustProblem(Problem):
@@ -434,12 +478,16 @@ def _serialise_nsga_result(
         x = np.empty((0, 12))
         f = np.empty((0, 2))
     diagnostics: list[dict[str, Any]] = []
+    recheck_difference = 0.0
     if len(x):
-        _, constraints, diagnostics = evaluator.evaluate(x)
+        reevaluated, constraints, diagnostics = evaluator.evaluate(x)
+        recheck_difference = float(np.max(abs(reevaluated-f)))
+        f = reevaluated
     else:
         constraints = np.empty((0, 6))
     return {
-        "schema_version": 4,
+        "schema_version": 6,
+        "final_recheck_max_objective_difference": recheck_difference,
         "cache_context_hash": cache_context_hash,
         "seed": seed,
         "sample_count": sample_count,
@@ -454,7 +502,7 @@ def _serialise_nsga_result(
     }
 
 
-def _agreement(runs: list[dict[str, Any]], bounds: DesignBounds) -> dict[str, Any]:
+def _agreement(runs: list[dict[str, Any]], bounds: DesignBounds, *, objective_scales: np.ndarray | None = None) -> dict[str, Any]:
     feasible_runs: list[tuple[np.ndarray, np.ndarray]] = []
     counts: list[int] = []
     for run in runs:
@@ -471,7 +519,8 @@ def _agreement(runs: list[dict[str, Any]], bounds: DesignBounds) -> dict[str, An
     design_distances: list[float] = []
     design_scale = np.maximum(bounds.upper - bounds.lower, 1e-12)
     objective_scale = (
-        np.maximum(np.ptp(all_objectives, axis=0), 1e-12) if len(all_objectives) else np.ones(2)
+        np.asarray(objective_scales,float) if objective_scales is not None
+        else np.maximum(np.ptp(all_objectives, axis=0), 1e-12) if len(all_objectives) else np.ones(2)
     )
     for (design_a, _), (design_b, _) in combinations(feasible_runs, 2):
         left_to_right = cKDTree(design_b / design_scale).query(design_a / design_scale, k=1)[0]
@@ -491,6 +540,11 @@ def _agreement(runs: list[dict[str, Any]], bounds: DesignBounds) -> dict[str, An
         threshold=0.20,
         minimum_feasible_fraction=0.80,
     )
+    # Pooled observed ranges are retrospective normalisers, not a prospective
+    # scientific acceptance scale. Preserve the diagnostic without self-approval.
+    objective_metrics["descriptive_threshold_satisfied"] = objective_metrics["passed"]
+    if objective_scales is None:
+        objective_metrics["passed"] = False
     objective_mean_distance = objective_metrics["mean_symmetric_distance"]
     return {
         "run_count": len(runs),
@@ -513,15 +567,13 @@ def _agreement(runs: list[dict[str, Any]], bounds: DesignBounds) -> dict[str, An
             objective_metrics["pairwise_symmetric_distances"], default=None
         ),
         "agreement_status": (
-            "pass"
-            if objective_metrics["passed"]
-            else "fail"
-            if feasible_runs
-            else "insufficient_feasible_runs"
+            ("pass" if objective_metrics["passed"] else "fail")
+            if objective_scales is not None else
+            "diagnostic_posthoc_scale_not_accepted" if feasible_runs else "insufficient_feasible_runs"
         ),
         "agreement_rule": "at least 80% feasible runs and mean normalized symmetric cross-front distance <= 0.20",
         "objective_agreement": objective_metrics,
-        "objective_scale_context": "frozen_once_from_all_feasible_runs_for_this_profile",
+        "objective_scale_context": "predeclared_reference_objectives" if objective_scales is not None else "posthoc_pooled_range_not_a_predeclared_acceptance_scale",
     }
 
 
@@ -540,6 +592,8 @@ def _run_nsga_profile(
     profile_index: int,
     ensemble_manifest_hash: str,
     uncertainty: UncertaintyConfig,
+    objective_scales: np.ndarray | None = None,
+    checkpoint_each_generation: bool = False,
 ) -> dict[str, Any]:
     if profile.uncertainty_samples > len(master_deltas):
         raise ValueError(f"{name} requests more uncertainty samples than the common master set")
@@ -547,9 +601,23 @@ def _run_nsga_profile(
     seeds = profile.independent_seeds or 1
     runs: list[dict[str, Any]] = []
     development_matrix = development_points[FEATURE_COLUMNS].to_numpy(float)
+    implementation_root = Path(__file__).parents[1]
+    implementation_hashes = {
+        path.relative_to(implementation_root).as_posix(): sha256_file(path)
+        for path in sorted(implementation_root.rglob("*.py"))
+    }
     cache_context_hash = hash_object(
         {
-            "objective_schema_version": 4,
+            "objective_schema_version": 6,
+            "objective_agreement_scales": None if objective_scales is None else objective_scales.tolist(),
+            "dense_geometry_verification_points": 2001,
+            "scientific_source_sha256": implementation_hashes,
+            "actual_ensemble_artifact_sha256": ensemble.artifact_hashes,
+            "dependency_versions": {
+                name: version(name) for name in ("numpy", "scipy", "pandas", "torch", "pymoo")
+            },
+            "python_version": platform.python_version(),
+            "inference_device": str(ensemble.device),
             "profile_name": name,
             "profile": profile.model_dump(mode="json"),
             "optimisation": optimisation.model_dump(mode="json"),
@@ -603,51 +671,53 @@ def _run_nsga_profile(
             )
             if (
                 structurally_current
-                and cached.get("schema_version") == 4
+                and cached.get("schema_version") == 6
+                and cached.get("seed") == seed
                 and cached.get("cache_context_hash") == cache_context_hash
             ):
                 runs.append(cached)
                 continue
-            # All schema-v2/v3 caches used reference-fitted CST increments and
-            # are incompatible with candidate-specific physical perturbations.
-            # Recompute under schema v4; do not migrate historical objectives.
+            # A context mismatch is evidence from another scientific revision,
+            # not permission to overwrite the historical result in place.
+            raise RuntimeError(
+                f"Incompatible cached evidence at {seed_path}; choose a fresh output revision"
+            )
         reference_objectives, _, _ = evaluator.evaluate(reference_parameters[None, :])
         reference_point = np.maximum(reference_objectives[0] * 2, reference_objectives[0] + 0.01)
         callback = _StudyCallback(evaluator, reference_point)
         problem = _RobustProblem(evaluator, bounds)
-        rng = np.random.default_rng(seed)
-        initial_population = rng.uniform(
-            bounds.lower,
-            bounds.upper,
-            size=(profile.population, len(reference_parameters)),
-        )
-        initial_population[0] = reference_parameters
         observed_designs = development_points[PARAMETER_COLUMNS].drop_duplicates().to_numpy(float)
-        within_bounds = np.all(
-            (observed_designs >= bounds.lower) & (observed_designs <= bounds.upper), axis=1
+        initial_population = initial_nominal_population(
+            evaluator, bounds, reference_parameters, observed_designs, profile.population, seed,
         )
-        observed_designs = observed_designs[within_bounds]
-        if len(observed_designs):
-            observed_constraints, _ = evaluator._nominal_constraints(observed_designs)
-            observed_violation = np.sum(np.maximum(observed_constraints, 0), axis=1)
-            observed_distance = np.linalg.norm(
-                (observed_designs - reference_parameters)
-                / np.maximum(bounds.upper - bounds.lower, 1e-12),
-                axis=1,
+        if checkpoint_each_generation:
+            checkpoint_root = output_root / "checkpoints" / f"seed_{seed}"
+            checkpoint_context = {"seed":seed,"cache_context_hash":cache_context_hash,
+                                  "population":profile.population,"generations":profile.generations,
+                                  "sample_count":profile.uncertainty_samples}
+            if (checkpoint_root / "algorithm_checkpoint.json").is_file():
+                algorithm = load_algorithm_checkpoint(checkpoint_root,checkpoint_context,problem=problem,evaluator=evaluator)
+            else:
+                algorithm = NSGA2(pop_size=profile.population,sampling=initial_population)
+                algorithm.setup(problem,termination=("n_gen",profile.generations),seed=seed,callback=callback,verbose=False)
+            while algorithm.has_next():
+                assert_campaign_resources(output_root)
+                algorithm.next()
+                save_algorithm_checkpoint(algorithm,checkpoint_root,checkpoint_context)
+                history = algorithm.callback.history
+                if history[-1]["population_count"] != profile.population:
+                    raise AssertionError("The robust generation does not contain the declared full population")
+                (checkpoint_root/"GENERATION_PROGRESS.json").write_text(json.dumps({"seed":seed,"completed_generations":len(history),"required_generations":profile.generations,"last":history[-1]},indent=2),encoding="utf-8")
+                if len(history) % 5 == 0 or len(history) == 1:
+                    print(f"PRODUCTION seed={seed} generation={len(history)}/{profile.generations} feasible={history[-1]['feasible_count']}/{profile.population}",flush=True)
+            result = algorithm.result()
+            callback = algorithm.callback
+        else:
+            result = minimize(
+                problem,
+                NSGA2(pop_size=profile.population, sampling=initial_population),
+                ("n_gen", profile.generations), seed=seed, callback=callback, verbose=False,
             )
-            order = np.lexsort((observed_distance, observed_violation))
-            observed_seed_count = min(len(order), max(0, profile.population // 2 - 1))
-            initial_population[1 : observed_seed_count + 1] = observed_designs[
-                order[:observed_seed_count]
-            ]
-        result = minimize(
-            problem,
-            NSGA2(pop_size=profile.population, sampling=initial_population),
-            ("n_gen", profile.generations),
-            seed=seed,
-            callback=callback,
-            verbose=False,
-        )
         serialised = _serialise_nsga_result(
             result,
             evaluator,
@@ -656,6 +726,10 @@ def _run_nsga_profile(
             profile.uncertainty_samples,
             cache_context_hash,
         )
+        if len(serialised["history"]) != profile.generations or any(
+            row["population_count"] != profile.population for row in serialised["history"]
+        ):
+            raise AssertionError("Robust seed does not satisfy its full generation/population contract")
         seed_path.write_text(json.dumps(serialised, indent=2, sort_keys=True), encoding="utf-8")
         runs.append(serialised)
     return {
@@ -664,7 +738,7 @@ def _run_nsga_profile(
         "uncertainty_samples": profile.uncertainty_samples,
         "independent_seeds": seeds,
         "runs": runs,
-        "agreement": _agreement(runs, bounds),
+        "agreement": _agreement(runs, bounds, objective_scales=objective_scales),
     }
 
 

@@ -78,3 +78,48 @@ def assert_locked_test_access(frozen_manifest: Path, requested_split: str, artif
         verify_frozen_artifacts(frozen_manifest, artifacts)
     except (ValueError, FileNotFoundError) as exc:
         raise PermissionError(f"Locked test access denied: {exc}") from exc
+
+
+def calibration_geometry_groups(predictions: pd.DataFrame, records: pd.DataFrame) -> np.ndarray:
+    """Resolve geometry clusters, rejecting unknown or non-calibration rows.
+
+    Names alone are not independent groups: two names can belong to the same
+    near-duplicate geometry cluster. The caller must use these groups for both
+    cross-validation and resampling, and retain the source split-manifest hash.
+    """
+    required = {"airfoil_id", "cluster_id", "split"}
+    if not required.issubset(records.columns) or "airfoil_id" not in predictions:
+        raise ValueError("Calibration grouping requires complete split records")
+    if records["airfoil_id"].duplicated().any():
+        raise ValueError("Ambiguous duplicate airfoil IDs in split records")
+    indexed = records.set_index("airfoil_id")
+    partitions = predictions["airfoil_id"].map(indexed["split"])
+    groups = predictions["airfoil_id"].map(indexed["cluster_id"])
+    if groups.isna().any() or not partitions.eq("calibration").all():
+        raise ValueError("Every risk-audit row must map to a calibration geometry cluster")
+    return groups.to_numpy()
+
+
+def protect_rebuilt_splits(airfoils: pd.DataFrame, historical_records: pd.DataFrame) -> pd.DataFrame:
+    """Keep each repaired physical cluster in its most protected old partition.
+
+    A newly discovered near-duplicate must never carry historical test or
+    calibration observations into model training. Only identities from the
+    archived corpus are admitted by this continuation policy.
+    """
+    ranks = {'development': 0, 'calibration': 1, 'locked_test': 2}
+    if historical_records['airfoil_id'].duplicated().any() or airfoils['airfoil_id'].duplicated().any():
+        raise ValueError('Ambiguous source identity in rebuilt split')
+    old = historical_records.set_index('airfoil_id')['split']
+    result = airfoils[['airfoil_id', 'cluster_id']].copy()
+    prior = result['airfoil_id'].map(old)
+    if prior.isna().any() or not prior.isin(ranks).all() or result['cluster_id'].isna().any():
+        raise ValueError('Every rebuilt identity requires a valid historical partition')
+    protected = prior.map(ranks)
+    rank_by_cluster = protected.groupby(result['cluster_id']).max()
+    result['split'] = result['cluster_id'].map(rank_by_cluster).map({v: k for k, v in ranks.items()})
+    if (result['split'].map(ranks).to_numpy() < protected.to_numpy()).any():
+        raise AssertionError('Protected partition moved into a less protected split')
+    if result.groupby('cluster_id')['split'].nunique().max() != 1:
+        raise AssertionError('Rebuilt physical cluster crosses partitions')
+    return result

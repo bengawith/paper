@@ -90,10 +90,10 @@ def fig_surrogate_accuracy() -> None:
         ax.set_xlabel(f"XFOIL {label}")
         ax.set_ylabel(f"Surrogate {label}")
         ax.set_title(f"$R^2$ = {r2:.3f}")
-    axes[1].legend(markerscale=4, loc="upper left")
+    axes[1].legend(markerscale=4, loc="lower right")
     for ax, tag in zip(axes, "abc", strict=True):
         ax.text(0.02, 0.98, f"({tag})", transform=ax.transAxes, va="top", fontweight="bold")
-    fig.suptitle("Surrogate accuracy on held-out (grouped) locked-test aerofoils", y=1.02)
+    fig.suptitle("Historical encoded-feature test predictions (geometry lineage requires repair)", y=1.02)
     fig.savefig(FIGDIR / "fig_surrogate_accuracy.png")
     plt.close(fig)
 
@@ -112,7 +112,7 @@ def fig_manufacturing_risk() -> None:
     ax.plot(pct, cvar, "s--", color="#8c510a", lw=2, label="Upper-tail penalised objective")
     ax.set_xlabel("Prescribed surface-normal deviation bound (% chord)")
     ax.set_ylabel("Robust weighted-drag objective")
-    ax.set_title("Surrogate objective including trust-exit penalties")
+    ax.set_title("Historical surrogate objective including trust-exit penalties")
     ax2 = ax.twinx()
     ax2.plot(pct, viol, "^:", color="#b2182b", lw=1.5, label="Trust-domain exit %")
     ax2.set_ylabel("Samples leaving trust domain (%)", color="#b2182b")
@@ -151,7 +151,7 @@ def fig_perturbation_validity() -> None:
         )
     ax.set_ylabel("Geometry/CST-refit accepted samples (%)")
     ax.set_ylim(0, 108)
-    ax.set_title("Acceptance of three prescribed perturbation generators (1% chord, 2048 draws)")
+    ax.set_title("Historical geometry/refit admission (1% chord, 2048 draws)")
     fig.savefig(FIGDIR / "fig_perturbation_validity.png")
     plt.close(fig)
 
@@ -171,11 +171,11 @@ def fig_pareto_front() -> None:
     ax.set_xlabel("Penalised mean required-lift drag objective (×10⁻³)")
     ax.set_ylabel("Penalised empirical CVaR95 objective (×10⁻³)")
     ax.set_title(
-        "Candidate-specific corrected NSGA-II: low-budget diagnostic\\n"
-        f"10 seeds; 32 population × 10 generations × 16 scenarios; "
+        "Historical schema-4 smoke front\n"
+        f"10 seeds; 32 × 10 × 16; post-hoc scaled "
         f"front-distance={agreement['pairwise_objective_distance_mean']:.3f}"
     )
-    ax.text(0.02, 0.02, "NOT a production Pareto optimum", transform=ax.transAxes,
+    ax.text(0.02, 0.02, "Historical diagnostic: not current acceptance", transform=ax.transAxes,
             fontsize=10, weight="bold", color="#8b0000")
     ax.legend(loc="upper right", ncol=2, fontsize=8)
     fig.tight_layout()
@@ -188,8 +188,8 @@ def fig_design_verification() -> None:
     order = ["reference_naca2412", "within_trust_knee", "outside_trust_deterministic"]
     labels = [
         "NACA 2412\nreference",
-        "Within-trust\nrobust design",
-        "Outside-trust\nsurrogate optimum",
+        "Historically selected\ncandidate",
+        "Outside-screen\ncomparator",
     ]
     colors = [REF_C, TRUST_C, UNTRUST_C]
     nominal = [d[k]["nominal_weighted_cd"] * 1e3 for k in order]
@@ -210,7 +210,7 @@ def fig_design_verification() -> None:
         ]
     )
     ax.set_ylabel(r"XFOIL required-lift weighted $C_D$ ($\times 10^{-3}$)")
-    ax.set_title("Selected-design XFOIL numerical check (13–14 valid scenarios)")
+    ax.set_title("Fixed-coordinate XFOIL check (13–14 completed scenarios)")
     from matplotlib.patches import Patch
 
     handles = [
@@ -292,7 +292,7 @@ def fig_worstcase_polar() -> None:
     ax.set_xlabel(r"Angle of attack $\alpha$ (deg)")
     ax.set_ylabel("$C_L$")
     ax.set_title(
-        "Largest observed surrogate–XFOIL divergence\n"
+        "Largest mean gap in the eligible converged subset\n"
         f"(design outside trust domain, mean $\\Delta C_L$ = "
         f"{worst['disagreement']['mean_absolute_cl_gap']:.2f}, "
         f"max = {worst['disagreement']['max_absolute_cl_gap']:.2f})"
@@ -316,7 +316,7 @@ def main() -> None:
     )
     shutil.copy2(
         ROOT
-        / "reports/robust_v2/submission_review_20261014/ML_DIAGNOSTICS/fig_ml_selective_coverage.png",
+        / "reports/robust_v2/external_academic_review_20261014/ML_SELECTIVE_CURRENT/fig_ml_selective_coverage.png",
         FIGDIR / "fig_ml_selective_coverage.png",
     )
     print("Figures written to", FIGDIR)

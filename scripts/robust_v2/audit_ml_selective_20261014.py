@@ -22,7 +22,7 @@ ROOT = Path(__file__).resolve().parents[2]
 LIN = ROOT / "results/robust_v2/lineages/robust-v2-current-20260908"
 CAL = LIN / "calibration/calibration_predictions.parquet"
 TEST = LIN / "locked_test/predictions.parquet"
-OUT = ROOT / "reports/robust_v2/submission_review_20261014/ML_DIAGNOSTICS"
+OUT = ROOT / "reports/robust_v2/external_academic_review_20261014/ML_SELECTIVE_CURRENT"
 OUT.mkdir(parents=True, exist_ok=True)
 COLS = [
     ("cl", "prediction_cl", "ensemble_std_cl"),
@@ -97,13 +97,13 @@ def main() -> None:
         )
         ax.axhline(values["all_macro_mae"], linestyle="--", color="0.5", label="Full held-out set")
         ax.set(
-            xlabel="States retained by calibration-scaled risk score (%)",
+            xlabel="Retained states (%)",
             ylabel="Macro MAE (per airfoil)",
-            title=f"{truth} | Spearman={values['error_risk_spearman']:.2f}",
+            title=f"({'abc'[list(results).index(truth)]}) {truth} | Spearman={values['error_risk_spearman']:.2f}",
         )
         ax.legend(fontsize=8)
     fig.suptitle(
-        "Descriptive selective prediction | frozen ensemble, no test-set fitting", fontsize=12
+        "Historical selective prediction | retrospective, no test-set fitting", fontsize=12
     )
     fig.tight_layout()
     figure = OUT / "fig_ml_selective_coverage.png"

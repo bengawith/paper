@@ -8,6 +8,7 @@ import numpy as np
 import pandas as pd
 
 from robust_airfoil.modelling.dataset import FEATURE_COLUMNS, TARGET_COLUMNS, ScalingBundle
+from robust_airfoil.modelling.support_index import GroupedSupportIndex
 
 
 def conformal_quantile(values: np.ndarray, coverage: float) -> float:
@@ -31,11 +32,9 @@ def calibrate_residual_quantiles(predictions: pd.DataFrame, output_path: Path, q
 
 
 def support_distance(train_features: np.ndarray, query_features: np.ndarray, k: int = 5) -> np.ndarray:
-    from sklearn.neighbors import NearestNeighbors
-
-    neighbours = NearestNeighbors(n_neighbors=min(k, len(train_features))).fit(train_features)
-    distances, _ = neighbours.kneighbors(query_features)
-    return distances.mean(axis=1)
+    count = min(k, len(train_features))
+    distances, _ = GroupedSupportIndex(train_features).query(query_features, k=count)
+    return np.asarray(distances).reshape(len(query_features), count).mean(axis=1)
 
 
 def calibrate_trust_model(
@@ -97,7 +96,13 @@ def calibrate_trust_model(
         if conformal_quantile(aggregate_scaled_residual[selected], 0.95) <= 1.0:
             support_thresholds.append(float(np.max(distances[selected])))
     trusted_support_threshold = max(support_thresholds) if support_thresholds else float(np.quantile(distances, 0.5))
-    trusted &= distances <= trusted_support_threshold
+    # Report the same published rule used by apply_trust_model. The initial
+    # 99th-percentile probe is not an additional runtime acceptance limit.
+    trusted = distances <= trusted_support_threshold
+    trusted &= calibration_predictions["alpha_deg"].between(alpha_min, alpha_max).to_numpy()
+    for target in TARGET_COLUMNS:
+        trusted &= calibration_predictions[f"ensemble_std_{target}"].to_numpy(float) <= disagreement[target]["trusted_threshold_from_residual_tolerance"]
+    calibration_predictions["trusted_domain"] = trusted
     payload: dict[str, object] = {
         "method": "split_conformal_residual_band_with_empirical_trust_thresholds",
         "residual_absolute_quantiles": residuals,

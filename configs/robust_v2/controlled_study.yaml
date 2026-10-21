@@ -1,0 +1,45 @@
+schema: controlled-cst-scientific-protocol-v1
+lineage: robust-v2-controlled-20261020
+# Numerical refinement only: preserve the original 0..8-degree service domain,
+# required CL, lift weights, physical deviations and engineering constraints.
+service_alpha_deg: [0.0, 0.25, 0.5, 0.75, 1.0, 1.25, 1.5, 1.75, 2.0, 2.25, 2.5, 2.75, 3.0, 3.25, 3.5, 3.75, 4.0, 4.25, 4.5, 4.75, 5.0, 5.25, 5.5, 5.75, 6.0, 6.25, 6.5, 6.75, 7.0, 7.25, 7.5, 7.75, 8.0]
+confirmation:
+  geometries: 200
+  seed: 2026102001
+  mixing_weights: [0.2, 0.8]
+  minimum_rms_separation: 0.0001
+  sampling: convex_mixtures_of_two_distinct_development_cst_shapes
+  selection: geometry_only_sealed_before_controlled_model_training
+  labels: genuine_local_xfoil_on_exact_cst_after_model_and_risk_freeze
+nominal_control:
+  population: 128
+  generations: 200
+  independent_seeds: 10
+  first_seed: 20264824
+final_evaluation:
+  scenarios: 2048
+  scramble_offset: 90000
+  amplitudes_fraction_chord: [0.001, 0.0025, 0.005, 0.01]
+  finer_service_step_deg: 0.125
+selected_xfoil:
+  required_grid: {start_deg: 0.0, end_deg: 11.0, step_deg: 0.25}
+  unrecorded_warmup: {start_deg: -2.0, end_deg: 0.0, step_deg: 0.5}
+  required_lift_root_domain_deg: [0.0, 8.0]
+  iterations: 200
+  timeout_seconds: 30
+  workers: 2
+  primary_designs: [reference, nominal_control, risk_knee]
+  campaigns:
+    - {name: stress_1pct, amplitude: 0.01, scenarios: 16, scramble_offset: 50000}
+    - {name: sensitivity_0p5pct_a, amplitude: 0.005, scenarios: 128, scramble_offset: 50000}
+    - {name: sensitivity_0p5pct_b, amplitude: 0.005, scenarios: 128, scramble_offset: 51000}
+uncertainty_reporting:
+  geometry_bootstrap_replicates: 1000
+  seed: 20261020
+  interpretation: fixed-model conditional numerical diagnostics, not unconditional physical confidence guarantees
+selection:
+  risk_knee: minimum_reference_scaled_euclidean_distance_to_pooled_feasible_ideal
+  mean_candidate: minimum_mean_penalised_objective
+  tail_candidate: minimum_tail_penalised_objective
+  nominal_control: minimum_nominal_drag_among_all_feasible_control_runs
+  final_solver_outcomes_used_for_selection: false
