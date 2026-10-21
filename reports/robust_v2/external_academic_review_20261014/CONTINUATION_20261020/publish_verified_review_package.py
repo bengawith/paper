@@ -261,6 +261,74 @@ def sources():
     return direct
 
 
+def _file_map(directory):
+    return {item.relative_to(directory).as_posix(): item for item in directory.rglob('*') if item.is_file()}
+
+
+def _safe_onedrive_install(staging, live, backup, manifest):
+    """Preserve a fully verified prior release before updating cloud-backed files.
+
+    Windows OneDrive reparse directories can refuse rename/replace (WinError5).
+    Hydrated files can still be copied directly. The release manifest is copied
+    LAST, only after every new file and removal has been source-verified.
+    """
+    desired = {item['path']: item for item in manifest['files']}
+    if len(desired) != len(manifest['files']):
+        raise ValueError('Duplicate staged package paths')
+    if backup.exists():
+        raise FileExistsError('Historical release backup path already exists')
+    previous = {}
+    if live.exists():
+        old_manifest = json.loads((live / 'SHA256_MANIFEST.json').read_text(encoding='utf-8'))
+        previous = {item['path']: item for item in old_manifest['files']}
+        if len(previous) != len(old_manifest['files']):
+            raise ValueError('Prior manifest contains duplicate paths')
+        old_files = _file_map(live)
+        if set(old_files) != set(previous) | {'SHA256_MANIFEST.json'}:
+            raise ValueError('Existing package has unmanifested files; refusing overwrite')
+        for relative, item in previous.items():
+            old_size = item.get('size', item.get('bytes'))
+            if old_files[relative].stat().st_size != old_size or sha(old_files[relative]) != item['sha256']:
+                raise ValueError('Historical source no longer matches its manifest: ' + relative)
+        shutil.copytree(live, backup)
+        copies = _file_map(backup)
+        if copies.keys() != old_files.keys() or any(sha(copies[key]) != sha(path) for key, path in old_files.items()):
+            raise ValueError('Versioned historical backup is not byte-identical')
+    else:
+        live.mkdir(parents=True)
+    for relative, item in desired.items():
+        source = staging / relative
+        target = live / relative
+        target.parent.mkdir(parents=True, exist_ok=True)
+        if target.is_file() and sha(target) == item['sha256']:
+            continue
+        if target.exists() and (relative not in previous or sha(target) != previous[relative]['sha256']):
+            raise ValueError('Canonical file was unexpectedly modified: ' + relative)
+        shutil.copy2(source, target)
+        if target.stat().st_size != item['size'] or sha(target) != item['sha256']:
+            raise ValueError('OneDrive hydrated-copy checksum mismatch: ' + relative)
+    for relative in sorted(set(previous) - set(desired)):
+        path = live / relative
+        if not path.is_file() or sha(path) != sha(backup / relative):
+            raise ValueError('Prior-only file changed before removal: ' + relative)
+        path.unlink()
+    # OneDrive Files On-Demand virtual directories may refuse rmdir; only
+    # physical file membership is part of the released manifest contract.
+    if set(_file_map(live)) != set(desired) | {'SHA256_MANIFEST.json'}:
+        raise ValueError('Canonical contents do not exactly match the staged file set')
+    for relative, item in desired.items():
+        if sha(live / relative) != item['sha256']:
+            raise ValueError('Final package file hash changed: ' + relative)
+    shutil.copy2(staging / 'SHA256_MANIFEST.json', live / 'SHA256_MANIFEST.json')
+    if sha(staging / 'SHA256_MANIFEST.json') != sha(live / 'SHA256_MANIFEST.json'):
+        raise ValueError('Canonical activation manifest checksum mismatch')
+    for name in ['SOURCE_COMMIT.zip', 'CFD_HANDOFF_ONLY.zip', 'RAW_EVIDENCE/RAW_XFOIL_EVIDENCE.zip']:
+        with zipfile.ZipFile(live / name) as archive:
+            if archive.testzip() is not None:
+                raise ValueError('Release ZIP CRC validation failed: ' + name)
+    return backup if backup.exists() else None
+
+
 def main():
     head, final = validate_release_preconditions()
     timestamp = datetime.datetime.now(datetime.UTC).strftime("%Y%m%dT%H%M%SZ")
@@ -326,9 +394,7 @@ def main():
     backup = ONEDRIVE / f"HISTORICAL_READY_FOR_REVIEW_{timestamp}"
     if backup.exists():
         raise FileExistsError("Versioned historical destination already exists")
-    if LIVE.exists():
-        LIVE.rename(backup)
-    staging.rename(LIVE)
+    verified_backup = _safe_onedrive_install(staging, LIVE, backup, manifest)
     print(
         json.dumps(
             {
@@ -336,7 +402,7 @@ def main():
                 "source_commit_sha": head,
                 "files": len(entries),
                 "live": str(LIVE),
-                "historical_directory": str(backup) if backup.exists() else None,
+                "historical_directory": str(verified_backup) if verified_backup else None,
                 "manifest_sha256": sha(LIVE / "SHA256_MANIFEST.json"),
                 "cloud_sync_confirmed": False,
             },

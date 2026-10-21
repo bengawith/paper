@@ -25,8 +25,16 @@ function Check-Files([string]$Base, $Entries) {
     foreach ($entry in $Entries) {
         $path = Safe-File -Base $Base -Relative $entry.path
         if (-not (Test-Path -LiteralPath $path -PathType Leaf)) { throw "Missing package file: $($entry.path)" }
+        # OneDrive Files On-Demand marks hydrated content as a reparse point.
+        # Reject actual filesystem links, not all reparse tags: a hydrated cloud
+        # file has LinkType=$null and must still pass full size/SHA256 checks.
+        $current = $Base
+        foreach ($segment in @($entry.path -split '/')) {
+            $current = Join-Path $current $segment
+            $part = Get-Item -LiteralPath $current -Force
+            if ($part.LinkType) { throw "Filesystem link in package path: $($entry.path)" }
+        }
         $item = Get-Item -LiteralPath $path -Force
-        if (($item.Attributes -band [IO.FileAttributes]::ReparsePoint) -ne 0) { throw "Reparse-point files are not admitted: $($entry.path)" }
         if ($item.Length -ne $entry.size) { throw "Size mismatch: $($entry.path)" }
         if ((Get-FileHash -LiteralPath $path -Algorithm SHA256).Hash.ToLowerInvariant() -ne $entry.sha256) { throw "Hash mismatch: $($entry.path)" }
     }
