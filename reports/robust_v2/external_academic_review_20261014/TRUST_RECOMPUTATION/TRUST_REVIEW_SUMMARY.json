@@ -1,0 +1,83 @@
+{
+  "schema": "calibration-only-cluster-separated-risk-review-v1",
+  "calibration_sha256": "d3b41f63cf1c28960b886c944140495876169f1fc121c3b6ad4cbe5c2d3a78ec",
+  "split_sha256": "9c8c67b2625845f9da024dc671802275917b331042fc208b5b9339c7251f3dd8",
+  "historical_id_grouping": {
+    "grouping": "airfoil_id",
+    "n_rows": 26933,
+    "n_airfoils": 234,
+    "n_geometry_clusters": 233,
+    "n_resampling_units": 234,
+    "excluded_incomplete_rows": 0,
+    "models": {
+      "support_only": {
+        "auroc": 0.766526914470837,
+        "average_precision": 0.3728262661156017,
+        "geometry_balanced_auroc": 0.764887647912631,
+        "mean_fold_auroc": 0.7528594546274097
+      },
+      "ensemble_only": {
+        "auroc": 0.8609073835667619,
+        "average_precision": 0.47181799834126875,
+        "geometry_balanced_auroc": 0.858338547670219,
+        "mean_fold_auroc": 0.8537667058893754
+      },
+      "support_plus_ensemble": {
+        "auroc": 0.8656869602388089,
+        "average_precision": 0.4957679326152362,
+        "geometry_balanced_auroc": 0.8631824055913111,
+        "mean_fold_auroc": 0.8588736252370575
+      }
+    },
+    "incremental_auroc": 0.09916004576797188,
+    "bootstrap_replicates": 300,
+    "fixed_oof_group_bootstrap_95pct_interval": [
+      0.06942635823564959,
+      0.13863587927122528
+    ],
+    "folds_with_cluster_overlap": [
+      4,
+      5
+    ],
+    "interpretation": "Retrospective calibration-distribution error-ranking diagnostic. Interval resamples fixed OOF predictions; it does not include refitting variability, establish conditional coverage, or validate an operational threshold under design shift."
+  },
+  "corrected_cluster_grouping": {
+    "grouping": "geometry_cluster",
+    "n_rows": 26933,
+    "n_airfoils": 234,
+    "n_geometry_clusters": 233,
+    "n_resampling_units": 233,
+    "excluded_incomplete_rows": 0,
+    "models": {
+      "support_only": {
+        "auroc": 0.7679624719322351,
+        "average_precision": 0.360933858927017,
+        "geometry_balanced_auroc": 0.7662785004538226,
+        "mean_fold_auroc": 0.758423293417237
+      },
+      "ensemble_only": {
+        "auroc": 0.8585365516281328,
+        "average_precision": 0.46859679507048513,
+        "geometry_balanced_auroc": 0.8562446664003558,
+        "mean_fold_auroc": 0.8614460125052117
+      },
+      "support_plus_ensemble": {
+        "auroc": 0.8667371582847566,
+        "average_precision": 0.48487076893092695,
+        "geometry_balanced_auroc": 0.8643868513766283,
+        "mean_fold_auroc": 0.8685486938623551
+      }
+    },
+    "incremental_auroc": 0.09877468635252151,
+    "bootstrap_replicates": 300,
+    "fixed_oof_group_bootstrap_95pct_interval": [
+      0.06667914334882863,
+      0.14020195244544573
+    ],
+    "folds_with_cluster_overlap": [],
+    "interpretation": "Retrospective calibration-distribution error-ranking diagnostic. Interval resamples fixed OOF predictions; it does not include refitting variability, establish conditional coverage, or validate an operational threshold under design shift."
+  },
+  "aerodynamic_model_changed": false,
+  "operational_trust_threshold_changed": false,
+  "locked_test_accessed_by_this_script": false
+}

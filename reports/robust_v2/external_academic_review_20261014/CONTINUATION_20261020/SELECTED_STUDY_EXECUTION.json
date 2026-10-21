@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "completed_utc": "2026-10-21T12:24:33.076478+00:00",
+  "seconds": 1013.859999999986,
+  "exit": 0,
+  "command": [
+    "C:\\Users\\Ben\\workspaces\\github.com\\bengawith\\paper\\.venv\\Scripts\\python.exe",
+    "-u",
+    "scripts/robust_v2/complete_controlled_selected_study.py"
+  ],
+  "log": "C:\\Users\\Ben\\workspaces\\github.com\\bengawith\\paper\\reports\\robust_v2\\external_academic_review_20261014\\CONTINUATION_20261020\\selected_study_execution.log",
+  "full_selected_summary": "C:\\Users\\Ben\\workspaces\\github.com\\bengawith\\paper\\results\\robust_v2\\lineages\\robust-v2-controlled-20261020\\selected_study\\SELECTED_XFOIL_SUMMARY.json"
+}

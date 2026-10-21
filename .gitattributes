@@ -1,0 +1,9 @@
+# Preserve exact, immutable review-before bytes; whitespace warnings are not source defects.
+# Only these seven historical evidence copies bypass Git whitespace diagnostics.
+reports/robust_v2/external_academic_review_20261014/COMPUTE_PROFILE/profile.txt -whitespace
+reports/robust_v2/external_academic_review_20261014/CONTINUATION_20261020/AUTHOR_EOF_R6/PRIOR_manuscript.md -whitespace
+reports/robust_v2/external_academic_review_20261014/CONTINUATION_20261020/BEFORE_ABSTRACT_FIT_v3.md -whitespace
+reports/robust_v2/external_academic_review_20261014/CONTINUATION_20261020/BEFORE_FINAL_COPYEDIT_manuscript.md -whitespace
+reports/robust_v2/external_academic_review_20261014/CONTINUATION_20261020/EOL_REPAIR_SOURCE_PRESERVED/profile_repaired_evaluator.py -whitespace
+reports/robust_v2/external_academic_review_20261014/CONTINUATION_20261020/EOL_REPAIR_SOURCE_PRESERVED/run_repaired_production.py -whitespace
+reports/robust_v2/external_academic_review_20261014/REBUILT_MODEL/EVALUATOR_PROFILE.txt -whitespace

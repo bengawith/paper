@@ -1,0 +1,43 @@
+         4872737 function calls (4866237 primitive calls) in 8.662 seconds
+
+   Ordered by: cumulative time
+   List reduced from 568 to 35 due to restriction <35>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.007    0.007    8.675    8.675 study.py:284(evaluate)
+     8320    0.146    0.000    3.994    0.000 objectives.py:52(weighted_required_lift_drag)
+      128    0.018    0.000    3.960    0.031 study.py:316(<listcomp>)
+        1    0.004    0.004    3.606    3.606 study.py:299(<listcomp>)
+      128    0.264    0.002    3.602    0.028 candidate_uncertainty.py:161(evaluate)
+     8320    0.366    0.000    3.501    0.000 objectives.py:58(<listcomp>)
+    24960    0.956    0.000    3.135    0.000 objectives.py:8(required_lift_drag)
+     8320    0.319    0.000    1.865    0.000 validity.py:17(validate_geometry)
+    33558    0.085    0.000    1.289    0.000 _arraysetops_impl.py:145(unique)
+    33558    0.665    0.000    1.162    0.000 _arraysetops_impl.py:350(_unique1d)
+    99584    0.627    0.000    0.746    0.000 _function_base_impl.py:1402(diff)
+   304820    0.726    0.000    0.726    0.000 {method 'reduce' of 'numpy.ufunc' objects}
+    49408    0.084    0.000    0.597    0.000 _function_base_impl.py:1538(interp)
+    16384    0.137    0.000    0.577    0.000 candidate_uncertainty.py:152(_resample_valid)
+     8320    0.022    0.000    0.511    0.000 numeric.py:2290(allclose)
+    91522    0.181    0.000    0.500    0.000 fromnumeric.py:86(_wrapreduction_any_all)
+   117266    0.125    0.000    0.479    0.000 {method 'all' of 'numpy.ndarray' objects}
+        1    0.010    0.010    0.470    0.470 study.py:197(_nominal_constraints)
+    49408    0.446    0.000    0.446    0.000 {built-in method numpy._core._multiarray_umath.interp}
+        2    0.004    0.002    0.436    0.218 ensemble.py:117(predict)
+     8320    0.192    0.000    0.433    0.000 numeric.py:2384(isclose)
+   134045    0.094    0.000    0.400    0.000 _methods.py:64(_all)
+       10    0.020    0.002    0.396    0.040 train.py:220(predict_frame)
+    16640    0.164    0.000    0.382    0.000 _function_base_impl.py:4910(trapezoid)
+    25168    0.027    0.000    0.366    0.000 {built-in method builtins.all}
+    99840    0.088    0.000    0.338    0.000 objectives.py:21(<genexpr>)
+    93955    0.086    0.000    0.307    0.000 fromnumeric.py:48(_wrapfunc)
+    49920    0.054    0.000    0.300    0.000 fromnumeric.py:2436(any)
+      130    0.006    0.000    0.299    0.002 support_index.py:81(query)
+    41602    0.040    0.000    0.294    0.000 fromnumeric.py:2548(all)
+      139    0.137    0.001    0.291    0.002 support_index.py:48(_query_chunk)
+    51094    0.101    0.000    0.284    0.000 fromnumeric.py:66(_wrapreduction)
+     8320    0.042    0.000    0.263    0.000 _arraysetops_impl.py:1083(union1d)
+        2    0.003    0.002    0.223    0.111 study.py:180(_support_and_disagreement)
+      165    0.207    0.001    0.207    0.001 {method 'cpu' of 'torch._C.TensorBase' objects}
+
+

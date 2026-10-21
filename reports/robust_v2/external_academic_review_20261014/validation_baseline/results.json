@@ -1,0 +1,85 @@
+[
+  {
+    "name": "diff_check",
+    "command": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "utc": "2026-10-14T10:41:09.283984+00:00",
+    "returncode": 0,
+    "seconds": 0.062
+  },
+  {
+    "name": "uv_sync",
+    "command": [
+      "uv",
+      "sync",
+      "--extra",
+      "dev",
+      "--extra",
+      "benchmarks",
+      "--extra",
+      "docs"
+    ],
+    "utc": "2026-10-14T10:41:09.353237+00:00",
+    "returncode": 0,
+    "seconds": 0.141
+  },
+  {
+    "name": "ruff",
+    "command": [
+      "uv",
+      "run",
+      "ruff",
+      "check",
+      "src/robust_airfoil",
+      "tests/robust_v2",
+      "scripts/robust_v2"
+    ],
+    "utc": "2026-10-14T10:41:09.487126+00:00",
+    "returncode": 0,
+    "seconds": 0.109
+  },
+  {
+    "name": "mypy",
+    "command": [
+      "uv",
+      "run",
+      "mypy",
+      "src/robust_airfoil"
+    ],
+    "utc": "2026-10-14T10:41:09.599622+00:00",
+    "returncode": 0,
+    "seconds": 3.422
+  },
+  {
+    "name": "unit",
+    "command": [
+      "uv",
+      "run",
+      "pytest",
+      "tests/robust_v2",
+      "-m",
+      "not network and not xfoil and not slow",
+      "-q"
+    ],
+    "utc": "2026-10-14T10:41:13.026654+00:00",
+    "returncode": 0,
+    "seconds": 17.359
+  },
+  {
+    "name": "author_pack",
+    "command": [
+      "uv",
+      "run",
+      "--extra",
+      "docs",
+      "python",
+      "scripts/robust_v2/verify_final_author_pack.py"
+    ],
+    "utc": "2026-10-14T10:41:30.385889+00:00",
+    "returncode": 0,
+    "seconds": 0.563
+  }
+]

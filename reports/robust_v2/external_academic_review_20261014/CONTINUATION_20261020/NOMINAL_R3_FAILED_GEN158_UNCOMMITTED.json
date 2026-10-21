@@ -1,0 +1,13 @@
+{
+  "completed_generations": 158,
+  "last": {
+    "evaluations": 20224,
+    "feasible_count": 128,
+    "generation": 158,
+    "maximum_constraint_violation": 0.0,
+    "minimum_feasible_nominal_drag": 0.0059941894280067035,
+    "population_count": 128
+  },
+  "required_generations": 200,
+  "seed": 20264829
+}

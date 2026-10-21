@@ -1,112 +1,41 @@
-# Response to Reviewers
+# Historical Reviewer Responses — Proposed Controlled-Study Revision (Author Working Draft)
 
-> Read alongside [REVIEW_STATUS.md](REVIEW_STATUS.md), which documents how each internally-flagged issue was corrected. A selected-design claim is checked numerically by local XFOIL; independent CFD and larger tail campaigns are outstanding. Journal choice and the prior venue's one-year resubmission restriction remain author decisions.
+**Status: prepared for coauthor consideration, not a response submitted to a journal.** This document addresses the earlier EAAI-26-2180 reviews. It does not claim that the earlier editor has invited or accepted a new submission. The current proposed manuscript is **“Geometric Provenance and Empirical Reliability in Machine-Learning Aerofoil Optimisation: A Controlled XFOIL Study.”** Every declaration and substantive response requires author approval before sending.
 
-**Manuscript (previous):** "Data-Driven Aerodynamic Prediction: High-Fidelity Lift Curve Estimation for Aerofoils Using Class-Shape Transformation and Artificial Intelligence" (EAAI-26-2180).
+## Earlier Reviewer 2 — Practical usefulness, adversarial tests, and selected-design verification
 
-**Current revised manuscript:** "Trust-Calibrated Machine-Learning Surrogates for Risk-Aware Aerofoil Design under Manufacturing Uncertainty, with Direct XFOIL Verification."
+We separated the original historical examples from the final controlled study rather than promoting old numerical improvements into a corrected model result. The original historical same-XFOIL calculations gave an 18.7% nominal weighted-drag decrease for one selected example and favourable completed-case perturbation means; those figures belong only to the original imperfect model/geometry lineage.
 
-We thank the reviewers for their constructive assessment. The work has been substantially reframed from a lift-curve prediction study into a robust-design and surrogate-trust framework, which directly addresses the central concern shared across reviews—that predictive accuracy alone does not establish engineering value. Every response below is backed by a concrete, reproducible result in the revised manuscript. All quantities are drawn from durable evidence artefacts (study lineage `robust-v2-current-20260908`, Re = 1×10⁶, M = 0, N_crit = 9).
+In the new exact-CST controlled study, 1,256 source geometries were attempted with genuine local-XFOIL labels. The 10-seed risk-aware and independent 10-seed constrained nominal-only search were both completed with 128 members and 200 generations. Finite risk-front agreement passes both retained numerical checks, but is not proof of a global optimum.
 
----
+The newly selected strict XFOIL verification **attempted 819 nominal and displaced cases; only 290 satisfy the full 45-angle, required-lift and clean-exit conditions**. The new nominal reference, risk-knee and nominal-control polars all miss required angles and **have zero usable nominal matched pairs**. A nominal percentage improvement cannot be reported under the preregistered protocol. The risk-knee shows favourable **15.2% and 14.9%** mean reductions on the two 0.5%-chord completed matched subsets (n=15 and 14, respectively). The 1%-chord risk-knee has no complete matched subset. These differences cannot be extrapolated to missing solver cases, manufacturing populations, independent RANS, experiments or a tail probability. Every failed case is retained. An explicitly labelled post-hoc equal-control higher-iteration check did not recover any of the three full nominal sweeps; it does **not** replace the original 200-iteration criterion.
 
-## Reviewer #2
+## Earlier Reviewer 3 — Source data, geometry validity, architecture and solver fidelity
 
-> *"The authors fail to demonstrate the actual usefulness of the approach in a pre-design exploration application… it would be useful to implement an optimization task aimed at finding the airfoil that maximizes the difference between the results of their ML approximator and those obtained with XFOIL using the same CST parameterization."*
+The original audit found incorrect interpretation of two-block coordinate inputs, changing 1,001 of 1,560 historical CST encodings. After correcting that, fresh numerical comparisons further demonstrated that rotating/resampling a geometry can change XFOIL coefficients at the same recorded incidence. The original archived geometry–label map therefore cannot establish the physical performance of the repaired representation.
 
-This is now the centrepiece of the paper and is implemented as a finite targeted search (not a global proof) (Section 3.5, Section 4.5, Figures 6–7). An adversarial search over the CST design box, using XFOIL as the oracle and the identical CST parameterisation, locates the aerofoil maximising surrogate–solver lift disagreement. The worst case (ΔC_L = 0.67) occurs entirely outside the surrogate's calibrated trust domain, whereas the sole wholly trusted adversarial candidate has a mean disagreement of 0.043; the in-screen adversarial sample is too small for generalisation. We go further and make the design consequence explicit (Section 4.4): a surrogate-optimised aerofoil that sits outside the trust domain is verified by XFOIL to be 87% worse than a NACA 2412 reference, while a design constrained to the trust domain is verified to be 18.7% better at nominal conditions and 8.8% better in expectation under manufacturing uncertainty. Usefulness is thus demonstrated, and one observed high-error example is flagged by the trust screen; a universal worst-case bound is not established.
+Instead we generated new, source-hashed XFOIL observations **on the exact CST reconstructions supplied to the predictor**: 106,931 eligible states from 1,224 observed geometries, against 141,928 requested states. The other 34,997 are missing or unusable, not filled. Five fixed-architecture neural members were genuinely retrained on development geometry clusters, using development-only out-of-bag stopping. Protected historical-identity test performance has R² 0.99778 for lift, 0.98176 for log drag and 0.98817 for moment, but these scores are conditional on solver-observed states and previously inspected geometry identities.
 
-> *"the work is characterized by many repetitions and redundancies, which make it difficult to read."*
+A separate 200-geometry numerical confirmation was selected and sealed before training, then its numerical predictions and risk scores frozen before new XFOIL outcomes. Of 22,600 requested states, 17,968 were eligible solver observations. This is a meaningful prospective *numerical* assessment, **not independent CFD** or an unseen-airfoil-family experiment. Independent converged RANS at equal achieved lift, with mesh/domain/transition sensitivity and moment/constraints accounted for, remains necessary.
 
-The manuscript has been rewritten from scratch around three clearly delineated contributions with no repeated derivations; redundant restatements of the loss and preprocessing have been removed.
+## Earlier Reviewer 6 — Figures, stall/high incidence, and numerical robustness
 
-## Reviewer #3
+The updated paper contains seven numbered figures and one supplement, seven tables, and no claims of prediction quality in unlabelled/non-converged regimes. Failure at XFOIL angles, post-stall duplicate lift roots, nonfinite/negative drag and untrusted candidate scenarios remains explicit. Strict selected-case partial polars are not completed by interpolation. The archived finite adversarial search is retained as historical evidence rather than presented as the current worst-case certificate.
 
-> *"clarify… what the main contribution of this work is and what has not been explored… compared with existing surrogate modelling approaches."*
+All 14 pages of the *Chromium-derived Word-content preview* and the separate one-page referee report preview were visually inspected; original layout defects were corrected and all rendered pages preserved. **Native Microsoft Word pagination parity has not been established** and must be reviewed by a coauthor on their installation before journal submission.
 
-The Introduction presents three linked contributions: a multi-output surrogate with measured accepted-set error/coverage, a prescribed geometric-uncertainty optimisation, and a selected direct-XFOIL numerical check plus finite adversarial probing. No CFD or experimental results are yet claimed. The specific contribution is an empirical acceptance screen applied to a selected numerical design comparison. Related robust optimisation and design-shift literature is explicitly discussed; calibration or robust optimisation alone is not claimed as novel.
+## Earlier Reviewer 7 — Clarity and manuscript independence
 
-> *"The training data are generated using XFoil rather than experimental data or high-fidelity CFD… the model essentially learns to reproduce XFoil results."*
+The previous V1 draft remains separate and is not concatenated with the new paper. The current study uses a methods-first engineering account of where geometry provenance, support screening, numerical solver missingness, candidate-specific prescribed uncertainty and finite-search validation matter. Historical findings, revised results, adverse nominal comparisons, technical acceptance and independent physical validation are differentiated rather than merged.
 
-This is acknowledged explicitly (Section 2, Section 5) and structurally addressed: the framework is prepared for a higher-fidelity extension, but presently has only XFOIL-class numerical evidence, using local XFOIL as a numerical-consistency cross-check rather than only as a label source, and is designed to accept selective CFD/wind-tunnel augmentation. The trust calibration and verification apparatus are label-source-agnostic.
+## Earlier Reviewer 8 — Novelty, baselines, model choice and trust utility
 
-> *"XFoil is known to be less reliable in separated-flow regimes… discuss how this limitation may affect predicted stall characteristics."*
+The new fixed-architecture surrogate is compared with ridge, histogram gradient boosting and a weighted mean under the same admitted development/test data. Its favourable numerical accuracy is not described as a controlled superiority claim across unrelated aerodynamic domains.
 
-Section 4.5 records 18 fully converged sweeps among 41 evaluated adversarial candidates and explicitly reports failed XFOIL cases. The largest *observed* surrogate disagreement is outside the empirical trust screen, but solver failures cannot be treated as measured aerodynamic discrepancies, and the in-screen adversarial sample is too small for a general guarantee.
+Existing CST representations, NSGA-II, CVaR, deep ensembles, empirical/conformal prediction and confidence-guided airfoil tools—including NeuralFoil—are cited; no first-ever integration claim is made. Within the corrected calibration-only near-duplicate-geometry separated study, high-error AUROC rises from 0.7532 (support-only) to 0.8893 (combined). On the separately sealed and numerically observed confirmation, support-only AUROC is 0.5346, combined 0.8019, while **disagreement alone performs better still (0.8210)**. These are ranking diagnostics, not a new deployment threshold or a distribution-free adaptive-design guarantee. The manufacturing field is a prescribed sensitivity test, not measured production variation.
 
-> *"edge padding… may introduce artificial patterns."*
+## Remaining response and author decisions
 
-Eliminated. The surrogate is now *point-conditioned*: it predicts a coefficient at a single queried angle, so only genuinely measured states are ever used as supervision. Fixed-grid padding and edge extrapolation—the source of the artefacts the reviewer identified—are no longer present.
+The software, complete finite search, fixed numerical confirmation and complete raw-case accounting now have executable receipts, current source/artefact hashes and a separate major-revision referee report. They do **not** resolve the demands for independent RANS/experimental comparison, unconditional manufacturing-risk inference, absent solver labels, comprehensive unseen-family transfer or proof of global optimality. Coauthors must verify authorship/affiliations, funding and conflict declarations, AI-use statements, journal policy and whether this controlled numerical study is a suitable contribution.
 
-> *"All data correspond to a single Reynolds number and Mach number… applicability is limited."*
-
-The single condition is now stated explicitly as a deliberate scoping choice (Section 2) that isolates the robustness and trust contributions, with a clear extension path (Section 5): the point-conditioned architecture and data-driven trust model extend to a Re/Mach-parameterised envelope by adding a conditioning input and labelled data, leaving the methodology unchanged.
-
-> *"All figures should have better quality and clarity."*
-
-All figures are regenerated at 150 dpi with 14-point base fonts, explicit subplot labels and descriptive captions (Figures 1–6).
-
-## Reviewer #6
-
-> *"Add (a), (b),… for the subplots… and provide brief descriptions."*
-
-Done for all multi-panel figures (Figures 1 and 5), with per-panel descriptions in the captions and text.
-
-> *"Address why the predicted and reference curves are not correlated well for the high angles."*
-
-The revised framework answers this quantitatively rather than qualitatively: high-angle discrepancy is now shown to be a trust-domain phenomenon (Section 4.1, Table 1; Section 4.5). Within the calibrated trust domain the lift R² is 0.994; errors are higher on rejected states and high-incidence solver difficulties remain and coincides with XFOIL's own convergence difficulties.
-
-> *"Use larger fonts in all the figures."*
-
-Done (14-point base, 15-point titles).
-
-## Reviewer #7
-
-> *"The paper is well written."*
-
-We thank the reviewer.
-
-## Reviewer #8
-
-> *"insufficient novelty… What else is gained apart from computational time?"*
-
-Beyond speed, the paper examines empirical trust screening, prescribed bounded geometry perturbations and a three-design XFOIL case comparison. These offer a practical way to flag extrapolation risk and assess selected design decisions. The CLI labels predicted outputs with trust status, but neither arbitrary geometries nor physical manufacturing outcomes are universally guaranteed.
-
-> *"the developed model… is doubtful… which model?"*
-
-We now justify the model choice quantitatively rather than assume it (Section 4.1, Table 2): under the identical grouped protocol the multilayer perceptron is compared against histogram gradient boosting, ridge regression and a Dummy baseline. We deliberately avoid over-claiming—gradient boosting is marginally stronger on the drag subset—and instead motivate the perceptron by its competitive accuracy, smooth differentiable multi-output map, and the ensemble-disagreement signal that powers the trust calibration. Consistent with the co-author guidance, we did not undertake a further large architecture search.
-
-> *"The ranges of applicability/operating conditions (Re and M) should be clearly stated… limitations should be clearly listed."*
-
-Operating conditions are stated in the Abstract, Section 2 and throughout (Re = 1×10⁶, M = 0, N_crit = 9). Section 5 lists three explicit limitations: the prescribed (not measured) manufacturing model, panel-method labels, and the moderate seed reproducibility of the robust Pareto front.
-
-> *"What happens with the drag and pitch moment curves, why weren't they also considered?"*
-
-Both are now first-class predicted quantities (Table 1: C_D R² = 0.922 in log-space, C_M R² = 0.918) and enter the optimisation as objectives and constraints.
-
-> *"Physics-aware validation score is never explained… validity of the starting dataset is doubtful… which three neural architectures…"*
-
-The previous ad-hoc "Physics Score" and multi-architecture search have been removed in line with the guidance to focus on application rather than architecture. Model selection is now a transparent, grouped, leakage-controlled protocol with a calibrated trust criterion. Dataset construction uses grouped cluster splits with explicit provenance and no padded/extrapolated targets.
-
-> *"Is the developed model truly satisfactory? … Is this truly scientifically significant?"*
-
-The revised contribution is not a lift-curve fit but a robust-design framework with a measured reliability envelope, re-evaluated using a separate local XFOIL run from the same solver family and stress-tested adversarially. Its significance lies in making surrogate-driven aerodynamic design *defensible*: it states, and empirically validates, the boundary of surrogate trust.
-
-> *"Newer, more relevant references should be cited; discussion should be much improved; passive form should be employed more."*
-
-The literature framing (Section 2) and Discussion (Section 5) are expanded, and the register has been shifted toward an impersonal, methods-first style.
-
----
-
-We believe the revised manuscript resolves the substantive concerns—demonstrated usefulness, drag/moment coverage, honest treatment of solver limitations, and clearly stated scope—while introducing a reproducible integration of empirical screening and selected design checks, pending CFD and larger uncertainty verification.
-
-
-## Additional verification and trust-component audit (14 October 2026)
-
-The strict re-evaluation now contains two independently seeded 128-scenario XFOIL campaigns at 0.5%-chord prescribed geometric deviation. Their full-sweep and target-lift-feasible matched-case counts are 92 and 96, and the selected within-screen candidate has paired mean weighted-drag reductions of 15.4% and 15.8%, respectively, among those successful pairs. The corresponding empirical upper-tail summaries also favour the candidate on the completed subset, but nonrandom solver failures prevent an unconditional manufacturing-risk or population-CVaR claim. At the 1%-chord stress level the earlier small-sample tail remains unfavourable, and no CFD validation is yet available.
-
-A component audit finds that all 9,050 historical rejected held-out states failed the calibrated support-distance cutoff; ensemble-disagreement thresholds did not independently change acceptance. We therefore attribute the observed error-versus-coverage effect to the **frozen support-dominated screening rule**, not to a separately proven ensemble-disagreement gate. A new calibration-scaled disagreement/support score is evaluated descriptively, without modifying the frozen model or choosing a threshold using the test data. A stronger operational trust model would require prospective validation on a fresh confirmation cohort.
-
-## Coauthor and CFD handoff
-
-These responses describe the evidence available before an independent CFD/RANS addition. The 1%-chord campaign contains 10 matched pairs; two separate 0.5%-chord campaigns contain 92 and 96 matched completed cases. Solver failures still prevent unconditional population-tail conclusions. A new venue's reviewer response must be adapted to its actual review history, and the journal's resubmission policy must be checked by the authors. Selected CFD and a larger independent solver campaign should be incorporated before asserting physically verified manufacturing robustness.
+**Publication recommendation: major scientific revisions before submission.** The earlier reviews are historical; this is an author working response, not evidence that a reviewer or editor has accepted those answers.

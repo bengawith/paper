@@ -67,3 +67,18 @@ reports/robust_v2/external_academic_review_20261014/RENDERED/
 reports/robust_v2/external_academic_review_20261014/BEFORE_REVIEW/
 reports/robust_v2/external_academic_review_20261014/CONTINUATION_20261020/FRAME_CHECK/
 reports/robust_v2/external_academic_review_20261014/CONTINUATION_20261020/RUNTIME_MEMORY_REPAIR/before/
+
+# Complete raw local-XFOIL evidence ZIP is delivered via verified OneDrive,
+# not embedded as a multi-hundred-megabyte Git blob.
+reports/robust_v2/external_academic_review_20261014/RAW_XFOIL_EVIDENCE.zip
+reports/robust_v2/external_academic_review_20261014/RAW_XFOIL_EVIDENCE.inprogress.zip
+reports/robust_v2/external_academic_review_20261014/CONTINUATION_20261020/word_browser_canary.pdf
+reports/robust_v2/external_academic_review_20261014/CONTINUATION_20261020/word_render_canary.docx
+reports/robust_v2/external_academic_review_20261014/CONTINUATION_20261020/word_render_canary.pdf
+
+# Intermediate visual-preview experiments preserved locally, while only the
+# accepted RENDERED_V3/ and its exact source hash ledger are distributed.
+reports/robust_v2/external_academic_review_20261014/RENDERED_FINAL/
+reports/robust_v2/external_academic_review_20261014/CONTINUATION_20261020/VISUAL_LAYOUT_R5/
+reports/robust_v2/external_academic_review_20261014/CONTINUATION_20261020/VISUAL_LAYOUT_R6/
+reports/robust_v2/external_academic_review_20261014/EXPLORATORY_NOMINAL_CONVERGENCE/*/iter_*/

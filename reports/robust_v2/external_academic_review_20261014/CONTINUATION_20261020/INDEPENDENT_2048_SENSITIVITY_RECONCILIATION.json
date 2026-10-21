@@ -1,0 +1,228 @@
+{
+  "schema": "independent-prescribed-2048-sensitivity-verification-v1",
+  "source_sha256": "6203883c4a0c723e0a0d757314337650be72f12ba556c9947a5b0df0c2a609b5",
+  "selected_sha256": "08446d40bb2b5712bd8658899896fec438bfd1ea0bf2e0376e53f85c8a7637ac",
+  "scenarios": 2048,
+  "amplitudes": [
+    0.001,
+    0.0025,
+    0.005,
+    0.01
+  ],
+  "fixed_design_count": 5,
+  "analysis": [
+    {
+      "amplitude_fraction_chord": 0.001,
+      "reference_mean": 0.007348581620881088,
+      "reference_cvar95": 0.007401894782614101,
+      "reference_invalid_refits": 0,
+      "reference_trust_exits": 0,
+      "comparisons": [
+        {
+          "design": "nominal_control",
+          "reference_minus_candidate_mean": 0.0010820083980641248,
+          "relative_mean_reduction": 0.14724044092938754,
+          "reference_minus_candidate_tail": -0.004259479147401116,
+          "relative_tail_reduction": -0.5754579432020527,
+          "candidate_nominal_feasible": true,
+          "candidate_invalid_refits": 0,
+          "candidate_trust_exits": 180,
+          "penalty_objective_not_pure_physical_drag": true
+        },
+        {
+          "design": "risk_knee",
+          "reference_minus_candidate_mean": 0.0009666737829950901,
+          "relative_mean_reduction": 0.13154562783221654,
+          "reference_minus_candidate_tail": 0.0009471112414174386,
+          "relative_tail_reduction": 0.1279552424390111,
+          "candidate_nominal_feasible": true,
+          "candidate_invalid_refits": 0,
+          "candidate_trust_exits": 0,
+          "penalty_objective_not_pure_physical_drag": true
+        },
+        {
+          "design": "risk_mean",
+          "reference_minus_candidate_mean": 0.0008445794789016404,
+          "relative_mean_reduction": 0.11493095164130138,
+          "reference_minus_candidate_tail": 0.000799934199734331,
+          "relative_tail_reduction": 0.10807154427718318,
+          "candidate_nominal_feasible": true,
+          "candidate_invalid_refits": 0,
+          "candidate_trust_exits": 0,
+          "penalty_objective_not_pure_physical_drag": true
+        },
+        {
+          "design": "risk_tail",
+          "reference_minus_candidate_mean": -0.002773560895242907,
+          "relative_mean_reduction": -0.37742805868302515,
+          "reference_minus_candidate_tail": -0.005245184568782906,
+          "relative_tail_reduction": -0.7086272802881538,
+          "candidate_nominal_feasible": true,
+          "candidate_invalid_refits": 0,
+          "candidate_trust_exits": 1236,
+          "penalty_objective_not_pure_physical_drag": true
+        }
+      ]
+    },
+    {
+      "amplitude_fraction_chord": 0.0025,
+      "reference_mean": 0.007379165028594767,
+      "reference_cvar95": 0.007639191676293124,
+      "reference_invalid_refits": 0,
+      "reference_trust_exits": 2,
+      "comparisons": [
+        {
+          "design": "nominal_control",
+          "reference_minus_candidate_mean": -0.0006291955974617649,
+          "relative_mean_reduction": -0.0852665030560489,
+          "reference_minus_candidate_tail": -0.004367958207054037,
+          "relative_tail_reduction": -0.5717827739038438,
+          "candidate_nominal_feasible": true,
+          "candidate_invalid_refits": 0,
+          "candidate_trust_exits": 733,
+          "penalty_objective_not_pure_physical_drag": true
+        },
+        {
+          "design": "risk_knee",
+          "reference_minus_candidate_mean": 0.0009671791205256332,
+          "relative_mean_reduction": 0.13106891047669325,
+          "reference_minus_candidate_tail": 0.0008787161583373613,
+          "relative_tail_reduction": 0.11502737404329061,
+          "candidate_nominal_feasible": true,
+          "candidate_invalid_refits": 0,
+          "candidate_trust_exits": 2,
+          "penalty_objective_not_pure_physical_drag": true
+        },
+        {
+          "design": "risk_mean",
+          "reference_minus_candidate_mean": 0.0008527586257492054,
+          "relative_mean_reduction": 0.1155630240609483,
+          "reference_minus_candidate_tail": 0.0008675379942840369,
+          "relative_tail_reduction": 0.1135641087493965,
+          "candidate_nominal_feasible": true,
+          "candidate_invalid_refits": 0,
+          "candidate_trust_exits": 0,
+          "penalty_objective_not_pure_physical_drag": true
+        },
+        {
+          "design": "risk_tail",
+          "reference_minus_candidate_mean": -0.0038671979872283765,
+          "relative_mean_reduction": -0.5240698605116867,
+          "reference_minus_candidate_tail": -0.0052494553930700905,
+          "relative_tail_reduction": -0.6871741953223721,
+          "candidate_nominal_feasible": true,
+          "candidate_invalid_refits": 0,
+          "candidate_trust_exits": 1538,
+          "penalty_objective_not_pure_physical_drag": true
+        }
+      ]
+    },
+    {
+      "amplitude_fraction_chord": 0.005,
+      "reference_mean": 0.008540461319585012,
+      "reference_cvar95": 0.01577123152684313,
+      "reference_invalid_refits": 0,
+      "reference_trust_exits": 272,
+      "comparisons": [
+        {
+          "design": "nominal_control",
+          "reference_minus_candidate_mean": -0.0014289543145023353,
+          "relative_mean_reduction": -0.16731582300190892,
+          "reference_minus_candidate_tail": 0.0032941988301497076,
+          "relative_tail_reduction": 0.20887391225871477,
+          "candidate_nominal_feasible": true,
+          "candidate_invalid_refits": 0,
+          "candidate_trust_exits": 1269,
+          "penalty_objective_not_pure_physical_drag": true
+        },
+        {
+          "design": "risk_knee",
+          "reference_minus_candidate_mean": 0.0015943098826647073,
+          "relative_mean_reduction": 0.18667725583027125,
+          "reference_minus_candidate_tail": 0.0013386227754169106,
+          "relative_tail_reduction": 0.08487750453339886,
+          "candidate_nominal_feasible": true,
+          "candidate_invalid_refits": 0,
+          "candidate_trust_exits": 119,
+          "penalty_objective_not_pure_physical_drag": true
+        },
+        {
+          "design": "risk_mean",
+          "reference_minus_candidate_mean": 0.0018218939713964969,
+          "relative_mean_reduction": 0.21332500707175198,
+          "reference_minus_candidate_tail": 0.006609874354717214,
+          "relative_tail_reduction": 0.4191095884596584,
+          "candidate_nominal_feasible": true,
+          "candidate_invalid_refits": 0,
+          "candidate_trust_exits": 28,
+          "penalty_objective_not_pure_physical_drag": true
+        },
+        {
+          "design": "risk_tail",
+          "reference_minus_candidate_mean": -0.003773621281399582,
+          "relative_mean_reduction": -0.4418521599935008,
+          "reference_minus_candidate_tail": 0.0026953547533407757,
+          "relative_tail_reduction": 0.1709032518325026,
+          "candidate_nominal_feasible": true,
+          "candidate_invalid_refits": 0,
+          "candidate_trust_exits": 1817,
+          "penalty_objective_not_pure_physical_drag": true
+        }
+      ]
+    },
+    {
+      "amplitude_fraction_chord": 0.01,
+      "reference_mean": 0.014520226037028496,
+      "reference_cvar95": 0.018019464216889523,
+      "reference_invalid_refits": 0,
+      "reference_trust_exits": 1362,
+      "comparisons": [
+        {
+          "design": "nominal_control",
+          "reference_minus_candidate_mean": 0.0019135195256584983,
+          "relative_mean_reduction": 0.13178303979419953,
+          "reference_minus_candidate_tail": 0.004610698663346515,
+          "relative_tail_reduction": 0.2558732383965633,
+          "candidate_nominal_feasible": true,
+          "candidate_invalid_refits": 0,
+          "candidate_trust_exits": 1823,
+          "penalty_objective_not_pure_physical_drag": true
+        },
+        {
+          "design": "risk_knee",
+          "reference_minus_candidate_mean": 0.0036531420451341307,
+          "relative_mean_reduction": 0.25158988818893974,
+          "reference_minus_candidate_tail": 0.002574542243728885,
+          "relative_tail_reduction": 0.14287562675230842,
+          "candidate_nominal_feasible": true,
+          "candidate_invalid_refits": 0,
+          "candidate_trust_exits": 982,
+          "penalty_objective_not_pure_physical_drag": true
+        },
+        {
+          "design": "risk_mean",
+          "reference_minus_candidate_mean": 0.0041511113965756515,
+          "relative_mean_reduction": 0.28588476418960485,
+          "reference_minus_candidate_tail": 0.002481807212052772,
+          "relative_tail_reduction": 0.13772924556361618,
+          "candidate_nominal_feasible": true,
+          "candidate_invalid_refits": 0,
+          "candidate_trust_exits": 840,
+          "penalty_objective_not_pure_physical_drag": true
+        },
+        {
+          "design": "risk_tail",
+          "reference_minus_candidate_mean": 0.000934312567596407,
+          "relative_mean_reduction": 0.06434559387806957,
+          "reference_minus_candidate_tail": 0.004156122286176444,
+          "relative_tail_reduction": 0.23064627428161477,
+          "candidate_nominal_feasible": true,
+          "candidate_invalid_refits": 0,
+          "candidate_trust_exits": 1971,
+          "penalty_objective_not_pure_physical_drag": true
+        }
+      ]
+    }
+  ],
+  "assessment": "Prescribed-surface, penalty-inclusive fixed-design scenario means and empirical tails. Numerical improvements do not establish measured manufacturing risks or independent aerodynamic CFD."
+}

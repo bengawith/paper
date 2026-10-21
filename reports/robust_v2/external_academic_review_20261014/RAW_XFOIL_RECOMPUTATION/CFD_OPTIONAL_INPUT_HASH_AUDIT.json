@@ -1,0 +1,98 @@
+[
+  {
+    "path": "reports/robust_v2/submission_review_20261014/CFD_HANDOFF/OPTIONAL_0P5_PERCENT/median_completed/reference_naca2412/geometry.dat",
+    "expected_sha256": "b371a1655221d87bc46b6e7ebb2fcb90eedf21edca08813c98cbe12c900e3f76",
+    "actual_sha256": "b371a1655221d87bc46b6e7ebb2fcb90eedf21edca08813c98cbe12c900e3f76",
+    "matches": true
+  },
+  {
+    "path": "reports/robust_v2/submission_review_20261014/CFD_HANDOFF/OPTIONAL_0P5_PERCENT/median_completed/reference_naca2412/combined_points.csv",
+    "expected_sha256": "f5cbfb55f253881e8c566c1571d630842c21e8704f2d1988fef2aeac46b20ad4",
+    "actual_sha256": "f5cbfb55f253881e8c566c1571d630842c21e8704f2d1988fef2aeac46b20ad4",
+    "matches": true
+  },
+  {
+    "path": "reports/robust_v2/submission_review_20261014/CFD_HANDOFF/OPTIONAL_0P5_PERCENT/median_completed/reference_naca2412/run_status.json",
+    "expected_sha256": "adc3343b8778a7dc322232575bf1963cf2db8d6ecba120a88a926f68313dc3e6",
+    "actual_sha256": "adc3343b8778a7dc322232575bf1963cf2db8d6ecba120a88a926f68313dc3e6",
+    "matches": true
+  },
+  {
+    "path": "reports/robust_v2/submission_review_20261014/CFD_HANDOFF/OPTIONAL_0P5_PERCENT/median_completed/reference_naca2412/command.txt",
+    "expected_sha256": "a204bfd1cf986b11809d9d28acd28587d689e39f8f4c4fe7cb11cedd90da4815",
+    "actual_sha256": "a204bfd1cf986b11809d9d28acd28587d689e39f8f4c4fe7cb11cedd90da4815",
+    "matches": true
+  },
+  {
+    "path": "reports/robust_v2/submission_review_20261014/CFD_HANDOFF/OPTIONAL_0P5_PERCENT/median_completed/within_trust_knee/geometry.dat",
+    "expected_sha256": "5e406d5da1f04d0a63df6c4fa43bfbcd9aa3b7991f09ae4ec928f9f5d4819257",
+    "actual_sha256": "5e406d5da1f04d0a63df6c4fa43bfbcd9aa3b7991f09ae4ec928f9f5d4819257",
+    "matches": true
+  },
+  {
+    "path": "reports/robust_v2/submission_review_20261014/CFD_HANDOFF/OPTIONAL_0P5_PERCENT/median_completed/within_trust_knee/combined_points.csv",
+    "expected_sha256": "2e5386a073d55c314cc3b0e8a0c5c6d66b08c741ef4a3475af53028c5a1a4ee8",
+    "actual_sha256": "2e5386a073d55c314cc3b0e8a0c5c6d66b08c741ef4a3475af53028c5a1a4ee8",
+    "matches": true
+  },
+  {
+    "path": "reports/robust_v2/submission_review_20261014/CFD_HANDOFF/OPTIONAL_0P5_PERCENT/median_completed/within_trust_knee/run_status.json",
+    "expected_sha256": "adc3343b8778a7dc322232575bf1963cf2db8d6ecba120a88a926f68313dc3e6",
+    "actual_sha256": "adc3343b8778a7dc322232575bf1963cf2db8d6ecba120a88a926f68313dc3e6",
+    "matches": true
+  },
+  {
+    "path": "reports/robust_v2/submission_review_20261014/CFD_HANDOFF/OPTIONAL_0P5_PERCENT/median_completed/within_trust_knee/command.txt",
+    "expected_sha256": "a204bfd1cf986b11809d9d28acd28587d689e39f8f4c4fe7cb11cedd90da4815",
+    "actual_sha256": "a204bfd1cf986b11809d9d28acd28587d689e39f8f4c4fe7cb11cedd90da4815",
+    "matches": true
+  },
+  {
+    "path": "reports/robust_v2/submission_review_20261014/CFD_HANDOFF/OPTIONAL_0P5_PERCENT/largest_completed_drag/reference_naca2412/geometry.dat",
+    "expected_sha256": "0e975d80ab72924a6025a9453d8b778d2edd42e3e5733a11d6dba1aa8bf4a73d",
+    "actual_sha256": "0e975d80ab72924a6025a9453d8b778d2edd42e3e5733a11d6dba1aa8bf4a73d",
+    "matches": true
+  },
+  {
+    "path": "reports/robust_v2/submission_review_20261014/CFD_HANDOFF/OPTIONAL_0P5_PERCENT/largest_completed_drag/reference_naca2412/combined_points.csv",
+    "expected_sha256": "13daf7270897f3e6adc205f66a0cddeb67d254655d40c2c7d5f8ca2325a5a5b1",
+    "actual_sha256": "13daf7270897f3e6adc205f66a0cddeb67d254655d40c2c7d5f8ca2325a5a5b1",
+    "matches": true
+  },
+  {
+    "path": "reports/robust_v2/submission_review_20261014/CFD_HANDOFF/OPTIONAL_0P5_PERCENT/largest_completed_drag/reference_naca2412/run_status.json",
+    "expected_sha256": "adc3343b8778a7dc322232575bf1963cf2db8d6ecba120a88a926f68313dc3e6",
+    "actual_sha256": "adc3343b8778a7dc322232575bf1963cf2db8d6ecba120a88a926f68313dc3e6",
+    "matches": true
+  },
+  {
+    "path": "reports/robust_v2/submission_review_20261014/CFD_HANDOFF/OPTIONAL_0P5_PERCENT/largest_completed_drag/reference_naca2412/command.txt",
+    "expected_sha256": "a204bfd1cf986b11809d9d28acd28587d689e39f8f4c4fe7cb11cedd90da4815",
+    "actual_sha256": "a204bfd1cf986b11809d9d28acd28587d689e39f8f4c4fe7cb11cedd90da4815",
+    "matches": true
+  },
+  {
+    "path": "reports/robust_v2/submission_review_20261014/CFD_HANDOFF/OPTIONAL_0P5_PERCENT/largest_completed_drag/within_trust_knee/geometry.dat",
+    "expected_sha256": "caf336021758b79fba76427fe8876790d165b45224623d1948702063649c3673",
+    "actual_sha256": "caf336021758b79fba76427fe8876790d165b45224623d1948702063649c3673",
+    "matches": true
+  },
+  {
+    "path": "reports/robust_v2/submission_review_20261014/CFD_HANDOFF/OPTIONAL_0P5_PERCENT/largest_completed_drag/within_trust_knee/combined_points.csv",
+    "expected_sha256": "4cdc1a3d15ddbf015b6fbd82381c04f00f811174f3509085148f456346e57be1",
+    "actual_sha256": "4cdc1a3d15ddbf015b6fbd82381c04f00f811174f3509085148f456346e57be1",
+    "matches": true
+  },
+  {
+    "path": "reports/robust_v2/submission_review_20261014/CFD_HANDOFF/OPTIONAL_0P5_PERCENT/largest_completed_drag/within_trust_knee/run_status.json",
+    "expected_sha256": "adc3343b8778a7dc322232575bf1963cf2db8d6ecba120a88a926f68313dc3e6",
+    "actual_sha256": "adc3343b8778a7dc322232575bf1963cf2db8d6ecba120a88a926f68313dc3e6",
+    "matches": true
+  },
+  {
+    "path": "reports/robust_v2/submission_review_20261014/CFD_HANDOFF/OPTIONAL_0P5_PERCENT/largest_completed_drag/within_trust_knee/command.txt",
+    "expected_sha256": "a204bfd1cf986b11809d9d28acd28587d689e39f8f4c4fe7cb11cedd90da4815",
+    "actual_sha256": "a204bfd1cf986b11809d9d28acd28587d689e39f8f4c4fe7cb11cedd90da4815",
+    "matches": true
+  }
+]

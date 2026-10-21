@@ -1,0 +1,8 @@
+{
+  "status": "STOPPED_FOR_REVIEW",
+  "utc": "2026-10-21T12:25:30.636072+00:00",
+  "elapsed_seconds": 0.46799999999348074,
+  "exit": 1,
+  "log": "reports/robust_v2/external_academic_review_20261014/CONTINUATION_20261020/visual_preview_execution.log",
+  "manual_all_pages_accepted": false
+}

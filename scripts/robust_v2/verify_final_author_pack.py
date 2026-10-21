@@ -133,7 +133,7 @@ def verify():
     ):
         raise ValueError("Selected XFOIL failed-case accounting incomplete")
     controller = json.loads(
-        require(BASE / "CONTINUATION_20261020/CONTROLLED_PIPELINE_STATUS_R3.json").read_text(
+        require(BASE / "CONTINUATION_20261020/CONTROLLED_PIPELINE_STATUS_R4.json").read_text(
             encoding="utf-8"
         )
     )

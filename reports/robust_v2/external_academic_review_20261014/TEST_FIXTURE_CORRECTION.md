@@ -1,0 +1,3 @@
+# Coordinate-order fixture correction
+
+The first unordered-input fixture swapped entries 3 and 14, which both had x=0.05. That changed surface y membership but not coordinate order, so an ordering-only guard could not be required to reject it. Corrected the fixture to indices 3 and 17 (different x positions); the assertion and fail-closed requirement are unchanged. The separate Selig/Lednicer equivalence and endpoint tests already demonstrate the real source defect. Also repaired JSON serialization of absent error-column values as null rather than nonstandard NaN; the full corpus CSV and numerical outputs had already been produced. No frozen scientific evidence changed.

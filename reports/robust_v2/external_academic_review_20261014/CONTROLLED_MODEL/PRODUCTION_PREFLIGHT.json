@@ -1,0 +1,17 @@
+{
+  "status": "REAL_MODEL_PREFLIGHT_PASS_NOT_PRODUCTION",
+  "source_context_hash": "987d85688fb85cabba95bb58813cc10f47e3f319a8f9f2fa911ed8ac2a3cfa69",
+  "directory": "reports/robust_v2/external_academic_review_20261014/CONTROLLED_MODEL/PRODUCTION_PREFLIGHT/987d85688fb8",
+  "profile": {
+    "population": 4,
+    "generations": 2,
+    "uncertainty_samples": 4,
+    "independent_seeds": 1
+  },
+  "generation_history_count": 2,
+  "checkpoint_hash_verified": true,
+  "verified_model_rebound": true,
+  "seed_feasible_counts": [
+    1
+  ]
+}
