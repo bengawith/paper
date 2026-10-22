@@ -1,0 +1,1006 @@
+{
+  "records": [
+    {
+      "airfoil_id": "a18sm",
+      "cluster_id": 1,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "ag03",
+      "cluster_id": 3,
+      "split": "calibration"
+    },
+    {
+      "airfoil_id": "ah79k135",
+      "cluster_id": 41,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "ah81131",
+      "cluster_id": 46,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "ah88k130",
+      "cluster_id": 54,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "ah94w301",
+      "cluster_id": 69,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "arad10",
+      "cluster_id": 77,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "atr72sm",
+      "cluster_id": 84,
+      "split": "calibration"
+    },
+    {
+      "airfoil_id": "c141d",
+      "cluster_id": 112,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "ch10sm",
+      "cluster_id": 122,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "clarkysm",
+      "cluster_id": 131,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "du861372",
+      "cluster_id": 168,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "e193",
+      "cluster_id": 189,
+      "split": "locked_test"
+    },
+    {
+      "airfoil_id": "e209",
+      "cluster_id": 196,
+      "split": "locked_test"
+    },
+    {
+      "airfoil_id": "e226",
+      "cluster_id": 206,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "e266",
+      "cluster_id": 210,
+      "split": "locked_test"
+    },
+    {
+      "airfoil_id": "e326",
+      "cluster_id": 213,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "e329",
+      "cluster_id": 216,
+      "split": "calibration"
+    },
+    {
+      "airfoil_id": "e333",
+      "cluster_id": 220,
+      "split": "locked_test"
+    },
+    {
+      "airfoil_id": "e334",
+      "cluster_id": 221,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "e337",
+      "cluster_id": 224,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "e338",
+      "cluster_id": 225,
+      "split": "locked_test"
+    },
+    {
+      "airfoil_id": "e339",
+      "cluster_id": 226,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "e344",
+      "cluster_id": 231,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "e361",
+      "cluster_id": 233,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "e376",
+      "cluster_id": 235,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "e479",
+      "cluster_id": 267,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "e520",
+      "cluster_id": 271,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "e546",
+      "cluster_id": 279,
+      "split": "calibration"
+    },
+    {
+      "airfoil_id": "e556",
+      "cluster_id": 289,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "e58",
+      "cluster_id": 296,
+      "split": "locked_test"
+    },
+    {
+      "airfoil_id": "e655",
+      "cluster_id": 321,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "e66",
+      "cluster_id": 324,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "e668",
+      "cluster_id": 327,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "e694",
+      "cluster_id": 332,
+      "split": "locked_test"
+    },
+    {
+      "airfoil_id": "e793",
+      "cluster_id": 336,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "e853",
+      "cluster_id": 345,
+      "split": "calibration"
+    },
+    {
+      "airfoil_id": "ea61012",
+      "cluster_id": 358,
+      "split": "locked_test"
+    },
+    {
+      "airfoil_id": "eh1070",
+      "cluster_id": 363,
+      "split": "calibration"
+    },
+    {
+      "airfoil_id": "eh2510",
+      "cluster_id": 369,
+      "split": "locked_test"
+    },
+    {
+      "airfoil_id": "fx05188",
+      "cluster_id": 384,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "fx05191",
+      "cluster_id": 385,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "fx60100sm",
+      "cluster_id": 394,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "fx63110",
+      "cluster_id": 406,
+      "split": "locked_test"
+    },
+    {
+      "airfoil_id": "fx63137",
+      "cluster_id": 408,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "fx63143",
+      "cluster_id": 410,
+      "split": "calibration"
+    },
+    {
+      "airfoil_id": "fx66182",
+      "cluster_id": 415,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "fx66s161",
+      "cluster_id": 420,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "fx66s196",
+      "cluster_id": 422,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "fx69h083",
+      "cluster_id": 427,
+      "split": "locked_test"
+    },
+    {
+      "airfoil_id": "fx71089a",
+      "cluster_id": 430,
+      "split": "calibration"
+    },
+    {
+      "airfoil_id": "fx73170",
+      "cluster_id": 437,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "fx73cl1152",
+      "cluster_id": 439,
+      "split": "calibration"
+    },
+    {
+      "airfoil_id": "fx74cl6140",
+      "cluster_id": 448,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "fx77w270s",
+      "cluster_id": 463,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "fx78k140",
+      "cluster_id": 465,
+      "split": "calibration"
+    },
+    {
+      "airfoil_id": "fx79l100",
+      "cluster_id": 471,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "fx79w660a",
+      "cluster_id": 474,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "giiib",
+      "cluster_id": 493,
+      "split": "locked_test"
+    },
+    {
+      "airfoil_id": "giiif",
+      "cluster_id": 497,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "giiil",
+      "cluster_id": 503,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "giiin",
+      "cluster_id": 505,
+      "split": "calibration"
+    },
+    {
+      "airfoil_id": "goe122",
+      "cluster_id": 526,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "goe134",
+      "cluster_id": 531,
+      "split": "calibration"
+    },
+    {
+      "airfoil_id": "goe137",
+      "cluster_id": 532,
+      "split": "calibration"
+    },
+    {
+      "airfoil_id": "goe13k",
+      "cluster_id": 533,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "goe14",
+      "cluster_id": 534,
+      "split": "calibration"
+    },
+    {
+      "airfoil_id": "goe144",
+      "cluster_id": 538,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "goe15k",
+      "cluster_id": 543,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "goe16k",
+      "cluster_id": 547,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "goe173",
+      "cluster_id": 548,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "goe178",
+      "cluster_id": 552,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "goe190",
+      "cluster_id": 558,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "goe198",
+      "cluster_id": 560,
+      "split": "locked_test"
+    },
+    {
+      "airfoil_id": "goe239",
+      "cluster_id": 576,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "goe276",
+      "cluster_id": 590,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "goe280",
+      "cluster_id": 594,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "goe284",
+      "cluster_id": 597,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "goe315",
+      "cluster_id": 615,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "goe316",
+      "cluster_id": 616,
+      "split": "calibration"
+    },
+    {
+      "airfoil_id": "goe321",
+      "cluster_id": 620,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "goe323",
+      "cluster_id": 622,
+      "split": "locked_test"
+    },
+    {
+      "airfoil_id": "goe335",
+      "cluster_id": 631,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "goe336",
+      "cluster_id": 632,
+      "split": "calibration"
+    },
+    {
+      "airfoil_id": "goe346",
+      "cluster_id": 635,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "goe358",
+      "cluster_id": 636,
+      "split": "calibration"
+    },
+    {
+      "airfoil_id": "goe363",
+      "cluster_id": 641,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "goe365",
+      "cluster_id": 643,
+      "split": "locked_test"
+    },
+    {
+      "airfoil_id": "goe375",
+      "cluster_id": 653,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "goe376",
+      "cluster_id": 654,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "goe381",
+      "cluster_id": 658,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "goe395",
+      "cluster_id": 672,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "goe413",
+      "cluster_id": 690,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "goe419",
+      "cluster_id": 697,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "goe423",
+      "cluster_id": 701,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "goe424",
+      "cluster_id": 702,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "goe428",
+      "cluster_id": 706,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "goe434",
+      "cluster_id": 712,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "goe442",
+      "cluster_id": 720,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "goe474",
+      "cluster_id": 735,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "goe491",
+      "cluster_id": 748,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "goe494",
+      "cluster_id": 751,
+      "split": "calibration"
+    },
+    {
+      "airfoil_id": "goe518",
+      "cluster_id": 774,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "goe526",
+      "cluster_id": 777,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "goe528",
+      "cluster_id": 779,
+      "split": "calibration"
+    },
+    {
+      "airfoil_id": "goe550",
+      "cluster_id": 793,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "goe598",
+      "cluster_id": 819,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "goe611",
+      "cluster_id": 828,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "goe613",
+      "cluster_id": 830,
+      "split": "locked_test"
+    },
+    {
+      "airfoil_id": "goe617",
+      "cluster_id": 833,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "goe620",
+      "cluster_id": 835,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "goe624",
+      "cluster_id": 839,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "goe648",
+      "cluster_id": 852,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "goe776",
+      "cluster_id": 887,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "goe804",
+      "cluster_id": 900,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "hq1010",
+      "cluster_id": 916,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "hq2012",
+      "cluster_id": 929,
+      "split": "locked_test"
+    },
+    {
+      "airfoil_id": "hq3010",
+      "cluster_id": 942,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "hq3013",
+      "cluster_id": 945,
+      "split": "calibration"
+    },
+    {
+      "airfoil_id": "hq3512",
+      "cluster_id": 951,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "hq359",
+      "cluster_id": 956,
+      "split": "calibration"
+    },
+    {
+      "airfoil_id": "ht08",
+      "cluster_id": 965,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "isa960",
+      "cluster_id": 970,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "k1",
+      "cluster_id": 976,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "k3311",
+      "cluster_id": 979,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "kc135d",
+      "cluster_id": 984,
+      "split": "locked_test"
+    },
+    {
+      "airfoil_id": "l1003",
+      "cluster_id": 987,
+      "split": "calibration"
+    },
+    {
+      "airfoil_id": "ls417",
+      "cluster_id": 1002,
+      "split": "calibration"
+    },
+    {
+      "airfoil_id": "ls421",
+      "cluster_id": 1004,
+      "split": "calibration"
+    },
+    {
+      "airfoil_id": "lwk80080",
+      "cluster_id": 1007,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "m1",
+      "cluster_id": 1011,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "m12",
+      "cluster_id": 1014,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "mb253515sm",
+      "cluster_id": 1047,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "mh104",
+      "cluster_id": 1049,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "mh113",
+      "cluster_id": 1054,
+      "split": "locked_test"
+    },
+    {
+      "airfoil_id": "mh42",
+      "cluster_id": 1076,
+      "split": "locked_test"
+    },
+    {
+      "airfoil_id": "mh62",
+      "cluster_id": 1083,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "mh78",
+      "cluster_id": 1086,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "mh93",
+      "cluster_id": 1094,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "ms317",
+      "cluster_id": 1101,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "n0011sc",
+      "cluster_id": 1104,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "n2h15",
+      "cluster_id": 1117,
+      "split": "locked_test"
+    },
+    {
+      "airfoil_id": "n5h20",
+      "cluster_id": 1120,
+      "split": "calibration"
+    },
+    {
+      "airfoil_id": "n64012a",
+      "cluster_id": 1132,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "n6409",
+      "cluster_id": 1135,
+      "split": "locked_test"
+    },
+    {
+      "airfoil_id": "n64212mb",
+      "cluster_id": 1140,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "n8h12",
+      "cluster_id": 1146,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "naca001035",
+      "cluster_id": 1154,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "naca001264a08cli02",
+      "cluster_id": 1160,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "naca16006",
+      "cluster_id": 1168,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "naca16015",
+      "cluster_id": 1171,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "naca16018",
+      "cluster_id": 1172,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "naca2408",
+      "cluster_id": 1179,
+      "split": "locked_test"
+    },
+    {
+      "airfoil_id": "naca4421",
+      "cluster_id": 1190,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "naca632a015",
+      "cluster_id": 1195,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "naca654221",
+      "cluster_id": 1231,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "naca66209",
+      "cluster_id": 1237,
+      "split": "locked_test"
+    },
+    {
+      "airfoil_id": "naca663218",
+      "cluster_id": 1241,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "naca671215",
+      "cluster_id": 1244,
+      "split": "locked_test"
+    },
+    {
+      "airfoil_id": "nasasc20714",
+      "cluster_id": 1253,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "npl9615",
+      "cluster_id": 1267,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "oa209",
+      "cluster_id": 1273,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "oa212",
+      "cluster_id": 1274,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "rae100",
+      "cluster_id": 1296,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "rae5214",
+      "cluster_id": 1304,
+      "split": "calibration"
+    },
+    {
+      "airfoil_id": "raf25",
+      "cluster_id": 1308,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "raf48",
+      "cluster_id": 1320,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "raf69",
+      "cluster_id": 1322,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "rc510",
+      "cluster_id": 1334,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "rg14",
+      "cluster_id": 1339,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "rg15a213",
+      "cluster_id": 1346,
+      "split": "calibration"
+    },
+    {
+      "airfoil_id": "rhodesg32",
+      "cluster_id": 1349,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "s2048",
+      "cluster_id": 1368,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "s2060",
+      "cluster_id": 1371,
+      "split": "locked_test"
+    },
+    {
+      "airfoil_id": "s4022",
+      "cluster_id": 1381,
+      "split": "calibration"
+    },
+    {
+      "airfoil_id": "s4094",
+      "cluster_id": 1385,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "s4096",
+      "cluster_id": 1387,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "s4158",
+      "cluster_id": 1389,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "s5010",
+      "cluster_id": 1393,
+      "split": "locked_test"
+    },
+    {
+      "airfoil_id": "s8025",
+      "cluster_id": 1401,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "s8037",
+      "cluster_id": 1404,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "s9026",
+      "cluster_id": 1412,
+      "split": "locked_test"
+    },
+    {
+      "airfoil_id": "sc20012",
+      "cluster_id": 1429,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "sc20402",
+      "cluster_id": 1430,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "sc20404",
+      "cluster_id": 1432,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "sc20412",
+      "cluster_id": 1435,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "sd6060",
+      "cluster_id": 1453,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "sd8000",
+      "cluster_id": 1462,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "sd8040",
+      "cluster_id": 1464,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "sg6043",
+      "cluster_id": 1468,
+      "split": "calibration"
+    },
+    {
+      "airfoil_id": "stcyr172",
+      "cluster_id": 1477,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "stcyr234",
+      "cluster_id": 1478,
+      "split": "calibration"
+    },
+    {
+      "airfoil_id": "ste87391",
+      "cluster_id": 1481,
+      "split": "locked_test"
+    },
+    {
+      "airfoil_id": "strand",
+      "cluster_id": 1483,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "usa35a",
+      "cluster_id": 1515,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "usnps4",
+      "cluster_id": 1529,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "v13009",
+      "cluster_id": 1531,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "vr5",
+      "cluster_id": 1541,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "waspsm",
+      "cluster_id": 1547,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "ys915",
+      "cluster_id": 1552,
+      "split": "locked_test"
+    }
+  ],
+  "records_hash": "3e68b91619ebcd0e1b109abdd815a0fae8e7277045c8e33223b2381cac300c77",
+  "seed": 20260825
+}

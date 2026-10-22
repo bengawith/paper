@@ -1,0 +1,109 @@
+{
+  "schema": "matched-nominal-independent-readonly-reconciliation-v1",
+  "nominal_summary_sha256": "65aaf96a6e733cd2cbc53e8eb46f97d367e827f9fa4960234cc6b1c1dde3dd72",
+  "nominal_protocol_sha256": "6d272a7e8c946a26c7419751eb961e5c5bd9208304c0ca9bd0fb6646c322845a",
+  "robust_summary_sha256": "fcf8cf689a8f4b439155723615db6f6d3bc952a91a7158bf8cda117f9f8df5a6",
+  "r3_preserved_failure_receipt_sha256": "22cc7c3ad4cc0d0f649be2cd524255d61ed063cc8a9463757828d493eb26eec4",
+  "r4_terminal_recovery_receipt_sha256": "5e35e98ec999805c784d38a991445fb70712b13fbbb8daf7b352a0f8fb6b1e00",
+  "seeds": 10,
+  "completed_generations": 2000,
+  "candidate_evaluations": 256000,
+  "feasible_seed_count": 10,
+  "feasible_final_entries": 1279,
+  "minimum_final_feasible_nominal_drag": 0.005735815864569067,
+  "source_hashes_unchanged_since_robust_campaign": true,
+  "r3_windows_checkpoint_failure_preserved": true,
+  "scope": "Independent finite-algorithm receipt reconciliation, not independent CFD, validated manufacturing probabilities or a global optimum.",
+  "per_seed": [
+    {
+      "seed": 20264824,
+      "completed_generations": 200,
+      "candidate_evaluations": 25600,
+      "feasible_final_entries": 128,
+      "minimum_feasible_nominal_drag": 0.006098651724137616,
+      "maximum_nominal_recheck_difference": 1.7866596136589807e-10,
+      "source_sha256": "b99a01080ab299ac610ac64d2899eb2045f96ae4591e9a285abdb774e5aa828c"
+    },
+    {
+      "seed": 20264825,
+      "completed_generations": 200,
+      "candidate_evaluations": 25600,
+      "feasible_final_entries": 128,
+      "minimum_feasible_nominal_drag": 0.0057565990661143755,
+      "maximum_nominal_recheck_difference": 3.637524335561859e-10,
+      "source_sha256": "e8ea09a0baa34eed24899688971d88768bc046b289c8c6bee18bfef46cd10db4"
+    },
+    {
+      "seed": 20264826,
+      "completed_generations": 200,
+      "candidate_evaluations": 25600,
+      "feasible_final_entries": 128,
+      "minimum_feasible_nominal_drag": 0.006006491817705854,
+      "maximum_nominal_recheck_difference": 2.374217758158159e-10,
+      "source_sha256": "a2246b61dd665b060bba6ff4aba928651d31ce0ff989a9f22d01e0f2ccec217f"
+    },
+    {
+      "seed": 20264827,
+      "completed_generations": 200,
+      "candidate_evaluations": 25600,
+      "feasible_final_entries": 127,
+      "minimum_feasible_nominal_drag": 0.006043944929449386,
+      "maximum_nominal_recheck_difference": 4.269397925471541e-10,
+      "source_sha256": "3f27158cfb0e948722b18d4815c61683df63bcbe5665d994a26fee404154e375"
+    },
+    {
+      "seed": 20264828,
+      "completed_generations": 200,
+      "candidate_evaluations": 25600,
+      "feasible_final_entries": 128,
+      "minimum_feasible_nominal_drag": 0.006021490785900719,
+      "maximum_nominal_recheck_difference": 4.3959044650904167e-10,
+      "source_sha256": "863bd84d269a3a2bf55101bc3551159024ab5b3615639f6c6bad75c4abd604c8"
+    },
+    {
+      "seed": 20264829,
+      "completed_generations": 200,
+      "candidate_evaluations": 25600,
+      "feasible_final_entries": 128,
+      "minimum_feasible_nominal_drag": 0.005994094056386605,
+      "maximum_nominal_recheck_difference": 4.840165455932688e-10,
+      "source_sha256": "9deab4de263b2e4727aab5bcf00fb77b8babe891b5e7b2f58f074cba54354c08"
+    },
+    {
+      "seed": 20264830,
+      "completed_generations": 200,
+      "candidate_evaluations": 25600,
+      "feasible_final_entries": 128,
+      "minimum_feasible_nominal_drag": 0.006057321575470271,
+      "maximum_nominal_recheck_difference": 4.662858415355187e-10,
+      "source_sha256": "d9779cb8b358894c44506e8cb451abf2956cfe03d583235aa57040bb03c5b9a1"
+    },
+    {
+      "seed": 20264831,
+      "completed_generations": 200,
+      "candidate_evaluations": 25600,
+      "feasible_final_entries": 128,
+      "minimum_feasible_nominal_drag": 0.005989367100570854,
+      "maximum_nominal_recheck_difference": 2.7575293871234807e-10,
+      "source_sha256": "c788feb006ae8dbc16dd0a24a34a521e054d3d16147454e84ccd0d081cfd017d"
+    },
+    {
+      "seed": 20264832,
+      "completed_generations": 200,
+      "candidate_evaluations": 25600,
+      "feasible_final_entries": 128,
+      "minimum_feasible_nominal_drag": 0.005735815864569067,
+      "maximum_nominal_recheck_difference": 4.4976575502148064e-10,
+      "source_sha256": "9e64fe14959564eb55bf31bd9dd8056e858b34e93ebe73d3dc4cd4d8870ad58b"
+    },
+    {
+      "seed": 20264833,
+      "completed_generations": 200,
+      "candidate_evaluations": 25600,
+      "feasible_final_entries": 128,
+      "minimum_feasible_nominal_drag": 0.005978387059760399,
+      "maximum_nominal_recheck_difference": 3.2952476684833254e-10,
+      "source_sha256": "883a65b3bdf4312bb40fc0201e67eb4a0a7b37f73cfca8539795743c8f2797df"
+    }
+  ]
+}

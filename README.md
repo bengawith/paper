@@ -1,52 +1,11 @@
-# Data-Driven Aerodynamic Prediction
+# Robust V2 — author-review working draft
 
-Data-Driven Aerodynamic Prediction: High-Fidelity Lift Curve Estimation for Aerofoils Using Class-Shape Transformation and Artificial Intelligence
+**Open LATEST_MANUSCRIPT_FOR_AVA.docx first.** This is the complete, source-verified numerical research paper, in the voice and structure of the original submission. It presents geometry-consistent CST/XFOIL data, protected and prospective neural-ensemble evaluation, candidate-specific prescribed uncertainty, ten robust and ten constrained nominal optimisation searches, strict selected-design numerical checks, and the supplementary geometry-distinct NACA-style challenge. The new neural model is a *research instrument* in the design methodology, not a claimed general-purpose replacement for other predictors.
 
-**Short summary:** This repository accompanies the research paper above. It contains code, datasets (small subsets and metadata), and scripts used to train, evaluate and analyze machine learning models that predict high-fidelity lift curves from airfoil Class-Shape Transformation (CST) parameters and operating conditions.
+**For Ava:** use CFD_HANDOFF_CURRENT.zip, with CFD_BRIEF_FOR_AVA.md. These contain the exact frozen reference, risk-knee and nominal-control geometries from this paper. The older October CFD handoff used DIFFERENT designs and is historical only.
 
-**Contents**
-- **Code:** Core library is inside the `src/` package. Top-level scripts are in `scripts/`.
-- **Data:** Sample and processed datasets are in `data/csv/` and raw `data/aerofoil_data/`.
-- **Models:** Trained model artifacts are in `trained_model/`.
+**For authors:** COAUTHOR_NOTES.md lists the few outstanding decisions and CFD conclusions. Full research results and cited publications are source-bound in reports/robust_v2, with unchanged original frozen solver/model evidence.
 
-**Quick Links**
-- **Main package:** [src](src)
-- **Scripts:** [scripts](scripts)
+The separate NeuralFoil benchmark is preserved in the technical-audit archive, not positioned as a hypothesis or principal experiment. NeuralFoil remains appropriately acknowledged in the related literature. Numerical accuracy does not establish a physical CFD result, measured manufacturing tolerance or a globally optimal aerodynamic design.
 
-**Installation**
-- Create and activate a virtual environment (recommended Python 3.10+):
-
-```bash
-python -m venv .venv
-# Windows PowerShell
-.\.venv\Scripts\Activate.ps1
-# or POSIX
-source .venv/bin/activate
-```
-
-- Install runtime + (optional) dev requirements:
-
-```bash
-pip install -r requirements.txt         # core runtime dependencies
-```
-
-
-**Primary Scripts & Usage**
-- `scripts/train_best_model.py` — Train or re-train models using dataset parameters defined in `data/csv/` and model configs in `physics_aware/model_details/`.
-- `scripts/physics_aware_tuner.py` — Hyperparameter sweep and tuning wrapper for physics-aware losses and architectures.
-- `scripts/physics_aware_sensitivity_analysis.py` — Runs sensitivity analysis (Morris / Sobol) on model inputs.
-- `scripts/gather_model_details.py` — Collates model metadata for `physics_aware/model_details/`.
-- `scripts/analyze_physics_results.py` — Post-hoc analysis and figure generation.
-
-**Core library highlights**
-- `src/utils.py` — Utility functions including CST parameter handling, physics-metrics (`calculate_physical_metrics`, `calculate_physics_score`), small helper model `QuickMLP`, and training/evaluation helpers.
-- `src/models.py` / `src/model_components.py` — Model definitions (MLP, GRU, LSTM, CNN flavours used in the experiments).
-
-**Data format**
-- Predictands: lift coefficient curves are arranged as columns `alpha_0..alpha_47` for a fixed alpha grid, or packed arrays in the processed CSV files under `data/csv/`.
-- Inputs: CST parameters (e.g., `lower_weight_*`, `upper_weight_*`, `TE_thickness`, `leading_edge_weight`), metadata columns and operating conditions.
-
-Refer to `data/csv/dataset_12CST_params.csv` for an example.
-
-**Reproducibility**
-- The repository includes utilities to set random seeds (`src.utils.set_seed`) and helper methods to evaluate physics-aware metrics.
+**Current state:** complete numerical research and one review-ready working manuscript, pending independently validated CFD, the consequent physical conclusion, coauthor declarations and final journal formatting. The Word document's browser-derived visual QA is not native Microsoft Word pagination.

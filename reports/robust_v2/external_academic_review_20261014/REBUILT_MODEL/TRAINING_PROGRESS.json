@@ -1,0 +1,19 @@
+{
+  "status": "FIVE_MEMBERS_TRAINED",
+  "completed_members": 5,
+  "epochs": [
+    37,
+    35,
+    33,
+    65,
+    31
+  ],
+  "best_epochs": [
+    12,
+    10,
+    8,
+    40,
+    6
+  ],
+  "elapsed_seconds": 709.6560000000027
+}

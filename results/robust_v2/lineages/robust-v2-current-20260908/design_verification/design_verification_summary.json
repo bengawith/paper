@@ -1,0 +1,116 @@
+{
+  "schema_version": "robust-v2-design-verification-v1",
+  "reynolds_number": 1000000,
+  "mach": 0.0,
+  "ncrit": 9.0,
+  "alpha_grid_deg": [
+    0.0,
+    11.0,
+    1.0
+  ],
+  "shared_perturbations": 16,
+  "manufacturing_amplitude_fraction_chord": 0.01,
+  "strict_support_threshold": 1.2466473071678343,
+  "designs": {
+    "reference_naca2412": {
+      "support_distance": 0.5957635102540237,
+      "within_trust_domain": true,
+      "nominal_weighted_cd": 0.007446402014116983,
+      "shared_converged": 16,
+      "shared_requested": 16,
+      "shared_weighted_cd_samples": [
+        0.00977167039799804,
+        0.007717391026823497,
+        0.009124534308531025,
+        0.008345968184364,
+        0.007962973801538927,
+        0.00860769867673386,
+        0.007733874632270611,
+        0.008589285213190724,
+        0.008675294423729378,
+        0.008521278495538884,
+        0.008432550415402683,
+        0.009090150655210644,
+        0.008794024067028597,
+        0.0087384103549646,
+        0.00796921446088501,
+        0.00796624818919988
+      ],
+      "shared_mean_weighted_cd": 0.008502535456463147,
+      "shared_cvar95_weighted_cd": 0.00977167039799804
+    },
+    "within_trust_knee": {
+      "support_distance": 0.9021553297254628,
+      "within_trust_domain": true,
+      "nominal_weighted_cd": 0.006051131470505879,
+      "shared_converged": 15,
+      "shared_requested": 16,
+      "shared_weighted_cd_samples": [
+        0.0098949154656124,
+        0.006337262091803491,
+        0.00842727971955137,
+        0.007066030838994871,
+        0.008400814212406658,
+        0.006794083451715538,
+        0.006596306970998492,
+        0.007286264620728934,
+        0.00720072617899719,
+        0.00825738309922448,
+        0.007810470740649861,
+        0.006851457852080906,
+        0.00829148348507857,
+        0.007083111668354412,
+        0.006374727177510658
+      ],
+      "shared_mean_weighted_cd": 0.0075114878382471885,
+      "shared_cvar95_weighted_cd": 0.0098949154656124
+    },
+    "outside_trust_deterministic": {
+      "support_distance": 3.716082020382211,
+      "within_trust_domain": false,
+      "nominal_weighted_cd": 0.013960017379531587,
+      "shared_converged": 16,
+      "shared_requested": 16,
+      "shared_weighted_cd_samples": [
+        0.014157107625093186,
+        0.013684973720483738,
+        0.014696096326283272,
+        0.014266128380464387,
+        0.014295847344769732,
+        0.014563431658957779,
+        0.013266670539446829,
+        0.01366353992213123,
+        0.014400567818741125,
+        0.013600792170738592,
+        0.013749513052975174,
+        0.013886018760017245,
+        0.014713076522083002,
+        0.013887557293755334,
+        0.014751363150467538,
+        0.014292984604303206
+      ],
+      "shared_mean_weighted_cd": 0.01411722930566946,
+      "shared_cvar95_weighted_cd": 0.014751363150467538
+    }
+  },
+  "paired_improvement_vs_reference": {
+    "within_trust_knee": {
+      "paired_samples": 15,
+      "mean_improvement_vs_reference": 0.0009795303537315436,
+      "ci95": [
+        0.0006206037063681117,
+        0.001305538221446636
+      ],
+      "sign_convention": "positive means design has LOWER weighted drag than the reference"
+    },
+    "outside_trust_deterministic": {
+      "paired_samples": 16,
+      "mean_improvement_vs_reference": -0.005614693849206313,
+      "ci95": [
+        -0.005913018764229605,
+        -0.005304721060433878
+      ],
+      "sign_convention": "positive means design has LOWER weighted drag than the reference"
+    }
+  }
+}

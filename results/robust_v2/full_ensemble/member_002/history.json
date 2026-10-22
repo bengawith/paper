@@ -1,0 +1,92 @@
+[
+  {
+    "epoch": 0,
+    "train_loss": 0.06301693141415536,
+    "validation_loss": 0.0116572650542191
+  },
+  {
+    "epoch": 1,
+    "train_loss": 0.01159109313594529,
+    "validation_loss": 0.008319338411466783
+  },
+  {
+    "epoch": 2,
+    "train_loss": 0.008619113578405007,
+    "validation_loss": 0.007578969671275003
+  },
+  {
+    "epoch": 3,
+    "train_loss": 0.007536868996783553,
+    "validation_loss": 0.005441449869173508
+  },
+  {
+    "epoch": 4,
+    "train_loss": 0.006424184146161419,
+    "validation_loss": 0.0044988890816214456
+  },
+  {
+    "epoch": 5,
+    "train_loss": 0.006136081551751459,
+    "validation_loss": 0.004828923448254485
+  },
+  {
+    "epoch": 6,
+    "train_loss": 0.0055150017497619715,
+    "validation_loss": 0.00460052065061308
+  },
+  {
+    "epoch": 7,
+    "train_loss": 0.005127000166140646,
+    "validation_loss": 0.004186601420568983
+  },
+  {
+    "epoch": 8,
+    "train_loss": 0.004979947392069492,
+    "validation_loss": 0.004550333176440294
+  },
+  {
+    "epoch": 9,
+    "train_loss": 0.004618367682356971,
+    "validation_loss": 0.0035286203076329873
+  },
+  {
+    "epoch": 10,
+    "train_loss": 0.004456995433779904,
+    "validation_loss": 0.006105365630905013
+  },
+  {
+    "epoch": 11,
+    "train_loss": 0.004535864595413567,
+    "validation_loss": 0.0028014056960562147
+  },
+  {
+    "epoch": 12,
+    "train_loss": 0.0038507310383725,
+    "validation_loss": 0.0030918229795827805
+  },
+  {
+    "epoch": 13,
+    "train_loss": 0.003967962878565472,
+    "validation_loss": 0.0050792783128479155
+  },
+  {
+    "epoch": 14,
+    "train_loss": 0.0039585778773968,
+    "validation_loss": 0.002203080844064898
+  },
+  {
+    "epoch": 15,
+    "train_loss": 0.0034926888966805725,
+    "validation_loss": 0.002618057418840911
+  },
+  {
+    "epoch": 16,
+    "train_loss": 0.0034495858685019984,
+    "validation_loss": 0.0028658595588806285
+  },
+  {
+    "epoch": 17,
+    "train_loss": 0.0033824298919803166,
+    "validation_loss": 0.002322407989635555
+  }
+]

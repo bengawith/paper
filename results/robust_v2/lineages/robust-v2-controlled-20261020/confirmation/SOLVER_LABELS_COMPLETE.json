@@ -1,0 +1,19 @@
+{
+  "case_accounting_sha256": "d9234fa174eb6f42535613d12ae73794b4f969cb1e224522db611b06affec60f",
+  "complete_grid_geometries": 3,
+  "completed_utc": "2026-10-21T09:01:26.185097+00:00",
+  "failed_full_sweep_segments": 349,
+  "frozen_predictor_sha256": "b01bd39fd0118d8cd4bd2006fa7617814d60b7004a900bf8e1a50fa615d4e798",
+  "geometries_with_observations": 199,
+  "geometry_selection_sha256": "de8cc1bb0cbb9e577a03aa07487818159abfd46522a7dd69ee279db6f7e0f07e",
+  "missing_requested_states": 4632,
+  "nonzero_or_missing_exit_segments": 37,
+  "observed_points_sha256": "7804d1d3da12b4515d7d98ad624e5049be89c4e8b6f7bd706fc93b95ba4ff836",
+  "observed_states": 17968,
+  "requested_geometries": 200,
+  "requested_states": 22600,
+  "schema": "complete-sealed-confirmation-label-accounting-v1",
+  "scope": "All sealed shapes attempted; only actual clean-process finite positive-drag observations. Accuracy is conditional on solver-observed states, not the missing outcomes.",
+  "solver_protocol_sha256": "e260ad9d81b830ef683d033495e0fa66e64f250bd1990142aa2d6c49d9f35e08",
+  "timed_out_segments": 37
+}

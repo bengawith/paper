@@ -1,0 +1,290 @@
+{
+  "cache_context_hash": "60e2597f72f2cb62910bd060486beaeb3d9ad11084fe70949598029c459f1e34",
+  "constraint_values": [
+    [
+      -0.020000000000000018,
+      -0.020000000000000018,
+      -0.020000000000000018,
+      -0.19999999999999996,
+      -0.010000000000000002,
+      -1.0
+    ],
+    [
+      -0.01606760491798509,
+      -0.023932395082014946,
+      -0.039198470835687615,
+      -0.19445012407330997,
+      -0.035494304373860364,
+      -1.0
+    ]
+  ],
+  "diagnostics": [
+    {
+      "aerodynamic_moment_scope": "conditional on valid geometry/refit, finite required-lift roots and empirical trust; invalid placeholders excluded",
+      "cm": -0.05199252754449844,
+      "conditional_aerodynamic_sample_count": 1,
+      "evaluation_sample_count": 4,
+      "geometry_metrics": {
+        "leading_edge_radius_proxy": 0.08999145640802812,
+        "maximum_camber": 0.019916748267052788,
+        "maximum_thickness": 0.11902902023663006,
+        "maximum_thickness_x": 0.30142605468260975,
+        "section_area": 0.08183437537475659,
+        "te_thickness": 0.002328850360356585
+      },
+      "invalid_reasons": [],
+      "lift_std_by_alpha": [
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "manufacturing_invalid_samples": 0,
+      "margins": [
+        0.020000000000000018,
+        0.020000000000000018,
+        0.020000000000000018,
+        0.19999999999999996,
+        0.010000000000000002,
+        1.0
+      ],
+      "maximum_support_distance": 0.7292211058340969,
+      "mean_cm_by_alpha": [
+        -0.053760065138339995,
+        -0.05421122089028359,
+        -0.0541807122528553,
+        -0.05067339390516281,
+        -0.04435642510652542
+      ],
+      "mean_lift_by_alpha": [
+        0.24425203800201417,
+        0.46373523473739625,
+        0.6841840863227844,
+        0.8923411726951599,
+        1.075299859046936
+      ],
+      "missing_lift_roots": 0,
+      "nominal_predictions": {
+        "cl": [
+          0.24990665912628174,
+          0.4772322475910187,
+          0.7029802083969117,
+          0.9183796525001526,
+          1.1163502931594849
+        ],
+        "cm": [
+          -0.05373682826757431,
+          -0.05412938520312309,
+          -0.05404736623167992,
+          -0.051306774467229845,
+          -0.04674228355288505
+        ],
+        "log_cd": [
+          -5.127443408966064,
+          -5.062341403961182,
+          -4.88480167388916,
+          -4.6407551765441895,
+          -4.401805210113525
+        ]
+      },
+      "nominal_required_lift_feasible": true,
+      "nominal_weighted_drag": 0.008002063395195142,
+      "sample_weighted_drag": [
+        0.016808464044722755,
+        0.016808464044722755,
+        0.016808464044722755,
+        0.008404232022361378
+      ],
+      "trusted": true,
+      "uncertainty_trust_violations": 3,
+      "valid_geometry": true
+    },
+    {
+      "aerodynamic_moment_scope": "conditional on valid geometry/refit, finite required-lift roots and empirical trust; invalid placeholders excluded",
+      "cm": -0.026498223170638085,
+      "conditional_aerodynamic_sample_count": 2,
+      "evaluation_sample_count": 4,
+      "geometry_metrics": {
+        "leading_edge_radius_proxy": 0.08949201499050144,
+        "maximum_camber": 0.020238268287454297,
+        "maximum_thickness": 0.11856095110283449,
+        "maximum_thickness_x": 0.3529798373838481,
+        "section_area": 0.08340547024374556,
+        "te_thickness": 0.003645114157652389
+      },
+      "invalid_reasons": [],
+      "lift_std_by_alpha": [
+        0.02464011395473597,
+        0.021975383672319528,
+        0.014305002847494612,
+        0.012648977305174313,
+        0.011667882965537566
+      ],
+      "manufacturing_invalid_samples": 0,
+      "margins": [
+        0.01606760491798509,
+        0.023932395082014946,
+        0.039198470835687615,
+        0.19445012407330997,
+        0.035494304373860364,
+        1.0
+      ],
+      "maximum_support_distance": 0.020689655172413796,
+      "mean_cm_by_alpha": [
+        -0.029734226875007153,
+        -0.0313021844252944,
+        -0.033624041266739374,
+        -0.03311940003186464,
+        -0.028908255882561205
+      ],
+      "mean_lift_by_alpha": [
+        0.19629915654659272,
+        0.42931116223335264,
+        0.6648644387722016,
+        0.8810636758804321,
+        1.0721843838691711
+      ],
+      "missing_lift_roots": 0,
+      "nominal_predictions": {
+        "cl": [
+          0.15320201516151427,
+          0.3774215877056122,
+          0.6109946012496948,
+          0.8334138751029968,
+          1.035526967048645
+        ],
+        "cm": [
+          -0.024324940517544746,
+          -0.025138827785849572,
+          -0.02821415476500988,
+          -0.028772402182221414,
+          -0.02604079060256481
+        ],
+        "log_cd": [
+          -4.965356063842774,
+          -4.99280309677124,
+          -4.846599197387695,
+          -4.601136970520019,
+          -4.352586555480957
+        ]
+      },
+      "nominal_required_lift_feasible": true,
+      "nominal_weighted_drag": 0.00918112600883023,
+      "sample_weighted_drag": [
+        0.018069943060710737,
+        0.009034971530355368,
+        0.00846396260034614,
+        0.018069943060710737
+      ],
+      "trusted": true,
+      "uncertainty_trust_violations": 2,
+      "valid_geometry": true
+    }
+  ],
+  "evaluation_counters": {
+    "candidate_evaluations": 11,
+    "invalid_geometry": 0,
+    "manufacturing_invalid_samples": 0,
+    "missing_lift_roots": 10,
+    "trust_rejections": 41
+  },
+  "final_recheck_max_objective_difference": 6.674774760684343e-10,
+  "history": [
+    {
+      "candidate_evaluations": 4,
+      "constraint_violation_max": 1.0,
+      "constraint_violation_mean": 0.1148819167495133,
+      "duplicate_count": 0,
+      "evaluations": 4,
+      "feasible_count": 2,
+      "feasible_fraction": 0.5,
+      "front_movement": null,
+      "generation": 1,
+      "hypervolume": 0.00026738423516127144,
+      "invalid_geometry": 0,
+      "manufacturing_invalid_samples": 0,
+      "missing_lift_roots": 6,
+      "objective_median": [
+        0.5073537033115876,
+        0.5090349715674651
+      ],
+      "objective_min": [
+        0.013409704898105947,
+        0.01680846471220023
+      ],
+      "population_count": 4,
+      "trust_rejections": 15
+    },
+    {
+      "candidate_evaluations": 4,
+      "constraint_violation_max": 0.028325192999966498,
+      "constraint_violation_mean": 0.002184658908187531,
+      "duplicate_count": 0,
+      "evaluations": 8,
+      "feasible_count": 3,
+      "feasible_fraction": 0.75,
+      "front_movement": 0.4710945941841264,
+      "generation": 2,
+      "hypervolume": 0.00026738423516127144,
+      "invalid_geometry": 0,
+      "manufacturing_invalid_samples": 0,
+      "missing_lift_roots": 4,
+      "objective_median": [
+        0.5073537033115876,
+        0.5090349715674651
+      ],
+      "objective_min": [
+        0.013409704898105947,
+        0.01680846471220023
+      ],
+      "population_count": 4,
+      "trust_rejections": 18
+    }
+  ],
+  "objectives": [
+    [
+      0.014707406039132412,
+      0.016808464044722755
+    ],
+    [
+      0.013409705063030745,
+      0.018069943060710737
+    ]
+  ],
+  "returned_population_fallback": false,
+  "sample_count": 4,
+  "schema_version": 6,
+  "seed": 20269824,
+  "solution_count": 2,
+  "solutions": [
+    [
+      -0.17206509553935198,
+      -0.06487645284796927,
+      -0.12530005922280965,
+      -0.05454605833398942,
+      -0.08274871211879595,
+      0.20839279013135772,
+      0.19042935361383515,
+      0.22314243030038705,
+      0.18049413922530969,
+      0.21829176166579578,
+      -0.04076541405747518,
+      0.002328850360356585
+    ],
+    [
+      -0.15172168851650022,
+      -0.023388835534137994,
+      -0.1783348291970204,
+      -0.059917344335734465,
+      -0.1566062558564982,
+      0.18656718630443248,
+      0.21920070293271066,
+      0.20253386304978363,
+      0.19220855487221714,
+      0.17544645374624343,
+      -0.019682139793901772,
+      0.003645114157652389
+    ]
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "schema": "entrypoint-only-ast-preserving-eol-repair-v1",
+  "scientific_library_source_files_changed": false,
+  "old_production_preflight": "Completed on equivalent parsed script before this cosmetic correction",
+  "rows": [
+    {
+      "path": "scripts/robust_v2/run_repaired_production.py",
+      "double_CRLF_converted": 114,
+      "original_sha256": "262c9437e4bd8394813da01206faa9071e1eb702e32db6fc02fca1848dadc555",
+      "new_sha256": "9bcf020954201d3c6e47a0461430263ae8419a4ed072af8d3f40dc362f59dcc2",
+      "AST_identical": true,
+      "before_byte_for_byte_backup": "reports/robust_v2/external_academic_review_20261014/CONTINUATION_20261020/EOL_REPAIR_SOURCE_PRESERVED/run_repaired_production.py"
+    },
+    {
+      "path": "scripts/robust_v2/profile_repaired_evaluator.py",
+      "double_CRLF_converted": 50,
+      "original_sha256": "5827376649d21c5786c68a0d4f8baba346eaa6ac503b4f651642db5a8b0ed176",
+      "new_sha256": "29803eb269dd8917e4a9758d3e943fb076899ca213300b8c3af50719503f81a6",
+      "AST_identical": true,
+      "before_byte_for_byte_backup": "reports/robust_v2/external_academic_review_20261014/CONTINUATION_20261020/EOL_REPAIR_SOURCE_PRESERVED/profile_repaired_evaluator.py"
+    }
+  ]
+}

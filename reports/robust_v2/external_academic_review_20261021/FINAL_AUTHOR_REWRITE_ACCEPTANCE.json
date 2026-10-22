@@ -1,0 +1,36 @@
+{
+  "schema": "new-20261021-full-rewrite-terminal-acceptance-v1",
+  "status": "COMPLETE_NUMERICAL_PAPER_READY_FOR_COAUTHOR_REVIEW",
+  "writing_style": "Independently matched to the users original 340-paragraph Word submission",
+  "original_author_docx_sha256": "cd6807e1b4211761eaa3b055c6461b1ba6353585bd347364d87e89f3f1b98125",
+  "total_words": 9244,
+  "verified_numbered_references": 29,
+  "all_29_references_cited": true,
+  "primary_literature_crosschecked": true,
+  "numeric_claims_reconciled": 46,
+  "numerical_solver_failures_unchanged": true,
+  "physical_independent_cfd_results": "NOT_AVAILABLE",
+  "engineering_final_superiority_claim": "WITHHELD_PENDING_CFD",
+  "coauthor_approvals": "NOT_CLAIMED",
+  "tables": 7,
+  "figures": 8,
+  "browser_preview_pages_inspected": 21,
+  "browser_only_not_native_word_visual_qa": true,
+  "next_scientific_step": "Run independent CFD fixed-shape matched-lift study and then write actual CFD physical conclusion",
+  "files_sha256": {
+    "paper/manuscript.md": "b0cb30814258ba343a7ce9655dbc01ced43d5200bc9ac1b35301edad630d5c02",
+    "paper/LATEST_MANUSCRIPT_FOR_AVA.docx": "4854386560dbbb65e381a42f0ea4dd2cf2f8ac781c63268396d6f6c9e3e73bc5",
+    "reports/robust_v2/external_academic_review_20261021/REFERENCES_PRIMARY_VERIFIED_V2.csv": "c2b7fee7d7ecd0f0dfc1952c24657cf74089e14c51d924a7c9942b838c27096f",
+    "reports/robust_v2/external_academic_review_20261021/NEW_MANUSCRIPT_NUMERIC_CLAIM_AUDIT.json": "73a7764f071de2a88548ec02e7f5eded53078aba4ae1cbd1e1747e2f1d48a32d",
+    "reports/robust_v2/external_academic_review_20261021/VISUAL_QA_FULL_AUTHOR_STYLE.json": "3847884880d5ca2ad704ee55deba0feecf9aaad9421bb7abab4f4849310e6c82",
+    "reports/robust_v2/external_academic_review_20261021/FINAL_MANUSCRIPT_INTEGRITY.md": "0595cfd22e27e0815460f9965dcfde2251032e12e53accc3b5d525da16494a67",
+    "reports/robust_v2/external_academic_review_20261021/ORIGINAL_AUTHOR_STYLE_EVIDENCE.json": "c7b0b52b81a401ffe12d773b3c5ecfa4e58f0eed8dad93b78f514c5704c09e97",
+    "paper/README.md": "a222576d36071075f4de98eb2f94f7edc41165f5d1600fd447698f80a4098929",
+    "paper/REVIEW_STATUS.md": "391ac83a7c8297fd4afc7529c229fe9cb8f02bf7538ea992ae83c36e740059f7"
+  },
+  "limitations": [
+    "The 819 selected XFOIL observations include 529 strict unusable cases; no nominal matched pairs.",
+    "Numerical evidence alone does not validate manufacturing tolerances or independent fluid physics.",
+    "Authors must approve contribution, funding/conflicts and journal submission statements."
+  ]
+}

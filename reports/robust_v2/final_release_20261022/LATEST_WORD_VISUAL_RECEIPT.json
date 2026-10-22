@@ -1,0 +1,179 @@
+{
+  "schema": "final-paper-native-Word-content-browser-preview-v1",
+  "main": {
+    "word_source_path": "paper/LATEST_MANUSCRIPT_FOR_AVA.docx",
+    "word_sha256": "6a7582448ea2bc64206ca1317405785380f1241254907f1c59c1c5a792f18e63",
+    "browser_pdf_sha256": "6a1031eada89294c875ad80e40908b5da18f571d33df37f7b439d97750555ea1",
+    "browser_pdf_path": "reports/robust_v2/final_release_20261022/VISUAL_LATEST/manuscript/manuscript_browser_word_content.pdf",
+    "page_count": 22,
+    "source_figures": 8,
+    "source_tables": 7,
+    "source_paragraphs": 211,
+    "figure_caption_image_groups": 8,
+    "browser_derived_not_native_microsoft_word": true,
+    "all_pages_visually_inspected": false,
+    "pages": [
+      {
+        "page": 1,
+        "sha256": "5cb1dbd3d6f6af84b7e63ef4e20a308742fb78eb2595ad1962e0ccc7376c72fc",
+        "image": "reports/robust_v2/final_release_20261022/VISUAL_LATEST/manuscript/PAGE_01.png"
+      },
+      {
+        "page": 2,
+        "sha256": "0fa16004888901d0cc8447c4a315d1a849c5b652658686d0863b38a7b656cbdc",
+        "image": "reports/robust_v2/final_release_20261022/VISUAL_LATEST/manuscript/PAGE_02.png"
+      },
+      {
+        "page": 3,
+        "sha256": "f30d5c64291ae267687234f223d5df166933140023b3eb54bd0730e064b1f93d",
+        "image": "reports/robust_v2/final_release_20261022/VISUAL_LATEST/manuscript/PAGE_03.png"
+      },
+      {
+        "page": 4,
+        "sha256": "4d41b1a27ae53291259954e64cbecdb2145a31078f88699427b3e166c83919b5",
+        "image": "reports/robust_v2/final_release_20261022/VISUAL_LATEST/manuscript/PAGE_04.png"
+      },
+      {
+        "page": 5,
+        "sha256": "28624594ddfdb11d685abe09c8a13605700204a38329be496a71a03c6d0cac35",
+        "image": "reports/robust_v2/final_release_20261022/VISUAL_LATEST/manuscript/PAGE_05.png"
+      },
+      {
+        "page": 6,
+        "sha256": "dd8902edce11d335eda9259177d8f10dddbedff2aa7ce052877fb70bb89288d7",
+        "image": "reports/robust_v2/final_release_20261022/VISUAL_LATEST/manuscript/PAGE_06.png"
+      },
+      {
+        "page": 7,
+        "sha256": "132f36bd678fed65e44f9cf6897af0196913f10a9733ad025b4b841e4be0e87e",
+        "image": "reports/robust_v2/final_release_20261022/VISUAL_LATEST/manuscript/PAGE_07.png"
+      },
+      {
+        "page": 8,
+        "sha256": "2799af0dfaba89dc81681502d2d052e56b1e559991a46fade442cdbb6c564b2d",
+        "image": "reports/robust_v2/final_release_20261022/VISUAL_LATEST/manuscript/PAGE_08.png"
+      },
+      {
+        "page": 9,
+        "sha256": "454ee2f67400d7eb115a14e893e509da6c0a035fce2c49e4163b5ab9432a5bf0",
+        "image": "reports/robust_v2/final_release_20261022/VISUAL_LATEST/manuscript/PAGE_09.png"
+      },
+      {
+        "page": 10,
+        "sha256": "b6f4fbcb4d91717b6167ee076a1ce62b755915c28bbd607d4781b9ea3a11ee9f",
+        "image": "reports/robust_v2/final_release_20261022/VISUAL_LATEST/manuscript/PAGE_10.png"
+      },
+      {
+        "page": 11,
+        "sha256": "7f4318042567608384f2c20e396348b06d1bf2921f21f5f44592731de3091b9d",
+        "image": "reports/robust_v2/final_release_20261022/VISUAL_LATEST/manuscript/PAGE_11.png"
+      },
+      {
+        "page": 12,
+        "sha256": "1b5fba914240459ce00a936c8fd68919e3d2de7f2d4e6ea967dea81cb4b2910b",
+        "image": "reports/robust_v2/final_release_20261022/VISUAL_LATEST/manuscript/PAGE_12.png"
+      },
+      {
+        "page": 13,
+        "sha256": "d7e7c6cba88237f301b4abab40f8903e18ed1d6fc13c11b444a0878ae56ee761",
+        "image": "reports/robust_v2/final_release_20261022/VISUAL_LATEST/manuscript/PAGE_13.png"
+      },
+      {
+        "page": 14,
+        "sha256": "be3ee2e73b81802fb1062bc30e2f7b384b87a82fe900565598e5fdc3c67e5e07",
+        "image": "reports/robust_v2/final_release_20261022/VISUAL_LATEST/manuscript/PAGE_14.png"
+      },
+      {
+        "page": 15,
+        "sha256": "1e110bbe85a3ffb9537d200bce7229bd19bc4de6486baa035ded542453d23457",
+        "image": "reports/robust_v2/final_release_20261022/VISUAL_LATEST/manuscript/PAGE_15.png"
+      },
+      {
+        "page": 16,
+        "sha256": "e64d9a421d404b735a50b7e48341934f29cfc2217408e672ee917c8c2d5422ce",
+        "image": "reports/robust_v2/final_release_20261022/VISUAL_LATEST/manuscript/PAGE_16.png"
+      },
+      {
+        "page": 17,
+        "sha256": "ef081df2919973faa881ec50ec838f80bad0474e6c0d4a64ddda56826476d13f",
+        "image": "reports/robust_v2/final_release_20261022/VISUAL_LATEST/manuscript/PAGE_17.png"
+      },
+      {
+        "page": 18,
+        "sha256": "37a9131d869f7e1f43a2ef9e98558275f44d846488f7a79104fe503c5e50d901",
+        "image": "reports/robust_v2/final_release_20261022/VISUAL_LATEST/manuscript/PAGE_18.png"
+      },
+      {
+        "page": 19,
+        "sha256": "9ecf29bdb2420dfe0713a41590db3cdbfc5d9557a71cd14f63a33a221f3b8aa9",
+        "image": "reports/robust_v2/final_release_20261022/VISUAL_LATEST/manuscript/PAGE_19.png"
+      },
+      {
+        "page": 20,
+        "sha256": "9c7af71ccb432da434a7a0bbd3cfcd0bdc5033cffe2da918d9e68ce67b65ed9e",
+        "image": "reports/robust_v2/final_release_20261022/VISUAL_LATEST/manuscript/PAGE_20.png"
+      },
+      {
+        "page": 21,
+        "sha256": "f02b62c7c652608ca12e9caaa4f1dbba54d13b63331a165df8fd569455b2aed9",
+        "image": "reports/robust_v2/final_release_20261022/VISUAL_LATEST/manuscript/PAGE_21.png"
+      },
+      {
+        "page": 22,
+        "sha256": "7fa82cd175a19d4beb1f048a6bbe185db2bef0bf1c6864516fd4272abadded6c",
+        "image": "reports/robust_v2/final_release_20261022/VISUAL_LATEST/manuscript/PAGE_22.png"
+      }
+    ],
+    "contact_sheets": [
+      {
+        "path": "reports/robust_v2/final_release_20261022/VISUAL_LATEST/manuscript/CONTACT_01.png",
+        "sha256": "d09ade76527766a44e46fbd8a3282c2d740241249eb6f815addfa5d4cd390c19"
+      },
+      {
+        "path": "reports/robust_v2/final_release_20261022/VISUAL_LATEST/manuscript/CONTACT_02.png",
+        "sha256": "a0841d284574a5111715c3403cc02f105264b357919ca4dfd29a497bda39c232"
+      },
+      {
+        "path": "reports/robust_v2/final_release_20261022/VISUAL_LATEST/manuscript/CONTACT_03.png",
+        "sha256": "2d592ebed37e45daac1e358bd8a910204ea9f0981c991d78ae790d9025144d00"
+      },
+      {
+        "path": "reports/robust_v2/final_release_20261022/VISUAL_LATEST/manuscript/CONTACT_04.png",
+        "sha256": "4cf4aa6d2151bb09198dba8bd0f17f063e1d1f649f256b8c62ddd5e4ea9fd8c2"
+      }
+    ]
+  },
+  "supplement": {
+    "word_source_path": "paper/SUPPLEMENTARY_NUMERICAL_COMPARISON.docx",
+    "word_sha256": "70b60fa5e675b6fcb6ba72244874274eed13c939268af619c740d4f96e36d923",
+    "browser_pdf_sha256": "28438ad7307a0e309e30de3e1f42cf90f7ce9c6b16d659db45afd45eaf4c8799",
+    "browser_pdf_path": "reports/robust_v2/final_release_20261022/VISUAL_LATEST/supplement/supplement_browser_word_content.pdf",
+    "page_count": 2,
+    "source_figures": 0,
+    "source_tables": 3,
+    "source_paragraphs": 18,
+    "figure_caption_image_groups": 0,
+    "browser_derived_not_native_microsoft_word": true,
+    "all_pages_visually_inspected": false,
+    "pages": [
+      {
+        "page": 1,
+        "sha256": "b6f89b98ea108a916d92686f2dbb876c4ec9746ded01d525b3f429b9478a5bde",
+        "image": "reports/robust_v2/final_release_20261022/VISUAL_LATEST/supplement/PAGE_01.png"
+      },
+      {
+        "page": 2,
+        "sha256": "8913d24797748dd8cda77c4e9c947d811897da4064aa5bde967eab212de10b4d",
+        "image": "reports/robust_v2/final_release_20261022/VISUAL_LATEST/supplement/PAGE_02.png"
+      }
+    ],
+    "contact_sheets": [
+      {
+        "path": "reports/robust_v2/final_release_20261022/VISUAL_LATEST/supplement/CONTACT_01.png",
+        "sha256": "292ff3b99e0ef49a2becafae9fd9847f214650e7f9b2fc0479d8d9b494637405"
+      }
+    ]
+  },
+  "claim": "Ready for page-by-page visual assessment, NOT yet a claimed inspection",
+  "native_microsoft_word_page_layout_verified": false
+}

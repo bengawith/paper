@@ -1,0 +1,1595 @@
+[
+  {
+    "number": 1,
+    "original_entry": "Drela, M. & Giles, M. B. (1987). Viscous–inviscid analysis of transonic and low Reynolds number airfoils. AIAA Journal, 25(10), 1347–1355. https://doi.org/10.2514/3.9789",
+    "doi": "10.2514/3.9789",
+    "checked_utc": "2026-10-14T11:19:38.714508+00:00",
+    "primary_url": "https://api.crossref.org/works/10.2514%2F3.9789",
+    "http_status": 200,
+    "status": "PRIMARY_METADATA_VERIFIED",
+    "metadata_sha256": "331db5525340e680e8f4608cfa884d48d1de44b255511aaaa207dbca881d4534",
+    "canonical_doi": "10.2514/3.9789",
+    "title": [
+      "Viscous-inviscid analysis of transonic and low Reynolds number airfoils"
+    ],
+    "authors": [
+      {
+        "given": "Mark",
+        "family": "Drela"
+      },
+      {
+        "given": "Michael B.",
+        "family": "Giles"
+      }
+    ],
+    "venue": [
+      "AIAA Journal"
+    ],
+    "volume": "25",
+    "issue": "10",
+    "page": "1347-1355",
+    "article_number": null,
+    "published": {
+      "date-parts": [
+        [
+          1987,
+          10
+        ]
+      ]
+    },
+    "published_print": {
+      "date-parts": [
+        [
+          1987,
+          10
+        ]
+      ]
+    },
+    "published_online": null,
+    "type": "journal-article"
+  },
+  {
+    "number": 2,
+    "original_entry": "Vinuesa, R. & Brunton, S. L. (2022). Enhancing computational fluid dynamics with machine learning. Nature Computational Science, 2(6), 358–366. https://doi.org/10.1038/s43588-022-00264-7",
+    "doi": "10.1038/s43588-022-00264-7",
+    "checked_utc": "2026-10-14T11:19:40.318036+00:00",
+    "primary_url": "https://api.crossref.org/works/10.1038%2Fs43588-022-00264-7",
+    "http_status": 200,
+    "status": "PRIMARY_METADATA_VERIFIED",
+    "metadata_sha256": "7247932be7ea7dc85a43f8a95b793f3db0d35707348ba6d66c0e19c99bf10d66",
+    "canonical_doi": "10.1038/s43588-022-00264-7",
+    "title": [
+      "Enhancing computational fluid dynamics with machine learning"
+    ],
+    "authors": [
+      {
+        "given": "Ricardo",
+        "family": "Vinuesa"
+      },
+      {
+        "given": "Steven L.",
+        "family": "Brunton"
+      }
+    ],
+    "venue": [
+      "Nature Computational Science"
+    ],
+    "volume": "2",
+    "issue": "6",
+    "page": "358-366",
+    "article_number": null,
+    "published": {
+      "date-parts": [
+        [
+          2022,
+          6,
+          27
+        ]
+      ]
+    },
+    "published_print": null,
+    "published_online": {
+      "date-parts": [
+        [
+          2022,
+          6,
+          27
+        ]
+      ]
+    },
+    "type": "journal-article"
+  },
+  {
+    "number": 3,
+    "original_entry": "Brunton, S. L., Noack, B. R. & Koumoutsakos, P. (2020). Machine learning for fluid mechanics. Annual Review of Fluid Mechanics, 52, 477–508. https://doi.org/10.1146/annurev-fluid-010719-060214",
+    "doi": "10.1146/annurev-fluid-010719-060214",
+    "checked_utc": "2026-10-14T11:19:41.876770+00:00",
+    "primary_url": "https://api.crossref.org/works/10.1146%2Fannurev-fluid-010719-060214",
+    "http_status": 200,
+    "status": "PRIMARY_METADATA_VERIFIED",
+    "metadata_sha256": "7f45dbc48d4f56985cc718cbb38fc013f1e74407eafcb5991bc607e5555a4b35",
+    "canonical_doi": "10.1146/annurev-fluid-010719-060214",
+    "title": [
+      "Machine Learning for Fluid Mechanics"
+    ],
+    "authors": [
+      {
+        "given": "Steven L.",
+        "family": "Brunton"
+      },
+      {
+        "given": "Bernd R.",
+        "family": "Noack"
+      },
+      {
+        "given": "Petros",
+        "family": "Koumoutsakos"
+      }
+    ],
+    "venue": [
+      "Annual Review of Fluid Mechanics"
+    ],
+    "volume": "52",
+    "issue": "1",
+    "page": "477-508",
+    "article_number": null,
+    "published": {
+      "date-parts": [
+        [
+          2020,
+          1,
+          5
+        ]
+      ]
+    },
+    "published_print": {
+      "date-parts": [
+        [
+          2020,
+          1,
+          5
+        ]
+      ]
+    },
+    "published_online": null,
+    "type": "journal-article"
+  },
+  {
+    "number": 4,
+    "original_entry": "Li, J., Bouhlel, M. A. & Martins, J. R. R. A. (2019). Data-based approach for fast airfoil analysis and optimization. AIAA Journal, 57(2), 581–596. https://doi.org/10.2514/1.J057129",
+    "doi": "10.2514/1.J057129",
+    "checked_utc": "2026-10-14T11:19:43.352731+00:00",
+    "primary_url": "https://api.crossref.org/works/10.2514%2F1.J057129",
+    "http_status": 200,
+    "status": "PRIMARY_METADATA_VERIFIED",
+    "metadata_sha256": "f46db06c4df600870f5e0017d85e5563d159adc24af3e747a329639fd81224f7",
+    "canonical_doi": "10.2514/1.j057129",
+    "title": [
+      "Data-Based Approach for Fast Airfoil Analysis and Optimization"
+    ],
+    "authors": [
+      {
+        "given": "Jichao",
+        "family": "Li"
+      },
+      {
+        "given": "Mohamed Amine",
+        "family": "Bouhlel"
+      },
+      {
+        "given": "Joaquim R. R. A.",
+        "family": "Martins"
+      }
+    ],
+    "venue": [
+      "AIAA Journal"
+    ],
+    "volume": "57",
+    "issue": "2",
+    "page": "581-596",
+    "article_number": null,
+    "published": {
+      "date-parts": [
+        [
+          2019,
+          2
+        ]
+      ]
+    },
+    "published_print": {
+      "date-parts": [
+        [
+          2019,
+          2
+        ]
+      ]
+    },
+    "published_online": null,
+    "type": "journal-article"
+  },
+  {
+    "number": 5,
+    "original_entry": "Li, J., Du, X. & Martins, J. R. R. A. (2022). Machine learning in aerodynamic shape optimization. Progress in Aerospace Sciences, 134, 100849. https://doi.org/10.1016/j.paerosci.2022.100849",
+    "doi": "10.1016/j.paerosci.2022.100849",
+    "checked_utc": "2026-10-14T11:19:44.757992+00:00",
+    "primary_url": "https://api.crossref.org/works/10.1016%2Fj.paerosci.2022.100849",
+    "http_status": 200,
+    "status": "PRIMARY_METADATA_VERIFIED",
+    "metadata_sha256": "eedfb8af4bb6de4c2f9bae2795863d8fd6d6ec0e920cb60734381ad496b1475e",
+    "canonical_doi": "10.1016/j.paerosci.2022.100849",
+    "title": [
+      "Machine learning in aerodynamic shape optimization"
+    ],
+    "authors": [
+      {
+        "given": "Jichao",
+        "family": "Li"
+      },
+      {
+        "given": "Xiaosong",
+        "family": "Du"
+      },
+      {
+        "given": "Joaquim R.R.A.",
+        "family": "Martins"
+      }
+    ],
+    "venue": [
+      "Progress in Aerospace Sciences"
+    ],
+    "volume": "134",
+    "issue": null,
+    "page": "100849",
+    "article_number": "100849",
+    "published": {
+      "date-parts": [
+        [
+          2022,
+          10
+        ]
+      ]
+    },
+    "published_print": {
+      "date-parts": [
+        [
+          2022,
+          10
+        ]
+      ]
+    },
+    "published_online": null,
+    "type": "journal-article"
+  },
+  {
+    "number": 6,
+    "original_entry": "Shahrokhi, A. & Jahangirian, A. (2010). A surrogate assisted evolutionary optimization method with application to the transonic airfoil design. Engineering Optimization, 42(6), 497–515. https://doi.org/10.1080/03052150903305468",
+    "doi": "10.1080/03052150903305468",
+    "checked_utc": "2026-10-14T11:19:46.482436+00:00",
+    "primary_url": "https://api.crossref.org/works/10.1080%2F03052150903305468",
+    "http_status": 200,
+    "status": "PRIMARY_METADATA_VERIFIED",
+    "metadata_sha256": "7bfe32af219e36883256260992b181e72666ffc3771d4ed662431855c00c2235",
+    "canonical_doi": "10.1080/03052150903305468",
+    "title": [
+      "A surrogate assisted evolutionary optimization method with application to the transonic airfoil design"
+    ],
+    "authors": [
+      {
+        "given": "Ava",
+        "family": "Shahrokhi"
+      },
+      {
+        "given": "Alireza",
+        "family": "Jahangirian"
+      }
+    ],
+    "venue": [
+      "Engineering Optimization"
+    ],
+    "volume": "42",
+    "issue": "6",
+    "page": "497-515",
+    "article_number": null,
+    "published": {
+      "date-parts": [
+        [
+          2010,
+          6
+        ]
+      ]
+    },
+    "published_print": {
+      "date-parts": [
+        [
+          2010,
+          6
+        ]
+      ]
+    },
+    "published_online": null,
+    "type": "journal-article"
+  },
+  {
+    "number": 7,
+    "original_entry": "Jahangirian, A. & Shahrokhi, A. (2011). Aerodynamic shape optimization using efficient evolutionary algorithms and unstructured CFD solver. Computers & Fluids, 46(1), 270–276. https://doi.org/10.1016/j.compfluid.2011.02.010",
+    "doi": "10.1016/j.compfluid.2011.02.010",
+    "checked_utc": "2026-10-14T11:19:47.828368+00:00",
+    "primary_url": "https://api.crossref.org/works/10.1016%2Fj.compfluid.2011.02.010",
+    "http_status": 200,
+    "status": "PRIMARY_METADATA_VERIFIED",
+    "metadata_sha256": "08551ddab51efefd2bd817f607d9038af9b7bbcc3ce225daae5137a1061120e2",
+    "canonical_doi": "10.1016/j.compfluid.2011.02.010",
+    "title": [
+      "Aerodynamic shape optimization using efficient evolutionary algorithms and unstructured CFD solver"
+    ],
+    "authors": [
+      {
+        "given": "A.",
+        "family": "Jahangirian"
+      },
+      {
+        "given": "A.",
+        "family": "Shahrokhi"
+      }
+    ],
+    "venue": [
+      "Computers &amp; Fluids"
+    ],
+    "volume": "46",
+    "issue": "1",
+    "page": "270-276",
+    "article_number": null,
+    "published": {
+      "date-parts": [
+        [
+          2011,
+          7
+        ]
+      ]
+    },
+    "published_print": {
+      "date-parts": [
+        [
+          2011,
+          7
+        ]
+      ]
+    },
+    "published_online": null,
+    "type": "journal-article"
+  },
+  {
+    "number": 8,
+    "original_entry": "Kulfan, B. M. (2008). Universal parametric geometry representation method. Journal of Aircraft, 45(1), 142–158. https://doi.org/10.2514/1.29958",
+    "doi": "10.2514/1.29958",
+    "checked_utc": "2026-10-14T11:19:49.228668+00:00",
+    "primary_url": "https://api.crossref.org/works/10.2514%2F1.29958",
+    "http_status": 200,
+    "status": "PRIMARY_METADATA_VERIFIED",
+    "metadata_sha256": "378110ab512f5a71b6e8d37b4e8d0c0f65e77e3f8be10e2d0b0473037f74daaf",
+    "canonical_doi": "10.2514/1.29958",
+    "title": [
+      "Universal Parametric Geometry Representation Method"
+    ],
+    "authors": [
+      {
+        "given": "Brenda M.",
+        "family": "Kulfan"
+      }
+    ],
+    "venue": [
+      "Journal of Aircraft"
+    ],
+    "volume": "45",
+    "issue": "1",
+    "page": "142-158",
+    "article_number": null,
+    "published": {
+      "date-parts": [
+        [
+          2008,
+          1
+        ]
+      ]
+    },
+    "published_print": {
+      "date-parts": [
+        [
+          2008,
+          1
+        ]
+      ]
+    },
+    "published_online": null,
+    "type": "journal-article"
+  },
+  {
+    "number": 9,
+    "original_entry": "Kulfan, B. M. & Bussoletti, J. E. (2006). \"Fundamental\" parametric geometry representations for aircraft component shapes. In 11th AIAA/ISSMO Multidisciplinary Analysis and Optimization Conference, AIAA 2006-6948. https://doi.org/10.2514/6.2006-6948",
+    "doi": "10.2514/6.2006-6948",
+    "checked_utc": "2026-10-14T11:19:50.760938+00:00",
+    "primary_url": "https://api.crossref.org/works/10.2514%2F6.2006-6948",
+    "http_status": 200,
+    "status": "PRIMARY_METADATA_VERIFIED",
+    "metadata_sha256": "ac30b36f7a1eff01408ac8f58a6fdc602565fd406d792f41ed37c74e27361ca5",
+    "canonical_doi": "10.2514/6.2006-6948",
+    "title": [
+      "\"Fundamental\" Parameteric Geometry Representations for Aircraft Component Shapes"
+    ],
+    "authors": [
+      {
+        "given": "Brenda",
+        "family": "Kulfan"
+      },
+      {
+        "given": "John",
+        "family": "Bussoletti"
+      }
+    ],
+    "venue": [
+      "11th AIAA/ISSMO Multidisciplinary Analysis and Optimization Conference"
+    ],
+    "volume": null,
+    "issue": null,
+    "page": null,
+    "article_number": null,
+    "published": {
+      "date-parts": [
+        [
+          2006,
+          9,
+          6
+        ]
+      ]
+    },
+    "published_print": {
+      "date-parts": [
+        [
+          2006,
+          9,
+          6
+        ]
+      ]
+    },
+    "published_online": {
+      "date-parts": [
+        [
+          2012,
+          6,
+          18
+        ]
+      ]
+    },
+    "type": "proceedings-article"
+  },
+  {
+    "number": 10,
+    "original_entry": "Drela, M. (1989). XFOIL: An analysis and design system for low Reynolds number airfoils. In Low Reynolds Number Aerodynamics, Lecture Notes in Engineering, vol. 54, Springer, 1–12. https://doi.org/10.1007/978-3-642-84010-4_1",
+    "doi": "10.1007/978-3-642-84010-4_1",
+    "checked_utc": "2026-10-14T11:19:52.149716+00:00",
+    "primary_url": "https://api.crossref.org/works/10.1007%2F978-3-642-84010-4_1",
+    "http_status": 200,
+    "status": "PRIMARY_METADATA_VERIFIED",
+    "metadata_sha256": "4a5c530c1d4cea0ac8c0a4a02b55dde3c53610132a156ed2fb70eb012b9d555a",
+    "canonical_doi": "10.1007/978-3-642-84010-4_1",
+    "title": [
+      "XFOIL: An Analysis and Design System for Low Reynolds Number Airfoils"
+    ],
+    "authors": [
+      {
+        "given": "Mark",
+        "family": "Drela"
+      }
+    ],
+    "venue": [
+      "Lecture Notes in Engineering",
+      "Low Reynolds Number Aerodynamics"
+    ],
+    "volume": null,
+    "issue": null,
+    "page": "1-12",
+    "article_number": null,
+    "published": {
+      "date-parts": [
+        [
+          1989
+        ]
+      ]
+    },
+    "published_print": {
+      "date-parts": [
+        [
+          1989
+        ]
+      ]
+    },
+    "published_online": null,
+    "type": "book-chapter"
+  },
+  {
+    "number": 11,
+    "original_entry": "Selig, M. S. (2010). UIUC Airfoil Data Site. University of Illinois at Urbana–Champaign. https://m-selig.ae.illinois.edu/ads/coord_database.html",
+    "doi": null,
+    "checked_utc": "2026-10-14T11:19:53.478618+00:00",
+    "status": "NO_DOI_WEB_PRIMARY_CHECK_REQUIRED"
+  },
+  {
+    "number": 12,
+    "original_entry": "Airfoil Tools (2019). Airfoil Tools. http://airfoiltools.com/",
+    "doi": null,
+    "checked_utc": "2026-10-14T11:19:53.479623+00:00",
+    "status": "NO_DOI_WEB_PRIMARY_CHECK_REQUIRED"
+  },
+  {
+    "number": 13,
+    "original_entry": "Deb, K., Pratap, A., Agarwal, S. & Meyarivan, T. (2002). A fast and elitist multiobjective genetic algorithm: NSGA-II. IEEE Transactions on Evolutionary Computation, 6(2), 182–197. https://doi.org/10.1109/4235.996017",
+    "doi": "10.1109/4235.996017",
+    "checked_utc": "2026-10-14T11:19:53.481624+00:00",
+    "primary_url": "https://api.crossref.org/works/10.1109%2F4235.996017",
+    "http_status": 200,
+    "status": "PRIMARY_METADATA_VERIFIED",
+    "metadata_sha256": "839ef262d7deecd2f78156eba66a8766bb3a1bb66061e0c3e0b8967d35d29345",
+    "canonical_doi": "10.1109/4235.996017",
+    "title": [
+      "A fast and elitist multiobjective genetic algorithm: NSGA-II"
+    ],
+    "authors": [
+      {
+        "given": "K.",
+        "family": "Deb"
+      },
+      {
+        "given": "A.",
+        "family": "Pratap"
+      },
+      {
+        "given": "S.",
+        "family": "Agarwal"
+      },
+      {
+        "given": "T.",
+        "family": "Meyarivan"
+      }
+    ],
+    "venue": [
+      "IEEE Transactions on Evolutionary Computation"
+    ],
+    "volume": "6",
+    "issue": "2",
+    "page": "182-197",
+    "article_number": null,
+    "published": {
+      "date-parts": [
+        [
+          2002,
+          4
+        ]
+      ]
+    },
+    "published_print": {
+      "date-parts": [
+        [
+          2002,
+          4
+        ]
+      ]
+    },
+    "published_online": null,
+    "type": "journal-article"
+  },
+  {
+    "number": 14,
+    "original_entry": "Blank, J. & Deb, K. (2020). pymoo: Multi-objective optimization in Python. IEEE Access, 8, 89497–89509. https://doi.org/10.1109/ACCESS.2020.2990567",
+    "doi": "10.1109/ACCESS.2020.2990567",
+    "checked_utc": "2026-10-14T11:19:54.875309+00:00",
+    "primary_url": "https://api.crossref.org/works/10.1109%2FACCESS.2020.2990567",
+    "http_status": 200,
+    "status": "PRIMARY_METADATA_VERIFIED",
+    "metadata_sha256": "0f520861834787b175ffa7e2952ea1cb0fa8151a485b6923fa7987fb21c45b53",
+    "canonical_doi": "10.1109/access.2020.2990567",
+    "title": [
+      "Pymoo: Multi-Objective Optimization in Python"
+    ],
+    "authors": [
+      {
+        "given": "Julian",
+        "family": "Blank"
+      },
+      {
+        "given": "Kalyanmoy",
+        "family": "Deb"
+      }
+    ],
+    "venue": [
+      "IEEE Access"
+    ],
+    "volume": "8",
+    "issue": null,
+    "page": "89497-89509",
+    "article_number": null,
+    "published": {
+      "date-parts": [
+        [
+          2020
+        ]
+      ]
+    },
+    "published_print": {
+      "date-parts": [
+        [
+          2020
+        ]
+      ]
+    },
+    "published_online": null,
+    "type": "journal-article"
+  },
+  {
+    "number": 15,
+    "original_entry": "Rockafellar, R. T. & Uryasev, S. (2000). Optimization of conditional value-at-risk. Journal of Risk, 2(3), 21–41. https://doi.org/10.21314/JOR.2000.038",
+    "doi": "10.21314/JOR.2000.038",
+    "checked_utc": "2026-10-14T11:19:56.289566+00:00",
+    "primary_url": "https://api.crossref.org/works/10.21314%2FJOR.2000.038",
+    "http_status": 200,
+    "status": "PRIMARY_METADATA_VERIFIED",
+    "metadata_sha256": "bf06e5b24758d1c80f63166a2109f4b1fedd2281c0add48356d1866ce459fdd7",
+    "canonical_doi": "10.21314/jor.2000.038",
+    "title": [
+      "Optimization of conditional value-at-risk"
+    ],
+    "authors": [
+      {
+        "given": "R. Tyrrell",
+        "family": "Rockafellar"
+      },
+      {
+        "given": "Stanislav",
+        "family": "Uryasev"
+      }
+    ],
+    "venue": [
+      "The Journal of Risk"
+    ],
+    "volume": "2",
+    "issue": "3",
+    "page": "21-41",
+    "article_number": null,
+    "published": {
+      "date-parts": [
+        [
+          2000
+        ]
+      ]
+    },
+    "published_print": null,
+    "published_online": {
+      "date-parts": [
+        [
+          2000
+        ]
+      ]
+    },
+    "type": "journal-article"
+  },
+  {
+    "number": 16,
+    "original_entry": "Lakshminarayanan, B., Pritzel, A. & Blundell, C. (2017). Simple and scalable predictive uncertainty estimation using deep ensembles. In Advances in Neural Information Processing Systems 30 (NIPS 2017), 6402–6413. https://papers.neurips.cc/paper/7219-simple-and-scalable-predictive-uncertainty-estimation-using-deep-ensembles",
+    "doi": null,
+    "checked_utc": "2026-10-14T11:19:57.687130+00:00",
+    "status": "NO_DOI_WEB_PRIMARY_CHECK_REQUIRED"
+  },
+  {
+    "number": 17,
+    "original_entry": "Angelopoulos, A. N. & Bates, S. (2021). A gentle introduction to conformal prediction and distribution-free uncertainty quantification. arXiv:2107.07511. https://arxiv.org/abs/2107.07511",
+    "doi": null,
+    "checked_utc": "2026-10-14T11:19:57.688156+00:00",
+    "status": "NO_DOI_WEB_PRIMARY_CHECK_REQUIRED"
+  },
+  {
+    "number": 18,
+    "original_entry": "Loshchilov, I. & Hutter, F. (2019). Decoupled weight decay regularization. In International Conference on Learning Representations (ICLR 2019). arXiv:1711.05101. https://arxiv.org/abs/1711.05101",
+    "doi": null,
+    "checked_utc": "2026-10-14T11:19:57.689688+00:00",
+    "status": "NO_DOI_WEB_PRIMARY_CHECK_REQUIRED"
+  },
+  {
+    "number": 19,
+    "original_entry": "Nair, V. & Hinton, G. E. (2010). Rectified linear units improve restricted Boltzmann machines. In Proceedings of the 27th International Conference on Machine Learning (ICML 2010), 807–814. https://icml.cc/2010/papers/432.pdf",
+    "doi": null,
+    "checked_utc": "2026-10-14T11:19:57.690771+00:00",
+    "status": "NO_DOI_WEB_PRIMARY_CHECK_REQUIRED"
+  },
+  {
+    "number": 20,
+    "original_entry": "Paszke, A., Gross, S., Massa, F. et al. (2019). PyTorch: An imperative style, high-performance deep learning library. In Advances in Neural Information Processing Systems 32 (NeurIPS 2019), 8026–8037. https://papers.neurips.cc/paper/9015-pytorch-an-imperative-stylehigh-performance-deep-learning-library.pdf",
+    "doi": null,
+    "checked_utc": "2026-10-14T11:19:57.691800+00:00",
+    "status": "NO_DOI_WEB_PRIMARY_CHECK_REQUIRED"
+  },
+  {
+    "number": 21,
+    "original_entry": "Akiba, T., Sano, S., Yanase, T., Ohta, T. & Koyama, M. (2019). Optuna: A next-generation hyperparameter optimization framework. In Proceedings of the 25th ACM SIGKDD International Conference on Knowledge Discovery & Data Mining, 2623–2631. https://doi.org/10.1145/3292500.3330701",
+    "doi": "10.1145/3292500.3330701",
+    "checked_utc": "2026-10-14T11:19:57.693329+00:00",
+    "primary_url": "https://api.crossref.org/works/10.1145%2F3292500.3330701",
+    "http_status": 200,
+    "status": "PRIMARY_METADATA_VERIFIED",
+    "metadata_sha256": "79b2e32e50827489555e8f7db8ad44349f2c5b678cc73788c99383f42dc10647",
+    "canonical_doi": "10.1145/3292500.3330701",
+    "title": [
+      "Optuna"
+    ],
+    "authors": [
+      {
+        "given": "Takuya",
+        "family": "Akiba"
+      },
+      {
+        "given": "Shotaro",
+        "family": "Sano"
+      },
+      {
+        "given": "Toshihiko",
+        "family": "Yanase"
+      },
+      {
+        "given": "Takeru",
+        "family": "Ohta"
+      },
+      {
+        "given": "Masanori",
+        "family": "Koyama"
+      }
+    ],
+    "venue": [
+      "Proceedings of the 25th ACM SIGKDD International Conference on Knowledge Discovery &amp; Data Mining"
+    ],
+    "volume": null,
+    "issue": null,
+    "page": "2623-2631",
+    "article_number": null,
+    "published": {
+      "date-parts": [
+        [
+          2019,
+          7,
+          25
+        ]
+      ]
+    },
+    "published_print": {
+      "date-parts": [
+        [
+          2019,
+          7,
+          25
+        ]
+      ]
+    },
+    "published_online": {
+      "date-parts": [
+        [
+          2019,
+          7,
+          25
+        ]
+      ]
+    },
+    "type": "proceedings-article"
+  },
+  {
+    "number": 22,
+    "original_entry": "Harris, C. R., Millman, K. J., van der Walt, S. J. et al. (2020). Array programming with NumPy. Nature, 585, 357–362. https://doi.org/10.1038/s41586-020-2649-2",
+    "doi": "10.1038/s41586-020-2649-2",
+    "checked_utc": "2026-10-14T11:19:59.073851+00:00",
+    "primary_url": "https://api.crossref.org/works/10.1038%2Fs41586-020-2649-2",
+    "http_status": 200,
+    "status": "PRIMARY_METADATA_VERIFIED",
+    "metadata_sha256": "f197c3627e5db06702c53ab2578fdaba5571e10a5b1de8080da97aa1d4f30205",
+    "canonical_doi": "10.1038/s41586-020-2649-2",
+    "title": [
+      "Array programming with NumPy"
+    ],
+    "authors": [
+      {
+        "given": "Charles R.",
+        "family": "Harris"
+      },
+      {
+        "given": "K. Jarrod",
+        "family": "Millman"
+      },
+      {
+        "given": "Stéfan J.",
+        "family": "van der Walt"
+      },
+      {
+        "given": "Ralf",
+        "family": "Gommers"
+      },
+      {
+        "given": "Pauli",
+        "family": "Virtanen"
+      },
+      {
+        "given": "David",
+        "family": "Cournapeau"
+      },
+      {
+        "given": "Eric",
+        "family": "Wieser"
+      },
+      {
+        "given": "Julian",
+        "family": "Taylor"
+      },
+      {
+        "given": "Sebastian",
+        "family": "Berg"
+      },
+      {
+        "given": "Nathaniel J.",
+        "family": "Smith"
+      },
+      {
+        "given": "Robert",
+        "family": "Kern"
+      },
+      {
+        "given": "Matti",
+        "family": "Picus"
+      },
+      {
+        "given": "Stephan",
+        "family": "Hoyer"
+      },
+      {
+        "given": "Marten H.",
+        "family": "van Kerkwijk"
+      },
+      {
+        "given": "Matthew",
+        "family": "Brett"
+      },
+      {
+        "given": "Allan",
+        "family": "Haldane"
+      },
+      {
+        "given": "Jaime Fernández",
+        "family": "del Río"
+      },
+      {
+        "given": "Mark",
+        "family": "Wiebe"
+      },
+      {
+        "given": "Pearu",
+        "family": "Peterson"
+      },
+      {
+        "given": "Pierre",
+        "family": "Gérard-Marchant"
+      },
+      {
+        "given": "Kevin",
+        "family": "Sheppard"
+      },
+      {
+        "given": "Tyler",
+        "family": "Reddy"
+      },
+      {
+        "given": "Warren",
+        "family": "Weckesser"
+      },
+      {
+        "given": "Hameer",
+        "family": "Abbasi"
+      },
+      {
+        "given": "Christoph",
+        "family": "Gohlke"
+      },
+      {
+        "given": "Travis E.",
+        "family": "Oliphant"
+      }
+    ],
+    "venue": [
+      "Nature"
+    ],
+    "volume": "585",
+    "issue": "7825",
+    "page": "357-362",
+    "article_number": null,
+    "published": {
+      "date-parts": [
+        [
+          2020,
+          9,
+          16
+        ]
+      ]
+    },
+    "published_print": {
+      "date-parts": [
+        [
+          2020,
+          9,
+          17
+        ]
+      ]
+    },
+    "published_online": {
+      "date-parts": [
+        [
+          2020,
+          9,
+          16
+        ]
+      ]
+    },
+    "type": "journal-article"
+  },
+  {
+    "number": 23,
+    "original_entry": "Virtanen, P., Gommers, R., Oliphant, T. E. et al. (2020). SciPy 1.0: Fundamental algorithms for scientific computing in Python. Nature Methods, 17, 261–272. https://doi.org/10.1038/s41592-019-0686-2",
+    "doi": "10.1038/s41592-019-0686-2",
+    "checked_utc": "2026-10-14T11:20:00.550662+00:00",
+    "primary_url": "https://api.crossref.org/works/10.1038%2Fs41592-019-0686-2",
+    "http_status": 200,
+    "status": "PRIMARY_METADATA_VERIFIED",
+    "metadata_sha256": "c9aa24b18eea4803f8e80abd521370f137f47fc665aeb7ed31d62d98ad187b4f",
+    "canonical_doi": "10.1038/s41592-019-0686-2",
+    "title": [
+      "SciPy 1.0: fundamental algorithms for scientific computing in Python"
+    ],
+    "authors": [
+      {
+        "given": "Pauli",
+        "family": "Virtanen"
+      },
+      {
+        "given": "Ralf",
+        "family": "Gommers"
+      },
+      {
+        "given": "Travis E.",
+        "family": "Oliphant"
+      },
+      {
+        "given": "Matt",
+        "family": "Haberland"
+      },
+      {
+        "given": "Tyler",
+        "family": "Reddy"
+      },
+      {
+        "given": "David",
+        "family": "Cournapeau"
+      },
+      {
+        "given": "Evgeni",
+        "family": "Burovski"
+      },
+      {
+        "given": "Pearu",
+        "family": "Peterson"
+      },
+      {
+        "given": "Warren",
+        "family": "Weckesser"
+      },
+      {
+        "given": "Jonathan",
+        "family": "Bright"
+      },
+      {
+        "given": "Stéfan J.",
+        "family": "van der Walt"
+      },
+      {
+        "given": "Matthew",
+        "family": "Brett"
+      },
+      {
+        "given": "Joshua",
+        "family": "Wilson"
+      },
+      {
+        "given": "K. Jarrod",
+        "family": "Millman"
+      },
+      {
+        "given": "Nikolay",
+        "family": "Mayorov"
+      },
+      {
+        "given": "Andrew R. J.",
+        "family": "Nelson"
+      },
+      {
+        "given": "Eric",
+        "family": "Jones"
+      },
+      {
+        "given": "Robert",
+        "family": "Kern"
+      },
+      {
+        "given": "Eric",
+        "family": "Larson"
+      },
+      {
+        "given": "C J",
+        "family": "Carey"
+      },
+      {
+        "given": "İlhan",
+        "family": "Polat"
+      },
+      {
+        "given": "Yu",
+        "family": "Feng"
+      },
+      {
+        "given": "Eric W.",
+        "family": "Moore"
+      },
+      {
+        "given": "Jake",
+        "family": "VanderPlas"
+      },
+      {
+        "given": "Denis",
+        "family": "Laxalde"
+      },
+      {
+        "given": "Josef",
+        "family": "Perktold"
+      },
+      {
+        "given": "Robert",
+        "family": "Cimrman"
+      },
+      {
+        "given": "Ian",
+        "family": "Henriksen"
+      },
+      {
+        "given": "E. A.",
+        "family": "Quintero"
+      },
+      {
+        "given": "Charles R.",
+        "family": "Harris"
+      },
+      {
+        "given": "Anne M.",
+        "family": "Archibald"
+      },
+      {
+        "given": "Antônio H.",
+        "family": "Ribeiro"
+      },
+      {
+        "given": "Fabian",
+        "family": "Pedregosa"
+      },
+      {
+        "given": "Paul",
+        "family": "van Mulbregt"
+      },
+      {
+        "given": null,
+        "family": null
+      },
+      {
+        "given": "Aditya",
+        "family": "Vijaykumar"
+      },
+      {
+        "given": "Alessandro Pietro",
+        "family": "Bardelli"
+      },
+      {
+        "given": "Alex",
+        "family": "Rothberg"
+      },
+      {
+        "given": "Andreas",
+        "family": "Hilboll"
+      },
+      {
+        "given": "Andreas",
+        "family": "Kloeckner"
+      },
+      {
+        "given": "Anthony",
+        "family": "Scopatz"
+      },
+      {
+        "given": "Antony",
+        "family": "Lee"
+      },
+      {
+        "given": "Ariel",
+        "family": "Rokem"
+      },
+      {
+        "given": "C. Nathan",
+        "family": "Woods"
+      },
+      {
+        "given": "Chad",
+        "family": "Fulton"
+      },
+      {
+        "given": "Charles",
+        "family": "Masson"
+      },
+      {
+        "given": "Christian",
+        "family": "Häggström"
+      },
+      {
+        "given": "Clark",
+        "family": "Fitzgerald"
+      },
+      {
+        "given": "David A.",
+        "family": "Nicholson"
+      },
+      {
+        "given": "David R.",
+        "family": "Hagen"
+      },
+      {
+        "given": "Dmitrii V.",
+        "family": "Pasechnik"
+      },
+      {
+        "given": "Emanuele",
+        "family": "Olivetti"
+      },
+      {
+        "given": "Eric",
+        "family": "Martin"
+      },
+      {
+        "given": "Eric",
+        "family": "Wieser"
+      },
+      {
+        "given": "Fabrice",
+        "family": "Silva"
+      },
+      {
+        "given": "Felix",
+        "family": "Lenders"
+      },
+      {
+        "given": "Florian",
+        "family": "Wilhelm"
+      },
+      {
+        "given": "G.",
+        "family": "Young"
+      },
+      {
+        "given": "Gavin A.",
+        "family": "Price"
+      },
+      {
+        "given": "Gert-Ludwig",
+        "family": "Ingold"
+      },
+      {
+        "given": "Gregory E.",
+        "family": "Allen"
+      },
+      {
+        "given": "Gregory R.",
+        "family": "Lee"
+      },
+      {
+        "given": "Hervé",
+        "family": "Audren"
+      },
+      {
+        "given": "Irvin",
+        "family": "Probst"
+      },
+      {
+        "given": "Jörg P.",
+        "family": "Dietrich"
+      },
+      {
+        "given": "Jacob",
+        "family": "Silterra"
+      },
+      {
+        "given": "James T",
+        "family": "Webber"
+      },
+      {
+        "given": "Janko",
+        "family": "Slavič"
+      },
+      {
+        "given": "Joel",
+        "family": "Nothman"
+      },
+      {
+        "given": "Johannes",
+        "family": "Buchner"
+      },
+      {
+        "given": "Johannes",
+        "family": "Kulick"
+      },
+      {
+        "given": "Johannes L.",
+        "family": "Schönberger"
+      },
+      {
+        "given": "José Vinícius",
+        "family": "de Miranda Cardoso"
+      },
+      {
+        "given": "Joscha",
+        "family": "Reimer"
+      },
+      {
+        "given": "Joseph",
+        "family": "Harrington"
+      },
+      {
+        "given": "Juan Luis Cano",
+        "family": "Rodríguez"
+      },
+      {
+        "given": "Juan",
+        "family": "Nunez-Iglesias"
+      },
+      {
+        "given": "Justin",
+        "family": "Kuczynski"
+      },
+      {
+        "given": "Kevin",
+        "family": "Tritz"
+      },
+      {
+        "given": "Martin",
+        "family": "Thoma"
+      },
+      {
+        "given": "Matthew",
+        "family": "Newville"
+      },
+      {
+        "given": "Matthias",
+        "family": "Kümmerer"
+      },
+      {
+        "given": "Maximilian",
+        "family": "Bolingbroke"
+      },
+      {
+        "given": "Michael",
+        "family": "Tartre"
+      },
+      {
+        "given": "Mikhail",
+        "family": "Pak"
+      },
+      {
+        "given": "Nathaniel J.",
+        "family": "Smith"
+      },
+      {
+        "given": "Nikolai",
+        "family": "Nowaczyk"
+      },
+      {
+        "given": "Nikolay",
+        "family": "Shebanov"
+      },
+      {
+        "given": "Oleksandr",
+        "family": "Pavlyk"
+      },
+      {
+        "given": "Per A.",
+        "family": "Brodtkorb"
+      },
+      {
+        "given": "Perry",
+        "family": "Lee"
+      },
+      {
+        "given": "Robert T.",
+        "family": "McGibbon"
+      },
+      {
+        "given": "Roman",
+        "family": "Feldbauer"
+      },
+      {
+        "given": "Sam",
+        "family": "Lewis"
+      },
+      {
+        "given": "Sam",
+        "family": "Tygier"
+      },
+      {
+        "given": "Scott",
+        "family": "Sievert"
+      },
+      {
+        "given": "Sebastiano",
+        "family": "Vigna"
+      },
+      {
+        "given": "Stefan",
+        "family": "Peterson"
+      },
+      {
+        "given": "Surhud",
+        "family": "More"
+      },
+      {
+        "given": "Tadeusz",
+        "family": "Pudlik"
+      },
+      {
+        "given": "Takuya",
+        "family": "Oshima"
+      },
+      {
+        "given": "Thomas J.",
+        "family": "Pingel"
+      },
+      {
+        "given": "Thomas P.",
+        "family": "Robitaille"
+      },
+      {
+        "given": "Thomas",
+        "family": "Spura"
+      },
+      {
+        "given": "Thouis R.",
+        "family": "Jones"
+      },
+      {
+        "given": "Tim",
+        "family": "Cera"
+      },
+      {
+        "given": "Tim",
+        "family": "Leslie"
+      },
+      {
+        "given": "Tiziano",
+        "family": "Zito"
+      },
+      {
+        "given": "Tom",
+        "family": "Krauss"
+      },
+      {
+        "given": "Utkarsh",
+        "family": "Upadhyay"
+      },
+      {
+        "given": "Yaroslav O.",
+        "family": "Halchenko"
+      },
+      {
+        "given": "Yoshiki",
+        "family": "Vázquez-Baeza"
+      }
+    ],
+    "venue": [
+      "Nature Methods"
+    ],
+    "volume": "17",
+    "issue": "3",
+    "page": "261-272",
+    "article_number": null,
+    "published": {
+      "date-parts": [
+        [
+          2020,
+          2,
+          3
+        ]
+      ]
+    },
+    "published_print": {
+      "date-parts": [
+        [
+          2020,
+          3,
+          2
+        ]
+      ]
+    },
+    "published_online": {
+      "date-parts": [
+        [
+          2020,
+          2,
+          3
+        ]
+      ]
+    },
+    "type": "journal-article"
+  },
+  {
+    "number": 24,
+    "original_entry": "Pedregosa, F., Varoquaux, G., Gramfort, A. et al. (2011). Scikit-learn: Machine learning in Python. Journal of Machine Learning Research, 12, 2825–2830. https://www.jmlr.org/papers/v12/pedregosa11a.html",
+    "doi": null,
+    "checked_utc": "2026-10-14T11:20:02.225559+00:00",
+    "status": "NO_DOI_WEB_PRIMARY_CHECK_REQUIRED"
+  },
+  {
+    "number": 25,
+    "original_entry": "Abbott, I. H. & von Doenhoff, A. E. (1959). Theory of Wing Sections, Including a Summary of Airfoil Data. Dover Publications.",
+    "doi": null,
+    "checked_utc": "2026-10-14T11:20:02.228086+00:00",
+    "status": "NO_DOI_WEB_PRIMARY_CHECK_REQUIRED"
+  },
+  {
+    "number": 26,
+    "original_entry": "Anderson, J. D. (2017). Fundamentals of Aerodynamics. 6th edn. McGraw-Hill Education.",
+    "doi": null,
+    "checked_utc": "2026-10-14T11:20:02.230086+00:00",
+    "status": "NO_DOI_WEB_PRIMARY_CHECK_REQUIRED"
+  },
+  {
+    "number": 27,
+    "original_entry": "Pichitkul, A., Boksawat, A., Phiboon, T., Tantrairatn, S., Bureerat, S., Kasemsri, R. & Ariyarit, A. (2026). An intelligent multi-objective robust design optimization framework based on PathLine Transformation and surrogate-assisted sampling for uncertainty-aware airfoil design. Applications in Engineering Science, 25, 100310. https://doi.org/10.1016/j.apples.2026.100310",
+    "doi": "10.1016/j.apples.2026.100310",
+    "checked_utc": "2026-10-14T11:20:02.232597+00:00",
+    "primary_url": "https://api.crossref.org/works/10.1016%2Fj.apples.2026.100310",
+    "http_status": 200,
+    "status": "PRIMARY_METADATA_VERIFIED",
+    "metadata_sha256": "f24c9d61dc2ef7c18986f4155180e252d6646476a1ed5cfb9c17b9ce9c61d4d0",
+    "canonical_doi": "10.1016/j.apples.2026.100310",
+    "title": [
+      "An intelligent multi-objective robust design optimization framework based on PathLine Transformation and surrogate-assisted sampling for uncertainty-aware airfoil design"
+    ],
+    "authors": [
+      {
+        "given": "Auraluck",
+        "family": "Pichitkul"
+      },
+      {
+        "given": "Anusorn",
+        "family": "Boksawat"
+      },
+      {
+        "given": "Tharathep",
+        "family": "Phiboon"
+      },
+      {
+        "given": "Suradet",
+        "family": "Tantrairatn"
+      },
+      {
+        "given": "Sujin",
+        "family": "Bureerat"
+      },
+      {
+        "given": "Rattanaporn",
+        "family": "Kasemsri"
+      },
+      {
+        "given": "Atthaphon",
+        "family": "Ariyarit"
+      }
+    ],
+    "venue": [
+      "Applications in Engineering Science"
+    ],
+    "volume": "25",
+    "issue": null,
+    "page": "100310",
+    "article_number": "100310",
+    "published": {
+      "date-parts": [
+        [
+          2026,
+          3
+        ]
+      ]
+    },
+    "published_print": {
+      "date-parts": [
+        [
+          2026,
+          3
+        ]
+      ]
+    },
+    "published_online": null,
+    "type": "journal-article"
+  },
+  {
+    "number": 28,
+    "original_entry": "Fannjiang, C., Bates, S., Angelopoulos, A. N., Listgarten, J. & Jordan, M. I. (2022). Conformal prediction under feedback covariate shift for biomolecular design. Proceedings of the National Academy of Sciences, 119(43), e2204569119. https://doi.org/10.1073/pnas.2204569119",
+    "doi": "10.1073/pnas.2204569119",
+    "checked_utc": "2026-10-14T11:20:03.761479+00:00",
+    "primary_url": "https://api.crossref.org/works/10.1073%2Fpnas.2204569119",
+    "http_status": 200,
+    "status": "PRIMARY_METADATA_VERIFIED",
+    "metadata_sha256": "d48a62a7dfa28009ed9987ebac2f9af76d76126976c6cff0449d4f5bfd6fe75b",
+    "canonical_doi": "10.1073/pnas.2204569119",
+    "title": [
+      "Conformal prediction under feedback covariate shift for biomolecular design"
+    ],
+    "authors": [
+      {
+        "given": "Clara",
+        "family": "Fannjiang"
+      },
+      {
+        "given": "Stephen",
+        "family": "Bates"
+      },
+      {
+        "given": "Anastasios N.",
+        "family": "Angelopoulos"
+      },
+      {
+        "given": "Jennifer",
+        "family": "Listgarten"
+      },
+      {
+        "given": "Michael I.",
+        "family": "Jordan"
+      }
+    ],
+    "venue": [
+      "Proceedings of the National Academy of Sciences"
+    ],
+    "volume": "119",
+    "issue": "43",
+    "page": null,
+    "article_number": "e2204569119",
+    "published": {
+      "date-parts": [
+        [
+          2022,
+          10,
+          18
+        ]
+      ]
+    },
+    "published_print": {
+      "date-parts": [
+        [
+          2022,
+          10,
+          25
+        ]
+      ]
+    },
+    "published_online": {
+      "date-parts": [
+        [
+          2022,
+          10,
+          18
+        ]
+      ]
+    },
+    "type": "journal-article"
+  }
+]

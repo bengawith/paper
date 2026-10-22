@@ -1,0 +1,8 @@
+{
+  "source_sha256": "7ae4495f88b0ec60da90683ca3dc5d403a4de25776041de91e5620d5096843fa",
+  "partition_sha256": {
+    "development": "bb6bc27413515199c4068f7c0f7d9748058ca688a644957f6b0764b50059d307",
+    "calibration": "ecc52a8c8329e1a928416a2e0603a17b9a0a5298c3a27cb1f884b18f623606ac",
+    "locked_test": "ff0ace6abecf0c3461632f3928a7246f46fb835d2cfebcea874445e8480866d4"
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "schema": "robust-v2-20261022-minimal-source-and-review-evidence-v1",
+  "status": "COAUTHOR_REVIEW_READY_CFD_PENDING",
+  "only_current_manuscript": "paper/LATEST_MANUSCRIPT_FOR_AVA.docx",
+  "only_current_comparison_supplement": "paper/SUPPLEMENTARY_NUMERICAL_COMPARISON.docx",
+  "raw_new_numerical_comparison_cases": 443,
+  "new_raw_comparison_archive_sha256": "c662f9fa68a5b04047f89761cc6efc69477b7e30017709ee3aeab322ed63ab44",
+  "native_word_render_claim": false,
+  "files": [
+    {
+      "relative_path": "paper/manuscript.md",
+      "bytes": 72550,
+      "sha256": "d3fa9045c0d4ce32087d41216ed36c0d0da2ffbc5daca00bfbfd809714ecd9e2"
+    },
+    {
+      "relative_path": "paper/LATEST_MANUSCRIPT_FOR_AVA.docx",
+      "bytes": 1292716,
+      "sha256": "6a7582448ea2bc64206ca1317405785380f1241254907f1c59c1c5a792f18e63"
+    },
+    {
+      "relative_path": "paper/SUPPLEMENTARY_NUMERICAL_COMPARISON.md",
+      "bytes": 4696,
+      "sha256": "93b27d045c4cfbc5d73909c320610cdd500d9a6d589e98398d4813e11717269a"
+    },
+    {
+      "relative_path": "paper/SUPPLEMENTARY_NUMERICAL_COMPARISON.docx",
+      "bytes": 40681,
+      "sha256": "70b60fa5e675b6fcb6ba72244874274eed13c939268af619c740d4f96e36d923"
+    },
+    {
+      "relative_path": "paper/COAUTHOR_NOTES.md",
+      "bytes": 3349,
+      "sha256": "8905a53ebc575eadae3959613d4771d66fc88a7b9143a9105171855b384b5b24"
+    },
+    {
+      "relative_path": "paper/README.md",
+      "bytes": 1721,
+      "sha256": "d7b1ec9103fbe1f52e6bc64cc9094efa89325e02a0af5185470e57d42046f47d"
+    },
+    {
+      "relative_path": "paper/REVIEW_STATUS.md",
+      "bytes": 1539,
+      "sha256": "945898814d18969cb59d0d53458f684556e9472fd413f03299b441e7862715f7"
+    },
+    {
+      "relative_path": "reports/robust_v2/final_release_20261022/CURRENT_SCIENTIFIC_REVIEW_REPORT.docx",
+      "bytes": 39636,
+      "sha256": "2458f3977665b6aaa6c114b3c3d2e1a234a90856a5bdb4b54d70c9c5652522bf"
+    },
+    {
+      "relative_path": "reports/robust_v2/external_academic_review_20261021/REFERENCES_PRIMARY_VERIFIED_V2.csv",
+      "bytes": 18724,
+      "sha256": "c2b7fee7d7ecd0f0dfc1952c24657cf74089e14c51d924a7c9942b838c27096f"
+    },
+    {
+      "relative_path": "reports/robust_v2/external_academic_review_20261021/FINAL_AUTHOR_REWRITE_ACCEPTANCE.json",
+      "bytes": 2548,
+      "sha256": "b98aa6551720af586d06a86268353cbfd69debf61648d6da973da55621ec2238"
+    },
+    {
+      "relative_path": "reports/robust_v2/external_academic_review_20261014/RAW_XFOIL_EVIDENCE.zip",
+      "bytes": 165657624,
+      "sha256": "e9bb00993e3ec5ad7e8b9a81bdc82004fb7404485c3cddeb75538a3eec00f90a"
+    },
+    {
+      "relative_path": "reports/robust_v2/final_release_20261022/FINAL_REVIEW_ACCEPTANCE.json",
+      "bytes": 2148,
+      "sha256": "276f08e62cb29979d87f5bc52b476016b3f8b9b953f4236bc3aeaddf367bb3b5"
+    },
+    {
+      "relative_path": "reports/robust_v2/final_release_20261022/LATEST_WORD_VISUAL_RECEIPT.json",
+      "bytes": 8034,
+      "sha256": "4192ad3e1996daf3a8a2e273c762e9c6df0c8846e3e5c0ceab0d8b590a5ac39c"
+    },
+    {
+      "relative_path": "reports/robust_v2/final_release_20261022/EXTERNAL_NACA_FAMILY/NEW_FAMILY_RESULTS.json",
+      "bytes": 1277,
+      "sha256": "bb02fe4dcee0980b2deead2e161ff9de964efda674dcf5179fc8f9fc6e019b98"
+    },
+    {
+      "relative_path": "reports/robust_v2/final_release_20261022/EXTERNAL_NACA_FAMILY/INDEPENDENT_RECEIPT_AND_TRUST_AUDIT.json",
+      "bytes": 2120,
+      "sha256": "11687e6ec1bca0ae6ca8cc44344cc8dcd2aef9913812334a320dd6e8fc297d4f"
+    },
+    {
+      "relative_path": "reports/robust_v2/final_release_20261022/NEURALFOIL_FULL_CONFIRMATION/RESULTS.json",
+      "bytes": 3705,
+      "sha256": "fe873dbc8e1919816a27ed958b09f2b9827fc7c94c5277715a5dad65c750d75d"
+    },
+    {
+      "relative_path": "reports/robust_v2/final_release_20261022/NEURALFOIL_COMPARISON/BENCHMARK_RESULT.json",
+      "bytes": 5236,
+      "sha256": "ae485aa237e19e59dee91a8ebf5d249bccd25f06ccf239690fdd60beda883770"
+    },
+    {
+      "relative_path": "reports/robust_v2/final_release_20261022/NEW_NUMERICAL_COMPARISON_RAW.zip",
+      "bytes": 3854425,
+      "sha256": "c662f9fa68a5b04047f89761cc6efc69477b7e30017709ee3aeab322ed63ab44"
+    }
+  ]
+}

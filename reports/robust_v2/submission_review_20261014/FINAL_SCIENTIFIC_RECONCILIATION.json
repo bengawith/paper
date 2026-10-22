@@ -1,0 +1,21 @@
+{
+  "schema": "robust-v2-scientific-reconciliation-20261014",
+  "date": "2026-10-14",
+  "new_sha256": "24444ead454f66a026791054679b9282bd42842e3c038923639e6239ac8ed0e0",
+  "changes": [
+    "abstract aligned to corrected evidence",
+    "physical field implementation",
+    "optimisation historical/modern distinction",
+    "corrected historical front appraisal",
+    "avoid robust-optimum label",
+    "Table5 terminology",
+    "historical figure4 caption",
+    "limitations tightened",
+    "conclusion",
+    "calibration-only incremental evidence"
+  ],
+  "evidence": {
+    "calibration_group_cv": "reports\\robust_v2\\submission_review_20261014\\TRUST_INCREMENTAL\\TRUST_INCREMENTAL_CV.json",
+    "candidate_specific_recheck": "reports\\robust_v2\\submission_review_20261014\\CORRECTED_OPTIMISATION\\CORRECTED_SELECTED_DESIGNS.json"
+  }
+}

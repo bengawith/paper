@@ -1,0 +1,62 @@
+{
+  "schema": "repaired-physical-geometry-corpus-v1",
+  "source_row_policy": "actual archived polar files parsed again; no synthetic aerodynamic labels or repaired-vector/old-checkpoint substitution",
+  "starting_source_airfoils": 1560,
+  "starting_source_states": 179780,
+  "initial_builder": {
+    "requested_polars": 1560,
+    "mapped_airfoils": 1546,
+    "accepted_polar_rows": 178168,
+    "joint_model_points": 178167,
+    "rejected_records": 14,
+    "mapping_fraction": 0.9910256410256411
+  },
+  "admitted_airfoils": 1256,
+  "admitted_states": 141383,
+  "geometry_clusters": 1246,
+  "split_counts": [
+    {
+      "split": "calibration",
+      "airfoils": 194,
+      "clusters": 193,
+      "states": 21741
+    },
+    {
+      "split": "development",
+      "airfoils": 880,
+      "clusters": 873,
+      "states": 99381
+    },
+    {
+      "split": "locked_test",
+      "airfoils": 182,
+      "clusters": 180,
+      "states": 20261
+    }
+  ],
+  "geometry_policy": {
+    "max_fit_error_chord": 0.005,
+    "dense_verification_points": 2001,
+    "nonnegative_fitted_te": true,
+    "postfit_surface_validity": true,
+    "near_duplicate_rms_threshold": 0.0001,
+    "partition_protection": "new physical cluster max historical rank; test > calibration > development"
+  },
+  "data_files": {
+    "airfoils.parquet": "d12f6b72c1d0d9bf6c6de775bf1e68eacba7f5a6fcaf887c959c504cba34ff59",
+    "mappings.json": "a56acb515dce128121babb9bcf978726fd6ff7cf8bd7a69fcacda9675385d25b",
+    "model_points.parquet": "7ae4495f88b0ec60da90683ca3dc5d403a4de25776041de91e5620d5096843fa",
+    "polar_points.parquet": "17234a53f7a27da8c285a8e97a716fae8470b6d391677491dd8d8776ed212945",
+    "rejected.json": "360bcb46934c38b016d4d1a5e61c07196c530c4ad39583ea253523aef60cdf3b"
+  },
+  "split_sha256": "31ebce600b60ddf1c628a329e7f7af9f2164d49a16264522b2ec68a4343f8e6d",
+  "geometry_source_sha256": {
+    "parser.py": "8bc9aa59f3bfdc1a38a3e97a4d485dbe5018f09eb7d93ed10961e1e14e3e1b73",
+    "normalise.py": "1879c30677db68264528719b15f1a4d705db80b877244fb83c380eeacef4dd92",
+    "cst.py": "19c09cdb2d16df173635a29add402b8ae27fdbd8fd13d092983fdcb0fbedb450",
+    "validity.py": "0c39fe76870fee4d717c068906944ad964f6d62f799b8b2df917e75608e0510f",
+    "clustering.py": "8519616aa715528ff4102469798bb600464f06027f2ebf63032ee6d9bc0527fd"
+  },
+  "original_inputs_preserved": true,
+  "test_limitation": "historical observations have been inspected previously; evaluation is a repaired-pipeline audit, not a claim of pristine prospective population confirmation"
+}

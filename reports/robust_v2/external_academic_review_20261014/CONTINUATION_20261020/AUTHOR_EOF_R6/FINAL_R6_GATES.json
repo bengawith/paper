@@ -1,0 +1,48 @@
+{
+  "status": "PASS",
+  "completed_utc": "2026-10-21T13:16:06.732309+00:00",
+  "rows": [
+    {
+      "gate": "ruff",
+      "exit": 0,
+      "seconds": 0.2970000000204891,
+      "sha256": "a4443afdcfb6d7363adb285762515ccf7cf50473b1a05c20c1a50f6bed4d26b0",
+      "log": "reports/robust_v2/external_academic_review_20261014/CONTINUATION_20261020/AUTHOR_EOF_R6/R6_ruff.log"
+    },
+    {
+      "gate": "mypy",
+      "exit": 0,
+      "seconds": 3.437000000034459,
+      "sha256": "b42ade8435baea992899d3f7cba53e98e9f6480f0fc9f22bc37ee584f4963c1f",
+      "log": "reports/robust_v2/external_academic_review_20261014/CONTINUATION_20261020/AUTHOR_EOF_R6/R6_mypy.log"
+    },
+    {
+      "gate": "prescribed_unit",
+      "exit": 0,
+      "seconds": 18.34299999999348,
+      "sha256": "880d24c26525feee75c19fec148756637e00870599ebf5153334a350ebd6becc",
+      "log": "reports/robust_v2/external_academic_review_20261014/CONTINUATION_20261020/AUTHOR_EOF_R6/R6_prescribed_unit.log"
+    },
+    {
+      "gate": "full_nonnetwork_xfoil",
+      "exit": 0,
+      "seconds": 18.483999999938533,
+      "sha256": "7b352f3705d48fd709544050383ede4c1ae26683df29e2094fc70e01c8382a68",
+      "log": "reports/robust_v2/external_academic_review_20261014/CONTINUATION_20261020/AUTHOR_EOF_R6/R6_full_nonnetwork_xfoil.log"
+    },
+    {
+      "gate": "author_pack",
+      "exit": 0,
+      "seconds": 3.640999999945052,
+      "sha256": "31248ba0217856b8b9af71eeb997f35e4cad0a36063b3fbd0475fdd27ba9366f",
+      "log": "reports/robust_v2/external_academic_review_20261014/CONTINUATION_20261020/AUTHOR_EOF_R6/R6_author_pack.log"
+    },
+    {
+      "gate": "git_diff_check",
+      "exit": 0,
+      "seconds": 0.125,
+      "sha256": "a13c0ad1dbb9263f15c4b85026289beb65ab7300599c10d204009bed884910f2",
+      "log": "reports/robust_v2/external_academic_review_20261014/CONTINUATION_20261020/AUTHOR_EOF_R6/R6_git_diff_check.log"
+    }
+  ]
+}

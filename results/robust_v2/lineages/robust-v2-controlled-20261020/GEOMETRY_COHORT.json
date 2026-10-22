@@ -1,0 +1,25 @@
+{
+  "airfoils": 1256,
+  "clusters": 1244,
+  "context_hash": "601c1f8d55a6c0eb5b5b364130bae46edc4441e63168c34c4523a2f219690888",
+  "partition_counts": [
+    {
+      "airfoils": 195,
+      "clusters": 193,
+      "split": "calibration"
+    },
+    {
+      "airfoils": 879,
+      "clusters": 871,
+      "split": "development"
+    },
+    {
+      "airfoils": 182,
+      "clusters": 180,
+      "split": "locked_test"
+    }
+  ],
+  "selection": "Geometry-only cohort/cluster/protected partition fixed before new aerodynamic labels",
+  "shape_file_sha256": "97944a642dbf114ac61017e8a82b7c8f00107412460f3b4c101822deea4c319b",
+  "split_file_sha256": "f5f413daff43edea16f43b50cc826cfdcee6f23530be3848cee3d4d2c866dc1d"
+}

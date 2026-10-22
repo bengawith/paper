@@ -1,0 +1,47 @@
+{
+  "schema": "robust-v2-manuscript-reconciliation-20261014-v1",
+  "source": "paper/data/paper_data.json",
+  "numeric_recalculation": {
+    "nominal_drag_improvement_pct": 18.73751297560799,
+    "marginal_mean_drag_improvement_pct": 11.655906914949941,
+    "nominal_outside_worse_pct": 87.47332407068554,
+    "within_trust_reported_paired_improvement": 0.0009795303537315436,
+    "within_trust_reported_paired_n": 15,
+    "outside_reported_paired_n": 16,
+    "reference_sample_n": 16,
+    "within_trust_sample_n": 15,
+    "outside_trust_sample_n": 16,
+    "estimated_tail_effective_count_reference": 0.8,
+    "estimated_tail_effective_count_within": 0.75,
+    "xfoil_cvar_is_single_max_reference": true,
+    "xfoil_cvar_is_single_max_within": true,
+    "relative_cvar_increase_within_pct": 1.2612487179224585,
+    "optimisation_mean_symmetric_distance": 0.28330599504836057,
+    "optimisation_agreement_threshold": 0.2,
+    "optimisation_agreement_pass": false,
+    "trust_inside_fraction": 0.660947100254758,
+    "heldout_coverage_all": {
+      "cl": 0.9366851491083471,
+      "log_cd": 0.9439157800089915,
+      "cm": 0.9448898546380938
+    },
+    "heldout_coverage_within": {
+      "cl": 0.9774968824396327,
+      "log_cd": 0.9653100555492574,
+      "cm": 0.9917809772134678
+    },
+    "source_sha256": "a242c986c4afd80e9e561155bf6f3aa4d9b416118c3e73faa4b9609527f0b044"
+  },
+  "interpretive_limits": [
+    "XFOIL uses a 16-scenario exploratory campaign; the within-trust candidate has only 15 successful outcomes.",
+    "The reported marginal means use different success sets (reference n=16, candidate n=15). Prefer paired-complete-case differences, report solver failure, and do not treat missing outcomes as favourable.",
+    "Empirical 95% CVaR from n=15/16 corresponds to approximately one maximum observation, not a stable tail-risk estimate.",
+    "The recorded paired bootstrap interval resamples scrambled-Sobol scenarios, which are not an IID random sample. Call this a descriptive sensitivity interval, not guaranteed population coverage.",
+    "Locked-test band coverage is empirical for the evaluated distribution. It does not confer conditional coverage or certification under optimizer-induced distribution shift.",
+    "A selected outside-trust counterexample and selected inside-trust success do not prove a universal or necessary relation across all candidate geometries.",
+    "The 0.01-chord risk figure includes an out-of-trust penalty for some scenarios; it is not pure physical drag.",
+    "The reported optimisation seed-distance threshold is not met. Keep repeatability limitation visible.",
+    "AirfoilTools/XFOIL training labels and local XFOIL checks share solver physics; no independent RANS/experimental verification exists.",
+    "Adversarial requested/evaluated/rejected figures require explicit denominators and stage-by-stage accounting."
+  ]
+}

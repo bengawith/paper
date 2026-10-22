@@ -1,0 +1,19 @@
+{
+  "best_params": {
+    "activation": "relu",
+    "batch_size": 512,
+    "dropout": 0.19656356274800876,
+    "hidden_layers": 2,
+    "hidden_width": 512,
+    "learning_rate": 0.0018617357197368122,
+    "loss": "huber",
+    "residual": false,
+    "weight_decay": 3.708243687725767e-08
+  },
+  "best_value": 0.0767784845999326,
+  "completed_trials": 27,
+  "grouped_folds": 3,
+  "selected_epochs": 18,
+  "status": "completed",
+  "trials": 50
+}

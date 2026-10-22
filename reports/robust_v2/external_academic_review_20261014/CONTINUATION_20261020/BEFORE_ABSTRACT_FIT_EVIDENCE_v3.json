@@ -1,0 +1,130 @@
+{
+  "schema": "controlled-manuscript-evidence-v1",
+  "files": [
+    {
+      "relative_path": "paper/manuscript.md",
+      "sha256": "13c3e15eec6696ca82bcb06908e4e8294b4bb51e81cb63e78447062f7143668b",
+      "bytes": 37555
+    },
+    {
+      "relative_path": "paper/LATEST_MANUSCRIPT_FOR_AVA.docx",
+      "sha256": "2a9723256f36f137627bcc8ad37574cb61f2a5362f099b65951f59ca498b04e3",
+      "bytes": 1280562
+    },
+    {
+      "relative_path": "paper/MODEL_CARD.md",
+      "sha256": "82dd7ce7921c3ded5d53d3f945d97185e3752969c1ae36813e3273dacc5d0a0e",
+      "bytes": 835
+    },
+    {
+      "relative_path": "reports/robust_v2/external_academic_review_20261014/ACADEMIC_REFEREE_REPORT.md",
+      "sha256": "9f7095eebf2087669d58fcfc841615a529013f9dbdd4d7805e619f8df0496ed3",
+      "bytes": 4084
+    },
+    {
+      "relative_path": "reports/robust_v2/external_academic_review_20261014/SCIENTIFIC_REVIEW_REPORT.docx",
+      "sha256": "b802e2a847004c2220eeb0ad463b7d2880ba53075f53a777a717f252400f7dd7",
+      "bytes": 39949
+    },
+    {
+      "relative_path": "reports/robust_v2/external_academic_review_20261014/CLAIM_EVIDENCE_MATRIX.csv",
+      "sha256": "52c0a5dd1cb8b90b0eda1088bbe2ccb40ca07a38a3a17b1466718f3b73a75e26",
+      "bytes": 13891
+    },
+    {
+      "relative_path": "reports/robust_v2/external_academic_review_20261014/REFERENCES_VERIFIED.csv",
+      "sha256": "a06d7e3a124fa4c4d3708258d8f6db1047d0872470593993e156980972b9bc8c",
+      "bytes": 17477
+    },
+    {
+      "relative_path": "results/robust_v2/lineages/robust-v2-controlled-20261020/DATA_MANIFEST.json",
+      "sha256": "fc14f6d6fdcb2d01246c2e855049e4215d3c316b7e318bf01b9fb1131223693a",
+      "bytes": 2143
+    },
+    {
+      "relative_path": "results/robust_v2/lineages/robust-v2-controlled-20261020/FROZEN_MODEL_MANIFEST.json",
+      "sha256": "fafd9375698dcd69da68dbeb030d2f65b99ebb006b40dada87b81c82590a95ab",
+      "bytes": 5952
+    },
+    {
+      "relative_path": "reports/robust_v2/external_academic_review_20261014/CONTROLLED_MODEL/REPAIRED_TEST_METRICS.json",
+      "sha256": "d4a4c53eb808738a60542775064fa6417a057a94f8e0c5163adc01e1b1482935",
+      "bytes": 7354
+    },
+    {
+      "relative_path": "reports/robust_v2/external_academic_review_20261014/CONTROLLED_MODEL/RISK_OOF/REPAIRED_RISK_OOF.json",
+      "sha256": "c101230a6a68239f38678f706c8678a98b00575c64590d5db74c7a3e9e4189ef",
+      "bytes": 27103
+    },
+    {
+      "relative_path": "reports/robust_v2/external_academic_review_20261014/CONTROLLED_MODEL/CONFIRMATION/CONFIRMATION_RESULTS.json",
+      "sha256": "a7fa48eeff1e3d20435f775c985fe6d147fadf158b4721a38bd83174ee9cedc4",
+      "bytes": 13682
+    },
+    {
+      "relative_path": "results/robust_v2/lineages/robust-v2-controlled-20261020/optimisation_production/PRODUCTION_SUMMARY.json",
+      "sha256": "fcf8cf689a8f4b439155723615db6f6d3bc952a91a7158bf8cda117f9f8df5a6",
+      "bytes": 10674
+    },
+    {
+      "relative_path": "results/robust_v2/lineages/robust-v2-controlled-20261020/nominal_control/NOMINAL_CONTROL_SUMMARY.json",
+      "sha256": "65aaf96a6e733cd2cbc53e8eb46f97d367e827f9fa4960234cc6b1c1dde3dd72",
+      "bytes": 4419
+    },
+    {
+      "relative_path": "results/robust_v2/lineages/robust-v2-controlled-20261020/selected_study/SELECTED_XFOIL_SUMMARY.json",
+      "sha256": "17234ed2a0db773953ad10b1b4d83e14400f233ae640cb018a38973cbd0a55fe",
+      "bytes": 1265679
+    },
+    {
+      "relative_path": "reports/robust_v2/external_academic_review_20261014/CONTINUATION_20261020/EXACT_RUNTIME_SOURCE_BYTES.zip",
+      "sha256": "fefb93097d636f9247695989f09a65dbc244efd8212a0ae9974a368f27280af4",
+      "bytes": 189591
+    },
+    {
+      "relative_path": "reports/robust_v2/external_academic_review_20261014/CONTINUATION_20261020/EXACT_RUNTIME_SOURCE_MANIFEST.json",
+      "sha256": "4fb0c0f70c50dca6993ee8f26dfab10cd4837f34d59511e5e7d728d8ab6d7d89",
+      "bytes": 17406
+    },
+    {
+      "relative_path": "paper/figures/fig_design_verification.png",
+      "sha256": "aeeadbdcab49da0361faeba8b3fc9f677c59ae5d65fd9497eaf965d868642f84",
+      "bytes": 82970
+    },
+    {
+      "relative_path": "paper/figures/fig_manufacturing_risk.png",
+      "sha256": "129b3e6e4103066cee19de0d9c043641de668ed2050eb52127908979035ecabc",
+      "bytes": 188556
+    },
+    {
+      "relative_path": "paper/figures/fig_ml_selective_coverage.png",
+      "sha256": "597525432dc7bd0960725913b07a31b6cb8447d0ff3efdc86bfb5d934a8167d7",
+      "bytes": 170290
+    },
+    {
+      "relative_path": "paper/figures/fig_pareto_front.png",
+      "sha256": "bc3fed7979643283d0bc4f196642a5e2eee3880b2c82647e0972f541dc633492",
+      "bytes": 283071
+    },
+    {
+      "relative_path": "paper/figures/fig_perturbation_validity.png",
+      "sha256": "cde6288ae77189e0087f00ec92a0cc8614120750e44834108b9790b929f27f52",
+      "bytes": 80607
+    },
+    {
+      "relative_path": "paper/figures/fig_surrogate_accuracy.png",
+      "sha256": "d98d2f3d1a13e12a14b42945618fa9ea21287156c80b97e52be6c36e857acb86",
+      "bytes": 357316
+    },
+    {
+      "relative_path": "paper/figures/fig_surrogate_trust_stress.png",
+      "sha256": "5ffba146e0ea362b260351dce95c64a44923fdd77fb29c4b1e2f462f2a8da50f",
+      "bytes": 99515
+    },
+    {
+      "relative_path": "paper/figures/fig_worstcase_polar.png",
+      "sha256": "803892ff572760a9dad733c82d97aa9352e540ed9becda12bd990db5690d51e1",
+      "bytes": 102721
+    }
+  ]
+}

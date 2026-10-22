@@ -1,0 +1,92 @@
+[
+  {
+    "epoch": 0,
+    "train_loss": 0.06622065624933902,
+    "validation_loss": 0.011542592759857454
+  },
+  {
+    "epoch": 1,
+    "train_loss": 0.011658136763163214,
+    "validation_loss": 0.008203817291064112
+  },
+  {
+    "epoch": 2,
+    "train_loss": 0.009209094307862403,
+    "validation_loss": 0.007235543867686718
+  },
+  {
+    "epoch": 3,
+    "train_loss": 0.007681923240756359,
+    "validation_loss": 0.005122179502424428
+  },
+  {
+    "epoch": 4,
+    "train_loss": 0.006666756852158929,
+    "validation_loss": 0.005425876794890236
+  },
+  {
+    "epoch": 5,
+    "train_loss": 0.006274057468929426,
+    "validation_loss": 0.004682626254852801
+  },
+  {
+    "epoch": 6,
+    "train_loss": 0.005844846053609277,
+    "validation_loss": 0.004682956067504498
+  },
+  {
+    "epoch": 7,
+    "train_loss": 0.00528295036988348,
+    "validation_loss": 0.0035190296717124377
+  },
+  {
+    "epoch": 8,
+    "train_loss": 0.004923708010957069,
+    "validation_loss": 0.0036816273388127242
+  },
+  {
+    "epoch": 9,
+    "train_loss": 0.004549808280610639,
+    "validation_loss": 0.0033372300151712827
+  },
+  {
+    "epoch": 10,
+    "train_loss": 0.004741118829962381,
+    "validation_loss": 0.004235764599132647
+  },
+  {
+    "epoch": 11,
+    "train_loss": 0.0043464020411370366,
+    "validation_loss": 0.0033250495874724254
+  },
+  {
+    "epoch": 12,
+    "train_loss": 0.004221060163742765,
+    "validation_loss": 0.0035658441313610573
+  },
+  {
+    "epoch": 13,
+    "train_loss": 0.004084514652765016,
+    "validation_loss": 0.002654346005188498
+  },
+  {
+    "epoch": 14,
+    "train_loss": 0.003944781160254668,
+    "validation_loss": 0.0025614245493737297
+  },
+  {
+    "epoch": 15,
+    "train_loss": 0.0038389008041713538,
+    "validation_loss": 0.0024564025568211737
+  },
+  {
+    "epoch": 16,
+    "train_loss": 0.0035841106986096963,
+    "validation_loss": 0.002619934909053268
+  },
+  {
+    "epoch": 17,
+    "train_loss": 0.003461491148085977,
+    "validation_loss": 0.0019702392200110254
+  }
+]

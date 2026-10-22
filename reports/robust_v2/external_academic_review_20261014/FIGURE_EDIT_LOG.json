@@ -1,0 +1,12 @@
+[
+  {
+    "path": "scripts/robust_v2/make_paper_figures.py",
+    "before_sha256": "4368cf64a15e710d163e59a560322456b923315fb4fe082280a39930123c5fe1",
+    "after_sha256": "b73cb8e635c21e9fed837a7604cf59c3b617977ca4250dd79f29abef09660826"
+  },
+  {
+    "path": "scripts/robust_v2/audit_ml_selective_20261014.py",
+    "before_sha256": "0b91e57b698f07c0298c67b347b4dd8e9d5eb89cc29e3c1fe56fa4134ab20a17",
+    "after_sha256": "0c6b110c6ac6d591f40469979a78c8982ec6d13594573224ab8321e6d1e6c300"
+  }
+]

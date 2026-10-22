@@ -1,0 +1,6 @@
+{
+  "path": "src/robust_airfoil/geometry/normalise.py",
+  "before_sha256": "4857430055cc6b5f229647cca25dabf649fd6099791fe0f9f3ae4ee9a1923685",
+  "after_sha256": "1879c30677db68264528719b15f1a4d705db80b877244fb83c380eeacef4dd92",
+  "scientific_effect": "Corrected normalisation changes affected model inputs and requires a new model/data lineage. No frozen data or model rewritten."
+}

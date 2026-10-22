@@ -1,0 +1,147 @@
+{
+  "method": "symmetric_mean_nearest_front_distance_v1",
+  "run_count": 10,
+  "feasible_run_count": 10,
+  "feasible_fraction": 1.0,
+  "objective_scales": [
+    0.006105532535655421,
+    0.0032461181998312653
+  ],
+  "pairwise_symmetric_distances": [
+    0.18726813947876064,
+    0.14448123606680896,
+    0.23442299286531848,
+    0.1944832568976398,
+    0.2803693505145689,
+    0.3150817679066493,
+    0.19207950479048524,
+    0.18952529333486223,
+    0.2112469844639326,
+    0.09704150868690044,
+    0.14673422059826777,
+    0.03620455775809736,
+    0.1834580715140805,
+    0.17243970425091876,
+    0.09669049094001253,
+    0.1010231495548213,
+    0.06175743518816315,
+    0.19763706468311487,
+    0.11176737149807112,
+    0.21897160634274127,
+    0.235072911161473,
+    0.12674618558902942,
+    0.14262800847205168,
+    0.11307879354521669,
+    0.11762732786164293,
+    0.11431895015705125,
+    0.22750256602135127,
+    0.09285916623485677,
+    0.1343973058898721,
+    0.1370805980610104,
+    0.13497049419893015,
+    0.19262473792006862,
+    0.05024104524730125,
+    0.0734978986971552,
+    0.07606181457514571,
+    0.1967870388740291,
+    0.08570280554053986,
+    0.14555691646213698,
+    0.12542587794456456,
+    0.23027848222950828,
+    0.1963735044406982,
+    0.1321333654157715,
+    0.0853858467276616,
+    0.10503888985635167,
+    0.07408549428478803
+  ],
+  "maximum_symmetric_hausdorff": 0.9230214499208521,
+  "mean_symmetric_distance": 0.14929243850538715,
+  "threshold": 0.2,
+  "minimum_feasible_fraction": 0.8,
+  "passed": true,
+  "seeds": [
+    {
+      "path": "reports/robust_v2/submission_review_20261014/CORRECTED_OPTIMISATION/smoke_seeds/nsga2_corrected-smoke_seed_20268824.json",
+      "sha256": "004592f4547d705895bfdfd7b70b4023deb52ce5b5b09b3ff99576e1690e7833",
+      "seed": 20268824,
+      "feasible": 4,
+      "schema": 4,
+      "history_generations": 10
+    },
+    {
+      "path": "reports/robust_v2/submission_review_20261014/CORRECTED_OPTIMISATION/smoke_seeds/nsga2_corrected-smoke_seed_20268825.json",
+      "sha256": "91c47797d19e3a20bac99faece83ab9389931ecf7a37f4cd96e189d1fe1ca63a",
+      "seed": 20268825,
+      "feasible": 4,
+      "schema": 4,
+      "history_generations": 10
+    },
+    {
+      "path": "reports/robust_v2/submission_review_20261014/CORRECTED_OPTIMISATION/smoke_seeds/nsga2_corrected-smoke_seed_20268826.json",
+      "sha256": "d67d11f36faf6f5a19b0c1ad99487b555d49f30829cde9db9c5be2d63de5a49a",
+      "seed": 20268826,
+      "feasible": 6,
+      "schema": 4,
+      "history_generations": 10
+    },
+    {
+      "path": "reports/robust_v2/submission_review_20261014/CORRECTED_OPTIMISATION/smoke_seeds/nsga2_corrected-smoke_seed_20268827.json",
+      "sha256": "3c12d713c51b58d0ad3e9dc02f4ca863f94305b6d1f01defbc4cd51c0f190a44",
+      "seed": 20268827,
+      "feasible": 4,
+      "schema": 4,
+      "history_generations": 10
+    },
+    {
+      "path": "reports/robust_v2/submission_review_20261014/CORRECTED_OPTIMISATION/smoke_seeds/nsga2_corrected-smoke_seed_20268828.json",
+      "sha256": "95f044d356639bcf1b0433d106d0f8bdbb5635b3522376e9d1a68365cffe958a",
+      "seed": 20268828,
+      "feasible": 7,
+      "schema": 4,
+      "history_generations": 10
+    },
+    {
+      "path": "reports/robust_v2/submission_review_20261014/CORRECTED_OPTIMISATION/smoke_seeds/nsga2_corrected-smoke_seed_20268829.json",
+      "sha256": "a0764c6974051a88d51848dc9a8142c3ead0fab6beec37dfce744b55e38d2260",
+      "seed": 20268829,
+      "feasible": 2,
+      "schema": 4,
+      "history_generations": 10
+    },
+    {
+      "path": "reports/robust_v2/submission_review_20261014/CORRECTED_OPTIMISATION/smoke_seeds/nsga2_corrected-smoke_seed_20268830.json",
+      "sha256": "b5abc522d2b780d033511ff7851984bcc2a319dedb0ee527b45237149cc63fa6",
+      "seed": 20268830,
+      "feasible": 2,
+      "schema": 4,
+      "history_generations": 10
+    },
+    {
+      "path": "reports/robust_v2/submission_review_20261014/CORRECTED_OPTIMISATION/smoke_seeds/nsga2_corrected-smoke_seed_20268831.json",
+      "sha256": "c3c94f97d819286c5e01524c0976c2d6d43cf75d0b21f03ca9ff14dce8d82154",
+      "seed": 20268831,
+      "feasible": 6,
+      "schema": 4,
+      "history_generations": 10
+    },
+    {
+      "path": "reports/robust_v2/submission_review_20261014/CORRECTED_OPTIMISATION/smoke_seeds/nsga2_corrected-smoke_seed_20268832.json",
+      "sha256": "72b7ab229f1fbac68d7594a6f83c7006c06f21f77594dce3d39a907449116362",
+      "seed": 20268832,
+      "feasible": 4,
+      "schema": 4,
+      "history_generations": 10
+    },
+    {
+      "path": "reports/robust_v2/submission_review_20261014/CORRECTED_OPTIMISATION/smoke_seeds/nsga2_corrected-smoke_seed_20268833.json",
+      "sha256": "1f22995046e0f61f6badf38f55795a8ca71f9a9f5afeece21784966e8d77699b",
+      "seed": 20268833,
+      "feasible": 5,
+      "schema": 4,
+      "history_generations": 10
+    }
+  ],
+  "scale_context": "POST-HOC pooled objective range, not a prospective fixed scale",
+  "historical_scope": "Schema-4 smoke only; not current schema/source acceptance",
+  "original_distance": 0.14929243850538715
+}

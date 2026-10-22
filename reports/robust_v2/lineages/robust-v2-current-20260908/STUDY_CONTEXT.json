@@ -1,0 +1,15 @@
+{
+  "created_utc": "2026-09-09T08:21:55.438398+00:00",
+  "dataset_hashes": {
+    "airfoils.parquet": "07b9e15893ab125182a6886e8ef57bd893eaeea17142ff263d01c7a3a059b6c6",
+    "model_points.parquet": "8ca191bfc7d5b6e82827f3a90fdc0e7354fb45fb6c6ab7fe3b349583a4e901d2"
+  },
+  "git_sha": "c7156b7dcb78d231f46b52542f495f6f776c2b9e",
+  "lineage_id": "robust-v2-current-20260908",
+  "parent_lineage_id": "legacy-20260826",
+  "protocol_hash": "96127b1fcec8d07615f57953a484609be9945562d3a6e59d1f8a5ad71bfb0ac5",
+  "protocol_path": "C:/Users/Ben/workspaces/github.com/bengawith/paper/configs/robust_v2/study_final.yaml",
+  "protocol_status": "working",
+  "schema_version": 1,
+  "status": "created"
+}

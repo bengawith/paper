@@ -1,0 +1,323 @@
+{
+  "schema": "full-rebuilt-production-completion-v1",
+  "status": "FULL_PROFILE_COMPLETED",
+  "utc": "2026-10-21T11:46:18.618589+00:00",
+  "profile": {
+    "population": 128,
+    "generations": 200,
+    "uncertainty_samples": 64,
+    "independent_seeds": 10
+  },
+  "source_context_hash": "987d85688fb85cabba95bb58813cc10f47e3f319a8f9f2fa911ed8ac2a3cfa69",
+  "invocation_seconds": 9867.562000000034,
+  "reference_scaled_agreement": {
+    "run_count": 10,
+    "feasible_run_count": 10,
+    "feasible_solution_counts": [
+      28,
+      49,
+      36,
+      41,
+      47,
+      36,
+      35,
+      28,
+      38,
+      33
+    ],
+    "objective_mean": [
+      0.010423837301893888,
+      0.0137363152754787
+    ],
+    "objective_std": [
+      0.0011202517717363663,
+      0.0006442379001602989
+    ],
+    "objective_min": [
+      0.008547829670212198,
+      0.01266415582195867
+    ],
+    "objective_max": [
+      0.012539889409366036,
+      0.015600363105385215
+    ],
+    "pairwise_design_distance_mean": 0.1448895083071436,
+    "pairwise_design_distance_max": 0.2728457820496481,
+    "pairwise_objective_distance_mean": 0.024277068431672866,
+    "pairwise_objective_distance_max": 0.06118194271687958,
+    "agreement_status": "pass",
+    "agreement_rule": "at least 80% feasible runs and mean normalized symmetric cross-front distance <= 0.20",
+    "objective_agreement": {
+      "method": "symmetric_mean_nearest_front_distance_v1",
+      "run_count": 10,
+      "feasible_run_count": 10,
+      "feasible_fraction": 1.0,
+      "objective_scales": [
+        0.012091743617095658,
+        0.016379397343821232
+      ],
+      "pairwise_symmetric_distances": [
+        0.0329329871815124,
+        0.01674637730450923,
+        0.008380059426759272,
+        0.00874305531792081,
+        0.01895328747912703,
+        0.014693723103239534,
+        0.05862137870316725,
+        0.02989469980545858,
+        0.011916886631712267,
+        0.02202874476070201,
+        0.03469634035500174,
+        0.035259759030510957,
+        0.01891386520205717,
+        0.03437082675704915,
+        0.02671098983568705,
+        0.008203715607986179,
+        0.0249809813187792,
+        0.02062171435413515,
+        0.01645440558070116,
+        0.013671389057594678,
+        0.015340221887115067,
+        0.030269607425256063,
+        0.017098224417843248,
+        0.01064931298102004,
+        0.012716283066931715,
+        0.026613011170459812,
+        0.01838419930945532,
+        0.05813402850528851,
+        0.03365686330061446,
+        0.012858767777838637,
+        0.021062116700625293,
+        0.014128184208351206,
+        0.06118194271687958,
+        0.03096119346586431,
+        0.01236706314617348,
+        0.01923775016988907,
+        0.040641674135645456,
+        0.01405653949289819,
+        0.01599139008362937,
+        0.0419317713967302,
+        0.026132897830538716,
+        0.010741165254258559,
+        0.016423383932235677,
+        0.05158299193691178,
+        0.02351230829921447
+      ],
+      "maximum_symmetric_hausdorff": 0.1832374350968301,
+      "mean_symmetric_distance": 0.024277068431672866,
+      "threshold": 0.2,
+      "minimum_feasible_fraction": 0.8,
+      "passed": true,
+      "descriptive_threshold_satisfied": true
+    },
+    "objective_scale_context": "predeclared_reference_objectives"
+  },
+  "original_pooled_range_diagnostic": {
+    "run_count": 10,
+    "feasible_run_count": 10,
+    "feasible_solution_counts": [
+      28,
+      49,
+      36,
+      41,
+      47,
+      36,
+      35,
+      28,
+      38,
+      33
+    ],
+    "objective_mean": [
+      0.010423837301893888,
+      0.0137363152754787
+    ],
+    "objective_std": [
+      0.0011202517717363663,
+      0.0006442379001602989
+    ],
+    "objective_min": [
+      0.008547829670212198,
+      0.01266415582195867
+    ],
+    "objective_max": [
+      0.012539889409366036,
+      0.015600363105385215
+    ],
+    "pairwise_design_distance_mean": 0.1448895083071436,
+    "pairwise_design_distance_max": 0.2728457820496481,
+    "pairwise_objective_distance_mean": 0.10290267388257869,
+    "pairwise_objective_distance_max": 0.2341448866688443,
+    "agreement_status": "diagnostic_posthoc_scale_not_accepted",
+    "agreement_rule": "at least 80% feasible runs and mean normalized symmetric cross-front distance <= 0.20",
+    "objective_agreement": {
+      "method": "symmetric_mean_nearest_front_distance_v1",
+      "run_count": 10,
+      "feasible_run_count": 10,
+      "feasible_fraction": 1.0,
+      "objective_scales": [
+        0.003992059739153838,
+        0.002936207283426546
+      ],
+      "pairwise_symmetric_distances": [
+        0.15093677215264373,
+        0.07952107159397334,
+        0.0371392666881685,
+        0.03595689659831486,
+        0.08364293758180605,
+        0.06134246566621957,
+        0.2223314066190129,
+        0.13385148594142793,
+        0.05392506540153198,
+        0.10407583698199521,
+        0.16419128065899696,
+        0.16331028859027436,
+        0.08047962250963756,
+        0.15995053260222478,
+        0.09347794666324409,
+        0.0360917444739548,
+        0.11505972560040714,
+        0.098835100844701,
+        0.07531869087635867,
+        0.06142632625884913,
+        0.06427149455004118,
+        0.11316195305165194,
+        0.07903681292019868,
+        0.046985522438211816,
+        0.052436930953040584,
+        0.11884156683746827,
+        0.08227702738461357,
+        0.2341448866688443,
+        0.15790411998488418,
+        0.061411140633172864,
+        0.09880379194781588,
+        0.05563990037248569,
+        0.2248347816764505,
+        0.13866448968909006,
+        0.05026768714900895,
+        0.08847009507308118,
+        0.13747198554940265,
+        0.05666972818310486,
+        0.07270086016140409,
+        0.1651226171138871,
+        0.12134903302182964,
+        0.042471740256899516,
+        0.05747765321327334,
+        0.19424371717719213,
+        0.10509632440524577
+      ],
+      "maximum_symmetric_hausdorff": 0.6456713477734268,
+      "mean_symmetric_distance": 0.10290267388257869,
+      "threshold": 0.2,
+      "minimum_feasible_fraction": 0.8,
+      "passed": false,
+      "descriptive_threshold_satisfied": true
+    },
+    "objective_scale_context": "posthoc_pooled_range_not_a_predeclared_acceptance_scale"
+  },
+  "original_unmodified_numerical_criterion_met": true,
+  "prospective_reference_scaled_criterion_met": true,
+  "both_numerical_checks_met": true,
+  "per_seed": [
+    {
+      "seed": 20263824,
+      "generations": 200,
+      "reported_entries": 28,
+      "feasible_entries": 28,
+      "returned_population_fallback": false,
+      "final_recheck_max_objective_difference": 0.0,
+      "file": "nsga2_rebuilt-full-production_seed_20263824.json",
+      "sha256": "6594a3673313a359a823b33d4b7e527b089947c0e1219da627c0dc0d8926db7b"
+    },
+    {
+      "seed": 20263825,
+      "generations": 200,
+      "reported_entries": 49,
+      "feasible_entries": 49,
+      "returned_population_fallback": false,
+      "final_recheck_max_objective_difference": 1.6625333054687275e-11,
+      "file": "nsga2_rebuilt-full-production_seed_20263825.json",
+      "sha256": "97dfa8806408a5a459803c88d8ed05861770680e7833796171ce001d4a402e7d"
+    },
+    {
+      "seed": 20263826,
+      "generations": 200,
+      "reported_entries": 36,
+      "feasible_entries": 36,
+      "returned_population_fallback": false,
+      "final_recheck_max_objective_difference": 0.0,
+      "file": "nsga2_rebuilt-full-production_seed_20263826.json",
+      "sha256": "2aa2523907326081a83246d1de79ef702a8c07f73521ff9193d1a5534ae41b32"
+    },
+    {
+      "seed": 20263827,
+      "generations": 200,
+      "reported_entries": 41,
+      "feasible_entries": 41,
+      "returned_population_fallback": false,
+      "final_recheck_max_objective_difference": 7.319214678780384e-13,
+      "file": "nsga2_rebuilt-full-production_seed_20263827.json",
+      "sha256": "4c2c5c4c32d6a8b5d851bc33a8ffeb34728b16eabe6a7ec5ae6bf388502cf06a"
+    },
+    {
+      "seed": 20263828,
+      "generations": 200,
+      "reported_entries": 47,
+      "feasible_entries": 47,
+      "returned_population_fallback": false,
+      "final_recheck_max_objective_difference": 2.2167062976863328e-10,
+      "file": "nsga2_rebuilt-full-production_seed_20263828.json",
+      "sha256": "cb3169f57d606f5eabaa2edb1c637edd31dbe19804ff8c0e7e96f89548dcc571"
+    },
+    {
+      "seed": 20263829,
+      "generations": 200,
+      "reported_entries": 36,
+      "feasible_entries": 36,
+      "returned_population_fallback": false,
+      "final_recheck_max_objective_difference": 0.0,
+      "file": "nsga2_rebuilt-full-production_seed_20263829.json",
+      "sha256": "c2dd765b0d556790f696b031c1053f8dd1149885ee24da854e6d13e9e0b09c3d"
+    },
+    {
+      "seed": 20263830,
+      "generations": 200,
+      "reported_entries": 35,
+      "feasible_entries": 35,
+      "returned_population_fallback": false,
+      "final_recheck_max_objective_difference": 3.58779499165518e-12,
+      "file": "nsga2_rebuilt-full-production_seed_20263830.json",
+      "sha256": "26ed9f803b8fd7596f45a702ff08b263413756ace12f02889b95b5f3d828efe0"
+    },
+    {
+      "seed": 20263831,
+      "generations": 200,
+      "reported_entries": 28,
+      "feasible_entries": 28,
+      "returned_population_fallback": false,
+      "final_recheck_max_objective_difference": 0.0,
+      "file": "nsga2_rebuilt-full-production_seed_20263831.json",
+      "sha256": "d5494dcc703a69f532b6a31d0a8d0887f1e5b168eddebc12068148001128bd3d"
+    },
+    {
+      "seed": 20263832,
+      "generations": 200,
+      "reported_entries": 38,
+      "feasible_entries": 38,
+      "returned_population_fallback": false,
+      "final_recheck_max_objective_difference": 0.0,
+      "file": "nsga2_rebuilt-full-production_seed_20263832.json",
+      "sha256": "8e61dca0aa7f7271936d4c1ac4190f17db0845105eb8f4e072980ad30511c7cc"
+    },
+    {
+      "seed": 20263833,
+      "generations": 200,
+      "reported_entries": 33,
+      "feasible_entries": 33,
+      "returned_population_fallback": false,
+      "final_recheck_max_objective_difference": 2.6577247347336908e-12,
+      "file": "nsga2_rebuilt-full-production_seed_20263833.json",
+      "sha256": "830e3072e150103adf42bc82f33f7c6b3e6b501292256d7fd448e092b940632a"
+    }
+  ],
+  "interpretation": "Finite-budget seeded algorithm agreement, not proof of a global optimum, manufacturing distribution or independent CFD."
+}

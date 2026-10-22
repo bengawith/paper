@@ -1,0 +1,8 @@
+{
+  "source": "src/robust_airfoil/optimisation/study.py",
+  "before_sha256": "d1fdf486ae6f52411896be7c509c5a63457bc7662e3dd632771308d0eb03bb75",
+  "after_sha256": "8522ed5cc25698ca2e62573f5297d9e2d58d7255a5b414a5dab2ac6c80546806",
+  "root_cause": "The reference also appeared among observed seeds, so duplicate elimination reduced generation one below the declared population.",
+  "fix": "Shared distinct reference/observed/random seeding in robust and nominal controls; actual full population checked in every recorded generation.",
+  "scientific_campaigns_run_under_changed_initialiser": false
+}

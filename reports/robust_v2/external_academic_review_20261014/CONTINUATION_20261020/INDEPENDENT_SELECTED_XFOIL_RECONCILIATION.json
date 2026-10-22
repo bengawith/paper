@@ -1,0 +1,140 @@
+{
+  "schema": "independent-controlled-selected-local-xfoil-audit-v1",
+  "selection_sha256": "08446d40bb2b5712bd8658899896fec438bfd1ea0bf2e0376e53f85c8a7637ac",
+  "stored_source_sha256": "17234ed2a0db773953ad10b1b4d83e14400f233ae640cb018a38973cbd0a55fe",
+  "protocol_sha256": "d19bfdfe47153f67a0d628070f4844ec6d8ac56131408274667f36a68ddc0bf9",
+  "total_attempts": 819,
+  "total_usable": 290,
+  "total_failed_or_rejected": 529,
+  "per_campaign_design": [
+    {
+      "campaign": "nominal",
+      "design": "nominal_control",
+      "requested": 1,
+      "usable": 0,
+      "failed": 1
+    },
+    {
+      "campaign": "nominal",
+      "design": "reference",
+      "requested": 1,
+      "usable": 0,
+      "failed": 1
+    },
+    {
+      "campaign": "nominal",
+      "design": "risk_knee",
+      "requested": 1,
+      "usable": 0,
+      "failed": 1
+    },
+    {
+      "campaign": "sensitivity_0p5pct_a",
+      "design": "nominal_control",
+      "requested": 128,
+      "usable": 58,
+      "failed": 70
+    },
+    {
+      "campaign": "sensitivity_0p5pct_a",
+      "design": "reference",
+      "requested": 128,
+      "usable": 47,
+      "failed": 81
+    },
+    {
+      "campaign": "sensitivity_0p5pct_a",
+      "design": "risk_knee",
+      "requested": 128,
+      "usable": 37,
+      "failed": 91
+    },
+    {
+      "campaign": "sensitivity_0p5pct_b",
+      "design": "nominal_control",
+      "requested": 128,
+      "usable": 56,
+      "failed": 72
+    },
+    {
+      "campaign": "sensitivity_0p5pct_b",
+      "design": "reference",
+      "requested": 128,
+      "usable": 42,
+      "failed": 86
+    },
+    {
+      "campaign": "sensitivity_0p5pct_b",
+      "design": "risk_knee",
+      "requested": 128,
+      "usable": 41,
+      "failed": 87
+    },
+    {
+      "campaign": "stress_1pct",
+      "design": "nominal_control",
+      "requested": 16,
+      "usable": 4,
+      "failed": 12
+    },
+    {
+      "campaign": "stress_1pct",
+      "design": "reference",
+      "requested": 16,
+      "usable": 4,
+      "failed": 12
+    },
+    {
+      "campaign": "stress_1pct",
+      "design": "risk_knee",
+      "requested": 16,
+      "usable": 1,
+      "failed": 15
+    }
+  ],
+  "conditional_pair_recomputation": {
+    "nominal_nominal_control": {
+      "matched_usable_count": 0,
+      "mean_reduction": null
+    },
+    "nominal_risk_knee": {
+      "matched_usable_count": 0,
+      "mean_reduction": null
+    },
+    "sensitivity_0p5pct_a_nominal_control": {
+      "matched_usable_count": 21,
+      "mean_reduction": 0.19757565369448848,
+      "reference_max": 0.008621239791576205,
+      "candidate_max": 0.00703854277345859
+    },
+    "sensitivity_0p5pct_a_risk_knee": {
+      "matched_usable_count": 15,
+      "mean_reduction": 0.15178858878440818,
+      "reference_max": 0.008595286721095358,
+      "candidate_max": 0.007209605700802648
+    },
+    "sensitivity_0p5pct_b_nominal_control": {
+      "matched_usable_count": 22,
+      "mean_reduction": 0.1875203894159807,
+      "reference_max": 0.008457751617449657,
+      "candidate_max": 0.007454792776463015
+    },
+    "sensitivity_0p5pct_b_risk_knee": {
+      "matched_usable_count": 14,
+      "mean_reduction": 0.14873866878175654,
+      "reference_max": 0.00813915297692392,
+      "candidate_max": 0.006953410811323139
+    },
+    "stress_1pct_nominal_control": {
+      "matched_usable_count": 2,
+      "mean_reduction": 0.15665090026553685,
+      "reference_max": 0.008803989527629234,
+      "candidate_max": 0.007658982991107215
+    },
+    "stress_1pct_risk_knee": {
+      "matched_usable_count": 0,
+      "mean_reduction": null
+    }
+  },
+  "scientific_limitation": "Complete same-XFOIL-family selected-case audit. No solver failures imputed, no unconditional manufacturing tail probability or independent CFD."
+}

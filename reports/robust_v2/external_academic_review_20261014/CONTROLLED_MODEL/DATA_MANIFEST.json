@@ -1,0 +1,52 @@
+{
+  "case_accounting_sha256": "f99eb6e950b940ae7b9d87dd08511256bf5fa01f5875c5af6a5c32c52bdebdec",
+  "cohort_sha256": "300e10ed8931df8fddbfb500ed98723833d3ca8d7a56fe6170ea78c8b314dcba",
+  "compatible_prior_case_count": 17,
+  "complete_grid_geometries": 44,
+  "created_utc": "2026-10-21T01:12:52.096805+00:00",
+  "data_files": {
+    "airfoils.parquet": "97944a642dbf114ac61017e8a82b7c8f00107412460f3b4c101822deea4c319b",
+    "model_points.parquet": "4a54f7d6bb4de32049465d4e102742a3945067b806b5f610d958bd12b3848663"
+  },
+  "execution_revision": 2,
+  "full_sweep_failed_segments": 2153,
+  "geometries_with_observations": 1224,
+  "label_protocol_file": "LABEL_PROTOCOL_R2.json",
+  "label_protocol_sha256": "fc5b6a66e72239621977d9489caafcaad72f034d00f3c617fb86c64a61c3daa3",
+  "labels": "Actual localXFOIL6.99 observations on exactly these coordinates; archived aerodynamic labels not used",
+  "lineage": "robust-v2-controlled-20261020",
+  "missing_requested_states": 34997,
+  "nonzero_or_missing_exit_segments": 204,
+  "observed_states": 106931,
+  "requested_geometries": 1256,
+  "requested_unique_states": 141928,
+  "schema": "controlled-cst-genuine-xfoil-data-v1",
+  "scientific_limits": [
+    "XFOIL is a numerical viscous/inviscid model, not independent RANS or experiment.",
+    "Convergence selects available supervised observations; no prediction accuracy outside observed data is established."
+  ],
+  "source_geometry_definition": "Exact recorded CST reconstructions, not unmodified UIUC coordinate contours",
+  "split_counts": [
+    {
+      "airfoils": 191,
+      "clusters": 189,
+      "split": "calibration",
+      "states": 16806
+    },
+    {
+      "airfoils": 858,
+      "clusters": 850,
+      "split": "development",
+      "states": 74946
+    },
+    {
+      "airfoils": 175,
+      "clusters": 173,
+      "split": "locked_test",
+      "states": 15179
+    }
+  ],
+  "split_sha256": "f5f413daff43edea16f43b50cc826cfdcee6f23530be3848cee3d4d2c866dc1d",
+  "test_scope": "Protected historical geometry identities; not pristine prospective population sampling",
+  "timed_out_segments": 204
+}
