@@ -38,6 +38,27 @@ def require(path):
 
 
 def verify():
+    # The 14-October evidence hashes certify its historical manuscript, not
+    # the replacement 21-October original-author-voice paper. Dispatch to
+    # the latest source/Word/29-reference/46-claim acceptance without ever
+    # rewriting or relabelling the frozen historical review receipts.
+    latest_dir = ROOT / "reports/robust_v2/external_academic_review_20261021"
+    latest = latest_dir / "FINAL_AUTHOR_REWRITE_ACCEPTANCE.json"
+    if latest.is_file():
+        from runpy import run_path
+
+        run_path(str(latest_dir / "verify_full_rewrite_acceptance.py"))["main"]()
+        model_path = LINEAGE / "FROZEN_MODEL_MANIFEST.json"
+        frozen = json.loads(require(model_path).read_text(encoding="utf-8"))
+        verify_frozen_artifacts(
+            model_path, {name: Path(path) for name, path in frozen["artifact_paths"].items()}
+        )
+        controller = json.loads(
+            require(BASE / "CONTINUATION_20261020/CONTROLLED_PIPELINE_STATUS_R4.json").read_text(encoding="utf-8")
+        )
+        if controller["status"] != "ALL_EXECUTED_GATES_PASS_NOT_INDEPENDENT_CFD_OR_AUTHOR_SUBMISSION":
+            raise ValueError("Full controlled numerical pipeline has no terminal passing receipt")
+        return json.loads(latest.read_text(encoding="utf-8"))
     source = require(PAPER / "manuscript.md").read_text(encoding="utf-8")
     doc = Document(require(PAPER / "LATEST_MANUSCRIPT_FOR_AVA.docx"))
     word = "\n".join(p.text for p in doc.paragraphs)
@@ -185,7 +206,10 @@ def verify():
 
 if __name__ == "__main__":
     result = verify()
-    (BASE / "FINAL_ACCEPTANCE.json").write_text(
-        json.dumps(result, indent=2) + "\n", encoding="utf-8"
-    )
+    # Never rewrite the 14-October sealed historical author receipt with a
+    # subsequent manuscript revision's checksums or scientific conclusions.
+    if not (ROOT / "reports/robust_v2/external_academic_review_20261021/FINAL_AUTHOR_REWRITE_ACCEPTANCE.json").exists():
+        (BASE / "FINAL_ACCEPTANCE.json").write_text(
+            json.dumps(result, indent=2) + "\n", encoding="utf-8"
+        )
     print(json.dumps(result, indent=2))
