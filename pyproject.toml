@@ -37,6 +37,8 @@ dev = [
 ]
 docs = [
     "python-docx>=1.2,<2",
+    "pypdfium2>=4.30,<5",
+    "pillow>=10,<13",
 ]
 
 [project.scripts]

@@ -1,9 +1,9 @@
-# Robust V2 manuscript — 21 October 2026
+# Robust V2 — final coauthor review status (22 October 2026)
 
-The complete 9,244-word original-author-style scientific paper, all 29 independently verified real references, 46 source-reconciled numerical claims, seven tables, eight figures and 21 inspected browser-derived Word preview pages are ready for coauthor review. The original author manuscript and the immediately preceding revision have been preserved.
+**Complete and frozen:** all original numerical results, five models, calibration, 200-shape before-label confirmation, ten robust and ten nominal seeds, 2,048-scenario sensitivity, 819 strict XFOIL attempts, actual public CLI prediction/trust path, full NeuralFoil comparison and a 40-shape source-distinct numerical challenge. The updated paper and source-driven supplement are ready to review. Evidence and model hashes are in the final author package.
 
-The frozen five-member model, 200-shape prospective confirmation, ten robust and ten nominal production seeds, 2,048-scenario sensitivities and all 819 strict XFOIL cases are complete. The paper retains all 529 unsuccessful selected-case outcomes, no imputed nominal comparisons and a frank assessment of numerical solver limits.
+**Integrity:** 29 real reference identities checked from primary records, source-bound numerical claims and missing-case denominators explicit, earlier paper/Word versions preserved, and no prior scientific checkpoint overwritten. NeuralFoil outperforms the frozen five-member model on tested numerical coefficients and XFOIL availability ranking. The substantive contribution is verified failure-aware data-to-design methodology, not neural architecture or general-purpose predictor superiority.
 
-**Remaining physical research:** run the specified independent viscous CFD protocol, verify convergence and fixed-lift comparisons, then write a final evidence-based physical aerofoil-design conclusion. Author affiliations, contributions, funding/conflicts and final submission choices require direct coauthor approval and are not invented.
+**Still awaiting research evidence:** independent converged CFD and the physical design ranking/conclusion that must follow its actual results. The CFD protocol is already in manuscript Section 7. Coauthor statements, journal choice and final native Word pagination are human review items, not completed by computational acceptance.
 
-Audit evidence: `reports/robust_v2/external_academic_review_20261021/FINAL_MANUSCRIPT_INTEGRITY.md`, `NEW_MANUSCRIPT_NUMERIC_CLAIM_AUDIT.json`, `REFERENCES_PRIMARY_VERIFIED_V2.csv` and `VISUAL_QA_FULL_AUTHOR_STYLE.json`.
+**Start:** `LATEST_MANUSCRIPT_FOR_AVA.docx`, then `SUPPLEMENTARY_NUMERICAL_COMPARISON.docx` and `COAUTHOR_NOTES.md`. No need to launch full training or optimisation to review the draft.

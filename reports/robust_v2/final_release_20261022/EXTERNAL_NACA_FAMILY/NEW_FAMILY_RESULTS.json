@@ -1,0 +1,24 @@
+{
+  "before_label_predictions_sha256": "1f2c580207b659c71f771619f91d7a72933dcb72ad2b899920410f6051bc105e",
+  "family": "Analytic NACA4 four-digit parameterised shapes physically screened against all 1256 original CST shapes",
+  "geometry_source_selection_sha256": "44fb198bd5ede10abd2f497a964af714f4fb8c31d954ad26cde8da4649820c2c",
+  "limits": [
+    "The new family was selected without solver labels and before its model scores were evaluated; no model was retrained.",
+    "The selection occurred after development/previous confirmation research; not a preregistered external publication benchmark.",
+    "NeuralFoil training-geometry overlap is unknown.",
+    "XFOIL is the same numerical solver family as training and does not establish independent CFD truth."
+  ],
+  "metrics": {
+    "neuralfoil_cd_mae": 0.0005025661434803211,
+    "neuralfoil_cl_mae": 0.01722638532328598,
+    "neuralfoil_cm_mae": 0.003598587282303243,
+    "ours_cd_mae": 0.0006363938956367325,
+    "ours_cl_mae": 0.019655774466464604,
+    "ours_cm_mae": 0.004087126911188818
+  },
+  "missing_states": 189,
+  "observed_states": 4331,
+  "requested_geometries": 40,
+  "requested_states": 4520,
+  "schema": "geometrically-separated-analytic-family-prospective-numerical-challenge-v1"
+}

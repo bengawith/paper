@@ -1,9 +1,9 @@
-# Robust V2 — full coauthor manuscript
+# Robust V2 — coauthor review handoff
 
-The current source is `manuscript.md` and the standalone Word paper is `LATEST_MANUSCRIPT_FOR_AVA.docx`. This complete rewrite follows the author's original submission style, now using source-verified numerical data and properly bounded engineering claims.
+**Start with `LATEST_MANUSCRIPT_FOR_AVA.docx`.** This is the complete original-author-style numerical research paper, with the corrected exact-CST geometry/label data, frozen five-member ensemble, prospective 200-shape confirmation, ten robust and ten nominal optimisations, strict XFOIL selected-design evidence, and the later geometry-distinct numerical challenge. The manuscript has an independent-CFD method section and numerical conclusion; no CFD results are fabricated.
 
-The 2026-10-21 independent audit under `reports/robust_v2/external_academic_review_20261021/` verifies 29 real references, 46 numerical claims, seven tables, eight embedded figures and all 21 browser-derived preview pages. Native Microsoft Word pagination is not independently certified.
+**Read `SUPPLEMENTARY_NUMERICAL_COMPARISON.docx` next.** It gives the actual NeuralFoil head-to-head results, including its better coefficient accuracy and missing-XFOIL confidence ranking, and explains why this is a credibility-aware numerical methodology rather than a superior NeuralFoil replacement. This is post hoc evidence, separately labelled and without any model retuning.
 
-The controlled model, 200-geometry confirmation, ten robust and ten nominal seeds, fresh scenario tests, and 819 strict XFOIL attempts are completed. The 529 unsuccessful selected-case observations remain missing rather than imputed. The current numerical results are not independent CFD.
+**If needed**, read `COAUTHOR_NOTES.md` for exact pending CFD deliverables, limits and the short reproduction instructions. The canonical machine-checkable scientific receipts are retained in `reports/robust_v2/` and the SHA-verified author package; heavy raw XFOIL files and historical manuscripts remain archived separately, not silently deleted or copied into Git.
 
-**Remaining physical research:** execute the prepared independent viscous CFD protocol and use actual converged lift/drag/moment results to finalise the physical aerofoil conclusion. Coauthors must personally sign off on roles, funding, conflicts, affiliations and target-journal requirements.
+The only missing experimental outcome needed to decide physical aerofoil superiority is independent, converged CFD of the preselected reference, risk-knee and nominal-control designs at matched achieved lift. Final CFD-dependent claims and the target journal's formatting/author declarations require coauthor approval. Native Microsoft Word pagination should be checked before submission; existing page QA uses the actual DOCX content via Chromium.

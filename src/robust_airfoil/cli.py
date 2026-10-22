@@ -78,11 +78,16 @@ def build_parser() -> argparse.ArgumentParser:
     _lineage_arguments(reproduce)
 
     predict = subcommands.add_parser("predict")
-    predict.add_argument("--lineage-id", default=DEFAULT_LINEAGE_ID)
-    predict.add_argument(
+    predict.add_argument("--lineage-id", default="robust-v2-controlled-20261020")
+    input_source = predict.add_mutually_exclusive_group(required=True)
+    input_source.add_argument(
         "--cst",
-        required=True,
-        help="12 comma-separated CST parameters: lower_0..4, upper_0..4, leading_edge_weight, TE_thickness",
+        help="12 comma-separated CST parameters (use --cst=values for negative first weights)",
+    )
+    input_source.add_argument(
+        "--airfoil-file",
+        type=Path,
+        help="Ordered .dat coordinates; predicts validated normalized CST fit, not original coordinates",
     )
     predict.add_argument("--alpha-start", type=float, default=0.0)
     predict.add_argument("--alpha-end", type=float, default=10.0)
@@ -127,7 +132,11 @@ def main(argv: list[str] | None = None) -> int:
     try:
         if arguments.command == "data" and arguments.data_command == "assemble":
             return _run_public_stage(arguments, "source_acquisition", "dataset")
-        if arguments.command == "model" and arguments.model_command in {"train", "calibrate", "evaluate"}:
+        if arguments.command == "model" and arguments.model_command in {
+            "train",
+            "calibrate",
+            "evaluate",
+        }:
             return _run_public_stage(arguments, "model", "model")
         if arguments.command == "model" and arguments.model_command == "evidence":
             evidence = build_study_ml_evidence(arguments.protocol, arguments.lineage_id)
@@ -167,11 +176,22 @@ def main(argv: list[str] | None = None) -> int:
                 raise ValueError("reproduce requires --all")
             return _run_public_stage(arguments, "preflight", "report")
         if arguments.command == "predict":
-            from robust_airfoil.predict import alpha_grid, parse_cst, predict_polar
+            from robust_airfoil.predict import (
+                alpha_grid,
+                cst_from_airfoil_file,
+                parse_cst,
+                predict_polar,
+            )
 
-            cst = parse_cst(arguments.cst)
+            origin = None
+            if arguments.airfoil_file is not None:
+                cst, origin = cst_from_airfoil_file(arguments.airfoil_file)
+            else:
+                cst = parse_cst(arguments.cst)
             alpha = alpha_grid(arguments.alpha_start, arguments.alpha_end, arguments.alpha_step)
             result = predict_polar(arguments.lineage_id, cst, alpha)
+            if origin is not None:
+                result["input_source"] = origin
             print(json.dumps(result, indent=2))
             return 0
     except (OSError, RuntimeError, ValueError) as exc:

@@ -33,6 +33,23 @@ def test_alpha_grid_rejects_bad_step_and_direction():
         alpha_grid(10.0, 0.0, 1.0)
 
 
+def test_alpha_grid_rejects_nonfinite_or_excessive_requests():
+    for start, end, step in [
+        (0.0, 10.0, np.nan),
+        (np.nan, 10.0, 1.0),
+        (0.0, np.inf, 1.0),
+        (0.0, 10.0, -1.0),
+        (0.0, 50.0, 0.001),
+    ]:
+        with pytest.raises(ValueError):
+            alpha_grid(start, end, step)
+
+
+def test_parse_cst_rejects_negative_trailing_edge_thickness():
+    with pytest.raises(ValueError, match="nonnegative"):
+        parse_cst(",".join(["0"] * 11 + ["-0.01"]))
+
+
 def test_assemble_polar_schema_and_trust_flag():
     frame = pd.DataFrame(
         {

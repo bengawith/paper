@@ -92,3 +92,27 @@ reports/robust_v2/external_academic_review_20261021/PRE_LAYOUT_AUTHOR_VOICE_WORD
 reports/robust_v2/external_academic_review_20261021/RENDERED/
 reports/robust_v2/external_academic_review_20261021/RENDERED_V2/
 reports/robust_v2/external_academic_review_20261021/*.log
+
+# Final source-bound 2026-10-22 comparative review: commit compact JSON
+# receipts; distribute raw NACA/XFOIL cases and page previews separately.
+reports/robust_v2/final_release_20261022/EXTERNAL_NACA_FAMILY/solver/
+reports/robust_v2/final_release_20261022/EXTERNAL_NACA_FAMILY/geometry/
+reports/robust_v2/final_release_20261022/EXTERNAL_NACA_FAMILY/*.parquet
+reports/robust_v2/final_release_20261022/NEURALFOIL_FULL_CONFIRMATION/*.jsonl
+reports/robust_v2/final_release_20261022/NEURALFOIL_COMPARISON/*.jsonl
+reports/robust_v2/final_release_20261022/VISUAL_CURRENT/
+reports/robust_v2/final_release_20261022/VISUAL_LATEST/
+reports/robust_v2/final_release_20261022/*.docx
+reports/robust_v2/final_release_20261022/*.log
+reports/robust_v2/final_release_20261022/*.zip
+reports/robust_v2/final_release_20261022/CLI_DEMONSTRATION.json
+reports/robust_v2/final_release_20261022/SUPERSEDED_DUPLICATE_COMPETITOR_PARAGRAPH.md
+reports/robust_v2/final_release_20261022/PRE_FINAL_20261021_MANUSCRIPT.md
+
+# One-time generation history is preserved locally, not a public release API.
+reports/robust_v2/final_release_20261022/ONEOFF_HISTORICAL_SCRIPTS/
+
+# Superseded intermediate Word/browser checksum receipts, kept locally for traceability.
+reports/robust_v2/final_release_20261022/BROWSER_VISUAL_RENDER_EVIDENCE.json
+reports/robust_v2/final_release_20261022/FINAL_SOURCE_AND_WORD_HASHES.json
+reports/robust_v2/final_release_20261022/FIRST_SOURCE_AND_WORD_HASHES_BEFORE_DEDUPE.json
