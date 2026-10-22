@@ -82,3 +82,13 @@ reports/robust_v2/external_academic_review_20261014/RENDERED_FINAL/
 reports/robust_v2/external_academic_review_20261014/CONTINUATION_20261020/VISUAL_LAYOUT_R5/
 reports/robust_v2/external_academic_review_20261014/CONTINUATION_20261020/VISUAL_LAYOUT_R6/
 reports/robust_v2/external_academic_review_20261014/EXPLORATORY_NOMINAL_CONVERGENCE/*/iter_*/
+
+# The author's original private Word submission and 21-page visual render bytes
+# stay in the SHA-verified local coauthor-review package, not public Git history.
+reports/robust_v2/external_academic_review_20261021/ORIGINAL_USER_SUBMISSION.docx
+reports/robust_v2/external_academic_review_20261021/ORIGINAL_AUTHOR_STYLE_EVIDENCE.json
+reports/robust_v2/external_academic_review_20261021/PRE_REWRITE_CONTROLLED_WORD.docx
+reports/robust_v2/external_academic_review_20261021/PRE_LAYOUT_AUTHOR_VOICE_WORD.docx
+reports/robust_v2/external_academic_review_20261021/RENDERED/
+reports/robust_v2/external_academic_review_20261021/RENDERED_V2/
+reports/robust_v2/external_academic_review_20261021/*.log
