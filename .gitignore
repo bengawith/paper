@@ -116,3 +116,8 @@ reports/robust_v2/final_release_20261022/ONEOFF_HISTORICAL_SCRIPTS/
 reports/robust_v2/final_release_20261022/BROWSER_VISUAL_RENDER_EVIDENCE.json
 reports/robust_v2/final_release_20261022/FINAL_SOURCE_AND_WORD_HASHES.json
 reports/robust_v2/final_release_20261022/FIRST_SOURCE_AND_WORD_HASHES_BEFORE_DEDUPE.json
+
+# Final focused journal-review Word history and page-render bytes are retained
+# with the verified author package, not as redundant repository objects.
+reports/robust_v2/final_release_20261022/EDITORIAL_HISTORY/
+reports/robust_v2/final_release_20261022/VISUAL_FOCUSED/

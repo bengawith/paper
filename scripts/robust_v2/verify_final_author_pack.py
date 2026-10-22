@@ -38,6 +38,13 @@ def require(path):
 
 
 def verify():
+    # One authoritative acceptance for the focused paper and current CFD handoff.
+    focused = ROOT / "reports/robust_v2/final_release_20261022/FOCUSED_AUTHOR_REVIEW_ACCEPTANCE.json"
+    if focused.exists():
+        from runpy import run_path
+
+        new_gate = ROOT / "scripts/robust_v2/verify_focused_review.py"
+        return run_path(str(new_gate))["verify"]()
     # Current 22-October author revision supersedes earlier manuscript hashes.
     # Reuse its authoritative read-only verifier; never mutate older receipts.
     current = ROOT / "reports/robust_v2/final_release_20261022/FINAL_REVIEW_ACCEPTANCE.json"

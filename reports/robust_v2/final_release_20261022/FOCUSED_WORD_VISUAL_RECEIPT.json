@@ -1,0 +1,149 @@
+{
+  "schema": "focused-author-working-Word-content-browser-preview-v1",
+  "main": {
+    "word_source_path": "paper/LATEST_MANUSCRIPT_FOR_AVA.docx",
+    "word_sha256": "ab3d4993186e87eaa3fdc5ee156b9ccbec8fc1fbd417273d0e491c23c70f0b66",
+    "browser_pdf_sha256": "c0ece625a03409ad6fc56bca3a1bcadf9736ce362acf07b431ac387e2ab031be",
+    "browser_pdf_path": "reports/robust_v2/final_release_20261022/VISUAL_FOCUSED/manuscript/manuscript_browser_word_content.pdf",
+    "page_count": 22,
+    "source_figures": 8,
+    "source_tables": 7,
+    "source_paragraphs": 207,
+    "figure_caption_image_groups": 8,
+    "browser_derived_not_native_microsoft_word": true,
+    "all_pages_visually_inspected": false,
+    "pages": [
+      {
+        "page": 1,
+        "sha256": "5d7b25ee9fc87d371486d43a1a31924c2d9856f43c4da47e1e9ede9b4a86ff02",
+        "image": "reports/robust_v2/final_release_20261022/VISUAL_FOCUSED/manuscript/PAGE_01.png"
+      },
+      {
+        "page": 2,
+        "sha256": "0308145a418e088d9c5dd169f6394cbc26552c131b01bbd8c78d8b7a63aebea3",
+        "image": "reports/robust_v2/final_release_20261022/VISUAL_FOCUSED/manuscript/PAGE_02.png"
+      },
+      {
+        "page": 3,
+        "sha256": "833bb5eee0e7b0e928904d21bb1792ea9cc053a820529dd0dcac205b14c3c7e3",
+        "image": "reports/robust_v2/final_release_20261022/VISUAL_FOCUSED/manuscript/PAGE_03.png"
+      },
+      {
+        "page": 4,
+        "sha256": "6290868c3f67e88f376dcbc24335ae983ba95bb78ca23b87c8d141f8a6fc578c",
+        "image": "reports/robust_v2/final_release_20261022/VISUAL_FOCUSED/manuscript/PAGE_04.png"
+      },
+      {
+        "page": 5,
+        "sha256": "57db0c538076ddb075977d8061f6eb388b43d0387be71231a9163dc5966893ec",
+        "image": "reports/robust_v2/final_release_20261022/VISUAL_FOCUSED/manuscript/PAGE_05.png"
+      },
+      {
+        "page": 6,
+        "sha256": "57bb7850a421cfd02e0e2054cf04f4fe137c877011be035b972ff4c03f17d647",
+        "image": "reports/robust_v2/final_release_20261022/VISUAL_FOCUSED/manuscript/PAGE_06.png"
+      },
+      {
+        "page": 7,
+        "sha256": "b5dd49e5db5d27ef40ec8d8f7f189488d40f7fe0f90d5f6a5fbfbe591233f2d1",
+        "image": "reports/robust_v2/final_release_20261022/VISUAL_FOCUSED/manuscript/PAGE_07.png"
+      },
+      {
+        "page": 8,
+        "sha256": "52904d7fa5aadd2b21c37d738459475fe2a9cd3b51b156e3ef46c7aa1bc9bf9e",
+        "image": "reports/robust_v2/final_release_20261022/VISUAL_FOCUSED/manuscript/PAGE_08.png"
+      },
+      {
+        "page": 9,
+        "sha256": "eea83f7de343d324e7094326a681ef714eb8fd673df06cdeb3d48a69811b2096",
+        "image": "reports/robust_v2/final_release_20261022/VISUAL_FOCUSED/manuscript/PAGE_09.png"
+      },
+      {
+        "page": 10,
+        "sha256": "362c5ad33555c0d259341a1a0be2114cc30e376db71acec340eb23d30d0db386",
+        "image": "reports/robust_v2/final_release_20261022/VISUAL_FOCUSED/manuscript/PAGE_10.png"
+      },
+      {
+        "page": 11,
+        "sha256": "b1f2d3c97be9a449832c7ec50bf7a07ae21123431a161487dddf6f6321bf4a82",
+        "image": "reports/robust_v2/final_release_20261022/VISUAL_FOCUSED/manuscript/PAGE_11.png"
+      },
+      {
+        "page": 12,
+        "sha256": "b35dc9076cd6af16746616d373291204327bf85d34e759950af3f1fd18bb41cc",
+        "image": "reports/robust_v2/final_release_20261022/VISUAL_FOCUSED/manuscript/PAGE_12.png"
+      },
+      {
+        "page": 13,
+        "sha256": "612511194012791b38af413dbbe0e9da1a8cebe6d721639a9ff02c32d1cafa2a",
+        "image": "reports/robust_v2/final_release_20261022/VISUAL_FOCUSED/manuscript/PAGE_13.png"
+      },
+      {
+        "page": 14,
+        "sha256": "0906fffc184d8cc19c447cab960d64b80a31a10b20349a97268d3cbc174ffe6e",
+        "image": "reports/robust_v2/final_release_20261022/VISUAL_FOCUSED/manuscript/PAGE_14.png"
+      },
+      {
+        "page": 15,
+        "sha256": "68cd7722d90599797b4120bbd02bcc955eb37c53d880808066a5467195cceca9",
+        "image": "reports/robust_v2/final_release_20261022/VISUAL_FOCUSED/manuscript/PAGE_15.png"
+      },
+      {
+        "page": 16,
+        "sha256": "f20d2d2b0e407eaf919d3f77976bee098988161e190fa43b5588d41b0a4e75bd",
+        "image": "reports/robust_v2/final_release_20261022/VISUAL_FOCUSED/manuscript/PAGE_16.png"
+      },
+      {
+        "page": 17,
+        "sha256": "ef081df2919973faa881ec50ec838f80bad0474e6c0d4a64ddda56826476d13f",
+        "image": "reports/robust_v2/final_release_20261022/VISUAL_FOCUSED/manuscript/PAGE_17.png"
+      },
+      {
+        "page": 18,
+        "sha256": "37a9131d869f7e1f43a2ef9e98558275f44d846488f7a79104fe503c5e50d901",
+        "image": "reports/robust_v2/final_release_20261022/VISUAL_FOCUSED/manuscript/PAGE_18.png"
+      },
+      {
+        "page": 19,
+        "sha256": "9ecf29bdb2420dfe0713a41590db3cdbfc5d9557a71cd14f63a33a221f3b8aa9",
+        "image": "reports/robust_v2/final_release_20261022/VISUAL_FOCUSED/manuscript/PAGE_19.png"
+      },
+      {
+        "page": 20,
+        "sha256": "9c7af71ccb432da434a7a0bbd3cfcd0bdc5033cffe2da918d9e68ce67b65ed9e",
+        "image": "reports/robust_v2/final_release_20261022/VISUAL_FOCUSED/manuscript/PAGE_20.png"
+      },
+      {
+        "page": 21,
+        "sha256": "f02b62c7c652608ca12e9caaa4f1dbba54d13b63331a165df8fd569455b2aed9",
+        "image": "reports/robust_v2/final_release_20261022/VISUAL_FOCUSED/manuscript/PAGE_21.png"
+      },
+      {
+        "page": 22,
+        "sha256": "7fa82cd175a19d4beb1f048a6bbe185db2bef0bf1c6864516fd4272abadded6c",
+        "image": "reports/robust_v2/final_release_20261022/VISUAL_FOCUSED/manuscript/PAGE_22.png"
+      }
+    ],
+    "contact_sheets": [
+      {
+        "path": "reports/robust_v2/final_release_20261022/VISUAL_FOCUSED/manuscript/CONTACT_01.png",
+        "sha256": "94eebcefc0726466272470009e7dd0f88cfe893b7110a63252babcf17d35b9c7"
+      },
+      {
+        "path": "reports/robust_v2/final_release_20261022/VISUAL_FOCUSED/manuscript/CONTACT_02.png",
+        "sha256": "c1817cb23f7116769ea5ff13e83708b45db19d6b1b66aea9babd9adf8ef4e1d9"
+      },
+      {
+        "path": "reports/robust_v2/final_release_20261022/VISUAL_FOCUSED/manuscript/CONTACT_03.png",
+        "sha256": "c259064c524b1c92d8c3e65dcd6ebe15876873bfd89aafba8170595ad0938e41"
+      },
+      {
+        "path": "reports/robust_v2/final_release_20261022/VISUAL_FOCUSED/manuscript/CONTACT_04.png",
+        "sha256": "4cf4aa6d2151bb09198dba8bd0f17f063e1d1f649f256b8c62ddd5e4ea9fd8c2"
+      }
+    ]
+  },
+  "technical_comparator": "Archived separately; not part of the working journal manuscript",
+  "claim": "Ready for visual inspection, not yet evidence of an inspection",
+  "native_microsoft_word_page_layout_verified": false
+}

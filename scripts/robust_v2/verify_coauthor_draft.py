@@ -219,6 +219,15 @@ def verify() -> dict:
 
 
 def main() -> None:
+    # Delegate to the single current focused journal-working-draft gate. The
+    # October 22 comparator-centred review remains immutable historical evidence.
+    focused = ROOT / "reports/robust_v2/final_release_20261022/FOCUSED_AUTHOR_REVIEW_ACCEPTANCE.json"
+    if focused.exists():
+        from runpy import run_path
+
+        runner = ROOT / "scripts/robust_v2/verify_focused_review.py"
+        run_path(str(runner))["main"]()
+        return
     result = verify()
     if OUTPUT.exists():
         if read(OUTPUT) != result:

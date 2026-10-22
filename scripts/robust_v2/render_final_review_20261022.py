@@ -24,7 +24,7 @@ HTML_SOURCE = (
     ROOT
     / "reports/robust_v2/external_academic_review_20261014/CONTINUATION_20261020/render_author_docx_browser.py"
 )
-RECORD = EVIDENCE / "LATEST_WORD_VISUAL_RECEIPT.json"
+RECORD = EVIDENCE / "FOCUSED_WORD_VISUAL_RECEIPT.json"
 
 
 def sha(path: Path) -> str:
@@ -32,7 +32,7 @@ def sha(path: Path) -> str:
 
 
 def render(name: str, word: Path, group_figures: bool) -> dict:
-    folder = EVIDENCE / "VISUAL_LATEST" / name
+    folder = EVIDENCE / "VISUAL_FOCUSED" / name
     if folder.exists():
         raise FileExistsError("Prior rendered pages require inspection: " + str(folder))
     folder.mkdir(parents=True)
@@ -128,24 +128,19 @@ def main() -> None:
     if RECORD.exists():
         raise FileExistsError("Existing Word browser evidence must be preserved")
     manuscript = render("manuscript", ROOT / "paper/LATEST_MANUSCRIPT_FOR_AVA.docx", True)
-    supplement = render("supplement", ROOT / "paper/SUPPLEMENTARY_NUMERICAL_COMPARISON.docx", False)
     result = {
-        "schema": "final-paper-native-Word-content-browser-preview-v1",
+        "schema": "focused-author-working-Word-content-browser-preview-v1",
         "main": manuscript,
-        "supplement": supplement,
-        "claim": "Ready for page-by-page visual assessment, NOT yet a claimed inspection",
+        "technical_comparator": "Archived separately; not part of the working journal manuscript",
+        "claim": "Ready for visual inspection, not yet evidence of an inspection",
         "native_microsoft_word_page_layout_verified": False,
     }
     RECORD.write_text(json.dumps(result, indent=2), encoding="utf-8")
     print(
-        "RENDERED",
-        json.dumps(
-            {
-                "manuscript": manuscript["page_count"],
-                "supplement": supplement["page_count"],
-                "caption_groups": manuscript["figure_caption_image_groups"],
-            }
-        ),
+        "FOCUSED_WORKING_DRAFT_RENDERED",
+        manuscript["page_count"],
+        "pages, caption groups",
+        manuscript["figure_caption_image_groups"],
         flush=True,
     )
 
