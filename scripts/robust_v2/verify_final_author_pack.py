@@ -38,6 +38,15 @@ def require(path):
 
 
 def verify():
+    # Current 22-October author revision supersedes earlier manuscript hashes.
+    # Reuse its authoritative read-only verifier; never mutate older receipts.
+    current = ROOT / "reports/robust_v2/final_release_20261022/FINAL_REVIEW_ACCEPTANCE.json"
+    if current.is_file():
+        from runpy import run_path
+
+        runner = ROOT / "scripts/robust_v2/verify_coauthor_draft.py"
+        run_path(str(runner))["main"]()
+        return json.loads(current.read_text(encoding="utf-8"))
     # The 14-October evidence hashes certify its historical manuscript, not
     # the replacement 21-October original-author-voice paper. Dispatch to
     # the latest source/Word/29-reference/46-claim acceptance without ever
