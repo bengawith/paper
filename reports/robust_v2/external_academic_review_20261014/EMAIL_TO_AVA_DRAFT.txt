@@ -1,0 +1,16 @@
+Subject: Robust V2 aerofoil study — revised manuscript and independent review package
+
+Dear Ava,
+
+I have prepared a revised version of the Robust V2 aerofoil study for your scientific review, together with the independent computational integrity report and a traceable evidence package.
+
+The review found issues in the original coordinate interpretation and reference-based manufacturing perturbation procedure. We retained the original results for audit, corrected the implementation, generated a separate set of XFOIL numerical labels on the exact reconstructed CST geometries and trained a new five-member model. The package distinguishes the corrected protected and sealed numerical evaluations, full multi-seed optimization, same-solver selected-design comparisons, and all adverse or missing solver outcomes. These results must not be interpreted as independent CFD validation.
+
+Would you please review the current standalone Word manuscript and the accompanying scientific referee report, particularly the aerodynamic mission assumptions, turbulence and transition physics, same-lift and pitching-moment constraints, manufacturing interpretation, and appropriate novelty/engineering claims? The supplied CFD input bundle and checklist identify the selected independent CFD cases, mesh/domain and convergence checks that remain necessary. Nothing in the package claims those CFD calculations have already been performed.
+
+Please also confirm the current affiliations, corresponding author, CRediT contributions, funding/competing-interest and AI-use disclosures, and any target journal or prior-submission restrictions before we take the manuscript forward. We can then reconcile your CFD and scientific findings into the paper without overclaiming what the numerical evidence establishes.
+
+Best wishes,
+Ben
+
+DRAFT ONLY — not sent. Replace general computational-status description with exact verified final summaries only after every controlled acceptance gate and the package manifest pass.

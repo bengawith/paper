@@ -1,0 +1,74 @@
+{
+  "schema": "posthoc-all-designs-nominal-xfoil-iteration-sensitivity-v1",
+  "protocol_sha256": "ef9b08cc10fa64b4c674ff7f6a4c083046c8691dc19dba4dccc28dd734e778c5",
+  "original_frozen_strict_sha256": "17234ed2a0db773953ad10b1b4d83e14400f233ae640cb018a38973cbd0a55fe",
+  "six_cases_attempted": 6,
+  "original_200_usable": 0,
+  "iter_400_usable": 0,
+  "iter_800_usable": 0,
+  "results": [
+    {
+      "design": "reference",
+      "iterations": 400,
+      "usable": false,
+      "weighted_cd": null,
+      "missing_alpha_deg": [
+        6.5
+      ]
+    },
+    {
+      "design": "nominal_control",
+      "iterations": 400,
+      "usable": false,
+      "weighted_cd": null,
+      "missing_alpha_deg": [
+        3.0
+      ]
+    },
+    {
+      "design": "risk_knee",
+      "iterations": 400,
+      "usable": false,
+      "weighted_cd": null,
+      "missing_alpha_deg": [
+        2.25,
+        5.75,
+        6.0,
+        6.5,
+        7.25
+      ]
+    },
+    {
+      "design": "reference",
+      "iterations": 800,
+      "usable": false,
+      "weighted_cd": null,
+      "missing_alpha_deg": [
+        6.5
+      ]
+    },
+    {
+      "design": "nominal_control",
+      "iterations": 800,
+      "usable": false,
+      "weighted_cd": null,
+      "missing_alpha_deg": [
+        3.0
+      ]
+    },
+    {
+      "design": "risk_knee",
+      "iterations": 800,
+      "usable": false,
+      "weighted_cd": null,
+      "missing_alpha_deg": [
+        2.25,
+        5.75,
+        6.0,
+        6.5,
+        7.25
+      ]
+    }
+  ],
+  "scope": "Exploratory convergence sensitivity due original VISCAL nonconvergence, not the predeclared strict verification or independent flow physics."
+}

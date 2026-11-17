@@ -1,52 +1,36 @@
-# Data-Driven Aerodynamic Prediction
+# Robust V2 — geometry-consistent aerodynamic selection study
 
-Data-Driven Aerodynamic Prediction: High-Fidelity Lift Curve Estimation for Aerofoils Using Class-Shape Transformation and Artificial Intelligence
+The canonical paper is [paper/manuscript.md](paper/manuscript.md), with a reproducibly generated coauthor Word copy at [paper/LATEST_MANUSCRIPT_FOR_AVA.docx](paper/LATEST_MANUSCRIPT_FOR_AVA.docx). The frozen numerical study is complete; **independent CFD has not been performed**.
 
-**Short summary:** This repository accompanies the research paper above. It contains code, datasets (small subsets and metadata), and scripts used to train, evaluate and analyze machine learning models that predict high-fidelity lift curves from airfoil Class-Shape Transformation (CST) parameters and operating conditions.
+**For Ava:** [paper/CFD_BRIEF_FOR_AVA.md](paper/CFD_BRIEF_FOR_AVA.md) and [paper/CFD_HANDOFF_CURRENT.zip](paper/CFD_HANDOFF_CURRENT.zip). This **20 October 2026** handoff contains the frozen reference, robust risk-knee and constrained nominal control, with original design identities and SHA-256 case manifest. The 14 October package selected different shapes and is historical only. [paper/COAUTHOR_NOTES.md](paper/COAUTHOR_NOTES.md) identifies the remaining author decisions.
 
-**Contents**
-- **Code:** Core library is inside the `src/` package. Top-level scripts are in `scripts/`.
-- **Data:** Sample and processed datasets are in `data/csv/` and raw `data/aerofoil_data/`.
-- **Models:** Trained model artifacts are in `trained_model/`.
+## Reproducibility map
 
-**Quick Links**
-- **Main package:** [src](src)
-- **Scripts:** [scripts](scripts)
+- Current controlled lineage: results/robust_v2/lineages/robust-v2-controlled-20261020/
+- Fixed selected experiments, solver ledger, fresh 2,048-scenario sensitivity and SHA-256 receipts: its selected_study/ subdirectory.
+- Controlled configurations: configs/robust_v2/; implementation: src/robust_airfoil/; study and reconciliation utilities: scripts/robust_v2/.
+- Archived model and raw numerical files are retained with their hashes; not every large third-party/source artifact is ordinary small Git text. Check the relevant frozen manifest before attempting a reconstruction.
+- The mean pitching-moment constraint actually executed is over 33 service-incidence points (0°–8°, step 0.25°), **not** a pointwise guarantee. The nominal control fails the alternative earlier five-incidence pointwise allowance at 6° and 8°. Fresh high-amplitude CVaR95 values include the stated candidate-specific trust penalties. Missing numerical solver observations have not been imputed.
 
-**Installation**
-- Create and activate a virtual environment (recommended Python 3.10+):
+## Working environment and targeted checks
 
-```bash
-python -m venv .venv
-# Windows PowerShell
-.\.venv\Scripts\Activate.ps1
-# or POSIX
-source .venv/bin/activate
-```
+Use Python **3.11–3.13** with [uv](https://docs.astral.sh/uv/) and the locked project environment:
 
-- Install runtime + (optional) dev requirements:
+~~~console
+uv sync --extra dev --extra benchmarks --extra docs
+uv run pytest tests/robust_v2 -m "not network" -q
+uv run ruff check src/robust_airfoil tests/robust_v2 scripts/robust_v2
+uv run mypy src/robust_airfoil
+uv run python -B scripts/robust_v2/verify_final_author_pack.py
+~~~
 
-```bash
-pip install -r requirements.txt         # core runtime dependencies
-```
+XFOIL-dependent checks require the configured solver executable; skip or mark them explicitly when not available. The historical requirements.txt is not the authoritative locked Robust V2 setup. Do not rerun full training, 10-seed searches or the 200-shape solver cohort to review the frozen evidence.
 
+After a source edit, generate the two selected-design figures from the frozen JSON and rebuild Word:
 
-**Primary Scripts & Usage**
-- `scripts/train_best_model.py` — Train or re-train models using dataset parameters defined in `data/csv/` and model configs in `physics_aware/model_details/`.
-- `scripts/physics_aware_tuner.py` — Hyperparameter sweep and tuning wrapper for physics-aware losses and architectures.
-- `scripts/physics_aware_sensitivity_analysis.py` — Runs sensitivity analysis (Morris / Sobol) on model inputs.
-- `scripts/gather_model_details.py` — Collates model metadata for `physics_aware/model_details/`.
-- `scripts/analyze_physics_results.py` — Post-hoc analysis and figure generation.
+~~~console
+uv run python scripts/robust_v2/render_current_selected_figures.py
+uv run python scripts/robust_v2/make_latest_ava_paper.py
+~~~
 
-**Core library highlights**
-- `src/utils.py` — Utility functions including CST parameter handling, physics-metrics (`calculate_physical_metrics`, `calculate_physics_score`), small helper model `QuickMLP`, and training/evaluation helpers.
-- `src/models.py` / `src/model_components.py` — Model definitions (MLP, GRU, LSTM, CNN flavours used in the experiments).
-
-**Data format**
-- Predictands: lift coefficient curves are arranged as columns `alpha_0..alpha_47` for a fixed alpha grid, or packed arrays in the processed CSV files under `data/csv/`.
-- Inputs: CST parameters (e.g., `lower_weight_*`, `upper_weight_*`, `TE_thickness`, `leading_edge_weight`), metadata columns and operating conditions.
-
-Refer to `data/csv/dataset_12CST_params.csv` for an example.
-
-**Reproducibility**
-- The repository includes utilities to set random seeds (`src.utils.set_seed`) and helper methods to evaluate physics-aware metrics.
+Earlier dated figure/Word exporters are archival and may use earlier lineage definitions; **do not regenerate the current paper with those scripts**. Software checks and XFOIL repeatability are not independent viscous-CFD validation. Claims about physical rankings, manufacturing probabilities and journal acceptance remain conditional on Ava's study and coauthor review.

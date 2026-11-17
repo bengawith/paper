@@ -1,0 +1,19 @@
+seed: 20260824
+reference_preference: naca2412
+conditions: {reynolds_number: 1000000, mach: 0.0, ncrit: 9.0}
+service_targets: {cl_required: [0.4, 0.7, 1.0], weights: [0.25, 0.50, 0.25]}
+ava_baseline:
+  alpha_deg: [0.0, 2.0, 4.0, 6.0, 8.0]
+  uncertainty_fraction: 0.01
+  lambda_sensitivity_values: [0.0, 0.25, 0.5, 1.0, 2.0, 4.0]
+risk_objectives: [expected_weighted_cd, cvar_95_weighted_cd]
+relative_constraints:
+  thickness_ratio_lower: 0.98
+  thickness_ratio_upper: 1.02
+  section_area_lower: 0.98
+  leading_edge_radius_lower: 0.80
+  cm_allowance_below_reference: 0.01
+trust: {require_calibrated_domain: true, reject_untrusted_candidates: true}
+debug_nsga2: {population: 32, generations: 10, uncertainty_samples: 16}
+pilot_nsga2: {population: 64, generations: 50, uncertainty_samples: 64}
+full_nsga2: {population: 128, generations: 200, uncertainty_samples: 64, independent_seeds: 10}

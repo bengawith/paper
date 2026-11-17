@@ -1,0 +1,9 @@
+{
+  "accepted_polar_rows": 179780,
+  "candidate_exact_polars": 1572,
+  "joint_model_points": 179779,
+  "mapped_airfoils": 1560,
+  "mapping_fraction": 0.9923664122137404,
+  "rejected_records": 12,
+  "requested_polars": 1572
+}

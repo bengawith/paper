@@ -1,0 +1,131 @@
+{
+  "records": [
+    {
+      "airfoil_id": "ag35",
+      "cluster_id": 20,
+      "split": "calibration"
+    },
+    {
+      "airfoil_id": "b707e",
+      "cluster_id": 94,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "b737b",
+      "cluster_id": 96,
+      "split": "calibration"
+    },
+    {
+      "airfoil_id": "e222",
+      "cluster_id": 204,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "e475",
+      "cluster_id": 267,
+      "split": "calibration"
+    },
+    {
+      "airfoil_id": "e553",
+      "cluster_id": 287,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "fx62k153",
+      "cluster_id": 408,
+      "split": "locked_test"
+    },
+    {
+      "airfoil_id": "fx66s161",
+      "cluster_id": 425,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "fx79k144",
+      "cluster_id": 475,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "fx79w660a",
+      "cluster_id": 479,
+      "split": "calibration"
+    },
+    {
+      "airfoil_id": "glennmartin3",
+      "cluster_id": 512,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "goe199",
+      "cluster_id": 566,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "goe289",
+      "cluster_id": 607,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "goe304",
+      "cluster_id": 614,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "gu255118",
+      "cluster_id": 910,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "m10",
+      "cluster_id": 1017,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "mh80",
+      "cluster_id": 1092,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "n64108",
+      "cluster_id": 1141,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "naca651212a06",
+      "cluster_id": 1225,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "npl9615",
+      "cluster_id": 1272,
+      "split": "locked_test"
+    },
+    {
+      "airfoil_id": "oaf117",
+      "cluster_id": 1283,
+      "split": "locked_test"
+    },
+    {
+      "airfoil_id": "rg14a147",
+      "cluster_id": 1348,
+      "split": "locked_test"
+    },
+    {
+      "airfoil_id": "s4158",
+      "cluster_id": 1394,
+      "split": "calibration"
+    },
+    {
+      "airfoil_id": "sc20402",
+      "cluster_id": 1435,
+      "split": "development"
+    },
+    {
+      "airfoil_id": "sg6041",
+      "cluster_id": 1471,
+      "split": "locked_test"
+    }
+  ],
+  "records_hash": "6f7f14b3a186633eb868ebcc012a369eaea1c4c664ce24d3de4dc603195d7a7b",
+  "seed": 20260824
+}

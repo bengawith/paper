@@ -1,0 +1,21 @@
+{
+  "schema": "author-artifact-final-crlf-only-revision-r6",
+  "status": "PASS",
+  "modified_file": "paper/manuscript.md",
+  "before_sha256": "4d2385f97aee365c23edbd1174284da5be4ce6292549834163c17a62b0d659a8",
+  "after_sha256": "70791df58f17a17dc8a3fb575e19869330bb2ff9479c2b6dd5825a580ada5d38",
+  "before_size": 37232,
+  "after_size": 37230,
+  "removed_hex": "0d0a",
+  "underlying_markdown_text_unchanged": true,
+  "word_sha256_unchanged": "8c3068433fe13e178c6766fb3e10a1546fc29aeeb13953ba57b3252ae6593ceb",
+  "historical_export_receipt_preserved_sha256": "992106b37eb5d44a43ad8984cb92b68c8d949992a0a7ac8d2ee2e5fc977432da",
+  "evidence_manifest_before_sha256": "7c8aab5b53058d868fc7191a077f09d725b3a6ab5d07fdce765a345f96c3e8ff",
+  "evidence_manifest_after_sha256": "42df45d878d051f373bbc1d3ece5c30c6338979ade55879ab38d1ccb0ea8972a",
+  "author_acceptance_before_sha256": "73ed97906ab053fe7bc1db3c12177eca4d6f1bc39f318236b0d0d48ac14a399f",
+  "author_acceptance_after_sha256": "31248ba0217856b8b9af71eeb997f35e4cad0a36063b3fbd0475fdd27ba9366f",
+  "git_diff_check_exit": 0,
+  "author_verifier_exit": 0,
+  "science_models_solver_protocols_or_frozen_thresholds_edited": false,
+  "native_word_paginated_visual_claim": false
+}

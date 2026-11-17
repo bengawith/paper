@@ -1,0 +1,30 @@
+{
+  "schema": "source-unchanged-checkpoint-nominal-recovery-v1",
+  "completed_utc": "2026-10-21T12:06:52.696374+00:00",
+  "r3_terminal_failed_state_sha256": "22cc7c3ad4cc0d0f649be2cd524255d61ed063cc8a9463757828d493eb26eec4",
+  "failure_log_sha256": "8ed1cca5859511e2c6440909841032843cb56be638d26ae38832fa4852dafc41",
+  "root_cause": "Windows PermissionError [WinError 5] replacing non-scientific GENE\u200b\u200bRATION_PROGRESS.json.tmp; separate complete generation 158 algorithm_checkpoint is intact",
+  "scientific_source_modified_in_recovery": false,
+  "failed_file_snapshots": {
+    "NOMINAL_R3_FAILED_GEN158_UNCOMMITTED.json": "b738f14dd72d52acc63de8aededc07fdfd4d4709b0b6810c50808a11a8b1b858",
+    "NOMINAL_R3_LAST_RECORDED_GEN157.json": "254c66825867b022e925f01e449ce82cf7231656f87992fdca3edd90e4d7517d",
+    "NOMINAL_R3_VALID_CHECKPOINT_GEN158.json": "5beb09661903399a8e1b86de4d11cc490b770737006beeadc6d5e816e5379490"
+  },
+  "same_scientific_context_resume_log_sha256": "049ac91a5c6bbd25bc2f8e231c43e4be3777adb392c165633073cf3920df472d",
+  "nominal_summary_sha256": "65aaf96a6e733cd2cbc53e8eb46f97d367e827f9fa4960234cc6b1c1dde3dd72",
+  "seed_count": 10,
+  "generations_per_seed": 200,
+  "seeds_sha256": {
+    "20264824": "b99a01080ab299ac610ac64d2899eb2045f96ae4591e9a285abdb774e5aa828c",
+    "20264825": "e8ea09a0baa34eed24899688971d88768bc046b289c8c6bee18bfef46cd10db4",
+    "20264826": "a2246b61dd665b060bba6ff4aba928651d31ce0ff989a9f22d01e0f2ccec217f",
+    "20264827": "3f27158cfb0e948722b18d4815c61683df63bcbe5665d994a26fee404154e375",
+    "20264828": "863bd84d269a3a2bf55101bc3551159024ab5b3615639f6c6bad75c4abd604c8",
+    "20264829": "9deab4de263b2e4727aab5bcf00fb77b8babe891b5e7b2f58f074cba54354c08",
+    "20264830": "d9779cb8b358894c44506e8cb451abf2956cfe03d583235aa57040bb03c5b9a1",
+    "20264831": "c788feb006ae8dbc16dd0a24a34a521e054d3d16147454e84ccd0d081cfd017d",
+    "20264832": "9e64fe14959564eb55bf31bd9dd8056e858b34e93ebe73d3dc4cd4d8870ad58b",
+    "20264833": "883a65b3bdf4312bb40fc0201e67eb4a0a7b37f73cfca8539795743c8f2797df"
+  },
+  "next_action": "Adopt already completed scientific gates into a new R4 read-only acceptance receipt; launch no duplicate trial."
+}

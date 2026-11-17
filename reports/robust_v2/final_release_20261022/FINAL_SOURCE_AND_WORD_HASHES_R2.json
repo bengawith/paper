@@ -1,0 +1,9 @@
+{
+  "source_sha256": "d3fa9045c0d4ce32087d41216ed36c0d0da2ffbc5daca00bfbfd809714ecd9e2",
+  "word_sha256": "6a7582448ea2bc64206ca1317405785380f1241254907f1c59c1c5a792f18e63",
+  "word_tables": 7,
+  "word_figures": 8,
+  "source_words": 9896,
+  "previous_Word_sha256": "62cedb2a7d36bac96b0886a72d719890c6048f546ef2fa34a8503e7ebfaabd2d",
+  "previous_record_sha256": "b1513f8d76ed29819e5b26f3a8427ff1f8c59e7e381241c08f7f39a2f1b68898"
+}

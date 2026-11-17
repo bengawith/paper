@@ -1,0 +1,170 @@
+[
+  {
+    "path": "reports/robust_v2/submission_review_20261014/CFD_HANDOFF/inputs/reference_naca2412/nominal/geometry.dat",
+    "expected_sha256": "be5d75c092be0edc865af702a58ac4f4ebd436607958faedff65b00ae3ae55a7",
+    "actual_sha256": "be5d75c092be0edc865af702a58ac4f4ebd436607958faedff65b00ae3ae55a7",
+    "matches": true
+  },
+  {
+    "path": "reports/robust_v2/submission_review_20261014/CFD_HANDOFF/inputs/reference_naca2412/nominal/combined_points.csv",
+    "expected_sha256": "dc3782604cd92110cfbe8883845da3bf3eff1ae529799341ea6d8745300c3768",
+    "actual_sha256": "dc3782604cd92110cfbe8883845da3bf3eff1ae529799341ea6d8745300c3768",
+    "matches": true
+  },
+  {
+    "path": "reports/robust_v2/submission_review_20261014/CFD_HANDOFF/inputs/reference_naca2412/nominal/run_status.json",
+    "expected_sha256": "adc3343b8778a7dc322232575bf1963cf2db8d6ecba120a88a926f68313dc3e6",
+    "actual_sha256": "adc3343b8778a7dc322232575bf1963cf2db8d6ecba120a88a926f68313dc3e6",
+    "matches": true
+  },
+  {
+    "path": "reports/robust_v2/submission_review_20261014/CFD_HANDOFF/inputs/reference_naca2412/nominal/command.txt",
+    "expected_sha256": "a204bfd1cf986b11809d9d28acd28587d689e39f8f4c4fe7cb11cedd90da4815",
+    "actual_sha256": "a204bfd1cf986b11809d9d28acd28587d689e39f8f4c4fe7cb11cedd90da4815",
+    "matches": true
+  },
+  {
+    "path": "reports/robust_v2/submission_review_20261014/CFD_HANDOFF/inputs/within_trust_knee/nominal/geometry.dat",
+    "expected_sha256": "4e601ba2cfbe29602b5938758cfb2efdf7ef501746e2543e2e8fe55bf9674b86",
+    "actual_sha256": "4e601ba2cfbe29602b5938758cfb2efdf7ef501746e2543e2e8fe55bf9674b86",
+    "matches": true
+  },
+  {
+    "path": "reports/robust_v2/submission_review_20261014/CFD_HANDOFF/inputs/within_trust_knee/nominal/combined_points.csv",
+    "expected_sha256": "0914958539079c375abe970570e2324c13e555d545a12bd775389960e4439fb4",
+    "actual_sha256": "0914958539079c375abe970570e2324c13e555d545a12bd775389960e4439fb4",
+    "matches": true
+  },
+  {
+    "path": "reports/robust_v2/submission_review_20261014/CFD_HANDOFF/inputs/within_trust_knee/nominal/run_status.json",
+    "expected_sha256": "adc3343b8778a7dc322232575bf1963cf2db8d6ecba120a88a926f68313dc3e6",
+    "actual_sha256": "adc3343b8778a7dc322232575bf1963cf2db8d6ecba120a88a926f68313dc3e6",
+    "matches": true
+  },
+  {
+    "path": "reports/robust_v2/submission_review_20261014/CFD_HANDOFF/inputs/within_trust_knee/nominal/command.txt",
+    "expected_sha256": "a204bfd1cf986b11809d9d28acd28587d689e39f8f4c4fe7cb11cedd90da4815",
+    "actual_sha256": "a204bfd1cf986b11809d9d28acd28587d689e39f8f4c4fe7cb11cedd90da4815",
+    "matches": true
+  },
+  {
+    "path": "reports/robust_v2/submission_review_20261014/CFD_HANDOFF/inputs/outside_trust_deterministic/nominal/geometry.dat",
+    "expected_sha256": "afb21dc353980f0258f4c1831a493d647f81b4ea30048a9cdb0b46f74dc09ac7",
+    "actual_sha256": "afb21dc353980f0258f4c1831a493d647f81b4ea30048a9cdb0b46f74dc09ac7",
+    "matches": true
+  },
+  {
+    "path": "reports/robust_v2/submission_review_20261014/CFD_HANDOFF/inputs/outside_trust_deterministic/nominal/combined_points.csv",
+    "expected_sha256": "b7564bd6f195aa1b9c09976bcb98e737e34f696a0294acac0e31929165dd6a12",
+    "actual_sha256": "b7564bd6f195aa1b9c09976bcb98e737e34f696a0294acac0e31929165dd6a12",
+    "matches": true
+  },
+  {
+    "path": "reports/robust_v2/submission_review_20261014/CFD_HANDOFF/inputs/outside_trust_deterministic/nominal/run_status.json",
+    "expected_sha256": "b08b843286f98eac7472a553498f933702d51ed382251c9bcfe80d5be2c369c4",
+    "actual_sha256": "b08b843286f98eac7472a553498f933702d51ed382251c9bcfe80d5be2c369c4",
+    "matches": true
+  },
+  {
+    "path": "reports/robust_v2/submission_review_20261014/CFD_HANDOFF/inputs/outside_trust_deterministic/nominal/command.txt",
+    "expected_sha256": "9a7c8cfc77f7c1209f24307c1487f62b14fb6205d486a3c4916d2e02a0d51a5a",
+    "actual_sha256": "9a7c8cfc77f7c1209f24307c1487f62b14fb6205d486a3c4916d2e02a0d51a5a",
+    "matches": true
+  },
+  {
+    "path": "reports/robust_v2/submission_review_20261014/CFD_HANDOFF/inputs/reference_naca2412/shared_07/geometry.dat",
+    "expected_sha256": "d80e39fdf340229f7fa98a68dfd7468b518dc5fbc97f179d029b95801ac7814b",
+    "actual_sha256": "d80e39fdf340229f7fa98a68dfd7468b518dc5fbc97f179d029b95801ac7814b",
+    "matches": true
+  },
+  {
+    "path": "reports/robust_v2/submission_review_20261014/CFD_HANDOFF/inputs/reference_naca2412/shared_07/combined_points.csv",
+    "expected_sha256": "71b1c2bd165f2b9174934b20b46a92f471689b662f170eef075a9ff28d67fb48",
+    "actual_sha256": "71b1c2bd165f2b9174934b20b46a92f471689b662f170eef075a9ff28d67fb48",
+    "matches": true
+  },
+  {
+    "path": "reports/robust_v2/submission_review_20261014/CFD_HANDOFF/inputs/reference_naca2412/shared_07/run_status.json",
+    "expected_sha256": "adc3343b8778a7dc322232575bf1963cf2db8d6ecba120a88a926f68313dc3e6",
+    "actual_sha256": "adc3343b8778a7dc322232575bf1963cf2db8d6ecba120a88a926f68313dc3e6",
+    "matches": true
+  },
+  {
+    "path": "reports/robust_v2/submission_review_20261014/CFD_HANDOFF/inputs/reference_naca2412/shared_07/command.txt",
+    "expected_sha256": "a204bfd1cf986b11809d9d28acd28587d689e39f8f4c4fe7cb11cedd90da4815",
+    "actual_sha256": "a204bfd1cf986b11809d9d28acd28587d689e39f8f4c4fe7cb11cedd90da4815",
+    "matches": true
+  },
+  {
+    "path": "reports/robust_v2/submission_review_20261014/CFD_HANDOFF/inputs/within_trust_knee/shared_07/geometry.dat",
+    "expected_sha256": "6b8a6572eb0b7b8af9cad1e24743f88157621de5e35ea6c4ce5f494e4fd37b94",
+    "actual_sha256": "6b8a6572eb0b7b8af9cad1e24743f88157621de5e35ea6c4ce5f494e4fd37b94",
+    "matches": true
+  },
+  {
+    "path": "reports/robust_v2/submission_review_20261014/CFD_HANDOFF/inputs/within_trust_knee/shared_07/combined_points.csv",
+    "expected_sha256": "2847653157c28139d10aad4ae6440fa9948e4ce85a4b8c75366aaf1a6252798e",
+    "actual_sha256": "2847653157c28139d10aad4ae6440fa9948e4ce85a4b8c75366aaf1a6252798e",
+    "matches": true
+  },
+  {
+    "path": "reports/robust_v2/submission_review_20261014/CFD_HANDOFF/inputs/within_trust_knee/shared_07/run_status.json",
+    "expected_sha256": "adc3343b8778a7dc322232575bf1963cf2db8d6ecba120a88a926f68313dc3e6",
+    "actual_sha256": "adc3343b8778a7dc322232575bf1963cf2db8d6ecba120a88a926f68313dc3e6",
+    "matches": true
+  },
+  {
+    "path": "reports/robust_v2/submission_review_20261014/CFD_HANDOFF/inputs/within_trust_knee/shared_07/command.txt",
+    "expected_sha256": "a204bfd1cf986b11809d9d28acd28587d689e39f8f4c4fe7cb11cedd90da4815",
+    "actual_sha256": "a204bfd1cf986b11809d9d28acd28587d689e39f8f4c4fe7cb11cedd90da4815",
+    "matches": true
+  },
+  {
+    "path": "reports/robust_v2/submission_review_20261014/CFD_HANDOFF/inputs/reference_naca2412/shared_04/geometry.dat",
+    "expected_sha256": "06c15c3a1f8ad6d0b8305431b5515eeb72a0386411811cf97f030e6d3f65d71d",
+    "actual_sha256": "06c15c3a1f8ad6d0b8305431b5515eeb72a0386411811cf97f030e6d3f65d71d",
+    "matches": true
+  },
+  {
+    "path": "reports/robust_v2/submission_review_20261014/CFD_HANDOFF/inputs/reference_naca2412/shared_04/combined_points.csv",
+    "expected_sha256": "b2f743200dee5050689292595d66ea79497da1ef997dd18b3fa0787c405df0c2",
+    "actual_sha256": "b2f743200dee5050689292595d66ea79497da1ef997dd18b3fa0787c405df0c2",
+    "matches": true
+  },
+  {
+    "path": "reports/robust_v2/submission_review_20261014/CFD_HANDOFF/inputs/reference_naca2412/shared_04/run_status.json",
+    "expected_sha256": "b08b843286f98eac7472a553498f933702d51ed382251c9bcfe80d5be2c369c4",
+    "actual_sha256": "b08b843286f98eac7472a553498f933702d51ed382251c9bcfe80d5be2c369c4",
+    "matches": true
+  },
+  {
+    "path": "reports/robust_v2/submission_review_20261014/CFD_HANDOFF/inputs/reference_naca2412/shared_04/command.txt",
+    "expected_sha256": "5156b37dc7aa4df6f2e06bb1ddb895c59c8d91482910a58da2087d4209ecc616",
+    "actual_sha256": "5156b37dc7aa4df6f2e06bb1ddb895c59c8d91482910a58da2087d4209ecc616",
+    "matches": true
+  },
+  {
+    "path": "reports/robust_v2/submission_review_20261014/CFD_HANDOFF/inputs/within_trust_knee/shared_04/geometry.dat",
+    "expected_sha256": "82794bcb1af7f5c6dee0ca3ddf7604ce6f9a38cb82d5aac0917932de69dc2a73",
+    "actual_sha256": "82794bcb1af7f5c6dee0ca3ddf7604ce6f9a38cb82d5aac0917932de69dc2a73",
+    "matches": true
+  },
+  {
+    "path": "reports/robust_v2/submission_review_20261014/CFD_HANDOFF/inputs/within_trust_knee/shared_04/combined_points.csv",
+    "expected_sha256": "78ae14e4ba5244f49bc3f7ae6de26b5eec57e33a160e4fcc23195078847ff2a3",
+    "actual_sha256": "78ae14e4ba5244f49bc3f7ae6de26b5eec57e33a160e4fcc23195078847ff2a3",
+    "matches": true
+  },
+  {
+    "path": "reports/robust_v2/submission_review_20261014/CFD_HANDOFF/inputs/within_trust_knee/shared_04/run_status.json",
+    "expected_sha256": "adc3343b8778a7dc322232575bf1963cf2db8d6ecba120a88a926f68313dc3e6",
+    "actual_sha256": "adc3343b8778a7dc322232575bf1963cf2db8d6ecba120a88a926f68313dc3e6",
+    "matches": true
+  },
+  {
+    "path": "reports/robust_v2/submission_review_20261014/CFD_HANDOFF/inputs/within_trust_knee/shared_04/command.txt",
+    "expected_sha256": "a204bfd1cf986b11809d9d28acd28587d689e39f8f4c4fe7cb11cedd90da4815",
+    "actual_sha256": "a204bfd1cf986b11809d9d28acd28587d689e39f8f4c4fe7cb11cedd90da4815",
+    "matches": true
+  }
+]

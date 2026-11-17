@@ -1,0 +1,37 @@
+{
+  "live": {
+    "allowed": false,
+    "body_sha256": null,
+    "http_status": null,
+    "reason": "missing AIRFOILTOOLS_CONTACT",
+    "status": "skipped"
+  },
+  "snapshot": {
+    "actual_commit": "6c0d35b44a33337afae0578402964df314b07698",
+    "case_count": 1576,
+    "geometry_count": 1657,
+    "license_files": [
+      {
+        "path": "LICENSE.md",
+        "sha256": "3da8a4ddeadf693f3d6acb7eda81b554aec5c78bbd5997de48afb4056a00d55c"
+      }
+    ],
+    "repo_url": "https://github.com/niccoforte/Aerofoil-Aerodynamic-Coefficients-ML-Predictive-Model.git",
+    "requested_commit": "6c0d35b44a33337afae0578402964df314b07698"
+  },
+  "uiuc": {
+    "content_length": 1073409,
+    "etag": null,
+    "extracted_files": 1665,
+    "http_status": 200,
+    "last_modified": "Tue, 24 Feb 2026 03:07:58 GMT",
+    "member_count": 1665,
+    "sha256": "5a17e5400322d7d1b0171554cee3764bcf34aa2cc349e0e4e95aeafe5062fda7",
+    "url": "https://m-selig.ae.illinois.edu/ads/archives/coord_seligFmt.zip"
+  },
+  "xfoil": {
+    "archive_sha256": "e13e8fe5cc38d8ac2626e9d3b17643bdcfaa63791619f042afdaa7cd103bcb08",
+    "path": "C:\\Users\\Ben\\workspaces\\github.com\\bengawith\\paper\\tools\\xfoil\\xfoil.exe",
+    "status": "available"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "schema": "final-primary-focus-numerical-research-and-CFD-readiness-v1",
+  "status": "COAUTHOR_WORKING_DRAFT_ACCEPTED_INDEPENDENT_CFD_PENDING",
+  "journal_submission_ready": false,
+  "independent_CFD_performed": false,
+  "all_29_publication_records_checked": true,
+  "source_claims_independently_reconciled": 46,
+  "frozen_five_member_model_verified": true,
+  "ten_robust_and_ten_nominal_completed": true,
+  "selected_strict_xfoil_unusable": 529,
+  "new_geometry_distinct_states_admitted": 4331,
+  "original_confirmed_states_admitted": 17968,
+  "manuscript_words": 9532,
+  "abstract_words": 221,
+  "main_figures": 8,
+  "main_tables": 7,
+  "browser_render_pages": 22,
+  "native_Microsoft_Word_pagination_verified": false,
+  "current_three_finalist_CFD_handoff_valid": true,
+  "neuralfoil_context": "Cited accurately as prior research; separate adverse posthoc diagnostic retained in archived engineering evidence, not main hypothesis",
+  "source_paths_sha256": {
+    "paper/manuscript.md": "3ab2e0d65c8ccbae23eb6d67b32d643568a23425853446fff3563804e283e345",
+    "paper/LATEST_MANUSCRIPT_FOR_AVA.docx": "ab3d4993186e87eaa3fdc5ee156b9ccbec8fc1fbd417273d0e491c23c70f0b66",
+    "paper/CFD_HANDOFF_CURRENT.zip": "d94335626b4ebcdb78b93a523857fa84c3fda2c8fcc59a9aa1385c41c8b70b20",
+    "reports/robust_v2/final_release_20261022/FOCUSED_BIBLIOGRAPHY_AUDIT.json": "c66355948e2c4fc44e0d77b808b8a78170c4278092593fbeadb863978e9f7b14",
+    "reports/robust_v2/final_release_20261022/FOCUSED_WORD_VISUAL_RECEIPT.json": "258aae6b27622b3a41bbeb89a1953d5bfa0e9540e5894ad6e06dcbae2d35f70c"
+  },
+  "next_required_work": "Ava independent CFD, physical-design conclusions, author declarations and native Word journal formatting"
+}

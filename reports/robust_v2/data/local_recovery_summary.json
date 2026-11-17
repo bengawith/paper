@@ -1,0 +1,13 @@
+{
+  "accepted_raw_count": 0,
+  "candidate_count": 1735,
+  "note": "Discovery only; no unsafe pickle deserialisation and no historical source silently substituted.",
+  "roots_scanned": [
+    "C:\\Users\\Ben\\workspaces\\github.com\\bengawith\\paper",
+    "C:\\Users\\Ben\\workspaces\\github.com\\bengawith",
+    "C:\\Users\\Ben\\Documents",
+    "C:\\Users\\Ben\\Downloads",
+    "C:\\Users\\Ben\\Desktop",
+    "C:\\Users\\Ben\\OneDrive"
+  ]
+}

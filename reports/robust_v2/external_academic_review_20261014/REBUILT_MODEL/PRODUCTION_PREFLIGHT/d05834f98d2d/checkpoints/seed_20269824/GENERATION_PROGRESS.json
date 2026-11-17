@@ -1,0 +1,30 @@
+{
+  "seed": 20269824,
+  "completed_generations": 2,
+  "required_generations": 2,
+  "last": {
+    "generation": 2,
+    "evaluations": 8,
+    "population_count": 4,
+    "feasible_count": 3,
+    "feasible_fraction": 0.75,
+    "objective_min": [
+      0.013409704898105947,
+      0.01680846471220023
+    ],
+    "objective_median": [
+      0.5073537033115876,
+      0.5090349715674651
+    ],
+    "constraint_violation_mean": 0.002184658908187531,
+    "constraint_violation_max": 0.028325192999966498,
+    "hypervolume": 0.00026738423516127144,
+    "front_movement": 0.4710945941841264,
+    "duplicate_count": 0,
+    "candidate_evaluations": 4,
+    "invalid_geometry": 0,
+    "trust_rejections": 18,
+    "missing_lift_roots": 4,
+    "manufacturing_invalid_samples": 0
+  }
+}

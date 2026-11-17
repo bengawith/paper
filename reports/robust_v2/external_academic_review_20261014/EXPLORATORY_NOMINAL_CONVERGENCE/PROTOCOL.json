@@ -1,0 +1,18 @@
+{
+  "strict_selected_sha256": "17234ed2a0db773953ad10b1b4d83e14400f233ae640cb018a38973cbd0a55fe",
+  "selection_sha256": "08446d40bb2b5712bd8658899896fec438bfd1ea0bf2e0376e53f85c8a7637ac",
+  "executable_sha256": "c17342f84ae260c2b11a74cd0e2fb8189a5f8954c6bb7a8467a0f27055c7faea",
+  "panel_count": 160,
+  "iterations": [
+    400,
+    800
+  ],
+  "designs": [
+    "reference",
+    "nominal_control",
+    "risk_knee"
+  ],
+  "study_order": "All three designs at both iteration counts, irrespective of nominal original solver success",
+  "no_posthoc_original_acceptance_replacement": true,
+  "exploratory_only": true
+}

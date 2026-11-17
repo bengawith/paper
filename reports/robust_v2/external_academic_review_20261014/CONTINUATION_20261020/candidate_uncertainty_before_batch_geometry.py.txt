@@ -1,0 +1,203 @@
+"""Candidate-specific correlated surface-normal manufacturing scenarios.
+
+The same latent Sobol draw is shared across designs. Normal displacement
+is applied to each *candidate's own* coordinates, then refitted for surrogate
+input. No reference-CST increments are transferred to different designs.
+"""
+
+from __future__ import annotations
+
+from dataclasses import dataclass
+
+import numpy as np
+
+from robust_airfoil.config import UncertaintyConfig
+from robust_airfoil.geometry.cst import fit_cst, reconstruct_cst
+from robust_airfoil.geometry.normalise import resample_surfaces_to_common_x
+from robust_airfoil.geometry.validity import validate_geometry
+from robust_airfoil.uncertainty.fields import smooth_normal_perturbation
+
+
+@dataclass(frozen=True)
+class CandidateScenarios:
+    parameters: np.ndarray
+    invalid: np.ndarray
+    invalid_reasons: tuple[str, ...]
+
+
+def candidate_surface_scenarios(
+    parameters: np.ndarray,
+    latent: np.ndarray,
+    config: UncertaintyConfig,
+) -> CandidateScenarios:
+    """Refit genuine displaced geometry for each shared latent scenario."""
+    original = np.asarray(parameters, dtype=float)
+    draws = np.asarray(latent, dtype=float)
+    controls = config.basis_control_points_per_surface
+    if original.shape != (12,) or draws.ndim != 2 or draws.shape[1] != controls * 2:
+        raise ValueError("Expected twelve CST parameters and (samples, 2*controls) draws")
+    if not np.isfinite(original).all() or not np.isfinite(draws).all():
+        raise ValueError("CST parameters and uncertainty draws must be finite")
+    x = (1 - np.cos(np.linspace(0, np.pi, config.cosine_points_per_surface))) / 2
+    uy, ly = reconstruct_cst(original, x)
+    upper, lower = np.column_stack([x, uy]), np.column_stack([x, ly])
+    out = np.tile(original, (len(draws), 1))
+    invalid = np.zeros(len(draws), dtype=bool)
+    reasons: list[str] = []
+    for index, row in enumerate(draws):
+        reason = ""
+        try:
+            correlation = float(config.upper_lower_correlation)
+            if not -1.0 <= correlation <= 1.0:
+                raise ValueError("upper_lower_correlation must be in [-1,1]")
+            upper_modes = row[:controls]
+            lower_modes = (
+                correlation * upper_modes + np.sqrt(max(0.0, 1.0 - correlation**2)) * row[controls:]
+            )
+            pert = smooth_normal_perturbation(
+                upper,
+                lower,
+                upper_modes,
+                lower_modes,
+                max(config.amplitudes_fraction_chord),
+                config.correlation_length_chord,
+                config.leading_edge_taper,
+                config.trailing_edge_zero_displacement,
+            )
+            if not pert.valid:
+                reason = ";".join(pert.invalid_reasons) or "invalid_geometry"
+            else:
+                upper_fit, lower_fit = resample_surfaces_to_common_x(pert.upper, pert.lower, x)
+                fit = fit_cst(upper_fit, lower_fit)
+                if not np.isfinite(fit.parameters).all():
+                    reason = "nonfinite_refit"
+                elif fit.max_error > config.maximum_cst_refit_error_fraction_chord:
+                    reason = "excessive_refit_error"
+                else:
+                    refit_upper, refit_lower = reconstruct_cst(fit.parameters, x)
+                    refit_validity = validate_geometry(
+                        np.column_stack([x, refit_upper]),
+                        np.column_stack([x, refit_lower]),
+                    )
+                    if not refit_validity.valid:
+                        reason = "invalid_refitted_geometry:" + ";".join(refit_validity.reasons)
+                    else:
+                        out[index] = fit.parameters
+        except (ValueError, RuntimeError, FloatingPointError) as exc:
+            reason = f"refit_error:{type(exc).__name__}"
+        invalid[index] = bool(reason)
+        reasons.append(reason)
+    # Invalid placeholders carry the nominal parameters solely to allow
+    # batched matrix shape; callers must penalise every invalid row, and
+    # report invalid counts. Never use those nominal predictions as outcomes.
+    return CandidateScenarios(out, invalid, tuple(reasons))
+
+
+class PreparedCandidateScenarios:
+    """Exact shared-field preparation with candidate-specific displaced coordinates.
+
+    The scalar function above remains the independently testable reference.
+    Only latent fields and fixed-grid linear maps are cached, never reference
+    shape increments. Dense post-refit checks are additional fail-closed gates.
+    """
+    def __init__(self, latent: np.ndarray, config: UncertaintyConfig, dense_verification_points: int = 2001):
+        from robust_airfoil.geometry.cst import BatchCSTFitter
+        from robust_airfoil.uncertainty.fields import correlated_control_field
+
+        self.config = config
+        self.latent = np.asarray(latent,float).copy()
+        controls = config.basis_control_points_per_surface
+        if self.latent.ndim != 2 or self.latent.shape[1] != 2*controls or not len(self.latent):
+            raise ValueError('Prepared scenarios require nonempty common latent draws')
+        if not np.isfinite(self.latent).all() or dense_verification_points < config.cosine_points_per_surface:
+            raise ValueError('Finite draws and a sufficiently dense validation grid are required')
+        rho = float(config.upper_lower_correlation)
+        if not -1 <= rho <= 1:
+            raise ValueError('upper_lower_correlation must be in [-1,1]')
+        self.x = (1-np.cos(np.linspace(0,np.pi,config.cosine_points_per_surface)))/2
+        self.dense_x = (1-np.cos(np.linspace(0,np.pi,dense_verification_points)))/2
+        self.fitter = BatchCSTFitter(self.x)
+        # Columns map coefficients to (upper,lower) ordinates at the denser grid.
+        self.dense_upper = np.column_stack([reconstruct_cst(unit,self.dense_x)[0] for unit in np.eye(12)])
+        self.dense_lower = np.column_stack([reconstruct_cst(unit,self.dense_x)[1] for unit in np.eye(12)])
+        control_x = (1-np.cos(np.linspace(0,np.pi,controls)))/2
+        taper = np.ones_like(self.x)
+        if config.leading_edge_taper:
+            s = np.clip(self.x/.10,0.,1.)
+            taper *= s*s*(3-2*s)
+        if config.trailing_edge_zero_displacement:
+            taper *= 1-np.clip(self.x,0.,1.)
+        amplitude = max(config.amplitudes_fraction_chord)
+        top,bottom = [],[]
+        for row in self.latent:
+            lower_modes = rho*row[:controls]+np.sqrt(max(0.,1-rho*rho))*row[controls:]
+            top.append(amplitude*correlated_control_field(control_x,row[:controls],self.x,config.correlation_length_chord)*taper)
+            bottom.append(amplitude*correlated_control_field(control_x,lower_modes,self.x,config.correlation_length_chord)*taper)
+        self.upper_displacement = np.asarray(top)
+        self.lower_displacement = np.asarray(bottom)
+
+    def displaced_surfaces(self, parameters: np.ndarray) -> tuple[np.ndarray,np.ndarray]:
+        from robust_airfoil.uncertainty.fields import surface_normals
+
+        candidate = np.asarray(parameters,float)
+        if candidate.shape != (12,) or not np.isfinite(candidate).all():
+            raise ValueError('Expected twelve finite candidate CST coefficients')
+        uy,ly = reconstruct_cst(candidate,self.x)
+        upper,lower = np.column_stack([self.x,uy]),np.column_stack([self.x,ly])
+        return (
+            upper[None,:,:]+self.upper_displacement[:,:,None]*surface_normals(upper,True)[None,:,:],
+            lower[None,:,:]+self.lower_displacement[:,:,None]*surface_normals(lower,False)[None,:,:],
+        )
+
+    def _resample_valid(self, surface: np.ndarray) -> np.ndarray:
+        rounded_x = np.round(surface[:,0],12)
+        if np.all(np.diff(rounded_x)>0):
+            if self.x[0] < rounded_x[0]-1e-10 or self.x[-1] > rounded_x[-1]+1e-10:
+                raise ValueError('Common grid falls outside displaced surface extent')
+            return np.interp(self.x,rounded_x,surface[:,1])
+        # Preserve the scalar implementation's rare duplicate-rounding policy.
+        return resample_surfaces_to_common_x(surface,surface,self.x)[0][:,1]
+
+    def evaluate(self, parameters: np.ndarray) -> CandidateScenarios:
+        candidate = np.asarray(parameters,float)
+        upper,lower = self.displaced_surfaces(candidate)
+        result = np.tile(candidate,(len(self.latent),1))
+        reasons = ['']*len(self.latent)
+        retained,ups,lows = [],[],[]
+        for i in range(len(self.latent)):
+            validity = validate_geometry(upper[i],lower[i])
+            if not validity.valid:
+                reasons[i] = ';'.join(validity.reasons) or 'invalid_geometry'
+                continue
+            try:
+                top_values = self._resample_valid(upper[i])
+                bottom_values = self._resample_valid(lower[i])
+                ups.append(top_values)
+                lows.append(bottom_values)
+                retained.append(i)
+            except (ValueError,RuntimeError,FloatingPointError) as exc:
+                reasons[i] = f'refit_error:{type(exc).__name__}'
+        if retained:
+            fit = self.fitter.fit_many(np.asarray(ups),np.asarray(lows))
+            dense_upper = fit.parameters @ self.dense_upper.T
+            dense_lower = fit.parameters @ self.dense_lower.T
+            dense_thickness = dense_upper-dense_lower
+            for j,i in enumerate(retained):
+                if not np.isfinite(fit.parameters[j]).all():
+                    reasons[i] = 'nonfinite_refit'
+                elif fit.max_error[j] > self.config.maximum_cst_refit_error_fraction_chord:
+                    reasons[i] = 'excessive_refit_error'
+                elif float(dense_thickness[j].min()) < -1e-8 or float(np.trapezoid(dense_thickness[j],self.dense_x)) <= 0:
+                    reasons[i] = 'invalid_refitted_geometry:surface_crossing_or_nonpositive_area'
+                else:
+                    # With the scalar-sized grid this is a strict numerical
+                    # equivalence mode. Production also checks dense fit error.
+                    error = float(fit.max_error[j])
+                    if len(self.dense_x) > len(self.x):
+                        error = max(error,float(np.max(abs(dense_upper[j]-np.interp(self.dense_x,upper[i,:,0],upper[i,:,1])))),float(np.max(abs(dense_lower[j]-np.interp(self.dense_x,lower[i,:,0],lower[i,:,1])))))
+                    if error > self.config.maximum_cst_refit_error_fraction_chord:
+                        reasons[i] = 'excessive_dense_refit_error'
+                    else:
+                        result[i] = fit.parameters[j]
+        invalid = np.asarray([bool(reason) for reason in reasons])
+        return CandidateScenarios(result,invalid,tuple(reasons))

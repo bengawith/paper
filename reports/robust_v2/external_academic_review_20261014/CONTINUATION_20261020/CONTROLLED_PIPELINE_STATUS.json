@@ -1,0 +1,39 @@
+{
+  "schema": "serial-controlled-gate-execution-v1",
+  "created_utc": "2026-10-21T08:02:57.087359+00:00",
+  "stages": {
+    "ruff": {
+      "status": "FAILED",
+      "returncode": 1,
+      "finished_utc": "2026-10-21T08:32:37.836537+00:00",
+      "elapsed_seconds": 0.42099999997299165,
+      "command": [
+        "uv",
+        "run",
+        "ruff",
+        "check",
+        "src/robust_airfoil",
+        "tests/robust_v2",
+        "scripts/robust_v2"
+      ],
+      "log": "reports\\robust_v2\\external_academic_review_20261014\\CONTINUATION_20261020\\controlled_stage_ruff.log",
+      "log_sha256": "74707acd7c1cc3550cc8dd42c47c15c470e6c1ab3d7d041d70d73fdc08e5f6f8"
+    }
+  },
+  "status": "STOPPED_FOR_REVIEW",
+  "scope": "Completes verified gates sequentially without claiming journal readiness or independent CFD",
+  "last_training_check_utc": "2026-10-21T08:32:17.336998+00:00",
+  "training": {
+    "status": "COMPLETE",
+    "sha256": "9fecacae6712cc46c96d961abe8ac173ab91c186e107f6e5ef7ab64ac6db1124",
+    "best_epochs": [
+      144,
+      75,
+      284,
+      239,
+      157
+    ]
+  },
+  "error": "RuntimeError('ruff failed; inspect C:\\\\Users\\\\Ben\\\\workspaces\\\\github.com\\\\bengawith\\\\paper\\\\reports\\\\robust_v2\\\\external_academic_review_20261014\\\\CONTINUATION_20261020\\\\controlled_stage_ruff.log')",
+  "stopped_utc": "2026-10-21T08:32:37.888044+00:00"
+}

@@ -1,0 +1,18 @@
+[
+  {
+    "path": "scripts/robust_v2/run_repaired_production.py",
+    "before_sha256": "02d31efe59cdbb38571d477afd5b5bb03b04ffa213dd4ec35c4f90bd5f9ad01d",
+    "after_sha256": "9953f398e30dd4fea32a9091e67f27b833763b04ff7c6f908794c889b4609b9a"
+  },
+  {
+    "path": "scripts/robust_v2/profile_repaired_evaluator.py",
+    "before_sha256": "6e8e6eaedeb2fb03de2b2eb9bc9862bb4d0bf1ffbccc49c7f526817e0089aa6d",
+    "after_sha256": "bcc0b34315ceba91e3a2b54d167f2f4c5de4cb75739bb42e6b995c6c30521ee6"
+  },
+  {
+    "path": "src/robust_airfoil/config.py",
+    "before_sha256": "ecc53eba8f466925d32e86bcd4e9a958f355c820d85b59945d072c77b9029509",
+    "after_sha256": "538c5d903ce0fda55d58fdd7910307b07f9197b474c72551e2af4819dc35b210",
+    "scope": "Removed this session unused import only; preserved concurrent service-grid implementation"
+  }
+]

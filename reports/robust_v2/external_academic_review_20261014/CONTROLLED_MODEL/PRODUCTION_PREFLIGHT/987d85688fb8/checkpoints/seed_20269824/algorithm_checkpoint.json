@@ -1,0 +1,14 @@
+{
+  "schema": "local-nsga2-checkpoint-v1",
+  "context": {
+    "seed": 20269824,
+    "cache_context_hash": "260a9a42227faa31a5b3aaafc62efb5a334f7b440ae8202e5920d101de1ff00b",
+    "population": 4,
+    "generations": 2,
+    "sample_count": 4
+  },
+  "context_hash": "2ef17591c4844cd472d671f866b5f0735bbc3f1970edfc8c1a98d2f5ca1ecdce",
+  "generation_completed": 2,
+  "sha256": "5075f7bc0ba8e0e17ba4991d5ad7b8926c15a4df4f39f05561b3bfe578d23c8f",
+  "bytes": 15733
+}

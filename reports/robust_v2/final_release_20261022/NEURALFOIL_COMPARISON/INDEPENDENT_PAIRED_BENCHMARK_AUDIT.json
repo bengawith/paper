@@ -1,0 +1,101 @@
+{
+  "all_case_labels_matched": true,
+  "case_record_sha256": "f443e48b3ba2d83fb71ed2238e303eae63a64e2c86e5d292fd75245825c0f6c8",
+  "comparator_cohorts": {
+    "protected_historical_test": {
+      "bootstrap_replicates": 3000,
+      "bootstrap_seed": 20261022,
+      "geometry_count": 166,
+      "improvement_sign": "Negative means NeuralFoil lower absolute error than five-member controlled surrogate",
+      "per_target": {
+        "cd": {
+          "geometry_cluster_fixed_model_bootstrap_95pct": [
+            -0.00014739257626426752,
+            -7.014372927564993e-05
+          ],
+          "neuralfoil_lower_error_fraction_of_geometries": 0.7771084337349398,
+          "neuralfoil_minus_controlled_geometry_macro_mae": -0.00010902956157845255,
+          "num_geometry_clusters": 166
+        },
+        "cl": {
+          "geometry_cluster_fixed_model_bootstrap_95pct": [
+            -0.014844373057662147,
+            -0.009822202986367223
+          ],
+          "neuralfoil_lower_error_fraction_of_geometries": 0.8734939759036144,
+          "neuralfoil_minus_controlled_geometry_macro_mae": -0.01214959935656419,
+          "num_geometry_clusters": 166
+        },
+        "cm": {
+          "geometry_cluster_fixed_model_bootstrap_95pct": [
+            -0.002581042096865716,
+            -0.0015106819779400153
+          ],
+          "neuralfoil_lower_error_fraction_of_geometries": 0.8373493975903614,
+          "neuralfoil_minus_controlled_geometry_macro_mae": -0.002000041026856799,
+          "num_geometry_clusters": 166
+        },
+        "log_cd": {
+          "geometry_cluster_fixed_model_bootstrap_95pct": [
+            -0.01774499529661955,
+            -0.010415997168223777
+          ],
+          "neuralfoil_lower_error_fraction_of_geometries": 0.7771084337349398,
+          "neuralfoil_minus_controlled_geometry_macro_mae": -0.013991656435392243,
+          "num_geometry_clusters": 166
+        }
+      },
+      "requested_states": 470
+    },
+    "sealed_development_mixtures": {
+      "bootstrap_replicates": 3000,
+      "bootstrap_seed": 20261022,
+      "geometry_count": 191,
+      "improvement_sign": "Negative means NeuralFoil lower absolute error than five-member controlled surrogate",
+      "per_target": {
+        "cd": {
+          "geometry_cluster_fixed_model_bootstrap_95pct": [
+            -0.000126777186728248,
+            -7.414070885607181e-05
+          ],
+          "neuralfoil_lower_error_fraction_of_geometries": 0.7486910994764397,
+          "neuralfoil_minus_controlled_geometry_macro_mae": -0.00010059312550968246,
+          "num_geometry_clusters": 191
+        },
+        "cl": {
+          "geometry_cluster_fixed_model_bootstrap_95pct": [
+            -0.011402888635545715,
+            -0.008702402308351512
+          ],
+          "neuralfoil_lower_error_fraction_of_geometries": 0.9109947643979057,
+          "neuralfoil_minus_controlled_geometry_macro_mae": -0.010029860022455407,
+          "num_geometry_clusters": 191
+        },
+        "cm": {
+          "geometry_cluster_fixed_model_bootstrap_95pct": [
+            -0.001466768480094537,
+            -0.0009634512990211034
+          ],
+          "neuralfoil_lower_error_fraction_of_geometries": 0.8586387434554974,
+          "neuralfoil_minus_controlled_geometry_macro_mae": -0.001214687277300547,
+          "num_geometry_clusters": 191
+        },
+        "log_cd": {
+          "geometry_cluster_fixed_model_bootstrap_95pct": [
+            -0.016925753747308925,
+            -0.010637239236737588
+          ],
+          "neuralfoil_lower_error_fraction_of_geometries": 0.774869109947644,
+          "neuralfoil_minus_controlled_geometry_macro_mae": -0.013805691784006407,
+          "num_geometry_clusters": 191
+        }
+      },
+      "requested_states": 543
+    }
+  },
+  "comparison_source_sha256": "ae485aa237e19e59dee91a8ebf5d249bccd25f06ccf239690fdd60beda883770",
+  "interpretation": "A matched XFOIL label comparison, not independent CFD. NeuralFoil internal training-airfoil overlap is unknown; the difference is not evidence of out-of-training-family generality. The geometry bootstrap resamples frozen predictions, not retraining.",
+  "no_model_weights_or_original_scientific_receipts_changed": true,
+  "schema": "independent-source-reconciled-competitor-diagnostic-v1",
+  "selection_protocol_sha256": "f0efa9053ccfac2f7fe6f1f044ddcd30dc17665f0f63effa98b9f3c0510db40c"
+}

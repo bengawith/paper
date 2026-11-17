@@ -1,0 +1,43 @@
+         1763693 function calls (1761468 primitive calls) in 3.648 seconds
+
+   Ordered by: cumulative time
+   List reduced from 563 to 35 due to restriction <35>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000    3.650    3.650 study.py:274(evaluate)
+        1    0.000    0.000    2.126    2.126 study.py:287(<listcomp>)
+        5    0.009    0.002    2.126    0.425 candidate_uncertainty.py:28(candidate_surface_scenarios)
+      320    0.001    0.000    1.598    0.005 normalise.py:17(resample_surfaces_to_common_x)
+      640    0.014    0.000    1.597    0.002 normalise.py:24(interpolate)
+      640    0.480    0.001    1.534    0.002 normalise.py:29(<listcomp>)
+        2    1.290    0.645    1.292    0.646 study.py:172(_support_and_disagreement)
+   128646    0.066    0.000    1.054    0.000 {method 'mean' of 'numpy.ndarray' objects}
+   128993    0.368    0.000    0.993    0.000 _methods.py:115(_mean)
+   146866    0.291    0.000    0.291    0.000 {method 'reduce' of 'numpy.ufunc' objects}
+   129004    0.235    0.000    0.260    0.000 _methods.py:73(_count_reduce_items)
+      320    0.014    0.000    0.228    0.001 fields.py:39(smooth_normal_perturbation)
+      320    0.013    0.000    0.170    0.001 cst.py:42(fit_cst)
+      645    0.027    0.000    0.153    0.000 validity.py:17(validate_geometry)
+      325    0.004    0.000    0.109    0.000 objectives.py:52(weighted_required_lift_drag)
+        5    0.001    0.000    0.108    0.022 study.py:306(<listcomp>)
+        1    0.018    0.018    0.101    0.101 study.py:189(_nominal_constraints)
+      325    0.002    0.000    0.097    0.000 objectives.py:58(<listcomp>)
+      975    0.026    0.000    0.095    0.000 objectives.py:8(required_lift_drag)
+        2    0.000    0.000    0.092    0.046 ensemble.py:117(predict)
+      970    0.015    0.000    0.085    0.000 cst.py:18(_basis)
+      640    0.012    0.000    0.082    0.000 fields.py:20(surface_normals)
+      650    0.012    0.000    0.077    0.000 cst.py:29(reconstruct_cst)
+     2260    0.005    0.000    0.071    0.000 _arraysetops_impl.py:145(unique)
+       10    0.001    0.000    0.070    0.007 train.py:156(predict_frame)
+      965    0.003    0.000    0.063    0.000 numeric.py:2290(allclose)
+     2260    0.036    0.000    0.063    0.000 _arraysetops_impl.py:350(_unique1d)
+      965    0.024    0.000    0.054    0.000 numeric.py:2384(isclose)
+      970    0.046    0.000    0.047    0.000 cst.py:19(<listcomp>)
+      640    0.014    0.000    0.043    0.000 fields.py:30(correlated_control_field)
+   268145    0.041    0.000    0.041    0.000 {built-in method builtins.issubclass}
+     4190    0.031    0.000    0.040    0.000 _shape_base_impl.py:625(column_stack)
+   270/10    0.000    0.000    0.038    0.004 module.py:1774(_wrapped_call_impl)
+   270/10    0.001    0.000    0.038    0.004 module.py:1782(_call_impl)
+       10    0.000    0.000    0.038    0.004 models.py:61(forward)
+
+

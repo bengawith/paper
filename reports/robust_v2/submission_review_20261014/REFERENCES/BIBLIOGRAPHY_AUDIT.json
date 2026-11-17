@@ -1,0 +1,291 @@
+{
+  "schema": "bibliography-crossref-audit-v1",
+  "caution": "Crossref search similarity is not author/pagination verification; manual checks required for flagged references.",
+  "count": 28,
+  "items": [
+    {
+      "number": 1,
+      "original_reference": "Drela, M. & Giles, M. B. (1987). Viscous–inviscid analysis of transonic and low Reynolds number airfoils. AIAA Journal, 25(10), 1347–1355.",
+      "query_title": "Viscous–inviscid analysis of transonic and low Reynolds number airfoils",
+      "status": "exact_title_candidate",
+      "title_similarity": 0.9859,
+      "crossref_title": "Viscous-inviscid analysis of transonic and low Reynolds number airfoils",
+      "doi": "10.2514/3.9789",
+      "publisher_link": "https://doi.org/10.2514/3.9789",
+      "container_title": "AIAA Journal"
+    },
+    {
+      "number": 2,
+      "original_reference": "Vinuesa, R. & Brunton, S. L. (2022). Enhancing computational fluid dynamics with machine learning. Nature Computational Science, 2(6), 358–366.",
+      "query_title": "Enhancing computational fluid dynamics with machine learning",
+      "status": "exact_title_candidate",
+      "title_similarity": 1.0,
+      "crossref_title": "Enhancing computational fluid dynamics with machine learning",
+      "doi": "10.1038/s43588-022-00264-7",
+      "publisher_link": "https://doi.org/10.1038/s43588-022-00264-7",
+      "container_title": "Nature Computational Science"
+    },
+    {
+      "number": 3,
+      "original_reference": "Brunton, S. L., Noack, B. R. & Koumoutsakos, P. (2020). Machine learning for fluid mechanics. Annual Review of Fluid Mechanics, 52, 477–508.",
+      "query_title": "Machine learning for fluid mechanics",
+      "status": "exact_title_candidate",
+      "title_similarity": 1.0,
+      "crossref_title": "Machine Learning for Fluid Mechanics",
+      "doi": "10.1146/annurev-fluid-010719-060214",
+      "publisher_link": "https://doi.org/10.1146/annurev-fluid-010719-060214",
+      "container_title": "Annual Review of Fluid Mechanics"
+    },
+    {
+      "number": 4,
+      "original_reference": "Li, J., Bouhlel, M. A. & Martins, J. R. R. A. (2019). Data-based approach for fast airfoil analysis and optimization. AIAA Journal, 57(2), 581–596.",
+      "query_title": "Data-based approach for fast airfoil analysis and optimization",
+      "status": "exact_title_candidate",
+      "title_similarity": 1.0,
+      "crossref_title": "Data-Based Approach for Fast Airfoil Analysis and Optimization",
+      "doi": "10.2514/1.j057129",
+      "publisher_link": "https://doi.org/10.2514/1.j057129",
+      "container_title": "AIAA Journal"
+    },
+    {
+      "number": 5,
+      "original_reference": "Li, J., Du, X. & Martins, J. R. R. A. (2022). Machine learning in aerodynamic shape optimization. Progress in Aerospace Sciences, 134, 100849.",
+      "query_title": "Machine learning in aerodynamic shape optimization",
+      "status": "exact_title_candidate",
+      "title_similarity": 1.0,
+      "crossref_title": "Machine learning in aerodynamic shape optimization",
+      "doi": "10.1016/j.paerosci.2022.100849",
+      "publisher_link": "https://doi.org/10.1016/j.paerosci.2022.100849",
+      "container_title": "Progress in Aerospace Sciences"
+    },
+    {
+      "number": 6,
+      "original_reference": "Shahrokhi, A. & Jahangirian, A. (2010). A surrogate assisted evolutionary optimization method with application to the transonic airfoil design. Engineering Optimization, 42(6), 497–515.",
+      "query_title": "A surrogate assisted evolutionary optimization method with application to the transonic airfoil design",
+      "status": "exact_title_candidate",
+      "title_similarity": 1.0,
+      "crossref_title": "A surrogate assisted evolutionary optimization method with application to the transonic airfoil design",
+      "doi": "10.1080/03052150903305468",
+      "publisher_link": "https://doi.org/10.1080/03052150903305468",
+      "container_title": "Engineering Optimization"
+    },
+    {
+      "number": 7,
+      "original_reference": "Jahangirian, A. & Shahrokhi, A. (2011). Aerodynamic shape optimization using efficient evolutionary algorithms and unstructured CFD solver. Computers & Fluids, 46(1), 270–276.",
+      "query_title": "Aerodynamic shape optimization using efficient evolutionary algorithms and unstructured CFD solver",
+      "status": "exact_title_candidate",
+      "title_similarity": 1.0,
+      "crossref_title": "Aerodynamic shape optimization using efficient evolutionary algorithms and unstructured CFD solver",
+      "doi": "10.1016/j.compfluid.2011.02.010",
+      "publisher_link": "https://doi.org/10.1016/j.compfluid.2011.02.010",
+      "container_title": "Computers &amp; Fluids"
+    },
+    {
+      "number": 8,
+      "original_reference": "Kulfan, B. M. (2008). Universal parametric geometry representation method. Journal of Aircraft, 45(1), 142–158.",
+      "query_title": "Universal parametric geometry representation method",
+      "status": "exact_title_candidate",
+      "title_similarity": 1.0,
+      "crossref_title": "Universal Parametric Geometry Representation Method",
+      "doi": "10.2514/1.29958",
+      "publisher_link": "https://doi.org/10.2514/1.29958",
+      "container_title": "Journal of Aircraft"
+    },
+    {
+      "number": 9,
+      "original_reference": "Kulfan, B. M. & Bussoletti, J. E. (2006). \"Fundamental\" parametric geometry representations for aircraft component shapes. In 11th AIAA/ISSMO Multidisciplinary Analysis and Optimization Conference, AIAA 2006-6948.",
+      "query_title": "\"Fundamental\" parametric geometry representations for aircraft component shapes",
+      "status": "exact_title_candidate",
+      "title_similarity": 0.9937,
+      "crossref_title": "\"Fundamental\" Parameteric Geometry Representations for Aircraft Component Shapes",
+      "doi": "10.2514/6.2006-6948",
+      "publisher_link": "https://doi.org/10.2514/6.2006-6948",
+      "container_title": "11th AIAA/ISSMO Multidisciplinary Analysis and Optimization Conference"
+    },
+    {
+      "number": 10,
+      "original_reference": "Drela, M. (1989). XFOIL: An analysis and design system for low Reynolds number airfoils. In Low Reynolds Number Aerodynamics, Lecture Notes in Engineering, vol. 54, Springer, 1–12.",
+      "query_title": "XFOIL: An analysis and design system for low Reynolds number airfoils",
+      "status": "exact_title_candidate",
+      "title_similarity": 1.0,
+      "crossref_title": "XFOIL: An Analysis and Design System for Low Reynolds Number Airfoils",
+      "doi": "10.1007/978-3-642-84010-4_1",
+      "publisher_link": "https://doi.org/10.1007/978-3-642-84010-4_1",
+      "container_title": "Lecture Notes in Engineering"
+    },
+    {
+      "number": 11,
+      "original_reference": "Selig, M. S. (2010). UIUC Airfoil Data Site. University of Illinois at Urbana–Champaign. https://m-selig.ae.illinois.edu/ads/coord_database.html",
+      "query_title": "UIUC Airfoil Data Site",
+      "status": "publisher_or_web_catalog_check_required",
+      "reason": "Website or book, not necessarily Crossref work"
+    },
+    {
+      "number": 12,
+      "original_reference": "Airfoil Tools (2019). Airfoil Tools. http://airfoiltools.com/",
+      "query_title": "Airfoil Tools",
+      "status": "publisher_or_web_catalog_check_required",
+      "reason": "Website or book, not necessarily Crossref work"
+    },
+    {
+      "number": 13,
+      "original_reference": "Deb, K., Pratap, A., Agarwal, S. & Meyarivan, T. (2002). A fast and elitist multiobjective genetic algorithm: NSGA-II. IEEE Transactions on Evolutionary Computation, 6(2), 182–197.",
+      "query_title": "A fast and elitist multiobjective genetic algorithm: NSGA-II",
+      "status": "exact_title_candidate",
+      "title_similarity": 1.0,
+      "crossref_title": "A fast and elitist multiobjective genetic algorithm: NSGA-II",
+      "doi": "10.1109/4235.996017",
+      "publisher_link": "https://doi.org/10.1109/4235.996017",
+      "container_title": "IEEE Transactions on Evolutionary Computation"
+    },
+    {
+      "number": 14,
+      "original_reference": "Blank, J. & Deb, K. (2020). pymoo: Multi-objective optimization in Python. IEEE Access, 8, 89497–89509.",
+      "query_title": "pymoo: Multi-objective optimization in Python",
+      "status": "exact_title_candidate",
+      "title_similarity": 1.0,
+      "crossref_title": "Pymoo: Multi-Objective Optimization in Python",
+      "doi": "10.1109/access.2020.2990567",
+      "publisher_link": "https://doi.org/10.1109/access.2020.2990567",
+      "container_title": "IEEE Access"
+    },
+    {
+      "number": 15,
+      "original_reference": "Rockafellar, R. T. & Uryasev, S. (2000). Optimization of conditional value-at-risk. Journal of Risk, 2(3), 21–41.",
+      "query_title": "Optimization of conditional value-at-risk",
+      "status": "exact_title_candidate",
+      "title_similarity": 1.0,
+      "crossref_title": "Optimization of conditional value-at-risk",
+      "doi": "10.21314/jor.2000.038",
+      "publisher_link": "https://doi.org/10.21314/jor.2000.038",
+      "container_title": "The Journal of Risk"
+    },
+    {
+      "number": 16,
+      "original_reference": "Lakshminarayanan, B., Pritzel, A. & Blundell, C. (2017). Simple and scalable predictive uncertainty estimation using deep ensembles. In Advances in Neural Information Processing Systems 30 (NIPS 2017), 6402–6413.",
+      "query_title": "Simple and scalable predictive uncertainty estimation using deep ensembles",
+      "status": "manual_bibliography_review",
+      "title_similarity": 0.4962,
+      "crossref_title": "Uncertainty Estimation by Flexible Evidential Deep Learning",
+      "doi": "10.52202/085713-3957",
+      "publisher_link": "https://doi.org/10.52202/085713-3957",
+      "container_title": "Advances in Neural Information Processing Systems 38"
+    },
+    {
+      "number": 17,
+      "original_reference": "Angelopoulos, A. N. & Bates, S. (2021). A gentle introduction to conformal prediction and distribution-free uncertainty quantification. arXiv:2107.07511.",
+      "query_title": "A gentle introduction to conformal prediction and distribution-free uncertainty quantification",
+      "status": "known_arxiv_identifier_requires_primary_arxiv_check",
+      "reason": "DOI metadata not needed for arXiv identifier"
+    },
+    {
+      "number": 18,
+      "original_reference": "Loshchilov, I. & Hutter, F. (2019). Decoupled weight decay regularization. In International Conference on Learning Representations (ICLR 2019). arXiv:1711.05101.",
+      "query_title": "Decoupled weight decay regularization",
+      "status": "known_arxiv_identifier_requires_primary_arxiv_check",
+      "reason": "DOI metadata not needed for arXiv identifier"
+    },
+    {
+      "number": 19,
+      "original_reference": "Nair, V. & Hinton, G. E. (2010). Rectified linear units improve restricted Boltzmann machines. In Proceedings of the 27th International Conference on Machine Learning (ICML 2010), 807–814.",
+      "query_title": "Rectified linear units improve restricted Boltzmann machines",
+      "status": "manual_bibliography_review",
+      "title_similarity": 0.6726,
+      "crossref_title": "Phone recognition using Restricted Boltzmann Machines",
+      "doi": "10.1109/icassp.2010.5495651",
+      "publisher_link": "https://doi.org/10.1109/icassp.2010.5495651",
+      "container_title": "2010 IEEE International Conference on Acoustics, Speech and Signal Processing"
+    },
+    {
+      "number": 20,
+      "original_reference": "Paszke, A., Gross, S., Massa, F. et al. (2019). PyTorch: An imperative style, high-performance deep learning library. In Advances in Neural Information Processing Systems 32 (NeurIPS 2019), 8024–8035.",
+      "query_title": "PyTorch: An imperative style, high-performance deep learning library",
+      "status": "manual_bibliography_review",
+      "title_similarity": 0.375,
+      "crossref_title": "Deep Predictive Coding for Multimodal Spatiotemporal Representation Learning",
+      "doi": "10.52591/lxai2019120813",
+      "publisher_link": "https://doi.org/10.52591/lxai2019120813",
+      "container_title": "LatinX in AI at Neural Information Processing Systems Conference 2019"
+    },
+    {
+      "number": 21,
+      "original_reference": "Akiba, T., Sano, S., Yanase, T., Ohta, T. & Koyama, M. (2019). Optuna: A next-generation hyperparameter optimization framework. In Proceedings of the 25th ACM SIGKDD International Conference on Knowledge Discovery & Data Mining, 2623–2631.",
+      "query_title": "Optuna: A next-generation hyperparameter optimization framework",
+      "status": "manual_bibliography_review",
+      "title_similarity": 0.319,
+      "crossref_title": "Proceedings of the 25th ACM SIGKDD International Conference on Knowledge Discovery &amp; Data Mining",
+      "doi": "10.1145/3292500",
+      "publisher_link": "https://doi.org/10.1145/3292500",
+      "container_title": null
+    },
+    {
+      "number": 22,
+      "original_reference": "Harris, C. R., Millman, K. J., van der Walt, S. J. et al. (2020). Array programming with NumPy. Nature, 585, 357–362.",
+      "query_title": "Array programming with NumPy",
+      "status": "exact_title_candidate",
+      "title_similarity": 1.0,
+      "crossref_title": "Array programming with NumPy",
+      "doi": "10.1038/s41586-020-2649-2",
+      "publisher_link": "https://doi.org/10.1038/s41586-020-2649-2",
+      "container_title": "Nature"
+    },
+    {
+      "number": 23,
+      "original_reference": "Virtanen, P., Gommers, R., Oliphant, T. E. et al. (2020). SciPy 1.0: Fundamental algorithms for scientific computing in Python. Nature Methods, 17, 261–272.",
+      "query_title": "SciPy 1.0: Fundamental algorithms for scientific computing in Python",
+      "status": "exact_title_candidate",
+      "title_similarity": 0.9189,
+      "crossref_title": "Review of \"SciPy 1.0: fundamental algorithms for scientific computing in Python\"",
+      "doi": "10.14293/s2199-1006.1.sor-life.a7056644.v1.rysreg",
+      "publisher_link": "https://doi.org/10.14293/s2199-1006.1.sor-life.a7056644.v1.rysreg",
+      "container_title": null
+    },
+    {
+      "number": 24,
+      "original_reference": "Pedregosa, F., Varoquaux, G., Gramfort, A. et al. (2011). Scikit-learn: Machine learning in Python. Journal of Machine Learning Research, 12, 2825–2830.",
+      "query_title": "Scikit-learn: Machine learning in Python",
+      "status": "manual_bibliography_review",
+      "title_similarity": 0.5957,
+      "crossref_title": "Getting Started with Scikit‐learn for Machine Learning",
+      "doi": "10.1002/9781119557500.ch5",
+      "publisher_link": "https://doi.org/10.1002/9781119557500.ch5",
+      "container_title": "Python® Machine Learning"
+    },
+    {
+      "number": 25,
+      "original_reference": "Abbott, I. H. & von Doenhoff, A. E. (1959). Theory of Wing Sections, Including a Summary of Airfoil Data. Dover Publications.",
+      "query_title": "Theory of Wing Sections, Including a Summary of Airfoil Data",
+      "status": "publisher_or_web_catalog_check_required",
+      "reason": "Website or book, not necessarily Crossref work"
+    },
+    {
+      "number": 26,
+      "original_reference": "Anderson, J. D. (2017). Fundamentals of Aerodynamics. 6th edn. McGraw-Hill Education.",
+      "query_title": "Fundamentals of Aerodynamics",
+      "status": "publisher_or_web_catalog_check_required",
+      "reason": "Website or book, not necessarily Crossref work"
+    },
+    {
+      "number": 27,
+      "original_reference": "Pichitkul, A., Boksawat, A., Phiboon, T., Tantrairatn, S., Bureerat, S., Kasemsri, R. & Ariyarit, A. (2026). An intelligent multi-objective robust design optimization framework based on PathLine Transformation and surrogate-assisted sampling for uncertainty-aware airfoil design. Applications in Engineering Science, 25, 100310. https://doi.org/10.1016/j.apples.2026.100310",
+      "query_title": "An intelligent multi-objective robust design optimization framework based on PathLine Transformation and surrogate-assisted sampling for uncertainty-aware airfoil design",
+      "status": "exact_title_candidate",
+      "title_similarity": 1.0,
+      "crossref_title": "An intelligent multi-objective robust design optimization framework based on PathLine Transformation and surrogate-assisted sampling for uncertainty-aware airfoil design",
+      "doi": "10.1016/j.apples.2026.100310",
+      "publisher_link": "https://doi.org/10.1016/j.apples.2026.100310",
+      "container_title": "Applications in Engineering Science"
+    },
+    {
+      "number": 28,
+      "original_reference": "Fannjiang, C., Bates, S., Angelopoulos, A. N., Listgarten, J. & Jordan, M. I. (2022). Conformal prediction under feedback covariate shift for biomolecular design. Proceedings of the National Academy of Sciences, 119(43), e2204569119. https://doi.org/10.1073/pnas.2204569119",
+      "query_title": "Conformal prediction under feedback covariate shift for biomolecular design",
+      "status": "exact_title_candidate",
+      "title_similarity": 1.0,
+      "crossref_title": "Conformal prediction under feedback covariate shift for biomolecular design",
+      "doi": "10.1073/pnas.2204569119",
+      "publisher_link": "https://doi.org/10.1073/pnas.2204569119",
+      "container_title": "Proceedings of the National Academy of Sciences"
+    }
+  ]
+}

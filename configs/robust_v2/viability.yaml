@@ -1,0 +1,29 @@
+seed: 20260824
+pilot:
+  target_airfoils: 25
+  minimum_mapped_airfoils: 20
+  minimum_joint_points: 500
+  minimum_parse_success_fraction: 0.95
+  minimum_mapping_fraction: 0.80
+  split_counts: {development: 15, calibration: 5, locked_test: 5}
+expansion:
+  target_airfoils: 200
+  start_automatically_after_go: true
+full:
+  build_all_available_exact_or_geometry_confirmed: true
+  start_baseline_after_expansion_pass: true
+  start_tuning_trials_after_baseline_pass: 50
+geometry:
+  cosine_points_per_surface: 201
+  exact_hash_decimals: 8
+  pilot_near_duplicate_rms_threshold: 0.0001
+  minimum_local_thickness: 0.0
+model:
+  require_one_batch_overfit: true
+  one_batch_relative_loss_reduction: 0.99
+  require_cl_better_than_dummy_fraction: 0.20
+  require_log_cd_better_than_dummy_fraction: 0.20
+  cm_improvement_is_desirable_not_initially_fatal: true
+live_network_tests: false
+xfoil_tests: false
+slow_tests: false

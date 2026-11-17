@@ -1,0 +1,18 @@
+[
+  {
+    "source": "paper/manuscript.md",
+    "source_sha256": "4d2385f97aee365c23edbd1174284da5be4ce6292549834163c17a62b0d659a8",
+    "docx": "paper/LATEST_MANUSCRIPT_FOR_AVA.docx",
+    "docx_sha256": "ea99f7d85d7ed6bb564018ce841bbd2458a7567d970bf2b3f955f56229676c1d",
+    "tables": 7,
+    "figures": 8
+  },
+  {
+    "source": "reports/robust_v2/external_academic_review_20261014/ACADEMIC_REFEREE_REPORT.md",
+    "source_sha256": "9f7095eebf2087669d58fcfc841615a529013f9dbdd4d7805e619f8df0496ed3",
+    "docx": "reports/robust_v2/external_academic_review_20261014/SCIENTIFIC_REVIEW_REPORT.docx",
+    "docx_sha256": "580efb37362cdf80428e98c9b461d26baaea355f9065b871fee0b078b9d864f8",
+    "tables": 0,
+    "figures": 0
+  }
+]

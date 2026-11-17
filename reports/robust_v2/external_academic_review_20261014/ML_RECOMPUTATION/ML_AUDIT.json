@@ -1,0 +1,578 @@
+{
+  "utc": "2026-10-14T10:53:05.988736+00:00",
+  "scope": "Frozen numerical evidence verification; retrospective diagnostics, not a fresh confirmation set.",
+  "frozen_artifacts": [
+    {
+      "key": "airfoils",
+      "path": "C:\\Users\\Ben\\workspaces\\github.com\\bengawith\\paper\\data\\robust_v2\\processed\\full_exact\\airfoils.parquet",
+      "expected": "07b9e15893ab125182a6886e8ef57bd893eaeea17142ff263d01c7a3a059b6c6",
+      "actual": "07b9e15893ab125182a6886e8ef57bd893eaeea17142ff263d01c7a3a059b6c6",
+      "matches": true
+    },
+    {
+      "key": "calibration_predictions",
+      "path": "C:\\Users\\Ben\\workspaces\\github.com\\bengawith\\paper\\results\\robust_v2\\lineages\\robust-v2-current-20260908\\calibration\\calibration_predictions.parquet",
+      "expected": "d3b41f63cf1c28960b886c944140495876169f1fc121c3b6ad4cbe5c2d3a78ec",
+      "actual": "d3b41f63cf1c28960b886c944140495876169f1fc121c3b6ad4cbe5c2d3a78ec",
+      "matches": true
+    },
+    {
+      "key": "ensemble_manifest",
+      "path": "C:\\Users\\Ben\\workspaces\\github.com\\bengawith\\paper\\results\\robust_v2\\lineages\\robust-v2-current-20260908\\full_ensemble\\ensemble_manifest.json",
+      "expected": "dca7047b22495513103ca077c6294832f4b26cfaab977a05b0ee016236ff5ed3",
+      "actual": "dca7047b22495513103ca077c6294832f4b26cfaab977a05b0ee016236ff5ed3",
+      "matches": true
+    },
+    {
+      "key": "member_000_checkpoint",
+      "path": "C:\\Users\\Ben\\workspaces\\github.com\\bengawith\\paper\\results\\robust_v2\\lineages\\robust-v2-current-20260908\\full_ensemble\\member_000\\checkpoint.pt",
+      "expected": "d8256dcde526b6db2bedea03797e92b9887a388f8fcb6ae45e5a15689a03cc1f",
+      "actual": "d8256dcde526b6db2bedea03797e92b9887a388f8fcb6ae45e5a15689a03cc1f",
+      "matches": true
+    },
+    {
+      "key": "member_000_scaling",
+      "path": "C:\\Users\\Ben\\workspaces\\github.com\\bengawith\\paper\\results\\robust_v2\\lineages\\robust-v2-current-20260908\\full_ensemble\\member_000\\scaling.joblib",
+      "expected": "002c2ceae455c674ae906d93985e65eadd9259e8a24bbf4eb46a0f8bfbe7bcb6",
+      "actual": "002c2ceae455c674ae906d93985e65eadd9259e8a24bbf4eb46a0f8bfbe7bcb6",
+      "matches": true
+    },
+    {
+      "key": "member_001_checkpoint",
+      "path": "C:\\Users\\Ben\\workspaces\\github.com\\bengawith\\paper\\results\\robust_v2\\lineages\\robust-v2-current-20260908\\full_ensemble\\member_001\\checkpoint.pt",
+      "expected": "aaeab720e6074adb79e1ee29b66cc17b02ca369c3b0520c78671550c44ac326a",
+      "actual": "aaeab720e6074adb79e1ee29b66cc17b02ca369c3b0520c78671550c44ac326a",
+      "matches": true
+    },
+    {
+      "key": "member_001_scaling",
+      "path": "C:\\Users\\Ben\\workspaces\\github.com\\bengawith\\paper\\results\\robust_v2\\lineages\\robust-v2-current-20260908\\full_ensemble\\member_001\\scaling.joblib",
+      "expected": "ce39ce4d228e0ed175be0bd4a0fb780f7383a6eb0d699ff9e99604de5e600aa3",
+      "actual": "ce39ce4d228e0ed175be0bd4a0fb780f7383a6eb0d699ff9e99604de5e600aa3",
+      "matches": true
+    },
+    {
+      "key": "member_002_checkpoint",
+      "path": "C:\\Users\\Ben\\workspaces\\github.com\\bengawith\\paper\\results\\robust_v2\\lineages\\robust-v2-current-20260908\\full_ensemble\\member_002\\checkpoint.pt",
+      "expected": "6f343f020c60e463bb2b35902f0877fb1b4787813a9cc78733f979c33827d83e",
+      "actual": "6f343f020c60e463bb2b35902f0877fb1b4787813a9cc78733f979c33827d83e",
+      "matches": true
+    },
+    {
+      "key": "member_002_scaling",
+      "path": "C:\\Users\\Ben\\workspaces\\github.com\\bengawith\\paper\\results\\robust_v2\\lineages\\robust-v2-current-20260908\\full_ensemble\\member_002\\scaling.joblib",
+      "expected": "20d86dd22b0a6283c713f2df96ef50c7b35b1aace2be2a15376fdfc960dc6386",
+      "actual": "20d86dd22b0a6283c713f2df96ef50c7b35b1aace2be2a15376fdfc960dc6386",
+      "matches": true
+    },
+    {
+      "key": "member_003_checkpoint",
+      "path": "C:\\Users\\Ben\\workspaces\\github.com\\bengawith\\paper\\results\\robust_v2\\lineages\\robust-v2-current-20260908\\full_ensemble\\member_003\\checkpoint.pt",
+      "expected": "07c717e493721b2c43d441e762648f0a856e7ca1ac85f146f93a4fc60859f9c9",
+      "actual": "07c717e493721b2c43d441e762648f0a856e7ca1ac85f146f93a4fc60859f9c9",
+      "matches": true
+    },
+    {
+      "key": "member_003_scaling",
+      "path": "C:\\Users\\Ben\\workspaces\\github.com\\bengawith\\paper\\results\\robust_v2\\lineages\\robust-v2-current-20260908\\full_ensemble\\member_003\\scaling.joblib",
+      "expected": "7e3b8087116361c4387d44700b5c814adacbbc4d6de2d2c2077cb689e9f8a4c9",
+      "actual": "7e3b8087116361c4387d44700b5c814adacbbc4d6de2d2c2077cb689e9f8a4c9",
+      "matches": true
+    },
+    {
+      "key": "member_004_checkpoint",
+      "path": "C:\\Users\\Ben\\workspaces\\github.com\\bengawith\\paper\\results\\robust_v2\\lineages\\robust-v2-current-20260908\\full_ensemble\\member_004\\checkpoint.pt",
+      "expected": "41ea378ceab7114789101a7253f2d26c8f878b377c13fa35aab74bad6694e9fe",
+      "actual": "41ea378ceab7114789101a7253f2d26c8f878b377c13fa35aab74bad6694e9fe",
+      "matches": true
+    },
+    {
+      "key": "member_004_scaling",
+      "path": "C:\\Users\\Ben\\workspaces\\github.com\\bengawith\\paper\\results\\robust_v2\\lineages\\robust-v2-current-20260908\\full_ensemble\\member_004\\scaling.joblib",
+      "expected": "d5602f9a420f8289ad52bf2cfbdaac4220b6d630cb173d17cdee9cc185f5c063",
+      "actual": "d5602f9a420f8289ad52bf2cfbdaac4220b6d630cb173d17cdee9cc185f5c063",
+      "matches": true
+    },
+    {
+      "key": "model_points",
+      "path": "C:\\Users\\Ben\\workspaces\\github.com\\bengawith\\paper\\data\\robust_v2\\processed\\full_exact\\model_points.parquet",
+      "expected": "8ca191bfc7d5b6e82827f3a90fdc0e7354fb45fb6c6ab7fe3b349583a4e901d2",
+      "actual": "8ca191bfc7d5b6e82827f3a90fdc0e7354fb45fb6c6ab7fe3b349583a4e901d2",
+      "matches": true
+    },
+    {
+      "key": "split_manifest",
+      "path": "C:\\Users\\Ben\\workspaces\\github.com\\bengawith\\paper\\results\\robust_v2\\lineages\\robust-v2-current-20260908\\splits\\full.json",
+      "expected": "9c8c67b2625845f9da024dc671802275917b331042fc208b5b9339c7251f3dd8",
+      "actual": "9c8c67b2625845f9da024dc671802275917b331042fc208b5b9339c7251f3dd8",
+      "matches": true
+    },
+    {
+      "key": "trust_calibration",
+      "path": "C:\\Users\\Ben\\workspaces\\github.com\\bengawith\\paper\\results\\robust_v2\\lineages\\robust-v2-current-20260908\\calibration\\trust_calibration.json",
+      "expected": "a2fda21cd21291f3016a3bc8ac11471abe56fcaa59d741ba7492e326105aec28",
+      "actual": "a2fda21cd21291f3016a3bc8ac11471abe56fcaa59d741ba7492e326105aec28",
+      "matches": true
+    },
+    {
+      "key": "tuning_summary",
+      "path": "C:\\Users\\Ben\\workspaces\\github.com\\bengawith\\paper\\results\\robust_v2\\lineages\\robust-v2-current-20260908\\tuning\\summary.json",
+      "expected": "ec2d747c96512b42606a037173bc7263e15017a8ce20e8f8f13877989ab80c91",
+      "actual": "ec2d747c96512b42606a037173bc7263e15017a8ce20e8f8f13877989ab80c91",
+      "matches": true
+    }
+  ],
+  "split_counts": [
+    {
+      "split": "calibration",
+      "airfoils": 234,
+      "clusters": 233
+    },
+    {
+      "split": "development",
+      "airfoils": 1093,
+      "clusters": 1088
+    },
+    {
+      "split": "locked_test",
+      "airfoils": 233,
+      "clusters": 233
+    }
+  ],
+  "split_cluster_overlap": 0,
+  "tuning_cluster_overlap": 0,
+  "tuning_outside_development": [],
+  "conditions": [
+    {
+      "reynolds_number": 1000000.0,
+      "mach": 0.0,
+      "ncrit": 9.0
+    }
+  ],
+  "point_count": 179780,
+  "mask_counts": {
+    "cl": 179779,
+    "log_cd": 179780,
+    "cm": 179780
+  },
+  "ineligible_rows": 0,
+  "duplicate_airfoil_alpha_rows": 0,
+  "calibration_source_sha256": "d3b41f63cf1c28960b886c944140495876169f1fc121c3b6ad4cbe5c2d3a78ec",
+  "locked_test_source_sha256": "aad0e8849ec431d36084fabfd63fad18241144158197491197a51a4dcef979b1",
+  "test_id_assignment_errors": 0,
+  "calibration_id_assignment_errors": 0,
+  "geometry_hash_cross_split": 0,
+  "cst_error_statistics": {
+    "cst_rms_error": {
+      "count": 1560.0,
+      "mean": 0.0026022196484946857,
+      "std": 0.0031383022245564086,
+      "min": 6.012953565049924e-05,
+      "50%": 0.001156744624100269,
+      "90%": 0.007806257062873477,
+      "95%": 0.009516004159689596,
+      "99%": 0.012677161282949882,
+      "max": 0.02195138730719913
+    },
+    "cst_max_error": {
+      "count": 1560.0,
+      "mean": 0.016091541962961704,
+      "std": 0.018495908129840127,
+      "min": 0.00014578857714961238,
+      "50%": 0.008195460382794555,
+      "90%": 0.04363996590667222,
+      "95%": 0.055397952574155605,
+      "99%": 0.07743513458120592,
+      "max": 0.12132061132221557
+    }
+  },
+  "cst_max_error_exceeds_0p5pct": 933,
+  "cst_worst_examples": [
+    {
+      "airfoil_id": "goe511",
+      "cst_rms_error": 0.014058087498370711,
+      "cst_max_error": 0.12132061132221557,
+      "geometry_path": "C:/Users/Ben/workspaces/github.com/bengawith/paper/data/aerofoil_data/goe511.dat"
+    },
+    {
+      "airfoil_id": "e420",
+      "cst_rms_error": 0.01565782246919966,
+      "cst_max_error": 0.10991930725743707,
+      "geometry_path": "C:/Users/Ben/workspaces/github.com/bengawith/paper/data/aerofoil_data/e420.dat"
+    },
+    {
+      "airfoil_id": "e421",
+      "cst_rms_error": 0.014700303429272261,
+      "cst_max_error": 0.10202194566803562,
+      "geometry_path": "C:/Users/Ben/workspaces/github.com/bengawith/paper/data/aerofoil_data/e421.dat"
+    },
+    {
+      "airfoil_id": "goe744",
+      "cst_rms_error": 0.011651540496846611,
+      "cst_max_error": 0.09921451406018969,
+      "geometry_path": "C:/Users/Ben/workspaces/github.com/bengawith/paper/data/aerofoil_data/goe744.dat"
+    },
+    {
+      "airfoil_id": "goe531",
+      "cst_rms_error": 0.02195138730719913,
+      "cst_max_error": 0.09632431172940262,
+      "geometry_path": "C:/Users/Ben/workspaces/github.com/bengawith/paper/data/aerofoil_data/goe531.dat"
+    },
+    {
+      "airfoil_id": "e422",
+      "cst_rms_error": 0.012227230006963088,
+      "cst_max_error": 0.08926854251387886,
+      "geometry_path": "C:/Users/Ben/workspaces/github.com/bengawith/paper/data/aerofoil_data/e422.dat"
+    },
+    {
+      "airfoil_id": "m24",
+      "cst_rms_error": 0.010692481334101627,
+      "cst_max_error": 0.08743987979631129,
+      "geometry_path": "C:/Users/Ben/workspaces/github.com/bengawith/paper/data/aerofoil_data/m24.dat"
+    },
+    {
+      "airfoil_id": "goe320",
+      "cst_rms_error": 0.010568667949453589,
+      "cst_max_error": 0.08700288851760368,
+      "geometry_path": "C:/Users/Ben/workspaces/github.com/bengawith/paper/data/aerofoil_data/goe320.dat"
+    },
+    {
+      "airfoil_id": "goe462",
+      "cst_rms_error": 0.014728217525261031,
+      "cst_max_error": 0.08574585066874031,
+      "geometry_path": "C:/Users/Ben/workspaces/github.com/bengawith/paper/data/aerofoil_data/goe462.dat"
+    },
+    {
+      "airfoil_id": "goe366",
+      "cst_rms_error": 0.013075351581513194,
+      "cst_max_error": 0.08177303383801332,
+      "geometry_path": "C:/Users/Ben/workspaces/github.com/bengawith/paper/data/aerofoil_data/goe366.dat"
+    }
+  ],
+  "naca2412_fit": [
+    {
+      "airfoil_id": "naca2412",
+      "cst_rms_error": 0.0007989739109984707,
+      "cst_max_error": 0.00414043373669633
+    }
+  ],
+  "train_only_scalers": [
+    {
+      "member": 0,
+      "bootstrap_draws": 1088,
+      "unique_clusters": 681,
+      "outside_development_clusters": 0,
+      "maximum_scaling_difference": 0.0,
+      "epochs": 23,
+      "best_epoch": 18,
+      "architecture": {
+        "activation": "relu",
+        "dropout": 0.12181152899002505,
+        "hidden_layers": 2,
+        "hidden_width": 512,
+        "input_dim": 13,
+        "layer_norm": true,
+        "residual": true
+      }
+    },
+    {
+      "member": 1,
+      "bootstrap_draws": 1088,
+      "unique_clusters": 690,
+      "outside_development_clusters": 0,
+      "maximum_scaling_difference": 0.0,
+      "epochs": 23,
+      "best_epoch": 22,
+      "architecture": {
+        "activation": "relu",
+        "dropout": 0.12181152899002505,
+        "hidden_layers": 2,
+        "hidden_width": 512,
+        "input_dim": 13,
+        "layer_norm": true,
+        "residual": true
+      }
+    },
+    {
+      "member": 2,
+      "bootstrap_draws": 1088,
+      "unique_clusters": 684,
+      "outside_development_clusters": 0,
+      "maximum_scaling_difference": 0.0,
+      "epochs": 23,
+      "best_epoch": 22,
+      "architecture": {
+        "activation": "relu",
+        "dropout": 0.12181152899002505,
+        "hidden_layers": 2,
+        "hidden_width": 512,
+        "input_dim": 13,
+        "layer_norm": true,
+        "residual": true
+      }
+    },
+    {
+      "member": 3,
+      "bootstrap_draws": 1088,
+      "unique_clusters": 699,
+      "outside_development_clusters": 0,
+      "maximum_scaling_difference": 0.0,
+      "epochs": 23,
+      "best_epoch": 22,
+      "architecture": {
+        "activation": "relu",
+        "dropout": 0.12181152899002505,
+        "hidden_layers": 2,
+        "hidden_width": 512,
+        "input_dim": 13,
+        "layer_norm": true,
+        "residual": true
+      }
+    },
+    {
+      "member": 4,
+      "bootstrap_draws": 1088,
+      "unique_clusters": 671,
+      "outside_development_clusters": 0,
+      "maximum_scaling_difference": 0.0,
+      "epochs": 23,
+      "best_epoch": 22,
+      "architecture": {
+        "activation": "relu",
+        "dropout": 0.12181152899002505,
+        "hidden_layers": 2,
+        "hidden_width": 512,
+        "input_dim": 13,
+        "layer_norm": true,
+        "residual": true
+      }
+    }
+  ],
+  "architecture": {
+    "member_parameters": 1064451,
+    "linear_modules": 8,
+    "residual_blocks": 2,
+    "interpretation": "One input projection, two two-linear residual blocks, three output heads; five hidden affine layers, not two hidden affine layers."
+  },
+  "fresh_frozen_prediction": {
+    "seconds": 0.2970000000059372,
+    "device": "cuda",
+    "max_absolute_difference_by_target": {
+      "cl": 0.0,
+      "log_cd": 0.0,
+      "cm": 0.0
+    }
+  },
+  "trust": {
+    "distance_recompute_max_error": 1.7763568394002505e-15,
+    "accepted": 17642,
+    "rejected": 9050,
+    "stored_flag_disagreements": 0,
+    "support_rejected": 9050,
+    "angle_rejected": 2,
+    "spread_rejected": {
+      "cl": 0,
+      "log_cd": 0,
+      "cm": 6
+    },
+    "spread_additional_rejections": 0
+  },
+  "metrics": [
+    {
+      "subset": "all",
+      "target": "cl",
+      "n_rows": 26692,
+      "n_airfoils": 233,
+      "mae": 0.05713827619105823,
+      "mse": 0.007832828485257312,
+      "r2": 0.9886904895287568,
+      "geometry_macro_mae": 0.056022043116590134,
+      "geometry_macro_mse": 0.007480274739791797,
+      "interval_coverage": 0.9366851491083471,
+      "geometry_macro_interval_coverage": 0.9402320783371579,
+      "whole_observed_curve_coverage": 0.5107296137339056
+    },
+    {
+      "subset": "all",
+      "target": "log_cd",
+      "n_rows": 26692,
+      "n_airfoils": 233,
+      "mae": 0.14340075002139796,
+      "mse": 0.05466996804711965,
+      "r2": 0.9218477075048556,
+      "geometry_macro_mae": 0.1483917968141882,
+      "geometry_macro_mse": 0.05748762295725615,
+      "interval_coverage": 0.9439157800089915,
+      "geometry_macro_interval_coverage": 0.9402962507370823,
+      "whole_observed_curve_coverage": 0.44206008583690987
+    },
+    {
+      "subset": "all",
+      "target": "cm",
+      "n_rows": 26692,
+      "n_airfoils": 233,
+      "mae": 0.009594764349737009,
+      "mse": 0.0002310080920003706,
+      "r2": 0.918010802560449,
+      "geometry_macro_mae": 0.009541047291044855,
+      "geometry_macro_mse": 0.00022613405412031027,
+      "interval_coverage": 0.9448898546380938,
+      "geometry_macro_interval_coverage": 0.946149393208808,
+      "whole_observed_curve_coverage": 0.6652360515021459
+    },
+    {
+      "subset": "all",
+      "target": "cd",
+      "n_rows": 26692,
+      "n_airfoils": 233,
+      "mae": 0.004546584412923897,
+      "mse": 0.00010210493005563183,
+      "r2": 0.8528276565927493,
+      "geometry_macro_mae": 0.004703527445351845,
+      "geometry_macro_mse": 0.00010936242151959692
+    },
+    {
+      "subset": "accepted",
+      "target": "cl",
+      "n_rows": 17642,
+      "n_airfoils": 154,
+      "mae": 0.04013710847912887,
+      "mse": 0.0038123054232905595,
+      "r2": 0.9943152267065691,
+      "geometry_macro_mae": 0.03958231074267171,
+      "geometry_macro_mse": 0.0037252718988330324,
+      "interval_coverage": 0.9774968824396327,
+      "geometry_macro_interval_coverage": 0.9785833601620545,
+      "whole_observed_curve_coverage": 0.6168831168831169
+    },
+    {
+      "subset": "accepted",
+      "target": "log_cd",
+      "n_rows": 17642,
+      "n_airfoils": 154,
+      "mae": 0.11159232482796047,
+      "mse": 0.03569002383081075,
+      "r2": 0.9496404021307736,
+      "geometry_macro_mae": 0.11597195747550183,
+      "geometry_macro_mse": 0.037636951729588704,
+      "interval_coverage": 0.9653100555492574,
+      "geometry_macro_interval_coverage": 0.9634299874396512,
+      "whole_observed_curve_coverage": 0.5
+    },
+    {
+      "subset": "accepted",
+      "target": "cm",
+      "n_rows": 17642,
+      "n_airfoils": 154,
+      "mae": 0.006053081060524005,
+      "mse": 7.964142291459301e-05,
+      "r2": 0.9569070011331088,
+      "geometry_macro_mae": 0.005994891185745474,
+      "geometry_macro_mse": 7.884649776414026e-05,
+      "interval_coverage": 0.9917809772134678,
+      "geometry_macro_interval_coverage": 0.9921896420848786,
+      "whole_observed_curve_coverage": 0.8116883116883117
+    },
+    {
+      "subset": "accepted",
+      "target": "cd",
+      "n_rows": 17642,
+      "n_airfoils": 154,
+      "mae": 0.003499935996603303,
+      "mse": 7.356912126594897e-05,
+      "r2": 0.8873244721569273,
+      "geometry_macro_mae": 0.0036067441253490114,
+      "geometry_macro_mse": 7.697219729538499e-05
+    },
+    {
+      "subset": "rejected",
+      "target": "cl",
+      "n_rows": 9050,
+      "n_airfoils": 80,
+      "mae": 0.09028022102794858,
+      "mse": 0.015670405044286868,
+      "r2": 0.9783181461225654,
+      "geometry_macro_mae": 0.08929968696826637,
+      "geometry_macro_mse": 0.015061222520117126,
+      "interval_coverage": 0.8571270718232045,
+      "geometry_macro_interval_coverage": 0.8574749769497318,
+      "whole_observed_curve_coverage": 0.3
+    },
+    {
+      "subset": "rejected",
+      "target": "log_cd",
+      "n_rows": 9050,
+      "n_airfoils": 80,
+      "mae": 0.20540784806146692,
+      "mse": 0.09166932449619386,
+      "r2": 0.8611718177291718,
+      "geometry_macro_mae": 0.21585501201418023,
+      "geometry_macro_mse": 0.0990048571929975,
+      "interval_coverage": 0.9022099447513812,
+      "geometry_macro_interval_coverage": 0.8868484179673203,
+      "whole_observed_curve_coverage": 0.325
+    },
+    {
+      "subset": "rejected",
+      "target": "cm",
+      "n_rows": 9050,
+      "n_airfoils": 80,
+      "mae": 0.016498894359493452,
+      "mse": 0.0005260811059242699,
+      "r2": 0.8728302289225145,
+      "geometry_macro_mae": 0.016646269581229146,
+      "geometry_macro_mse": 0.0005200924559534412,
+      "interval_coverage": 0.8534806629834254,
+      "geometry_macro_interval_coverage": 0.8509414484594524,
+      "whole_observed_curve_coverage": 0.375
+    },
+    {
+      "subset": "rejected",
+      "target": "cd",
+      "n_rows": 9050,
+      "n_airfoils": 80,
+      "mae": 0.0065869127400761535,
+      "mse": 0.00015773241499127653,
+      "r2": 0.7934555796732052,
+      "geometry_macro_mae": 0.007271867978664021,
+      "geometry_macro_mse": 0.00019240745979869954
+    }
+  ],
+  "fit_error_strata": [
+    {
+      "fit_bin": "(-0.001, 0.001]",
+      "rows": 703,
+      "foils": 6,
+      "mean_absolute_cl_error": 0.03353004181178162,
+      "accepted_fraction": 1.0
+    },
+    {
+      "fit_bin": "(0.001, 0.005]",
+      "rows": 9033,
+      "foils": 82,
+      "mean_absolute_cl_error": 0.04269291881227974,
+      "accepted_fraction": 0.8361563157312077
+    },
+    {
+      "fit_bin": "(0.005, 0.01]",
+      "rows": 4402,
+      "foils": 37,
+      "mean_absolute_cl_error": 0.05334375960409831,
+      "accepted_fraction": 0.6703771013175829
+    },
+    {
+      "fit_bin": "(0.01, 0.02]",
+      "rows": 5300,
+      "foils": 42,
+      "mean_absolute_cl_error": 0.05984561504101303,
+      "accepted_fraction": 0.7283018867924528
+    },
+    {
+      "fit_bin": "(0.02, inf]",
+      "rows": 7254,
+      "foils": 66,
+      "mean_absolute_cl_error": 0.07773878185444046,
+      "accepted_fraction": 0.35497656465398403
+    }
+  ]
+}

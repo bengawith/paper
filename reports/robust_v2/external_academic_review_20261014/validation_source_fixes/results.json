@@ -1,0 +1,52 @@
+[
+  {
+    "check": "diff_check",
+    "returncode": 0,
+    "seconds": 0.09399999999732245,
+    "command": [
+      "git",
+      "diff",
+      "--check"
+    ]
+  },
+  {
+    "check": "ruff",
+    "returncode": 1,
+    "seconds": 0.8130000000019209,
+    "command": [
+      "uv",
+      "run",
+      "ruff",
+      "check",
+      "src/robust_airfoil",
+      "tests/robust_v2",
+      "scripts/robust_v2"
+    ]
+  },
+  {
+    "check": "mypy",
+    "returncode": 0,
+    "seconds": 11.828000000001339,
+    "command": [
+      "uv",
+      "run",
+      "mypy",
+      "src/robust_airfoil"
+    ]
+  },
+  {
+    "check": "tests",
+    "returncode": 0,
+    "seconds": 13.577999999994063,
+    "command": [
+      "uv",
+      "run",
+      "pytest",
+      "tests/robust_v2",
+      "-m",
+      "not network",
+      "--run-xfoil",
+      "-q"
+    ]
+  }
+]

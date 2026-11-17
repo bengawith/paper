@@ -1,0 +1,24 @@
+{
+  "schema": "scientific-manuscript-final-clarity-copyedit-v1",
+  "edits": [
+    {
+      "path": "paper/manuscript.md",
+      "previous_sha256": "0b43f9f44b75003e27163f31ae804fcd31431b3fc4290c1d24e8eb4a29074c38",
+      "current_sha256": "13c3e15eec6696ca82bcb06908e4e8294b4bb51e81cb63e78447062f7143668b",
+      "backup": "reports/robust_v2/external_academic_review_20261014/CONTINUATION_20261020/BEFORE_FINAL_COPYEDIT_manuscript.md"
+    },
+    {
+      "path": "reports/robust_v2/external_academic_review_20261014/ACADEMIC_REFEREE_REPORT.md",
+      "previous_sha256": "b72e9a8647ce449ea2b36ecf2d2f2f958497829b3774b7f4a58ecf016d604f1f",
+      "current_sha256": "9f7095eebf2087669d58fcfc841615a529013f9dbdd4d7805e619f8df0496ed3",
+      "backup": "reports/robust_v2/external_academic_review_20261014/CONTINUATION_20261020/BEFORE_FINAL_COPYEDIT_referee.md"
+    }
+  ],
+  "model_data_objectives_thresholds_or_solver_receipts_edited": false,
+  "old_source_manifest_sha256": "fcaaa12af90290eb508f020830c160cd04b734dda8bfe330214fefb878e7e487",
+  "new_source_manifest_sha256": "6ab26c48dc1230dbf9211f94bfdd7db1baa44caf9846efc1f2c7f01d17fde490",
+  "final_manuscript_sha256": "13c3e15eec6696ca82bcb06908e4e8294b4bb51e81cb63e78447062f7143668b",
+  "final_docx_sha256": "2a9723256f36f137627bcc8ad37574cb61f2a5362f099b65951f59ca498b04e3",
+  "final_referee_sha256": "b802e2a847004c2220eeb0ad463b7d2880ba53075f53a777a717f252400f7dd7",
+  "remaining_gate": "Render and inspect the two revised Word documents; original figures, 29 bibliography entries and all numerical claims are preserved."
+}

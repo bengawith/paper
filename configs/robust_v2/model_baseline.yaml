@@ -1,0 +1,28 @@
+seed: 20260824
+features:
+  geometry: [lower_weight_0, lower_weight_1, lower_weight_2, lower_weight_3, lower_weight_4,
+             upper_weight_0, upper_weight_1, upper_weight_2, upper_weight_3, upper_weight_4,
+             leading_edge_weight, TE_thickness]
+  operating: [alpha_deg]
+targets: [cl, log_cd, cm]
+architecture:
+  type: conditioned_multi_head_mlp
+  hidden_width: 256
+  hidden_layers: 3
+  activation: silu
+  dropout: 0.10
+  layer_norm: true
+  residual: true
+training:
+  optimiser: adamw
+  learning_rate: 0.001
+  weight_decay: 0.00001
+  batch_size: 1024
+  maximum_epochs: 300
+  early_stopping_patience: 25
+  gradient_clip_norm: 1.0
+  loss: huber
+  huber_delta_standardised: 1.0
+  deterministic_warn_only: true
+  mixed_precision: false
+  equalise_nominal_airfoil_weight: true

@@ -1,0 +1,18 @@
+Subject: Aerofoil paper – updated draft and CFD verification
+
+Hi Ava,
+
+I hope you're well!
+
+I've now completed another stage of the paper and wanted to send over the latest draft for your thoughts. We've kept the ML surrogate central, but extended it to predict lift, drag and pitching moment, and looked more closely at where its predictions can be trusted during optimisation.
+
+The results are encouraging. A selected design shows 18.7% lower nominal weighted drag than NACA 2412 in XFOIL. Two independently sampled 0.5%-chord geometry-variation studies also show lower mean drag in the successfully completed matched XFOIL cases. We've found cases where unrestricted ML optimisation performs poorly, which I think is an interesting contribution in itself.
+
+I've also tightened the uncertainty implementation and kept the remaining limitations clear. The full corrected optimisation study still needs its final run, and independent CFD is the next major verification step. I've included the selected geometries, XFOIL results and a proposed CFD plan to make that easier.
+
+I'd really appreciate your thoughts on the updated manuscript, particularly the ML and engineering balance and whether the CFD cases and approach look appropriate.
+
+Thanks again for your help. Hopefully we're getting much closer!
+
+Best,
+Ben

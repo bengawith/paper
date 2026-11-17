@@ -1,0 +1,50 @@
+"""Profile the actual repaired evaluator without changing its scientific protocol."""
+from __future__ import annotationsimport argparseimport cProfileimport ioimport jsonimport osimport pstatsimport timefrom pathlib import Pathos.environ.setdefault('OMP_NUM_THREADS','2')
+os.environ.setdefault('MKL_NUM_THREADS','2')
+
+import numpy as npimport pandas as pdimport torchfrom robust_airfoil.config import UncertaintyConfig, load_yamlfrom robust_airfoil.hashing import sha256_filefrom robust_airfoil.modelling.dataset import FEATURE_COLUMNSfrom robust_airfoil.modelling.ensemble import LoadedEnsemblefrom robust_airfoil.modelling.freeze import verify_frozen_artifactsfrom robust_airfoil.optimisation.study import RobustCandidateEvaluatorfrom robust_airfoil.research_lineage import load_optimisation_for_lineage, resolve_lineagefrom robust_airfoil.uncertainty.sampling import sobol_normal_samplesROOT = Path(__file__).resolve().parents[2]
+LINEAGE = ROOT/'results/robust_v2/lineages/robust-v2-rebuilt-20261014'
+OUT = ROOT/'reports/robust_v2/external_academic_review_20261014/REBUILT_MODEL'
+
+
+def main() -> None:
+    parser=argparse.ArgumentParser()
+    parser.add_argument('--lineage', choices=['rebuilt','controlled'], default='rebuilt', help='Explicit immutable scientific revision; never overwrites the other lineage')
+    args=parser.parse_args()
+    paths=resolve_lineage(ROOT,args.lineage)
+    LINEAGE=paths['results']
+    OUT=paths['reports']
+    torch.set_num_threads(2)
+    frozen = json.loads((LINEAGE/'FROZEN_MODEL_MANIFEST.json').read_text(encoding='utf-8'))
+    verify_frozen_artifacts(LINEAGE/'FROZEN_MODEL_MANIFEST.json',{k:Path(v) for k,v in frozen['artifact_paths'].items()})
+    points = pd.read_parquet(LINEAGE/'partition_inputs/development.parquet')
+    geometries = pd.read_parquet(paths['data']/'airfoils.parquet')
+    reference = geometries.loc[geometries.airfoil_id.eq('naca2412'),FEATURE_COLUMNS[:-1]].to_numpy(float)[0]
+    opt = load_optimisation_for_lineage(ROOT, args.lineage)
+    unc = UncertaintyConfig.model_validate(load_yaml(ROOT/'configs/robust_v2/uncertainty.yaml'))
+    cal = json.loads((LINEAGE/'calibration/trust_calibration.json').read_text(encoding='utf-8'))
+    ensemble = LoadedEnsemble(LINEAGE/'full_ensemble')
+    latent = sobol_normal_samples(64,16,unc.seed+2000,antithetic=True)
+    evaluator = RobustCandidateEvaluator(reference,np.zeros((64,12)),np.zeros(64,bool),points,ensemble,cal,opt,candidate_latent=latent,uncertainty=unc)
+    # Geometry-only workload: no labels or solver outcomes choose the variants.
+    candidates = np.tile(reference,(128,1))
+    candidates[:,7] += np.linspace(-.003,.003,len(candidates))
+    profiler = cProfile.Profile()
+    start=time.monotonic()
+    profiler.enable()
+    f,g,d=evaluator.evaluate(candidates)
+    profiler.disable()
+    elapsed=time.monotonic()-start
+    buffer=io.StringIO()
+    pstats.Stats(profiler,stream=buffer).strip_dirs().sort_stats('cumulative').print_stats(35)
+    (OUT/'EVALUATOR_PROFILE.txt').write_text(buffer.getvalue(),encoding='utf-8')
+    reference_f,reference_g,reference_d=evaluator.evaluate(reference[None,:])
+    report={'schema':'repaired-production-evaluator-profile-v1','population':128,'scenarios':64,'states':128*64*len(evaluator.alpha),'seconds':elapsed,'finite_objectives':bool(np.isfinite(f).all()),'nominal_feasible':int(np.all(g<=0,axis=1).sum()),'reference':{'parameters':reference.tolist(),'objectives':reference_f[0].tolist(),'constraints':reference_g[0].tolist(),'diagnostics':reference_d[0]},'scope':'Fixed geometry-only profiling workload, not production optimisation; no extrapolated completion-time claim.','source_sha256':sha256_file(ROOT/'src/robust_airfoil/optimisation/study.py')}
+    (OUT/'EVALUATOR_PROFILE.json').write_text(json.dumps(report,indent=2,allow_nan=False),encoding='utf-8')
+    print(json.dumps({k:v for k,v in report.items() if k!='reference'},indent=2),flush=True)
+    print('REFERENCE',reference_f.tolist(),reference_g.tolist(),flush=True)
+    print(buffer.getvalue(),flush=True)
+
+
+if __name__ == '__main__':
+    main()

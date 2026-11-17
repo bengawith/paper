@@ -1,0 +1,68 @@
+{
+  "cases": [
+    {
+      "case": "valid",
+      "expected": "PASS",
+      "exit_code": 0,
+      "repository_unchanged": true,
+      "output": "{\n    \"status\":  \"VERIFIED_OFFLINE_REVIEW_COPY\",\n    \"commit\":  \"5445ba71abdbea29579c5ed18a80ea7dad68b352\",\n    \"destination\":  \"C:\\\\Users\\\\Ben\\\\AppData\\\\Local\\\\Temp\\\\aerofoil-review-copy-tests-jmodi1z0\\\\valid\\\\copied\",\n    \"verified_files\":  1,\n    \"repository_modified\":  false\n}"
+    },
+    {
+      "case": "tracked_dirty",
+      "expected": "REFUSED",
+      "exit_code": 1,
+      "repository_unchanged": true,
+      "output": "Repository has tracked or untracked local changes; nothing will be reset\nAt C:\\Users\\Ben\\workspaces\\github.com\\bengawith\\paper\\reports\\robust_v2\\external_academic_review_20261014\\COPY_TO_LAPTO\nP_OFFLINE.ps1:49 char:98\n+ ... th -ne 0) { throw 'Repository has tracked or untracked local changes; ...\n+                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n    + CategoryInfo          : OperationStopped: (Repository has ...g will be reset:String) [], RuntimeException\n    + FullyQualifiedErrorId : Repository has tracked or untracked local changes; nothing will be reset"
+    },
+    {
+      "case": "untracked",
+      "expected": "REFUSED",
+      "exit_code": 1,
+      "repository_unchanged": true,
+      "output": "Repository has tracked or untracked local changes; nothing will be reset\nAt C:\\Users\\Ben\\workspaces\\github.com\\bengawith\\paper\\reports\\robust_v2\\external_academic_review_20261014\\COPY_TO_LAPTO\nP_OFFLINE.ps1:49 char:98\n+ ... th -ne 0) { throw 'Repository has tracked or untracked local changes; ...\n+                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n    + CategoryInfo          : OperationStopped: (Repository has ...g will be reset:String) [], RuntimeException\n    + FullyQualifiedErrorId : Repository has tracked or untracked local changes; nothing will be reset"
+    },
+    {
+      "case": "wrong_branch",
+      "expected": "REFUSED",
+      "exit_code": 1,
+      "repository_unchanged": true,
+      "output": "Current branch differs from the reviewed package branch\nAt C:\\Users\\Ben\\workspaces\\github.com\\bengawith\\paper\\reports\\robust_v2\\external_academic_review_20261014\\COPY_TO_LAPTO\nP_OFFLINE.ps1:50 char:89\n+ ... e_branch) { throw 'Current branch differs from the reviewed package b ...\n+                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n    + CategoryInfo          : OperationStopped: (Current branch ... package branch:String) [], RuntimeException\n    + FullyQualifiedErrorId : Current branch differs from the reviewed package branch"
+    },
+    {
+      "case": "unpushed_commit",
+      "expected": "REFUSED",
+      "exit_code": 1,
+      "repository_unchanged": true,
+      "output": "Local commit differs from the reviewed package commit; unpublished work will not be discarded\nAt C:\\Users\\Ben\\workspaces\\github.com\\bengawith\\paper\\reports\\robust_v2\\external_academic_review_20261014\\COPY_TO_LAPTO\nP_OFFLINE.ps1:51 char:86\n+ ... mmit_sha) { throw 'Local commit differs from the reviewed package com ...\n+                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n    + CategoryInfo          : OperationStopped: (Local commit di...ot be discarded:String) [], RuntimeException\n    + FullyQualifiedErrorId : Local commit differs from the reviewed package commit; unpublished work will not be disc \n   arded"
+    },
+    {
+      "case": "source_tampered",
+      "expected": "REFUSED",
+      "exit_code": 1,
+      "repository_unchanged": true,
+      "output": "Size mismatch: evidence.txt\nAt C:\\Users\\Ben\\workspaces\\github.com\\bengawith\\paper\\reports\\robust_v2\\external_academic_review_20261014\\COPY_TO_LAPTO\nP_OFFLINE.ps1:30 char:45\n+ ... tem.Length -ne $entry.size) { throw \"Size mismatch: $($entry.path)\" }\n+                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n    + CategoryInfo          : OperationStopped: (Size mismatch: evidence.txt:String) [], RuntimeException\n    + FullyQualifiedErrorId : Size mismatch: evidence.txt"
+    },
+    {
+      "case": "existing_destination",
+      "expected": "REFUSED",
+      "exit_code": 1,
+      "repository_unchanged": true,
+      "output": "Destination already exists; it will not be overwritten or deleted\nAt C:\\Users\\Ben\\workspaces\\github.com\\bengawith\\paper\\reports\\robust_v2\\external_academic_review_20261014\\COPY_TO_LAPTO\nP_OFFLINE.ps1:37 char:44\n+ ... tination) { throw 'Destination already exists; it will not be overwri ...\n+                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n    + CategoryInfo          : OperationStopped: (Destination alr...tten or deleted:String) [], RuntimeException\n    + FullyQualifiedErrorId : Destination already exists; it will not be overwritten or deleted"
+    },
+    {
+      "case": "remote_ahead",
+      "expected": "REFUSED",
+      "exit_code": 1,
+      "repository_unchanged": true,
+      "output": "Remote branch differs from the reviewed package commit\nAt C:\\Users\\Ben\\workspaces\\github.com\\bengawith\\paper\\reports\\robust_v2\\external_academic_review_20261014\\COPY_TO_LAPTO\nP_OFFLINE.ps1:53 char:115\n+ ... mmit_sha) { throw 'Remote branch differs from the reviewed package co ...\n+                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n    + CategoryInfo          : OperationStopped: (Remote branch d... package commit:String) [], RuntimeException\n    + FullyQualifiedErrorId : Remote branch differs from the reviewed package commit"
+    },
+    {
+      "case": "escaping_manifest",
+      "expected": "REFUSED",
+      "exit_code": 1,
+      "repository_unchanged": true,
+      "output": "Unsafe manifest path: ../outside.txt\nAt C:\\Users\\Ben\\workspaces\\github.com\\bengawith\\paper\\reports\\robust_v2\\external_academic_review_20261014\\COPY_TO_LAPTO\nP_OFFLINE.ps1:17 char:9\n+         throw \"Unsafe manifest path: $Relative\"\n+         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n    + CategoryInfo          : OperationStopped: (Unsafe manifest path: ../outside.txt:String) [], RuntimeException\n    + FullyQualifiedErrorId : Unsafe manifest path: ../outside.txt"
+    }
+  ],
+  "all_passed": true
+}

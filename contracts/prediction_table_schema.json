@@ -1,0 +1,15 @@
+{
+  "schema_version": "ml-prediction-table-v1",
+  "format": "one CSV row per attempted request and target, UTF-8, header required",
+  "unique_key": ["case_id", "target", "model_id", "protocol_hash"],
+  "required_for_audit_cli": ["case_id", "cluster_id", "model_id", "model_sha256", "protocol_hash", "pool_role", "target", "reference_value", "prediction_value", "uncertainty_score", "accepted_by_trust", "reference_complete", "solver_status"],
+  "required_for_full_study_in_addition": ["geometry_id", "ancestry_id", "scenario_id", "fold_id", "alpha_deg", "prediction_route", "solver_attempt_id", "failure_reason"],
+  "optional_audit_columns": ["interval_lower", "interval_upper"],
+  "targets": ["cl", "log_cd", "cd", "cm"],
+  "pool_roles": ["development_validation", "calibration", "diagnostic", "confirmation", "historical_exposed"],
+  "boolean_format": ["true", "false", "1", "0"],
+  "missing_numeric_format": "empty field, never imputed",
+  "hash_format": "64 lowercase hex SHA-256; executable audit verifies syntax, not source correctness",
+  "complete_reference_statuses": ["xfoil_complete", "archived_reference_available"],
+  "uncertainty_direction": "larger means less trusted"
+}

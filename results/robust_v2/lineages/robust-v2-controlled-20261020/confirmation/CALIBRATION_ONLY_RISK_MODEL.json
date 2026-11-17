@@ -1,0 +1,130 @@
+{
+  "calibration_predictions_sha256": "39da6136c30875541652074ad0a6da4a0f512f7c675d6e5dffb83d7bf745b404",
+  "confirmation_labels_used_for_fit": false,
+  "created_utc": "2026-10-21T08:41:37.152540+00:00",
+  "excluded_incomplete_calibration_rows": 0,
+  "geometry_selection_sha256": "de8cc1bb0cbb9e577a03aa07487818159abfd46522a7dd69ee279db6f7e0f07e",
+  "model_manifest_sha256": "fafd9375698dcd69da68dbeb030d2f65b99ebb006b40dada87b81c82590a95ab",
+  "models": {
+    "ensemble_only": {
+      "calibration_retention_thresholds": {
+        "10": 0.28687863863191665,
+        "100": 2.48367327553234,
+        "20": 0.3180706569003954,
+        "30": 0.3462741922377567,
+        "40": 0.37633825689569755,
+        "50": 0.4096145338993631,
+        "60": 0.445770809006808,
+        "70": 0.49644780380350834,
+        "80": 0.5704255687505035,
+        "90": 0.7020839957493215
+      },
+      "coefficients": [
+        0.060143885760790064,
+        0.13184699121424184,
+        0.09715102671701761
+      ],
+      "feature_center": [
+        0.03261362187126331,
+        0.04957477121337687,
+        0.003447612630493204
+      ],
+      "feature_scale": [
+        0.021617400025505305,
+        0.05254565119784804,
+        0.002728689879618992
+      ],
+      "features": [
+        "ensemble_std_cl",
+        "ensemble_std_log_cd",
+        "ensemble_std_cm"
+      ],
+      "intercept": 0.4722029953752577
+    },
+    "support_only": {
+      "calibration_retention_thresholds": {
+        "10": 0.3132296730634991,
+        "100": 1.4487329318036262,
+        "20": 0.35013616674068154,
+        "30": 0.36930810442686685,
+        "40": 0.40343464578987953,
+        "50": 0.4355547277598121,
+        "60": 0.4650125411874323,
+        "70": 0.48929474659748723,
+        "80": 0.5606759054849593,
+        "90": 0.6558298585419936
+      },
+      "coefficients": [
+        0.17617986436340652
+      ],
+      "feature_center": [
+        1.0900845308457914
+      ],
+      "feature_scale": [
+        0.6966454356141148
+      ],
+      "features": [
+        "support_distance"
+      ],
+      "intercept": 0.4722029953752576
+    },
+    "support_plus_ensemble": {
+      "calibration_retention_thresholds": {
+        "10": 0.26794335133514924,
+        "100": 2.4797849034188513,
+        "20": 0.3062159792021838,
+        "30": 0.34163377320393523,
+        "40": 0.37507240150608867,
+        "50": 0.4085045378581462,
+        "60": 0.4484807244517376,
+        "70": 0.5025925630782313,
+        "80": 0.5818308222550075,
+        "90": 0.7247662836975941
+      },
+      "coefficients": [
+        0.06887777280411742,
+        0.024134454156217042,
+        0.12679003977665512,
+        0.08890649267893995
+      ],
+      "feature_center": [
+        1.0900845308457914,
+        0.03261362187126331,
+        0.04957477121337687,
+        0.003447612630493204
+      ],
+      "feature_scale": [
+        0.6966454356141148,
+        0.021617400025505305,
+        0.05254565119784804,
+        0.002728689879618992
+      ],
+      "features": [
+        "support_distance",
+        "ensemble_std_cl",
+        "ensemble_std_log_cd",
+        "ensemble_std_cm"
+      ],
+      "intercept": 0.4722029953752577
+    }
+  },
+  "policy_status": "Research ranking only; no operational acceptance rule is changed",
+  "ridge_alpha": 10.0,
+  "risk_implementation_sha256": "cb0077c33f9bf961f3b3855c9379e4d200e972ed0d435be0480a8bb4de9e9bb1",
+  "schema": "frozen-calibration-linear-residual-risk-v1",
+  "target_order": [
+    "cl",
+    "log_cd",
+    "cm"
+  ],
+  "training_airfoil_count": 191,
+  "training_high_error_fraction": 0.100023801023444,
+  "training_high_error_threshold": 1.606384674070851,
+  "training_partition": "calibration",
+  "training_residual_p90_scales": [
+    0.056207169675827034,
+    0.11641331917729936,
+    0.008550443384051325
+  ],
+  "training_rows": 16806
+}

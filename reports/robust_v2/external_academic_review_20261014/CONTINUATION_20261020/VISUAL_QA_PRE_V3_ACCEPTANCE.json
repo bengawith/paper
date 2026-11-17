@@ -1,0 +1,165 @@
+{
+  "schema": "word-content-visual-preview-v1",
+  "manuscript_docx_sha256": "46b0092eea71f6d91f6bcc275961a296eff487bb5b76fe16ddfb20d47b70de1b",
+  "referee_docx_sha256": "07114a3e9d7055565d8ecac9dfa8676b2d331fcee5d67712de36e28f21dac88e",
+  "visual_previews_created": true,
+  "all_pages_visually_inspected": false,
+  "native_microsoft_word_render_unavailable": true,
+  "manuscript": {
+    "docx": "paper/LATEST_MANUSCRIPT_FOR_AVA.docx",
+    "docx_sha256": "46b0092eea71f6d91f6bcc275961a296eff487bb5b76fe16ddfb20d47b70de1b",
+    "structural_tables": 7,
+    "embedded_figures": 8,
+    "preview_pdf": "reports/robust_v2/external_academic_review_20261014/RENDERED/manuscript.browser-preview.pdf",
+    "preview_pdf_sha256": "074ddba4403cb361b71c219fb6f08f0d7a601f8295e123aff19661ec662d8522",
+    "page_count": 14,
+    "pages": [
+      {
+        "page": 1,
+        "image": "reports/robust_v2/external_academic_review_20261014/RENDERED/manuscript-page-01.png",
+        "preview_white_fraction_approx": 0.6002,
+        "width_px": 774,
+        "height_px": 1095,
+        "visually_inspected": false
+      },
+      {
+        "page": 2,
+        "image": "reports/robust_v2/external_academic_review_20261014/RENDERED/manuscript-page-02.png",
+        "preview_white_fraction_approx": 0.5739,
+        "width_px": 774,
+        "height_px": 1095,
+        "visually_inspected": false
+      },
+      {
+        "page": 3,
+        "image": "reports/robust_v2/external_academic_review_20261014/RENDERED/manuscript-page-03.png",
+        "preview_white_fraction_approx": 0.5686,
+        "width_px": 774,
+        "height_px": 1095,
+        "visually_inspected": false
+      },
+      {
+        "page": 4,
+        "image": "reports/robust_v2/external_academic_review_20261014/RENDERED/manuscript-page-04.png",
+        "preview_white_fraction_approx": 0.5192,
+        "width_px": 774,
+        "height_px": 1095,
+        "visually_inspected": false
+      },
+      {
+        "page": 5,
+        "image": "reports/robust_v2/external_academic_review_20261014/RENDERED/manuscript-page-05.png",
+        "preview_white_fraction_approx": 0.5671,
+        "width_px": 774,
+        "height_px": 1095,
+        "visually_inspected": false
+      },
+      {
+        "page": 6,
+        "image": "reports/robust_v2/external_academic_review_20261014/RENDERED/manuscript-page-06.png",
+        "preview_white_fraction_approx": 0.6272,
+        "width_px": 774,
+        "height_px": 1095,
+        "visually_inspected": false
+      },
+      {
+        "page": 7,
+        "image": "reports/robust_v2/external_academic_review_20261014/RENDERED/manuscript-page-07.png",
+        "preview_white_fraction_approx": 0.5452,
+        "width_px": 774,
+        "height_px": 1095,
+        "visually_inspected": false
+      },
+      {
+        "page": 8,
+        "image": "reports/robust_v2/external_academic_review_20261014/RENDERED/manuscript-page-08.png",
+        "preview_white_fraction_approx": 0.5627,
+        "width_px": 774,
+        "height_px": 1095,
+        "visually_inspected": false
+      },
+      {
+        "page": 9,
+        "image": "reports/robust_v2/external_academic_review_20261014/RENDERED/manuscript-page-09.png",
+        "preview_white_fraction_approx": 0.7448,
+        "width_px": 774,
+        "height_px": 1095,
+        "visually_inspected": false
+      },
+      {
+        "page": 10,
+        "image": "reports/robust_v2/external_academic_review_20261014/RENDERED/manuscript-page-10.png",
+        "preview_white_fraction_approx": 0.7124,
+        "width_px": 774,
+        "height_px": 1095,
+        "visually_inspected": false
+      },
+      {
+        "page": 11,
+        "image": "reports/robust_v2/external_academic_review_20261014/RENDERED/manuscript-page-11.png",
+        "preview_white_fraction_approx": 0.7857,
+        "width_px": 774,
+        "height_px": 1095,
+        "visually_inspected": false
+      },
+      {
+        "page": 12,
+        "image": "reports/robust_v2/external_academic_review_20261014/RENDERED/manuscript-page-12.png",
+        "preview_white_fraction_approx": 0.7495,
+        "width_px": 774,
+        "height_px": 1095,
+        "visually_inspected": false
+      },
+      {
+        "page": 13,
+        "image": "reports/robust_v2/external_academic_review_20261014/RENDERED/manuscript-page-13.png",
+        "preview_white_fraction_approx": 0.5465,
+        "width_px": 774,
+        "height_px": 1095,
+        "visually_inspected": false
+      },
+      {
+        "page": 14,
+        "image": "reports/robust_v2/external_academic_review_20261014/RENDERED/manuscript-page-14.png",
+        "preview_white_fraction_approx": 0.8027,
+        "width_px": 774,
+        "height_px": 1095,
+        "visually_inspected": false
+      }
+    ],
+    "native_word_render": false,
+    "preview_type": "Chromium HTML reconstruction from actual DOCX paragraphs,tables,images",
+    "limitation": "Does not prove native Microsoft Word page breaks, headers, footers or exact typography."
+  },
+  "referee": {
+    "docx": "reports/robust_v2/external_academic_review_20261014/SCIENTIFIC_REVIEW_REPORT.docx",
+    "docx_sha256": "07114a3e9d7055565d8ecac9dfa8676b2d331fcee5d67712de36e28f21dac88e",
+    "structural_tables": 0,
+    "embedded_figures": 0,
+    "preview_pdf": "reports/robust_v2/external_academic_review_20261014/RENDERED/referee.browser-preview.pdf",
+    "preview_pdf_sha256": "7df7d0388aa82540eebfcb31aa9033313da8ecff03283fd2e96e3853f1de3e19",
+    "page_count": 2,
+    "pages": [
+      {
+        "page": 1,
+        "image": "reports/robust_v2/external_academic_review_20261014/RENDERED/referee-page-01.png",
+        "preview_white_fraction_approx": 0.5202,
+        "width_px": 774,
+        "height_px": 1095,
+        "visually_inspected": false
+      },
+      {
+        "page": 2,
+        "image": "reports/robust_v2/external_academic_review_20261014/RENDERED/referee-page-02.png",
+        "preview_white_fraction_approx": 0.9912,
+        "width_px": 774,
+        "height_px": 1095,
+        "visually_inspected": false
+      }
+    ],
+    "native_word_render": false,
+    "preview_type": "Chromium HTML reconstruction from actual DOCX paragraphs,tables,images",
+    "limitation": "Does not prove native Microsoft Word page breaks, headers, footers or exact typography."
+  },
+  "reviewer_action": "Inspect every generated page PNG and contact sheet, record abnormalities and re-render. Do not claim native Word layout parity."
+}

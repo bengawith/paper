@@ -1,0 +1,11 @@
+{
+  "schema": "posttraining-opt-in-resource-guard-revision-v1",
+  "source_path": "src/robust_airfoil/modelling/train.py",
+  "training_source_sha256": "635559a75216267f277e29127cd7f9723d743b6b26c393b77fbfc85288cfbec3",
+  "new_source_sha256": "957de4e6dd58e831e1ce3f987a2d5cde3b5a64407733b0eb25aab8bd24b2d331",
+  "original_controlled_five_member_weights_retrained": false,
+  "original_checkpoint_receipts_modified": false,
+  "enabled_in_original_member_training": false,
+  "change_scope": "Adds opt-in guard before each new epoch; existing default False remains unchanged",
+  "source_provenance_boundary": "Already produced weights remain bound to original prior source hash. Resume of an existing checkpoint under the revised source must refuse via its context hash."
+}

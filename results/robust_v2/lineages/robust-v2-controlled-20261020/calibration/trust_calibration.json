@@ -1,0 +1,87 @@
+{
+  "alpha_coverage_deg": [
+    -12.0,
+    16.0
+  ],
+  "calibration_points": 16806,
+  "empirical_95_interval_coverage": {
+    "cl": 0.950077353326193,
+    "cm": 0.950077353326193,
+    "log_cd": 0.950077353326193
+  },
+  "ensemble_disagreement_quantiles": {
+    "cl": {
+      "0.5": 0.026766834091366855,
+      "0.9": 0.057720975927107045,
+      "0.95": 0.07222945128035928,
+      "0.99": 0.12337680255855925,
+      "trusted_threshold_from_residual_tolerance": 0.19489966576181822
+    },
+    "cm": {
+      "0.5": 0.0028018150546800027,
+      "0.9": 0.0064373763277040166,
+      "0.95": 0.00785805880687568,
+      "0.99": 0.012640479790918976,
+      "trusted_threshold_from_residual_tolerance": 0.03440639852969301
+    },
+    "log_cd": {
+      "0.5": 0.035377208697391326,
+      "0.9": 0.09071609004043497,
+      "0.95": 0.1289738981149257,
+      "0.99": 0.3003411649106245,
+      "trusted_threshold_from_residual_tolerance": 0.6160039429194701
+    }
+  },
+  "method": "split_conformal_residual_band_with_empirical_trust_thresholds",
+  "residual_absolute_quantiles": {
+    "cl": {
+      "0.5": 0.015404972171783382,
+      "0.9": 0.056283723640441874,
+      "0.95": 0.08706801242828369,
+      "0.99": 0.1877578580856323
+    },
+    "cm": {
+      "0.5": 0.0018901812016963952,
+      "0.9": 0.0085537590265274,
+      "0.95": 0.015648916888237,
+      "0.99": 0.02657690272331238
+    },
+    "log_cd": {
+      "0.5": 0.02502127438891133,
+      "0.9": 0.11666858949458891,
+      "0.95": 0.18454483047549042,
+      "0.99": 0.488085473367148
+    }
+  },
+  "residual_tolerance_reference": 0.18454483047549042,
+  "source_tiers": [
+    "local_xfoil_699_exact_cst"
+  ],
+  "support_distance_quantiles": {
+    "0.5": 0.9451709878043335,
+    "0.9": 1.8161766784556774,
+    "0.95": 2.1981396806032785,
+    "0.99": 4.397050648420578,
+    "trusted_threshold_from_residual_tolerance": 1.1576682500105302
+  },
+  "target_coverage": {
+    "cl": [
+      -1.3364,
+      2.2235
+    ],
+    "cm": [
+      -0.2667,
+      0.0817
+    ],
+    "log_cd": [
+      -6.767993336606978,
+      -1.4272830361972446
+    ]
+  },
+  "trusted_calibration_fraction": 0.7021896941568487,
+  "uncertainty_terms": [
+    "ensemble disagreement",
+    "empirical predictive uncertainty",
+    "calibrated residual band"
+  ]
+}

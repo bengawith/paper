@@ -1,0 +1,8 @@
+{
+  "queries": 16806,
+  "reference_states": 74946,
+  "max_absolute_distance_difference": 1.3322676295501878e-15,
+  "full_state_tree_seconds": 2.5790000000270084,
+  "exact_grouped_tree_seconds": 0.7179999999934807,
+  "grouped_index_source_sha256": "bb6a6700a20f6811441677b737c565c515f1bd861323853ae21881143ae91cd9"
+}

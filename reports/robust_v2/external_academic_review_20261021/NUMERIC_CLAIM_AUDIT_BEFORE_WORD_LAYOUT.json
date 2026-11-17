@@ -1,0 +1,508 @@
+{
+  "schema": "new-full-manuscript-primary-source-and-science-audit-v1",
+  "checks": 46,
+  "all_reconciled": true,
+  "updated_source_sha256": "b0cb30814258ba343a7ce9655dbc01ced43d5200bc9ac1b35301edad630d5c02",
+  "word_sha256": "07b5e90497ca44688478d155f8ec6b181d2a4bb8c9e5d37a97438aae43878ea5",
+  "original_author_style_source_sha256": "cd6807e1b4211761eaa3b055c6461b1ba6353585bd347364d87e89f3f1b98125",
+  "bibliography29_csv_sha256": "c2b7fee7d7ecd0f0dfc1952c24657cf74089e14c51d924a7c9942b838c27096f",
+  "claims": [
+    {
+      "claim": "Geometry population",
+      "source_key": "requested_geometries",
+      "source_path": "results/robust_v2/lineages/robust-v2-controlled-20261020/DATA_MANIFEST.json",
+      "source_sha256": "fc14f6d6fdcb2d01246c2e855049e4215d3c316b7e318bf01b9fb1131223693a",
+      "source_value": 1256,
+      "paper_displayed": "1,256",
+      "status": "EXACT_SOURCE_RECONCILED",
+      "limitations": "Numerical solver / finite search / observed state conditional results; not independent CFD or physical population."
+    },
+    {
+      "claim": "Requested XFOIL states",
+      "source_key": "requested_unique_states",
+      "source_path": "results/robust_v2/lineages/robust-v2-controlled-20261020/DATA_MANIFEST.json",
+      "source_sha256": "fc14f6d6fdcb2d01246c2e855049e4215d3c316b7e318bf01b9fb1131223693a",
+      "source_value": 141928,
+      "paper_displayed": "141,928",
+      "status": "EXACT_SOURCE_RECONCILED",
+      "limitations": "Numerical solver / finite search / observed state conditional results; not independent CFD or physical population."
+    },
+    {
+      "claim": "Observed XFOIL states",
+      "source_key": "observed_states",
+      "source_path": "results/robust_v2/lineages/robust-v2-controlled-20261020/DATA_MANIFEST.json",
+      "source_sha256": "fc14f6d6fdcb2d01246c2e855049e4215d3c316b7e318bf01b9fb1131223693a",
+      "source_value": 106931,
+      "paper_displayed": "106,931",
+      "status": "EXACT_SOURCE_RECONCILED",
+      "limitations": "Numerical solver / finite search / observed state conditional results; not independent CFD or physical population."
+    },
+    {
+      "claim": "Numerically missing states",
+      "source_key": "missing_requested_states",
+      "source_path": "results/robust_v2/lineages/robust-v2-controlled-20261020/DATA_MANIFEST.json",
+      "source_sha256": "fc14f6d6fdcb2d01246c2e855049e4215d3c316b7e318bf01b9fb1131223693a",
+      "source_value": 34997,
+      "paper_displayed": "34,997",
+      "status": "EXACT_SOURCE_RECONCILED",
+      "limitations": "Numerical solver / finite search / observed state conditional results; not independent CFD or physical population."
+    },
+    {
+      "claim": "Geometries observed",
+      "source_key": "geometries_with_observations",
+      "source_path": "results/robust_v2/lineages/robust-v2-controlled-20261020/DATA_MANIFEST.json",
+      "source_sha256": "fc14f6d6fdcb2d01246c2e855049e4215d3c316b7e318bf01b9fb1131223693a",
+      "source_value": 1224,
+      "paper_displayed": "1,224",
+      "status": "EXACT_SOURCE_RECONCILED",
+      "limitations": "Numerical solver / finite search / observed state conditional results; not independent CFD or physical population."
+    },
+    {
+      "claim": "Complete polar count",
+      "source_key": "complete_grid_geometries",
+      "source_path": "results/robust_v2/lineages/robust-v2-controlled-20261020/DATA_MANIFEST.json",
+      "source_sha256": "fc14f6d6fdcb2d01246c2e855049e4215d3c316b7e318bf01b9fb1131223693a",
+      "source_value": 44,
+      "paper_displayed": "44",
+      "status": "EXACT_SOURCE_RECONCILED",
+      "limitations": "Numerical solver / finite search / observed state conditional results; not independent CFD or physical population."
+    },
+    {
+      "claim": "calibration geometry identities",
+      "source_key": "split_counts/airfoils",
+      "source_path": "results/robust_v2/lineages/robust-v2-controlled-20261020/DATA_MANIFEST.json",
+      "source_sha256": "fc14f6d6fdcb2d01246c2e855049e4215d3c316b7e318bf01b9fb1131223693a",
+      "source_value": 191,
+      "paper_displayed": "191",
+      "status": "EXACT_SOURCE_RECONCILED",
+      "limitations": "Numerical solver / finite search / observed state conditional results; not independent CFD or physical population."
+    },
+    {
+      "claim": "calibration observed states",
+      "source_key": "split_counts/states",
+      "source_path": "results/robust_v2/lineages/robust-v2-controlled-20261020/DATA_MANIFEST.json",
+      "source_sha256": "fc14f6d6fdcb2d01246c2e855049e4215d3c316b7e318bf01b9fb1131223693a",
+      "source_value": 16806,
+      "paper_displayed": "16,806",
+      "status": "EXACT_SOURCE_RECONCILED",
+      "limitations": "Numerical solver / finite search / observed state conditional results; not independent CFD or physical population."
+    },
+    {
+      "claim": "development geometry identities",
+      "source_key": "split_counts/airfoils",
+      "source_path": "results/robust_v2/lineages/robust-v2-controlled-20261020/DATA_MANIFEST.json",
+      "source_sha256": "fc14f6d6fdcb2d01246c2e855049e4215d3c316b7e318bf01b9fb1131223693a",
+      "source_value": 858,
+      "paper_displayed": "858",
+      "status": "EXACT_SOURCE_RECONCILED",
+      "limitations": "Numerical solver / finite search / observed state conditional results; not independent CFD or physical population."
+    },
+    {
+      "claim": "development observed states",
+      "source_key": "split_counts/states",
+      "source_path": "results/robust_v2/lineages/robust-v2-controlled-20261020/DATA_MANIFEST.json",
+      "source_sha256": "fc14f6d6fdcb2d01246c2e855049e4215d3c316b7e318bf01b9fb1131223693a",
+      "source_value": 74946,
+      "paper_displayed": "74,946",
+      "status": "EXACT_SOURCE_RECONCILED",
+      "limitations": "Numerical solver / finite search / observed state conditional results; not independent CFD or physical population."
+    },
+    {
+      "claim": "locked_test geometry identities",
+      "source_key": "split_counts/airfoils",
+      "source_path": "results/robust_v2/lineages/robust-v2-controlled-20261020/DATA_MANIFEST.json",
+      "source_sha256": "fc14f6d6fdcb2d01246c2e855049e4215d3c316b7e318bf01b9fb1131223693a",
+      "source_value": 175,
+      "paper_displayed": "175",
+      "status": "EXACT_SOURCE_RECONCILED",
+      "limitations": "Numerical solver / finite search / observed state conditional results; not independent CFD or physical population."
+    },
+    {
+      "claim": "locked_test observed states",
+      "source_key": "split_counts/states",
+      "source_path": "results/robust_v2/lineages/robust-v2-controlled-20261020/DATA_MANIFEST.json",
+      "source_sha256": "fc14f6d6fdcb2d01246c2e855049e4215d3c316b7e318bf01b9fb1131223693a",
+      "source_value": 15179,
+      "paper_displayed": "15,179",
+      "status": "EXACT_SOURCE_RECONCILED",
+      "limitations": "Numerical solver / finite search / observed state conditional results; not independent CFD or physical population."
+    },
+    {
+      "claim": "Protected state count",
+      "source_key": "states",
+      "source_path": "reports/robust_v2/external_academic_review_20261014/CONTROLLED_MODEL/REPAIRED_TEST_METRICS.json",
+      "source_sha256": "d4a4c53eb808738a60542775064fa6417a057a94f8e0c5163adc01e1b1482935",
+      "source_value": 15179,
+      "paper_displayed": "15,179",
+      "status": "EXACT_SOURCE_RECONCILED",
+      "limitations": "Numerical solver / finite search / observed state conditional results; not independent CFD or physical population."
+    },
+    {
+      "claim": "Trusted test states",
+      "source_key": "accepted_states",
+      "source_path": "reports/robust_v2/external_academic_review_20261014/CONTROLLED_MODEL/REPAIRED_TEST_METRICS.json",
+      "source_sha256": "d4a4c53eb808738a60542775064fa6417a057a94f8e0c5163adc01e1b1482935",
+      "source_value": 9913,
+      "paper_displayed": "9,913",
+      "status": "EXACT_SOURCE_RECONCILED",
+      "limitations": "Numerical solver / finite search / observed state conditional results; not independent CFD or physical population."
+    },
+    {
+      "claim": "Rejected test states",
+      "source_key": "rejected_states",
+      "source_path": "reports/robust_v2/external_academic_review_20261014/CONTROLLED_MODEL/REPAIRED_TEST_METRICS.json",
+      "source_sha256": "d4a4c53eb808738a60542775064fa6417a057a94f8e0c5163adc01e1b1482935",
+      "source_value": 5266,
+      "paper_displayed": "5,266",
+      "status": "EXACT_SOURCE_RECONCILED",
+      "limitations": "Numerical solver / finite search / observed state conditional results; not independent CFD or physical population."
+    },
+    {
+      "claim": "Protected test R2 cl",
+      "source_key": "metrics/all/cl/r2",
+      "source_path": "reports/robust_v2/external_academic_review_20261014/CONTROLLED_MODEL/REPAIRED_TEST_METRICS.json",
+      "source_sha256": "d4a4c53eb808738a60542775064fa6417a057a94f8e0c5163adc01e1b1482935",
+      "source_value": 0.9977777539359411,
+      "paper_displayed": "0.9978",
+      "status": "EXACT_SOURCE_RECONCILED",
+      "limitations": "Numerical solver / finite search / observed state conditional results; not independent CFD or physical population."
+    },
+    {
+      "claim": "Protected test R2 log_cd",
+      "source_key": "metrics/all/log_cd/r2",
+      "source_path": "reports/robust_v2/external_academic_review_20261014/CONTROLLED_MODEL/REPAIRED_TEST_METRICS.json",
+      "source_sha256": "d4a4c53eb808738a60542775064fa6417a057a94f8e0c5163adc01e1b1482935",
+      "source_value": 0.9817561609733763,
+      "paper_displayed": "0.9818",
+      "status": "EXACT_SOURCE_RECONCILED",
+      "limitations": "Numerical solver / finite search / observed state conditional results; not independent CFD or physical population."
+    },
+    {
+      "claim": "Protected test R2 cm",
+      "source_key": "metrics/all/cm/r2",
+      "source_path": "reports/robust_v2/external_academic_review_20261014/CONTROLLED_MODEL/REPAIRED_TEST_METRICS.json",
+      "source_sha256": "d4a4c53eb808738a60542775064fa6417a057a94f8e0c5163adc01e1b1482935",
+      "source_value": 0.9881679420821691,
+      "paper_displayed": "0.9882",
+      "status": "EXACT_SOURCE_RECONCILED",
+      "limitations": "Numerical solver / finite search / observed state conditional results; not independent CFD or physical population."
+    },
+    {
+      "claim": "Protected test R2 cd",
+      "source_key": "metrics/all/cd/r2",
+      "source_path": "reports/robust_v2/external_academic_review_20261014/CONTROLLED_MODEL/REPAIRED_TEST_METRICS.json",
+      "source_sha256": "d4a4c53eb808738a60542775064fa6417a057a94f8e0c5163adc01e1b1482935",
+      "source_value": 0.944361497666776,
+      "paper_displayed": "0.9444",
+      "status": "EXACT_SOURCE_RECONCILED",
+      "limitations": "Numerical solver / finite search / observed state conditional results; not independent CFD or physical population."
+    },
+    {
+      "claim": "Calibration risk AUROC support_only",
+      "source_key": "models/support_only/auroc",
+      "source_path": "reports/robust_v2/external_academic_review_20261014/CONTROLLED_MODEL/RISK_OOF/REPAIRED_RISK_OOF.json",
+      "source_sha256": "c101230a6a68239f38678f706c8678a98b00575c64590d5db74c7a3e9e4189ef",
+      "source_value": 0.7531976834215988,
+      "paper_displayed": "0.753",
+      "status": "EXACT_SOURCE_RECONCILED",
+      "limitations": "Numerical solver / finite search / observed state conditional results; not independent CFD or physical population."
+    },
+    {
+      "claim": "Calibration risk AUROC support_plus_ensemble",
+      "source_key": "models/support_plus_ensemble/auroc",
+      "source_path": "reports/robust_v2/external_academic_review_20261014/CONTROLLED_MODEL/RISK_OOF/REPAIRED_RISK_OOF.json",
+      "source_sha256": "c101230a6a68239f38678f706c8678a98b00575c64590d5db74c7a3e9e4189ef",
+      "source_value": 0.8893086302962732,
+      "paper_displayed": "0.889",
+      "status": "EXACT_SOURCE_RECONCILED",
+      "limitations": "Numerical solver / finite search / observed state conditional results; not independent CFD or physical population."
+    },
+    {
+      "claim": "Calibration risk AUROC ensemble_only",
+      "source_key": "models/ensemble_only/auroc",
+      "source_path": "reports/robust_v2/external_academic_review_20261014/CONTROLLED_MODEL/RISK_OOF/REPAIRED_RISK_OOF.json",
+      "source_sha256": "c101230a6a68239f38678f706c8678a98b00575c64590d5db74c7a3e9e4189ef",
+      "source_value": 0.8843892015637812,
+      "paper_displayed": "0.884",
+      "status": "EXACT_SOURCE_RECONCILED",
+      "limitations": "Numerical solver / finite search / observed state conditional results; not independent CFD or physical population."
+    },
+    {
+      "claim": "Confirmation requested geometries",
+      "source_key": "requested_geometries",
+      "source_path": "reports/robust_v2/external_academic_review_20261014/CONTROLLED_MODEL/CONFIRMATION/CONFIRMATION_RESULTS.json",
+      "source_sha256": "a7fa48eeff1e3d20435f775c985fe6d147fadf158b4721a38bd83174ee9cedc4",
+      "source_value": 200,
+      "paper_displayed": "200",
+      "status": "EXACT_SOURCE_RECONCILED",
+      "limitations": "Numerical solver / finite search / observed state conditional results; not independent CFD or physical population."
+    },
+    {
+      "claim": "Confirmation requested labels",
+      "source_key": "requested_states",
+      "source_path": "reports/robust_v2/external_academic_review_20261014/CONTROLLED_MODEL/CONFIRMATION/CONFIRMATION_RESULTS.json",
+      "source_sha256": "a7fa48eeff1e3d20435f775c985fe6d147fadf158b4721a38bd83174ee9cedc4",
+      "source_value": 22600,
+      "paper_displayed": "22,600",
+      "status": "EXACT_SOURCE_RECONCILED",
+      "limitations": "Numerical solver / finite search / observed state conditional results; not independent CFD or physical population."
+    },
+    {
+      "claim": "Confirmation observations",
+      "source_key": "observed_states",
+      "source_path": "reports/robust_v2/external_academic_review_20261014/CONTROLLED_MODEL/CONFIRMATION/CONFIRMATION_RESULTS.json",
+      "source_sha256": "a7fa48eeff1e3d20435f775c985fe6d147fadf158b4721a38bd83174ee9cedc4",
+      "source_value": 17968,
+      "paper_displayed": "17,968",
+      "status": "EXACT_SOURCE_RECONCILED",
+      "limitations": "Numerical solver / finite search / observed state conditional results; not independent CFD or physical population."
+    },
+    {
+      "claim": "Confirmation missing labels",
+      "source_key": "missing_solver_observations",
+      "source_path": "reports/robust_v2/external_academic_review_20261014/CONTROLLED_MODEL/CONFIRMATION/CONFIRMATION_RESULTS.json",
+      "source_sha256": "a7fa48eeff1e3d20435f775c985fe6d147fadf158b4721a38bd83174ee9cedc4",
+      "source_value": 4632,
+      "paper_displayed": "4,632",
+      "status": "EXACT_SOURCE_RECONCILED",
+      "limitations": "Numerical solver / finite search / observed state conditional results; not independent CFD or physical population."
+    },
+    {
+      "claim": "Confirmation trust accepted",
+      "source_key": "accepted_observed_states",
+      "source_path": "reports/robust_v2/external_academic_review_20261014/CONTROLLED_MODEL/CONFIRMATION/CONFIRMATION_RESULTS.json",
+      "source_sha256": "a7fa48eeff1e3d20435f775c985fe6d147fadf158b4721a38bd83174ee9cedc4",
+      "source_value": 11718,
+      "paper_displayed": "11,718",
+      "status": "EXACT_SOURCE_RECONCILED",
+      "limitations": "Numerical solver / finite search / observed state conditional results; not independent CFD or physical population."
+    },
+    {
+      "claim": "Confirmation ranking support_only",
+      "source_key": "risk_models/support_only/auroc",
+      "source_path": "reports/robust_v2/external_academic_review_20261014/CONTROLLED_MODEL/CONFIRMATION/CONFIRMATION_RESULTS.json",
+      "source_sha256": "a7fa48eeff1e3d20435f775c985fe6d147fadf158b4721a38bd83174ee9cedc4",
+      "source_value": 0.5345943477641083,
+      "paper_displayed": "0.535",
+      "status": "EXACT_SOURCE_RECONCILED",
+      "limitations": "Numerical solver / finite search / observed state conditional results; not independent CFD or physical population."
+    },
+    {
+      "claim": "Confirmation ranking support_plus_ensemble",
+      "source_key": "risk_models/support_plus_ensemble/auroc",
+      "source_path": "reports/robust_v2/external_academic_review_20261014/CONTROLLED_MODEL/CONFIRMATION/CONFIRMATION_RESULTS.json",
+      "source_sha256": "a7fa48eeff1e3d20435f775c985fe6d147fadf158b4721a38bd83174ee9cedc4",
+      "source_value": 0.8018535179043464,
+      "paper_displayed": "0.802",
+      "status": "EXACT_SOURCE_RECONCILED",
+      "limitations": "Numerical solver / finite search / observed state conditional results; not independent CFD or physical population."
+    },
+    {
+      "claim": "Confirmation ranking ensemble_only",
+      "source_key": "risk_models/ensemble_only/auroc",
+      "source_path": "reports/robust_v2/external_academic_review_20261014/CONTROLLED_MODEL/CONFIRMATION/CONFIRMATION_RESULTS.json",
+      "source_sha256": "a7fa48eeff1e3d20435f775c985fe6d147fadf158b4721a38bd83174ee9cedc4",
+      "source_value": 0.8209809178168179,
+      "paper_displayed": "0.821",
+      "status": "EXACT_SOURCE_RECONCILED",
+      "limitations": "Numerical solver / finite search / observed state conditional results; not independent CFD or physical population."
+    },
+    {
+      "claim": "Total robust seed final feasible",
+      "source_key": "per_seed/feasible_entries",
+      "source_path": "results/robust_v2/lineages/robust-v2-controlled-20261020/optimisation_production/PRODUCTION_SUMMARY.json",
+      "source_sha256": "fcf8cf689a8f4b439155723615db6f6d3bc952a91a7158bf8cda117f9f8df5a6",
+      "source_value": 371,
+      "paper_displayed": "371",
+      "status": "EXACT_SOURCE_RECONCILED",
+      "limitations": "Numerical solver / finite search / observed state conditional results; not independent CFD or physical population."
+    },
+    {
+      "claim": "Robust generations",
+      "source_key": "per_seed/generations",
+      "source_path": "results/robust_v2/lineages/robust-v2-controlled-20261020/optimisation_production/PRODUCTION_SUMMARY.json",
+      "source_sha256": "fcf8cf689a8f4b439155723615db6f6d3bc952a91a7158bf8cda117f9f8df5a6",
+      "source_value": 2000,
+      "paper_displayed": "2,000",
+      "status": "EXACT_SOURCE_RECONCILED",
+      "limitations": "Numerical solver / finite search / observed state conditional results; not independent CFD or physical population."
+    },
+    {
+      "claim": "Independent robust population evals",
+      "source_key": "aggregate_candidate_evaluations",
+      "source_path": "reports/robust_v2/external_academic_review_20261014/CONTINUATION_20261020/FULL_TEN_SEED_INDEPENDENT_RECONCILIATION.json",
+      "source_sha256": "44b2ce13059bd188c4930558ccb984844a6e48b263c94761cb5cdf71f453cd87",
+      "source_value": 256000,
+      "paper_displayed": "256,000",
+      "status": "EXACT_SOURCE_RECONCILED",
+      "limitations": "Numerical solver / finite search / observed state conditional results; not independent CFD or physical population."
+    },
+    {
+      "claim": "Reference scaled front distance",
+      "source_key": "reference_scaled_agreement/pairwise_objective_distance_mean",
+      "source_path": "results/robust_v2/lineages/robust-v2-controlled-20261020/optimisation_production/PRODUCTION_SUMMARY.json",
+      "source_sha256": "fcf8cf689a8f4b439155723615db6f6d3bc952a91a7158bf8cda117f9f8df5a6",
+      "source_value": 0.024277068431672866,
+      "paper_displayed": "0.0243",
+      "status": "EXACT_SOURCE_RECONCILED",
+      "limitations": "Numerical solver / finite search / observed state conditional results; not independent CFD or physical population."
+    },
+    {
+      "claim": "Historical pooled range distance",
+      "source_key": "original_pooled_range_diagnostic/pairwise_objective_distance_mean",
+      "source_path": "results/robust_v2/lineages/robust-v2-controlled-20261020/optimisation_production/PRODUCTION_SUMMARY.json",
+      "source_sha256": "fcf8cf689a8f4b439155723615db6f6d3bc952a91a7158bf8cda117f9f8df5a6",
+      "source_value": 0.10290267388257869,
+      "paper_displayed": "0.1029",
+      "status": "EXACT_SOURCE_RECONCILED",
+      "limitations": "Numerical solver / finite search / observed state conditional results; not independent CFD or physical population."
+    },
+    {
+      "claim": "Strict XFOIL scheduled cases",
+      "source_key": "cases_requested",
+      "source_path": "results/robust_v2/lineages/robust-v2-controlled-20261020/selected_study/SELECTED_XFOIL_SUMMARY.json",
+      "source_sha256": "17234ed2a0db773953ad10b1b4d83e14400f233ae640cb018a38973cbd0a55fe",
+      "source_value": 819,
+      "paper_displayed": "819",
+      "status": "EXACT_SOURCE_RECONCILED",
+      "limitations": "Numerical solver / finite search / observed state conditional results; not independent CFD or physical population."
+    },
+    {
+      "claim": "Strict XFOIL admissible cases",
+      "source_key": "usable_cases",
+      "source_path": "results/robust_v2/lineages/robust-v2-controlled-20261020/selected_study/SELECTED_XFOIL_SUMMARY.json",
+      "source_sha256": "17234ed2a0db773953ad10b1b4d83e14400f233ae640cb018a38973cbd0a55fe",
+      "source_value": 290,
+      "paper_displayed": "290",
+      "status": "EXACT_SOURCE_RECONCILED",
+      "limitations": "Numerical solver / finite search / observed state conditional results; not independent CFD or physical population."
+    },
+    {
+      "claim": "Strict XFOIL unusable cases",
+      "source_key": "cases_failed_or_not_admitted",
+      "source_path": "results/robust_v2/lineages/robust-v2-controlled-20261020/selected_study/SELECTED_XFOIL_SUMMARY.json",
+      "source_sha256": "17234ed2a0db773953ad10b1b4d83e14400f233ae640cb018a38973cbd0a55fe",
+      "source_value": 529,
+      "paper_displayed": "529",
+      "status": "EXACT_SOURCE_RECONCILED",
+      "limitations": "Numerical solver / finite search / observed state conditional results; not independent CFD or physical population."
+    },
+    {
+      "claim": "Fresh 2048 reference mean",
+      "source_key": "rows/sensitivity",
+      "source_path": "results/robust_v2/lineages/robust-v2-controlled-20261020/selected_study/FINAL_2048_SCENARIO_EVALUATION.json",
+      "source_sha256": "6203883c4a0c723e0a0d757314337650be72f12ba556c9947a5b0df0c2a609b5",
+      "source_value": 0.014520226037028496,
+      "paper_displayed": "0.01452",
+      "status": "EXACT_SOURCE_RECONCILED",
+      "limitations": "Numerical solver / finite search / observed state conditional results; not independent CFD or physical population."
+    },
+    {
+      "claim": "Fresh 2048 reference cvar95",
+      "source_key": "rows/sensitivity",
+      "source_path": "results/robust_v2/lineages/robust-v2-controlled-20261020/selected_study/FINAL_2048_SCENARIO_EVALUATION.json",
+      "source_sha256": "6203883c4a0c723e0a0d757314337650be72f12ba556c9947a5b0df0c2a609b5",
+      "source_value": 0.018019464216889523,
+      "paper_displayed": "0.018019",
+      "status": "EXACT_SOURCE_RECONCILED",
+      "limitations": "Numerical solver / finite search / observed state conditional results; not independent CFD or physical population."
+    },
+    {
+      "claim": "Fresh 2048 risk_knee mean",
+      "source_key": "rows/sensitivity",
+      "source_path": "results/robust_v2/lineages/robust-v2-controlled-20261020/selected_study/FINAL_2048_SCENARIO_EVALUATION.json",
+      "source_sha256": "6203883c4a0c723e0a0d757314337650be72f12ba556c9947a5b0df0c2a609b5",
+      "source_value": 0.010867083991894365,
+      "paper_displayed": "0.010867",
+      "status": "EXACT_SOURCE_RECONCILED",
+      "limitations": "Numerical solver / finite search / observed state conditional results; not independent CFD or physical population."
+    },
+    {
+      "claim": "Fresh 2048 risk_knee cvar95",
+      "source_key": "rows/sensitivity",
+      "source_path": "results/robust_v2/lineages/robust-v2-controlled-20261020/selected_study/FINAL_2048_SCENARIO_EVALUATION.json",
+      "source_sha256": "6203883c4a0c723e0a0d757314337650be72f12ba556c9947a5b0df0c2a609b5",
+      "source_value": 0.015444921973160637,
+      "paper_displayed": "0.015445",
+      "status": "EXACT_SOURCE_RECONCILED",
+      "limitations": "Numerical solver / finite search / observed state conditional results; not independent CFD or physical population."
+    },
+    {
+      "claim": "Paired selected XFOIL knee_a",
+      "source_key": "paired_conditional_results/sensitivity_0p5pct_a_risk_knee",
+      "source_path": "results/robust_v2/lineages/robust-v2-controlled-20261020/selected_study/SELECTED_XFOIL_SUMMARY.json",
+      "source_sha256": "17234ed2a0db773953ad10b1b4d83e14400f233ae640cb018a38973cbd0a55fe",
+      "source_value": {
+        "candidate_max": 0.007209605700802648,
+        "candidate_mean": 0.006693285863962187,
+        "mean_difference": 0.0011977726333172595,
+        "mean_reduction": 0.15178858878440818,
+        "pairs": 15,
+        "reference_max": 0.008595286721095358,
+        "reference_mean": 0.007891058497279444
+      },
+      "paper_displayed": "15 pairs; 15.2% approx",
+      "status": "EXACT_SOURCE_RECONCILED",
+      "limitations": "Only successfully paired solver cases; full complete-case missingness preserved."
+    },
+    {
+      "claim": "Paired selected XFOIL knee_b",
+      "source_key": "paired_conditional_results/sensitivity_0p5pct_b_risk_knee",
+      "source_path": "results/robust_v2/lineages/robust-v2-controlled-20261020/selected_study/SELECTED_XFOIL_SUMMARY.json",
+      "source_sha256": "17234ed2a0db773953ad10b1b4d83e14400f233ae640cb018a38973cbd0a55fe",
+      "source_value": {
+        "candidate_max": 0.006953410811323139,
+        "candidate_mean": 0.00663944318222968,
+        "mean_difference": 0.0011600925640116613,
+        "mean_reduction": 0.14873866878175654,
+        "pairs": 14,
+        "reference_max": 0.00813915297692392,
+        "reference_mean": 0.007799535746241342
+      },
+      "paper_displayed": "14 pairs; 14.9% approx",
+      "status": "EXACT_SOURCE_RECONCILED",
+      "limitations": "Only successfully paired solver cases; full complete-case missingness preserved."
+    },
+    {
+      "claim": "Paired selected XFOIL control_a",
+      "source_key": "paired_conditional_results/sensitivity_0p5pct_a_nominal_control",
+      "source_path": "results/robust_v2/lineages/robust-v2-controlled-20261020/selected_study/SELECTED_XFOIL_SUMMARY.json",
+      "source_sha256": "17234ed2a0db773953ad10b1b4d83e14400f233ae640cb018a38973cbd0a55fe",
+      "source_value": {
+        "candidate_max": 0.00703854277345859,
+        "candidate_mean": 0.006292113007428543,
+        "mean_difference": 0.0015492654806475298,
+        "mean_reduction": 0.19757565369448848,
+        "pairs": 21,
+        "reference_max": 0.008621239791576205,
+        "reference_mean": 0.007841378488076072
+      },
+      "paper_displayed": "21 pairs; 19.8% approx",
+      "status": "EXACT_SOURCE_RECONCILED",
+      "limitations": "Only successfully paired solver cases; full complete-case missingness preserved."
+    },
+    {
+      "claim": "Paired selected XFOIL control_b",
+      "source_key": "paired_conditional_results/sensitivity_0p5pct_b_nominal_control",
+      "source_path": "results/robust_v2/lineages/robust-v2-controlled-20261020/selected_study/SELECTED_XFOIL_SUMMARY.json",
+      "source_sha256": "17234ed2a0db773953ad10b1b4d83e14400f233ae640cb018a38973cbd0a55fe",
+      "source_value": {
+        "candidate_max": 0.007454792776463015,
+        "candidate_mean": 0.006374750169327905,
+        "mean_difference": 0.001471293086755364,
+        "mean_reduction": 0.1875203894159807,
+        "pairs": 22,
+        "reference_max": 0.008457751617449657,
+        "reference_mean": 0.00784604325608327
+      },
+      "paper_displayed": "22 pairs; 18.8% approx",
+      "status": "EXACT_SOURCE_RECONCILED",
+      "limitations": "Only successfully paired solver cases; full complete-case missingness preserved."
+    }
+  ],
+  "scientific_limits": [
+    "Strict XFOIL success is conditional on complete solver polars (290/819).",
+    "200 sealed geometries are development-mixtures and XFOIL is shared with train labels.",
+    "No independent CFD, validated manufacturing prior, physical design conclusion or author signoff is represented as completed."
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "schema": "xfoil-two-independent-scramble-sensitivity-0p5pct-v1",
+  "condition": "Re=1e6, Mach=0, Ncrit=9, 0.5% chord prescribed correlated perturbation",
+  "runs": [
+    {
+      "status": "complete",
+      "directory": "results/robust_v2/submission_review_20261014/xfoil_eps005_n128",
+      "summary_sha256": "a106eb739c18d2948d79d31c3b1e653f617d9bdc246d523b2c415a47fa7bf270",
+      "scramble_seed_offset": 50000,
+      "scramble_seed_note": "Legacy source used fixed offset 50000",
+      "requested": 128,
+      "reference_usable": 105,
+      "candidate_usable": 110,
+      "outside_usable": 118,
+      "paired_usable": 92,
+      "paired_reference_mean": 0.007774056957696679,
+      "paired_candidate_mean": 0.006576882509640224,
+      "paired_improvement_mean": 0.0011971744480564531,
+      "paired_improvement_fraction": 0.15399609940742648,
+      "paired_improvement_positive_count": 92,
+      "paired_reference_empirical_cvar95": 0.008502452981763702,
+      "paired_candidate_empirical_cvar95": 0.007447780573310334,
+      "paired_empirical_cvar95_candidate_change_fraction": -0.12404330970314781,
+      "max_observed_reference": 0.008620201808866627,
+      "max_observed_candidate": 0.007460348505848433,
+      "failure_selection_warning": "All values conditioned on complete sweeps and available lift roots. Solver failures are never imputed; tails are not population estimates."
+    },
+    {
+      "status": "complete",
+      "directory": "results/robust_v2/submission_review_20261014/xfoil_eps005_n128_b",
+      "summary_sha256": "be16152178c711989d4ab92f1f7162d05abe073b17d3cbd9e44231e70fb380f7",
+      "scramble_seed_offset": 51000,
+      "scramble_seed_note": "Recorded in output",
+      "requested": 128,
+      "reference_usable": 115,
+      "candidate_usable": 107,
+      "outside_usable": 119,
+      "paired_usable": 96,
+      "paired_reference_mean": 0.007791109298438526,
+      "paired_candidate_mean": 0.006561646846421936,
+      "paired_improvement_mean": 0.0012294624520165912,
+      "paired_improvement_fraction": 0.1578032607324604,
+      "paired_improvement_positive_count": 96,
+      "paired_reference_empirical_cvar95": 0.008417849406342898,
+      "paired_candidate_empirical_cvar95": 0.007435479084804781,
+      "paired_empirical_cvar95_candidate_change_fraction": -0.11670086670805668,
+      "max_observed_reference": 0.008525721649771367,
+      "max_observed_candidate": 0.007558890662859117,
+      "failure_selection_warning": "All values conditioned on complete sweeps and available lift roots. Solver failures are never imputed; tails are not population estimates."
+    }
+  ],
+  "independent_scrambles_finished": 2,
+  "limitations": [
+    "Complete and required-lift feasible cases only; missingness is nonrandom and may depend on geometry.",
+    "Two independent QMC scrambles are too few for a formal uncertainty interval across designs.",
+    "CVaR95 from the finite accepted subset is descriptive, not a manufacturing population tail guarantee.",
+    "All comparisons use XFOIL-class numerical physics rather than independent RANS or experiment."
+  ],
+  "across_scramble_paired_mean_improvements": [
+    0.0011971744480564531,
+    0.0012294624520165912
+  ],
+  "across_scramble_paired_fractional_improvements": [
+    0.15399609940742648,
+    0.1578032607324604
+  ],
+  "all_completed_same_direction": true
+}

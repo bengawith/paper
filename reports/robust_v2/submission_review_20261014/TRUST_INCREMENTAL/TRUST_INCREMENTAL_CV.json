@@ -1,0 +1,100 @@
+{
+  "schema": "trust-calibration-group-oof-all-fit-is-train-only-v2",
+  "source": "results/robust_v2/lineages/robust-v2-current-20260908/calibration/calibration_predictions.parquet",
+  "source_sha256": "d3b41f63cf1c28960b886c944140495876169f1fc121c3b6ad4cbe5c2d3a78ec",
+  "n_rows": 26933,
+  "n_geometries": 234,
+  "high_error_base_rate": 0.1011027364200052,
+  "cv": "GroupKFold(5) with no shared airfoil IDs",
+  "target_definition": "within each fold: max target absolute residual normalized by training-fold P90; high risk threshold training-fold P90",
+  "fitting": "per-fold train-only normalization/threshold and train-only input scaling; ridge alpha=10 fixed",
+  "folds": [
+    {
+      "fold": 1,
+      "train_geometries": 187,
+      "evaluation_geometries": 47,
+      "train_only_target_error_p90_scaling": [
+        0.126727147064209,
+        0.31266677354087746,
+        0.022712936367988587
+      ],
+      "train_only_large_error_threshold": 1.4725080300441111,
+      "evaluation_high_error_rate": 0.0811111111111111
+    },
+    {
+      "fold": 2,
+      "train_geometries": 187,
+      "evaluation_geometries": 47,
+      "train_only_target_error_p90_scaling": [
+        0.13073392116546642,
+        0.31808515086076544,
+        0.0237473111358285
+      ],
+      "train_only_large_error_threshold": 1.4488343551830494,
+      "evaluation_high_error_rate": 0.06916373076209902
+    },
+    {
+      "fold": 3,
+      "train_geometries": 187,
+      "evaluation_geometries": 47,
+      "train_only_target_error_p90_scaling": [
+        0.1260284408378602,
+        0.3104367327678761,
+        0.02278397288680077
+      ],
+      "train_only_large_error_threshold": 1.443715624757697,
+      "evaluation_high_error_rate": 0.09849749582637729
+    },
+    {
+      "fold": 4,
+      "train_geometries": 188,
+      "evaluation_geometries": 46,
+      "train_only_target_error_p90_scaling": [
+        0.12686787961959842,
+        0.31185631922033724,
+        0.023160097630023958
+      ],
+      "train_only_large_error_threshold": 1.430132505138514,
+      "evaluation_high_error_rate": 0.0985230884277435
+    },
+    {
+      "fold": 5,
+      "train_geometries": 187,
+      "evaluation_geometries": 47,
+      "train_only_target_error_p90_scaling": [
+        0.11793039619445797,
+        0.30065914059565013,
+        0.02059912181138992
+      ],
+      "train_only_large_error_threshold": 1.4514503114278499,
+      "evaluation_high_error_rate": 0.15814814814814815
+    }
+  ],
+  "models": {
+    "support_only": {
+      "auroc_for_fold_train_defined_high_error": 0.7665269296398587,
+      "average_precision": 0.37282609175974646,
+      "half_coverage_geometry_macro_error": 0.44149220392205474,
+      "spearman_error_correlation": 0.5271972889586745
+    },
+    "support_plus_ensemble": {
+      "auroc_for_fold_train_defined_high_error": 0.8656869602388089,
+      "average_precision": 0.4957679326152362,
+      "half_coverage_geometry_macro_error": 0.4152069170303913,
+      "spearman_error_correlation": 0.6369345016530199
+    },
+    "ensemble_only": {
+      "auroc_for_fold_train_defined_high_error": 0.8609073835667619,
+      "average_precision": 0.47181799834126875,
+      "half_coverage_geometry_macro_error": 0.450738197882148,
+      "spearman_error_correlation": 0.5945942845975069
+    }
+  },
+  "incremental_auroc": 0.09916003059895018,
+  "cluster_bootstrap_replicates": 300,
+  "cluster_bootstrap_95pct_interval": [
+    0.06942638740274414,
+    0.1386358963117066
+  ],
+  "limits": "Calibration-distribution CV diagnostic only. Not tested on pristine optimisation-selected/CFD examples. No operational trust threshold changed."
+}

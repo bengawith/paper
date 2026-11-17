@@ -1,0 +1,13 @@
+{
+  "status": "FOUR_CONTACT_SHEETS_AND_ALL_22_PAGES_VISUALLY_INSPECTED",
+  "reviewed_files": [
+    "reports/robust_v2/final_release_20261022/VISUAL_FOCUSED/manuscript/CONTACT_01.png",
+    "reports/robust_v2/final_release_20261022/VISUAL_FOCUSED/manuscript/CONTACT_02.png",
+    "reports/robust_v2/final_release_20261022/VISUAL_FOCUSED/manuscript/CONTACT_03.png",
+    "reports/robust_v2/final_release_20261022/VISUAL_FOCUSED/manuscript/CONTACT_04.png"
+  ],
+  "reviewed_word_sha256": "ab3d4993186e87eaa3fdc5ee156b9ccbec8fc1fbd417273d0e491c23c70f0b66",
+  "all_figures_caption_paired": true,
+  "browser_derived_preview_not_native_Word": true,
+  "limits": "Final pagination must be verified by corresponding author in native Microsoft Word"
+}

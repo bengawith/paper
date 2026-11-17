@@ -1,0 +1,66 @@
+{
+  "schema": "corrected-candidate-specific-evaluation-of-historical-designs-v1",
+  "note": "Historic candidates held fixed; physical uncertainty model corrected; NOT a newly optimised Pareto front.",
+  "physical_protocol": "each latent Sobol draw applied to each candidate's OWN surface normal, followed by geometry/CST refit",
+  "sample_count": 64,
+  "latent_sha256": "2ed7ccc524753322daa15f9272a24284c37198f6c7fbc559f536a30bc072651f",
+  "calibration_source_sha256": "a2fda21cd21291f3016a3bc8ac11471abe56fcaa59d741ba7492e326105aec28",
+  "selected_source_sha256": "f0e2843319671ddb1b0fd8d93d1dd13df54adeb186e66f46a23bf96cc684107b",
+  "results": [
+    {
+      "design_id": "verified_reference",
+      "historic_expected_penalised_objective": 0.008411626514565469,
+      "historic_cvar95_penalised_objective": 0.013326196643155692,
+      "corrected_expected_penalised_objective": 0.009420563127817427,
+      "corrected_cvar95_penalised_objective": 0.01918441961418333,
+      "corrected_nominal_feasible": true,
+      "corrected_geometry_invalid_scenarios": 0,
+      "corrected_trust_exit_scenarios": 8,
+      "corrected_missing_lift_scenarios": 0
+    },
+    {
+      "design_id": "deterministic_optimum",
+      "historic_expected_penalised_objective": 0.015094543680559687,
+      "historic_cvar95_penalised_objective": 0.022666789622034115,
+      "corrected_expected_penalised_objective": 1.0,
+      "corrected_cvar95_penalised_objective": 1.0,
+      "corrected_nominal_feasible": false,
+      "corrected_geometry_invalid_scenarios": 0,
+      "corrected_trust_exit_scenarios": 64,
+      "corrected_missing_lift_scenarios": 14
+    },
+    {
+      "design_id": "ava_robust_optimum",
+      "historic_expected_penalised_objective": 0.019860191202119022,
+      "historic_cvar95_penalised_objective": 0.02309307692051729,
+      "corrected_expected_penalised_objective": 1.0,
+      "corrected_cvar95_penalised_objective": 1.0,
+      "corrected_nominal_feasible": false,
+      "corrected_geometry_invalid_scenarios": 0,
+      "corrected_trust_exit_scenarios": 64,
+      "corrected_missing_lift_scenarios": 53
+    },
+    {
+      "design_id": "smooth_correlated_robust_optimum",
+      "historic_expected_penalised_objective": 0.007565378708858473,
+      "historic_cvar95_penalised_objective": 0.014313031274830157,
+      "corrected_expected_penalised_objective": 0.008938049963522805,
+      "corrected_cvar95_penalised_objective": 0.015485129663553263,
+      "corrected_nominal_feasible": true,
+      "corrected_geometry_invalid_scenarios": 0,
+      "corrected_trust_exit_scenarios": 14,
+      "corrected_missing_lift_scenarios": 0
+    },
+    {
+      "design_id": "trust_constrained_pareto_knee",
+      "historic_expected_penalised_objective": 0.0072716173336076426,
+      "historic_cvar95_penalised_objective": 0.016448797014922224,
+      "corrected_expected_penalised_objective": 0.009039696952746708,
+      "corrected_cvar95_penalised_objective": 0.015157433212471809,
+      "corrected_nominal_feasible": true,
+      "corrected_geometry_invalid_scenarios": 0,
+      "corrected_trust_exit_scenarios": 18,
+      "corrected_missing_lift_scenarios": 0
+    }
+  ]
+}

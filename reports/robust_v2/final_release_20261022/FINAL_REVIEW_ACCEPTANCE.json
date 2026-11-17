@@ -1,0 +1,33 @@
+{
+  "schema": "robust-v2-final-coauthor-review-gate-v1",
+  "status": "READY_FOR_COAUTHOR_REVIEW_INDEPENDENT_CFD_PENDING",
+  "numeric_study": "COMPLETE_NO_RETRAIN_OR_SEED_RERUN",
+  "original_heldout_confirmed_observed_states": 17968,
+  "independent_naca_source_geometries": 40,
+  "new_family_observed_numeric_states": 4331,
+  "strict_selected_xfoil_failed_or_unusable": 529,
+  "benchmark_neuralfoil_advantage_honestly_reported": true,
+  "reference_primary_identity_count": 29,
+  "original_science_reconciled_claim_count": 46,
+  "main_manuscript_words": 9896,
+  "main_word_tables": 7,
+  "main_word_figures": 8,
+  "supplement_tables": 3,
+  "browser_preview_main_pages": 22,
+  "browser_preview_supplement_pages": 2,
+  "browser_derived_not_native_word": true,
+  "journal_submission_ready": false,
+  "independent_cfd_performed": false,
+  "author_contributions_approved": false,
+  "files_sha256": {
+    "paper/manuscript.md": "d3fa9045c0d4ce32087d41216ed36c0d0da2ffbc5daca00bfbfd809714ecd9e2",
+    "paper/LATEST_MANUSCRIPT_FOR_AVA.docx": "6a7582448ea2bc64206ca1317405785380f1241254907f1c59c1c5a792f18e63",
+    "paper/SUPPLEMENTARY_NUMERICAL_COMPARISON.md": "93b27d045c4cfbc5d73909c320610cdd500d9a6d589e98398d4813e11717269a",
+    "paper/SUPPLEMENTARY_NUMERICAL_COMPARISON.docx": "70b60fa5e675b6fcb6ba72244874274eed13c939268af619c740d4f96e36d923",
+    "reports/robust_v2/final_release_20261022/LATEST_WORD_VISUAL_RECEIPT.json": "4192ad3e1996daf3a8a2e273c762e9c6df0c8846e3e5c0ceab0d8b590a5ac39c",
+    "reports/robust_v2/final_release_20261022/NEURALFOIL_FULL_CONFIRMATION/RESULTS.json": "fe873dbc8e1919816a27ed958b09f2b9827fc7c94c5277715a5dad65c750d75d",
+    "reports/robust_v2/final_release_20261022/EXTERNAL_NACA_FAMILY/INDEPENDENT_RECEIPT_AND_TRUST_AUDIT.json": "11687e6ec1bca0ae6ca8cc44344cc8dcd2aef9913812334a320dd6e8fc297d4f",
+    "reports/robust_v2/external_academic_review_20261021/REFERENCES_PRIMARY_VERIFIED_V2.csv": "c2b7fee7d7ecd0f0dfc1952c24657cf74089e14c51d924a7c9942b838c27096f"
+  },
+  "remaining": "Independent CFD results, CFD-dependent final physical conclusion, and coauthor disclosures/native Word check"
+}

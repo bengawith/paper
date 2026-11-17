@@ -1,0 +1,46 @@
+{
+  "schema": "solver-import-only-equivalence-proof-v1",
+  "parent_protocol_sha256": "1d082b0b4ae202229729f2c63ae0cb99943104023658849a8154e50bf4cec4ab",
+  "parent_context_hash": "601c1f8d55a6c0eb5b5b364130bae46edc4441e63168c34c4523a2f219690888",
+  "compatible_existing_receipts_sha256": {
+    "a18": "c12e35865e6d6d998b513b28e52256f2349bd6fff04b7feb717b08de2beaf0bd",
+    "a18sm": "141ae50b88a8b598b279067a79e3a94e24944d6551273f03b2315b0e5fbe60f3",
+    "a63a108c": "8584b9c0375492af28298afca1b9cd2bd7caab3255fb23713c9ee324c5532670",
+    "ag03": "5f2370f802f08534933fcf5f8485a2dd6b6312afd128b41d61be4b46649260bd",
+    "ag04": "355506b3e090a6181297bd0ac3ca84e4fa37f13cd0ecaab48d2b75dfc92366be",
+    "ag08": "46d4818919ae1dea24fc1965175ba51e68567f19d6e98e51c005106be441d0a7",
+    "ag09": "0561cd0e88879306a00b45bf8be95d6f862f84d060f54d94d29b4ec3d67f6c61",
+    "ag10": "6a56a5d0486cfcbc7faa17f785899bbc195da69e7fd4a74c2824e76b46ca05a4",
+    "ag11": "8183e4b2ffc61153916a71109a7b32be931442354691211c1a42464d65d42872",
+    "ag12": "35ccf79b2ce1e2cf6bcbbfcce4125a2d6e1d931fc31b99305aea0f3976773650",
+    "ag13": "a21a96baceeb27184698721ad77c507ff670ef7d3670ec661b7b1b4c229f8004",
+    "ag14": "943b8ac825840173f3a2aacdd8cad7ff6503bbe75a8ebb630e1668972f5f2f4e",
+    "ag16": "e5c55ba78d51b4017ebadd43bd90d26aa39a4125fff0e7f2560e2e960ac6f41a",
+    "ag17": "c182d6db724d8a17dc62f4c9c40b02ccb92cb241f35c48199e41f27e044ca594",
+    "ag18": "7341d1ee759fc329296bf61027ba14083bc13a91db362bac58ebc07822ceb637",
+    "ag19": "613c932c3dfa315988d7c2453dee451e0f99c95b82d5b44629a0aad7303524ee",
+    "ag24": "07a93c3d6534419b77c8a0a8d786d75ae2e5e203555eb8a3c87a7e4849bc4d4b"
+  },
+  "pure_solver_ast_unchanged": true,
+  "feature_contract_ast_unchanged": true,
+  "pure_solver_ast_sha256": {
+    "XFoilCase": "81a700fdb5ec69b50db76084e79380a0f2cf95f27b1f4ae5cef895b46ec24d34",
+    "XFoilResult": "e708b76c75dd06129c45711af2426af357f97da45e9a1a0c49a4a93b4583a92d",
+    "build_xfoil_commands": "1fee9e09c68f65cd4b064d06f6d46decdec4411f5cdad120aab83dbab20ae603",
+    "_requested_alpha_grid": "e1938622073c18a5adbc959cf81d212e82d53fa8d359526e5e4821d9b83eeea1",
+    "_sweep_completion": "cd18957f1f2c95b4774b55c6c2b5e3460946f4c6979c123d6e8eaa79ae671213",
+    "_segment_status": "36276b9050b8bb271cce3e6276b1f70503632923692c60bf66e2f2cdbdd48ea2",
+    "_run_xfoil_segment": "91614667de32855c776011f95e0dfd64f2c32abbf12855a3b40b9e3994a3db6b"
+  },
+  "feature_contract_ast_sha256": {
+    "FEATURE_COLUMNS": "d14c32361daefbbbe416783f306828029392acebbbe291c3234877305eb5de4f",
+    "TARGET_COLUMNS": "8a308348f9b2fc8d4942895959fddf278f8d838d2ecb6c7eb235b3fb8da29990"
+  },
+  "preserved_baseline_files_sha256": {
+    "src/robust_airfoil/validation/xfoil_runner.py": "47407d931d988446b07fe865049e9ee8d0a2cd1a2231b39df6ffda2e93171113",
+    "src/robust_airfoil/modelling/dataset.py": "d3f7c1c29741d5928373bcae9d2eb5977428d41b809f3485d3b53dcbd82e434b",
+    "src/robust_airfoil/constants.py": "432e162cdb7dc7d0e8f42ce8d36f35372a7dcd5f3bd2e1ba0b2c0b9280b971ec",
+    "scripts/robust_v2/generate_controlled_corpus.py": "fd2c47786c578283156d15b230c647eb58e2e2cb8f09d58435212d4f829e9ffe"
+  },
+  "ruling": "Import/dependency-only execution repair, not a physical or label-admission change. Keep the3GiB/20GiB floors. Existing case bytes and original protocol are not rewritten."
+}

@@ -1,0 +1,12 @@
+Subject: Rewritten Robust V2 paper — complete numerical review for your assessment
+
+Hi Ava,
+
+I've completed a full rewrite of the paper based on my original submission's writing style and structure. The new standalone Word draft has been reviewed against the actual rebuilt-model, calibration, optimisation and strict XFOIL numerical evidence. All 29 references were checked against primary records, including edition-specific books and original published papers. The source-bound audit reconciles 46 numerical claims, and the manuscript includes the adverse selected-solver outcomes rather than omitting them.
+
+The remaining physical analysis is the independent viscous CFD validation of our three preselected geometries, at equal achieved lift with documented convergence and mesh/domain/transition-model checks. The paper includes a detailed protocol and has intentionally withheld any final physical design superiority claim until those results exist.
+
+I've included the full manuscript, scientific integrity report, reference ledger, complete source/results evidence and a versioned offline-copy handoff. Please review the CFD protocol, final scientific conclusions to be drawn from those calculations, and the author declarations/affiliations before deciding on a submission target.
+
+Thanks,
+Ben

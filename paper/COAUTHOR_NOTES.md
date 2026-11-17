@@ -1,0 +1,15 @@
+# Robust V2 — coauthor review and independent CFD
+
+**Read:** paper/LATEST_MANUSCRIPT_FOR_AVA.docx, generated from paper/manuscript.md. The frozen study and manuscript are ready for a **physics-independent check**, not a claim that CFD has already verified the designs.
+
+**Give Ava:** paper/CFD_HANDOFF_CURRENT.zip and paper/CFD_BRIEF_FOR_AVA.md. The package contains the correct 20 October reference, robust risk-knee and constrained nominal-control finalists. Do not use the older 14 October handoff. The brief specifies matched C_L = 0.4, 0.7, 1.0 within 0°–8°, three-mesh convergence for **all three** cases, consistent modelling and full failed-case reporting. The optional six 0.5% perturbed geometries are diagnostics, not a measured probability distribution.
+
+**Moment rule requiring attention:** the executed robust and nominal searches imposed a **33-incidence service-mean** moment bound (mean C_M ≥ reference mean C_M − 0.01). This is not the five-incidence **pointwise** requirement in an earlier draft specification. Both selected designs satisfy the executed mean rule; the nominal control exceeds the pointwise allowance at 6° and 8°. We preserve this actual completed study rather than retroactively claiming that a different optimisation was run. Ava should report the pointwise CFD moments alongside the service-mean comparison.
+
+**Evidence:** 106,931/141,928 controlled XFOIL states; five frozen neural members; 15,179 protected historical test states; sealed 200-shape confirmation 17,968/22,600; post hoc distinct NACA-style challenge 4,331/4,520; ten full robust and ten constrained nominal seeded searches; original 64 scenarios and fresh 2,048-scenario checks; 819 strict selected-case attempts, 290 usable and 529 unusable. The operational disagreement thresholds are calibration maxima and add no protected-test rejections; large-amplitude CVaR95 values are driven by candidate-specific trust penalties, not measured manufacturing costs. The strict nominal paired drag metric is unestimable.
+
+**Contribution:** geometry-consistent aerodynamic labels, empirical prediction-support evidence and failure-accountable fixed-design comparison. CST, neural ensembles, NSGA-II and uncertainty-based section optimisation are established; Ju and Zhang and NeuralFoil are cited as relevant prior research, not competitors the paper claims to outperform.
+
+**Before journal submission:** Ava's independent CFD and its numerical-quality checks; author confirmation of affiliation, contributions, funding, interests and AI-use declaration; final journal-specific style, reference and data-accession checks. Do not add physical performance claims until independent CFD exists. Original numerical receipts and archived failures remain immutable.
+
+**Reproduce without retraining:** use the root README for environment commands, frozen lineage map and targeted tests. Regenerate only figures 5/7 and the Word document from the current source when text/figure edits require it. Do not run full optimisation or regenerate the sealed numerical cohorts merely to review the paper.

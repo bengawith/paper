@@ -1,0 +1,14 @@
+{
+  "schema": "abstract-clarity-layout-fit-v3",
+  "old_paper_sha256": "13c3e15eec6696ca82bcb06908e4e8294b4bb51e81cb63e78447062f7143668b",
+  "new_paper_sha256": "4d2385f97aee365c23edbd1174284da5be4ce6292549834163c17a62b0d659a8",
+  "old_docx_sha256": "2a9723256f36f137627bcc8ad37574cb61f2a5362f099b65951f59ca498b04e3",
+  "new_docx_sha256": "8c3068433fe13e178c6766fb3e10a1546fc29aeeb13953ba57b3252ae6593ceb",
+  "old_manifest_sha256": "6ab26c48dc1230dbf9211f94bfdd7db1baa44caf9846efc1f2c7f01d17fde490",
+  "new_manifest_sha256": "da23a6df73802853c76441cd81b7f481f03025cc9abdd23a2658a10c1b78b9e2",
+  "scientific_quantities_changed": false,
+  "frozen_simulation_data_changed": false,
+  "word_figure_count": 8,
+  "word_table_count": 7,
+  "visual_qa_required": true
+}

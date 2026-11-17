@@ -1,0 +1,256 @@
+{
+  "schema": "word-content-visual-preview-v1",
+  "manuscript_docx_sha256": "8c3068433fe13e178c6766fb3e10a1546fc29aeeb13953ba57b3252ae6593ceb",
+  "referee_docx_sha256": "580efb37362cdf80428e98c9b461d26baaea355f9065b871fee0b078b9d864f8",
+  "visual_previews_created": true,
+  "all_pages_visually_inspected": true,
+  "native_microsoft_word_render_unavailable": true,
+  "manuscript": {
+    "docx": "paper/LATEST_MANUSCRIPT_FOR_AVA.docx",
+    "docx_sha256": "8c3068433fe13e178c6766fb3e10a1546fc29aeeb13953ba57b3252ae6593ceb",
+    "structural_tables": 7,
+    "embedded_figures": 8,
+    "preview_pdf": "reports/robust_v2/external_academic_review_20261014/RENDERED_V3/manuscript.browser-preview.pdf",
+    "preview_pdf_sha256": "28d2252b8000ed93141c17759c3e93e622569268d1f8a199717658d28d3e5a06",
+    "page_count": 14,
+    "pages": [
+      {
+        "page": 1,
+        "image": "reports/robust_v2/external_academic_review_20261014/RENDERED_V3/manuscript-page-01.png",
+        "preview_white_fraction_approx": 0.6261,
+        "width_px": 774,
+        "height_px": 1095,
+        "visually_inspected": true
+      },
+      {
+        "page": 2,
+        "image": "reports/robust_v2/external_academic_review_20261014/RENDERED_V3/manuscript-page-02.png",
+        "preview_white_fraction_approx": 0.5739,
+        "width_px": 774,
+        "height_px": 1095,
+        "visually_inspected": true
+      },
+      {
+        "page": 3,
+        "image": "reports/robust_v2/external_academic_review_20261014/RENDERED_V3/manuscript-page-03.png",
+        "preview_white_fraction_approx": 0.5686,
+        "width_px": 774,
+        "height_px": 1095,
+        "visually_inspected": true
+      },
+      {
+        "page": 4,
+        "image": "reports/robust_v2/external_academic_review_20261014/RENDERED_V3/manuscript-page-04.png",
+        "preview_white_fraction_approx": 0.5192,
+        "width_px": 774,
+        "height_px": 1095,
+        "visually_inspected": true
+      },
+      {
+        "page": 5,
+        "image": "reports/robust_v2/external_academic_review_20261014/RENDERED_V3/manuscript-page-05.png",
+        "preview_white_fraction_approx": 0.5671,
+        "width_px": 774,
+        "height_px": 1095,
+        "visually_inspected": true
+      },
+      {
+        "page": 6,
+        "image": "reports/robust_v2/external_academic_review_20261014/RENDERED_V3/manuscript-page-06.png",
+        "preview_white_fraction_approx": 0.6272,
+        "width_px": 774,
+        "height_px": 1095,
+        "visually_inspected": true
+      },
+      {
+        "page": 7,
+        "image": "reports/robust_v2/external_academic_review_20261014/RENDERED_V3/manuscript-page-07.png",
+        "preview_white_fraction_approx": 0.5452,
+        "width_px": 774,
+        "height_px": 1095,
+        "visually_inspected": true
+      },
+      {
+        "page": 8,
+        "image": "reports/robust_v2/external_academic_review_20261014/RENDERED_V3/manuscript-page-08.png",
+        "preview_white_fraction_approx": 0.5627,
+        "width_px": 774,
+        "height_px": 1095,
+        "visually_inspected": true
+      },
+      {
+        "page": 9,
+        "image": "reports/robust_v2/external_academic_review_20261014/RENDERED_V3/manuscript-page-09.png",
+        "preview_white_fraction_approx": 0.7448,
+        "width_px": 774,
+        "height_px": 1095,
+        "visually_inspected": true
+      },
+      {
+        "page": 10,
+        "image": "reports/robust_v2/external_academic_review_20261014/RENDERED_V3/manuscript-page-10.png",
+        "preview_white_fraction_approx": 0.7124,
+        "width_px": 774,
+        "height_px": 1095,
+        "visually_inspected": true
+      },
+      {
+        "page": 11,
+        "image": "reports/robust_v2/external_academic_review_20261014/RENDERED_V3/manuscript-page-11.png",
+        "preview_white_fraction_approx": 0.7857,
+        "width_px": 774,
+        "height_px": 1095,
+        "visually_inspected": true
+      },
+      {
+        "page": 12,
+        "image": "reports/robust_v2/external_academic_review_20261014/RENDERED_V3/manuscript-page-12.png",
+        "preview_white_fraction_approx": 0.7495,
+        "width_px": 774,
+        "height_px": 1095,
+        "visually_inspected": true
+      },
+      {
+        "page": 13,
+        "image": "reports/robust_v2/external_academic_review_20261014/RENDERED_V3/manuscript-page-13.png",
+        "preview_white_fraction_approx": 0.5465,
+        "width_px": 774,
+        "height_px": 1095,
+        "visually_inspected": true
+      },
+      {
+        "page": 14,
+        "image": "reports/robust_v2/external_academic_review_20261014/RENDERED_V3/manuscript-page-14.png",
+        "preview_white_fraction_approx": 0.8027,
+        "width_px": 774,
+        "height_px": 1095,
+        "visually_inspected": true
+      }
+    ],
+    "native_word_render": false,
+    "preview_type": "Chromium HTML reconstruction from actual DOCX paragraphs,tables,images",
+    "limitation": "Does not prove native Microsoft Word page breaks, headers, footers or exact typography."
+  },
+  "referee": {
+    "docx": "reports/robust_v2/external_academic_review_20261014/SCIENTIFIC_REVIEW_REPORT.docx",
+    "docx_sha256": "580efb37362cdf80428e98c9b461d26baaea355f9065b871fee0b078b9d864f8",
+    "structural_tables": 0,
+    "embedded_figures": 0,
+    "preview_pdf": "reports/robust_v2/external_academic_review_20261014/RENDERED_V3/referee.browser-preview.pdf",
+    "preview_pdf_sha256": "3333972cfff9afc97f46b153183ad01a9360aa7b3b9f18db1a6c1b6af07880bf",
+    "page_count": 1,
+    "pages": [
+      {
+        "page": 1,
+        "image": "reports/robust_v2/external_academic_review_20261014/RENDERED_V3/referee-page-01.png",
+        "preview_white_fraction_approx": 0.5202,
+        "width_px": 774,
+        "height_px": 1095,
+        "visually_inspected": true
+      }
+    ],
+    "native_word_render": false,
+    "preview_type": "Chromium HTML reconstruction from actual DOCX paragraphs,tables,images",
+    "limitation": "Does not prove native Microsoft Word page breaks, headers, footers or exact typography."
+  },
+  "reviewer_action": "Inspect every generated page PNG and contact sheet, record abnormalities and re-render. Do not claim native Word layout parity.",
+  "native_word_page_parity_proven": false,
+  "inspection_scope": "All 14 manuscript and one referee page manually inspected through actual Chromium DOCX-derived contact sheets; not native Microsoft Word pagination.",
+  "visual_defects_corrected": [
+    "First abstract split across two pages in v2; condensed without changing scientific data and confirmed entire abstract on v3 page1.",
+    "Single orphaned editorial recommendation on referee page2; removed repeated sentence and confirmed one-page referee."
+  ],
+  "unresolved_native_layout_caveat": "True Microsoft Word page rendering was unavailable/stalled; recipient should check in Word prior to journal submission.",
+  "per_page_sha256": [
+    {
+      "source": "manuscript",
+      "page": 1,
+      "preview_image_sha256": "0cf3a3f788f948797caddd38d3caddc304490b37405a0fb9b02103dcd0a398bf",
+      "visual_result": "PAGE_PRESENT_NO_DETECTED_CLIPPING_OR_BLANKNESS"
+    },
+    {
+      "source": "manuscript",
+      "page": 2,
+      "preview_image_sha256": "882785389f6b2fa525401e66e48053c8247519a08aa1c91589bb09808bcc441e",
+      "visual_result": "PAGE_PRESENT_NO_DETECTED_CLIPPING_OR_BLANKNESS"
+    },
+    {
+      "source": "manuscript",
+      "page": 3,
+      "preview_image_sha256": "ad95beea83a6e1ccc281721a5443b043336468f91f69a7baf5a58d54b27d36fe",
+      "visual_result": "PAGE_PRESENT_NO_DETECTED_CLIPPING_OR_BLANKNESS"
+    },
+    {
+      "source": "manuscript",
+      "page": 4,
+      "preview_image_sha256": "31e9e0412342b7213cfb7dfc8f00513ee9e2813320d527c9c70f00d33c30bf1b",
+      "visual_result": "PAGE_PRESENT_NO_DETECTED_CLIPPING_OR_BLANKNESS"
+    },
+    {
+      "source": "manuscript",
+      "page": 5,
+      "preview_image_sha256": "611397e185e9ff7a5a8f613e04bca5b673b4530917393866ce8e191b6abf7757",
+      "visual_result": "PAGE_PRESENT_NO_DETECTED_CLIPPING_OR_BLANKNESS"
+    },
+    {
+      "source": "manuscript",
+      "page": 6,
+      "preview_image_sha256": "1ab8cc147f135d7538765ceb7119648374d84ef2434a692e18e0bc23fb67a73a",
+      "visual_result": "PAGE_PRESENT_NO_DETECTED_CLIPPING_OR_BLANKNESS"
+    },
+    {
+      "source": "manuscript",
+      "page": 7,
+      "preview_image_sha256": "74b7e47471e52b82f8a315c54137cfa1d28614b0d4a83883bbe466fbc6c1514a",
+      "visual_result": "PAGE_PRESENT_NO_DETECTED_CLIPPING_OR_BLANKNESS"
+    },
+    {
+      "source": "manuscript",
+      "page": 8,
+      "preview_image_sha256": "8808b1df0236174e7fa1b5b625c84875018c0e8b3e12fc30840b1fab6b31eebd",
+      "visual_result": "PAGE_PRESENT_NO_DETECTED_CLIPPING_OR_BLANKNESS"
+    },
+    {
+      "source": "manuscript",
+      "page": 9,
+      "preview_image_sha256": "1e872695e8d93d984edf3b3b11a0f65ed4fdf6c934ae3fe5ffd6c8eb1b5ff083",
+      "visual_result": "PAGE_PRESENT_NO_DETECTED_CLIPPING_OR_BLANKNESS"
+    },
+    {
+      "source": "manuscript",
+      "page": 10,
+      "preview_image_sha256": "3c7ce3dc1830a7fe8389959241a9f9e463b18130eabec4e61fab1565bacc57ea",
+      "visual_result": "PAGE_PRESENT_NO_DETECTED_CLIPPING_OR_BLANKNESS"
+    },
+    {
+      "source": "manuscript",
+      "page": 11,
+      "preview_image_sha256": "3ff1139e30e4c9368fa3182b23a5a972cf3a7f71f2cb0c279a7842e791dd3c3d",
+      "visual_result": "PAGE_PRESENT_NO_DETECTED_CLIPPING_OR_BLANKNESS"
+    },
+    {
+      "source": "manuscript",
+      "page": 12,
+      "preview_image_sha256": "bad4dbab3e76ad149684f91a094279f2cc0d3fdbe2cef4cfcba528d40f548a48",
+      "visual_result": "PAGE_PRESENT_NO_DETECTED_CLIPPING_OR_BLANKNESS"
+    },
+    {
+      "source": "manuscript",
+      "page": 13,
+      "preview_image_sha256": "9edd97f4bfefc53fad7fa6852c04f71ad850a328a0494f44032b1eb1e38455b0",
+      "visual_result": "PAGE_PRESENT_NO_DETECTED_CLIPPING_OR_BLANKNESS"
+    },
+    {
+      "source": "manuscript",
+      "page": 14,
+      "preview_image_sha256": "229ccb1d4cb47ff60d565ddbb4a6b6ec969d7e7b4f593564b3997061e8fd5278",
+      "visual_result": "PAGE_PRESENT_NO_DETECTED_CLIPPING_OR_BLANKNESS"
+    },
+    {
+      "source": "referee",
+      "page": 1,
+      "preview_image_sha256": "2adf8c27b990ed5f206ebefa3a22e801f77f6b82c7dc76c88ca6cbd7e5cd3aff",
+      "visual_result": "PAGE_PRESENT_NO_DETECTED_CLIPPING_OR_BLANKNESS"
+    }
+  ]
+}

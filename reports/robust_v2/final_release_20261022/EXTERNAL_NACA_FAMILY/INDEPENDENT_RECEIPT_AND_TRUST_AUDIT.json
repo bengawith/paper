@@ -1,0 +1,45 @@
+{
+  "schema": "independent-analytic-40shape-source-preservation-v1",
+  "source_seal_sha256": "44fb198bd5ede10abd2f497a964af714f4fb8c31d954ad26cde8da4649820c2c",
+  "before_label_predictor_receipt_sha256": "1f2c580207b659c71f771619f91d7a72933dcb72ad2b899920410f6051bc105e",
+  "complete_solver_receipt_sha256": "d2c15916566ed0caa5a740daf8410bf67fe6215eacf8dc990910bc2b32485a8d",
+  "external_summary_sha256": "bb02fe4dcee0980b2deead2e161ff9de964efda674dcf5179fc8f9fc6e019b98",
+  "original_1256_geometry_catalog_unchanged": true,
+  "all_40_geometry_receipts_hash_verified": true,
+  "unavailable_solver_states_not_imputed": true,
+  "requested_geometries": 40,
+  "requested_states": 4520,
+  "solver_observed_states": 4331,
+  "solver_missing_states": 189,
+  "selected_geometry_min_source_rms_chord": 0.002008093141442472,
+  "empirical_trust_fraction_all_requests": 0.5146017699115044,
+  "empirical_trust_fraction_observed": 0.5190487185407527,
+  "selective_prediction_errors": {
+    "accepted_observed": {
+      "states": 2248,
+      "geometries": 21,
+      "cl_mae": 0.015333089812518864,
+      "cd_mae": 0.0007107796848287299,
+      "cm_mae": 0.00317390881969968
+    },
+    "rejected_observed": {
+      "states": 2083,
+      "geometries": 20,
+      "cl_mae": 0.02432087053082851,
+      "cd_mae": 0.0005561158091731653,
+      "cm_mae": 0.005072683449675415
+    }
+  },
+  "solver_unavailable_ranking_auroc": {
+    "neuralfoil_negative_analysis_confidence": 0.7300866522755232,
+    "controlled_ensemble_std_cl": 0.7081004545793278,
+    "controlled_ensemble_std_log_cd": 0.6302710006242677,
+    "controlled_nearest_support_distance": 0.5606932426373664
+  },
+  "limitations": [
+    "The analytic family was chosen geometrically after previous research but before new solver labels.",
+    "This is numerical source geometry distinctness, not proof of NeuralFoil training-family independence.",
+    "XFOIL remains the same numerical solver family as training and is not independent CFD.",
+    "Model trust and confidence scores are descriptive, not calibrated physical probabilities."
+  ]
+}

@@ -1,0 +1,359 @@
+{
+  "accepted_observed_states": 11718,
+  "claims": {
+    "confirmation_used_to_fit_or_select_model": false,
+    "geometry_selection_preceded_controlled_training": true,
+    "independent_physical_validation": false,
+    "operational_trust_policy_changed": false,
+    "predictions_and_risk_preceded_confirmation_labels": true
+  },
+  "completed_utc": "2026-10-21T09:01:43.779292+00:00",
+  "fixed_model_geometry_bootstrap": {
+    "replicates": 1000,
+    "resampling_units": 199,
+    "schema": "fixed-model-whole-geometry-bootstrap-v1",
+    "scope": "Descriptive fixed-model resampling of complete geometry groups conditional on observed solver labels. Shared source parents and numerical selection may create further dependence; no manufacturing-population or complete-refitting confidence guarantee.",
+    "seed": 20261020,
+    "targets": {
+      "cd": {
+        "geometry_macro_coverage_interval": [
+          0.9584159857476041,
+          0.9760923108879481
+        ],
+        "geometry_macro_coverage_point": 0.9677871743915697,
+        "geometry_macro_mae_interval": [
+          0.0010250734756804345,
+          0.0014427491546222782
+        ],
+        "geometry_macro_mae_point": 0.0012158145661760472,
+        "observed_geometries": 199,
+        "observed_states": 17968,
+        "point_mae_interval": [
+          0.0009740261827085965,
+          0.0013360251298375641
+        ],
+        "point_mae_point": 0.0011464042988080423,
+        "usable_bootstrap_replicates": 1000
+      },
+      "cl": {
+        "geometry_macro_coverage_interval": [
+          0.9704458530199397,
+          0.9863990549065439
+        ],
+        "geometry_macro_coverage_point": 0.978770796133066,
+        "geometry_macro_mae_interval": [
+          0.018801032581037054,
+          0.021652778163677285
+        ],
+        "geometry_macro_mae_point": 0.02012513545761268,
+        "observed_geometries": 199,
+        "observed_states": 17968,
+        "point_mae_interval": [
+          0.0192692884892033,
+          0.02210061375634767
+        ],
+        "point_mae_point": 0.020609792707710527,
+        "usable_bootstrap_replicates": 1000
+      },
+      "cm": {
+        "geometry_macro_coverage_interval": [
+          0.978325711989593,
+          0.991099159515355
+        ],
+        "geometry_macro_coverage_point": 0.985421900328653,
+        "geometry_macro_mae_interval": [
+          0.002656228468525079,
+          0.0031596643582742466
+        ],
+        "geometry_macro_mae_point": 0.0028976857205622853,
+        "observed_geometries": 199,
+        "observed_states": 17968,
+        "point_mae_interval": [
+          0.002765356268524075,
+          0.003294061492970148
+        ],
+        "point_mae_point": 0.003018658431388524,
+        "usable_bootstrap_replicates": 1000
+      },
+      "log_cd": {
+        "geometry_macro_coverage_interval": [
+          0.9584159857476041,
+          0.9760923108879481
+        ],
+        "geometry_macro_coverage_point": 0.9677871743915697,
+        "geometry_macro_mae_interval": [
+          0.04099945676565394,
+          0.05103731001964754
+        ],
+        "geometry_macro_mae_point": 0.045725373410001824,
+        "observed_geometries": 199,
+        "observed_states": 17968,
+        "point_mae_interval": [
+          0.03875242427863771,
+          0.04795497646316984
+        ],
+        "point_mae_point": 0.04307002062909505,
+        "usable_bootstrap_replicates": 1000
+      }
+    }
+  },
+  "fixed_model_geometry_bootstrap_delta_interval": [
+    0.20017136280816192,
+    0.33958349346274636
+  ],
+  "frozen_calibration_defined_high_error_fraction": 0.04958815672306322,
+  "geometries_with_observations": 199,
+  "incremental_combined_minus_support_auroc": 0.26725917014023814,
+  "input_hashes": {
+    "before_labels_receipt": "9f9a04337acf4a39a8add26a85533bd7c8a30d55d51a35f3d6aa204f608815ff",
+    "frozen_predictor": "b01bd39fd0118d8cd4bd2006fa7617814d60b7004a900bf8e1a50fa615d4e798",
+    "observed_labels": "7804d1d3da12b4515d7d98ad624e5049be89c4e8b6f7bd706fc93b95ba4ff836",
+    "predictions": "083a61469f5618b04d8406f3a72dd7c80c100651d386db2d038250e7e8172580",
+    "risk_model": "0c87c08ae55cb8516984cb434c9e3fcbd6abe6142b255c24f63a3060c74f17c8",
+    "selection": "de8cc1bb0cbb9e577a03aa07487818159abfd46522a7dd69ee279db6f7e0f07e"
+  },
+  "limits": [
+    "The cohort samples explicit mixtures of development geometry; it is not an unseen-family or manufacturing-population sample.",
+    "Local XFOIL shares the training numerical method; fresh executions are not independent RANS CFD or experiments.",
+    "Error metrics condition on clean-process observed states. Missing solver truth is never imputed.",
+    "Whole-observed-curve coverage is not a simultaneous coverage guarantee.",
+    "Geometry bootstrap holds predictions fixed and does not include full refitting variability; shared parents and selection can add dependence.",
+    "A favourable ranking diagnostic does not automatically validate or deploy a new operational threshold."
+  ],
+  "missing_solver_observations": 4632,
+  "model_metrics": [
+    {
+      "airfoils": 199,
+      "geometry_macro_interval_coverage": 0.978770796133066,
+      "geometry_macro_mae": 0.02012513545761268,
+      "geometry_macro_mse": 0.0009778242024566916,
+      "mae": 0.020609792707710527,
+      "mse": 0.0010039164614617097,
+      "r2": 0.9982664783033203,
+      "state_interval_coverage": 0.9782390917186109,
+      "states": 17968,
+      "subset": "all",
+      "target": "cl",
+      "whole_observed_curve_coverage": 0.7085427135678392
+    },
+    {
+      "airfoils": 199,
+      "geometry_macro_interval_coverage": 0.9677871743915697,
+      "geometry_macro_mae": 0.045725373410001824,
+      "geometry_macro_mse": 0.009792151884402663,
+      "mae": 0.04307002062909505,
+      "mse": 0.00904068288972108,
+      "r2": 0.9815631820233089,
+      "state_interval_coverage": 0.9718944790739091,
+      "states": 17968,
+      "subset": "all",
+      "target": "log_cd",
+      "whole_observed_curve_coverage": 0.5778894472361809
+    },
+    {
+      "airfoils": 199,
+      "geometry_macro_interval_coverage": 0.985421900328653,
+      "geometry_macro_mae": 0.0028976857205622853,
+      "geometry_macro_mse": 2.1665537514419208e-05,
+      "mae": 0.003018658431388524,
+      "mse": 2.2752358253226128e-05,
+      "r2": 0.9826699657244983,
+      "state_interval_coverage": 0.9842497773820125,
+      "states": 17968,
+      "subset": "all",
+      "target": "cm",
+      "whole_observed_curve_coverage": 0.7738693467336684
+    },
+    {
+      "airfoils": 199,
+      "geometry_macro_interval_coverage": 0.9677871743915697,
+      "geometry_macro_mae": 0.0012158145661760472,
+      "geometry_macro_mse": 1.8470236321060534e-05,
+      "mae": 0.0011464042988080423,
+      "mse": 1.6548724340975368e-05,
+      "r2": 0.9440877880861096,
+      "state_interval_coverage": 0.9718944790739091,
+      "states": 17968,
+      "subset": "all",
+      "target": "cd",
+      "whole_observed_curve_coverage": 0.5778894472361809
+    },
+    {
+      "airfoils": 136,
+      "geometry_macro_interval_coverage": 0.9840186132972958,
+      "geometry_macro_mae": 0.017665832610548535,
+      "geometry_macro_mse": 0.0008112677035793792,
+      "mae": 0.017895153637330345,
+      "mse": 0.0008236263875082179,
+      "r2": 0.9984725028051176,
+      "state_interval_coverage": 0.9837002901519031,
+      "states": 11718,
+      "subset": "accepted",
+      "target": "cl",
+      "whole_observed_curve_coverage": 0.7279411764705882
+    },
+    {
+      "airfoils": 136,
+      "geometry_macro_interval_coverage": 0.9686080768914029,
+      "geometry_macro_mae": 0.044081420059073693,
+      "geometry_macro_mse": 0.011119158157998348,
+      "mae": 0.04078822824812936,
+      "mse": 0.010390281172936713,
+      "r2": 0.9804012877521682,
+      "state_interval_coverage": 0.9735449735449735,
+      "states": 11718,
+      "subset": "accepted",
+      "target": "log_cd",
+      "whole_observed_curve_coverage": 0.5735294117647058
+    },
+    {
+      "airfoils": 136,
+      "geometry_macro_interval_coverage": 0.9874646852889524,
+      "geometry_macro_mae": 0.002601259708340645,
+      "geometry_macro_mse": 1.991666108885805e-05,
+      "mae": 0.002723276249882273,
+      "mse": 2.1196048508256987e-05,
+      "r2": 0.9840485045870837,
+      "state_interval_coverage": 0.9857484212322922,
+      "states": 11718,
+      "subset": "accepted",
+      "target": "cm",
+      "whole_observed_curve_coverage": 0.7794117647058824
+    },
+    {
+      "airfoils": 136,
+      "geometry_macro_interval_coverage": 0.9686080768914029,
+      "geometry_macro_mae": 0.0012051444695852858,
+      "geometry_macro_mse": 2.1018779933147618e-05,
+      "mae": 0.0011461464466888103,
+      "mse": 1.9380127572111682e-05,
+      "r2": 0.9401402177527913,
+      "state_interval_coverage": 0.9735449735449735,
+      "states": 11718,
+      "subset": "accepted",
+      "target": "cd",
+      "whole_observed_curve_coverage": 0.5735294117647058
+    },
+    {
+      "airfoils": 65,
+      "geometry_macro_interval_coverage": 0.9661570518984495,
+      "geometry_macro_mae": 0.025475805213139392,
+      "geometry_macro_mse": 0.0013456021158231306,
+      "mae": 0.025699415207984924,
+      "mse": 0.0013419387153156322,
+      "r2": 0.9979464459555865,
+      "state_interval_coverage": 0.968,
+      "states": 6250,
+      "subset": "rejected",
+      "target": "cl",
+      "whole_observed_curve_coverage": 0.676923076923077
+    },
+    {
+      "airfoils": 65,
+      "geometry_macro_interval_coverage": 0.958171347139095,
+      "geometry_macro_mae": 0.05138371852070629,
+      "geometry_macro_mse": 0.007305966113462118,
+      "mae": 0.047348107528319985,
+      "mse": 0.006510348060485751,
+      "r2": 0.9843398906158416,
+      "state_interval_coverage": 0.9688,
+      "states": 6250,
+      "subset": "rejected",
+      "target": "log_cd",
+      "whole_observed_curve_coverage": 0.6
+    },
+    {
+      "airfoils": 65,
+      "geometry_macro_interval_coverage": 0.977956951174146,
+      "geometry_macro_mae": 0.003625194258794486,
+      "geometry_macro_mse": 2.6917575325964952e-05,
+      "mae": 0.0035724645758509637,
+      "mse": 2.567025226787387e-05,
+      "r2": 0.9796125581363314,
+      "state_interval_coverage": 0.98144,
+      "states": 6250,
+      "subset": "rejected",
+      "target": "cm",
+      "whole_observed_curve_coverage": 0.7692307692307693
+    },
+    {
+      "airfoils": 65,
+      "geometry_macro_interval_coverage": 0.958171347139095,
+      "geometry_macro_mae": 0.0013642393496380275,
+      "geometry_macro_mse": 1.4374684551574075e-05,
+      "mae": 0.0011468877405893482,
+      "mse": 1.1240183050982521e-05,
+      "r2": 0.9538023331073098,
+      "state_interval_coverage": 0.9688,
+      "states": 6250,
+      "subset": "rejected",
+      "target": "cd",
+      "whole_observed_curve_coverage": 0.6
+    }
+  ],
+  "observed_states": 17968,
+  "requested_geometries": 200,
+  "requested_states": 22600,
+  "risk_bootstrap_replicates_requested": 1000,
+  "risk_bootstrap_replicates_usable": 1000,
+  "risk_models": {
+    "ensemble_only": {
+      "auroc": 0.8209809178168179,
+      "average_precision": 0.3691528939101839,
+      "geometry_balanced": {
+        "auroc": 0.8225528298120768,
+        "average_precision": 0.3643104893834905
+      }
+    },
+    "support_only": {
+      "auroc": 0.5345943477641083,
+      "average_precision": 0.0885119613490643,
+      "geometry_balanced": {
+        "auroc": 0.5329351567089424,
+        "average_precision": 0.08274905106376312
+      }
+    },
+    "support_plus_ensemble": {
+      "auroc": 0.8018535179043464,
+      "average_precision": 0.3581300540855699,
+      "geometry_balanced": {
+        "auroc": 0.8040759615735009,
+        "average_precision": 0.35247762365416857
+      }
+    }
+  },
+  "risk_vs_missing_solver_observation_diagnostic": {
+    "ensemble_only": {
+      "auroc": 0.7350612973245856,
+      "average_precision": 0.4930283667561497
+    },
+    "support_only": {
+      "auroc": 0.46264804672901505,
+      "average_precision": 0.18137599286224984
+    },
+    "support_plus_ensemble": {
+      "auroc": 0.7163935511144741,
+      "average_precision": 0.4613448304614326
+    }
+  },
+  "schema": "sealed-before-training-geometry-before-label-predictor-confirmation-v1",
+  "solver_accounting": {
+    "case_accounting_sha256": "d9234fa174eb6f42535613d12ae73794b4f969cb1e224522db611b06affec60f",
+    "complete_grid_geometries": 3,
+    "completed_utc": "2026-10-21T09:01:26.185097+00:00",
+    "failed_full_sweep_segments": 349,
+    "frozen_predictor_sha256": "b01bd39fd0118d8cd4bd2006fa7617814d60b7004a900bf8e1a50fa615d4e798",
+    "geometries_with_observations": 199,
+    "geometry_selection_sha256": "de8cc1bb0cbb9e577a03aa07487818159abfd46522a7dd69ee279db6f7e0f07e",
+    "missing_requested_states": 4632,
+    "nonzero_or_missing_exit_segments": 37,
+    "observed_points_sha256": "7804d1d3da12b4515d7d98ad624e5049be89c4e8b6f7bd706fc93b95ba4ff836",
+    "observed_states": 17968,
+    "requested_geometries": 200,
+    "requested_states": 22600,
+    "schema": "complete-sealed-confirmation-label-accounting-v1",
+    "scope": "All sealed shapes attempted; only actual clean-process finite positive-drag observations. Accuracy is conditional on solver-observed states, not the missing outcomes.",
+    "solver_protocol_sha256": "e260ad9d81b830ef683d033495e0fa66e64f250bd1990142aa2d6c49d9f35e08",
+    "timed_out_segments": 37
+  }
+}

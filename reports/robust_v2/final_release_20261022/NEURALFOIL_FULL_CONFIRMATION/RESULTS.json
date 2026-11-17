@@ -1,0 +1,89 @@
+{
+  "aerosandbox_version": "4.2.10",
+  "case_receipts_sha256": "d2c4d6eff16b07d08cc8a2f91980ec7a1e3ade2329eb72643532cf7edd90dbd1",
+  "geometries_completed_by_neuralfoil": 200,
+  "geometries_failed_by_neuralfoil": 0,
+  "geometries_requested": 200,
+  "limits": [
+    "Cross-model comparison measures errors against local XFOIL family only, not CFD truth.",
+    "NeuralFoil internal training shape overlap is not established; never claim blind external families.",
+    "The frozen confirmation shapes are development-geometry mixtures, not unrelated families.",
+    "The trust-score AUROC predicts local solver availability, not real physical model validity.",
+    "Model speed is not compared here on strictly identical input and hardware workflow costs.",
+    "Only XFOIL-observed cases enter prediction accuracy metrics; no imputed truth for missing."
+  ],
+  "neuralfoil_geometry_refit_included_in_timing_seconds": 0.9518872018670663,
+  "neuralfoil_version": "0.3.3",
+  "original_prelabel_prediction_sha256": "083a61469f5618b04d8406f3a72dd7c80c100651d386db2d038250e7e8172580",
+  "original_solver_observed_sha256": "7804d1d3da12b4515d7d98ad624e5049be89c4e8b6f7bd706fc93b95ba4ff836",
+  "per_target_observed_label_error": {
+    "cd": {
+      "controlled_mae": 0.0011464042988080423,
+      "fixed_model_geometry_bootstrap_95pct": [
+        -0.0003312497396417219,
+        -6.538973007871923e-05
+      ],
+      "neuralfoil_mae": 0.0009372261163990728,
+      "neuralfoil_minus_controlled_geometry_macro_mae": -0.0001951418855520138,
+      "paired_observed_states": 17968
+    },
+    "cl": {
+      "controlled_mae": 0.020609792707710527,
+      "fixed_model_geometry_bootstrap_95pct": [
+        -0.012403905542050401,
+        -0.008826002810078249
+      ],
+      "neuralfoil_mae": 0.009354586202451049,
+      "neuralfoil_minus_controlled_geometry_macro_mae": -0.010562198205053044,
+      "paired_observed_states": 17968
+    },
+    "cm": {
+      "controlled_mae": 0.003018658431388524,
+      "fixed_model_geometry_bootstrap_95pct": [
+        -0.0017002688502969377,
+        -0.0011646170229732504
+      ],
+      "neuralfoil_mae": 0.0014650899589788561,
+      "neuralfoil_minus_controlled_geometry_macro_mae": -0.001428523155758903,
+      "paired_observed_states": 17968
+    },
+    "log_cd": {
+      "controlled_mae": 0.04307002062909505,
+      "fixed_model_geometry_bootstrap_95pct": [
+        -0.014247894071074577,
+        -0.007314254214216949
+      ],
+      "neuralfoil_mae": 0.031412584930468876,
+      "neuralfoil_minus_controlled_geometry_macro_mae": -0.010701621298306253,
+      "paired_observed_states": 17968
+    }
+  },
+  "predicting_xfoil_unavailability_auroc": {
+    "neuralfoil_minus_confidence": {
+      "auroc": 0.8874073602543459,
+      "eligible_requested_states": 22600,
+      "unscored_requested_states": 0
+    },
+    "our_frozen_combined_risk": {
+      "auroc": 0.7163935511144741,
+      "eligible_requested_states": 22600,
+      "unscored_requested_states": 0
+    },
+    "our_frozen_ensemble_disagreement_risk": {
+      "auroc": 0.7350612973245856,
+      "eligible_requested_states": 22600,
+      "unscored_requested_states": 0
+    },
+    "our_frozen_support_risk": {
+      "auroc": 0.46264804672901505,
+      "eligible_requested_states": 22600,
+      "unscored_requested_states": 0
+    }
+  },
+  "preselection_sha256": "ec8690ab87c6aae29291bdee064d3234824183eba27eec72a4b2a3c02460e124",
+  "same_solver_observed_paired_states": 17968,
+  "schema": "all-22600-prerequested-200geometry-neuralfoil-diagnostic-v1",
+  "solver_missing_states": 4632,
+  "solver_observed_states": 17968,
+  "states_requested": 22600
+}

@@ -1,0 +1,1649 @@
+{
+  "cases": [
+    {
+      "context_sha256": "b9dedf3f5d26b41e2c18cd7f88a53ada6b98493487cfe81911931928e65c9df5",
+      "files_sha256": {
+        "negative/command.txt": "492d82e2e8c71afd1d8126ed0c7e5b9abbbf7e8f4557abe742802c080c04f888",
+        "negative/polar.txt": "fd76f312f52e4522afccff2fe5b6badbc80a9bdf17253696d79f000278882a56",
+        "negative/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "negative/stdout.txt": "0cb1be74dd6c1b5db50004ea357b455ba0f8d64b74764488cf05a6edf19dfaa9",
+        "observed.parquet": "a1ccae905e88678ee2548c2e2fc14feefd111682d2687d67df1f71ea28a62c48",
+        "positive/command.txt": "93813481c5fd282e4790ccf8c5eacaf1deaca707595d27f8fbf827678951f0c2",
+        "positive/polar.txt": "427b5db9cd4f51ef450e95bf0f596ea15d4a4ca8cc44bb7b1d07244a33313ef4",
+        "positive/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "positive/stdout.txt": "60495d15462d87e62a97e7ecf1b1ea29a9aac0fcdc2ff9b434d1cda8dcb676f1"
+      },
+      "id": "external_naca4_000",
+      "merge_audit": {
+        "admitted_states": 110,
+        "conflicting_alpha_count": 0,
+        "conflicting_alpha_values": [],
+        "consistent_duplicate_rows_removed": 1
+      },
+      "observed": 110,
+      "requested": 113,
+      "segments": [
+        {
+          "admitted_states": 64,
+          "name": "positive",
+          "return_code": 0,
+          "seconds": 2.3490782999433577,
+          "status": "failed",
+          "timed_out": false
+        },
+        {
+          "admitted_states": 47,
+          "name": "negative",
+          "return_code": 0,
+          "seconds": 2.7391271999804303,
+          "status": "failed",
+          "timed_out": false
+        }
+      ]
+    },
+    {
+      "context_sha256": "b9dedf3f5d26b41e2c18cd7f88a53ada6b98493487cfe81911931928e65c9df5",
+      "files_sha256": {
+        "negative/command.txt": "492d82e2e8c71afd1d8126ed0c7e5b9abbbf7e8f4557abe742802c080c04f888",
+        "negative/polar.txt": "ef9fb836952096900c3d05283ba190fdcdc1d6663e3c274ee32c29af33e5da93",
+        "negative/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "negative/stdout.txt": "1c3501730df948a7b0cc0d0f7652b92ac8d944ad67dde9227ea32ba6664d4fd5",
+        "observed.parquet": "ed88ed5710560c8cfb752c20098b36ecc9ec187ece30b9a7502aa196a689fd53",
+        "positive/command.txt": "93813481c5fd282e4790ccf8c5eacaf1deaca707595d27f8fbf827678951f0c2",
+        "positive/polar.txt": "b43014f39794a18b8bc663adfccd72f51c5dc053614dc00d608c8f97875c0c73",
+        "positive/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "positive/stdout.txt": "c5d70b03897c6f5466179073781128eda12cea181dd53113d8c64344f582f490"
+      },
+      "id": "external_naca4_001",
+      "merge_audit": {
+        "admitted_states": 107,
+        "conflicting_alpha_count": 0,
+        "conflicting_alpha_values": [],
+        "consistent_duplicate_rows_removed": 1
+      },
+      "observed": 107,
+      "requested": 113,
+      "segments": [
+        {
+          "admitted_states": 62,
+          "name": "positive",
+          "return_code": 0,
+          "seconds": 3.529442400089465,
+          "status": "failed",
+          "timed_out": false
+        },
+        {
+          "admitted_states": 46,
+          "name": "negative",
+          "return_code": 0,
+          "seconds": 3.156269900035113,
+          "status": "failed",
+          "timed_out": false
+        }
+      ]
+    },
+    {
+      "context_sha256": "b9dedf3f5d26b41e2c18cd7f88a53ada6b98493487cfe81911931928e65c9df5",
+      "files_sha256": {
+        "negative/command.txt": "492d82e2e8c71afd1d8126ed0c7e5b9abbbf7e8f4557abe742802c080c04f888",
+        "negative/polar.txt": "6495dc84dbc7959eaa1c9eaa2d50bdac20f2c59fcca3b5b30dfd5ddfce5606a3",
+        "negative/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "negative/stdout.txt": "29e19547bdd3098c9013b65c17f78af1461f331df0faf243f7247da66d4bfc1c",
+        "observed.parquet": "98cafb80512c7f95288f467c3e7dbf29b430fb16b495f2fd524b30db117181b1",
+        "positive/command.txt": "93813481c5fd282e4790ccf8c5eacaf1deaca707595d27f8fbf827678951f0c2",
+        "positive/polar.txt": "e78a5e6d2fdd81a7e93cc04b84e33900671eeed1e101be4a8f3548e999a4b56c",
+        "positive/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "positive/stdout.txt": "2fa7fed5434c166e8f02b8e12ecf626ec863710e21e053be65b695f59af80378"
+      },
+      "id": "external_naca4_002",
+      "merge_audit": {
+        "admitted_states": 107,
+        "conflicting_alpha_count": 0,
+        "conflicting_alpha_values": [],
+        "consistent_duplicate_rows_removed": 1
+      },
+      "observed": 107,
+      "requested": 113,
+      "segments": [
+        {
+          "admitted_states": 62,
+          "name": "positive",
+          "return_code": 0,
+          "seconds": 3.7592816000105813,
+          "status": "failed",
+          "timed_out": false
+        },
+        {
+          "admitted_states": 46,
+          "name": "negative",
+          "return_code": 0,
+          "seconds": 4.398290799930692,
+          "status": "failed",
+          "timed_out": false
+        }
+      ]
+    },
+    {
+      "context_sha256": "b9dedf3f5d26b41e2c18cd7f88a53ada6b98493487cfe81911931928e65c9df5",
+      "files_sha256": {
+        "negative/command.txt": "492d82e2e8c71afd1d8126ed0c7e5b9abbbf7e8f4557abe742802c080c04f888",
+        "negative/polar.txt": "6b33b6efc66c5ea610ac8e5332db1a5996e7fdce6da78d79aef3fb8120cec0d4",
+        "negative/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "negative/stdout.txt": "6ea3a8ebc002fab10dff49925d5adb41cfccc9f8b23533520fcd494e4376a4cf",
+        "observed.parquet": "fb6715b6f88a6505f08ab45e4f0bcfb7092eecbf21ab0ed66149ef18be96d6e1",
+        "positive/command.txt": "93813481c5fd282e4790ccf8c5eacaf1deaca707595d27f8fbf827678951f0c2",
+        "positive/polar.txt": "9d114d600d02cb957b913fe7a630b4f84867364ce7d56269d886657545f05b17",
+        "positive/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "positive/stdout.txt": "df44de600fb4c3d240d3e97c796f85f22b62f7593dc191ed9dd839cebcf185be"
+      },
+      "id": "external_naca4_003",
+      "merge_audit": {
+        "admitted_states": 106,
+        "conflicting_alpha_count": 0,
+        "conflicting_alpha_values": [],
+        "consistent_duplicate_rows_removed": 1
+      },
+      "observed": 106,
+      "requested": 113,
+      "segments": [
+        {
+          "admitted_states": 64,
+          "name": "positive",
+          "return_code": 0,
+          "seconds": 2.440413200063631,
+          "status": "failed",
+          "timed_out": false
+        },
+        {
+          "admitted_states": 43,
+          "name": "negative",
+          "return_code": 0,
+          "seconds": 6.246613200055435,
+          "status": "failed",
+          "timed_out": false
+        }
+      ]
+    },
+    {
+      "context_sha256": "b9dedf3f5d26b41e2c18cd7f88a53ada6b98493487cfe81911931928e65c9df5",
+      "files_sha256": {
+        "negative/command.txt": "492d82e2e8c71afd1d8126ed0c7e5b9abbbf7e8f4557abe742802c080c04f888",
+        "negative/polar.txt": "ea4efe0f9353c6dce45f8c527f6575a61c670d4453d9abdbc5cba81f804e8a44",
+        "negative/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "negative/stdout.txt": "aaf306de58a8c2f6a44ade2d8a148acd6b796c2e74881a4d71b08b4947ae9e90",
+        "observed.parquet": "15b64a88888300619118a19a136c09c1cdc1093cab09c1542dc401c40c7bb0ec",
+        "positive/command.txt": "93813481c5fd282e4790ccf8c5eacaf1deaca707595d27f8fbf827678951f0c2",
+        "positive/polar.txt": "548c2a12be3f1f65d0f196b01500ea8714ec7e2c33e2ea61f362816c4d679c97",
+        "positive/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "positive/stdout.txt": "8aefa72c5665e8981f3b9a2abca7258757f7af6f4bd9849584e1b1612ef249a7"
+      },
+      "id": "external_naca4_004",
+      "merge_audit": {
+        "admitted_states": 112,
+        "conflicting_alpha_count": 0,
+        "conflicting_alpha_values": [],
+        "consistent_duplicate_rows_removed": 1
+      },
+      "observed": 112,
+      "requested": 113,
+      "segments": [
+        {
+          "admitted_states": 64,
+          "name": "positive",
+          "return_code": 0,
+          "seconds": 2.210617700009607,
+          "status": "failed",
+          "timed_out": false
+        },
+        {
+          "admitted_states": 49,
+          "name": "negative",
+          "return_code": 0,
+          "seconds": 1.2700550999725237,
+          "status": "ok",
+          "timed_out": false
+        }
+      ]
+    },
+    {
+      "context_sha256": "b9dedf3f5d26b41e2c18cd7f88a53ada6b98493487cfe81911931928e65c9df5",
+      "files_sha256": {
+        "negative/command.txt": "492d82e2e8c71afd1d8126ed0c7e5b9abbbf7e8f4557abe742802c080c04f888",
+        "negative/polar.txt": "2a076b98ebd760a703798050eba926e3de332b1388766f9259d55ff43af54662",
+        "negative/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "negative/stdout.txt": "b1971f5b4b9094220045097145829ff26cdbf6ed50ef026543379c71728f19fb",
+        "observed.parquet": "7f72c7f00ff5464f7a54231a44c66dad9dc5319b4fc49799f3e46b8da6b46c5d",
+        "positive/command.txt": "93813481c5fd282e4790ccf8c5eacaf1deaca707595d27f8fbf827678951f0c2",
+        "positive/polar.txt": "1f669d34c198ab148b0d0e6d3ce86cc67a9f64220f4d931f6d9fc89e821d428e",
+        "positive/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "positive/stdout.txt": "aa437b468575ccc7bb057c4fcaf64187e69f3af44b9483a5d482be0e952ab01b"
+      },
+      "id": "external_naca4_005",
+      "merge_audit": {
+        "admitted_states": 112,
+        "conflicting_alpha_count": 0,
+        "conflicting_alpha_values": [],
+        "consistent_duplicate_rows_removed": 1
+      },
+      "observed": 112,
+      "requested": 113,
+      "segments": [
+        {
+          "admitted_states": 64,
+          "name": "positive",
+          "return_code": 0,
+          "seconds": 2.1848878000164405,
+          "status": "failed",
+          "timed_out": false
+        },
+        {
+          "admitted_states": 49,
+          "name": "negative",
+          "return_code": 0,
+          "seconds": 1.1826994000002742,
+          "status": "ok",
+          "timed_out": false
+        }
+      ]
+    },
+    {
+      "context_sha256": "b9dedf3f5d26b41e2c18cd7f88a53ada6b98493487cfe81911931928e65c9df5",
+      "files_sha256": {
+        "negative/command.txt": "492d82e2e8c71afd1d8126ed0c7e5b9abbbf7e8f4557abe742802c080c04f888",
+        "negative/polar.txt": "e2235273443d2d4b13cd78b02ec051ad47c539a7136c74ae6c9f519ce636c524",
+        "negative/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "negative/stdout.txt": "b44b147682c4ee70d70aaea0aaffc79bc94a497c580f8563220e9d178f0bea24",
+        "observed.parquet": "ab69b238fc269304f40d277ecba9e0b4e80d68e8616eab592a7a65b5b4b24b08",
+        "positive/command.txt": "93813481c5fd282e4790ccf8c5eacaf1deaca707595d27f8fbf827678951f0c2",
+        "positive/polar.txt": "6b228edd210343352900c4863332c5bdaa89f59629abe207ab6b4be922dec1f0",
+        "positive/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "positive/stdout.txt": "99714e19fa9f582d436b8efd75d8a25a7bb10aabcf412244e29a6febf69a8916"
+      },
+      "id": "external_naca4_006",
+      "merge_audit": {
+        "admitted_states": 108,
+        "conflicting_alpha_count": 0,
+        "conflicting_alpha_values": [],
+        "consistent_duplicate_rows_removed": 1
+      },
+      "observed": 108,
+      "requested": 113,
+      "segments": [
+        {
+          "admitted_states": 61,
+          "name": "positive",
+          "return_code": 0,
+          "seconds": 4.26094569999259,
+          "status": "failed",
+          "timed_out": false
+        },
+        {
+          "admitted_states": 48,
+          "name": "negative",
+          "return_code": 0,
+          "seconds": 2.5983830000041053,
+          "status": "failed",
+          "timed_out": false
+        }
+      ]
+    },
+    {
+      "context_sha256": "b9dedf3f5d26b41e2c18cd7f88a53ada6b98493487cfe81911931928e65c9df5",
+      "files_sha256": {
+        "negative/command.txt": "492d82e2e8c71afd1d8126ed0c7e5b9abbbf7e8f4557abe742802c080c04f888",
+        "negative/polar.txt": "ccaba031f17c70256bf52fa378405d319b62fa565e4cace737c7308c41231993",
+        "negative/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "negative/stdout.txt": "dbd9b8379815f740abfee0e5ce9bb791fffdd49388ef06518230f52dea19b045",
+        "observed.parquet": "3cbc3b4c7d62d2fb38ee042c70f47198c22f7b88649426d5ef0c59b99f2f8c80",
+        "positive/command.txt": "93813481c5fd282e4790ccf8c5eacaf1deaca707595d27f8fbf827678951f0c2",
+        "positive/polar.txt": "2490e6dfcc1691c28c04ae31dea05a54db945221bfbca922fc42d34b23b2e78e",
+        "positive/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "positive/stdout.txt": "547a8c2d0c0d085315a86ea6fb42cdae124a61f7788f20b2c6687e1eb78819df"
+      },
+      "id": "external_naca4_007",
+      "merge_audit": {
+        "admitted_states": 108,
+        "conflicting_alpha_count": 0,
+        "conflicting_alpha_values": [],
+        "consistent_duplicate_rows_removed": 1
+      },
+      "observed": 108,
+      "requested": 113,
+      "segments": [
+        {
+          "admitted_states": 64,
+          "name": "positive",
+          "return_code": 0,
+          "seconds": 2.240603500045836,
+          "status": "failed",
+          "timed_out": false
+        },
+        {
+          "admitted_states": 45,
+          "name": "negative",
+          "return_code": 0,
+          "seconds": 5.654102999949828,
+          "status": "failed",
+          "timed_out": false
+        }
+      ]
+    },
+    {
+      "context_sha256": "b9dedf3f5d26b41e2c18cd7f88a53ada6b98493487cfe81911931928e65c9df5",
+      "files_sha256": {
+        "negative/command.txt": "492d82e2e8c71afd1d8126ed0c7e5b9abbbf7e8f4557abe742802c080c04f888",
+        "negative/polar.txt": "3c1be0104307b1f002fd8ab6bfc140007650db9162941913609f62e7c3518c8d",
+        "negative/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "negative/stdout.txt": "c1e8586bda33b16bce5165095009423e9714c61753e4fdcb6f3cbc138abf1938",
+        "observed.parquet": "53b6cd6e27ee6646613b389ebfc82e675953e757684b5f2b44add2bf91d368b0",
+        "positive/command.txt": "93813481c5fd282e4790ccf8c5eacaf1deaca707595d27f8fbf827678951f0c2",
+        "positive/polar.txt": "f9f507f71bfd80b1d2ff44311da7d0b1772d0cae597b8ca7e5368bad984634ff",
+        "positive/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "positive/stdout.txt": "88a03f2b286842b50cf64650e1eed8b002d26e5cb2881efc553a320a6c15775c"
+      },
+      "id": "external_naca4_008",
+      "merge_audit": {
+        "admitted_states": 111,
+        "conflicting_alpha_count": 0,
+        "conflicting_alpha_values": [],
+        "consistent_duplicate_rows_removed": 1
+      },
+      "observed": 111,
+      "requested": 113,
+      "segments": [
+        {
+          "admitted_states": 64,
+          "name": "positive",
+          "return_code": 0,
+          "seconds": 2.2230335000203922,
+          "status": "failed",
+          "timed_out": false
+        },
+        {
+          "admitted_states": 48,
+          "name": "negative",
+          "return_code": 0,
+          "seconds": 1.973126000026241,
+          "status": "failed",
+          "timed_out": false
+        }
+      ]
+    },
+    {
+      "context_sha256": "b9dedf3f5d26b41e2c18cd7f88a53ada6b98493487cfe81911931928e65c9df5",
+      "files_sha256": {
+        "negative/command.txt": "492d82e2e8c71afd1d8126ed0c7e5b9abbbf7e8f4557abe742802c080c04f888",
+        "negative/polar.txt": "00fd5726d15db185180bee3815f70004ab5e7d7b225fd28b5f6b248ec365156a",
+        "negative/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "negative/stdout.txt": "eaba3b13321028f23198966ea3fd68bb8e5ed8404a01b603507cf8796da5b2f6",
+        "observed.parquet": "dd5389c3f7e143f229fa159aea1d2890ba8049ef96f2c55d24b8b03f9376e27b",
+        "positive/command.txt": "93813481c5fd282e4790ccf8c5eacaf1deaca707595d27f8fbf827678951f0c2",
+        "positive/polar.txt": "54c48b9f816ee6380ed76d6ec8cdbeb01fd5762aeb40aa2ef18e68b8eb3723f9",
+        "positive/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "positive/stdout.txt": "b261069d5cbd26b8d6079732b489339cea38a87e27e1154a82783491cf3c230f"
+      },
+      "id": "external_naca4_009",
+      "merge_audit": {
+        "admitted_states": 111,
+        "conflicting_alpha_count": 0,
+        "conflicting_alpha_values": [],
+        "consistent_duplicate_rows_removed": 1
+      },
+      "observed": 111,
+      "requested": 113,
+      "segments": [
+        {
+          "admitted_states": 64,
+          "name": "positive",
+          "return_code": 0,
+          "seconds": 2.2186506000580266,
+          "status": "failed",
+          "timed_out": false
+        },
+        {
+          "admitted_states": 48,
+          "name": "negative",
+          "return_code": 0,
+          "seconds": 1.9009821999352425,
+          "status": "failed",
+          "timed_out": false
+        }
+      ]
+    },
+    {
+      "context_sha256": "b9dedf3f5d26b41e2c18cd7f88a53ada6b98493487cfe81911931928e65c9df5",
+      "files_sha256": {
+        "negative/command.txt": "492d82e2e8c71afd1d8126ed0c7e5b9abbbf7e8f4557abe742802c080c04f888",
+        "negative/polar.txt": "80ce84fb045a7af0431ec4d404deee58b01327e18ecc1b94c7dae3f1c00ec213",
+        "negative/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "negative/stdout.txt": "c8eb3d5e8166bab07a3cdc835d9a07fee2697fe605d2f214d373db6b04b83109",
+        "observed.parquet": "a140e3e119d33679bdd3a66dba97f9e0145f27bd4b4ba1f0d7ccc1f616aa5072",
+        "positive/command.txt": "93813481c5fd282e4790ccf8c5eacaf1deaca707595d27f8fbf827678951f0c2",
+        "positive/polar.txt": "a5db197649161926cca6476ca859f5a5ebc6f855081c5039974b324b3c5d129e",
+        "positive/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "positive/stdout.txt": "3652c56128a3bebe2c4c09936b52bb73626cc0723cce2da831489ee605d4c33d"
+      },
+      "id": "external_naca4_010",
+      "merge_audit": {
+        "admitted_states": 106,
+        "conflicting_alpha_count": 0,
+        "conflicting_alpha_values": [],
+        "consistent_duplicate_rows_removed": 1
+      },
+      "observed": 106,
+      "requested": 113,
+      "segments": [
+        {
+          "admitted_states": 61,
+          "name": "positive",
+          "return_code": 0,
+          "seconds": 4.32419229997322,
+          "status": "failed",
+          "timed_out": false
+        },
+        {
+          "admitted_states": 46,
+          "name": "negative",
+          "return_code": 0,
+          "seconds": 3.1781110001029447,
+          "status": "failed",
+          "timed_out": false
+        }
+      ]
+    },
+    {
+      "context_sha256": "b9dedf3f5d26b41e2c18cd7f88a53ada6b98493487cfe81911931928e65c9df5",
+      "files_sha256": {
+        "negative/command.txt": "492d82e2e8c71afd1d8126ed0c7e5b9abbbf7e8f4557abe742802c080c04f888",
+        "negative/polar.txt": "5c6e00aab3a658a5ab201893c6cd6a13a6face19083a749689f40014b7beaf2c",
+        "negative/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "negative/stdout.txt": "b89dc44e3a585c98e010ad5e059fbc58708135ceba334a249c1243cf384cf6e3",
+        "observed.parquet": "7176c4d259cc652d84356bbb6bb652d8042fb0aeff3a414393592414afb3e1d1",
+        "positive/command.txt": "93813481c5fd282e4790ccf8c5eacaf1deaca707595d27f8fbf827678951f0c2",
+        "positive/polar.txt": "0cced87538f588edef995c51b6c6e3aa7c1c76542abd8c313b65823f9b78b7c3",
+        "positive/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "positive/stdout.txt": "b8c907bf905747c2ee5397fa6864cc5c215844edc9c5ddaf15d239564fb89177"
+      },
+      "id": "external_naca4_011",
+      "merge_audit": {
+        "admitted_states": 111,
+        "conflicting_alpha_count": 0,
+        "conflicting_alpha_values": [],
+        "consistent_duplicate_rows_removed": 1
+      },
+      "observed": 111,
+      "requested": 113,
+      "segments": [
+        {
+          "admitted_states": 63,
+          "name": "positive",
+          "return_code": 0,
+          "seconds": 2.882085399935022,
+          "status": "failed",
+          "timed_out": false
+        },
+        {
+          "admitted_states": 49,
+          "name": "negative",
+          "return_code": 0,
+          "seconds": 1.1972062999848276,
+          "status": "ok",
+          "timed_out": false
+        }
+      ]
+    },
+    {
+      "context_sha256": "b9dedf3f5d26b41e2c18cd7f88a53ada6b98493487cfe81911931928e65c9df5",
+      "files_sha256": {
+        "negative/command.txt": "492d82e2e8c71afd1d8126ed0c7e5b9abbbf7e8f4557abe742802c080c04f888",
+        "negative/polar.txt": "0935b2cb6af4053c9d3fbbf7c460e3f8876f7845af526a503d7187c1c0504599",
+        "negative/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "negative/stdout.txt": "3ac5662ab66a49a8e06643a4e172bafe89dce3e416572acc778eb1bc65359618",
+        "observed.parquet": "3773ed99b7a859f0bf49cb805c8ba31afd5bed892c21a8fbecc8ef119c5329d2",
+        "positive/command.txt": "93813481c5fd282e4790ccf8c5eacaf1deaca707595d27f8fbf827678951f0c2",
+        "positive/polar.txt": "afbf94aef36614226f953aa261fcddea305246aa4e0ec289c385445881f0e471",
+        "positive/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "positive/stdout.txt": "80a2793753539b0234ab05f8f9d41dc666a6738c9239b02f322f6b6b8b889fb2"
+      },
+      "id": "external_naca4_012",
+      "merge_audit": {
+        "admitted_states": 110,
+        "conflicting_alpha_count": 0,
+        "conflicting_alpha_values": [],
+        "consistent_duplicate_rows_removed": 1
+      },
+      "observed": 110,
+      "requested": 113,
+      "segments": [
+        {
+          "admitted_states": 63,
+          "name": "positive",
+          "return_code": 0,
+          "seconds": 2.952638699905947,
+          "status": "failed",
+          "timed_out": false
+        },
+        {
+          "admitted_states": 48,
+          "name": "negative",
+          "return_code": 0,
+          "seconds": 1.8199850000673905,
+          "status": "failed",
+          "timed_out": false
+        }
+      ]
+    },
+    {
+      "context_sha256": "b9dedf3f5d26b41e2c18cd7f88a53ada6b98493487cfe81911931928e65c9df5",
+      "files_sha256": {
+        "negative/command.txt": "492d82e2e8c71afd1d8126ed0c7e5b9abbbf7e8f4557abe742802c080c04f888",
+        "negative/polar.txt": "0ca2482baf8d63295b43c3b7934b69b10c0342ded22b120cee59280d4102cc30",
+        "negative/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "negative/stdout.txt": "17d4de706b1f7f7b98d079ade4ef4ffa4084e4856311dd0de1a9889bb3f475c2",
+        "observed.parquet": "3c93fc6f632c9edf571ea219a7701d59c0c9c71cf1d1f982bed92f204ab5ba90",
+        "positive/command.txt": "93813481c5fd282e4790ccf8c5eacaf1deaca707595d27f8fbf827678951f0c2",
+        "positive/polar.txt": "9d046437976647ad752d374bd31911f6d026a4bfd0d3299abdb03d8c58ccc89a",
+        "positive/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "positive/stdout.txt": "0d31fa7b7452d65368deec52331d6afc0d3e1011e07da9997e57291b7e54e9ce"
+      },
+      "id": "external_naca4_013",
+      "merge_audit": {
+        "admitted_states": 111,
+        "conflicting_alpha_count": 0,
+        "conflicting_alpha_values": [],
+        "consistent_duplicate_rows_removed": 1
+      },
+      "observed": 111,
+      "requested": 113,
+      "segments": [
+        {
+          "admitted_states": 64,
+          "name": "positive",
+          "return_code": 0,
+          "seconds": 2.2304131999844685,
+          "status": "failed",
+          "timed_out": false
+        },
+        {
+          "admitted_states": 48,
+          "name": "negative",
+          "return_code": 0,
+          "seconds": 2.466630900045857,
+          "status": "failed",
+          "timed_out": false
+        }
+      ]
+    },
+    {
+      "context_sha256": "b9dedf3f5d26b41e2c18cd7f88a53ada6b98493487cfe81911931928e65c9df5",
+      "files_sha256": {
+        "negative/command.txt": "492d82e2e8c71afd1d8126ed0c7e5b9abbbf7e8f4557abe742802c080c04f888",
+        "negative/polar.txt": "3d68dea3cc3780526eff618c0a8f108df0958dd0dcd84350bcece9b4f53bc396",
+        "negative/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "negative/stdout.txt": "a0e28c365e292eb94a838d718ee4f5f000d5f7e78d4e6c4463937f2545d447b6",
+        "observed.parquet": "54f851f07c22764679591b45b30731f9d502b39ad193aa75a43b939b67565e88",
+        "positive/command.txt": "93813481c5fd282e4790ccf8c5eacaf1deaca707595d27f8fbf827678951f0c2",
+        "positive/polar.txt": "36f06656c489dc4ccf1a775f8110fcc221988b3fda21300bd93d6c85be699e6c",
+        "positive/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "positive/stdout.txt": "da6fc44cd4009aef63314767f1194c3ff1e057d1b51a8f76add183da3f0fc652"
+      },
+      "id": "external_naca4_014",
+      "merge_audit": {
+        "admitted_states": 111,
+        "conflicting_alpha_count": 0,
+        "conflicting_alpha_values": [],
+        "consistent_duplicate_rows_removed": 1
+      },
+      "observed": 111,
+      "requested": 113,
+      "segments": [
+        {
+          "admitted_states": 64,
+          "name": "positive",
+          "return_code": 0,
+          "seconds": 2.2338523999787867,
+          "status": "failed",
+          "timed_out": false
+        },
+        {
+          "admitted_states": 48,
+          "name": "negative",
+          "return_code": 0,
+          "seconds": 2.3542095999000594,
+          "status": "failed",
+          "timed_out": false
+        }
+      ]
+    },
+    {
+      "context_sha256": "b9dedf3f5d26b41e2c18cd7f88a53ada6b98493487cfe81911931928e65c9df5",
+      "files_sha256": {
+        "negative/command.txt": "492d82e2e8c71afd1d8126ed0c7e5b9abbbf7e8f4557abe742802c080c04f888",
+        "negative/polar.txt": "78ea6ca76beecfe680beb29eba5765694b3214b43bf519551dc6451c181fccc5",
+        "negative/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "negative/stdout.txt": "4c77a227697ff474044da9f7ee1d4f05c2ffaa01f4291d44581eda9ec1c725ce",
+        "observed.parquet": "38d3f8404b4ce0e21b43293e39fc274dfd76241e91cb06134e3173e52d65dfef",
+        "positive/command.txt": "93813481c5fd282e4790ccf8c5eacaf1deaca707595d27f8fbf827678951f0c2",
+        "positive/polar.txt": "192d659f30abdadfb686e06b12e7b166732d66b65208f9da48f4fc695ebc0cc7",
+        "positive/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "positive/stdout.txt": "a50754d59022a182490f1269fae8986a823d1c8aac624566898c7314f0c789e9"
+      },
+      "id": "external_naca4_015",
+      "merge_audit": {
+        "admitted_states": 112,
+        "conflicting_alpha_count": 0,
+        "conflicting_alpha_values": [],
+        "consistent_duplicate_rows_removed": 1
+      },
+      "observed": 112,
+      "requested": 113,
+      "segments": [
+        {
+          "admitted_states": 64,
+          "name": "positive",
+          "return_code": 0,
+          "seconds": 2.1882592999609187,
+          "status": "failed",
+          "timed_out": false
+        },
+        {
+          "admitted_states": 49,
+          "name": "negative",
+          "return_code": 0,
+          "seconds": 1.1751688999356702,
+          "status": "ok",
+          "timed_out": false
+        }
+      ]
+    },
+    {
+      "context_sha256": "b9dedf3f5d26b41e2c18cd7f88a53ada6b98493487cfe81911931928e65c9df5",
+      "files_sha256": {
+        "negative/command.txt": "492d82e2e8c71afd1d8126ed0c7e5b9abbbf7e8f4557abe742802c080c04f888",
+        "negative/polar.txt": "7d4b74b5a5d986f974da662d4df4ef0c852eb9c84bbc14cb00b353cafcec4a07",
+        "negative/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "negative/stdout.txt": "c526e5bcc4467b563bf713ea26b602ad98a0e051f1083260f97ff611e50c6675",
+        "observed.parquet": "f49931297dc5e2637879338507d6a20a21fe1f03df1420c165de54326d11a25c",
+        "positive/command.txt": "93813481c5fd282e4790ccf8c5eacaf1deaca707595d27f8fbf827678951f0c2",
+        "positive/polar.txt": "2980edf7301e03e7f65c004250051dadf5835ddd3457e6b68b2f50a0abf4c7c2",
+        "positive/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "positive/stdout.txt": "4f812ef9b044d3d79aef05f9a9fb0e8b68ba0e77173cc7d555bbfab32a791093"
+      },
+      "id": "external_naca4_016",
+      "merge_audit": {
+        "admitted_states": 111,
+        "conflicting_alpha_count": 0,
+        "conflicting_alpha_values": [],
+        "consistent_duplicate_rows_removed": 1
+      },
+      "observed": 111,
+      "requested": 113,
+      "segments": [
+        {
+          "admitted_states": 63,
+          "name": "positive",
+          "return_code": 0,
+          "seconds": 2.975505799986422,
+          "status": "failed",
+          "timed_out": false
+        },
+        {
+          "admitted_states": 49,
+          "name": "negative",
+          "return_code": 0,
+          "seconds": 1.1884833000367507,
+          "status": "ok",
+          "timed_out": false
+        }
+      ]
+    },
+    {
+      "context_sha256": "b9dedf3f5d26b41e2c18cd7f88a53ada6b98493487cfe81911931928e65c9df5",
+      "files_sha256": {
+        "negative/command.txt": "492d82e2e8c71afd1d8126ed0c7e5b9abbbf7e8f4557abe742802c080c04f888",
+        "negative/polar.txt": "4edf6366fa3c6d64f1e9e22b5a843dc56fd6a6ab0b713c6b82e18b77dd9ef73c",
+        "negative/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "negative/stdout.txt": "6528ab87d2d2fb657e8d5f10ce7d93365eeb7cc451d5de3de82092fc1fb784be",
+        "observed.parquet": "198ad78b0ad2c9747af9d135662c809cc57777be96ee373ba471fdcb05687b3a",
+        "positive/command.txt": "93813481c5fd282e4790ccf8c5eacaf1deaca707595d27f8fbf827678951f0c2",
+        "positive/polar.txt": "476731e7e8da0c926d75606d4f646c4811d420f36acd9a72107dac3edb15f224",
+        "positive/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "positive/stdout.txt": "640df2f52705cad3005f54d352b9b90b0ae6f3c665cfd2b98666eac066c98bd5"
+      },
+      "id": "external_naca4_017",
+      "merge_audit": {
+        "admitted_states": 112,
+        "conflicting_alpha_count": 0,
+        "conflicting_alpha_values": [],
+        "consistent_duplicate_rows_removed": 1
+      },
+      "observed": 112,
+      "requested": 113,
+      "segments": [
+        {
+          "admitted_states": 65,
+          "name": "positive",
+          "return_code": 0,
+          "seconds": 2.7833653999259695,
+          "status": "ok",
+          "timed_out": false
+        },
+        {
+          "admitted_states": 48,
+          "name": "negative",
+          "return_code": 0,
+          "seconds": 2.478292000014335,
+          "status": "failed",
+          "timed_out": false
+        }
+      ]
+    },
+    {
+      "context_sha256": "b9dedf3f5d26b41e2c18cd7f88a53ada6b98493487cfe81911931928e65c9df5",
+      "files_sha256": {
+        "negative/command.txt": "492d82e2e8c71afd1d8126ed0c7e5b9abbbf7e8f4557abe742802c080c04f888",
+        "negative/polar.txt": "0e9cc95fe78a8edc51595e71a9c68ab35adc464183866d967aa2c3914eca2054",
+        "negative/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "negative/stdout.txt": "32e49f0c6be6c6fffd28ba5d49da0e5fadb0b3d370ab55bb8b8cc2d36ece6ba1",
+        "observed.parquet": "cf703f83fd832dbb6810397dc6852d67ae7274a9f8bf445ec83ec360d476ebdb",
+        "positive/command.txt": "93813481c5fd282e4790ccf8c5eacaf1deaca707595d27f8fbf827678951f0c2",
+        "positive/polar.txt": "2a3633086ee5524564e39d9c67a80eb8723bcd334cb1b8bbc70bda1c06bea165",
+        "positive/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "positive/stdout.txt": "35ef5da6e6250385b6b37b9d4abc5d8ec0425672886e23ccac3ce71004ec8b59"
+      },
+      "id": "external_naca4_018",
+      "merge_audit": {
+        "admitted_states": 108,
+        "conflicting_alpha_count": 0,
+        "conflicting_alpha_values": [],
+        "consistent_duplicate_rows_removed": 1
+      },
+      "observed": 108,
+      "requested": 113,
+      "segments": [
+        {
+          "admitted_states": 62,
+          "name": "positive",
+          "return_code": 0,
+          "seconds": 3.6010922000277787,
+          "status": "failed",
+          "timed_out": false
+        },
+        {
+          "admitted_states": 47,
+          "name": "negative",
+          "return_code": 0,
+          "seconds": 2.6148778999922797,
+          "status": "failed",
+          "timed_out": false
+        }
+      ]
+    },
+    {
+      "context_sha256": "b9dedf3f5d26b41e2c18cd7f88a53ada6b98493487cfe81911931928e65c9df5",
+      "files_sha256": {
+        "negative/command.txt": "492d82e2e8c71afd1d8126ed0c7e5b9abbbf7e8f4557abe742802c080c04f888",
+        "negative/polar.txt": "0e6b1db217959019d72a77fd6ada5ee12c211cd91ae4557c036eb5f233279422",
+        "negative/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "negative/stdout.txt": "56e745c5c754228474bf28dd26cb2fbb3a58da27445a2b75b52a100615b2f65c",
+        "observed.parquet": "f1cbf7823b9dc17070c32337ad0442ebd11b263680858b488d18e96d087435f1",
+        "positive/command.txt": "93813481c5fd282e4790ccf8c5eacaf1deaca707595d27f8fbf827678951f0c2",
+        "positive/polar.txt": "8a3246688e6e58b1d8f3ff6fb744af644b4a5d562322434a7bb6071678ac1a71",
+        "positive/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "positive/stdout.txt": "6edf8cc62474680bc180aee1ed6c49e141f9a981e372b8c35e497b05d8822147"
+      },
+      "id": "external_naca4_019",
+      "merge_audit": {
+        "admitted_states": 106,
+        "conflicting_alpha_count": 0,
+        "conflicting_alpha_values": [],
+        "consistent_duplicate_rows_removed": 1
+      },
+      "observed": 106,
+      "requested": 113,
+      "segments": [
+        {
+          "admitted_states": 61,
+          "name": "positive",
+          "return_code": 0,
+          "seconds": 4.244156299973838,
+          "status": "failed",
+          "timed_out": false
+        },
+        {
+          "admitted_states": 46,
+          "name": "negative",
+          "return_code": 0,
+          "seconds": 3.245894099934958,
+          "status": "failed",
+          "timed_out": false
+        }
+      ]
+    },
+    {
+      "context_sha256": "b9dedf3f5d26b41e2c18cd7f88a53ada6b98493487cfe81911931928e65c9df5",
+      "files_sha256": {
+        "negative/command.txt": "492d82e2e8c71afd1d8126ed0c7e5b9abbbf7e8f4557abe742802c080c04f888",
+        "negative/polar.txt": "d6a1a53c0e5f790ac36ee1d74a5fd00f64b923179839ded6cd6eefa4b4668596",
+        "negative/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "negative/stdout.txt": "b3c4aa8861a486151f3414aaf54da2c4631c6c19bc10e843da0b75b34fa562dc",
+        "observed.parquet": "a8762794efef213677d470f6476dcd40b505fe3ac0cf408090f8b3b39c9fd295",
+        "positive/command.txt": "93813481c5fd282e4790ccf8c5eacaf1deaca707595d27f8fbf827678951f0c2",
+        "positive/polar.txt": "7984d7aaf724a24c00a2b503db715a8a7f382b9e98a7ccc97afc1a941375132a",
+        "positive/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "positive/stdout.txt": "af64c7def03bdb594df83ad5b35379f23d2e8382798a7eb5a3d3222973b37997"
+      },
+      "id": "external_naca4_020",
+      "merge_audit": {
+        "admitted_states": 93,
+        "conflicting_alpha_count": 0,
+        "conflicting_alpha_values": [],
+        "consistent_duplicate_rows_removed": 1
+      },
+      "observed": 93,
+      "requested": 113,
+      "segments": [
+        {
+          "admitted_states": 63,
+          "name": "positive",
+          "return_code": 0,
+          "seconds": 3.145435499958694,
+          "status": "failed",
+          "timed_out": false
+        },
+        {
+          "admitted_states": 31,
+          "name": "negative",
+          "return_code": 0,
+          "seconds": 5.843003100017086,
+          "status": "failed",
+          "timed_out": false
+        }
+      ]
+    },
+    {
+      "context_sha256": "b9dedf3f5d26b41e2c18cd7f88a53ada6b98493487cfe81911931928e65c9df5",
+      "files_sha256": {
+        "negative/command.txt": "492d82e2e8c71afd1d8126ed0c7e5b9abbbf7e8f4557abe742802c080c04f888",
+        "negative/polar.txt": "7a46e6fe12fe5ac78abc827a3f98a36ab9185f5aa9f273d0a116824b73411988",
+        "negative/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "negative/stdout.txt": "3870f0d7c9a58b80d871454d205c525c817d5c39fae5f3307367965da5220d59",
+        "observed.parquet": "6752707a2d43fb685f07eadd8d9a223afa6d7940c23e60d13c923407862a0e75",
+        "positive/command.txt": "93813481c5fd282e4790ccf8c5eacaf1deaca707595d27f8fbf827678951f0c2",
+        "positive/polar.txt": "d6587d05015cbcb4e974d8833522ace98d7dc7719d8133724a8ddf01e345f18b",
+        "positive/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "positive/stdout.txt": "4a597ffd5e65219c1d3037e6ec42ce0bc26dc60406a4aa649913538f2f13d8bd"
+      },
+      "id": "external_naca4_021",
+      "merge_audit": {
+        "admitted_states": 104,
+        "conflicting_alpha_count": 0,
+        "conflicting_alpha_values": [],
+        "consistent_duplicate_rows_removed": 1
+      },
+      "observed": 104,
+      "requested": 113,
+      "segments": [
+        {
+          "admitted_states": 65,
+          "name": "positive",
+          "return_code": 0,
+          "seconds": 1.6193054999457672,
+          "status": "ok",
+          "timed_out": false
+        },
+        {
+          "admitted_states": 40,
+          "name": "negative",
+          "return_code": 0,
+          "seconds": 5.63137249997817,
+          "status": "failed",
+          "timed_out": false
+        }
+      ]
+    },
+    {
+      "context_sha256": "b9dedf3f5d26b41e2c18cd7f88a53ada6b98493487cfe81911931928e65c9df5",
+      "files_sha256": {
+        "negative/command.txt": "492d82e2e8c71afd1d8126ed0c7e5b9abbbf7e8f4557abe742802c080c04f888",
+        "negative/polar.txt": "a291b79b3409d3e2e34ddb67649db9195959d2a23ad6c131a1fc14d87095c835",
+        "negative/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "negative/stdout.txt": "34c752a2d79f8763bea66b7772eaa7e94c052a8230732c53d9845437b9bb172f",
+        "observed.parquet": "40a32036951b4b204814945dd528c6f37eb647d0e2a2427af666b56835f41d60",
+        "positive/command.txt": "93813481c5fd282e4790ccf8c5eacaf1deaca707595d27f8fbf827678951f0c2",
+        "positive/polar.txt": "45702102ec5bfd7eefa7f426eb1c1e772b914f220afb7d9fcf5db54b7c3ebd00",
+        "positive/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "positive/stdout.txt": "a78dc18096989d9ed1a6a9a27792579c0391b36c144965c19901674501bed864"
+      },
+      "id": "external_naca4_022",
+      "merge_audit": {
+        "admitted_states": 109,
+        "conflicting_alpha_count": 0,
+        "conflicting_alpha_values": [],
+        "consistent_duplicate_rows_removed": 1
+      },
+      "observed": 109,
+      "requested": 113,
+      "segments": [
+        {
+          "admitted_states": 63,
+          "name": "positive",
+          "return_code": 0,
+          "seconds": 3.198603200027719,
+          "status": "failed",
+          "timed_out": false
+        },
+        {
+          "admitted_states": 47,
+          "name": "negative",
+          "return_code": 0,
+          "seconds": 2.510454999981448,
+          "status": "failed",
+          "timed_out": false
+        }
+      ]
+    },
+    {
+      "context_sha256": "b9dedf3f5d26b41e2c18cd7f88a53ada6b98493487cfe81911931928e65c9df5",
+      "files_sha256": {
+        "negative/command.txt": "492d82e2e8c71afd1d8126ed0c7e5b9abbbf7e8f4557abe742802c080c04f888",
+        "negative/polar.txt": "3e84f5a010f31bf345db82882e40e3c0ef21912f8c9ec59badd17802dea3b931",
+        "negative/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "negative/stdout.txt": "07aace7690df931ac6fc2e03d244902fe7bea4fd60b47941944db855ef4dc619",
+        "observed.parquet": "204cfc9296305c7623ed9c3e013a74e33c9810afe559439ea9f6749bcb32e575",
+        "positive/command.txt": "93813481c5fd282e4790ccf8c5eacaf1deaca707595d27f8fbf827678951f0c2",
+        "positive/polar.txt": "f422ba666669dbc549f81a610db61e7c5164da28deaf0b2eec3668c9f3026c24",
+        "positive/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "positive/stdout.txt": "1bc98b495ac81a22a60fd075d0544bb6d60e27644e961ac1e9d7bfa524cb1634"
+      },
+      "id": "external_naca4_023",
+      "merge_audit": {
+        "admitted_states": 91,
+        "conflicting_alpha_count": 0,
+        "conflicting_alpha_values": [],
+        "consistent_duplicate_rows_removed": 1
+      },
+      "observed": 91,
+      "requested": 113,
+      "segments": [
+        {
+          "admitted_states": 64,
+          "name": "positive",
+          "return_code": 0,
+          "seconds": 2.397468499955721,
+          "status": "failed",
+          "timed_out": false
+        },
+        {
+          "admitted_states": 28,
+          "name": "negative",
+          "return_code": 0,
+          "seconds": 6.314304500003345,
+          "status": "failed",
+          "timed_out": false
+        }
+      ]
+    },
+    {
+      "context_sha256": "b9dedf3f5d26b41e2c18cd7f88a53ada6b98493487cfe81911931928e65c9df5",
+      "files_sha256": {
+        "negative/command.txt": "492d82e2e8c71afd1d8126ed0c7e5b9abbbf7e8f4557abe742802c080c04f888",
+        "negative/polar.txt": "87207a3ab184a2396ada8ed8dcaefa47fb43fdce872a284d567f0bb96fedda32",
+        "negative/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "negative/stdout.txt": "9ff858737a6aee0b34f62e470545c9a5e6f287a043ba6f32dad522a0a573f7a1",
+        "observed.parquet": "fa73cad10eb0a26a50a5e1ba835e296344627b3ac58f698e325009a53d7277ce",
+        "positive/command.txt": "93813481c5fd282e4790ccf8c5eacaf1deaca707595d27f8fbf827678951f0c2",
+        "positive/polar.txt": "e89577d451f8c40e7201d0831aa826a7ee94a742149586ec19dc048eb5b81c59",
+        "positive/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "positive/stdout.txt": "6bff6b50213a67aadaca3a9a2dc84d9ff1917952b5dd655a8abe805092283fbd"
+      },
+      "id": "external_naca4_024",
+      "merge_audit": {
+        "admitted_states": 108,
+        "conflicting_alpha_count": 0,
+        "conflicting_alpha_values": [],
+        "consistent_duplicate_rows_removed": 1
+      },
+      "observed": 108,
+      "requested": 113,
+      "segments": [
+        {
+          "admitted_states": 63,
+          "name": "positive",
+          "return_code": 0,
+          "seconds": 2.8770384999224916,
+          "status": "failed",
+          "timed_out": false
+        },
+        {
+          "admitted_states": 46,
+          "name": "negative",
+          "return_code": 0,
+          "seconds": 3.1950789999682456,
+          "status": "failed",
+          "timed_out": false
+        }
+      ]
+    },
+    {
+      "context_sha256": "b9dedf3f5d26b41e2c18cd7f88a53ada6b98493487cfe81911931928e65c9df5",
+      "files_sha256": {
+        "negative/command.txt": "492d82e2e8c71afd1d8126ed0c7e5b9abbbf7e8f4557abe742802c080c04f888",
+        "negative/polar.txt": "f4e1ecbf59a605b5d5fa7e13b00753d377018f676b14835a2ac4a575f6495e2f",
+        "negative/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "negative/stdout.txt": "04685fbe414f6ff90598e3bfd7a1df7334a1587a72dc791741f1d7186213674c",
+        "observed.parquet": "cbe68537f13e32a4528fe79f1bd4283fff43099dece4593e73e500422641bfdb",
+        "positive/command.txt": "93813481c5fd282e4790ccf8c5eacaf1deaca707595d27f8fbf827678951f0c2",
+        "positive/polar.txt": "4fe85125421d7ff1c82e0ab99eded288cdcf18db67ca501c1c57a9a21a4ff944",
+        "positive/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "positive/stdout.txt": "3cbf5976259ebaf4ada4c02038a10589a10af5885c55d93c1358ee2c0bcde1d4"
+      },
+      "id": "external_naca4_025",
+      "merge_audit": {
+        "admitted_states": 112,
+        "conflicting_alpha_count": 0,
+        "conflicting_alpha_values": [],
+        "consistent_duplicate_rows_removed": 1
+      },
+      "observed": 112,
+      "requested": 113,
+      "segments": [
+        {
+          "admitted_states": 64,
+          "name": "positive",
+          "return_code": 0,
+          "seconds": 2.2239230000413954,
+          "status": "failed",
+          "timed_out": false
+        },
+        {
+          "admitted_states": 49,
+          "name": "negative",
+          "return_code": 0,
+          "seconds": 1.216649700072594,
+          "status": "ok",
+          "timed_out": false
+        }
+      ]
+    },
+    {
+      "context_sha256": "b9dedf3f5d26b41e2c18cd7f88a53ada6b98493487cfe81911931928e65c9df5",
+      "files_sha256": {
+        "negative/command.txt": "492d82e2e8c71afd1d8126ed0c7e5b9abbbf7e8f4557abe742802c080c04f888",
+        "negative/polar.txt": "f04b21aaa041d2d3d230c0bb175b0bcf4784f4ae61d7d84c4cca41afaf3b5cae",
+        "negative/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "negative/stdout.txt": "d0d7d78c08d2ad1f8ecb5fcf6e2f6eb0e4fadc0d65f5e317980647db65bacafd",
+        "observed.parquet": "571f3a2d6cef9e6c0931af56d570dd1de5176b384f95858c6800648afd38f9b1",
+        "positive/command.txt": "93813481c5fd282e4790ccf8c5eacaf1deaca707595d27f8fbf827678951f0c2",
+        "positive/polar.txt": "d7b74f81bf79a2d7f73c01d833a0e7f96aced356455045ce504d843428d8f9f1",
+        "positive/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "positive/stdout.txt": "1d99e19d2d3e5fc44aea3d1164126213ffa61ef40714b939f7329960b17bc9f6"
+      },
+      "id": "external_naca4_026",
+      "merge_audit": {
+        "admitted_states": 104,
+        "conflicting_alpha_count": 0,
+        "conflicting_alpha_values": [],
+        "consistent_duplicate_rows_removed": 1
+      },
+      "observed": 104,
+      "requested": 113,
+      "segments": [
+        {
+          "admitted_states": 61,
+          "name": "positive",
+          "return_code": 0,
+          "seconds": 4.246720399940386,
+          "status": "failed",
+          "timed_out": false
+        },
+        {
+          "admitted_states": 44,
+          "name": "negative",
+          "return_code": 0,
+          "seconds": 4.491640199907124,
+          "status": "failed",
+          "timed_out": false
+        }
+      ]
+    },
+    {
+      "context_sha256": "b9dedf3f5d26b41e2c18cd7f88a53ada6b98493487cfe81911931928e65c9df5",
+      "files_sha256": {
+        "negative/command.txt": "492d82e2e8c71afd1d8126ed0c7e5b9abbbf7e8f4557abe742802c080c04f888",
+        "negative/polar.txt": "3893b4b61c195d41ed805f207a074e84279230dca91624480940c59893ccbdfd",
+        "negative/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "negative/stdout.txt": "c50b65f2c4e91be6187d57d83a0e58162d44daf8ef6ce37923230211d7fdbdca",
+        "observed.parquet": "e202665a5fb8af588dbb43767c2a4be26e7e9eeb2a7c45c04b179ee9590f2f98",
+        "positive/command.txt": "93813481c5fd282e4790ccf8c5eacaf1deaca707595d27f8fbf827678951f0c2",
+        "positive/polar.txt": "09c6d56f3d6e3d591ea925046a46350a856842ef8408eee4e008ecb32e68ec40",
+        "positive/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "positive/stdout.txt": "f8b32f366a778394d453b15beb5bb609ea0c2ee48007779f641b26903fad65dd"
+      },
+      "id": "external_naca4_027",
+      "merge_audit": {
+        "admitted_states": 94,
+        "conflicting_alpha_count": 0,
+        "conflicting_alpha_values": [],
+        "consistent_duplicate_rows_removed": 1
+      },
+      "observed": 94,
+      "requested": 113,
+      "segments": [
+        {
+          "admitted_states": 54,
+          "name": "positive",
+          "return_code": 0,
+          "seconds": 4.3954984000884,
+          "status": "failed",
+          "timed_out": false
+        },
+        {
+          "admitted_states": 41,
+          "name": "negative",
+          "return_code": 0,
+          "seconds": 6.053801300004125,
+          "status": "failed",
+          "timed_out": false
+        }
+      ]
+    },
+    {
+      "context_sha256": "b9dedf3f5d26b41e2c18cd7f88a53ada6b98493487cfe81911931928e65c9df5",
+      "files_sha256": {
+        "negative/command.txt": "492d82e2e8c71afd1d8126ed0c7e5b9abbbf7e8f4557abe742802c080c04f888",
+        "negative/polar.txt": "c23a25e8012fb4b81fcb5cd6ea343928516ff6c72b85f4858fbc1f0c6c564a3a",
+        "negative/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "negative/stdout.txt": "2d3d9239b7b0c22821cdf5c82d1321b4e9d9ea1cb756dc9bd2736851283273eb",
+        "observed.parquet": "22b42fe084e2066dbbf6198f85b554422bde5342059a599c15c980277f55f331",
+        "positive/command.txt": "93813481c5fd282e4790ccf8c5eacaf1deaca707595d27f8fbf827678951f0c2",
+        "positive/polar.txt": "60bf866795de937302cc4f403c5262fcf56668edc0195ba1c08e33f574d2fdac",
+        "positive/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "positive/stdout.txt": "fe94ae76ca157959e07feaac05dc03d352ef0f15580b29cd090d792643505c3c"
+      },
+      "id": "external_naca4_028",
+      "merge_audit": {
+        "admitted_states": 111,
+        "conflicting_alpha_count": 0,
+        "conflicting_alpha_values": [],
+        "consistent_duplicate_rows_removed": 1
+      },
+      "observed": 111,
+      "requested": 113,
+      "segments": [
+        {
+          "admitted_states": 63,
+          "name": "positive",
+          "return_code": 0,
+          "seconds": 2.943987200036645,
+          "status": "failed",
+          "timed_out": false
+        },
+        {
+          "admitted_states": 49,
+          "name": "negative",
+          "return_code": 0,
+          "seconds": 1.2017397000454366,
+          "status": "ok",
+          "timed_out": false
+        }
+      ]
+    },
+    {
+      "context_sha256": "b9dedf3f5d26b41e2c18cd7f88a53ada6b98493487cfe81911931928e65c9df5",
+      "files_sha256": {
+        "negative/command.txt": "492d82e2e8c71afd1d8126ed0c7e5b9abbbf7e8f4557abe742802c080c04f888",
+        "negative/polar.txt": "6d96551860755e506de706e10245f18d16a12f92234e3bf7b87a505e2a65154e",
+        "negative/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "negative/stdout.txt": "dec94069bdba2a2d4bc05664f32c6451b4e2f41c497e8ee32baae8b5fa3c671a",
+        "observed.parquet": "b5f1693f6894d1893d29594d538134b0d6e45a67b1e685bf7e4963f34a1e9630",
+        "positive/command.txt": "93813481c5fd282e4790ccf8c5eacaf1deaca707595d27f8fbf827678951f0c2",
+        "positive/polar.txt": "7e5c571de23ef9e53e259a6ce0d3c080108d7dd7ec9ba3f33b36f874f4799acd",
+        "positive/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "positive/stdout.txt": "9d9d4c3f2047a84c3f0da241efdfbf22b75fa7ceebef9ad5e7cc4a7c3f1cb6e7"
+      },
+      "id": "external_naca4_029",
+      "merge_audit": {
+        "admitted_states": 112,
+        "conflicting_alpha_count": 0,
+        "conflicting_alpha_values": [],
+        "consistent_duplicate_rows_removed": 1
+      },
+      "observed": 112,
+      "requested": 113,
+      "segments": [
+        {
+          "admitted_states": 64,
+          "name": "positive",
+          "return_code": 0,
+          "seconds": 2.5430268000345677,
+          "status": "failed",
+          "timed_out": false
+        },
+        {
+          "admitted_states": 49,
+          "name": "negative",
+          "return_code": 0,
+          "seconds": 1.298593300045468,
+          "status": "ok",
+          "timed_out": false
+        }
+      ]
+    },
+    {
+      "context_sha256": "b9dedf3f5d26b41e2c18cd7f88a53ada6b98493487cfe81911931928e65c9df5",
+      "files_sha256": {
+        "negative/command.txt": "492d82e2e8c71afd1d8126ed0c7e5b9abbbf7e8f4557abe742802c080c04f888",
+        "negative/polar.txt": "4b92bf40528da58843fdba64248a4ae3be3f8d86b47cc49e99019aa2caa483d5",
+        "negative/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "negative/stdout.txt": "5a9805a7a9e803faf03ac146f59c642abc71c57196f518bbb1a248b70aea3441",
+        "observed.parquet": "e8303a696dd7f638945bfdcdae7fc27b9748f90f480c9376ca8495265ad5e78f",
+        "positive/command.txt": "93813481c5fd282e4790ccf8c5eacaf1deaca707595d27f8fbf827678951f0c2",
+        "positive/polar.txt": "48e5776ed855a5ec41b2c83e6e1fdd8e0296b5b94d260972a6de2af5305d466b",
+        "positive/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "positive/stdout.txt": "91645b5c2c64e1a736dccb0e5e2c17499a68519b8dadb561160738c5404d643c"
+      },
+      "id": "external_naca4_030",
+      "merge_audit": {
+        "admitted_states": 113,
+        "conflicting_alpha_count": 0,
+        "conflicting_alpha_values": [],
+        "consistent_duplicate_rows_removed": 1
+      },
+      "observed": 113,
+      "requested": 113,
+      "segments": [
+        {
+          "admitted_states": 65,
+          "name": "positive",
+          "return_code": 0,
+          "seconds": 1.5744842999847606,
+          "status": "ok",
+          "timed_out": false
+        },
+        {
+          "admitted_states": 49,
+          "name": "negative",
+          "return_code": 0,
+          "seconds": 1.1771768999751657,
+          "status": "ok",
+          "timed_out": false
+        }
+      ]
+    },
+    {
+      "context_sha256": "b9dedf3f5d26b41e2c18cd7f88a53ada6b98493487cfe81911931928e65c9df5",
+      "files_sha256": {
+        "negative/command.txt": "492d82e2e8c71afd1d8126ed0c7e5b9abbbf7e8f4557abe742802c080c04f888",
+        "negative/polar.txt": "420c4f69da742188a2a61edc70e20f28644c2f8f638ab17f2a0314208332acd5",
+        "negative/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "negative/stdout.txt": "3afd7f08e5e0be47c1e08530b662342147e7c6dc16dc59f0e56fc3c74e3cf6c6",
+        "observed.parquet": "5bcea79563507908d11ddadee834d3543fd69fca740663d9215ca9d34a3926ce",
+        "positive/command.txt": "93813481c5fd282e4790ccf8c5eacaf1deaca707595d27f8fbf827678951f0c2",
+        "positive/polar.txt": "8293a97cbe71b0e27caab2586da17169a2bbd6dd62e69ee8b3c9300d6ab84dac",
+        "positive/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "positive/stdout.txt": "955aa277a3cedb93b874208c13f7762839b0affa714ec3f4a46e2a12857f230e"
+      },
+      "id": "external_naca4_031",
+      "merge_audit": {
+        "admitted_states": 110,
+        "conflicting_alpha_count": 0,
+        "conflicting_alpha_values": [],
+        "consistent_duplicate_rows_removed": 1
+      },
+      "observed": 110,
+      "requested": 113,
+      "segments": [
+        {
+          "admitted_states": 64,
+          "name": "positive",
+          "return_code": 0,
+          "seconds": 2.193106999970041,
+          "status": "failed",
+          "timed_out": false
+        },
+        {
+          "admitted_states": 47,
+          "name": "negative",
+          "return_code": 0,
+          "seconds": 2.582089400035329,
+          "status": "failed",
+          "timed_out": false
+        }
+      ]
+    },
+    {
+      "context_sha256": "b9dedf3f5d26b41e2c18cd7f88a53ada6b98493487cfe81911931928e65c9df5",
+      "files_sha256": {
+        "negative/command.txt": "492d82e2e8c71afd1d8126ed0c7e5b9abbbf7e8f4557abe742802c080c04f888",
+        "negative/polar.txt": "85bc1461c2da1360cb52f0b6a0bccbb9cbc41599387e3e6ee229c3dc0f8c01da",
+        "negative/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "negative/stdout.txt": "7735596c6a9d83830d3f2857c3f25c3ae19cfa0185090f9c4cc743da008f7209",
+        "observed.parquet": "25398a239074023e96cb4f2a8c672de538b7679bf5f706300ab79dde7b8e58cb",
+        "positive/command.txt": "93813481c5fd282e4790ccf8c5eacaf1deaca707595d27f8fbf827678951f0c2",
+        "positive/polar.txt": "e0acdccd803ebda8fd74f537528aa2a1901e30d84972e10f6beb5fda543b7e4e",
+        "positive/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "positive/stdout.txt": "6161b1156834e79ff0368c3df8908ef6cad0700ea3dc33cad601a8848eeafc8e"
+      },
+      "id": "external_naca4_032",
+      "merge_audit": {
+        "admitted_states": 112,
+        "conflicting_alpha_count": 0,
+        "conflicting_alpha_values": [],
+        "consistent_duplicate_rows_removed": 1
+      },
+      "observed": 112,
+      "requested": 113,
+      "segments": [
+        {
+          "admitted_states": 65,
+          "name": "positive",
+          "return_code": 0,
+          "seconds": 1.490186300012283,
+          "status": "ok",
+          "timed_out": false
+        },
+        {
+          "admitted_states": 48,
+          "name": "negative",
+          "return_code": 0,
+          "seconds": 1.791383600095287,
+          "status": "failed",
+          "timed_out": false
+        }
+      ]
+    },
+    {
+      "context_sha256": "b9dedf3f5d26b41e2c18cd7f88a53ada6b98493487cfe81911931928e65c9df5",
+      "files_sha256": {
+        "negative/command.txt": "492d82e2e8c71afd1d8126ed0c7e5b9abbbf7e8f4557abe742802c080c04f888",
+        "negative/polar.txt": "0e3b179836d90782b91a61131608e93642dc53a5906dfda66f98bae25b7acb43",
+        "negative/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "negative/stdout.txt": "186e94ec97f6f85d8e3e049b0d84440e299d69a91fec210becdca6a10e726061",
+        "observed.parquet": "4095256ad050c222e20c6263921d1bbac45b22ad0b65c29322fcefbc448127fc",
+        "positive/command.txt": "93813481c5fd282e4790ccf8c5eacaf1deaca707595d27f8fbf827678951f0c2",
+        "positive/polar.txt": "d680cf687c6e4858b5adb5ce412e7f9ec0bd13da91a70bb44911fd9390b5cecf",
+        "positive/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "positive/stdout.txt": "462f12daa15fa989ceb93a706cc5c73b2f829c77dbd4453caff89fe9690bd0db"
+      },
+      "id": "external_naca4_033",
+      "merge_audit": {
+        "admitted_states": 112,
+        "conflicting_alpha_count": 0,
+        "conflicting_alpha_values": [],
+        "consistent_duplicate_rows_removed": 1
+      },
+      "observed": 112,
+      "requested": 113,
+      "segments": [
+        {
+          "admitted_states": 64,
+          "name": "positive",
+          "return_code": 0,
+          "seconds": 2.349205099977553,
+          "status": "failed",
+          "timed_out": false
+        },
+        {
+          "admitted_states": 49,
+          "name": "negative",
+          "return_code": 0,
+          "seconds": 1.3296158999437466,
+          "status": "ok",
+          "timed_out": false
+        }
+      ]
+    },
+    {
+      "context_sha256": "b9dedf3f5d26b41e2c18cd7f88a53ada6b98493487cfe81911931928e65c9df5",
+      "files_sha256": {
+        "negative/command.txt": "492d82e2e8c71afd1d8126ed0c7e5b9abbbf7e8f4557abe742802c080c04f888",
+        "negative/polar.txt": "ea7c62f9151cbbeb3b82787492aa4ed34d3a28e6ecf1f243f234a99871a1c54a",
+        "negative/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "negative/stdout.txt": "2f2bdfa4412db0e54a2289a7a5e8e52eaf428d4bd06fec6c6c8413073ad2316d",
+        "observed.parquet": "2e08ae318c2ccd6322cc1f7ec13b32116c284f4b8abdfc2ee046e816c639b9a8",
+        "positive/command.txt": "93813481c5fd282e4790ccf8c5eacaf1deaca707595d27f8fbf827678951f0c2",
+        "positive/polar.txt": "ee3a755ccc9558db2d5b3e627d99fe88336b239537fd0c40ce8a9bd861c66ea0",
+        "positive/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "positive/stdout.txt": "90aca38b8faca8e142be5156d77e08bce5b496e3edcd3bff1bff2b94cf6068a8"
+      },
+      "id": "external_naca4_034",
+      "merge_audit": {
+        "admitted_states": 109,
+        "conflicting_alpha_count": 0,
+        "conflicting_alpha_values": [],
+        "consistent_duplicate_rows_removed": 1
+      },
+      "observed": 109,
+      "requested": 113,
+      "segments": [
+        {
+          "admitted_states": 63,
+          "name": "positive",
+          "return_code": 0,
+          "seconds": 2.9075485999928787,
+          "status": "failed",
+          "timed_out": false
+        },
+        {
+          "admitted_states": 47,
+          "name": "negative",
+          "return_code": 0,
+          "seconds": 2.50415069994051,
+          "status": "failed",
+          "timed_out": false
+        }
+      ]
+    },
+    {
+      "context_sha256": "b9dedf3f5d26b41e2c18cd7f88a53ada6b98493487cfe81911931928e65c9df5",
+      "files_sha256": {
+        "negative/command.txt": "492d82e2e8c71afd1d8126ed0c7e5b9abbbf7e8f4557abe742802c080c04f888",
+        "negative/polar.txt": "8167d3cfca72bf604a899b840b5af7c1138d4b3857120882f1b1321cac818297",
+        "negative/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "negative/stdout.txt": "7dfcf7afce2f7c4fc1f09587b84422176b8963013a38e35eb93c1fd7ab8efac7",
+        "observed.parquet": "a3fd6009b8f0744abd9b5c060655fec0b45781acfe8cb366f2758c69e8743918",
+        "positive/command.txt": "93813481c5fd282e4790ccf8c5eacaf1deaca707595d27f8fbf827678951f0c2",
+        "positive/polar.txt": "23a1edc027d10eb709e298f81c92c6c35f3c9238d6b6fab1d67b7a4f5b9adfba",
+        "positive/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "positive/stdout.txt": "4561f49a472fbea63797d9d3fe1f4882ff8bd243507b4962794f80348980de59"
+      },
+      "id": "external_naca4_035",
+      "merge_audit": {
+        "admitted_states": 109,
+        "conflicting_alpha_count": 0,
+        "conflicting_alpha_values": [],
+        "consistent_duplicate_rows_removed": 1
+      },
+      "observed": 109,
+      "requested": 113,
+      "segments": [
+        {
+          "admitted_states": 61,
+          "name": "positive",
+          "return_code": 0,
+          "seconds": 4.290579800028354,
+          "status": "failed",
+          "timed_out": false
+        },
+        {
+          "admitted_states": 49,
+          "name": "negative",
+          "return_code": 0,
+          "seconds": 1.1456205999711528,
+          "status": "ok",
+          "timed_out": false
+        }
+      ]
+    },
+    {
+      "context_sha256": "b9dedf3f5d26b41e2c18cd7f88a53ada6b98493487cfe81911931928e65c9df5",
+      "files_sha256": {
+        "negative/command.txt": "492d82e2e8c71afd1d8126ed0c7e5b9abbbf7e8f4557abe742802c080c04f888",
+        "negative/polar.txt": "c5a2147a907e7a6f4baf2784f940167fcc7c923c4040882bfb8d2f7c06530d73",
+        "negative/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "negative/stdout.txt": "102ca968449ecfea50ccba46c028e9a8b29d529c499680b674824ca78ab01036",
+        "observed.parquet": "bc7426c763291fb883f265d06df514f715527a7b7dbe84b54b29f39e45680cde",
+        "positive/command.txt": "93813481c5fd282e4790ccf8c5eacaf1deaca707595d27f8fbf827678951f0c2",
+        "positive/polar.txt": "7d4634c7adbbd0ff335ffda7910e22114f49513434a4d82eb05ebc408c196c7f",
+        "positive/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "positive/stdout.txt": "a9c14c6ad32dd8c2b5e94e036f73cd80835e4cc1c2e52582f9b82543a5e2b982"
+      },
+      "id": "external_naca4_036",
+      "merge_audit": {
+        "admitted_states": 112,
+        "conflicting_alpha_count": 0,
+        "conflicting_alpha_values": [],
+        "consistent_duplicate_rows_removed": 1
+      },
+      "observed": 112,
+      "requested": 113,
+      "segments": [
+        {
+          "admitted_states": 64,
+          "name": "positive",
+          "return_code": 0,
+          "seconds": 2.209702799911611,
+          "status": "failed",
+          "timed_out": false
+        },
+        {
+          "admitted_states": 49,
+          "name": "negative",
+          "return_code": 0,
+          "seconds": 1.1383743999758735,
+          "status": "ok",
+          "timed_out": false
+        }
+      ]
+    },
+    {
+      "context_sha256": "b9dedf3f5d26b41e2c18cd7f88a53ada6b98493487cfe81911931928e65c9df5",
+      "files_sha256": {
+        "negative/command.txt": "492d82e2e8c71afd1d8126ed0c7e5b9abbbf7e8f4557abe742802c080c04f888",
+        "negative/polar.txt": "47ce97f6f6ccceb95b5f887e8a9e1edc1f5cfbba0d642627807d111c2c2aec8d",
+        "negative/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "negative/stdout.txt": "de81c954be1e4cb0bab2137651722d56dafd3176bcb08a767f1b6885fb5b29df",
+        "observed.parquet": "7471e205b43cea31049d8d27c7dee9ccfc552b68ca9771e60bbf54c876ef523e",
+        "positive/command.txt": "93813481c5fd282e4790ccf8c5eacaf1deaca707595d27f8fbf827678951f0c2",
+        "positive/polar.txt": "b7e4b8da00776c350a0328ef6b8f0803c4c9e118b96037ecb92f4a07c7d2c66f",
+        "positive/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "positive/stdout.txt": "a189faf02f773f629a57ddb693f34c3ccca774a86be467fef49ac071b1a7dbb7"
+      },
+      "id": "external_naca4_037",
+      "merge_audit": {
+        "admitted_states": 112,
+        "conflicting_alpha_count": 0,
+        "conflicting_alpha_values": [],
+        "consistent_duplicate_rows_removed": 1
+      },
+      "observed": 112,
+      "requested": 113,
+      "segments": [
+        {
+          "admitted_states": 64,
+          "name": "positive",
+          "return_code": 0,
+          "seconds": 2.1727047000313178,
+          "status": "failed",
+          "timed_out": false
+        },
+        {
+          "admitted_states": 49,
+          "name": "negative",
+          "return_code": 0,
+          "seconds": 1.1326108999783173,
+          "status": "ok",
+          "timed_out": false
+        }
+      ]
+    },
+    {
+      "context_sha256": "b9dedf3f5d26b41e2c18cd7f88a53ada6b98493487cfe81911931928e65c9df5",
+      "files_sha256": {
+        "negative/command.txt": "492d82e2e8c71afd1d8126ed0c7e5b9abbbf7e8f4557abe742802c080c04f888",
+        "negative/polar.txt": "db532b7ee8aa8451e58dd717940f908b74c40265dae6f38fd04c242c1b4ef66e",
+        "negative/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "negative/stdout.txt": "a329200e064aad91f6711adf33c539393f341ecd304fe3869b1cb90f0b6d5dc7",
+        "observed.parquet": "b0c4f4641dd04a7c06d71ad5a8f9cb06e3f33d9401e1226b647483db7826797e",
+        "positive/command.txt": "93813481c5fd282e4790ccf8c5eacaf1deaca707595d27f8fbf827678951f0c2",
+        "positive/polar.txt": "e9974571d66db39cd3b391bc610c1956247abfb6c23b9fc265d7098fd0b9ce20",
+        "positive/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "positive/stdout.txt": "8d8afb5e9eb748a59014149b144a8d88ac3bc261ec537a3ed44ffb450f50e181"
+      },
+      "id": "external_naca4_038",
+      "merge_audit": {
+        "admitted_states": 108,
+        "conflicting_alpha_count": 0,
+        "conflicting_alpha_values": [],
+        "consistent_duplicate_rows_removed": 1
+      },
+      "observed": 108,
+      "requested": 113,
+      "segments": [
+        {
+          "admitted_states": 61,
+          "name": "positive",
+          "return_code": 0,
+          "seconds": 4.393313199980184,
+          "status": "failed",
+          "timed_out": false
+        },
+        {
+          "admitted_states": 48,
+          "name": "negative",
+          "return_code": 0,
+          "seconds": 2.1108805000549182,
+          "status": "failed",
+          "timed_out": false
+        }
+      ]
+    },
+    {
+      "context_sha256": "b9dedf3f5d26b41e2c18cd7f88a53ada6b98493487cfe81911931928e65c9df5",
+      "files_sha256": {
+        "negative/command.txt": "492d82e2e8c71afd1d8126ed0c7e5b9abbbf7e8f4557abe742802c080c04f888",
+        "negative/polar.txt": "431ced0068aeac2185c8d5511ed3e303f7fdd7e1952351ede647fc71be2aeaf4",
+        "negative/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "negative/stdout.txt": "ab1c3215c889fcea290662ddb46a85d0acfcabf33350f07b5630c14be1c8337c",
+        "observed.parquet": "fde2cef9dc9451d758e3e258e48be8bc46271894391915c0fa7c324fc3a99883",
+        "positive/command.txt": "93813481c5fd282e4790ccf8c5eacaf1deaca707595d27f8fbf827678951f0c2",
+        "positive/polar.txt": "045373e9e01056115d35d45f638811033aeb6a3b1070ad17c7117e3e36370bd6",
+        "positive/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "positive/stdout.txt": "0b010b7e44b4930bc3b8f0953568b4543d835fe514576ff06396b4e72d7e6fea"
+      },
+      "id": "external_naca4_039",
+      "merge_audit": {
+        "admitted_states": 106,
+        "conflicting_alpha_count": 0,
+        "conflicting_alpha_values": [],
+        "consistent_duplicate_rows_removed": 0
+      },
+      "observed": 106,
+      "requested": 113,
+      "segments": [
+        {
+          "admitted_states": 58,
+          "name": "positive",
+          "return_code": 0,
+          "seconds": 6.275136400014162,
+          "status": "failed",
+          "timed_out": false
+        },
+        {
+          "admitted_states": 48,
+          "name": "negative",
+          "return_code": 0,
+          "seconds": 1.8603812999790534,
+          "status": "failed",
+          "timed_out": false
+        }
+      ]
+    }
+  ],
+  "context_sha256": "b9dedf3f5d26b41e2c18cd7f88a53ada6b98493487cfe81911931928e65c9df5",
+  "observed_states": 4331,
+  "requested_states": 4520,
+  "schema": "new-analytic-source-40-shape-real-xfoil-v1",
+  "source_polar_not_imputed": true
+}

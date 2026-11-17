@@ -1,0 +1,23 @@
+{
+  "status": "REVIEW_DELIVERABLES_ACCEPTED_MAJOR_REVISIONS_BEFORE_SUBMISSION",
+  "review_deliverables_complete": true,
+  "software_checks": "PASS",
+  "controlled_model_training": "COMPLETE",
+  "controlled_holdout": "COMPLETE",
+  "sealed_confirmation": "COMPLETE",
+  "full_robust_128_200_64_10": "COMPLETE",
+  "full_nominal_128_200_10": "COMPLETE",
+  "source_claims_traced": 40,
+  "bibliography_entries_reviewed": 29,
+  "embedded_figures": 8,
+  "tables": 7,
+  "selected_xfoil_requested": 819,
+  "selected_xfoil_usable": 290,
+  "numerical_agreement_both_checks_met": true,
+  "independent_cfd": "NOT_PERFORMED",
+  "journal_submission_ready": false,
+  "manufacturing_tolerances": "PRESCRIBED_NOT_MEASURED",
+  "coauthor_approval": "NOT_CLAIMED",
+  "canonical_manuscript_sha256": "70791df58f17a17dc8a3fb575e19869330bb2ff9479c2b6dd5825a580ada5d38",
+  "standalone_docx_sha256": "8c3068433fe13e178c6766fb3e10a1546fc29aeeb13953ba57b3252ae6593ceb"
+}

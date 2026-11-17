@@ -1,0 +1,123 @@
+{
+  "case_geometries_attempted": 357,
+  "case_records_sha256": "f443e48b3ba2d83fb71ed2238e303eae63a64e2c86e5d292fd75245825c0f6c8",
+  "cases_failed": 0,
+  "cases_ok": 357,
+  "inference_timing": {
+    "neuralfoil_total_seconds_including_18_parameter_geometry_refit": 0.7419202004093677,
+    "not_a_comparable_model_only_speed_benchmark": true
+  },
+  "limits": [
+    "All available solver-observed states at three preset incidences. This does not test XFOIL failures.",
+    "Historical test geometries are previously inspected; sealed mixtures come from development parents.",
+    "NeuralFoil's original training identity overlap is unknown; no independent family-blind claim.",
+    "NeuralFoil receives a refitted 18-parameter Kulfan shape from the same exact CST coordinates.",
+    "Both methods compared against the SAME numerical XFOIL labels, not independent CFD.",
+    "Conditional errors use only paired successfully evaluated states.",
+    "The baseline is not retrained; its internal training data may overlap these airfoils.",
+    "No evidence of superiority is asserted unless actual paired metrics support it."
+  ],
+  "metrics_by_cohort": {
+    "protected_historical_test": {
+      "controlled_on_paired": {
+        "cd_geometry_macro_mae": 0.0002714158131265468,
+        "cd_mae": 0.0002641948694681134,
+        "cd_r2": 0.9230149138405573,
+        "cd_rmse": 0.000650361366911998,
+        "cl_geometry_macro_mae": 0.01690465161120556,
+        "cl_mae": 0.016704610035165827,
+        "cl_r2": 0.991585078739781,
+        "cl_rmse": 0.025449444200240364,
+        "cm_geometry_macro_mae": 0.0030811518436634397,
+        "cm_mae": 0.00308292832534998,
+        "cm_r2": 0.9905968685676747,
+        "cm_rmse": 0.0051635890916198225,
+        "log_cd_geometry_macro_mae": 0.031036184949027556,
+        "log_cd_mae": 0.030019683609507353,
+        "log_cd_r2": 0.9640631856274903,
+        "log_cd_rmse": 0.04837431361289655,
+        "observed_points": 470
+      },
+      "neuralfoil_on_paired": {
+        "cd_geometry_macro_mae": 0.00016238625154809422,
+        "cd_mae": 0.00016055225081308843,
+        "cd_r2": 0.9486249084518807,
+        "cd_rmse": 0.0005312852263494153,
+        "cl_geometry_macro_mae": 0.004755052254641372,
+        "cl_mae": 0.004807118114811416,
+        "cl_r2": 0.9993210997075559,
+        "cl_rmse": 0.0072286345914599984,
+        "cm_geometry_macro_mae": 0.001081110816806641,
+        "cm_mae": 0.0010869705495891388,
+        "cm_r2": 0.9990840043906818,
+        "cm_rmse": 0.0016116180298604826,
+        "log_cd_geometry_macro_mae": 0.017044528513635318,
+        "log_cd_mae": 0.016695121282272414,
+        "log_cd_r2": 0.9816602202981678,
+        "log_cd_rmse": 0.03455748156080473,
+        "observed_points": 470
+      },
+      "paired_geometries": 166,
+      "paired_states": 470,
+      "requested_geometries": 166,
+      "requested_states": 470
+    },
+    "sealed_development_mixtures": {
+      "controlled_on_paired": {
+        "cd_geometry_macro_mae": 0.0002138390766997182,
+        "cd_mae": 0.00021359182692815085,
+        "cd_r2": 0.9761458300360654,
+        "cd_rmse": 0.00030231353793636284,
+        "cl_geometry_macro_mae": 0.014233820631533185,
+        "cl_mae": 0.014184276625596359,
+        "cl_r2": 0.993440885203321,
+        "cl_rmse": 0.01848253661805513,
+        "cm_geometry_macro_mae": 0.002135893266228065,
+        "cm_mae": 0.00214551759631704,
+        "cm_r2": 0.9931335917017865,
+        "cm_rmse": 0.0029812445873866823,
+        "log_cd_geometry_macro_mae": 0.027461679889890296,
+        "log_cd_mae": 0.027381591996575402,
+        "log_cd_r2": 0.9746786219995652,
+        "log_cd_rmse": 0.038291178645551885,
+        "observed_points": 543
+      },
+      "neuralfoil_on_paired": {
+        "cd_geometry_macro_mae": 0.00011324595119003577,
+        "cd_mae": 0.00011189359473853771,
+        "cd_r2": 0.9818826050289257,
+        "cd_rmse": 0.0002634652352362249,
+        "cl_geometry_macro_mae": 0.0042039606090777774,
+        "cl_mae": 0.004259297503231803,
+        "cl_r2": 0.9989892092279494,
+        "cl_rmse": 0.007255537541036588,
+        "cm_geometry_macro_mae": 0.0009212059889275184,
+        "cm_mae": 0.000933490270173912,
+        "cm_r2": 0.9980533178673623,
+        "cm_rmse": 0.0015873778542545684,
+        "log_cd_geometry_macro_mae": 0.013655988105883886,
+        "log_cd_mae": 0.01338708880870805,
+        "log_cd_r2": 0.9886403015609662,
+        "log_cd_rmse": 0.025647111957596738,
+        "observed_points": 543
+      },
+      "paired_geometries": 191,
+      "paired_states": 543,
+      "requested_geometries": 191,
+      "requested_states": 543
+    }
+  },
+  "paired_observed_states": 1013,
+  "per_case_status_counts": {
+    "ok": 357
+  },
+  "preselection_sha256": "f0efa9053ccfac2f7fe6f1f044ddcd30dc17665f0f63effa98b9f3c0510db40c",
+  "requested_observed_states": 1013,
+  "schema": "matched-observed-XFOIL-labels-neuralfoil-comparison-v1",
+  "versions": {
+    "aerosandbox": "4.2.10",
+    "neuralfoil": "0.3.3",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "python": "3.11.15 (main, May 10 2026, 19:31:25) [MSC v.1944 64 bit (AMD64)]"
+  }
+}

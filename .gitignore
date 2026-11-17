@@ -1,2 +1,123 @@
-__pycache__
+__pycache__/
+*.py[cod]
 .env
+.venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+htmlcov/
+.coverage
+ROBUST_V2_ML_ENGINEERING_FINAL/
+ROBUST_V2_ML_ENGINEERING_FINAL_20260908.zip
+
+# Robust V2 generated/heavy artefacts. Compact manifests and reports are
+# force-added when they are intended to become part of the evidence record.
+data/robust_v2/raw/
+data/robust_v2/interim/
+data/robust_v2/processed/
+results/robust_v2/**/*.pt
+results/robust_v2/**/*.pkl
+results/robust_v2/**/*.sqlite3
+results/robust_v2/**/*.parquet
+# Retain only the scaling bundles declared by the immutable frozen ensemble.
+results/robust_v2/**/*.joblib
+!results/robust_v2/full_ensemble/
+!results/robust_v2/full_ensemble/member_*/
+!results/robust_v2/full_ensemble/member_*/scaling.joblib
+reports/robust_v2/logs/
+tools/xfoil/*.exe
+tools/xfoil/*.zip
+
+# Direct-XFOIL per-case evidence is reproducible but extremely verbose. Commit
+# the compact root summaries; keep geometry, segment, polar, and console files local.
+results/robust_v2/xfoil_canaries/*/
+results/robust_v2/xfoil_candidates/*/
+
+# Lineage-scoped heavy artefacts: keep compact summaries, not the verbose per-case
+# XFOIL trees, oversized evidence JSON, or console logs.
+results/robust_v2/lineages/**/surrogate_stress/*/
+results/robust_v2/lineages/**/xfoil_canaries/*/
+results/robust_v2/lineages/**/xfoil_candidates/*/
+results/robust_v2/lineages/**/design_verification/*/
+reports/robust_v2/lineages/**/logs/
+reports/robust_v2/lineages/**/viability/advanced_studies.json
+reports/robust_v2/lineages/**/viability/viability_report.json
+reports/robust_v2/lineages/**/run_state.json
+# Oversized one-time starting-state snapshot patch (reproducible provenance, kept local).
+reports/robust_v2/final_study/starting_diff.patch
+.opencode/
+
+# October 2026 review: keep per-case XFOIL logs and generated Word exports local.
+# Compact numerical summaries are intentionally force-added by the release script.
+results/robust_v2/submission_review_20261014/xfoil_*/
+reports/robust_v2/submission_review_20261014/*.docx
+reports/robust_v2/submission_review_20261014/XFOIL_*.log
+
+# Controlled scientific lineage: large XFOIL case trees and restart states remain
+# on the authorised workstation, hash-bound by compact tracked manifests.
+results/robust_v2/lineages/robust-v2-controlled-20261020/solver_labels/
+results/robust_v2/lineages/robust-v2-controlled-20261020/confirmation/solver_labels/
+results/robust_v2/lineages/robust-v2-controlled-20261020/selected_study/xfoil/
+results/robust_v2/lineages/robust-v2-controlled-20261020/optimisation_production/checkpoints/
+results/robust_v2/lineages/robust-v2-controlled-20261020/nominal_control/checkpoints/
+results/robust_v2/lineages/robust-v2-controlled-20261020/full_ensemble/member_*/
+results/robust_v2/lineages/robust-v2-rebuilt-20261014/full_ensemble/member_*/
+reports/robust_v2/external_academic_review_20261014/**/*.log
+reports/robust_v2/external_academic_review_20261014/RENDERED/
+reports/robust_v2/external_academic_review_20261014/BEFORE_REVIEW/
+reports/robust_v2/external_academic_review_20261014/CONTINUATION_20261020/FRAME_CHECK/
+reports/robust_v2/external_academic_review_20261014/CONTINUATION_20261020/RUNTIME_MEMORY_REPAIR/before/
+
+# Complete raw local-XFOIL evidence ZIP is delivered via verified OneDrive,
+# not embedded as a multi-hundred-megabyte Git blob.
+reports/robust_v2/external_academic_review_20261014/RAW_XFOIL_EVIDENCE.zip
+reports/robust_v2/external_academic_review_20261014/RAW_XFOIL_EVIDENCE.inprogress.zip
+reports/robust_v2/external_academic_review_20261014/CONTINUATION_20261020/word_browser_canary.pdf
+reports/robust_v2/external_academic_review_20261014/CONTINUATION_20261020/word_render_canary.docx
+reports/robust_v2/external_academic_review_20261014/CONTINUATION_20261020/word_render_canary.pdf
+
+# Intermediate visual-preview experiments preserved locally, while only the
+# accepted RENDERED_V3/ and its exact source hash ledger are distributed.
+reports/robust_v2/external_academic_review_20261014/RENDERED_FINAL/
+reports/robust_v2/external_academic_review_20261014/CONTINUATION_20261020/VISUAL_LAYOUT_R5/
+reports/robust_v2/external_academic_review_20261014/CONTINUATION_20261020/VISUAL_LAYOUT_R6/
+reports/robust_v2/external_academic_review_20261014/EXPLORATORY_NOMINAL_CONVERGENCE/*/iter_*/
+
+# The author's original private Word submission and 21-page visual render bytes
+# stay in the SHA-verified local coauthor-review package, not public Git history.
+reports/robust_v2/external_academic_review_20261021/ORIGINAL_USER_SUBMISSION.docx
+reports/robust_v2/external_academic_review_20261021/ORIGINAL_AUTHOR_STYLE_EVIDENCE.json
+reports/robust_v2/external_academic_review_20261021/PRE_REWRITE_CONTROLLED_WORD.docx
+reports/robust_v2/external_academic_review_20261021/PRE_LAYOUT_AUTHOR_VOICE_WORD.docx
+reports/robust_v2/external_academic_review_20261021/RENDERED/
+reports/robust_v2/external_academic_review_20261021/RENDERED_V2/
+reports/robust_v2/external_academic_review_20261021/*.log
+
+# Final source-bound 2026-10-22 comparative review: commit compact JSON
+# receipts; distribute raw NACA/XFOIL cases and page previews separately.
+reports/robust_v2/final_release_20261022/EXTERNAL_NACA_FAMILY/solver/
+reports/robust_v2/final_release_20261022/EXTERNAL_NACA_FAMILY/geometry/
+reports/robust_v2/final_release_20261022/EXTERNAL_NACA_FAMILY/*.parquet
+reports/robust_v2/final_release_20261022/NEURALFOIL_FULL_CONFIRMATION/*.jsonl
+reports/robust_v2/final_release_20261022/NEURALFOIL_COMPARISON/*.jsonl
+reports/robust_v2/final_release_20261022/VISUAL_CURRENT/
+reports/robust_v2/final_release_20261022/VISUAL_LATEST/
+reports/robust_v2/final_release_20261022/*.docx
+reports/robust_v2/final_release_20261022/*.log
+reports/robust_v2/final_release_20261022/*.zip
+reports/robust_v2/final_release_20261022/CLI_DEMONSTRATION.json
+reports/robust_v2/final_release_20261022/SUPERSEDED_DUPLICATE_COMPETITOR_PARAGRAPH.md
+reports/robust_v2/final_release_20261022/PRE_FINAL_20261021_MANUSCRIPT.md
+
+# One-time generation history is preserved locally, not a public release API.
+reports/robust_v2/final_release_20261022/ONEOFF_HISTORICAL_SCRIPTS/
+
+# Superseded intermediate Word/browser checksum receipts, kept locally for traceability.
+reports/robust_v2/final_release_20261022/BROWSER_VISUAL_RENDER_EVIDENCE.json
+reports/robust_v2/final_release_20261022/FINAL_SOURCE_AND_WORD_HASHES.json
+reports/robust_v2/final_release_20261022/FIRST_SOURCE_AND_WORD_HASHES_BEFORE_DEDUPE.json
+
+# Final focused journal-review Word history and page-render bytes are retained
+# with the verified author package, not as redundant repository objects.
+reports/robust_v2/final_release_20261022/EDITORIAL_HISTORY/
+reports/robust_v2/final_release_20261022/VISUAL_FOCUSED/

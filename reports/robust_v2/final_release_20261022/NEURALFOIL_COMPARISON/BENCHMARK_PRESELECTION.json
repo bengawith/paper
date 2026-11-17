@@ -1,0 +1,6104 @@
+{
+  "angles_deg": [
+    2.0,
+    4.0,
+    6.0
+  ],
+  "limitations": [
+    "All available solver-observed states at three preset incidences. This does not test XFOIL failures.",
+    "Historical test geometries are previously inspected; sealed mixtures come from development parents.",
+    "NeuralFoil's original training identity overlap is unknown; no independent family-blind claim.",
+    "NeuralFoil receives a refitted 18-parameter Kulfan shape from the same exact CST coordinates."
+  ],
+  "schema": "all-available-predeclared-three-incidence-neuralfoil-comparison-v1",
+  "selection": [
+    {
+      "airfoil_id": "ag09",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "ag09",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "ag09",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "ag19",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "ag19",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "ag19",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "ag36",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "ag36",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "ag36",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "ag45ct02r",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "ag45ct02r",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "ag45ct02r",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "ah6407",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "ah6407",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "ah6407",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "ah82150f",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "ah82150f",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "ah82150f",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "ah93156",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "ah93156",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "ah93156",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "ah93157",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "ah93157",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "ah93157",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "ah93k132",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "ah93k132",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "ah93k132",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "arad10",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "arad10",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "arad10",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "as5046",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "as5046",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "as5046",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "atr72sm",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "atr72sm",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "atr72sm",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "august160",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "august160",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "august160",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "b540ols",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "b540ols",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "b540ols",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "b707c",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "b707c",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "b707c",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "b707e",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "b707e",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "b707e",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "b737d",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "b737d",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "b737d",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "ch10sm",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "ch10sm",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "ch10sm",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "clarkw",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "clarkw",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "clarkw",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "cr001sm",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "cr001sm",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "cr001sm",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "dae11",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "dae11",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "dae11",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "davis",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "davis",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "davis",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "drgnfly",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "drgnfly",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "drgnfly",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "e174",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "e174",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "e174",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "e212",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "e212",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "e212",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "e221",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "e221",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "e221",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "e228",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "e228",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "e228",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "e231",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "e231",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "e231",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "e333",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "e333",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "e333",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "e336",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "e336",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "e336",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "e338",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "e338",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "e338",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "e339",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "e339",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "e339",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "e387",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "e387",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "e387",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "e407",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "e407",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "e407",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "e433",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "e433",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "e433",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "e475",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "e475",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "e475",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "e479",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "e479",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "e479",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "e541",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "e541",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "e554",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "e554",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "e554",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "e591",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "e591",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "e591",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "e62",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "e62",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "e62",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "e625",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "e625",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "e625",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "e638",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "e638",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "e638",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "e837",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "e837",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "fauvel",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "fauvel",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "fx05188",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "fx05188",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "fx05188",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "fx05191",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "fx05191",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "fx05191",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "fx082512",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "fx082512",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "fx082512",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "fx61147",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "fx61147",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "fx61184",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "fx61184",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "fx61184",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "fx63137sm",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "fx63137sm",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "fx63137sm",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "fx63145",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "fx63145",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "fx63145",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "fx68h120",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "fx68h120",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "fx68h120",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "fx711525",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "fx711525",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "fx711525",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "fx73170a",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "fx73170a",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "fx73170a",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "fx74130wp1",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "fx74130wp1",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "fx74130wp1",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "fx75141",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "fx75141",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "fx75141",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "fx77w153",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "fx77w153",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "fx77w153",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "fx84w097",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "fx84w097",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "fx84w097",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "fx84w140",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "fx84w140",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "fx84w140",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "fxs21158",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "fxs21158",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "fxs21158",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "giiig",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "giiig",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "giiig",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "goe100",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "goe100",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "goe118",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "goe118",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "goe118",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "goe12k",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "goe12k",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "goe142",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "goe142",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "goe142",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "goe174",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "goe174",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "goe174",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "goe239",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "goe315",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "goe315",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "goe315",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "goe370",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "goe377",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "goe377",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "goe377",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "goe392",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "goe392",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "goe426",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "goe426",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "goe426",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "goe479",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "goe479",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "goe479",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "goe493",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "goe493",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "goe493",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "goe507",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "goe507",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "goe507",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "goe546",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "goe546",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "goe548",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "goe548",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "goe548",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "goe57",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "goe574",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "goe574",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "goe574",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "goe585",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "goe585",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "goe585",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "goe595",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "goe595",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "goe595",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "goe622",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "goe622",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "goe622",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "goe650",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "goe650",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "goe673",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "goe673",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "goe673",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "goe676",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "goe676",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "goe682",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "goe682",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "goe746",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "goe746",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "goe746",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "gu255118",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "gu255118",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "gu255118",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "hq1010",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "hq1010",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "hq1010",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "hq1512",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "hq1512",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "hq1512",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "hq2010",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "hq2010",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "hq2010",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "hq3010",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "hq3010",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "hq3010",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "hq3013",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "hq3013",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "hq359",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "hq359",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "hq359",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "k1",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "k1",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "lds2",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "lds2",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "lds2",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "m12",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "m12",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "m12",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "m14",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "m14",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "m14",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "m19",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "m26",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "m26",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "m3",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "m3",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "m3",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "m6",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "m6",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "m6",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "mh102",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "mh102",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "mh102",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "mh104",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "mh104",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "mh104",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "mh106",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "mh106",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "mh106",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "mh18",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "mh18",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "mh18",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "mh32",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "mh32",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "mh32",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "mh33",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "mh33",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "mh33",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "mh42",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "mh42",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "mh42",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "mrc16",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "mrc16",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "mrc16",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "n10",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "n10",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "n10",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "n1h15",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "n1h15",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "n1h15",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "n63215b",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "n63215b",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "n63215b",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "n64012a",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "n64012a",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "n64012a",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "naca0010",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "naca0010",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "naca0010",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "naca001035",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "naca001035",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "naca16006",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "naca2412",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "naca2412",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "naca2412",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "naca4415",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "naca4415",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "naca4415",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "naca64206",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "naca64206",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "naca64206",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "naca642415",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "naca642415",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "naca642415",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "naca651212",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "naca651212",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "naca651212",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "naca651412",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "naca651412",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "naca651412",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "naca653218",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "naca653218",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "naca653218",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "naca65410",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "naca65410",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "naca65410",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "naca747a315",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "naca747a315",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "naca747a315",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "nacam3",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "nacam3",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "nacam3",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "nl722343",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "nl722343",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "nl722343",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "nlf416",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "nlf416",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "nlf416",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "nlr1t",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "nlr1t",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "nlr1t",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "npl9510",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "npl9510",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "npl9510",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "oaf117",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "oaf117",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "oaf117",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "oaf139",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "oaf139",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "oaf139",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "psu94097",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "psu94097",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "psu94097",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "rc08b3",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "rc08b3",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "rc08b3",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "rc1264c",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "rc1264c",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "rc1264c",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "rg12a",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "rg12a",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "rg12a",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "rg12a189",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "rg12a189",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "rg12a189",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "rg15",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "rg15",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "rg15",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "rg8",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "rg8",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "rg8",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "s1012",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "s1012",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "s1012",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "s102s",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "s102s",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "s1210",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "s1210",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "s1210",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "s2055",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "s2055",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "s2055",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "s2060",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "s2060",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "s2060",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "s8036",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "s8036",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "s8064",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "s8064",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "s8064",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "s9027",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "s9027",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "s9027",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "s9032",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "s9032",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "s9032",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "s9033",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "s9033",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "s9033",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "sa7038",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "sa7038",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "sa7038",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "sc20012",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "sc20012",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "sc20012",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "sc20406",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "sc20406",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "sc20406",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "sc21006",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "sc21006",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "sc21006",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "sc21010",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "sc21010",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "sc21010",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "sd2030",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "sd2030",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "sd2030",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "sd7090",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "sd7090",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "sd7090",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "sd8000",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "sd8000",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "sd8000",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "us1000root",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "us1000root",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "us1000root",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "usa51",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "usa51",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "usa51",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "v23010",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "v23010",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "v23010",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "vr15",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "vr15",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "vr15",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "vr5",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "vr5",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "vr5",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "vr7b",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "vr7b",
+      "alpha_deg": 4.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "vr7b",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "waspsm",
+      "alpha_deg": 2.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "waspsm",
+      "alpha_deg": 6.0,
+      "cohort": "protected_historical_test",
+      "geometry_sha256": "nan"
+    },
+    {
+      "airfoil_id": "confirmation_0000",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "156698872d040a4dc203451fc71bb165a4c20049c30f6cb6a33123d9a90d5c39"
+    },
+    {
+      "airfoil_id": "confirmation_0000",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "156698872d040a4dc203451fc71bb165a4c20049c30f6cb6a33123d9a90d5c39"
+    },
+    {
+      "airfoil_id": "confirmation_0000",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "156698872d040a4dc203451fc71bb165a4c20049c30f6cb6a33123d9a90d5c39"
+    },
+    {
+      "airfoil_id": "confirmation_0001",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "a12da90869d4fa5c9ceac6c77adc4c9362ba9be2e8872431ea8f6fd9a31d8b57"
+    },
+    {
+      "airfoil_id": "confirmation_0001",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "a12da90869d4fa5c9ceac6c77adc4c9362ba9be2e8872431ea8f6fd9a31d8b57"
+    },
+    {
+      "airfoil_id": "confirmation_0001",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "a12da90869d4fa5c9ceac6c77adc4c9362ba9be2e8872431ea8f6fd9a31d8b57"
+    },
+    {
+      "airfoil_id": "confirmation_0002",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "5e89ecc7a3d6e343d49d6ac7b77ace8d828bf0cec64be95f06ac4eaf2522d283"
+    },
+    {
+      "airfoil_id": "confirmation_0002",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "5e89ecc7a3d6e343d49d6ac7b77ace8d828bf0cec64be95f06ac4eaf2522d283"
+    },
+    {
+      "airfoil_id": "confirmation_0002",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "5e89ecc7a3d6e343d49d6ac7b77ace8d828bf0cec64be95f06ac4eaf2522d283"
+    },
+    {
+      "airfoil_id": "confirmation_0003",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "e3cded9e95bfb2c3d54826029a396fa5664fc47e591d058ce3329fec89f34b3a"
+    },
+    {
+      "airfoil_id": "confirmation_0003",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "e3cded9e95bfb2c3d54826029a396fa5664fc47e591d058ce3329fec89f34b3a"
+    },
+    {
+      "airfoil_id": "confirmation_0003",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "e3cded9e95bfb2c3d54826029a396fa5664fc47e591d058ce3329fec89f34b3a"
+    },
+    {
+      "airfoil_id": "confirmation_0004",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "b1a9ffe30d95bcb33d66112f0a53752e9fa50e9a51f4fd4e75312969627dfeab"
+    },
+    {
+      "airfoil_id": "confirmation_0004",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "b1a9ffe30d95bcb33d66112f0a53752e9fa50e9a51f4fd4e75312969627dfeab"
+    },
+    {
+      "airfoil_id": "confirmation_0004",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "b1a9ffe30d95bcb33d66112f0a53752e9fa50e9a51f4fd4e75312969627dfeab"
+    },
+    {
+      "airfoil_id": "confirmation_0005",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "543eb8995d36b2d5ee02bae9c704cf50b2f2545fb85c3a638ba3db10096ab399"
+    },
+    {
+      "airfoil_id": "confirmation_0005",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "543eb8995d36b2d5ee02bae9c704cf50b2f2545fb85c3a638ba3db10096ab399"
+    },
+    {
+      "airfoil_id": "confirmation_0005",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "543eb8995d36b2d5ee02bae9c704cf50b2f2545fb85c3a638ba3db10096ab399"
+    },
+    {
+      "airfoil_id": "confirmation_0006",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "2ebdd01ce11b9eb0e0039d39cbcc2743f7e40071452eadb15e0a9a201cc558ca"
+    },
+    {
+      "airfoil_id": "confirmation_0006",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "2ebdd01ce11b9eb0e0039d39cbcc2743f7e40071452eadb15e0a9a201cc558ca"
+    },
+    {
+      "airfoil_id": "confirmation_0006",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "2ebdd01ce11b9eb0e0039d39cbcc2743f7e40071452eadb15e0a9a201cc558ca"
+    },
+    {
+      "airfoil_id": "confirmation_0007",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "89fcbd0f8e7b4c24822c66af78ae4728f222a48cccbef484ad837c99594c9800"
+    },
+    {
+      "airfoil_id": "confirmation_0007",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "89fcbd0f8e7b4c24822c66af78ae4728f222a48cccbef484ad837c99594c9800"
+    },
+    {
+      "airfoil_id": "confirmation_0009",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "2225d90be32f0231a9e1eb4c404133711da9627eb67ae3eb4f445c08946d21f0"
+    },
+    {
+      "airfoil_id": "confirmation_0009",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "2225d90be32f0231a9e1eb4c404133711da9627eb67ae3eb4f445c08946d21f0"
+    },
+    {
+      "airfoil_id": "confirmation_0009",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "2225d90be32f0231a9e1eb4c404133711da9627eb67ae3eb4f445c08946d21f0"
+    },
+    {
+      "airfoil_id": "confirmation_0010",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "311487007ce23cc4061dd04825b22c23573c814490cdfad7e9156611ed5a8708"
+    },
+    {
+      "airfoil_id": "confirmation_0010",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "311487007ce23cc4061dd04825b22c23573c814490cdfad7e9156611ed5a8708"
+    },
+    {
+      "airfoil_id": "confirmation_0010",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "311487007ce23cc4061dd04825b22c23573c814490cdfad7e9156611ed5a8708"
+    },
+    {
+      "airfoil_id": "confirmation_0012",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "9c19e13536583540e5f1ffe880cd189e948fc1104c7bd0dc69d287ba1cd6ce27"
+    },
+    {
+      "airfoil_id": "confirmation_0012",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "9c19e13536583540e5f1ffe880cd189e948fc1104c7bd0dc69d287ba1cd6ce27"
+    },
+    {
+      "airfoil_id": "confirmation_0012",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "9c19e13536583540e5f1ffe880cd189e948fc1104c7bd0dc69d287ba1cd6ce27"
+    },
+    {
+      "airfoil_id": "confirmation_0013",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "bb40e5b43bf9dc1828f5a272ccd29307f0967b48c1284451e81794e5fed9e1cc"
+    },
+    {
+      "airfoil_id": "confirmation_0013",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "bb40e5b43bf9dc1828f5a272ccd29307f0967b48c1284451e81794e5fed9e1cc"
+    },
+    {
+      "airfoil_id": "confirmation_0013",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "bb40e5b43bf9dc1828f5a272ccd29307f0967b48c1284451e81794e5fed9e1cc"
+    },
+    {
+      "airfoil_id": "confirmation_0014",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "bee8d4d23fd7afa47ec2d147d6e80a1897e4a5719273d2531f52400c39c03bde"
+    },
+    {
+      "airfoil_id": "confirmation_0014",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "bee8d4d23fd7afa47ec2d147d6e80a1897e4a5719273d2531f52400c39c03bde"
+    },
+    {
+      "airfoil_id": "confirmation_0014",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "bee8d4d23fd7afa47ec2d147d6e80a1897e4a5719273d2531f52400c39c03bde"
+    },
+    {
+      "airfoil_id": "confirmation_0015",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "722fef51139d3d381da23cd5452548c11151f0be57236ea222a4a3b2ac37418d"
+    },
+    {
+      "airfoil_id": "confirmation_0015",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "722fef51139d3d381da23cd5452548c11151f0be57236ea222a4a3b2ac37418d"
+    },
+    {
+      "airfoil_id": "confirmation_0015",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "722fef51139d3d381da23cd5452548c11151f0be57236ea222a4a3b2ac37418d"
+    },
+    {
+      "airfoil_id": "confirmation_0016",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "a5190eef200cf7a76fbf5003f4f6502fc4b6e2037acb1e13e766cab15abfa80f"
+    },
+    {
+      "airfoil_id": "confirmation_0016",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "a5190eef200cf7a76fbf5003f4f6502fc4b6e2037acb1e13e766cab15abfa80f"
+    },
+    {
+      "airfoil_id": "confirmation_0017",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "a116869a3f12abd850786ac7540236b901a48a7cfe1bace09a76e22b8b5408b2"
+    },
+    {
+      "airfoil_id": "confirmation_0017",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "a116869a3f12abd850786ac7540236b901a48a7cfe1bace09a76e22b8b5408b2"
+    },
+    {
+      "airfoil_id": "confirmation_0017",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "a116869a3f12abd850786ac7540236b901a48a7cfe1bace09a76e22b8b5408b2"
+    },
+    {
+      "airfoil_id": "confirmation_0018",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "5ad992bad45be23ce714d9617a3fda40a5609ffd1821db5b4ff322a838348261"
+    },
+    {
+      "airfoil_id": "confirmation_0018",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "5ad992bad45be23ce714d9617a3fda40a5609ffd1821db5b4ff322a838348261"
+    },
+    {
+      "airfoil_id": "confirmation_0018",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "5ad992bad45be23ce714d9617a3fda40a5609ffd1821db5b4ff322a838348261"
+    },
+    {
+      "airfoil_id": "confirmation_0019",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "55091baec3c7696338e82886d90fdbba3f570f2ee83deee085faf61bf934a15c"
+    },
+    {
+      "airfoil_id": "confirmation_0019",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "55091baec3c7696338e82886d90fdbba3f570f2ee83deee085faf61bf934a15c"
+    },
+    {
+      "airfoil_id": "confirmation_0019",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "55091baec3c7696338e82886d90fdbba3f570f2ee83deee085faf61bf934a15c"
+    },
+    {
+      "airfoil_id": "confirmation_0020",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "d1388bb861ca25f29e524e434bd75bb2265ffcd5dd1c0337f1af2e05dc851ab9"
+    },
+    {
+      "airfoil_id": "confirmation_0020",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "d1388bb861ca25f29e524e434bd75bb2265ffcd5dd1c0337f1af2e05dc851ab9"
+    },
+    {
+      "airfoil_id": "confirmation_0020",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "d1388bb861ca25f29e524e434bd75bb2265ffcd5dd1c0337f1af2e05dc851ab9"
+    },
+    {
+      "airfoil_id": "confirmation_0022",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "a555d067ee86cb5f583f1b560385e9b894ccbbc07091fb5de8e426ff60a4343c"
+    },
+    {
+      "airfoil_id": "confirmation_0022",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "a555d067ee86cb5f583f1b560385e9b894ccbbc07091fb5de8e426ff60a4343c"
+    },
+    {
+      "airfoil_id": "confirmation_0022",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "a555d067ee86cb5f583f1b560385e9b894ccbbc07091fb5de8e426ff60a4343c"
+    },
+    {
+      "airfoil_id": "confirmation_0023",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "0617f2267f086c900625ea9979a823a86bed27948860ab568a0dae450578ec0d"
+    },
+    {
+      "airfoil_id": "confirmation_0023",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "0617f2267f086c900625ea9979a823a86bed27948860ab568a0dae450578ec0d"
+    },
+    {
+      "airfoil_id": "confirmation_0023",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "0617f2267f086c900625ea9979a823a86bed27948860ab568a0dae450578ec0d"
+    },
+    {
+      "airfoil_id": "confirmation_0024",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "464c0d2a4c0da0472085af679883e99b963daa088b86c548983deb86ddef1045"
+    },
+    {
+      "airfoil_id": "confirmation_0024",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "464c0d2a4c0da0472085af679883e99b963daa088b86c548983deb86ddef1045"
+    },
+    {
+      "airfoil_id": "confirmation_0024",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "464c0d2a4c0da0472085af679883e99b963daa088b86c548983deb86ddef1045"
+    },
+    {
+      "airfoil_id": "confirmation_0025",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "ec01b2cf2a381835f37916966af3f67e4aa7ee8232332c754e4e22903dbd0663"
+    },
+    {
+      "airfoil_id": "confirmation_0025",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "ec01b2cf2a381835f37916966af3f67e4aa7ee8232332c754e4e22903dbd0663"
+    },
+    {
+      "airfoil_id": "confirmation_0025",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "ec01b2cf2a381835f37916966af3f67e4aa7ee8232332c754e4e22903dbd0663"
+    },
+    {
+      "airfoil_id": "confirmation_0026",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "0d2df73a302120bf75389dbc7d02a779f59e7bd3504deadea1bea82e0d0d56e7"
+    },
+    {
+      "airfoil_id": "confirmation_0026",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "0d2df73a302120bf75389dbc7d02a779f59e7bd3504deadea1bea82e0d0d56e7"
+    },
+    {
+      "airfoil_id": "confirmation_0026",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "0d2df73a302120bf75389dbc7d02a779f59e7bd3504deadea1bea82e0d0d56e7"
+    },
+    {
+      "airfoil_id": "confirmation_0027",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "f4a672e62026ada5831c2fd31a819ea976d7087f20bef7131ef641eedc5a7f1b"
+    },
+    {
+      "airfoil_id": "confirmation_0027",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "f4a672e62026ada5831c2fd31a819ea976d7087f20bef7131ef641eedc5a7f1b"
+    },
+    {
+      "airfoil_id": "confirmation_0027",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "f4a672e62026ada5831c2fd31a819ea976d7087f20bef7131ef641eedc5a7f1b"
+    },
+    {
+      "airfoil_id": "confirmation_0028",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "9a7a911ba4cf92dad9f2052731630fce50667f08a6c0054649e8f2fcdd035357"
+    },
+    {
+      "airfoil_id": "confirmation_0028",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "9a7a911ba4cf92dad9f2052731630fce50667f08a6c0054649e8f2fcdd035357"
+    },
+    {
+      "airfoil_id": "confirmation_0028",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "9a7a911ba4cf92dad9f2052731630fce50667f08a6c0054649e8f2fcdd035357"
+    },
+    {
+      "airfoil_id": "confirmation_0029",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "06d3f98f0888836abb792a6bcbb91fc604859565203afa24b522de8efbe96af7"
+    },
+    {
+      "airfoil_id": "confirmation_0029",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "06d3f98f0888836abb792a6bcbb91fc604859565203afa24b522de8efbe96af7"
+    },
+    {
+      "airfoil_id": "confirmation_0029",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "06d3f98f0888836abb792a6bcbb91fc604859565203afa24b522de8efbe96af7"
+    },
+    {
+      "airfoil_id": "confirmation_0030",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "8cd0e209d3f3c72756e1008939868ee76c8d16f83bed0b11782b3adaf3211202"
+    },
+    {
+      "airfoil_id": "confirmation_0030",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "8cd0e209d3f3c72756e1008939868ee76c8d16f83bed0b11782b3adaf3211202"
+    },
+    {
+      "airfoil_id": "confirmation_0030",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "8cd0e209d3f3c72756e1008939868ee76c8d16f83bed0b11782b3adaf3211202"
+    },
+    {
+      "airfoil_id": "confirmation_0031",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "2561eefba31055e13236c680db895308e37b2111acd6b31eec5633363fb3d203"
+    },
+    {
+      "airfoil_id": "confirmation_0032",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "01d16525cdb1a26229c3cb9400dfd0ba60bed261ddbff17dbde75c6d21243e1b"
+    },
+    {
+      "airfoil_id": "confirmation_0032",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "01d16525cdb1a26229c3cb9400dfd0ba60bed261ddbff17dbde75c6d21243e1b"
+    },
+    {
+      "airfoil_id": "confirmation_0032",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "01d16525cdb1a26229c3cb9400dfd0ba60bed261ddbff17dbde75c6d21243e1b"
+    },
+    {
+      "airfoil_id": "confirmation_0033",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "73ff820ed3ac5d2bdd06de62ca2566386d106d4e35e62a36d6cc5823d9193dba"
+    },
+    {
+      "airfoil_id": "confirmation_0033",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "73ff820ed3ac5d2bdd06de62ca2566386d106d4e35e62a36d6cc5823d9193dba"
+    },
+    {
+      "airfoil_id": "confirmation_0033",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "73ff820ed3ac5d2bdd06de62ca2566386d106d4e35e62a36d6cc5823d9193dba"
+    },
+    {
+      "airfoil_id": "confirmation_0035",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "6d3e6c3da695bf76cf0aa430476da35d1d61a013dc2a976f32e1f3ef0a432c62"
+    },
+    {
+      "airfoil_id": "confirmation_0035",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "6d3e6c3da695bf76cf0aa430476da35d1d61a013dc2a976f32e1f3ef0a432c62"
+    },
+    {
+      "airfoil_id": "confirmation_0035",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "6d3e6c3da695bf76cf0aa430476da35d1d61a013dc2a976f32e1f3ef0a432c62"
+    },
+    {
+      "airfoil_id": "confirmation_0036",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "b6d83e95de32899de01a461003b712d1865d1325fb94dce68b23b364760c3c3c"
+    },
+    {
+      "airfoil_id": "confirmation_0036",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "b6d83e95de32899de01a461003b712d1865d1325fb94dce68b23b364760c3c3c"
+    },
+    {
+      "airfoil_id": "confirmation_0036",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "b6d83e95de32899de01a461003b712d1865d1325fb94dce68b23b364760c3c3c"
+    },
+    {
+      "airfoil_id": "confirmation_0037",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "e5be8b7d06da8dd056fe20cc7e195291c0f9334bcf31539cfb04f96807954dc2"
+    },
+    {
+      "airfoil_id": "confirmation_0037",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "e5be8b7d06da8dd056fe20cc7e195291c0f9334bcf31539cfb04f96807954dc2"
+    },
+    {
+      "airfoil_id": "confirmation_0038",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "fd2db21bda4bd3b8e6072bc76c34254ffbb0f4198fee349b918e9fcebc4d50bc"
+    },
+    {
+      "airfoil_id": "confirmation_0038",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "fd2db21bda4bd3b8e6072bc76c34254ffbb0f4198fee349b918e9fcebc4d50bc"
+    },
+    {
+      "airfoil_id": "confirmation_0039",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "ef3b37dadecf50e655182abafe22079f370172aa3ca466e8223bfa9a3e251177"
+    },
+    {
+      "airfoil_id": "confirmation_0039",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "ef3b37dadecf50e655182abafe22079f370172aa3ca466e8223bfa9a3e251177"
+    },
+    {
+      "airfoil_id": "confirmation_0039",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "ef3b37dadecf50e655182abafe22079f370172aa3ca466e8223bfa9a3e251177"
+    },
+    {
+      "airfoil_id": "confirmation_0040",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "7bb8dc7bcbf6f5f15a7c500ccc9dc7f5f916be43ef1fe895b3996db2f554b4dd"
+    },
+    {
+      "airfoil_id": "confirmation_0040",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "7bb8dc7bcbf6f5f15a7c500ccc9dc7f5f916be43ef1fe895b3996db2f554b4dd"
+    },
+    {
+      "airfoil_id": "confirmation_0040",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "7bb8dc7bcbf6f5f15a7c500ccc9dc7f5f916be43ef1fe895b3996db2f554b4dd"
+    },
+    {
+      "airfoil_id": "confirmation_0041",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "17855d916cdea96267cf96bf1f53591be8064960101ea680c73bcb609307717e"
+    },
+    {
+      "airfoil_id": "confirmation_0041",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "17855d916cdea96267cf96bf1f53591be8064960101ea680c73bcb609307717e"
+    },
+    {
+      "airfoil_id": "confirmation_0041",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "17855d916cdea96267cf96bf1f53591be8064960101ea680c73bcb609307717e"
+    },
+    {
+      "airfoil_id": "confirmation_0042",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "dccfbef493dc0dfaf70d6c8e15cc74da7937060633ee4fe712efe80e316a7c83"
+    },
+    {
+      "airfoil_id": "confirmation_0042",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "dccfbef493dc0dfaf70d6c8e15cc74da7937060633ee4fe712efe80e316a7c83"
+    },
+    {
+      "airfoil_id": "confirmation_0042",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "dccfbef493dc0dfaf70d6c8e15cc74da7937060633ee4fe712efe80e316a7c83"
+    },
+    {
+      "airfoil_id": "confirmation_0043",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "39c559e35b6226beccc3f33594ea0b648eaddcd9c13e6dbfce8d516beedcfc3e"
+    },
+    {
+      "airfoil_id": "confirmation_0043",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "39c559e35b6226beccc3f33594ea0b648eaddcd9c13e6dbfce8d516beedcfc3e"
+    },
+    {
+      "airfoil_id": "confirmation_0044",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "4cf955e350ff781be7bfffdbdc93e5c840c3b045700819e6125cf41947543ee6"
+    },
+    {
+      "airfoil_id": "confirmation_0044",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "4cf955e350ff781be7bfffdbdc93e5c840c3b045700819e6125cf41947543ee6"
+    },
+    {
+      "airfoil_id": "confirmation_0044",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "4cf955e350ff781be7bfffdbdc93e5c840c3b045700819e6125cf41947543ee6"
+    },
+    {
+      "airfoil_id": "confirmation_0045",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "347782a95adaaa02dda9bc68842bda556821c10dbcda7a218eb9d12568b7cf65"
+    },
+    {
+      "airfoil_id": "confirmation_0045",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "347782a95adaaa02dda9bc68842bda556821c10dbcda7a218eb9d12568b7cf65"
+    },
+    {
+      "airfoil_id": "confirmation_0045",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "347782a95adaaa02dda9bc68842bda556821c10dbcda7a218eb9d12568b7cf65"
+    },
+    {
+      "airfoil_id": "confirmation_0046",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "4830ebd34aecbae709f6d2079f446e86d4f7084f3211e62f5e2ee012d8ce70b3"
+    },
+    {
+      "airfoil_id": "confirmation_0046",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "4830ebd34aecbae709f6d2079f446e86d4f7084f3211e62f5e2ee012d8ce70b3"
+    },
+    {
+      "airfoil_id": "confirmation_0046",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "4830ebd34aecbae709f6d2079f446e86d4f7084f3211e62f5e2ee012d8ce70b3"
+    },
+    {
+      "airfoil_id": "confirmation_0047",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "681fd1210ff6a70b3e93787a86d66bc48881c3272045ed35301a3174c4d063a5"
+    },
+    {
+      "airfoil_id": "confirmation_0047",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "681fd1210ff6a70b3e93787a86d66bc48881c3272045ed35301a3174c4d063a5"
+    },
+    {
+      "airfoil_id": "confirmation_0047",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "681fd1210ff6a70b3e93787a86d66bc48881c3272045ed35301a3174c4d063a5"
+    },
+    {
+      "airfoil_id": "confirmation_0048",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "664a3171da4f4450c4f07ca7b32c395dea38304a9011ed5ec3a7212c240f7c34"
+    },
+    {
+      "airfoil_id": "confirmation_0048",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "664a3171da4f4450c4f07ca7b32c395dea38304a9011ed5ec3a7212c240f7c34"
+    },
+    {
+      "airfoil_id": "confirmation_0048",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "664a3171da4f4450c4f07ca7b32c395dea38304a9011ed5ec3a7212c240f7c34"
+    },
+    {
+      "airfoil_id": "confirmation_0049",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "a21266898bf19bdb2d3d93dec155fe0b3275c1aeda84f79a81c748bf8422f4ed"
+    },
+    {
+      "airfoil_id": "confirmation_0049",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "a21266898bf19bdb2d3d93dec155fe0b3275c1aeda84f79a81c748bf8422f4ed"
+    },
+    {
+      "airfoil_id": "confirmation_0049",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "a21266898bf19bdb2d3d93dec155fe0b3275c1aeda84f79a81c748bf8422f4ed"
+    },
+    {
+      "airfoil_id": "confirmation_0050",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "ae85cf4de9fcfdf3a90086dd1adbe1e80988a8fe7ebe2777c1de7d0453dac0cf"
+    },
+    {
+      "airfoil_id": "confirmation_0050",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "ae85cf4de9fcfdf3a90086dd1adbe1e80988a8fe7ebe2777c1de7d0453dac0cf"
+    },
+    {
+      "airfoil_id": "confirmation_0050",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "ae85cf4de9fcfdf3a90086dd1adbe1e80988a8fe7ebe2777c1de7d0453dac0cf"
+    },
+    {
+      "airfoil_id": "confirmation_0051",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "35a0c76347bc9b6c3903576b253553d9062f566014258ec335379fb45eb8393d"
+    },
+    {
+      "airfoil_id": "confirmation_0051",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "35a0c76347bc9b6c3903576b253553d9062f566014258ec335379fb45eb8393d"
+    },
+    {
+      "airfoil_id": "confirmation_0052",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "f3a9e52eb8aaa61d666ef198b423bfce6066d3cc5cc4cf697db642d95bf66460"
+    },
+    {
+      "airfoil_id": "confirmation_0052",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "f3a9e52eb8aaa61d666ef198b423bfce6066d3cc5cc4cf697db642d95bf66460"
+    },
+    {
+      "airfoil_id": "confirmation_0052",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "f3a9e52eb8aaa61d666ef198b423bfce6066d3cc5cc4cf697db642d95bf66460"
+    },
+    {
+      "airfoil_id": "confirmation_0053",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "34d534eea8a2751aacf65412f0aea226d4af84d43855f3ae0507ad15c98eebcc"
+    },
+    {
+      "airfoil_id": "confirmation_0053",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "34d534eea8a2751aacf65412f0aea226d4af84d43855f3ae0507ad15c98eebcc"
+    },
+    {
+      "airfoil_id": "confirmation_0053",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "34d534eea8a2751aacf65412f0aea226d4af84d43855f3ae0507ad15c98eebcc"
+    },
+    {
+      "airfoil_id": "confirmation_0054",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "42383804344dd573b4170059c20a607205258b1b8fba2b95082e54fb4c5b0030"
+    },
+    {
+      "airfoil_id": "confirmation_0054",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "42383804344dd573b4170059c20a607205258b1b8fba2b95082e54fb4c5b0030"
+    },
+    {
+      "airfoil_id": "confirmation_0054",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "42383804344dd573b4170059c20a607205258b1b8fba2b95082e54fb4c5b0030"
+    },
+    {
+      "airfoil_id": "confirmation_0055",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "d494f1b81aa4c95518adc74f77771a11bd605304244e47b181ab0d8270e8f955"
+    },
+    {
+      "airfoil_id": "confirmation_0055",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "d494f1b81aa4c95518adc74f77771a11bd605304244e47b181ab0d8270e8f955"
+    },
+    {
+      "airfoil_id": "confirmation_0055",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "d494f1b81aa4c95518adc74f77771a11bd605304244e47b181ab0d8270e8f955"
+    },
+    {
+      "airfoil_id": "confirmation_0056",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "a1d34de94e8e50d014e216a7c1bd912a0bd58ed97c4d1ecf19dcc5094b8c7bdd"
+    },
+    {
+      "airfoil_id": "confirmation_0056",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "a1d34de94e8e50d014e216a7c1bd912a0bd58ed97c4d1ecf19dcc5094b8c7bdd"
+    },
+    {
+      "airfoil_id": "confirmation_0056",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "a1d34de94e8e50d014e216a7c1bd912a0bd58ed97c4d1ecf19dcc5094b8c7bdd"
+    },
+    {
+      "airfoil_id": "confirmation_0057",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "17a4649e5f9f31927c96091e3d8182d1a93ac8e8c573c76f9ef8f44fe13f2e94"
+    },
+    {
+      "airfoil_id": "confirmation_0057",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "17a4649e5f9f31927c96091e3d8182d1a93ac8e8c573c76f9ef8f44fe13f2e94"
+    },
+    {
+      "airfoil_id": "confirmation_0057",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "17a4649e5f9f31927c96091e3d8182d1a93ac8e8c573c76f9ef8f44fe13f2e94"
+    },
+    {
+      "airfoil_id": "confirmation_0058",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "bb35e0850b30552791bba846188b5d4ea0f7542aaa07be8603223c7852130780"
+    },
+    {
+      "airfoil_id": "confirmation_0058",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "bb35e0850b30552791bba846188b5d4ea0f7542aaa07be8603223c7852130780"
+    },
+    {
+      "airfoil_id": "confirmation_0058",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "bb35e0850b30552791bba846188b5d4ea0f7542aaa07be8603223c7852130780"
+    },
+    {
+      "airfoil_id": "confirmation_0059",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "a86c50e39ab7c802cd3da277770855f6df985f4c4815ce2a82160c6691d6eb53"
+    },
+    {
+      "airfoil_id": "confirmation_0059",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "a86c50e39ab7c802cd3da277770855f6df985f4c4815ce2a82160c6691d6eb53"
+    },
+    {
+      "airfoil_id": "confirmation_0060",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "1907ca381513685fa9c55e13b51102ab6c5c5eaabe364c066c9b9895af6338d8"
+    },
+    {
+      "airfoil_id": "confirmation_0060",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "1907ca381513685fa9c55e13b51102ab6c5c5eaabe364c066c9b9895af6338d8"
+    },
+    {
+      "airfoil_id": "confirmation_0060",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "1907ca381513685fa9c55e13b51102ab6c5c5eaabe364c066c9b9895af6338d8"
+    },
+    {
+      "airfoil_id": "confirmation_0061",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "f2d3fd74ae3af60c994fd8ed9e758c0c02e284890d7bbdb55b2c4c8f690488bf"
+    },
+    {
+      "airfoil_id": "confirmation_0061",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "f2d3fd74ae3af60c994fd8ed9e758c0c02e284890d7bbdb55b2c4c8f690488bf"
+    },
+    {
+      "airfoil_id": "confirmation_0061",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "f2d3fd74ae3af60c994fd8ed9e758c0c02e284890d7bbdb55b2c4c8f690488bf"
+    },
+    {
+      "airfoil_id": "confirmation_0062",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "3a62a37693c71eea113cd2e1f7084d7fe070a27c56f953bf9754b1d3f7b62874"
+    },
+    {
+      "airfoil_id": "confirmation_0062",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "3a62a37693c71eea113cd2e1f7084d7fe070a27c56f953bf9754b1d3f7b62874"
+    },
+    {
+      "airfoil_id": "confirmation_0063",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "c6419eab649830188d97a029da120a8a361c3f945dd47f9f84b23d8f1b61744b"
+    },
+    {
+      "airfoil_id": "confirmation_0063",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "c6419eab649830188d97a029da120a8a361c3f945dd47f9f84b23d8f1b61744b"
+    },
+    {
+      "airfoil_id": "confirmation_0063",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "c6419eab649830188d97a029da120a8a361c3f945dd47f9f84b23d8f1b61744b"
+    },
+    {
+      "airfoil_id": "confirmation_0064",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "4736e120ed6a38d05f747dfb77781582ef6613c625f01a73f8eb129443917954"
+    },
+    {
+      "airfoil_id": "confirmation_0064",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "4736e120ed6a38d05f747dfb77781582ef6613c625f01a73f8eb129443917954"
+    },
+    {
+      "airfoil_id": "confirmation_0064",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "4736e120ed6a38d05f747dfb77781582ef6613c625f01a73f8eb129443917954"
+    },
+    {
+      "airfoil_id": "confirmation_0065",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "85b6c98fb6f760cde8138ba87d8a6522c2e971a6ee0965cd0d250f469d3173d0"
+    },
+    {
+      "airfoil_id": "confirmation_0065",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "85b6c98fb6f760cde8138ba87d8a6522c2e971a6ee0965cd0d250f469d3173d0"
+    },
+    {
+      "airfoil_id": "confirmation_0066",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "3c09f9d23895b67d142928323fc9f75e7cc9bc0110bd7ff69134557034c67401"
+    },
+    {
+      "airfoil_id": "confirmation_0066",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "3c09f9d23895b67d142928323fc9f75e7cc9bc0110bd7ff69134557034c67401"
+    },
+    {
+      "airfoil_id": "confirmation_0066",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "3c09f9d23895b67d142928323fc9f75e7cc9bc0110bd7ff69134557034c67401"
+    },
+    {
+      "airfoil_id": "confirmation_0067",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "48ed5ebba25654325ef668020c7853210fa5ba7a46d9eb8688674e264517c9fe"
+    },
+    {
+      "airfoil_id": "confirmation_0067",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "48ed5ebba25654325ef668020c7853210fa5ba7a46d9eb8688674e264517c9fe"
+    },
+    {
+      "airfoil_id": "confirmation_0067",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "48ed5ebba25654325ef668020c7853210fa5ba7a46d9eb8688674e264517c9fe"
+    },
+    {
+      "airfoil_id": "confirmation_0068",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "a3bece0cbdf807dbf515b48bed835db5fab88c8cac819cdbaf3e2987d7f9cb13"
+    },
+    {
+      "airfoil_id": "confirmation_0068",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "a3bece0cbdf807dbf515b48bed835db5fab88c8cac819cdbaf3e2987d7f9cb13"
+    },
+    {
+      "airfoil_id": "confirmation_0068",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "a3bece0cbdf807dbf515b48bed835db5fab88c8cac819cdbaf3e2987d7f9cb13"
+    },
+    {
+      "airfoil_id": "confirmation_0069",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "407ef61d796d790b803d4178fecb87f375ae35abef0a3ccdb2d68d8a152f5efc"
+    },
+    {
+      "airfoil_id": "confirmation_0069",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "407ef61d796d790b803d4178fecb87f375ae35abef0a3ccdb2d68d8a152f5efc"
+    },
+    {
+      "airfoil_id": "confirmation_0069",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "407ef61d796d790b803d4178fecb87f375ae35abef0a3ccdb2d68d8a152f5efc"
+    },
+    {
+      "airfoil_id": "confirmation_0070",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "9479251b276de9e945afbef1cf81ab5b3837a749c90b2d5d6c3e88be99c03348"
+    },
+    {
+      "airfoil_id": "confirmation_0070",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "9479251b276de9e945afbef1cf81ab5b3837a749c90b2d5d6c3e88be99c03348"
+    },
+    {
+      "airfoil_id": "confirmation_0071",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "25e7c7353222d0d6c58a1a6af2ecefd58eb90b6e2afc8b2ae77a8e44e2158bca"
+    },
+    {
+      "airfoil_id": "confirmation_0071",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "25e7c7353222d0d6c58a1a6af2ecefd58eb90b6e2afc8b2ae77a8e44e2158bca"
+    },
+    {
+      "airfoil_id": "confirmation_0071",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "25e7c7353222d0d6c58a1a6af2ecefd58eb90b6e2afc8b2ae77a8e44e2158bca"
+    },
+    {
+      "airfoil_id": "confirmation_0072",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "eda55110967cfd4ae307e6567dded824627b140670a2a2197ee6245eeb2cc5c0"
+    },
+    {
+      "airfoil_id": "confirmation_0072",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "eda55110967cfd4ae307e6567dded824627b140670a2a2197ee6245eeb2cc5c0"
+    },
+    {
+      "airfoil_id": "confirmation_0072",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "eda55110967cfd4ae307e6567dded824627b140670a2a2197ee6245eeb2cc5c0"
+    },
+    {
+      "airfoil_id": "confirmation_0073",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "2598903010f80e73757c8722bdab05b4cd66b57dacb6318fd8b8d294f18972c6"
+    },
+    {
+      "airfoil_id": "confirmation_0073",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "2598903010f80e73757c8722bdab05b4cd66b57dacb6318fd8b8d294f18972c6"
+    },
+    {
+      "airfoil_id": "confirmation_0073",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "2598903010f80e73757c8722bdab05b4cd66b57dacb6318fd8b8d294f18972c6"
+    },
+    {
+      "airfoil_id": "confirmation_0075",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "b451a1de235c2bf66e42c42a858dfafc7e9ad5409f695c00fd3d5f56b89af587"
+    },
+    {
+      "airfoil_id": "confirmation_0075",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "b451a1de235c2bf66e42c42a858dfafc7e9ad5409f695c00fd3d5f56b89af587"
+    },
+    {
+      "airfoil_id": "confirmation_0075",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "b451a1de235c2bf66e42c42a858dfafc7e9ad5409f695c00fd3d5f56b89af587"
+    },
+    {
+      "airfoil_id": "confirmation_0076",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "589d9c9eb2f21010f0a4872f8555eb9f5ac1d70e34c02f9c5ab779a196901ffa"
+    },
+    {
+      "airfoil_id": "confirmation_0076",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "589d9c9eb2f21010f0a4872f8555eb9f5ac1d70e34c02f9c5ab779a196901ffa"
+    },
+    {
+      "airfoil_id": "confirmation_0076",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "589d9c9eb2f21010f0a4872f8555eb9f5ac1d70e34c02f9c5ab779a196901ffa"
+    },
+    {
+      "airfoil_id": "confirmation_0077",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "15357e3a06f94f1d8f27915abad0e22223cb6932604b41cd57343a0b435a82e1"
+    },
+    {
+      "airfoil_id": "confirmation_0077",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "15357e3a06f94f1d8f27915abad0e22223cb6932604b41cd57343a0b435a82e1"
+    },
+    {
+      "airfoil_id": "confirmation_0077",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "15357e3a06f94f1d8f27915abad0e22223cb6932604b41cd57343a0b435a82e1"
+    },
+    {
+      "airfoil_id": "confirmation_0078",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "caddb890ae4b7a79b3948e1f2c0b37cfef4cb6e19bf35f8bb85ab60e0c37609e"
+    },
+    {
+      "airfoil_id": "confirmation_0078",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "caddb890ae4b7a79b3948e1f2c0b37cfef4cb6e19bf35f8bb85ab60e0c37609e"
+    },
+    {
+      "airfoil_id": "confirmation_0078",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "caddb890ae4b7a79b3948e1f2c0b37cfef4cb6e19bf35f8bb85ab60e0c37609e"
+    },
+    {
+      "airfoil_id": "confirmation_0079",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "13e86941174b45e4a1e05d289d30843dc10d20ccdbfc95cc56e0ad65a88322b5"
+    },
+    {
+      "airfoil_id": "confirmation_0079",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "13e86941174b45e4a1e05d289d30843dc10d20ccdbfc95cc56e0ad65a88322b5"
+    },
+    {
+      "airfoil_id": "confirmation_0079",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "13e86941174b45e4a1e05d289d30843dc10d20ccdbfc95cc56e0ad65a88322b5"
+    },
+    {
+      "airfoil_id": "confirmation_0080",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "b46e818d43498f1c8d846b59c0a0ea26cc31fe835cbfe32457143a34027bf42f"
+    },
+    {
+      "airfoil_id": "confirmation_0080",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "b46e818d43498f1c8d846b59c0a0ea26cc31fe835cbfe32457143a34027bf42f"
+    },
+    {
+      "airfoil_id": "confirmation_0080",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "b46e818d43498f1c8d846b59c0a0ea26cc31fe835cbfe32457143a34027bf42f"
+    },
+    {
+      "airfoil_id": "confirmation_0081",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "b609940b6dfb683bff1df301b4c49051e6158e9c820ef9d0580131c0ae8a479f"
+    },
+    {
+      "airfoil_id": "confirmation_0081",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "b609940b6dfb683bff1df301b4c49051e6158e9c820ef9d0580131c0ae8a479f"
+    },
+    {
+      "airfoil_id": "confirmation_0081",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "b609940b6dfb683bff1df301b4c49051e6158e9c820ef9d0580131c0ae8a479f"
+    },
+    {
+      "airfoil_id": "confirmation_0082",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "90f840de62e7f44dd7d01c7df638b627798bb2da814b083d205f694c49669c54"
+    },
+    {
+      "airfoil_id": "confirmation_0082",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "90f840de62e7f44dd7d01c7df638b627798bb2da814b083d205f694c49669c54"
+    },
+    {
+      "airfoil_id": "confirmation_0082",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "90f840de62e7f44dd7d01c7df638b627798bb2da814b083d205f694c49669c54"
+    },
+    {
+      "airfoil_id": "confirmation_0083",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "e367b57ffb20fe8ee486a7f3691cc8a7d7ade33522739c60d41fb532f1320132"
+    },
+    {
+      "airfoil_id": "confirmation_0083",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "e367b57ffb20fe8ee486a7f3691cc8a7d7ade33522739c60d41fb532f1320132"
+    },
+    {
+      "airfoil_id": "confirmation_0083",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "e367b57ffb20fe8ee486a7f3691cc8a7d7ade33522739c60d41fb532f1320132"
+    },
+    {
+      "airfoil_id": "confirmation_0084",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "3b81130ca45ecaede024a0822fcdfb06ada4bd6a28bd111e255761ac59669b1f"
+    },
+    {
+      "airfoil_id": "confirmation_0084",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "3b81130ca45ecaede024a0822fcdfb06ada4bd6a28bd111e255761ac59669b1f"
+    },
+    {
+      "airfoil_id": "confirmation_0084",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "3b81130ca45ecaede024a0822fcdfb06ada4bd6a28bd111e255761ac59669b1f"
+    },
+    {
+      "airfoil_id": "confirmation_0085",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "678babb7186bc6eb9e67efc6954beea21aa924acbb9409d8545f5dd20955490e"
+    },
+    {
+      "airfoil_id": "confirmation_0085",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "678babb7186bc6eb9e67efc6954beea21aa924acbb9409d8545f5dd20955490e"
+    },
+    {
+      "airfoil_id": "confirmation_0086",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "5cb60d04bc3e44b16b458f203384b05fa075b1d088f9511c678e3e4f407be4d1"
+    },
+    {
+      "airfoil_id": "confirmation_0086",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "5cb60d04bc3e44b16b458f203384b05fa075b1d088f9511c678e3e4f407be4d1"
+    },
+    {
+      "airfoil_id": "confirmation_0086",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "5cb60d04bc3e44b16b458f203384b05fa075b1d088f9511c678e3e4f407be4d1"
+    },
+    {
+      "airfoil_id": "confirmation_0087",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "4596959196f51a60e6fe600a38f652363850531150979f000acb94a23caa0eeb"
+    },
+    {
+      "airfoil_id": "confirmation_0087",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "4596959196f51a60e6fe600a38f652363850531150979f000acb94a23caa0eeb"
+    },
+    {
+      "airfoil_id": "confirmation_0087",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "4596959196f51a60e6fe600a38f652363850531150979f000acb94a23caa0eeb"
+    },
+    {
+      "airfoil_id": "confirmation_0088",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "f29bb38403db67c80523360c36735f2e16f7f1df2c06f275ddf489db0d3c0da2"
+    },
+    {
+      "airfoil_id": "confirmation_0088",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "f29bb38403db67c80523360c36735f2e16f7f1df2c06f275ddf489db0d3c0da2"
+    },
+    {
+      "airfoil_id": "confirmation_0088",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "f29bb38403db67c80523360c36735f2e16f7f1df2c06f275ddf489db0d3c0da2"
+    },
+    {
+      "airfoil_id": "confirmation_0089",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "589d59536419ceb1fce24bebea0090e48143acd0fb2ab6ce6ebac941f4f20d06"
+    },
+    {
+      "airfoil_id": "confirmation_0089",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "589d59536419ceb1fce24bebea0090e48143acd0fb2ab6ce6ebac941f4f20d06"
+    },
+    {
+      "airfoil_id": "confirmation_0089",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "589d59536419ceb1fce24bebea0090e48143acd0fb2ab6ce6ebac941f4f20d06"
+    },
+    {
+      "airfoil_id": "confirmation_0090",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "98f9fb49fc90e2c664147c4d8e9c1a9b77778bd5f6303aefa0c5f9f2182ad6ee"
+    },
+    {
+      "airfoil_id": "confirmation_0090",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "98f9fb49fc90e2c664147c4d8e9c1a9b77778bd5f6303aefa0c5f9f2182ad6ee"
+    },
+    {
+      "airfoil_id": "confirmation_0090",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "98f9fb49fc90e2c664147c4d8e9c1a9b77778bd5f6303aefa0c5f9f2182ad6ee"
+    },
+    {
+      "airfoil_id": "confirmation_0091",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "fb7c2b61d60ff5d6e5562f923f1e3eab02bf3391caf2e91dfa45cc1d365480b1"
+    },
+    {
+      "airfoil_id": "confirmation_0091",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "fb7c2b61d60ff5d6e5562f923f1e3eab02bf3391caf2e91dfa45cc1d365480b1"
+    },
+    {
+      "airfoil_id": "confirmation_0091",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "fb7c2b61d60ff5d6e5562f923f1e3eab02bf3391caf2e91dfa45cc1d365480b1"
+    },
+    {
+      "airfoil_id": "confirmation_0092",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "c3f1fe4d0a7abed43baa05c111402ce01aaaca3093f6dcc7f66a0b0c582007ee"
+    },
+    {
+      "airfoil_id": "confirmation_0092",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "c3f1fe4d0a7abed43baa05c111402ce01aaaca3093f6dcc7f66a0b0c582007ee"
+    },
+    {
+      "airfoil_id": "confirmation_0092",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "c3f1fe4d0a7abed43baa05c111402ce01aaaca3093f6dcc7f66a0b0c582007ee"
+    },
+    {
+      "airfoil_id": "confirmation_0093",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "ce41aad381088fcac7dc87bf19faba22152742920cd0c2c7cc9c7142c5ffca00"
+    },
+    {
+      "airfoil_id": "confirmation_0093",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "ce41aad381088fcac7dc87bf19faba22152742920cd0c2c7cc9c7142c5ffca00"
+    },
+    {
+      "airfoil_id": "confirmation_0093",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "ce41aad381088fcac7dc87bf19faba22152742920cd0c2c7cc9c7142c5ffca00"
+    },
+    {
+      "airfoil_id": "confirmation_0094",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "e065936849dd32c7575f0a2cd31768c3adc5cba799b1169625531940728dfe32"
+    },
+    {
+      "airfoil_id": "confirmation_0094",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "e065936849dd32c7575f0a2cd31768c3adc5cba799b1169625531940728dfe32"
+    },
+    {
+      "airfoil_id": "confirmation_0094",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "e065936849dd32c7575f0a2cd31768c3adc5cba799b1169625531940728dfe32"
+    },
+    {
+      "airfoil_id": "confirmation_0095",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "bb1369a333b248c00cdde090aa088195b628a37e7aa528e4132c9a48d598c85d"
+    },
+    {
+      "airfoil_id": "confirmation_0095",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "bb1369a333b248c00cdde090aa088195b628a37e7aa528e4132c9a48d598c85d"
+    },
+    {
+      "airfoil_id": "confirmation_0095",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "bb1369a333b248c00cdde090aa088195b628a37e7aa528e4132c9a48d598c85d"
+    },
+    {
+      "airfoil_id": "confirmation_0096",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "bc1aa6e557fa252456a90b97b4fe38bb2929d2534a3d2b6dc614445032da53e1"
+    },
+    {
+      "airfoil_id": "confirmation_0096",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "bc1aa6e557fa252456a90b97b4fe38bb2929d2534a3d2b6dc614445032da53e1"
+    },
+    {
+      "airfoil_id": "confirmation_0096",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "bc1aa6e557fa252456a90b97b4fe38bb2929d2534a3d2b6dc614445032da53e1"
+    },
+    {
+      "airfoil_id": "confirmation_0097",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "eac4d1789a98ac224b0b7707017979139bdb953a9342c01d3248fc81d9fdcd03"
+    },
+    {
+      "airfoil_id": "confirmation_0097",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "eac4d1789a98ac224b0b7707017979139bdb953a9342c01d3248fc81d9fdcd03"
+    },
+    {
+      "airfoil_id": "confirmation_0097",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "eac4d1789a98ac224b0b7707017979139bdb953a9342c01d3248fc81d9fdcd03"
+    },
+    {
+      "airfoil_id": "confirmation_0099",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "16739d60a4b22ff542c1a6797e940b13864ba9d7e6141567a01cc2eb7d71acfc"
+    },
+    {
+      "airfoil_id": "confirmation_0099",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "16739d60a4b22ff542c1a6797e940b13864ba9d7e6141567a01cc2eb7d71acfc"
+    },
+    {
+      "airfoil_id": "confirmation_0099",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "16739d60a4b22ff542c1a6797e940b13864ba9d7e6141567a01cc2eb7d71acfc"
+    },
+    {
+      "airfoil_id": "confirmation_0100",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "82fc2a178e071c7000ca5283aba8d57736e2e24d51c8ec432e26253a3d022443"
+    },
+    {
+      "airfoil_id": "confirmation_0100",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "82fc2a178e071c7000ca5283aba8d57736e2e24d51c8ec432e26253a3d022443"
+    },
+    {
+      "airfoil_id": "confirmation_0100",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "82fc2a178e071c7000ca5283aba8d57736e2e24d51c8ec432e26253a3d022443"
+    },
+    {
+      "airfoil_id": "confirmation_0101",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "ad6f4fa0062c16385be8e078c8c22dd45a1d69a70cc9d117c3575b8278481b9c"
+    },
+    {
+      "airfoil_id": "confirmation_0101",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "ad6f4fa0062c16385be8e078c8c22dd45a1d69a70cc9d117c3575b8278481b9c"
+    },
+    {
+      "airfoil_id": "confirmation_0102",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "7698f0a2c4e26bc07d9a3433ae5c8b2c81acd1ae90fe6243f7c703b2e8cfdc18"
+    },
+    {
+      "airfoil_id": "confirmation_0102",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "7698f0a2c4e26bc07d9a3433ae5c8b2c81acd1ae90fe6243f7c703b2e8cfdc18"
+    },
+    {
+      "airfoil_id": "confirmation_0102",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "7698f0a2c4e26bc07d9a3433ae5c8b2c81acd1ae90fe6243f7c703b2e8cfdc18"
+    },
+    {
+      "airfoil_id": "confirmation_0103",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "d2d10d73898b5c74757e58697036c00c2c9b67f6cbdc09bcccbe96a5bb43dee6"
+    },
+    {
+      "airfoil_id": "confirmation_0103",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "d2d10d73898b5c74757e58697036c00c2c9b67f6cbdc09bcccbe96a5bb43dee6"
+    },
+    {
+      "airfoil_id": "confirmation_0104",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "ab634eb992016e6ceb6f825da283094cabf4fc88bb867ce5cab28b52add3a5b3"
+    },
+    {
+      "airfoil_id": "confirmation_0104",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "ab634eb992016e6ceb6f825da283094cabf4fc88bb867ce5cab28b52add3a5b3"
+    },
+    {
+      "airfoil_id": "confirmation_0105",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "d9f973e609323e6ad46d24a31eefd1a30cf25431db949194f805d867241bf5ce"
+    },
+    {
+      "airfoil_id": "confirmation_0105",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "d9f973e609323e6ad46d24a31eefd1a30cf25431db949194f805d867241bf5ce"
+    },
+    {
+      "airfoil_id": "confirmation_0105",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "d9f973e609323e6ad46d24a31eefd1a30cf25431db949194f805d867241bf5ce"
+    },
+    {
+      "airfoil_id": "confirmation_0106",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "0393317592d1e7f1d37cfd68fc05087681875bc2c15e75d95597f3b497607522"
+    },
+    {
+      "airfoil_id": "confirmation_0106",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "0393317592d1e7f1d37cfd68fc05087681875bc2c15e75d95597f3b497607522"
+    },
+    {
+      "airfoil_id": "confirmation_0106",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "0393317592d1e7f1d37cfd68fc05087681875bc2c15e75d95597f3b497607522"
+    },
+    {
+      "airfoil_id": "confirmation_0107",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "455addf274f4db4bfc29e68fa5203451266344b1f3085245e21dab13055d8a7a"
+    },
+    {
+      "airfoil_id": "confirmation_0107",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "455addf274f4db4bfc29e68fa5203451266344b1f3085245e21dab13055d8a7a"
+    },
+    {
+      "airfoil_id": "confirmation_0107",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "455addf274f4db4bfc29e68fa5203451266344b1f3085245e21dab13055d8a7a"
+    },
+    {
+      "airfoil_id": "confirmation_0108",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "fe2550ea0aeae676214c42197ba70e777e3b1b82f156e027cfac7c39648885e0"
+    },
+    {
+      "airfoil_id": "confirmation_0108",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "fe2550ea0aeae676214c42197ba70e777e3b1b82f156e027cfac7c39648885e0"
+    },
+    {
+      "airfoil_id": "confirmation_0109",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "08458efd7579895dba5484aebb08980ef5106cd4b8a245c4a5cfcc9c55a3ab0b"
+    },
+    {
+      "airfoil_id": "confirmation_0109",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "08458efd7579895dba5484aebb08980ef5106cd4b8a245c4a5cfcc9c55a3ab0b"
+    },
+    {
+      "airfoil_id": "confirmation_0109",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "08458efd7579895dba5484aebb08980ef5106cd4b8a245c4a5cfcc9c55a3ab0b"
+    },
+    {
+      "airfoil_id": "confirmation_0111",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "0d66e42f88e5b3c97e7dc95f4c2844750b2be675d04f297911eb402bda9076d3"
+    },
+    {
+      "airfoil_id": "confirmation_0111",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "0d66e42f88e5b3c97e7dc95f4c2844750b2be675d04f297911eb402bda9076d3"
+    },
+    {
+      "airfoil_id": "confirmation_0111",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "0d66e42f88e5b3c97e7dc95f4c2844750b2be675d04f297911eb402bda9076d3"
+    },
+    {
+      "airfoil_id": "confirmation_0112",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "16aeb9e14870333f30b0e8cba454e9fc7f40bba22b2a52e0a763729aad527c17"
+    },
+    {
+      "airfoil_id": "confirmation_0112",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "16aeb9e14870333f30b0e8cba454e9fc7f40bba22b2a52e0a763729aad527c17"
+    },
+    {
+      "airfoil_id": "confirmation_0112",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "16aeb9e14870333f30b0e8cba454e9fc7f40bba22b2a52e0a763729aad527c17"
+    },
+    {
+      "airfoil_id": "confirmation_0113",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "05def16de8c395b8b2618b29fa317bafe7641b29b72fcc230f526e9b830bcbb2"
+    },
+    {
+      "airfoil_id": "confirmation_0113",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "05def16de8c395b8b2618b29fa317bafe7641b29b72fcc230f526e9b830bcbb2"
+    },
+    {
+      "airfoil_id": "confirmation_0113",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "05def16de8c395b8b2618b29fa317bafe7641b29b72fcc230f526e9b830bcbb2"
+    },
+    {
+      "airfoil_id": "confirmation_0114",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "74512b861bce940420d8953c6f41b2b074d123279237996ec1199afc92cf4931"
+    },
+    {
+      "airfoil_id": "confirmation_0114",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "74512b861bce940420d8953c6f41b2b074d123279237996ec1199afc92cf4931"
+    },
+    {
+      "airfoil_id": "confirmation_0114",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "74512b861bce940420d8953c6f41b2b074d123279237996ec1199afc92cf4931"
+    },
+    {
+      "airfoil_id": "confirmation_0115",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "81d8fe904304427b09bb9fa6d1536427683187602ad3c7b89e9d5d21c513dfca"
+    },
+    {
+      "airfoil_id": "confirmation_0115",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "81d8fe904304427b09bb9fa6d1536427683187602ad3c7b89e9d5d21c513dfca"
+    },
+    {
+      "airfoil_id": "confirmation_0116",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "d0237aff7764033e7a74e010309e6fcd01771515e936743989209e5d2e6354bb"
+    },
+    {
+      "airfoil_id": "confirmation_0116",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "d0237aff7764033e7a74e010309e6fcd01771515e936743989209e5d2e6354bb"
+    },
+    {
+      "airfoil_id": "confirmation_0116",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "d0237aff7764033e7a74e010309e6fcd01771515e936743989209e5d2e6354bb"
+    },
+    {
+      "airfoil_id": "confirmation_0117",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "ba919ba957a334e2bd55cf9fa4727aa07b03a92492348010264266e31de31c06"
+    },
+    {
+      "airfoil_id": "confirmation_0117",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "ba919ba957a334e2bd55cf9fa4727aa07b03a92492348010264266e31de31c06"
+    },
+    {
+      "airfoil_id": "confirmation_0117",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "ba919ba957a334e2bd55cf9fa4727aa07b03a92492348010264266e31de31c06"
+    },
+    {
+      "airfoil_id": "confirmation_0118",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "2568a9aa85d2d15c19cf84fb2a4f1df99e8b0c16d0eecca7998c6558e8dc903d"
+    },
+    {
+      "airfoil_id": "confirmation_0118",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "2568a9aa85d2d15c19cf84fb2a4f1df99e8b0c16d0eecca7998c6558e8dc903d"
+    },
+    {
+      "airfoil_id": "confirmation_0118",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "2568a9aa85d2d15c19cf84fb2a4f1df99e8b0c16d0eecca7998c6558e8dc903d"
+    },
+    {
+      "airfoil_id": "confirmation_0119",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "e9ec75dcc69e4b746ff9ef8f8c10ce87ff4c5a0ee9b099e0ba591bab1216c2c1"
+    },
+    {
+      "airfoil_id": "confirmation_0119",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "e9ec75dcc69e4b746ff9ef8f8c10ce87ff4c5a0ee9b099e0ba591bab1216c2c1"
+    },
+    {
+      "airfoil_id": "confirmation_0119",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "e9ec75dcc69e4b746ff9ef8f8c10ce87ff4c5a0ee9b099e0ba591bab1216c2c1"
+    },
+    {
+      "airfoil_id": "confirmation_0120",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "1291e1287c37f544d24f6ddfa5ee14f1af80f3526e1281605a1eb9e2ef579d5d"
+    },
+    {
+      "airfoil_id": "confirmation_0120",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "1291e1287c37f544d24f6ddfa5ee14f1af80f3526e1281605a1eb9e2ef579d5d"
+    },
+    {
+      "airfoil_id": "confirmation_0120",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "1291e1287c37f544d24f6ddfa5ee14f1af80f3526e1281605a1eb9e2ef579d5d"
+    },
+    {
+      "airfoil_id": "confirmation_0121",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "92ca0f26614a1ec4ef5bded85f0e258cc46bf44b00b3172a5212b9f26481efdf"
+    },
+    {
+      "airfoil_id": "confirmation_0121",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "92ca0f26614a1ec4ef5bded85f0e258cc46bf44b00b3172a5212b9f26481efdf"
+    },
+    {
+      "airfoil_id": "confirmation_0121",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "92ca0f26614a1ec4ef5bded85f0e258cc46bf44b00b3172a5212b9f26481efdf"
+    },
+    {
+      "airfoil_id": "confirmation_0122",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "9f3dc59b44f42c579f48244cc7c656d2e92ecea32d38c8c15dc6c76271f91d0e"
+    },
+    {
+      "airfoil_id": "confirmation_0122",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "9f3dc59b44f42c579f48244cc7c656d2e92ecea32d38c8c15dc6c76271f91d0e"
+    },
+    {
+      "airfoil_id": "confirmation_0122",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "9f3dc59b44f42c579f48244cc7c656d2e92ecea32d38c8c15dc6c76271f91d0e"
+    },
+    {
+      "airfoil_id": "confirmation_0123",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "aaf7f4ed083cb300decf379325f78f2acecc56c9f54457c0dccac6d85a717c80"
+    },
+    {
+      "airfoil_id": "confirmation_0123",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "aaf7f4ed083cb300decf379325f78f2acecc56c9f54457c0dccac6d85a717c80"
+    },
+    {
+      "airfoil_id": "confirmation_0123",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "aaf7f4ed083cb300decf379325f78f2acecc56c9f54457c0dccac6d85a717c80"
+    },
+    {
+      "airfoil_id": "confirmation_0124",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "1c9e5360b6421daac6b19f5e309b09aa93de2dafb9c297fe98d8ad18b79027ed"
+    },
+    {
+      "airfoil_id": "confirmation_0124",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "1c9e5360b6421daac6b19f5e309b09aa93de2dafb9c297fe98d8ad18b79027ed"
+    },
+    {
+      "airfoil_id": "confirmation_0124",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "1c9e5360b6421daac6b19f5e309b09aa93de2dafb9c297fe98d8ad18b79027ed"
+    },
+    {
+      "airfoil_id": "confirmation_0125",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "78826f3abf8f11690c3efac0b3860e360e4ef642d94f6b341dbf5a38f1bdd09e"
+    },
+    {
+      "airfoil_id": "confirmation_0125",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "78826f3abf8f11690c3efac0b3860e360e4ef642d94f6b341dbf5a38f1bdd09e"
+    },
+    {
+      "airfoil_id": "confirmation_0125",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "78826f3abf8f11690c3efac0b3860e360e4ef642d94f6b341dbf5a38f1bdd09e"
+    },
+    {
+      "airfoil_id": "confirmation_0126",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "a7b511b10f65a17df1d518104e26b7a69c30714d2a430474fe199e50295c2fc5"
+    },
+    {
+      "airfoil_id": "confirmation_0126",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "a7b511b10f65a17df1d518104e26b7a69c30714d2a430474fe199e50295c2fc5"
+    },
+    {
+      "airfoil_id": "confirmation_0126",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "a7b511b10f65a17df1d518104e26b7a69c30714d2a430474fe199e50295c2fc5"
+    },
+    {
+      "airfoil_id": "confirmation_0127",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "17e05663d191ffeb855659e882029442a985ad5a21fdce7aca9de286dafc381b"
+    },
+    {
+      "airfoil_id": "confirmation_0127",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "17e05663d191ffeb855659e882029442a985ad5a21fdce7aca9de286dafc381b"
+    },
+    {
+      "airfoil_id": "confirmation_0127",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "17e05663d191ffeb855659e882029442a985ad5a21fdce7aca9de286dafc381b"
+    },
+    {
+      "airfoil_id": "confirmation_0128",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "9188838da3f9f57557fdc0b7abbe582e0906bc426cd4192be8aa91b4edf73fda"
+    },
+    {
+      "airfoil_id": "confirmation_0128",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "9188838da3f9f57557fdc0b7abbe582e0906bc426cd4192be8aa91b4edf73fda"
+    },
+    {
+      "airfoil_id": "confirmation_0128",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "9188838da3f9f57557fdc0b7abbe582e0906bc426cd4192be8aa91b4edf73fda"
+    },
+    {
+      "airfoil_id": "confirmation_0129",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "bada061c7343545de013a2c657559dc18c2e0ef579c871236ed2618fd719570d"
+    },
+    {
+      "airfoil_id": "confirmation_0129",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "bada061c7343545de013a2c657559dc18c2e0ef579c871236ed2618fd719570d"
+    },
+    {
+      "airfoil_id": "confirmation_0129",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "bada061c7343545de013a2c657559dc18c2e0ef579c871236ed2618fd719570d"
+    },
+    {
+      "airfoil_id": "confirmation_0130",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "27a51177807df15b73e83f9220dc018a57e361e135e0801edb04fc71e5483103"
+    },
+    {
+      "airfoil_id": "confirmation_0130",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "27a51177807df15b73e83f9220dc018a57e361e135e0801edb04fc71e5483103"
+    },
+    {
+      "airfoil_id": "confirmation_0131",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "94fc03b5170a01fea48fb14419386d9fe8aea17049d4f21ce28ef421f225c641"
+    },
+    {
+      "airfoil_id": "confirmation_0131",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "94fc03b5170a01fea48fb14419386d9fe8aea17049d4f21ce28ef421f225c641"
+    },
+    {
+      "airfoil_id": "confirmation_0131",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "94fc03b5170a01fea48fb14419386d9fe8aea17049d4f21ce28ef421f225c641"
+    },
+    {
+      "airfoil_id": "confirmation_0132",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "9734c643ca6e03a2acb77b57a074878516f917852311f6779b149ab07729e141"
+    },
+    {
+      "airfoil_id": "confirmation_0132",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "9734c643ca6e03a2acb77b57a074878516f917852311f6779b149ab07729e141"
+    },
+    {
+      "airfoil_id": "confirmation_0132",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "9734c643ca6e03a2acb77b57a074878516f917852311f6779b149ab07729e141"
+    },
+    {
+      "airfoil_id": "confirmation_0133",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "848bfe02901d18a01b6d41f82e6a9a33e5b56fe51226cd214f810e399700fecf"
+    },
+    {
+      "airfoil_id": "confirmation_0133",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "848bfe02901d18a01b6d41f82e6a9a33e5b56fe51226cd214f810e399700fecf"
+    },
+    {
+      "airfoil_id": "confirmation_0133",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "848bfe02901d18a01b6d41f82e6a9a33e5b56fe51226cd214f810e399700fecf"
+    },
+    {
+      "airfoil_id": "confirmation_0134",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "8d5140a9a827a5ceb4527a9161545bb09b385d6205d9be480850da791e27cc8c"
+    },
+    {
+      "airfoil_id": "confirmation_0134",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "8d5140a9a827a5ceb4527a9161545bb09b385d6205d9be480850da791e27cc8c"
+    },
+    {
+      "airfoil_id": "confirmation_0135",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "7e2f2621bbe5761d891c06b6af8946f55182eada411a60bebb88b2810c2a67d4"
+    },
+    {
+      "airfoil_id": "confirmation_0135",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "7e2f2621bbe5761d891c06b6af8946f55182eada411a60bebb88b2810c2a67d4"
+    },
+    {
+      "airfoil_id": "confirmation_0135",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "7e2f2621bbe5761d891c06b6af8946f55182eada411a60bebb88b2810c2a67d4"
+    },
+    {
+      "airfoil_id": "confirmation_0136",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "9e53ce66dff302926b9113b0ed0e0df7c468a6f2689502d7a8d3d061b593f119"
+    },
+    {
+      "airfoil_id": "confirmation_0136",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "9e53ce66dff302926b9113b0ed0e0df7c468a6f2689502d7a8d3d061b593f119"
+    },
+    {
+      "airfoil_id": "confirmation_0136",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "9e53ce66dff302926b9113b0ed0e0df7c468a6f2689502d7a8d3d061b593f119"
+    },
+    {
+      "airfoil_id": "confirmation_0137",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "2cdd429e9e643b9ce3fafc1250126a65b151ac17e5532d9257f571186678fea2"
+    },
+    {
+      "airfoil_id": "confirmation_0137",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "2cdd429e9e643b9ce3fafc1250126a65b151ac17e5532d9257f571186678fea2"
+    },
+    {
+      "airfoil_id": "confirmation_0137",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "2cdd429e9e643b9ce3fafc1250126a65b151ac17e5532d9257f571186678fea2"
+    },
+    {
+      "airfoil_id": "confirmation_0139",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "2c2d0c5848a2cc54ee08d8d650c6e76d57e6f1814d498a68d0396cd8634dded2"
+    },
+    {
+      "airfoil_id": "confirmation_0139",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "2c2d0c5848a2cc54ee08d8d650c6e76d57e6f1814d498a68d0396cd8634dded2"
+    },
+    {
+      "airfoil_id": "confirmation_0139",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "2c2d0c5848a2cc54ee08d8d650c6e76d57e6f1814d498a68d0396cd8634dded2"
+    },
+    {
+      "airfoil_id": "confirmation_0140",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "4843d8f2b9f5fc225bdf2346074a11593a06a15d90f0deaf2a24c8e8b2e4b9db"
+    },
+    {
+      "airfoil_id": "confirmation_0140",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "4843d8f2b9f5fc225bdf2346074a11593a06a15d90f0deaf2a24c8e8b2e4b9db"
+    },
+    {
+      "airfoil_id": "confirmation_0140",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "4843d8f2b9f5fc225bdf2346074a11593a06a15d90f0deaf2a24c8e8b2e4b9db"
+    },
+    {
+      "airfoil_id": "confirmation_0141",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "e43a7cf0408e291168e805bea4e7c47b515cd43ffe172d8e878e740907278b94"
+    },
+    {
+      "airfoil_id": "confirmation_0141",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "e43a7cf0408e291168e805bea4e7c47b515cd43ffe172d8e878e740907278b94"
+    },
+    {
+      "airfoil_id": "confirmation_0141",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "e43a7cf0408e291168e805bea4e7c47b515cd43ffe172d8e878e740907278b94"
+    },
+    {
+      "airfoil_id": "confirmation_0142",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "1aca648402e2b0e5987eca72627728c6079fdb457ca02c4b9575d95401a44ac5"
+    },
+    {
+      "airfoil_id": "confirmation_0142",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "1aca648402e2b0e5987eca72627728c6079fdb457ca02c4b9575d95401a44ac5"
+    },
+    {
+      "airfoil_id": "confirmation_0142",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "1aca648402e2b0e5987eca72627728c6079fdb457ca02c4b9575d95401a44ac5"
+    },
+    {
+      "airfoil_id": "confirmation_0143",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "84d8aa3f37cac9e586bc00a078dd91aa2b9747799130f8cf46c2612895655bc4"
+    },
+    {
+      "airfoil_id": "confirmation_0143",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "84d8aa3f37cac9e586bc00a078dd91aa2b9747799130f8cf46c2612895655bc4"
+    },
+    {
+      "airfoil_id": "confirmation_0143",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "84d8aa3f37cac9e586bc00a078dd91aa2b9747799130f8cf46c2612895655bc4"
+    },
+    {
+      "airfoil_id": "confirmation_0144",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "c93a81ba58748d94f16ad3d89f9bc793915a570051f19b821b05a6ec9adfbbdc"
+    },
+    {
+      "airfoil_id": "confirmation_0144",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "c93a81ba58748d94f16ad3d89f9bc793915a570051f19b821b05a6ec9adfbbdc"
+    },
+    {
+      "airfoil_id": "confirmation_0144",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "c93a81ba58748d94f16ad3d89f9bc793915a570051f19b821b05a6ec9adfbbdc"
+    },
+    {
+      "airfoil_id": "confirmation_0145",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "bbda0bba8c441a55b1d259208758a51bb7420ba6ed622c652bccef7225f58f59"
+    },
+    {
+      "airfoil_id": "confirmation_0145",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "bbda0bba8c441a55b1d259208758a51bb7420ba6ed622c652bccef7225f58f59"
+    },
+    {
+      "airfoil_id": "confirmation_0145",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "bbda0bba8c441a55b1d259208758a51bb7420ba6ed622c652bccef7225f58f59"
+    },
+    {
+      "airfoil_id": "confirmation_0146",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "454b69feff8d631aafdd34d5138e43ad352493e8a368dad71451c7250255859a"
+    },
+    {
+      "airfoil_id": "confirmation_0146",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "454b69feff8d631aafdd34d5138e43ad352493e8a368dad71451c7250255859a"
+    },
+    {
+      "airfoil_id": "confirmation_0146",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "454b69feff8d631aafdd34d5138e43ad352493e8a368dad71451c7250255859a"
+    },
+    {
+      "airfoil_id": "confirmation_0147",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "dc4e900691372dada1420c3a04165c532ee56eba76c6d55a162fcf3b6075d83f"
+    },
+    {
+      "airfoil_id": "confirmation_0147",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "dc4e900691372dada1420c3a04165c532ee56eba76c6d55a162fcf3b6075d83f"
+    },
+    {
+      "airfoil_id": "confirmation_0147",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "dc4e900691372dada1420c3a04165c532ee56eba76c6d55a162fcf3b6075d83f"
+    },
+    {
+      "airfoil_id": "confirmation_0148",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "e5e2b9256abb2b25eacc3d4e611920a0cff5546c90b32d1a7efae401496d9542"
+    },
+    {
+      "airfoil_id": "confirmation_0148",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "e5e2b9256abb2b25eacc3d4e611920a0cff5546c90b32d1a7efae401496d9542"
+    },
+    {
+      "airfoil_id": "confirmation_0148",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "e5e2b9256abb2b25eacc3d4e611920a0cff5546c90b32d1a7efae401496d9542"
+    },
+    {
+      "airfoil_id": "confirmation_0149",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "1602701531465162e86b07f2f3cc3451a380d6f751d8164e3a04d6c222d64562"
+    },
+    {
+      "airfoil_id": "confirmation_0149",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "1602701531465162e86b07f2f3cc3451a380d6f751d8164e3a04d6c222d64562"
+    },
+    {
+      "airfoil_id": "confirmation_0149",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "1602701531465162e86b07f2f3cc3451a380d6f751d8164e3a04d6c222d64562"
+    },
+    {
+      "airfoil_id": "confirmation_0150",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "390deb31036c1d5f661f76a95873af5a4be59ac1ac98c48026a3e98e93f06c0e"
+    },
+    {
+      "airfoil_id": "confirmation_0150",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "390deb31036c1d5f661f76a95873af5a4be59ac1ac98c48026a3e98e93f06c0e"
+    },
+    {
+      "airfoil_id": "confirmation_0150",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "390deb31036c1d5f661f76a95873af5a4be59ac1ac98c48026a3e98e93f06c0e"
+    },
+    {
+      "airfoil_id": "confirmation_0151",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "be621faa6b04dfa315dcb4d8317b6956c2b9317fbcfbac7913c45fa6d635c777"
+    },
+    {
+      "airfoil_id": "confirmation_0151",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "be621faa6b04dfa315dcb4d8317b6956c2b9317fbcfbac7913c45fa6d635c777"
+    },
+    {
+      "airfoil_id": "confirmation_0152",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "02373d02184513a8d20153b26412c0d5d77313d0ddc2f72be9eed2094cfb299d"
+    },
+    {
+      "airfoil_id": "confirmation_0152",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "02373d02184513a8d20153b26412c0d5d77313d0ddc2f72be9eed2094cfb299d"
+    },
+    {
+      "airfoil_id": "confirmation_0152",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "02373d02184513a8d20153b26412c0d5d77313d0ddc2f72be9eed2094cfb299d"
+    },
+    {
+      "airfoil_id": "confirmation_0153",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "4a1f3cfafe43037c73e06e1a66cccc02569147ad6b9c72d78937e469ff81e1da"
+    },
+    {
+      "airfoil_id": "confirmation_0153",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "4a1f3cfafe43037c73e06e1a66cccc02569147ad6b9c72d78937e469ff81e1da"
+    },
+    {
+      "airfoil_id": "confirmation_0153",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "4a1f3cfafe43037c73e06e1a66cccc02569147ad6b9c72d78937e469ff81e1da"
+    },
+    {
+      "airfoil_id": "confirmation_0154",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "58795479eca0d0f92bbb2e5d5a4828d4dba2502be0b37b901354501392aedb6f"
+    },
+    {
+      "airfoil_id": "confirmation_0154",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "58795479eca0d0f92bbb2e5d5a4828d4dba2502be0b37b901354501392aedb6f"
+    },
+    {
+      "airfoil_id": "confirmation_0154",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "58795479eca0d0f92bbb2e5d5a4828d4dba2502be0b37b901354501392aedb6f"
+    },
+    {
+      "airfoil_id": "confirmation_0155",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "539052bae7bd0e6f2895f5cfadd1687b09f17fa8da85811d4db5aa6ae0c19930"
+    },
+    {
+      "airfoil_id": "confirmation_0155",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "539052bae7bd0e6f2895f5cfadd1687b09f17fa8da85811d4db5aa6ae0c19930"
+    },
+    {
+      "airfoil_id": "confirmation_0155",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "539052bae7bd0e6f2895f5cfadd1687b09f17fa8da85811d4db5aa6ae0c19930"
+    },
+    {
+      "airfoil_id": "confirmation_0156",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "c0f14aee42dda3e9cde18ea7b065d67f045539c2f1da0d5223d51083a105dded"
+    },
+    {
+      "airfoil_id": "confirmation_0156",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "c0f14aee42dda3e9cde18ea7b065d67f045539c2f1da0d5223d51083a105dded"
+    },
+    {
+      "airfoil_id": "confirmation_0157",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "1b590128cac806536c1b3111a8560b3049e6706556031626f6b678bf48a1d5bd"
+    },
+    {
+      "airfoil_id": "confirmation_0157",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "1b590128cac806536c1b3111a8560b3049e6706556031626f6b678bf48a1d5bd"
+    },
+    {
+      "airfoil_id": "confirmation_0157",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "1b590128cac806536c1b3111a8560b3049e6706556031626f6b678bf48a1d5bd"
+    },
+    {
+      "airfoil_id": "confirmation_0158",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "f2ac07065f4b972f95cfc87b44333b816da3ff69a3bab7fe5f26fea875304087"
+    },
+    {
+      "airfoil_id": "confirmation_0158",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "f2ac07065f4b972f95cfc87b44333b816da3ff69a3bab7fe5f26fea875304087"
+    },
+    {
+      "airfoil_id": "confirmation_0158",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "f2ac07065f4b972f95cfc87b44333b816da3ff69a3bab7fe5f26fea875304087"
+    },
+    {
+      "airfoil_id": "confirmation_0159",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "e869a0368f3866252e28c6ccc665229f0b51510e3eda5590b3b1e3113ac003f3"
+    },
+    {
+      "airfoil_id": "confirmation_0159",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "e869a0368f3866252e28c6ccc665229f0b51510e3eda5590b3b1e3113ac003f3"
+    },
+    {
+      "airfoil_id": "confirmation_0159",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "e869a0368f3866252e28c6ccc665229f0b51510e3eda5590b3b1e3113ac003f3"
+    },
+    {
+      "airfoil_id": "confirmation_0160",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "502e220b85e8a830fb303923d51965ef6a45d49c30cb43c1ef3696ad925c5802"
+    },
+    {
+      "airfoil_id": "confirmation_0160",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "502e220b85e8a830fb303923d51965ef6a45d49c30cb43c1ef3696ad925c5802"
+    },
+    {
+      "airfoil_id": "confirmation_0160",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "502e220b85e8a830fb303923d51965ef6a45d49c30cb43c1ef3696ad925c5802"
+    },
+    {
+      "airfoil_id": "confirmation_0161",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "c93299f43b47f1b09bd28637d145d0fe517e6a446e2fef0a1b2beb40364289d3"
+    },
+    {
+      "airfoil_id": "confirmation_0161",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "c93299f43b47f1b09bd28637d145d0fe517e6a446e2fef0a1b2beb40364289d3"
+    },
+    {
+      "airfoil_id": "confirmation_0161",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "c93299f43b47f1b09bd28637d145d0fe517e6a446e2fef0a1b2beb40364289d3"
+    },
+    {
+      "airfoil_id": "confirmation_0162",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "bf24a3054c28489ebb5f3958b64046db9f96006d674b0a2c3004aa75704fcc30"
+    },
+    {
+      "airfoil_id": "confirmation_0162",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "bf24a3054c28489ebb5f3958b64046db9f96006d674b0a2c3004aa75704fcc30"
+    },
+    {
+      "airfoil_id": "confirmation_0162",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "bf24a3054c28489ebb5f3958b64046db9f96006d674b0a2c3004aa75704fcc30"
+    },
+    {
+      "airfoil_id": "confirmation_0163",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "142c5d0cf94c61aa435b53e59bc13419d43288adae7626785d2c7248c7fddae6"
+    },
+    {
+      "airfoil_id": "confirmation_0163",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "142c5d0cf94c61aa435b53e59bc13419d43288adae7626785d2c7248c7fddae6"
+    },
+    {
+      "airfoil_id": "confirmation_0163",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "142c5d0cf94c61aa435b53e59bc13419d43288adae7626785d2c7248c7fddae6"
+    },
+    {
+      "airfoil_id": "confirmation_0164",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "02efe8c9b01aca9176ecb4693df6b56413dc27041fef6084ce787039af1da1be"
+    },
+    {
+      "airfoil_id": "confirmation_0164",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "02efe8c9b01aca9176ecb4693df6b56413dc27041fef6084ce787039af1da1be"
+    },
+    {
+      "airfoil_id": "confirmation_0164",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "02efe8c9b01aca9176ecb4693df6b56413dc27041fef6084ce787039af1da1be"
+    },
+    {
+      "airfoil_id": "confirmation_0165",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "b839115d21cba9b7c7418a9a17c84fc6ff1bf0a1dfde5b2b9aaeb708a6955042"
+    },
+    {
+      "airfoil_id": "confirmation_0165",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "b839115d21cba9b7c7418a9a17c84fc6ff1bf0a1dfde5b2b9aaeb708a6955042"
+    },
+    {
+      "airfoil_id": "confirmation_0165",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "b839115d21cba9b7c7418a9a17c84fc6ff1bf0a1dfde5b2b9aaeb708a6955042"
+    },
+    {
+      "airfoil_id": "confirmation_0166",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "25b9997af004e1efe3e8780bfdb06cd25d810750cf1cb3d9c31c5235f1c70880"
+    },
+    {
+      "airfoil_id": "confirmation_0166",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "25b9997af004e1efe3e8780bfdb06cd25d810750cf1cb3d9c31c5235f1c70880"
+    },
+    {
+      "airfoil_id": "confirmation_0166",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "25b9997af004e1efe3e8780bfdb06cd25d810750cf1cb3d9c31c5235f1c70880"
+    },
+    {
+      "airfoil_id": "confirmation_0167",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "2f23d58ebd6e988ba671adfdbdeef6ee970447d1f19c99172bdae9a7830ffa4c"
+    },
+    {
+      "airfoil_id": "confirmation_0167",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "2f23d58ebd6e988ba671adfdbdeef6ee970447d1f19c99172bdae9a7830ffa4c"
+    },
+    {
+      "airfoil_id": "confirmation_0167",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "2f23d58ebd6e988ba671adfdbdeef6ee970447d1f19c99172bdae9a7830ffa4c"
+    },
+    {
+      "airfoil_id": "confirmation_0168",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "774db8c48de340a1a0f594789fb637c9b87d32cc099700f6b203dc05b5d97e81"
+    },
+    {
+      "airfoil_id": "confirmation_0168",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "774db8c48de340a1a0f594789fb637c9b87d32cc099700f6b203dc05b5d97e81"
+    },
+    {
+      "airfoil_id": "confirmation_0168",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "774db8c48de340a1a0f594789fb637c9b87d32cc099700f6b203dc05b5d97e81"
+    },
+    {
+      "airfoil_id": "confirmation_0169",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "400b76d29fce0559c084aa4fdf4112e096c5e254cc106597346b2f87ade3e364"
+    },
+    {
+      "airfoil_id": "confirmation_0169",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "400b76d29fce0559c084aa4fdf4112e096c5e254cc106597346b2f87ade3e364"
+    },
+    {
+      "airfoil_id": "confirmation_0170",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "04ff255c51d137670647f06f5dd003eb0e35d24ecf7efce8e7d1ba0715e4a7fc"
+    },
+    {
+      "airfoil_id": "confirmation_0170",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "04ff255c51d137670647f06f5dd003eb0e35d24ecf7efce8e7d1ba0715e4a7fc"
+    },
+    {
+      "airfoil_id": "confirmation_0170",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "04ff255c51d137670647f06f5dd003eb0e35d24ecf7efce8e7d1ba0715e4a7fc"
+    },
+    {
+      "airfoil_id": "confirmation_0171",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "e26a553f023605ac74e5fc9739e75cc2fcd2f0aa549504973d5eb7dcaab272e8"
+    },
+    {
+      "airfoil_id": "confirmation_0171",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "e26a553f023605ac74e5fc9739e75cc2fcd2f0aa549504973d5eb7dcaab272e8"
+    },
+    {
+      "airfoil_id": "confirmation_0172",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "39744c271bd6a14cb1d2ed1444099db0517584f22dc6c63c6f2f79c21d48019f"
+    },
+    {
+      "airfoil_id": "confirmation_0172",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "39744c271bd6a14cb1d2ed1444099db0517584f22dc6c63c6f2f79c21d48019f"
+    },
+    {
+      "airfoil_id": "confirmation_0172",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "39744c271bd6a14cb1d2ed1444099db0517584f22dc6c63c6f2f79c21d48019f"
+    },
+    {
+      "airfoil_id": "confirmation_0173",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "4d23c6a9e46b22c2278032f40524ec9fd49278fa215a253d1d9a0a031661c216"
+    },
+    {
+      "airfoil_id": "confirmation_0173",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "4d23c6a9e46b22c2278032f40524ec9fd49278fa215a253d1d9a0a031661c216"
+    },
+    {
+      "airfoil_id": "confirmation_0173",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "4d23c6a9e46b22c2278032f40524ec9fd49278fa215a253d1d9a0a031661c216"
+    },
+    {
+      "airfoil_id": "confirmation_0174",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "548de1f6e791f9c6115c2366d5ba0383aebde3f12f0470ba438f7cc508aaef8a"
+    },
+    {
+      "airfoil_id": "confirmation_0174",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "548de1f6e791f9c6115c2366d5ba0383aebde3f12f0470ba438f7cc508aaef8a"
+    },
+    {
+      "airfoil_id": "confirmation_0174",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "548de1f6e791f9c6115c2366d5ba0383aebde3f12f0470ba438f7cc508aaef8a"
+    },
+    {
+      "airfoil_id": "confirmation_0176",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "ce2addde128ccd62fdfa79db4bcd753f54ee269675b8b1ced024ed5fcc67a722"
+    },
+    {
+      "airfoil_id": "confirmation_0176",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "ce2addde128ccd62fdfa79db4bcd753f54ee269675b8b1ced024ed5fcc67a722"
+    },
+    {
+      "airfoil_id": "confirmation_0176",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "ce2addde128ccd62fdfa79db4bcd753f54ee269675b8b1ced024ed5fcc67a722"
+    },
+    {
+      "airfoil_id": "confirmation_0177",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "8330ca9f65fbcbb3cb70e785a7fde6e00c4ee9a4289b20466b0805c9a7902af7"
+    },
+    {
+      "airfoil_id": "confirmation_0177",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "8330ca9f65fbcbb3cb70e785a7fde6e00c4ee9a4289b20466b0805c9a7902af7"
+    },
+    {
+      "airfoil_id": "confirmation_0177",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "8330ca9f65fbcbb3cb70e785a7fde6e00c4ee9a4289b20466b0805c9a7902af7"
+    },
+    {
+      "airfoil_id": "confirmation_0178",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "c8f8edc8c6dcdc2661db18b8051f10afb6c582277aaac8d0009cc771bc2a057a"
+    },
+    {
+      "airfoil_id": "confirmation_0178",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "c8f8edc8c6dcdc2661db18b8051f10afb6c582277aaac8d0009cc771bc2a057a"
+    },
+    {
+      "airfoil_id": "confirmation_0179",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "183f2d8ee6aff077537bd9b3060ff75c1bd83eaa49e673896fbcfceae9b8d66f"
+    },
+    {
+      "airfoil_id": "confirmation_0179",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "183f2d8ee6aff077537bd9b3060ff75c1bd83eaa49e673896fbcfceae9b8d66f"
+    },
+    {
+      "airfoil_id": "confirmation_0179",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "183f2d8ee6aff077537bd9b3060ff75c1bd83eaa49e673896fbcfceae9b8d66f"
+    },
+    {
+      "airfoil_id": "confirmation_0180",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "13862ea4d81c8c6578ca7b57ae1bf340918f727103e5605aeafc17e3cb118060"
+    },
+    {
+      "airfoil_id": "confirmation_0180",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "13862ea4d81c8c6578ca7b57ae1bf340918f727103e5605aeafc17e3cb118060"
+    },
+    {
+      "airfoil_id": "confirmation_0180",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "13862ea4d81c8c6578ca7b57ae1bf340918f727103e5605aeafc17e3cb118060"
+    },
+    {
+      "airfoil_id": "confirmation_0181",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "84b1588cd4280a98ef4ad0909a74b54ff2c105d70e039cfa55c83b2a04356338"
+    },
+    {
+      "airfoil_id": "confirmation_0181",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "84b1588cd4280a98ef4ad0909a74b54ff2c105d70e039cfa55c83b2a04356338"
+    },
+    {
+      "airfoil_id": "confirmation_0181",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "84b1588cd4280a98ef4ad0909a74b54ff2c105d70e039cfa55c83b2a04356338"
+    },
+    {
+      "airfoil_id": "confirmation_0182",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "87f9dffe7290a181182b0d73174b1b1886c80599a0900fd83e43d48e4a3a7b71"
+    },
+    {
+      "airfoil_id": "confirmation_0182",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "87f9dffe7290a181182b0d73174b1b1886c80599a0900fd83e43d48e4a3a7b71"
+    },
+    {
+      "airfoil_id": "confirmation_0182",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "87f9dffe7290a181182b0d73174b1b1886c80599a0900fd83e43d48e4a3a7b71"
+    },
+    {
+      "airfoil_id": "confirmation_0183",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "000184c3b6709c3a35053303805a073f55a4acd0b5ab4207bce05fca98aa778c"
+    },
+    {
+      "airfoil_id": "confirmation_0183",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "000184c3b6709c3a35053303805a073f55a4acd0b5ab4207bce05fca98aa778c"
+    },
+    {
+      "airfoil_id": "confirmation_0183",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "000184c3b6709c3a35053303805a073f55a4acd0b5ab4207bce05fca98aa778c"
+    },
+    {
+      "airfoil_id": "confirmation_0184",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "424371022ceb1d31f89f124367b09c3c5f942bf929c4141f0aee81feadd1766b"
+    },
+    {
+      "airfoil_id": "confirmation_0184",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "424371022ceb1d31f89f124367b09c3c5f942bf929c4141f0aee81feadd1766b"
+    },
+    {
+      "airfoil_id": "confirmation_0184",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "424371022ceb1d31f89f124367b09c3c5f942bf929c4141f0aee81feadd1766b"
+    },
+    {
+      "airfoil_id": "confirmation_0185",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "7aad2ac0ad5fe47d47aa9f23ea4b8cbc80a86488e4733c5cebe10ddd21ed42d6"
+    },
+    {
+      "airfoil_id": "confirmation_0186",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "d36101bffad12e7a1ace5899f8438c875579ccf5585a77f05f8cd0524f42d746"
+    },
+    {
+      "airfoil_id": "confirmation_0186",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "d36101bffad12e7a1ace5899f8438c875579ccf5585a77f05f8cd0524f42d746"
+    },
+    {
+      "airfoil_id": "confirmation_0186",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "d36101bffad12e7a1ace5899f8438c875579ccf5585a77f05f8cd0524f42d746"
+    },
+    {
+      "airfoil_id": "confirmation_0187",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "c4e35c17b2ac6222192c7437743d6d25819dbcdfbdeb85c2a3a686dd0d7c857b"
+    },
+    {
+      "airfoil_id": "confirmation_0187",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "c4e35c17b2ac6222192c7437743d6d25819dbcdfbdeb85c2a3a686dd0d7c857b"
+    },
+    {
+      "airfoil_id": "confirmation_0187",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "c4e35c17b2ac6222192c7437743d6d25819dbcdfbdeb85c2a3a686dd0d7c857b"
+    },
+    {
+      "airfoil_id": "confirmation_0188",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "421a2c6d6209d6d1d94a47c64d9a831f0875f96d54dfb544d7fa4b1471236225"
+    },
+    {
+      "airfoil_id": "confirmation_0188",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "421a2c6d6209d6d1d94a47c64d9a831f0875f96d54dfb544d7fa4b1471236225"
+    },
+    {
+      "airfoil_id": "confirmation_0188",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "421a2c6d6209d6d1d94a47c64d9a831f0875f96d54dfb544d7fa4b1471236225"
+    },
+    {
+      "airfoil_id": "confirmation_0189",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "5c34fd8a5890b94d3393ccc18befe8dfab267f868da441d2b3d8e3941184df73"
+    },
+    {
+      "airfoil_id": "confirmation_0189",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "5c34fd8a5890b94d3393ccc18befe8dfab267f868da441d2b3d8e3941184df73"
+    },
+    {
+      "airfoil_id": "confirmation_0190",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "ac7d2e84595a51755fae836235bd652ad73a3407fa16afc25251d80b8427a37d"
+    },
+    {
+      "airfoil_id": "confirmation_0190",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "ac7d2e84595a51755fae836235bd652ad73a3407fa16afc25251d80b8427a37d"
+    },
+    {
+      "airfoil_id": "confirmation_0190",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "ac7d2e84595a51755fae836235bd652ad73a3407fa16afc25251d80b8427a37d"
+    },
+    {
+      "airfoil_id": "confirmation_0191",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "a82da4a659a278f8cac23d07da8f73866685b18b3cf2bb9f2a4306329854b7f4"
+    },
+    {
+      "airfoil_id": "confirmation_0191",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "a82da4a659a278f8cac23d07da8f73866685b18b3cf2bb9f2a4306329854b7f4"
+    },
+    {
+      "airfoil_id": "confirmation_0191",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "a82da4a659a278f8cac23d07da8f73866685b18b3cf2bb9f2a4306329854b7f4"
+    },
+    {
+      "airfoil_id": "confirmation_0192",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "370a5e067301166af9694307a8009693bb6484b833cfe58698d10abb23da6fcc"
+    },
+    {
+      "airfoil_id": "confirmation_0192",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "370a5e067301166af9694307a8009693bb6484b833cfe58698d10abb23da6fcc"
+    },
+    {
+      "airfoil_id": "confirmation_0193",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "2e6edaa3ebac4fe79fa5e093e11f1d1a38d3a0b11a230659f2788a513eab79ae"
+    },
+    {
+      "airfoil_id": "confirmation_0193",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "2e6edaa3ebac4fe79fa5e093e11f1d1a38d3a0b11a230659f2788a513eab79ae"
+    },
+    {
+      "airfoil_id": "confirmation_0193",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "2e6edaa3ebac4fe79fa5e093e11f1d1a38d3a0b11a230659f2788a513eab79ae"
+    },
+    {
+      "airfoil_id": "confirmation_0194",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "cec4d0b73f4873101d38a2389d69161cea16abdb2bda7488bc8f261fce2828b1"
+    },
+    {
+      "airfoil_id": "confirmation_0194",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "cec4d0b73f4873101d38a2389d69161cea16abdb2bda7488bc8f261fce2828b1"
+    },
+    {
+      "airfoil_id": "confirmation_0194",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "cec4d0b73f4873101d38a2389d69161cea16abdb2bda7488bc8f261fce2828b1"
+    },
+    {
+      "airfoil_id": "confirmation_0195",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "483e3e2ab1d436b9b14fc32a8fad73b57090adfde3b652edee23782a4500c06f"
+    },
+    {
+      "airfoil_id": "confirmation_0195",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "483e3e2ab1d436b9b14fc32a8fad73b57090adfde3b652edee23782a4500c06f"
+    },
+    {
+      "airfoil_id": "confirmation_0195",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "483e3e2ab1d436b9b14fc32a8fad73b57090adfde3b652edee23782a4500c06f"
+    },
+    {
+      "airfoil_id": "confirmation_0196",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "dd9bf7a72d9410be0af33866a30917d6a0f1b9175292431c738110b887b37c93"
+    },
+    {
+      "airfoil_id": "confirmation_0196",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "dd9bf7a72d9410be0af33866a30917d6a0f1b9175292431c738110b887b37c93"
+    },
+    {
+      "airfoil_id": "confirmation_0197",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "c4cd0875fe18d5a694f1a1b042617c5bd8879ebb28008e148a4a50e031429850"
+    },
+    {
+      "airfoil_id": "confirmation_0197",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "c4cd0875fe18d5a694f1a1b042617c5bd8879ebb28008e148a4a50e031429850"
+    },
+    {
+      "airfoil_id": "confirmation_0197",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "c4cd0875fe18d5a694f1a1b042617c5bd8879ebb28008e148a4a50e031429850"
+    },
+    {
+      "airfoil_id": "confirmation_0198",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "c289d31f8396c84fc31c53e662a35980166e2db56cc11edc16d40cc61b9d99d7"
+    },
+    {
+      "airfoil_id": "confirmation_0198",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "c289d31f8396c84fc31c53e662a35980166e2db56cc11edc16d40cc61b9d99d7"
+    },
+    {
+      "airfoil_id": "confirmation_0198",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "c289d31f8396c84fc31c53e662a35980166e2db56cc11edc16d40cc61b9d99d7"
+    },
+    {
+      "airfoil_id": "confirmation_0199",
+      "alpha_deg": 2.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "3b76cb46f57346b2f98a47f98d2301cbfc7b5f44b8eedbf3aaefcb114e2bdf98"
+    },
+    {
+      "airfoil_id": "confirmation_0199",
+      "alpha_deg": 4.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "3b76cb46f57346b2f98a47f98d2301cbfc7b5f44b8eedbf3aaefcb114e2bdf98"
+    },
+    {
+      "airfoil_id": "confirmation_0199",
+      "alpha_deg": 6.0,
+      "cohort": "sealed_development_mixtures",
+      "geometry_sha256": "3b76cb46f57346b2f98a47f98d2301cbfc7b5f44b8eedbf3aaefcb114e2bdf98"
+    }
+  ],
+  "source_inputs": {
+    "protected_historical_test": {
+      "path": "results/robust_v2/lineages/robust-v2-controlled-20261020/locked_test/predictions.parquet",
+      "sha256": "44ad40be3fd628b596ccdfbf52009c839820c34a54ca5a25f8e30cad5a4f17da"
+    },
+    "sealed_development_mixtures": {
+      "path": "results/robust_v2/lineages/robust-v2-controlled-20261020/confirmation/joined_observed_predictions.parquet",
+      "sha256": "925c566751bedadecb5e6cb422c811d5e31b28acab1333b0c7ca84bcc95b5d2c"
+    }
+  }
+}
