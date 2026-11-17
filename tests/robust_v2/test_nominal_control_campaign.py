@@ -55,8 +55,11 @@ def test_initial_population_retains_reference_and_same_feasibility_ranked_observ
     np.testing.assert_array_equal(population[1:4],[[.2,.2],[.4,.4],[.8,.8]])
 
 
-def test_checkpointed_nominal_profile_completes_declared_seeds_and_refuses_context_mixing(tmp_path):
+def test_checkpointed_nominal_profile_completes_declared_seeds_and_refuses_context_mixing(tmp_path, monkeypatch):
     implementation=module()
+    # This is a tiny synthetic checkpoint test, independent of live workstation RAM.
+    # The production memory guard remains exercised in its own resource tests.
+    monkeypatch.setattr(implementation, 'assert_campaign_resources', lambda _directory: None)
     args=dict(evaluator=FixtureEvaluator(),bounds=DesignBounds(np.zeros(2),np.ones(2)),
               reference=np.array([.3,.3]),observed=np.array([[.2,.2],[.4,.4]]),
               seeds=[61,62],population=8,generations=3,output=tmp_path,
